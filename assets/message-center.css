@@ -1,0 +1,312 @@
+/* Compact mission messages beneath the standings instead of over the world. */
+.team-card .message-center-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid rgba(112, 230, 255, 0.16);
+  color: #7f9aa6;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.48rem;
+  letter-spacing: 0.1em;
+}
+
+.team-card .message-center-heading strong {
+  color: var(--class-accent);
+  font-size: 0.5rem;
+  white-space: nowrap;
+}
+
+.team-card .toast-stack {
+  position: static;
+  inset: auto;
+  transform: none;
+  width: 100%;
+  margin-top: 7px;
+  display: grid;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.team-card .toast {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-4px);
+  padding: 8px 9px;
+  background: rgba(4, 16, 24, 0.92);
+  box-shadow: none;
+}
+
+.team-card .toast.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.team-card .toast strong {
+  display: block;
+  font-size: 0.6rem;
+}
+
+.team-card .toast p {
+  margin: 3px 0 0;
+  font-size: 0.54rem;
+  line-height: 1.35;
+}
+
+.team-card .toast-credit-balance {
+  display: block;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--class-accent);
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.48rem;
+  letter-spacing: 0.06em;
+}
+
+/* Status history remains available at narrower desktop widths as well. */
+.right-hud .team-card {
+  display: block;
+}
+
+/* Pause hub: readable access to the companion and complete mission log. */
+.pause-card {
+  width: min(560px, calc(100% - 32px));
+}
+
+.pause-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.pause-option {
+  min-height: 105px;
+  padding: 14px;
+  display: grid;
+  gap: 5px;
+  align-content: center;
+  border: 1px solid rgba(108, 245, 211, 0.28);
+  background: rgba(5, 24, 32, 0.78);
+  text-align: left;
+  cursor: pointer;
+}
+
+.pause-option:hover,
+.pause-option:focus-visible {
+  border-color: var(--class-accent);
+  background: rgba(25, 76, 82, 0.72);
+  outline: none;
+}
+
+.pause-option > span,
+.pause-option > small {
+  color: #78a9b2;
+  font: 0.56rem/1.3 "Chakra Petch", sans-serif;
+  letter-spacing: 0.09em;
+}
+
+.pause-option > strong {
+  color: #efffff;
+  font: 0.76rem/1.25 "Chakra Petch", sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.pause-message-panel {
+  position: absolute;
+  inset: 7vh max(18px, 11vw);
+  z-index: 31;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  overflow: hidden;
+  border-top: 2px solid var(--class-accent);
+}
+
+.pause-message-panel > header {
+  min-height: 70px;
+  padding: 13px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(112, 230, 255, 0.2);
+}
+
+.pause-message-panel > header > div {
+  display: grid;
+  gap: 3px;
+}
+
+.pause-message-panel > header small,
+.pause-message-panel > header span {
+  color: var(--class-accent);
+  font: 0.57rem/1.3 "Chakra Petch", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.pause-message-panel > header strong {
+  font: 0.98rem/1.2 "Chakra Petch", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.pause-message-history {
+  min-height: 0;
+  padding: 16px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: rgba(108, 245, 211, 0.56) rgba(0, 0, 0, 0.18);
+}
+
+.pause-history-entry {
+  padding: 13px 15px;
+  border-left: 3px solid #55e6ff;
+  background: rgba(3, 17, 26, 0.88);
+}
+
+.pause-history-entry.warning { border-left-color: #ffc45c; }
+.pause-history-entry.danger { border-left-color: #ff6072; }
+.pause-history-entry.success { border-left-color: #5df1c4; }
+
+.pause-history-entry > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.pause-history-entry time {
+  flex: 0 0 auto;
+  color: #6f909d;
+  font: 0.6rem/1.3 "Chakra Petch", sans-serif;
+}
+
+.pause-history-entry strong {
+  color: #f0fbff;
+  font: 0.82rem/1.35 "Chakra Petch", sans-serif;
+}
+
+.pause-history-entry p {
+  margin: 7px 0 0;
+  color: #b9cbd2;
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.pause-history-entry .toast-credit-balance {
+  font-size: 0.58rem;
+}
+
+.pause-message-empty {
+  color: #91aebc;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .pause-actions { grid-template-columns: 1fr; }
+  .pause-message-panel { inset: 18px 10px; }
+  .pause-message-panel > header { grid-template-columns: 1fr auto; }
+  .pause-message-panel > header > span { display: none; }
+}
+
+.multiplayer-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 9px;
+  padding: 7px 8px;
+  border: 1px solid rgba(93, 241, 196, 0.22);
+  background: rgba(5, 35, 37, 0.54);
+  color: #83b9b1;
+  font: 0.51rem/1.2 "Chakra Petch", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.multiplayer-status span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.multiplayer-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5df1c4;
+  box-shadow: 0 0 9px rgba(93, 241, 196, 0.8);
+}
+
+.multiplayer-status strong { color: #caffef; }
+.multiplayer-status.offline { border-color: rgba(255, 196, 92, 0.25); }
+.multiplayer-status.offline i { background: #ffc45c; box-shadow: none; }
+.multiplayer-status.offline strong { color: #ffd99a; }
+
+.biome-grid {
+  grid-template-columns: 1fr;
+  gap: 7px;
+}
+
+.biome-card {
+  min-height: 74px;
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: minmax(105px, 0.85fr) minmax(120px, 1fr) minmax(120px, 1.15fr) minmax(130px, 1.1fr);
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.biome-card .class-rank { font-size: 0.76rem; }
+.biome-card .machine-name { font-size: 0.56rem; }
+.biome-card p { min-height: 0; margin: 0; font-size: 0.6rem; }
+.biome-card small { font-size: 0.52rem; }
+
+.rank-progression-note {
+  margin: 9px 0 0;
+  color: #8eabb5;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.rank-progress {
+  margin: 8px 0;
+  padding: 7px 8px;
+  display: grid;
+  gap: 3px;
+  border: 1px solid color-mix(in srgb, var(--class-accent) 32%, transparent);
+  background: rgba(5, 20, 28, 0.66);
+}
+
+.rank-progress strong {
+  color: var(--class-accent);
+  font: 0.58rem/1.25 "Chakra Petch", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.rank-progress span {
+  color: #a6bdc5;
+  font-size: 0.56rem;
+}
+
+.rank-progress.complete { border-color: rgba(255, 196, 92, 0.38); }
+
+@media (max-width: 1050px) {
+  .biome-card {
+    grid-template-columns: minmax(100px, 0.85fr) 1fr 1fr;
+  }
+  .biome-card small { grid-column: 2 / -1; }
+}
+
+@media (max-width: 620px) {
+  .biome-card {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .biome-card small { grid-column: auto; }
+}

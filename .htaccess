@@ -1,0 +1,17 @@
+DirectoryIndex index.php index.html
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:html|php)$">
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+  </FilesMatch>
+
+  <FilesMatch "\.(?:js|css|glb|webp|wasm)$">
+    Header always set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+AddType application/wasm .wasm
+
+FileETag MTime Size
