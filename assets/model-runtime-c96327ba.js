@@ -2,6 +2,7 @@ import {
   AnimationMixer,
   Box3,
   Group,
+  LoopOnce,
   Vector3,
 } from './vendor/three.module.min.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
@@ -158,21 +159,86 @@ function disposeModel(root) {
   });
 }
 
-function createMotionController(scene, walkClip, runClip = null) {
+function attachWeaponModel(characterScene, weaponScene, {
+  id,
+  length,
+  position = [0.08, 0.02, 0],
+  rotation = [0, 0, 0],
+}) {
+  const hand = characterScene.getObjectByName('RightHand');
+  if (!hand) {
+    disposeModel(weaponScene);
+    return null;
+  }
+  const mount = new Group();
+  mount.name = `weapon-${id}`;
+  const box = new Box3().setFromObject(weaponScene);
+  const size = box.getSize(new Vector3());
+  const longest = Math.max(size.x, size.y, size.z, 0.0001);
+  weaponScene.position.sub(box.getCenter(new Vector3()));
+  weaponScene.scale.setScalar(length / longest);
+  weaponScene.traverse((object) => {
+    if (!object.isMesh) return;
+    object.castShadow = true;
+    object.receiveShadow = false;
+    object.frustumCulled = false;
+  });
+  mount.position.fromArray(position);
+  mount.rotation.set(...rotation);
+  mount.add(weaponScene);
+  hand.add(mount);
+  return mount;
+}
+
+function createMotionController(scene, walkClip, runClip = null, combatClips = {}) {
   const mixer = new AnimationMixer(scene);
   const safeWalkClip = removeUnsafeScaleTracks(walkClip);
   const safeRunClip = removeUnsafeScaleTracks(runClip);
   const walkAction = safeWalkClip ? mixer.clipAction(safeWalkClip) : null;
   const runAction = safeRunClip ? mixer.clipAction(safeRunClip) : null;
+  const combatActions = Object.fromEntries(Object.entries(combatClips).flatMap(([name, clip]) => {
+    const safeClip = removeUnsafeScaleTracks(clip);
+    return safeClip ? [[name, mixer.clipAction(safeClip)]] : [];
+  }));
   let activeMotion = 'idle';
+  let lockedAction = null;
+  let lockedUntil = 0;
+  let idleCombatName = null;
+
+  function applyIdleCombatPose() {
+    const action = combatActions[idleCombatName];
+    if (!action) return false;
+    action.reset();
+    action.enabled = true;
+    action.setEffectiveWeight(1);
+    action.setEffectiveTimeScale(1);
+    action.play();
+    action.time = action.getClip().duration * (idleCombatName === 'heavyMinigun' ? 0.18 : 0.24);
+    action.paused = true;
+    mixer.update(0);
+    return true;
+  }
+
+  function clearAction() {
+    lockedAction?.stop();
+    lockedAction = null;
+    lockedUntil = 0;
+    activeMotion = '';
+  }
 
   return {
     update(delta, moving, sprinting) {
+      if (lockedAction) {
+        mixer.update(delta);
+        if (performance.now() < lockedUntil) return;
+        clearAction();
+      }
       const nextMotion = moving ? (sprinting && runAction ? 'run' : 'walk') : 'idle';
       if (nextMotion !== activeMotion) {
         mixer.stopAllAction();
         const nextAction = nextMotion === 'run' ? runAction : walkAction;
-        nextAction?.reset().play();
+        if (nextMotion === 'idle') applyIdleCombatPose();
+        else nextAction?.reset().play();
         activeMotion = nextMotion;
       }
 
@@ -180,6 +246,30 @@ function createMotionController(scene, walkClip, runClip = null) {
         walkAction.setEffectiveTimeScale(sprinting ? 1.35 : 1);
       }
       moving && mixer.update(delta);
+    },
+    play(name, { timeScale = 1, hold = false } = {}) {
+      const action = combatActions[name];
+      if (!action) return 0;
+      mixer.stopAllAction();
+      action.reset();
+      action.enabled = true;
+      action.clampWhenFinished = hold;
+      action.setLoop(LoopOnce, 1);
+      action.setEffectiveTimeScale(timeScale);
+      action.play();
+      lockedAction = action;
+      const duration = Math.max(0.2, action.getClip().duration / Math.max(0.1, timeScale));
+      lockedUntil = hold ? Number.POSITIVE_INFINITY : performance.now() + duration * 1000;
+      activeMotion = `combat:${name}`;
+      return duration;
+    },
+    clearAction,
+    hasAction(name) {
+      return Boolean(combatActions[name]);
+    },
+    setIdleCombat(name) {
+      idleCombatName = combatActions[name] ? name : null;
+      activeMotion = '';
     },
     dispose() {
       mixer.stopAllAction();
@@ -190,7 +280,17 @@ function createMotionController(scene, walkClip, runClip = null) {
 export async function loadEnsignEngineerModel() {
   await MeshoptDecoder.ready;
   const engineerGltf = await loadGlbOneAtATime('./assets/models/ensign-engineer.glb');
-  const runningEngineerGltf = await loadGlbOneAtATime('./assets/models/ensign-engineer-run.glb');
+  const runningEngineerGltf = await loadGlbOneAtATime('./assets/models/ensign-engineer-run-v2.anim.glb');
+  const rifleGltf = await loadGlbOneAtATime('./assets/models/ensign-engineer-rifle-fire.anim.glb');
+  const rollGltf = await loadGlbOneAtATime('./assets/models/ensign-engineer-roll-fire.anim.glb');
+  const deathGltf = await loadGlbOneAtATime('./assets/models/ensign-engineer-death.anim.glb');
+  const heavyGltf = await loadGlbOneAtATime('./assets/models/ensign-engineer-heavy-minigun.anim.glb');
+  const weaponGlbs = {};
+  for (const [id, path] of [
+    ['voidsting', './assets/models/weapon-voidsting.glb'],
+    ['singularity', './assets/models/weapon-singularity.glb'],
+    ['thunderclaw', './assets/models/weapon-thunderclaw.glb'],
+  ]) weaponGlbs[id] = await loadGlbOneAtATime(path);
 
   const root = prepareModel(engineerGltf.scene, 3.35, 'ensignHighQualityModel');
 
@@ -198,8 +298,33 @@ export async function loadEnsignEngineerModel() {
     engineerGltf.scene,
     engineerGltf.animations[0],
     runningEngineerGltf.animations[0],
+    {
+      rifle: rifleGltf.animations[0],
+      rollFire: rollGltf.animations[0],
+      death: deathGltf.animations[0],
+      heavyMinigun: heavyGltf.animations[0],
+    },
   );
   disposeModel(runningEngineerGltf.scene);
+  disposeModel(rifleGltf.scene);
+  disposeModel(rollGltf.scene);
+  disposeModel(deathGltf.scene);
+  disposeModel(heavyGltf.scene);
+
+  const weapons = {
+    voidsting: attachWeaponModel(engineerGltf.scene, weaponGlbs.voidsting.scene, {
+      id: 'voidsting', length: 54, position: [5, -1, 0], rotation: [0, 0, 0],
+    }),
+    singularity: attachWeaponModel(engineerGltf.scene, weaponGlbs.singularity.scene, {
+      id: 'singularity', length: 100, position: [12, -1, 0], rotation: [0, 0, 0],
+    }),
+    thunderclaw: attachWeaponModel(engineerGltf.scene, weaponGlbs.thunderclaw.scene, {
+      id: 'thunderclaw', length: 115, position: [12, -1, 0], rotation: [0, 0, 0],
+    }),
+  };
+  let equippedWeapon = 'voidsting';
+  for (const [id, mount] of Object.entries(weapons)) if (mount) mount.visible = id === equippedWeapon;
+  motion.setIdleCombat('rifle');
 
   return {
     root,
@@ -208,6 +333,19 @@ export async function loadEnsignEngineerModel() {
     },
     update(delta, moving, sprinting) {
       motion.update(delta, moving, sprinting);
+    },
+    play(name, options) {
+      return motion.play(name, options);
+    },
+    clearAction() {
+      motion.clearAction();
+    },
+    equipWeapon(id) {
+      if (!weapons[id]) return false;
+      equippedWeapon = id;
+      for (const [weaponId, mount] of Object.entries(weapons)) if (mount) mount.visible = weaponId === id;
+      motion.setIdleCombat(id === 'thunderclaw' ? 'heavyMinigun' : 'rifle');
+      return true;
     },
     dispose() {
       motion.dispose();

@@ -1,13 +1,15 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
-document.documentElement.dataset.zeknovaSource = "auth55";
+document.documentElement.dataset.zeknovaSource = "auth59";
 
 function loadGameStyles() {
   const styles = [
     ["./assets/index-Bjdqeidf.css", "game-core"],
     ["./assets/campaign-35cfe1bd.css", "game-campaign"],
-    ["./assets/message-center.css?v=auth55", "game-messages"],
-    ["./assets/team-chat.css?v=auth55", "game-chat"],
+    ["./assets/message-center.css?v=auth59", "game-messages"],
+    ["./assets/team-chat.css?v=auth59", "game-chat"],
+    ["./assets/weapon-system.css?v=auth59", "game-weapons"],
+    ["./assets/hud-focus.css?v=auth59", "game-hud-focus"],
   ];
   for (const [href, id] of styles) {
     if (document.querySelector(`link[data-zeknova-style="${id}"]`)) continue;
@@ -37,6 +39,7 @@ async function launch() {
     import("./ui/MessageCenter.js"),
     import("./ui/TeamChat.js"),
   ]);
+  const { HudDirector } = await import("./ui/HudDirector.js");
   const { Game } = gameModule;
   window.ZekNovaSource = Object.freeze({
     Game, Player, Enemies, Missions, Terrain, Collision, Biomes,
@@ -49,6 +52,7 @@ async function launch() {
   const teamChat = new chatModule.TeamChat({ user });
   teamChat.install();
   teamChat.mount(document.body);
+  new HudDirector({ chat: teamChat }).arm();
   const game = new Game();
   await game.start({ user });
 }

@@ -82,7 +82,7 @@ function createStartupCover() {
 }
 
 export class Game {
-  constructor({ runtime = "../../assets/index-02987539.js?v=auth55" } = {}) {
+  constructor({ runtime = "../../assets/index-02987539.js?v=auth59" } = {}) {
     this.runtimeUrl = new URL(runtime, import.meta.url);
     this.started = false;
   }

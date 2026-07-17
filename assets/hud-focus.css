@@ -1,0 +1,295 @@
+/* HUD focus tiers. Active gameplay keeps only survival, mission, resources,
+   and combat visible; colony panels gate behind Command mode; standings,
+   history, and full comms gate behind Pause. All rules hang off html.zk-hud
+   so the layer is inert until HudDirector arms after gameplay-ready. */
+
+/* ---------- Tier 1 · active gameplay ---------- */
+
+/* Top-left: compact identity + survival. */
+html.zk-hud .crew-card { padding: 8px 10px; }
+html.zk-hud .crew-card .crew-avatar { width: 30px; height: 30px; font-size: 0.8rem; }
+html.zk-hud .crew-card span { font-size: 0.5rem; }
+html.zk-hud .status-card { padding: 8px 10px; }
+html.zk-hud .left-hud { width: 218px; }
+
+/* Mission card: collapsed to title + progress; click (or pause) expands. */
+html.zk-hud .objective-card { cursor: pointer; }
+html.zk-obj-collapsed .objective-card #objective-copy,
+html.zk-obj-collapsed .objective-card #diplomacy-status,
+html.zk-obj-collapsed .objective-card #mission-ladder,
+html.zk-obj-collapsed .objective-card #sub-objective-list { display: none; }
+html.zk-obj-collapsed .objective-card::after {
+  content: "CLICK FOR OBJECTIVES";
+  display: block;
+  margin-top: 5px;
+  color: #6f909d;
+  font: 0.46rem/1 "Chakra Petch", sans-serif;
+  letter-spacing: 0.12em;
+}
+
+/* Controls collapse once the player moves; the ? button restores them. */
+html.zk-controls-off .controls-card { display: none; }
+.zk-controls-toggle {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 14;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(112, 230, 255, 0.3);
+  background: rgba(4, 16, 24, 0.9);
+  color: #9fd8e4;
+  font: 0.72rem/1 "Chakra Petch", sans-serif;
+  cursor: pointer;
+}
+.zk-controls-toggle:hover { border-color: var(--class-accent, #5df1c4); color: #efffff; }
+html.zk-hud:not(.zk-controls-off) .zk-controls-toggle { border-color: var(--class-accent, #5df1c4); }
+
+/* Top-right: resource strip. Card chrome stripped, five key resources only. */
+html.zk-hud:not(.zk-command) .resources-card {
+  padding: 6px 8px;
+}
+html.zk-hud:not(.zk-command) .resources-card .section-title span { display: none; }
+html.zk-hud:not(.zk-command) .resource-grid {
+  display: flex;
+  gap: 10px;
+}
+html.zk-hud:not(.zk-command) .resource-item span { display: none; }
+html.zk-hud:not(.zk-command) .resource-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+/* Order: energy, water, minerals, iron, biomass, timber, data, credits, trust */
+html.zk-hud:not(.zk-command) .resource-item:nth-child(3),
+html.zk-hud:not(.zk-command) .resource-item:nth-child(5),
+html.zk-hud:not(.zk-command) .resource-item:nth-child(7),
+html.zk-hud:not(.zk-command) .resource-item:nth-child(9) { display: none; }
+
+/* Readiness matrix belongs to Command/Pause, not active play. */
+html.zk-hud:not(.zk-command) .readiness-card { display: none; }
+
+/* Standings + message center strip out of active play; the injected status
+   sections (utility, AO, special, weapons) remain as flow children. */
+html.zk-hud:not(.zk-log-open) .team-card {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+html.zk-hud:not(.zk-log-open) .team-card > .section-title,
+html.zk-hud:not(.zk-log-open) .team-card > .leaderboard,
+html.zk-hud:not(.zk-log-open) .team-card > .message-center-heading,
+html.zk-hud:not(.zk-log-open) .team-card > .multiplayer-status { display: none; }
+
+/* Notifications: fixed top-center, one visible at a time. */
+html.zk-hud .team-card .toast-stack,
+html.zk-hud .toast-stack {
+  position: fixed !important;
+  top: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(420px, calc(100% - 32px));
+  margin: 0;
+  z-index: 18;
+}
+html.zk-hud .toast-stack .toast { display: none; }
+html.zk-hud .toast-stack .toast:last-child { display: block; }
+
+/* Message-log chip: latest stays as toast; count + history behind the chip. */
+.zk-log-chip {
+  position: absolute;
+  top: 74px;
+  right: 16px;
+  z-index: 17;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid rgba(112, 230, 255, 0.3);
+  background: rgba(4, 16, 24, 0.9);
+  color: #9fd8e4;
+  font: 0.52rem/1.2 "Chakra Petch", sans-serif;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.zk-log-chip:hover { border-color: var(--class-accent, #5df1c4); color: #efffff; }
+.zk-log-chip b {
+  min-width: 15px;
+  padding: 1px 4px;
+  border-radius: 8px;
+  background: #ff6072;
+  color: #fff;
+  font-size: 0.5rem;
+  text-align: center;
+}
+.zk-log-chip b[data-zero="true"] { display: none; }
+
+/* Log open: team-card returns as a right-side overlay with its history. */
+html.zk-log-open .team-card {
+  position: fixed;
+  top: 74px;
+  right: 16px;
+  width: min(300px, calc(100vw - 32px));
+  max-height: min(430px, calc(100vh - 120px));
+  overflow-y: auto;
+  z-index: 35;
+}
+html.zk-log-open .team-card > #utility-network-status,
+html.zk-log-open .team-card > #ao-operation-status { display: none; }
+
+/* Utility network: only in Command mode or while something is disconnected. */
+html.zk-hud:not(.zk-command) #utility-network-status:not(.warning) { display: none; }
+
+/* AO status collapses to its region label during play. */
+html.zk-hud:not(.zk-command) #ao-operation-status > span { display: none; }
+html.zk-hud:not(.zk-command) #ao-operation-status {
+  padding: 5px 8px;
+}
+
+/* Combat: special gauge and weapons move to the bottom center. */
+html.zk-hud #special-attack-status {
+  position: fixed;
+  left: 50%;
+  bottom: 118px;
+  transform: translateX(-50%);
+  width: min(300px, calc(100vw - 24px));
+  z-index: 13;
+}
+html.zk-hud #weapon-system-status {
+  position: fixed;
+  left: 50%;
+  bottom: 64px;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: calc(100vw - 24px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  z-index: 13;
+}
+html.zk-hud #weapon-system-status header { display: none; }
+html.zk-hud #weapon-system-status nav { display: flex; gap: 6px; }
+html.zk-hud #weapon-system-status nav button small { display: none; }
+html.zk-hud #weapon-system-status nav button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+}
+html.zk-hud #weapon-system-status .weapon-readout { display: flex; gap: 8px; align-items: center; }
+html.zk-hud #weapon-system-status footer { display: flex; gap: 6px; }
+html.zk-hud .action-pad { left: 50%; bottom: 12px; transform: translateX(-50%); gap: 5px; }
+html.zk-hud .action-pad button { min-width: 66px; height: 38px; }
+html.zk-hud .mode-switcher { left: auto; right: 16px; bottom: 12px; transform: none; }
+html.zk-hud .mode-button { min-width: 190px; }
+html.zk-hud .team-chat { left: 76px; bottom: 154px; }
+html.zk-hud:not(.zk-paused) .logout-button { display: none; }
+html.zk-hud .zk-controls-toggle { left: 16px; right: auto; bottom: 120px; }
+
+/* ---------- Tier 3 · pause command interface ---------- */
+
+.zk-pause-tabs {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 61;
+}
+.zk-pause-tabs button {
+  padding: 8px 13px;
+  border: 1px solid rgba(112, 230, 255, 0.28);
+  background: rgba(4, 16, 24, 0.92);
+  color: #9fd8e4;
+  font: 0.56rem/1.2 "Chakra Petch", sans-serif;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.zk-pause-tabs button:hover { color: #efffff; }
+.zk-pause-tabs button[data-active="true"] {
+  border-color: var(--class-accent, #5df1c4);
+  color: #efffff;
+  background: rgba(25, 76, 82, 0.72);
+}
+
+/* Non-overview tabs hide the default pause card. */
+html.zk-paused[data-zk-tab]:not([data-zk-tab="overview"]) .pause-card { display: none; }
+
+/* Missions tab: the mission card expands front and center. */
+html.zk-paused[data-zk-tab="missions"] .objective-card,
+html.zk-paused[data-zk-tab="comms"] .objective-card {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(460px, calc(100vw - 32px));
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  z-index: 60;
+}
+html.zk-paused[data-zk-tab="missions"] .objective-card #objective-copy,
+html.zk-paused[data-zk-tab="missions"] .objective-card #diplomacy-status,
+html.zk-paused[data-zk-tab="missions"] .objective-card #mission-ladder,
+html.zk-paused[data-zk-tab="missions"] .objective-card #sub-objective-list { display: block; }
+
+/* Comms tab: chat panel front-left, mission summary beside it. */
+html.zk-paused[data-zk-tab="comms"] .team-chat {
+  position: fixed;
+  left: 30px;
+  top: 90px;
+  bottom: auto;
+  z-index: 62;
+}
+html.zk-paused[data-zk-tab="comms"] .team-chat-toggle { display: none; }
+html.zk-paused[data-zk-tab="comms"] .team-chat-panel {
+  width: min(700px, calc(100vw - 430px));
+  height: calc(100vh - 130px);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+html.zk-paused[data-zk-tab="comms"] .team-chat .team-chat-log { max-height: none; min-height: 0; }
+html.zk-paused[data-zk-tab="comms"] .objective-card {
+  left: auto;
+  right: 16px;
+  transform: none;
+  width: min(340px, calc(100vw - 420px));
+}
+
+/* Colony tab: full resources, readiness, utility, and AO detail. */
+html.zk-paused[data-zk-tab="colony"] .resources-card,
+html.zk-paused[data-zk-tab="colony"] .readiness-card,
+html.zk-paused[data-zk-tab="colony"] .team-card {
+  position: fixed;
+  z-index: 60;
+  display: block;
+  width: min(320px, calc(50vw - 30px));
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+html.zk-paused[data-zk-tab="colony"] .resources-card { top: 90px; left: calc(50% - 330px); }
+html.zk-paused[data-zk-tab="colony"] .readiness-card { top: 90px; left: calc(50% + 10px); }
+html.zk-paused[data-zk-tab="colony"] .team-card { top: 340px; left: calc(50% - 330px); width: min(660px, calc(100vw - 32px)); }
+html.zk-paused[data-zk-tab="colony"] .resources-card .section-title span,
+html.zk-paused[data-zk-tab="colony"] .resource-item span { display: initial; }
+html.zk-paused[data-zk-tab="colony"] .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+html.zk-paused[data-zk-tab="colony"] #utility-network-status,
+html.zk-paused[data-zk-tab="colony"] #utility-network-status:not(.warning),
+html.zk-paused[data-zk-tab="colony"] #ao-operation-status,
+html.zk-paused[data-zk-tab="colony"] #ao-operation-status > span { display: block; }
+
+/* Controls tab: the controls card front and center. */
+html.zk-paused[data-zk-tab="controls"] .controls-card {
+  display: block;
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(420px, calc(100vw - 32px));
+  z-index: 60;
+}

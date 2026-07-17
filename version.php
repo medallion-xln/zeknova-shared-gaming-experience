@@ -8,6 +8,6 @@ header('Expires: 0');
 
 echo json_encode([
     'app' => 'ZekNova: Prepare the Planet',
-    'build' => '2026-07-17-auth55',
-    'entry' => 'src/main.js?v=auth55',
+    'build' => '2026-07-17-auth59',
+    'entry' => 'src/main.js?v=auth59',
 ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
