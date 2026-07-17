@@ -32,11 +32,9 @@ foreach (array_slice($rawHistory, -12) as $message) {
 }
 
 // Provider selection remains server-side so API keys never reach the game.
-// Explicit ZekNova variables override the convenient OpenAI/DeepSeek aliases.
-$provider = strtolower(trim((string)(getenv('ZEKNOVA_AI_PROVIDER') ?: '')));
-if ($provider === '') {
-    $provider = getenv('OPENAI_API_KEY') ? 'openai' : (getenv('DEEPSEEK_API_KEY') ? 'deepseek' : 'custom');
-}
+// DeepSeek is the default; explicit ZekNova variables can still target another
+// OpenAI-compatible endpoint without exposing credentials to the browser.
+$provider = strtolower(trim((string)(getenv('ZEKNOVA_AI_PROVIDER') ?: 'deepseek')));
 
 $endpoint = trim((string)(getenv('ZEKNOVA_AI_API_URL') ?: ''));
 $apiKey = trim((string)(getenv('ZEKNOVA_AI_API_KEY') ?: ''));
@@ -80,6 +78,11 @@ if ($endpoint !== '' && $apiKey !== '' && $model !== '' && function_exists('curl
         'max_tokens' => 520,
         'stream' => false,
     ];
+    if ($provider === 'deepseek') {
+        // Companion dialogue should respond quickly; reserve thinking mode for
+        // callers that deliberately configure a custom endpoint.
+        $payload['thinking'] = ['type' => 'disabled'];
+    }
 
     $curl = curl_init($endpoint);
     curl_setopt_array($curl, [

@@ -145,13 +145,18 @@ export class TeamChat extends EventTarget {
   scheduleRender() {
     if (this.renderScheduled) return;
     this.renderScheduled = true;
-    requestAnimationFrame(() => {
+    // rAF batches appends between frames, but its callbacks stall entirely
+    // while the tab is hidden or occluded, so a timeout backstop always runs.
+    const run = () => {
+      if (!this.renderScheduled) return;
       this.renderScheduled = false;
       if (!this.open || !this.pendingRender.length) { this.pendingRender.length = 0; return; }
       const fragment = document.createDocumentFragment();
       for (const message of this.pendingRender.splice(0)) fragment.append(this.buildEntry(message));
       this.appendCapped(fragment);
-    });
+    };
+    requestAnimationFrame(run);
+    setTimeout(run, 150);
   }
 
   rebuildLog() {

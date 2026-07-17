@@ -202,19 +202,9 @@ labels this as local-only mode. A normal localhost URL (without `?demo=1`)
 still exercises the production gate, which makes the authentication behavior
 testable before deployment.
 
-## Connect OpenAI or DeepSeek to SCOUT-01
+## Connect DeepSeek to SCOUT-01
 
-The browser never receives an API key. Configure one provider in the PHP server environment.
-
-OpenAI:
-
-```text
-ZEKNOVA_AI_PROVIDER=openai
-OPENAI_API_KEY=your-server-side-key
-OPENAI_MODEL=gpt-5.6
-```
-
-DeepSeek:
+The browser never receives an API key. DeepSeek is now the default provider. Configure the key in the PHP server environment:
 
 ```text
 ZEKNOVA_AI_PROVIDER=deepseek

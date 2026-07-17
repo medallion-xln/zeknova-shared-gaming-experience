@@ -1,4 +1,9 @@
 /* Team comms: collapsed badge by default, capped scrollback when open. */
+.team-chat[hidden],
+.team-chat [hidden] {
+  display: none !important;
+}
+
 .team-chat {
   position: fixed;
   left: 14px;

@@ -1,13 +1,13 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
-document.documentElement.dataset.zeknovaSource = "auth54";
+document.documentElement.dataset.zeknovaSource = "auth55";
 
 function loadGameStyles() {
   const styles = [
     ["./assets/index-Bjdqeidf.css", "game-core"],
     ["./assets/campaign-35cfe1bd.css", "game-campaign"],
-    ["./assets/message-center.css?v=auth54", "game-messages"],
-    ["./assets/team-chat.css?v=auth54", "game-chat"],
+    ["./assets/message-center.css?v=auth55", "game-messages"],
+    ["./assets/team-chat.css?v=auth55", "game-chat"],
   ];
   for (const [href, id] of styles) {
     if (document.querySelector(`link[data-zeknova-style="${id}"]`)) continue;
