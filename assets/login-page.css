@@ -1,0 +1,53 @@
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+* { box-sizing: border-box; }
+html, body, #app { margin: 0; min-height: 100%; }
+body { background: #020b12; color: #e4f4f6; }
+button, input, select { font: inherit; }
+.login-boot-shell { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(340px, .65fr); min-height: 100vh; overflow: hidden; position: relative; }
+.login-boot-backdrop { background: linear-gradient(90deg, rgba(1,10,18,.18), rgba(1,10,18,.78)), url("./zeknova-cockpit.webp") center/cover; inset: 0; position: absolute; }
+.login-boot-brand, .login-boot-panel { position: relative; z-index: 1; }
+.login-boot-brand { align-self: center; margin: 6vw; max-width: 760px; padding: 3rem; }
+.login-boot-eyebrow, .login-boot-kicker { color: #67e8d0; font-size: .76rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.login-boot-brand h1 { color: transparent; font-size: clamp(4rem, 9vw, 9rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 1.4rem 0 1rem; -webkit-text-stroke: 2px #c7f5ff; text-shadow: 0 0 28px rgba(90,208,255,.42); }
+.login-boot-brand h2 { color: #75f2d9; font-size: clamp(2rem, 4.5vw, 4.6rem); line-height: 1; margin: 0 0 1.4rem; }
+.login-boot-brand p, .login-boot-copy { color: rgba(228,244,246,.72); line-height: 1.65; }
+.login-boot-sequence { align-items: center; display: flex; font-size: .72rem; font-weight: 800; gap: .75rem; letter-spacing: .12em; margin-top: 2rem; }
+.login-boot-sequence i { background: #49d9c1; height: 1px; opacity: .5; width: 32px; }
+.login-boot-panel { align-self: center; backdrop-filter: blur(18px); background: rgba(3,22,32,.93); border: 1px solid rgba(93,226,205,.32); border-top: 3px solid #5de2cd; margin: 3vw; max-height: 92vh; overflow: auto; padding: clamp(1.5rem, 3vw, 3rem); }
+.login-boot-panel h3 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin: .8rem 0 1rem; }
+.login-boot-panel label { color: rgba(228,244,246,.66); display: grid; font-size: .72rem; font-weight: 800; gap: .45rem; letter-spacing: .1em; margin: .75rem 0; text-transform: uppercase; }
+.login-boot-panel input, .login-boot-panel select { background: rgba(0,9,15,.82); border: 1px solid rgba(124,202,217,.25); color: #e4f4f6; min-height: 48px; padding: 0 .8rem; width: 100%; }
+.login-boot-panel input[readonly] { color: rgba(228,244,246,.58); }
+.login-boot-primary, .login-boot-secondary { align-items: center; border: 1px solid #68e8d2; cursor: pointer; display: flex; font-weight: 900; justify-content: center; letter-spacing: .1em; margin-top: 1rem; min-height: 52px; padding: .75rem; text-decoration: none; width: 100%; }
+.login-boot-primary { background: linear-gradient(90deg, #128d91, #1dbd9b); color: white; }
+.login-boot-secondary { background: transparent; color: #89e8d8; }
+.login-boot-primary:disabled { cursor: wait; opacity: .55; }
+.login-boot-status { align-items: center; border: 1px solid rgba(93,226,205,.26); color: #82ead8; display: flex; font-size: .7rem; gap: .6rem; letter-spacing: .1em; margin: 1rem 0; padding: .7rem; }
+.login-boot-status span { background: #62e7cf; border-radius: 50%; box-shadow: 0 0 12px #62e7cf; height: 8px; width: 8px; }
+.login-boot-note, .login-boot-error { color: rgba(228,244,246,.55); font-size: .75rem; line-height: 1.45; margin-top: .8rem; }
+.login-boot-error { color: #ffad91; min-height: 1.1rem; }
+.login-boot-profile { border: 1px solid rgba(93,226,205,.2); display: grid; gap: .45rem 1rem; grid-template-columns: auto 1fr; margin: 1rem 0; padding: 1rem; }
+.login-boot-profile span { color: rgba(228,244,246,.52); font-size: .68rem; letter-spacing: .12em; }
+.login-team-switch { display: grid; gap: .5rem; grid-template-columns: 1fr 1fr; margin: 1rem 0; }
+.login-team-switch button { background: rgba(0,9,15,.72); border: 1px solid rgba(124,202,217,.25); color: rgba(228,244,246,.65); cursor: pointer; min-height: 44px; }
+.login-team-switch button.selected { border-color: #62e7cf; color: #82ead8; }
+.login-team-switch button:disabled { cursor: not-allowed; opacity: .35; }
+.login-boot-loader { padding: 3rem 0; text-align: center; }
+.login-boot-loader span { animation: login-pulse 1s infinite alternate; background: #62e7cf; border-radius: 50%; box-shadow: 0 0 20px #62e7cf; display: inline-block; height: 12px; width: 12px; }
+@keyframes login-pulse { to { opacity: .35; transform: scale(.72); } }
+.zeknova-startup-cover { align-items: center; background: radial-gradient(circle at 50% 35%, rgba(10,73,78,.96), rgba(1,9,15,.99) 55%); display: flex; inset: 0; justify-content: center; position: fixed; z-index: 100000; }
+.zeknova-startup-card { color: #e4f4f6; max-width: 560px; padding: 2rem; text-align: center; width: min(90vw,560px); }
+.zeknova-startup-card small { color: #67e8d0; font-size: .72rem; font-weight: 900; letter-spacing: .18em; }
+.zeknova-startup-card h1 { font-size: clamp(2rem,6vw,4rem); margin: .75rem 0; }
+.zeknova-startup-card > p { color: rgba(228,244,246,.72); min-height: 1.6em; }
+.zeknova-startup-orbit { animation: startup-spin 1.2s linear infinite; border: 3px solid rgba(103,232,208,.18); border-top-color: #67e8d0; border-radius: 50%; display: inline-block; height: 54px; margin-bottom: 1.5rem; width: 54px; }
+.zeknova-startup-meter { background: rgba(255,255,255,.08); height: 3px; margin: 1.5rem 0; overflow: hidden; }
+.zeknova-startup-meter i { animation: startup-meter 1.4s ease-in-out infinite; background: #67e8d0; display: block; height: 100%; width: 35%; }
+.zeknova-startup-card details { border-top: 1px solid rgba(103,232,208,.2); color: rgba(228,244,246,.58); font-size: .8rem; margin-top: 1.75rem; padding-top: 1rem; }
+.zeknova-startup-card summary { cursor: pointer; }
+.zeknova-startup-card details div { display: flex; gap: .75rem; justify-content: center; }
+.zeknova-startup-card a { border: 1px solid rgba(103,232,208,.4); color: #84ead8; padding: .65rem .8rem; text-decoration: none; }
+.zeknova-startup-cover[data-stage="error"] .zeknova-startup-orbit { animation: none; border-color: #ff8e72; }
+@keyframes startup-spin { to { transform: rotate(360deg); } }
+@keyframes startup-meter { from { transform: translateX(-110%); } to { transform: translateX(320%); } }
+@media (max-width: 860px) { .login-boot-shell { grid-template-columns: 1fr; } .login-boot-brand { margin: 1rem; padding: 1.5rem; } .login-boot-panel { margin: 1rem; } .login-boot-brand h1 { font-size: 4.5rem; } }

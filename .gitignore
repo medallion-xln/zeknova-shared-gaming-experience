@@ -1,0 +1,10 @@
+.DS_Store
+*.zip
+data/*.json
+data/*.lock
+data/*.tmp
+rust/**/target/
+.env
+.env.*
+!.env.example
+

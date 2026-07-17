@@ -23,7 +23,7 @@ if (!is_array($profile)) {
     $profile = [
         'version' => 1,
         'rank' => 'ensign',
-        'biome' => (string)($user['biome'] ?? 'highlands'),
+        'biome' => 'highlands',
         'personalObjectives' => [],
         'teamCompleted' => 0,
         'deployed' => false,
@@ -40,8 +40,7 @@ if ($method === 'POST') {
     $profile['personalObjectives'] = array_slice(array_keys($set), 0, 100);
     $profile['teamCompleted'] = max((int)($profile['teamCompleted'] ?? 0), min(12, (int)($input['teamCompleted'] ?? 0)));
     if (!empty($input['deployed'])) $profile['deployed'] = true;
-    $biome = strtolower((string)($input['biome'] ?? $profile['biome'] ?? 'highlands'));
-    if (in_array($biome, ['forest', 'desert', 'highlands', 'arctic', 'wetlands'], true)) $profile['biome'] = $biome;
+    $profile['biome'] = 'highlands';
 }
 
 $personalCount = count($profile['personalObjectives'] ?? []);

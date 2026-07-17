@@ -2,6 +2,35 @@
 
 A first-playable browser game for the AI × Crypto Expo 2026 hackathon experience. It uses Three.js `WebGPURenderer`, TypeScript, Vite, PHP session/save adapters, and a deterministic procedural lush-highland biome.
 
+Authentication and team enrollment run in a lightweight standalone bootstrap.
+The Three.js runtime, source gameplay modules, models, terrain, WASM core, and
+multiplayer simulation are loaded only after an enrolled player presses
+**Launch ZekNova**.
+
+## Hackathon source layout
+
+The browser now starts from `src/main.js`. Gameplay rules that have completed the progressive migration are edited in the following modules:
+
+```text
+src/
+├── game/
+│   ├── Game.js
+│   ├── Player.js
+│   ├── Enemies.js
+│   └── Missions.js
+├── world/
+│   ├── Terrain.js
+│   ├── Collision.js
+│   └── Biomes.js
+├── multiplayer/
+│   └── MultiplayerClient.js
+├── ui/
+│   └── MessageCenter.js
+└── main.js
+```
+
+Biomes, mission definitions, player progression, enemy profiles, and collision radii in these modules are consumed by the live game. The generated Three.js renderer and main simulation loop remain in `assets/index-02987539.js` as a compatibility layer while their classes are migrated incrementally. See `CONTRIBUTING.md` before opening a pull request.
+
 ## V7 gameplay
 
 - Hybrid third-person exploration and overhead command mode
@@ -17,7 +46,7 @@ A first-playable browser game for the AI × Crypto Expo 2026 hackathon experienc
 - Holding Shift selects dedicated running clips for every loaded rig that provides one; walk-cycle speed scaling is reserved for fallback models without a run clip
 - The Captain and construction mech use optimized skinned GLBs with dedicated walking/running animation clips, replacing their procedural placeholder meshes
 - Browser-optimized model delivery: the Ensign is 1.3 MB with its skinned walking animation, and the scout is 1.5 MB after geometry, texture, quantization, and Meshopt optimization
-- Deterministic team biome generated from the team code
+- Deterministic five-region world generated from the internal team identifier
 - Mineral and biomass collection, companion-robot rock mining, and individually harvestable alien trees
 - Collidable stones and highland formations that become passable after the companion robot mines them
 - Size-based tree chopping: small trees fall in one chop, while medium and large trees take longer and award more timber
@@ -53,7 +82,7 @@ A first-playable browser game for the AI × Crypto Expo 2026 hackathon experienc
 - Click the in-world robot companion to open the SCOUT-01 conversation console; multi-turn chat automatically receives current resources, readiness, mission tier, diplomacy status, and installed structures
 - AlphaZero-lite proof of concept: SCOUT-01 can run a time-bounded, depth-4 Monte Carlo Tree Search of up to 72 simulations in a Web Worker over abstract colony telemetry, then recommend a ranked macro-action without controlling the player or spending resources
 - Team save data, prototype leaderboard endpoint, autosave, and local fallback persistence
-- Persistent team multiplayer rooms: concurrent players sharing a team code see each other's live positions, online roster count, construction, harvested trees, mined rocks, and collected power-ups
+- Persistent team multiplayer rooms: concurrent players on the same team see each other's live positions, online roster count, construction, harvested trees, mined rocks, and collected power-ups
 - Conflict-safe PHP file locking and stable-ID world merging prevent simultaneous saves from erasing another player's installations or completed world interactions
 - WebGPU-first rendering with WebGL 2 fallback through Three.js
 
@@ -92,11 +121,11 @@ The Utility Network panel beneath Hackathon Standings reports online and disconn
 php -S 127.0.0.1:8790
 ```
 
-Open `http://127.0.0.1:8790/` in two separate browsers or private sessions. Sign in with different email addresses but the same team code to test multiplayer.
+For end-to-end multiplayer testing, use two authenticated Medallion accounts on a staging or production server. Create a team with the first account and join it from the second. Local `?demo=1` mode remains intended for single-browser gameplay testing.
 
 ## Multiplayer architecture
 
-- `api/multiplayer.php` maintains one persistent room per team code.
+- `api/multiplayer.php` maintains one persistent room per internal team identifier.
 - Clients send lightweight presence and world snapshots approximately once per second.
 - Inactive players expire from the room roster after 20 seconds.
 - Buildings and completed environmental interactions merge by stable IDs under an exclusive file lock.
@@ -124,29 +153,40 @@ php -l api/save.php
 
 The included `index.php` serves the built `index.html` with no-cache headers.
 
-## Connect existing Medallion XLN authentication
+## Medallion XLN authentication (connected)
 
-The prototype defaults to `ZEKNOVA_AUTH_MODE = 'demo'` in `api/bootstrap.php`.
+`ZEKNOVA_AUTH_MODE = 'medallion'` in `api/bootstrap.php` shares the parent
+site's login session. The passwordless OTP login at `/api/auth/login` stores
+`user_id`, `user_email`, and `user_name` in `$_SESSION` with the cookie on
+path `/`, so ZekNova (served from `/zeknova/`) reads the same session — no
+second password database exists.
 
-To use the existing account session:
+How it works:
 
-1. Change the constant to `medallion`.
-2. Implement `zeknova_current_user_from_medallion()` using the current site bootstrap/session code.
-3. Return this shape:
+- Identity (id, email, display name) always comes from the shared XLN session.
+- The production landing screen is a hard gate: no Medallion session means no
+  crew form and no browser-created fallback officer.
+- Game enrollment (callsign and team membership) is collected by the in-game
+  form and stored per account in `data/enroll-<hash>.json`.
+- Players create a named team or join an existing team from the enrollment
+  dropdown. Internal team identifiers are generated automatically and are not
+  exposed as signup fields.
+- Every team shares one persistent five-region world; biome is no longer a
+  player deployment choice.
+- Officer rank is read from the progression profile in `data/`.
+- Signing out inside ZekNova sets a `zeknova_signed_out` flag only; the
+  Medallion XLN login is untouched. Enlisting again clears the flag and
+  rejoins the same team.
+- An unauthenticated `POST /api/session.php` returns
+  `401 Sign in through Medallion XLN before entering ZekNova.`
+- Set the `ZEKNOVA_LOGIN_URL` server environment variable if the parent login
+  screen is not at `/`.
 
-```php
-[
-  'id' => 'existing-user-id',
-  'displayName' => 'Crew Member',
-  'email' => 'member@example.com',
-  'teamName' => 'Team Name',
-  'teamCode' => 'TEAM-1234',
-  'officerClass' => 'ensign',
-  'rankXp' => 0,
-]
-```
-
-Do not create a second password database for ZekNova.
+For local development without the parent site, open the static `index.html`
+file directly, or serve the project on localhost and append `?demo=1`. The UI
+labels this as local-only mode. A normal localhost URL (without `?demo=1`)
+still exercises the production gate, which makes the authentication behavior
+testable before deployment.
 
 ## Connect OpenAI or DeepSeek to SCOUT-01
 

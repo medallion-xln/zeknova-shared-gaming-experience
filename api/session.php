@@ -5,10 +5,18 @@ require __DIR__ . '/bootstrap.php';
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
 if ($method === 'GET') {
-    zeknova_response(['user' => zeknova_current_user()]);
+    zeknova_response([
+        'user' => zeknova_current_user(),
+        'auth' => zeknova_auth_context(),
+    ]);
 }
 
 if ($method === 'DELETE') {
+    if (ZEKNOVA_AUTH_MODE === 'medallion') {
+        // Exit ZekNova without touching the shared Medallion XLN login.
+        $_SESSION['zeknova_signed_out'] = true;
+        zeknova_response(['ok' => true]);
+    }
     unset($_SESSION['zeknova_user']);
     session_regenerate_id(true);
     zeknova_response(['ok' => true]);
@@ -19,11 +27,55 @@ if ($method !== 'POST') {
 }
 
 if (ZEKNOVA_AUTH_MODE === 'medallion') {
-    $user = zeknova_current_user_from_medallion();
-    if ($user === null) {
+    $medallionId = (int)($_SESSION['user_id'] ?? 0);
+    if ($medallionId < 1) {
         zeknova_error('Sign in through Medallion XLN before entering ZekNova.', 401);
     }
-    zeknova_response(['user' => $user]);
+    unset($_SESSION['zeknova_signed_out']);
+
+    $input = zeknova_json_input();
+    $existing = zeknova_medallion_enrollment($medallionId);
+
+    $displayName = trim((string)($input['displayName'] ?? ''));
+    if ($displayName === '') {
+        $displayName = (string)($existing['displayName'] ?? trim((string)($_SESSION['user_name'] ?? '')));
+    }
+    if ($displayName === '') {
+        $displayName = 'Crew Member';
+    }
+
+    $requestedTeam = trim((string)($input['teamCode'] ?? ''));
+    $submittedName = trim((string)($input['teamName'] ?? ''));
+    if ($requestedTeam !== '') {
+        $team = zeknova_find_team($requestedTeam);
+        if ($team === null) zeknova_error('That team is no longer available.', 422);
+        $teamCode = (string)$team['teamCode'];
+        $teamName = (string)$team['teamName'];
+    } elseif ($submittedName !== '') {
+        foreach (zeknova_team_catalog() as $team) {
+            if (strcasecmp($team['teamName'], $submittedName) === 0) {
+                zeknova_error('That team already exists. Choose it from Join an existing team.', 409);
+            }
+        }
+        $teamName = $submittedName;
+        $teamCode = zeknova_create_team_key($teamName);
+    } elseif ($existing !== null) {
+        $teamName = (string)$existing['teamName'];
+        $teamCode = (string)$existing['teamCode'];
+    } else {
+        zeknova_error('Create a team or join an existing team.', 422);
+    }
+
+    zeknova_medallion_enroll($medallionId, [
+        'displayName' => substr($displayName, 0, 80),
+        'teamName' => substr($teamName, 0, 80),
+        'teamCode' => $teamCode,
+        'biome' => 'highlands',
+        'rankXp' => (int)($existing['rankXp'] ?? 0),
+        'updatedAt' => gmdate('c'),
+    ]);
+
+    zeknova_response(['user' => zeknova_current_user_from_medallion()], 201);
 }
 
 $input = zeknova_json_input();

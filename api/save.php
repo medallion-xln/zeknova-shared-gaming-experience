@@ -9,7 +9,7 @@ if ($method === 'GET') {
     $requestedTeam = (string)($_GET['team'] ?? $user['teamCode'] ?? '');
     $teamCode = zeknova_team_key($requestedTeam);
     if ($teamCode !== zeknova_team_key((string)$user['teamCode'])) {
-        zeknova_error('You do not have access to this team biome.', 403);
+        zeknova_error('You do not have access to this team world.', 403);
     }
     $path = zeknova_save_path($teamCode);
     if (!is_file($path)) {
@@ -27,7 +27,7 @@ if ($method !== 'POST') {
 $input = zeknova_json_input();
 $teamCode = zeknova_team_key((string)($input['user']['teamCode'] ?? ''));
 if ($teamCode !== zeknova_team_key((string)$user['teamCode'])) {
-    zeknova_error('Cannot write another team’s biome.', 403);
+    zeknova_error('Cannot write another team’s world.', 403);
 }
 if (!in_array(($input['version'] ?? null), [1, 2, 3, 4], true) || !isset($input['buildings']) || !is_array($input['buildings'])) {
     zeknova_error('Invalid save snapshot.', 422);
@@ -42,7 +42,7 @@ $lockPath = $path . '.lock';
 $lock = fopen($lockPath, 'c+');
 if ($lock === false || !flock($lock, LOCK_EX)) {
     if (is_resource($lock)) fclose($lock);
-    zeknova_error('Unable to lock biome data.', 503);
+    zeknova_error('Unable to lock team world data.', 503);
 }
 
 // Concurrent players contribute to one team world. Preserve every unique
@@ -79,7 +79,7 @@ if (file_put_contents($temp, $encoded, LOCK_EX) === false || !rename($temp, $pat
     @unlink($temp);
     flock($lock, LOCK_UN);
     fclose($lock);
-    zeknova_error('Unable to persist biome data.', 500);
+    zeknova_error('Unable to persist team world data.', 500);
 }
 flock($lock, LOCK_UN);
 fclose($lock);
