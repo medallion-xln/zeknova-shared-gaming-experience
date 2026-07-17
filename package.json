@@ -1,0 +1,15 @@
+{
+  "name": "zeknova-shared-gaming-experience",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cooperative browser-based ZekNova colony simulation",
+  "scripts": {
+    "dev": "php -S 127.0.0.1:8790",
+    "check": "node scripts/check-source.mjs",
+    "test": "npm run check"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

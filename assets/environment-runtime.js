@@ -65,7 +65,7 @@ function createAmbientLife(heightAt) {
   const group = new Group();
   group.name = 'alienFlowersAndFauna';
   const random = seededRandom(0x5a454b4e);
-  const flowerCount = 132;
+  const flowerCount = 66;
   const matrix = new Matrix4();
   const rotation = new Quaternion();
   const position = new Vector3();
@@ -139,7 +139,7 @@ function createAmbientLife(heightAt) {
   ];
   const appendageGeometry = new ConeGeometry(0.13, 0.48, 3);
 
-  for (let index = 0; index < 18; index += 1) {
+  for (let index = 0; index < 9; index += 1) {
     const point = groundPoint(random, heightAt, 72);
     if (!point) continue;
     const variant = index % 3;
@@ -242,10 +242,12 @@ function disposeSharedModels(models) {
   materials.forEach((material) => material.dispose());
 }
 
-function idleTurn() {
+function idleTurn(delay = 2400) {
   return new Promise((resolve) => {
-    if ('requestIdleCallback' in window) window.requestIdleCallback(resolve, { timeout: 1800 });
-    else window.setTimeout(resolve, 120);
+    window.setTimeout(() => {
+      if ('requestIdleCallback' in window) window.requestIdleCallback(resolve, { timeout: 1200 });
+      else resolve();
+    }, delay);
   });
 }
 
@@ -360,7 +362,7 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
     if (isTreeAsset) {
       const candidates = harvestableTrees.filter((tree) => treeAssetFor(tree) === assetKey);
       const pool = [];
-      const poolSize = assetKey === 'giantCanopyTree' ? 4 : 12;
+      const poolSize = assetKey === 'giantCanopyTree' ? 3 : 8;
       for (let index = 0; index < poolSize; index += 1) {
         const instance = base.clone(true);
         instance.visible = false;
@@ -381,13 +383,10 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
     for (const assetKey of ['palmTree', 'spikyPlant']) {
       if (disposed) return;
       await loadAsset(assetKey);
+      await idleTurn();
     }
     await idleTurn();
-    if (!disposed) await loadAsset('coralGround');
-    await idleTurn();
     if (!disposed) await loadAsset('giantCanopyTree');
-    await idleTurn();
-    if (!disposed) await loadAsset('tieredStonePillar');
     await idleTurn();
     if (!disposed) await loadAsset('redTrumpetFlower');
     await idleTurn();
@@ -416,8 +415,8 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
         });
       }
       const now = performance.now();
-      const treePoolMoved = Math.hypot(playerPosition.x - lastTreePoolX, playerPosition.z - lastTreePoolZ) >= 2.5;
-      const refreshTreePools = treePoolMoved || now - lastTreePoolUpdateAt >= 1000;
+      const treePoolMoved = Math.hypot(playerPosition.x - lastTreePoolX, playerPosition.z - lastTreePoolZ) >= 3.5;
+      const refreshTreePools = treePoolMoved || now - lastTreePoolUpdateAt >= 1400;
       if (refreshTreePools) for (const [assetKey, pool] of treePools) {
         const nearest = (treeCandidates.get(assetKey) || [])
           .filter((tree) => tree.visible && !tree.userData.falling)

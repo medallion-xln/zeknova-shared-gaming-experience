@@ -118,8 +118,12 @@ The Utility Network panel beneath Hackathon Standings reports online and disconn
 ## Local development
 
 ```bash
-php -S 127.0.0.1:8790
+npm run dev
 ```
+
+This starts PHP's development server at `http://127.0.0.1:8790`. Open
+`http://127.0.0.1:8790/?demo=1` for a local browser-only officer, or omit
+`?demo=1` to exercise the production Medallion authentication gate.
 
 For end-to-end multiplayer testing, use two authenticated Medallion accounts on a staging or production server. Create a team with the first account and join it from the second. Local `?demo=1` mode remains intended for single-browser gameplay testing.
 
@@ -179,8 +183,8 @@ How it works:
   rejoins the same team.
 - An unauthenticated `POST /api/session.php` returns
   `401 Sign in through Medallion XLN before entering ZekNova.`
-- Set the `ZEKNOVA_LOGIN_URL` server environment variable if the parent login
-  screen is not at `/`.
+- Set `ZEKNOVA_LOGIN_URL` or `ZEKNOVA_REGISTER_URL` if the parent sign-in and
+  account-creation pages are not at `/auth/login/` and `/auth/register`.
 
 For local development without the parent site, open the static `index.html`
 file directly, or serve the project on localhost and append `?demo=1`. The UI

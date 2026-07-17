@@ -92,7 +92,8 @@ function zeknova_auth_context(): array
     $medallionId = (int)($_SESSION['user_id'] ?? 0);
     $authenticated = $medallionId > 0;
     $enrollment = $authenticated ? zeknova_medallion_enrollment($medallionId) : null;
-    $loginUrl = trim((string)(getenv('ZEKNOVA_LOGIN_URL') ?: '/'));
+    $loginUrl = trim((string)(getenv('ZEKNOVA_LOGIN_URL') ?: '/auth/login/'));
+    $registerUrl = trim((string)(getenv('ZEKNOVA_REGISTER_URL') ?: '/auth/register'));
 
     return [
         'mode' => 'medallion',
@@ -110,7 +111,8 @@ function zeknova_auth_context(): array
             'teamCode' => (string)($enrollment['teamCode'] ?? ''),
             'biome' => (string)($enrollment['biome'] ?? 'highlands'),
         ],
-        'loginUrl' => $loginUrl === '' ? '/' : $loginUrl,
+        'loginUrl' => $loginUrl === '' ? '/auth/login/' : $loginUrl,
+        'registerUrl' => $registerUrl === '' ? '/auth/register' : $registerUrl,
     ];
 }
 

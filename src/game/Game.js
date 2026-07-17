@@ -1,6 +1,35 @@
-import { installAuthGate } from "../ui/AuthGate.js";
-
 const nextPaint = () => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+function isLegacySessionRestore(input, init = {}) {
+  const method = String(init.method || (input instanceof Request ? input.method : "GET")).toUpperCase();
+  if (method !== "GET") return false;
+  const source = input instanceof Request ? input.url : String(input);
+  try { return new URL(source, location.href).pathname.endsWith("/api/session.php"); }
+  catch { return false; }
+}
+
+async function importRuntimeWithSession(runtimeUrl, user) {
+  const nativeFetch = globalThis.fetch;
+  globalThis.fetch = (input, init) => {
+    if (!isLegacySessionRestore(input, init)) return nativeFetch(input, init);
+    const auth = {
+      available: true,
+      authenticated: true,
+      enrolled: true,
+      signedOut: false,
+      identity: { displayName: user.displayName || "", email: user.email || "" },
+      enrollment: user,
+      loginUrl: "/auth/login/",
+      registerUrl: "/auth/register",
+    };
+    return Promise.resolve(new Response(JSON.stringify({ user, auth }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    }));
+  };
+  try { await import(runtimeUrl); }
+  finally { globalThis.fetch = nativeFetch; }
+}
 
 function diagnosticUrl(flag) {
   const url = new URL(location.href);
@@ -22,10 +51,10 @@ function createStartupCover() {
       <div class="zeknova-startup-meter"><i></i></div>
       <details>
         <summary>Launch diagnostics</summary>
-        <p>If this device stalls, test the lightweight world or disable only WebAssembly.</p>
+        <p>If this device stalls, test the lightweight world. WebAssembly is now optional and disabled by default.</p>
         <div>
           <a href="${diagnosticUrl("safe")}">Launch lightweight world</a>
-          <a href="${diagnosticUrl("noWasm")}">Test without WebAssembly</a>
+          <a href="${diagnosticUrl("wasm")}">Test with WebAssembly</a>
         </div>
       </details>
     </div>`;
@@ -53,29 +82,27 @@ function createStartupCover() {
 }
 
 export class Game {
-  constructor({ runtime = "../../assets/index-02987539.js?v=auth48" } = {}) {
+  constructor({ runtime = "../../assets/index-02987539.js?v=auth53" } = {}) {
     this.runtimeUrl = new URL(runtime, import.meta.url);
     this.started = false;
   }
 
-  async start({ autoEnter = false } = {}) {
+  async start({ user } = {}) {
     if (this.started) return;
+    if (!user) throw new Error("An authenticated officer is required to start the game runtime.");
     const startup = createStartupCover();
     const ready = new Promise((resolve) => window.addEventListener("zeknova:gameplay-ready", (event) => resolve(event.detail), { once: true }));
     try {
       startup.set("Loading the game engine…", "engine");
       await nextPaint();
-      await import(this.runtimeUrl.href);
-      this.stopAuthGate = installAuthGate();
-      if (autoEnter) {
-        const form = document.getElementById("crew-form");
-        if (!(form instanceof HTMLFormElement)) throw new Error("The authenticated game session could not be resumed.");
-        startup.set("Building terrain, vegetation, and collision maps…", "world");
-        await nextPaint();
-        form.requestSubmit();
-        const diagnostics = await ready;
-        startup.finish(diagnostics);
-      } else startup.finish({ elapsedMs: 0 });
+      await importRuntimeWithSession(this.runtimeUrl.href, user);
+      const bridge = globalThis.ZekNovaLegacyBridge;
+      if (!bridge?.start) throw new Error("The direct game-runtime bridge is unavailable.");
+      startup.set("Building terrain, vegetation, and collision maps…", "world");
+      await nextPaint();
+      await bridge.start(user);
+      const diagnostics = await ready;
+      startup.finish(diagnostics);
       this.started = true;
       window.dispatchEvent(new CustomEvent("zeknova:ready", { detail: { sourceEntry: import.meta.url, runtime: this.runtimeUrl.href } }));
     } catch (error) {

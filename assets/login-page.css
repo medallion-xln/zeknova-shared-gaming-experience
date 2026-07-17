@@ -26,6 +26,8 @@ button, input, select { font: inherit; }
 .login-boot-status span { background: #62e7cf; border-radius: 50%; box-shadow: 0 0 12px #62e7cf; height: 8px; width: 8px; }
 .login-boot-note, .login-boot-error { color: rgba(228,244,246,.55); font-size: .75rem; line-height: 1.45; margin-top: .8rem; }
 .login-boot-error { color: #ffad91; min-height: 1.1rem; }
+.login-account-steps { border-bottom: 1px solid rgba(93,226,205,.14); border-top: 1px solid rgba(93,226,205,.14); color: rgba(228,244,246,.64); display: grid; font-size: .78rem; gap: .65rem; line-height: 1.45; margin: 1.25rem 0 0; padding: 1rem 1rem 1rem 1.8rem; }
+.login-account-steps strong { color: #a5f2e5; }
 .login-boot-profile { border: 1px solid rgba(93,226,205,.2); display: grid; gap: .45rem 1rem; grid-template-columns: auto 1fr; margin: 1rem 0; padding: 1rem; }
 .login-boot-profile span { color: rgba(228,244,246,.52); font-size: .68rem; letter-spacing: .12em; }
 .login-team-switch { display: grid; gap: .5rem; grid-template-columns: 1fr 1fr; margin: 1rem 0; }

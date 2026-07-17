@@ -1,13 +1,12 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
-document.documentElement.dataset.zeknovaSource = "auth48";
+document.documentElement.dataset.zeknovaSource = "auth53";
 
 function loadGameStyles() {
   const styles = [
     ["./assets/index-Bjdqeidf.css", "game-core"],
     ["./assets/campaign-35cfe1bd.css", "game-campaign"],
-    ["./assets/message-center.css?v=auth48", "game-messages"],
-    ["./assets/auth-gate.css?v=auth48", "game-auth"],
+    ["./assets/message-center.css?v=auth53", "game-messages"],
   ];
   for (const [href, id] of styles) {
     if (document.querySelector(`link[data-zeknova-style="${id}"]`)) continue;
@@ -44,7 +43,7 @@ async function launch() {
   });
   document.documentElement.dataset.zeknovaModules = Object.keys(window.ZekNovaSource).join(",");
   const game = new Game();
-  await game.start({ autoEnter: true });
+  await game.start({ user });
 }
 
 launch().catch((error) => {

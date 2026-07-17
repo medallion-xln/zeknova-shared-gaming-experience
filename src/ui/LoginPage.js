@@ -76,13 +76,21 @@ async function fetchTeams() {
 }
 
 function renderSignIn(root, auth) {
+  const loginUrl = auth.loginUrl || "/auth/login/";
+  const registerUrl = auth.registerUrl || "/auth/register";
   root.innerHTML = pageShell(`
-    <div class="login-boot-kicker">MEDALLION XLN ACCOUNT REQUIRED</div>
-    <h3>Sign in before launch</h3>
-    <p class="login-boot-copy">Authentication is handled here before any terrain, models, Three.js, or game simulation is downloaded.</p>
+    <div class="login-boot-kicker">MEDALLION XLN IDENTITY</div>
+    <h3>Sign in or create an account</h3>
+    <p class="login-boot-copy">Create a free account if this is your first deployment. Returning players can sign in with a six-digit email code.</p>
     <div class="login-boot-status"><span></span><strong>LIGHTWEIGHT SECURE LOGIN</strong></div>
-    <a id="medallion-sign-in" class="login-boot-primary" href="${escapeHtml(auth.loginUrl || "/")}">SIGN IN THROUGH MEDALLION XLN</a>
-    <p class="login-boot-note">A six-digit code will be sent to your email.</p>
+    <a id="medallion-sign-in" class="login-boot-primary" href="${escapeHtml(loginUrl)}">SIGN IN WITH EMAIL CODE</a>
+    <a id="medallion-create-account" class="login-boot-secondary" href="${escapeHtml(registerUrl)}">CREATE A FREE ACCOUNT</a>
+    <ol class="login-account-steps">
+      <li><strong>New player?</strong> Create and verify your Medallion XLN account.</li>
+      <li><strong>Then return here</strong> and sign in with the same email.</li>
+      <li><strong>Choose a crew</strong> and launch the shared ZekNova world.</li>
+    </ol>
+    <p class="login-boot-note">No password is stored by ZekNova. Authentication remains with Medallion XLN.</p>
     <div id="login-boot-error" class="login-boot-error" role="alert"></div>
   `);
   root.querySelector("#medallion-sign-in")?.addEventListener("click", (event) => {
@@ -91,7 +99,7 @@ function renderSignIn(root, auth) {
     const error = root.querySelector("#login-boot-error");
     loadAuthWidget()
       .then((MedallionAuth) => MedallionAuth.open({ onSuccess: () => location.reload() }))
-      .catch(() => { location.href = auth.loginUrl || "/"; });
+      .catch(() => { location.href = loginUrl; });
     if (error) error.textContent = "";
   });
 }
