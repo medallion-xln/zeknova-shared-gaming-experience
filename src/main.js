@@ -1,12 +1,13 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
-document.documentElement.dataset.zeknovaSource = "auth53";
+document.documentElement.dataset.zeknovaSource = "auth54";
 
 function loadGameStyles() {
   const styles = [
     ["./assets/index-Bjdqeidf.css", "game-core"],
     ["./assets/campaign-35cfe1bd.css", "game-campaign"],
-    ["./assets/message-center.css?v=auth53", "game-messages"],
+    ["./assets/message-center.css?v=auth54", "game-messages"],
+    ["./assets/team-chat.css?v=auth54", "game-chat"],
   ];
   for (const [href, id] of styles) {
     if (document.querySelector(`link[data-zeknova-style="${id}"]`)) continue;
@@ -24,7 +25,7 @@ async function launch() {
   if (!user) throw new Error("An authenticated officer is required to launch ZekNova.");
 
   loadGameStyles();
-  const [gameModule, Player, Enemies, Missions, Terrain, Collision, Biomes, multiplayerModule, messageModule] = await Promise.all([
+  const [gameModule, Player, Enemies, Missions, Terrain, Collision, Biomes, multiplayerModule, messageModule, chatModule] = await Promise.all([
     import("./game/Game.js"),
     import("./game/Player.js"),
     import("./game/Enemies.js"),
@@ -34,14 +35,20 @@ async function launch() {
     import("./world/Biomes.js"),
     import("./multiplayer/MultiplayerClient.js"),
     import("./ui/MessageCenter.js"),
+    import("./ui/TeamChat.js"),
   ]);
   const { Game } = gameModule;
   window.ZekNovaSource = Object.freeze({
     Game, Player, Enemies, Missions, Terrain, Collision, Biomes,
     MultiplayerClient: multiplayerModule.MultiplayerClient,
     MessageCenter: messageModule.MessageCenter,
+    TeamChat: chatModule.TeamChat,
   });
   document.documentElement.dataset.zeknovaModules = Object.keys(window.ZekNovaSource).join(",");
+  // Install before the runtime loads so every heartbeat carries chat traffic.
+  const teamChat = new chatModule.TeamChat({ user });
+  teamChat.install();
+  teamChat.mount(document.body);
   const game = new Game();
   await game.start({ user });
 }

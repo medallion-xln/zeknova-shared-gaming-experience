@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Cooperative browser-based ZekNova colony simulation",
   "scripts": {
-    "dev": "php -S 127.0.0.1:8790",
+    "dev": "node scripts/dev.mjs",
+    "dev:production": "node scripts/dev.mjs --production",
     "check": "node scripts/check-source.mjs",
     "test": "npm run check"
   },

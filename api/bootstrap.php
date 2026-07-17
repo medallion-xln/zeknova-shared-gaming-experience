@@ -1,9 +1,12 @@
 <?php
 declare(strict_types=1);
 
-// 'medallion' shares the Medallion XLN login session; switch back to 'demo'
-// for local development without the parent site.
-const ZEKNOVA_AUTH_MODE = 'medallion';
+// Production is the safe default. `npm run dev` explicitly sets
+// ZEKNOVA_ENV=local so contributors bypass the parent Medallion login while
+// still exercising the PHP session, persistence, and multiplayer APIs.
+$zeknovaEnvironment = strtolower(trim((string)(getenv('ZEKNOVA_ENV') ?: 'production')));
+define('ZEKNOVA_ENVIRONMENT', $zeknovaEnvironment === 'local' ? 'local' : 'production');
+define('ZEKNOVA_AUTH_MODE', ZEKNOVA_ENVIRONMENT === 'local' ? 'demo' : 'medallion');
 const ZEKNOVA_DATA_DIR = __DIR__ . '/../data';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -25,6 +28,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
+header('X-ZekNova-Environment: ' . ZEKNOVA_ENVIRONMENT);
 
 if (!is_dir(ZEKNOVA_DATA_DIR)) {
     @mkdir(ZEKNOVA_DATA_DIR, 0750, true);
@@ -76,6 +80,7 @@ function zeknova_auth_context(): array
         $user = zeknova_current_user();
         return [
             'mode' => 'demo',
+            'environment' => ZEKNOVA_ENVIRONMENT,
             'available' => true,
             'authenticated' => $user !== null,
             'signedOut' => false,
@@ -97,6 +102,7 @@ function zeknova_auth_context(): array
 
     return [
         'mode' => 'medallion',
+        'environment' => ZEKNOVA_ENVIRONMENT,
         'available' => true,
         'authenticated' => $authenticated,
         'signedOut' => $authenticated && !empty($_SESSION['zeknova_signed_out']),

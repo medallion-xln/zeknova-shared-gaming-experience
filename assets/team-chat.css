@@ -1,0 +1,173 @@
+/* Team comms: collapsed badge by default, capped scrollback when open. */
+.team-chat {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 30;
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.team-chat-toggle {
+  position: relative;
+  padding: 8px 12px;
+  border: 1px solid rgba(112, 230, 255, 0.28);
+  background: rgba(4, 16, 24, 0.9);
+  color: #9fd8e4;
+  font: 0.56rem/1.2 "Chakra Petch", sans-serif;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.team-chat-toggle:hover,
+.team-chat-toggle:focus-visible {
+  border-color: var(--class-accent, #5df1c4);
+  color: #efffff;
+  outline: none;
+}
+
+.team-chat-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 16px;
+  padding: 2px 4px;
+  border-radius: 9px;
+  background: #ff6072;
+  color: #fff;
+  font-style: normal;
+  font-size: 0.5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.team-chat-panel {
+  width: min(320px, calc(100vw - 28px));
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  border: 1px solid rgba(112, 230, 255, 0.24);
+  border-top: 2px solid var(--class-accent, #5df1c4);
+  background: rgba(4, 16, 24, 0.94);
+}
+
+.team-chat-panel > header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  border-bottom: 1px solid rgba(112, 230, 255, 0.18);
+}
+
+.team-chat-panel > header strong {
+  color: var(--class-accent, #5df1c4);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+}
+
+.team-chat-panel > header small {
+  color: #7f9aa6;
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-chat-log {
+  margin: 0;
+  padding: 10px 11px;
+  max-height: 200px;
+  min-height: 90px;
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: rgba(108, 245, 211, 0.56) rgba(0, 0, 0, 0.18);
+}
+
+.team-chat-log li {
+  padding: 6px 8px;
+  border-left: 2px solid #55e6ff;
+  background: rgba(3, 17, 26, 0.88);
+}
+
+.team-chat-log li[data-officer="lieutenant"] { border-left-color: #ffc45c; }
+.team-chat-log li[data-officer="captain"] { border-left-color: #b48bff; }
+.team-chat-log li.own { border-left-color: var(--class-accent, #5df1c4); }
+.team-chat-log li.pending { opacity: 0.55; }
+
+.team-chat-log li > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.team-chat-log li strong {
+  color: #f0fbff;
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+}
+
+.team-chat-log li time {
+  flex: 0 0 auto;
+  color: #6f909d;
+  font-size: 0.48rem;
+}
+
+.team-chat-log li p {
+  margin: 3px 0 0;
+  color: #b9cbd2;
+  font-family: inherit;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.team-chat-form {
+  display: flex;
+  gap: 6px;
+  padding: 9px 11px;
+  border-top: 1px solid rgba(112, 230, 255, 0.18);
+}
+
+.team-chat-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid rgba(112, 230, 255, 0.22);
+  background: rgba(5, 24, 32, 0.78);
+  color: #e9fbff;
+  font: 0.62rem/1.3 "Chakra Petch", sans-serif;
+}
+
+.team-chat-form input:focus-visible {
+  border-color: var(--class-accent, #5df1c4);
+  outline: none;
+}
+
+.team-chat-form button {
+  padding: 7px 10px;
+  border: 1px solid rgba(93, 241, 196, 0.35);
+  background: rgba(5, 35, 37, 0.72);
+  color: #caffef;
+  font: 0.54rem/1.2 "Chakra Petch", sans-serif;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.team-chat-form button:hover,
+.team-chat-form button:focus-visible {
+  border-color: var(--class-accent, #5df1c4);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .team-chat { left: 10px; bottom: 10px; }
+  .team-chat-log { max-height: 150px; }
+}

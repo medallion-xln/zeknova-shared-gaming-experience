@@ -8,6 +8,7 @@ if ($method === 'GET') {
     zeknova_response([
         'user' => zeknova_current_user(),
         'auth' => zeknova_auth_context(),
+        'environment' => ZEKNOVA_ENVIRONMENT,
     ]);
 }
 

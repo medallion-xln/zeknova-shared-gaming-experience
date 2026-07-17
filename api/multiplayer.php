@@ -69,6 +69,44 @@ if (!empty($input['leaving'])) {
     ];
 }
 
+// Team chat rides inside the same heartbeat and room file: clients send an
+// outbox plus the last sequence number they have seen, and receive only newer
+// messages back. The log is a ring buffer, so the file cannot grow unbounded.
+$chat = is_array($room['chat'] ?? null) ? $room['chat'] : [];
+$chat['seq'] = (int)($chat['seq'] ?? 0);
+$chat['messages'] = is_array($chat['messages'] ?? null) ? $chat['messages'] : [];
+$chatInput = is_array($input['chat'] ?? null) ? $input['chat'] : [];
+
+if (empty($input['leaving'])) {
+    $outbox = is_array($chatInput['send'] ?? null) ? array_slice($chatInput['send'], 0, 3) : [];
+    foreach ($outbox as $text) {
+        $clean = trim((string)preg_replace('/[\x00-\x1F\x7F]/u', ' ', (string)$text));
+        if ($clean === '') continue;
+        $clean = function_exists('mb_substr') ? mb_substr($clean, 0, 300) : substr($clean, 0, 300);
+        $chat['seq']++;
+        $chat['messages'][] = [
+            'seq' => $chat['seq'],
+            'userId' => (string)($user['id'] ?? ''),
+            'displayName' => substr((string)($user['displayName'] ?? 'Crew Member'), 0, 80),
+            'officerClass' => in_array(($user['officerClass'] ?? ''), ['ensign', 'lieutenant', 'captain'], true)
+                ? (string)$user['officerClass'] : 'ensign',
+            'text' => $clean,
+            'at' => $now,
+        ];
+    }
+    $chat['messages'] = array_slice($chat['messages'], -200);
+}
+$room['chat'] = $chat;
+
+$sinceSeq = max(0, (int)($chatInput['since'] ?? 0));
+$chatMessages = [];
+foreach ($chat['messages'] as $message) {
+    if ((int)($message['seq'] ?? 0) > $sinceSeq) {
+        $chatMessages[] = $message;
+    }
+}
+$chatMessages = array_slice($chatMessages, -50);
+
 $changed = false;
 $world = is_array($input['world'] ?? null) ? $input['world'] : [];
 $allowedTypes = ['power', 'water', 'habitat', 'research', 'culture', 'governance', 'defense', 'bridge', 'boat'];
@@ -138,4 +176,8 @@ zeknova_response([
     'serverTime' => gmdate('c'),
     'players' => $players,
     'world' => $responseWorld,
+    'chat' => [
+        'seq' => (int)$chat['seq'],
+        'messages' => $chatMessages,
+    ],
 ]);

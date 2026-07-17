@@ -146,7 +146,7 @@ function renderReady(root, user, launch, options = {}) {
   });
 }
 
-async function renderEnrollment(root, session, launch, isLocal = false) {
+async function renderEnrollment(root, session, launch, isLocal = false, persistLocalSession = false) {
   const auth = session.auth ?? {};
   const identity = auth.identity ?? {};
   const enrollment = auth.enrollment ?? {};
@@ -207,8 +207,12 @@ async function renderEnrollment(root, session, launch, isLocal = false) {
         const displayName = String(data.get("displayName") || "").trim();
         const teamName = String(data.get("teamName") || "").trim();
         if (!email || !displayName || !teamName) throw new Error("Callsign, email, and team name are required.");
-        user = { id: `demo-${Date.now()}`, displayName, email, teamName, teamCode: `LOCAL-${crypto.randomUUID().slice(0, 8).toUpperCase()}`, officerClass: "ensign", biome: "highlands", rankXp: 0 };
-        localStorage.setItem(LOCAL_USER_KEY, JSON.stringify(user));
+        if (persistLocalSession) {
+          user = await postEnrollment({ email, displayName, teamName, teamCode: String(data.get("teamCode") || "") });
+        } else {
+          user = { id: `demo-${Date.now()}`, displayName, email, teamName, teamCode: `LOCAL-${crypto.randomUUID().slice(0, 8).toUpperCase()}`, officerClass: "ensign", biome: "highlands", rankXp: 0 };
+          localStorage.setItem(LOCAL_USER_KEY, JSON.stringify(user));
+        }
       } else {
         user = await postEnrollment({
           displayName: String(data.get("displayName") || ""),
@@ -216,7 +220,7 @@ async function renderEnrollment(root, session, launch, isLocal = false) {
           teamCode: String(data.get("teamCode") || ""),
         });
       }
-      renderReady(root, user, launch, { changeTeam: () => renderEnrollment(root, { ...session, user, auth: { ...auth, enrolled: true, enrollment: user } }, launch, isLocal) });
+      renderReady(root, user, launch, { changeTeam: () => renderEnrollment(root, { ...session, user, auth: { ...auth, enrolled: true, enrollment: user } }, launch, isLocal, persistLocalSession) });
     } catch (failure) {
       if (error) error.textContent = failure instanceof Error ? failure.message : "Unable to complete enrollment.";
       submit.disabled = false;
@@ -239,6 +243,13 @@ export function runLoginPage(root = document.getElementById("app")) {
     try {
       const session = await sessionState();
       const auth = session.auth ?? {};
+      const serverLocal = session.environment === "local" || auth.environment === "local" || auth.mode === "demo";
+      if (serverLocal) {
+        if (session.user) return renderReady(root, session.user, launch, {
+          changeTeam: () => renderEnrollment(root, session, launch, true, true),
+        });
+        return renderEnrollment(root, session, launch, true, true);
+      }
       if (!auth.authenticated) return renderSignIn(root, auth);
       if (session.user) return renderReady(root, session.user, launch, { changeTeam: () => renderEnrollment(root, session, launch) });
       if (auth.enrolled && auth.enrollment) {

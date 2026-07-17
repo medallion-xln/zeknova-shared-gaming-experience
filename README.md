@@ -121,9 +121,19 @@ The Utility Network panel beneath Hackathon Standings reports online and disconn
 npm run dev
 ```
 
-This starts PHP's development server at `http://127.0.0.1:8790`. Open
-`http://127.0.0.1:8790/?demo=1` for a local browser-only officer, or omit
-`?demo=1` to exercise the production Medallion authentication gate.
+This starts PHP's development server at `http://127.0.0.1:8790` with
+`ZEKNOVA_ENV=local`. Contributors go directly to local officer/team setup—no
+Medallion account or query-string flag is required. Local sessions exercise
+the same PHP save, progression, team, and multiplayer endpoints as production.
+
+To test the production authentication gate locally instead, run:
+
+```bash
+npm run dev:production
+```
+
+Production remains the default whenever `ZEKNOVA_ENV=local` is absent. The old
+`?demo=1` browser-only mode remains available as an offline fallback.
 
 For end-to-end multiplayer testing, use two authenticated Medallion accounts on a staging or production server. Create a team with the first account and join it from the second. Local `?demo=1` mode remains intended for single-browser gameplay testing.
 
