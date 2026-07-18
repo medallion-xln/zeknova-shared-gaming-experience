@@ -192,6 +192,50 @@ html.zk-hud .team-chat { left: 76px; bottom: 154px; }
 html.zk-hud:not(.zk-paused) .logout-button { display: none; }
 html.zk-hud .zk-controls-toggle { left: 16px; right: auto; bottom: 120px; }
 
+/* ---------- Tier 2 · focused construction workspace ---------- */
+
+/* Combat and movement controls intercept terrain clicks and visually compete
+   with the construction matrix. Command mode has its own interaction model,
+   so remove those controls from both the layout and the pointer plane. */
+html.zk-command:not(.zk-paused) #special-attack-status,
+html.zk-command:not(.zk-paused) #weapon-system-status,
+html.zk-command:not(.zk-paused) .action-pad,
+html.zk-command:not(.zk-paused) .movement-pad,
+html.zk-command:not(.zk-paused) .team-chat,
+html.zk-command:not(.zk-paused) .advisor-orb,
+html.zk-command:not(.zk-paused) .advisor-panel,
+html.zk-command:not(.zk-paused) .zk-controls-toggle,
+html.zk-command:not(.zk-paused) .zk-log-chip,
+html.zk-command:not(.zk-paused) .interaction-prompt {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Give every installation a readable, unobstructed construction row. */
+html.zk-command:not(.zk-paused) .build-dock {
+  bottom: 70px;
+  width: min(1440px, calc(100vw - 32px));
+  min-width: 0;
+  z-index: 30;
+}
+html.zk-command:not(.zk-paused) .build-options {
+  grid-template-columns: repeat(9, minmax(84px, 1fr));
+}
+html.zk-command:not(.zk-paused) .mode-switcher {
+  right: 16px;
+  bottom: 12px;
+  z-index: 31;
+}
+html.zk-command:not(.zk-paused) .mode-button { min-width: 220px; }
+
+@media (max-width: 1180px) {
+  html.zk-command:not(.zk-paused) .build-dock {
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+  html.zk-command:not(.zk-paused) .build-options { min-width: 900px; }
+}
+
 /* ---------- Tier 3 · pause command interface ---------- */
 
 .zk-pause-tabs {

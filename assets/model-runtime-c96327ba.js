@@ -164,6 +164,7 @@ function attachWeaponModel(characterScene, weaponScene, {
   length,
   position = [0.08, 0.02, 0],
   rotation = [0, 0, 0],
+  gripOffset = [0, 0, 0],
 }) {
   const hand = characterScene.getObjectByName('RightHand');
   if (!hand) {
@@ -175,8 +176,13 @@ function attachWeaponModel(characterScene, weaponScene, {
   const box = new Box3().setFromObject(weaponScene);
   const size = box.getSize(new Vector3());
   const longest = Math.max(size.x, size.y, size.z, 0.0001);
-  weaponScene.position.sub(box.getCenter(new Vector3()));
-  weaponScene.scale.setScalar(length / longest);
+  const weaponScale = length / longest;
+  // The imported weapon origin is its geometric center, not its handle. Scale
+  // the centering correction into hand space, then offset the body so the
+  // RightHand socket lands on the rear grip/trigger instead of mid-barrel.
+  weaponScene.position.copy(box.getCenter(new Vector3())).multiplyScalar(-weaponScale);
+  weaponScene.position.add(new Vector3().fromArray(gripOffset));
+  weaponScene.scale.setScalar(weaponScale);
   weaponScene.traverse((object) => {
     if (!object.isMesh) return;
     object.castShadow = true;
@@ -213,7 +219,7 @@ function createMotionController(scene, walkClip, runClip = null, combatClips = {
     action.setEffectiveWeight(1);
     action.setEffectiveTimeScale(1);
     action.play();
-    action.time = action.getClip().duration * (idleCombatName === 'heavyMinigun' ? 0.18 : 0.24);
+    action.time = action.getClip().duration * (idleCombatName === 'carryHeavyWeapon' ? 0.18 : 0.5);
     action.paused = true;
     mixer.update(0);
     return true;
@@ -302,7 +308,7 @@ export async function loadEnsignEngineerModel() {
       rifle: rifleGltf.animations[0],
       rollFire: rollGltf.animations[0],
       death: deathGltf.animations[0],
-      heavyMinigun: heavyGltf.animations[0],
+      carryHeavyWeapon: heavyGltf.animations[0],
     },
   );
   disposeModel(runningEngineerGltf.scene);
@@ -313,18 +319,18 @@ export async function loadEnsignEngineerModel() {
 
   const weapons = {
     voidsting: attachWeaponModel(engineerGltf.scene, weaponGlbs.voidsting.scene, {
-      id: 'voidsting', length: 54, position: [5, -1, 0], rotation: [0, 0, 0],
+      id: 'voidsting', length: 54, position: [2, 0, 0], rotation: [Math.PI, 0, 0], gripOffset: [8, -7, 0],
     }),
     singularity: attachWeaponModel(engineerGltf.scene, weaponGlbs.singularity.scene, {
-      id: 'singularity', length: 100, position: [12, -1, 0], rotation: [0, 0, 0],
+      id: 'singularity', length: 100, position: [2, -1, 0], rotation: [Math.PI, 0, 0], gripOffset: [20, -5, 0],
     }),
     thunderclaw: attachWeaponModel(engineerGltf.scene, weaponGlbs.thunderclaw.scene, {
-      id: 'thunderclaw', length: 115, position: [12, -1, 0], rotation: [0, 0, 0],
+      id: 'thunderclaw', length: 115, position: [1, -2, 0], rotation: [Math.PI, 0, 0], gripOffset: [26, -7, 0],
     }),
   };
   let equippedWeapon = 'voidsting';
   for (const [id, mount] of Object.entries(weapons)) if (mount) mount.visible = id === equippedWeapon;
-  motion.setIdleCombat('rifle');
+  motion.setIdleCombat(null);
 
   return {
     root,
@@ -344,7 +350,7 @@ export async function loadEnsignEngineerModel() {
       if (!weapons[id]) return false;
       equippedWeapon = id;
       for (const [weaponId, mount] of Object.entries(weapons)) if (mount) mount.visible = weaponId === id;
-      motion.setIdleCombat(id === 'thunderclaw' ? 'heavyMinigun' : 'rifle');
+      motion.setIdleCombat(id === 'thunderclaw' ? 'carryHeavyWeapon' : id === 'singularity' ? 'rifle' : null);
       return true;
     },
     dispose() {
@@ -515,8 +521,11 @@ function createEnemyMotionController(scene, walkClip, runClip = null) {
     update(delta, moving, charging) {
       const nextAction = charging && runAction ? runAction : walkAction;
       if (nextAction !== activeAction) {
-        activeAction?.stop();
-        nextAction?.reset().play();
+        // Enemy roles can change direction and sprint state several times in a
+        // second while steering around terrain. Stopping and resetting the
+        // mixer on every change made the rig visibly snap back to frame zero.
+        activeAction?.fadeOut(0.16);
+        nextAction?.reset().setEffectiveWeight(1).fadeIn(0.16).play();
         activeAction = nextAction;
       }
       if (!activeAction) return;

@@ -224,6 +224,57 @@ function zeknova_find_team(string $teamCode): ?array
     return null;
 }
 
+/**
+ * Appends one message to a team's chat ring buffer under the same exclusive
+ * room-file lock the multiplayer heartbeat uses. Lets server-side actors
+ * (SCOUT-01) speak in team comms; clients pick the message up on their next
+ * heartbeat like any other chat line.
+ */
+function zeknova_team_chat_post(string $teamCode, string $senderId, string $displayName, string $text): bool
+{
+    $clean = trim((string)preg_replace('/[\x00-\x1F\x7F]/u', ' ', $text));
+    if ($clean === '') {
+        return false;
+    }
+    $clean = function_exists('mb_substr') ? mb_substr($clean, 0, 300) : substr($clean, 0, 300);
+
+    $handle = fopen(zeknova_room_path($teamCode), 'c+');
+    if ($handle === false || !flock($handle, LOCK_EX)) {
+        if (is_resource($handle)) fclose($handle);
+        return false;
+    }
+    $raw = stream_get_contents($handle);
+    $room = $raw !== false && trim($raw) !== '' ? json_decode($raw, true) : null;
+    if (!is_array($room)) {
+        $room = ['version' => 1, 'revision' => 0, 'players' => [], 'world' => ['buildings' => [], 'harvestedTreeIds' => [], 'collectedPowerUpIds' => [], 'minedRockIds' => []]];
+    }
+    $chat = is_array($room['chat'] ?? null) ? $room['chat'] : [];
+    $chat['seq'] = (int)($chat['seq'] ?? 0) + 1;
+    $chat['messages'] = is_array($chat['messages'] ?? null) ? $chat['messages'] : [];
+    $chat['messages'][] = [
+        'seq' => $chat['seq'],
+        'userId' => $senderId,
+        'displayName' => substr($displayName, 0, 80),
+        'officerClass' => 'ensign',
+        'text' => $clean,
+        'at' => time(),
+    ];
+    $chat['messages'] = array_slice($chat['messages'], -200);
+    $room['chat'] = $chat;
+
+    $encoded = json_encode($room, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    $ok = false;
+    if ($encoded !== false) {
+        rewind($handle);
+        ftruncate($handle, 0);
+        $ok = fwrite($handle, $encoded) !== false;
+        fflush($handle);
+    }
+    flock($handle, LOCK_UN);
+    fclose($handle);
+    return $ok;
+}
+
 function zeknova_create_team_key(string $teamName): string
 {
     $prefix = substr(preg_replace('/[^A-Z0-9]/', '', strtoupper($teamName)) ?: 'TEAM', 0, 8);
