@@ -55,7 +55,13 @@ if (is_file($path)) {
         $buildings = [];
         foreach (array_merge($existing['buildings'] ?? [], $input['buildings']) as $building) {
             if (is_array($building) && isset($building['id'])) {
-                $buildings[(string)$building['id']] = $building;
+                $id = (string)$building['id'];
+                $current = $buildings[$id] ?? null;
+                $currentHealthAt = is_array($current) ? (int)($current['healthUpdatedAt'] ?? 0) : -1;
+                $incomingHealthAt = (int)($building['healthUpdatedAt'] ?? 0);
+                if (!is_array($current) || $incomingHealthAt >= $currentHealthAt) {
+                    $buildings[$id] = $building;
+                }
             }
         }
         $input['buildings'] = array_values($buildings);

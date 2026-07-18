@@ -125,9 +125,23 @@ foreach (($world['buildings'] ?? []) as $building) {
             'z' => max(-120.0, min(120.0, (float)($building['z'] ?? 0))),
             'rotation' => (float)($building['rotation'] ?? 0),
             'level' => max(1, min(10, (int)($building['level'] ?? 1))),
+            'health' => max(0, min(1000, (int)($building['health'] ?? 1000))),
+            'maxHealth' => 1000,
+            'healthSchemaVersion' => 1,
+            'healthUpdatedAt' => max(0, (int)($building['healthUpdatedAt'] ?? 0)),
             'placedBy' => (string)($user['id'] ?? ''),
         ];
         $changed = true;
+    } else {
+        $incomingHealthUpdatedAt = max(0, (int)($building['healthUpdatedAt'] ?? 0));
+        $storedHealthUpdatedAt = max(0, (int)($storedBuildings[$id]['healthUpdatedAt'] ?? 0));
+        if ($incomingHealthUpdatedAt > $storedHealthUpdatedAt) {
+            $storedBuildings[$id]['health'] = max(0, min(1000, (int)($building['health'] ?? 1000)));
+            $storedBuildings[$id]['maxHealth'] = 1000;
+            $storedBuildings[$id]['healthSchemaVersion'] = 1;
+            $storedBuildings[$id]['healthUpdatedAt'] = $incomingHealthUpdatedAt;
+            $changed = true;
+        }
     }
 }
 $room['world']['buildings'] = $storedBuildings;
