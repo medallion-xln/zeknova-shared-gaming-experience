@@ -454,11 +454,13 @@ Optionally also `_s.getAdvisorTelemetry = () => (/* the askAdvisor context */)`
 for a precise `missionProgress`/`missionTargets`; `captureSearchState()` prefers
 it and degrades to a build-diversity approximation without it.
 
-**Still can't run from this repo (server-side only, noted honestly):**
-`tests/run-node-tests.js` and `/azl/bench.html` live in the AZL deployment tree,
-not here. The standalone `.cjs` test above is the equivalent verification
-available in-repo; re-running the AZL suite and re-baselining `bench.html` in a
-browser must happen against the server checkout.
+**Integration completed in this repository:** `azl/azl-engine.js` now supplies
+the six-expert policy router and PUCT search, `azl/azl-worker.js` keeps the
+search off the render thread, and `src/game/StrategicAI.js` connects the live
+SCOUT-01 console to the engine. The original planner remains a runtime fallback.
+The adapter contract, engine, worker dependency graph, and live-state capture
+are covered by the repository's Node tests and were also exercised through the
+local browser build.
 
 ---
 

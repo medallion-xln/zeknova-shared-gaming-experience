@@ -8,7 +8,7 @@
     "dev": "node scripts/dev.mjs",
     "dev:production": "node scripts/dev.mjs --production",
     "check": "node scripts/check-source.mjs",
-    "test": "npm run check"
+    "test": "npm run check && node tests/azl-zeknova-adapter.test.cjs && node tests/azl-engine.test.cjs"
   },
   "engines": {
     "node": ">=18"

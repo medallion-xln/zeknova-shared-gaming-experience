@@ -1,6 +1,6 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
-document.documentElement.dataset.zeknovaSource = "azl1";
+document.documentElement.dataset.zeknovaSource = "azl2";
 
 function loadGameStyles() {
   const styles = [
@@ -27,7 +27,7 @@ async function launch() {
   if (!user) throw new Error("An authenticated officer is required to launch ZekNova.");
 
   loadGameStyles();
-  const [gameModule, Player, Enemies, Missions, Terrain, Collision, Biomes, multiplayerModule, messageModule, chatModule] = await Promise.all([
+  const [gameModule, Player, Enemies, Missions, Terrain, Collision, Biomes, multiplayerModule, messageModule, chatModule, strategicModule] = await Promise.all([
     import("./game/Game.js"),
     import("./game/Player.js"),
     import("./game/Enemies.js"),
@@ -38,6 +38,7 @@ async function launch() {
     import("./multiplayer/MultiplayerClient.js"),
     import("./ui/MessageCenter.js"),
     import("./ui/TeamChat.js"),
+    import("./game/StrategicAI.js"),
   ]);
   const { HudDirector } = await import("./ui/HudDirector.js");
   const { Game } = gameModule;
@@ -46,6 +47,7 @@ async function launch() {
     MultiplayerClient: multiplayerModule.MultiplayerClient,
     MessageCenter: messageModule.MessageCenter,
     TeamChat: chatModule.TeamChat,
+    StrategicAI: strategicModule.StrategicAI,
   });
   document.documentElement.dataset.zeknovaModules = Object.keys(window.ZekNovaSource).join(",");
   // Install before the runtime loads so every heartbeat carries chat traffic.
@@ -55,6 +57,12 @@ async function launch() {
   new HudDirector({ chat: teamChat }).arm();
   const game = new Game();
   await game.start({ user });
+  try {
+    const strategicAI = new strategicModule.StrategicAI();
+    await strategicAI.install({ game: globalThis.ZekNovaGame });
+  } catch (error) {
+    console.warn("AZL strategic integration is unavailable; the built-in planner remains active.", error);
+  }
 }
 
 launch().catch((error) => {
