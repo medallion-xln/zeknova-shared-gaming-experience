@@ -48,6 +48,7 @@ if ($lock === false || !flock($lock, LOCK_EX)) {
 // Concurrent players contribute to one team world. Preserve every unique
 // installation and every completed world interaction instead of allowing the
 // latest full snapshot to erase another player's work.
+$existing = [];
 if (is_file($path)) {
     $existingJson = file_get_contents($path);
     $existing = $existingJson !== false ? json_decode($existingJson, true) : null;
@@ -65,13 +66,40 @@ if (is_file($path)) {
             }
         }
         $input['buildings'] = array_values($buildings);
-        foreach (['harvestedTreeIds', 'collectedPowerUpIds', 'minedRockIds'] as $key) {
+        foreach (['collectedPowerUpIds', 'minedRockIds'] as $key) {
             $old = is_array($existing['worldProgress'][$key] ?? null) ? $existing['worldProgress'][$key] : [];
             $new = is_array($input['worldProgress'][$key] ?? null) ? $input['worldProgress'][$key] : [];
             $input['worldProgress'][$key] = array_values(array_unique(array_merge($old, $new)));
         }
     }
 }
+
+// Trees are renewable instead of permanent union-only interactions. Preserve
+// the newest harvest timestamp from any player, then remove trees whose
+// three-hour recovery window has elapsed.
+$regrowthMs = 3 * 60 * 60 * 1000;
+$nowMs = (int)floor(microtime(true) * 1000);
+$treeTimes = [];
+$existingTreeTimes = is_array($existing['worldProgress']['treeHarvestedAt'] ?? null)
+    ? $existing['worldProgress']['treeHarvestedAt'] : [];
+$incomingTreeTimes = is_array($input['worldProgress']['treeHarvestedAt'] ?? null)
+    ? $input['worldProgress']['treeHarvestedAt'] : [];
+$existingFallback = isset($existing['updatedAt']) ? (int)(strtotime((string)$existing['updatedAt']) * 1000) : $nowMs;
+foreach (($existing['worldProgress']['harvestedTreeIds'] ?? []) as $id) {
+    $key = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+    if ($key !== '') $treeTimes[$key] = (int)($existingTreeTimes[$key] ?? $existingFallback);
+}
+foreach (($input['worldProgress']['harvestedTreeIds'] ?? []) as $id) {
+    $key = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+    if ($key === '') continue;
+    $incomingAt = (int)($incomingTreeTimes[$key] ?? $nowMs);
+    $treeTimes[$key] = max((int)($treeTimes[$key] ?? 0), $incomingAt);
+}
+foreach ($treeTimes as $id => $harvestedAt) {
+    if ($harvestedAt <= 0 || ($nowMs - $harvestedAt) >= $regrowthMs) unset($treeTimes[$id]);
+}
+$input['worldProgress']['treeHarvestedAt'] = $treeTimes;
+$input['worldProgress']['harvestedTreeIds'] = array_keys($treeTimes);
 
 $encoded = json_encode($input, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 if ($encoded === false) {

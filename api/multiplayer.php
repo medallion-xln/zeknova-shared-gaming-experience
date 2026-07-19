@@ -36,6 +36,7 @@ if (!is_array($room)) {
         'world' => [
             'buildings' => [],
             'harvestedTreeIds' => [],
+            'treeHarvestedAt' => [],
             'collectedPowerUpIds' => [],
             'minedRockIds' => [],
         ],
@@ -146,7 +147,7 @@ foreach (($world['buildings'] ?? []) as $building) {
 }
 $room['world']['buildings'] = $storedBuildings;
 
-foreach (['harvestedTreeIds', 'collectedPowerUpIds', 'minedRockIds'] as $key) {
+foreach (['collectedPowerUpIds', 'minedRockIds'] as $key) {
     $stored = is_array($room['world'][$key] ?? null) ? $room['world'][$key] : [];
     $set = array_fill_keys(array_map('strval', $stored), true);
     foreach (($world[$key] ?? []) as $id) {
@@ -158,6 +159,34 @@ foreach (['harvestedTreeIds', 'collectedPowerUpIds', 'minedRockIds'] as $key) {
     }
     $room['world'][$key] = array_slice(array_keys($set), 0, 10000);
 }
+
+// Harvested trees are shared with timestamps so every client observes the
+// same three-hour regrowth rather than permanently unioning felled tree IDs.
+$regrowthMs = 3 * 60 * 60 * 1000;
+$nowMs = (int)floor(microtime(true) * 1000);
+$storedTreeTimes = is_array($room['world']['treeHarvestedAt'] ?? null) ? $room['world']['treeHarvestedAt'] : [];
+$incomingTreeTimes = is_array($world['treeHarvestedAt'] ?? null) ? $world['treeHarvestedAt'] : [];
+foreach (($room['world']['harvestedTreeIds'] ?? []) as $id) {
+    $key = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+    if ($key !== '' && !isset($storedTreeTimes[$key])) $storedTreeTimes[$key] = $nowMs;
+}
+foreach (($world['harvestedTreeIds'] ?? []) as $id) {
+    $key = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+    if ($key === '') continue;
+    $incomingAt = max(0, (int)($incomingTreeTimes[$key] ?? $nowMs));
+    if (!isset($storedTreeTimes[$key]) || $incomingAt > (int)$storedTreeTimes[$key]) {
+        $storedTreeTimes[$key] = $incomingAt;
+        $changed = true;
+    }
+}
+foreach ($storedTreeTimes as $id => $harvestedAt) {
+    if ((int)$harvestedAt <= 0 || ($nowMs - (int)$harvestedAt) >= $regrowthMs) {
+        unset($storedTreeTimes[$id]);
+        $changed = true;
+    }
+}
+$room['world']['treeHarvestedAt'] = $storedTreeTimes;
+$room['world']['harvestedTreeIds'] = array_slice(array_keys($storedTreeTimes), 0, 10000);
 
 if ($changed) {
     $room['revision'] = (int)($room['revision'] ?? 0) + 1;
