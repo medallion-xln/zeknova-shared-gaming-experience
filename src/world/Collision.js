@@ -1,4 +1,21 @@
-export const BUILDING_COLLISION_RADII = Object.freeze({ power: 1.55, water: 1.45, defense: 1.35, research: 1.7, habitat: 1.9, culture: 1.55, governance: 1.75 });
+export const BUILDING_COLLISION_RADII = Object.freeze({
+  power: 1.55,
+  water: 1.45,
+  defense: 1.35,
+  research: 1.7,
+  habitat: 1.9,
+  culture: 1.55,
+  governance: 1.75,
+  zek_clinic: 1.85,
+  zek_watershed: 1.75,
+  zek_beacon: 1.45,
+  zek_grove: 1.65,
+  zek_habitat: 2.05,
+  zek_archive: 1.55,
+  zek_market: 2,
+  zek_watch: 1.65,
+  zek_transit: 2.15,
+});
 export const ENEMY_COLLISION_RADII = Object.freeze({ juggernaut: 1.75, burrower: 1.35, skyray: 0.7, default: 0.78 });
 
 export function buildingCollisionRadius(type) {
@@ -29,4 +46,3 @@ export class SpatialHash {
     return found;
   }
 }
-

@@ -66,6 +66,10 @@ if (!empty($input['leaving'])) {
         'z' => max(-120.0, min(120.0, (float)($player['z'] ?? 0))),
         'rotation' => (float)($player['rotation'] ?? 0),
         'health' => max(0.0, min(100.0, (float)($player['health'] ?? 100))),
+        'moving' => !empty($player['moving']),
+        'sprinting' => !empty($player['sprinting']),
+        'action' => substr(preg_replace('/[^a-zA-Z0-9_-]/', '', (string)($player['action'] ?? 'idle')) ?? 'idle', 0, 24),
+        'weapon' => substr(preg_replace('/[^a-zA-Z0-9_-]/', '', (string)($player['weapon'] ?? '')) ?? '', 0, 32),
         'seenAt' => $now,
     ];
 }
@@ -110,7 +114,7 @@ $chatMessages = array_slice($chatMessages, -50);
 
 $changed = false;
 $world = is_array($input['world'] ?? null) ? $input['world'] : [];
-$allowedTypes = ['power', 'water', 'habitat', 'research', 'culture', 'governance', 'defense', 'bridge', 'boat'];
+$allowedTypes = ['power', 'water', 'habitat', 'research', 'culture', 'governance', 'defense', 'bridge', 'boat', 'zek_clinic', 'zek_watershed', 'zek_beacon', 'zek_grove', 'zek_habitat', 'zek_archive', 'zek_market', 'zek_watch', 'zek_transit'];
 $storedBuildings = is_array($room['world']['buildings'] ?? null) ? $room['world']['buildings'] : [];
 foreach (($world['buildings'] ?? []) as $building) {
     if (!is_array($building)) continue;
@@ -149,9 +153,17 @@ $room['world']['buildings'] = $storedBuildings;
 
 foreach (['collectedPowerUpIds', 'minedRockIds'] as $key) {
     $stored = is_array($room['world'][$key] ?? null) ? $room['world'][$key] : [];
+    if ($key === 'collectedPowerUpIds') {
+        $before = count($stored);
+        // Ammunition caches are personal supplies with their own one-hour
+        // cooldown. Remove legacy team-shared cache IDs from old room files.
+        $stored = array_values(array_filter($stored, static fn($id): bool => strpos((string)$id, 'ammo-drop-') !== 0));
+        if (count($stored) !== $before) $changed = true;
+    }
     $set = array_fill_keys(array_map('strval', $stored), true);
     foreach (($world[$key] ?? []) as $id) {
         $clean = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+        if ($key === 'collectedPowerUpIds' && strpos($clean, 'ammo-drop-') === 0) continue;
         if ($clean !== '' && strlen($clean) <= 120 && !isset($set[$clean])) {
             $set[$clean] = true;
             $changed = true;
@@ -159,6 +171,33 @@ foreach (['collectedPowerUpIds', 'minedRockIds'] as $key) {
     }
     $room['world'][$key] = array_slice(array_keys($set), 0, 10000);
 }
+
+// Ammo cache cooldowns follow the authenticated player, not the team. This
+// prevents one crew member from consuming everybody's field supplies while
+// still preserving the one-hour cooldown across that player's devices.
+$ammoRespawnMs = 60 * 60 * 1000;
+$ammoNowMs = (int)floor(microtime(true) * 1000);
+$ammoUserKey = hash('sha256', (string)($user['id'] ?? ''));
+$personalAmmoCaches = is_array($room['world']['personalAmmoCaches'] ?? null) ? $room['world']['personalAmmoCaches'] : [];
+$personalAmmoTimes = is_array($personalAmmoCaches[$ammoUserKey] ?? null) ? $personalAmmoCaches[$ammoUserKey] : [];
+foreach ($personalAmmoTimes as $id => $collectedAt) {
+    if (strpos((string)$id, 'ammo-drop-') !== 0 || ($ammoNowMs - (int)$collectedAt) >= $ammoRespawnMs) {
+        unset($personalAmmoTimes[$id]);
+        $changed = true;
+    }
+}
+$incomingAmmoTimes = is_array($world['personalAmmoCacheCollectedAt'] ?? null) ? $world['personalAmmoCacheCollectedAt'] : [];
+foreach (array_slice($incomingAmmoTimes, 0, 50, true) as $id => $collectedAt) {
+    $clean = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+    $time = max(0, min($ammoNowMs, (int)$collectedAt));
+    if (strpos($clean, 'ammo-drop-') !== 0 || $time <= 0 || ($ammoNowMs - $time) >= $ammoRespawnMs) continue;
+    if (!isset($personalAmmoTimes[$clean]) || $time > (int)$personalAmmoTimes[$clean]) {
+        $personalAmmoTimes[$clean] = $time;
+        $changed = true;
+    }
+}
+$personalAmmoCaches[$ammoUserKey] = $personalAmmoTimes;
+$room['world']['personalAmmoCaches'] = $personalAmmoCaches;
 
 // Harvested trees are shared with timestamps so every client observes the
 // same three-hour regrowth rather than permanently unioning felled tree IDs.
@@ -188,6 +227,50 @@ foreach ($storedTreeTimes as $id => $harvestedAt) {
 $room['world']['treeHarvestedAt'] = $storedTreeTimes;
 $room['world']['harvestedTreeIds'] = array_slice(array_keys($storedTreeTimes), 0, 10000);
 
+// Relationship changes are event-sourced so simultaneous players cannot
+// overwrite one another's reconciliation work or hostility penalties.
+$incomingRelations = is_array($world['relations'] ?? null) ? $world['relations'] : [];
+$incomingRelationEvents = is_array($world['relationEvents'] ?? null) ? array_slice($world['relationEvents'], 0, 20) : [];
+$storedRelations = is_array($room['world']['relations'] ?? null) ? $room['world']['relations'] : null;
+$storedRelationIds = is_array($room['world']['relationEventIds'] ?? null) ? $room['world']['relationEventIds'] : [];
+$relationIdSet = array_fill_keys(array_map('strval', $storedRelationIds), true);
+$ackedRelationIds = [];
+
+if ($storedRelations === null) {
+    $storedRelations = [
+        'tension' => max(0.0, min(100.0, (float)($incomingRelations['tension'] ?? 50))),
+        'trust' => max(0.0, min(100.0, (float)($incomingRelations['trust'] ?? 50))),
+        'updatedAt' => $nowMs,
+        'updatedBy' => (string)($user['id'] ?? ''),
+    ];
+    // The first client's values already contain its local pending deltas.
+    foreach ($incomingRelationEvents as $event) {
+        $id = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($event['id'] ?? '')) ?? '';
+        if ($id === '' || strlen($id) > 120) continue;
+        $relationIdSet[$id] = true;
+        $ackedRelationIds[] = $id;
+    }
+    $changed = true;
+} else {
+    foreach ($incomingRelationEvents as $event) {
+        if (!is_array($event)) continue;
+        $id = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($event['id'] ?? '')) ?? '';
+        if ($id === '' || strlen($id) > 120) continue;
+        $ackedRelationIds[] = $id;
+        if (isset($relationIdSet[$id])) continue;
+        $tensionDelta = max(-25.0, min(25.0, (float)($event['tensionDelta'] ?? 0)));
+        $trustDelta = max(-25.0, min(25.0, (float)($event['trustDelta'] ?? 0)));
+        $storedRelations['tension'] = max(0.0, min(100.0, (float)($storedRelations['tension'] ?? 50) + $tensionDelta));
+        $storedRelations['trust'] = max(0.0, min(100.0, (float)($storedRelations['trust'] ?? 50) + $trustDelta));
+        $storedRelations['updatedAt'] = $nowMs;
+        $storedRelations['updatedBy'] = (string)($user['id'] ?? '');
+        $relationIdSet[$id] = true;
+        $changed = true;
+    }
+}
+$room['world']['relations'] = $storedRelations;
+$room['world']['relationEventIds'] = array_slice(array_keys($relationIdSet), -500);
+
 if ($changed) {
     $room['revision'] = (int)($room['revision'] ?? 0) + 1;
 }
@@ -210,15 +293,30 @@ fflush($handle);
 flock($handle, LOCK_UN);
 fclose($handle);
 
-$players = array_values(array_filter($room['players'], static fn(array $player): bool => ($player['clientId'] ?? '') !== $clientId));
+$playersByUser = [];
+foreach ($room['players'] as $player) {
+    if (!is_array($player) || ($player['clientId'] ?? '') === $clientId) continue;
+    $playerUserId = (string)($player['userId'] ?? '');
+    if ($playerUserId !== '' && $playerUserId === (string)($user['id'] ?? '')) continue;
+    $identityKey = $playerUserId !== '' ? $playerUserId : (string)($player['clientId'] ?? '');
+    if ($identityKey === '') continue;
+    if (!isset($playersByUser[$identityKey]) || (int)($player['seenAt'] ?? 0) > (int)($playersByUser[$identityKey]['seenAt'] ?? 0)) {
+        $playersByUser[$identityKey] = $player;
+    }
+}
+$players = array_values($playersByUser);
 $responseWorld = $room['world'];
 $responseWorld['buildings'] = array_values($storedBuildings);
+$responseWorld['personalAmmoCacheCollectedAt'] = $personalAmmoTimes;
+unset($responseWorld['personalAmmoCaches']);
+unset($responseWorld['relationEventIds']);
 zeknova_response([
     'ok' => true,
     'revision' => (int)$room['revision'],
     'serverTime' => gmdate('c'),
     'players' => $players,
     'world' => $responseWorld,
+    'relationEventAcks' => array_values(array_unique($ackedRelationIds)),
     'chat' => [
         'seq' => (int)$chat['seq'],
         'messages' => $chatMessages,

@@ -7,6 +7,7 @@ const TABS = [
   ["overview", "OVERVIEW"],
   ["missions", "MISSIONS"],
   ["colony", "COLONY"],
+  ["relations", "RELATIONS"],
   ["comms", "TEAM COMMS"],
   ["log", "MESSAGE LOG"],
   ["controls", "CONTROLS"],

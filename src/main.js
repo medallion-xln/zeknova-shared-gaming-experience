@@ -1,6 +1,6 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
-document.documentElement.dataset.zeknovaSource = "azl2";
+document.documentElement.dataset.zeknovaSource = "zeknovan-aid3";
 
 function loadGameStyles() {
   const styles = [
@@ -9,7 +9,8 @@ function loadGameStyles() {
     ["./assets/message-center.css?v=azl1", "game-messages"],
     ["./assets/team-chat.css?v=azl1", "game-chat"],
     ["./assets/weapon-system.css?v=azl1", "game-weapons"],
-    ["./assets/hud-focus.css?v=azl1", "game-hud-focus"],
+    ["./assets/hud-focus.css?v=zeknovan-aid3", "game-hud-focus"],
+    ["./assets/relations-multiplayer.css?v=live-relations2", "game-live-relations"],
   ];
   for (const [href, id] of styles) {
     if (document.querySelector(`link[data-zeknova-style="${id}"]`)) continue;
@@ -27,7 +28,7 @@ async function launch() {
   if (!user) throw new Error("An authenticated officer is required to launch ZekNova.");
 
   loadGameStyles();
-  const [gameModule, Player, Enemies, Missions, Terrain, Collision, Biomes, multiplayerModule, messageModule, chatModule, strategicModule] = await Promise.all([
+  const [gameModule, Player, Enemies, Missions, Terrain, Collision, Biomes, multiplayerModule, messageModule, chatModule, strategicModule, relationsModule] = await Promise.all([
     import("./game/Game.js"),
     import("./game/Player.js"),
     import("./game/Enemies.js"),
@@ -39,6 +40,7 @@ async function launch() {
     import("./ui/MessageCenter.js"),
     import("./ui/TeamChat.js"),
     import("./game/StrategicAI.js"),
+    import("./game/RelationsPanel.js"),
   ]);
   const { HudDirector } = await import("./ui/HudDirector.js");
   const { Game } = gameModule;
@@ -48,6 +50,7 @@ async function launch() {
     MessageCenter: messageModule.MessageCenter,
     TeamChat: chatModule.TeamChat,
     StrategicAI: strategicModule.StrategicAI,
+    RelationsPanel: relationsModule.RelationsPanel,
   });
   document.documentElement.dataset.zeknovaModules = Object.keys(window.ZekNovaSource).join(",");
   // Install before the runtime loads so every heartbeat carries chat traffic.
@@ -57,6 +60,9 @@ async function launch() {
   new HudDirector({ chat: teamChat }).arm();
   const game = new Game();
   await game.start({ user });
+  const relationsPanel = new relationsModule.RelationsPanel({ game: globalThis.ZekNovaGame });
+  relationsPanel.install();
+  globalThis.ZekNovaRelationsPanel = relationsPanel;
   try {
     const strategicAI = new strategicModule.StrategicAI();
     await strategicAI.install({ game: globalThis.ZekNovaGame });

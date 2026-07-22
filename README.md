@@ -51,6 +51,7 @@ Biomes, mission definitions, player progression, enemy profiles, and collision r
 - Collidable stones and highland formations that become passable after the companion robot mines them
 - Size-based tree chopping: small trees fall in one chop, while medium and large trees take longer and award more timber
 - Nine construction systems: power, water, habitat, research, culture, governance, defense, bridge, and Survey Skiff
+- A separate ZekNovan Aid construction tab provides nine shared projects: Field Clinic, Watershed Renewal, Peace Beacon, Sacred Grove Nursery, Village Habitat, Cultural Archive, Trade Pavilion, Guardian Watch, and Transit Gate. Every project costs minerals plus Colony Credits, remains destructible and repairable, and reduces tension by 10–20 points without counting toward human colony missions.
 - Local bridge crossings and automatic boat deployment over open water
 - Phase III hydro-suit traversal remains a later technology upgrade
 - Guaranteed ZekNovan patrol encounter after roughly 14 seconds, followed by recurring 26–44 second encounter windows with up to three active defenders
@@ -69,6 +70,7 @@ Biomes, mission definitions, player progression, enemy profiles, and collision r
 - Full pause state on `P` or `Escape` that freezes production, movement, mining recovery, hazards, enemies, and all projectiles
 - Gameplay updates are contained beneath Hackathon Standings instead of blocking the center of the world view
 - Rock mining produces 5 iron ore per completed formation; Ensign robots cool for 10 seconds, Lieutenants for 5 seconds, and Captains for 2 seconds
+- Five personal ammunition caches are guaranteed in every biome. A collected cache replenishes after one hour for that authenticated player and remains available to other crew members unless it is deposited into a future shared armory.
 - Every construction recipe requires iron ore in addition to its other resources
 - Direct utility networks: Water Works must be river-adjacent and directly connected to a Solar Grid; dependent buildings only operate when their required power, water, and data sources are within cable range
 - Visible color-coded utility runs connect every consumer directly to its source, while disconnected structures stop contributing production, readiness, and mission progress
@@ -142,8 +144,10 @@ For end-to-end multiplayer testing, use two authenticated Medallion accounts on 
 - `api/multiplayer.php` maintains one persistent room per internal team identifier.
 - Clients send lightweight presence and world snapshots approximately once per second.
 - Inactive players expire from the room roster after 20 seconds.
+- Presence is deduplicated by authenticated account, so stale tabs do not inflate the online player count.
 - Buildings and completed environmental interactions merge by stable IDs under an exclusive file lock.
-- Remote players use inexpensive procedural markers, avoiding another high-fidelity model load for every teammate.
+- Remote players use inexpensive animated field avatars with visible beacons. The live roster reports name, rank, health, range, and bearing and can track a selected teammate without loading another high-fidelity character model.
+- ZekNovan tension and trust use deduplicated relationship events, so simultaneous hostility or reconciliation actions accumulate instead of overwriting one another.
 - `api/save.php` also merges shared-world arrays under a lock, so autosaves cannot remove another player's work.
 
 This first multiplayer version is designed for small cooperative teams on ordinary PHP hosting. It does not require WebSockets or a dedicated game-server process. Combat enemies and rapidly changing physics remain local to each client; shared construction and persistent world progress are synchronized.
@@ -204,7 +208,7 @@ testable before deployment.
 
 ## Connect DeepSeek to SCOUT-01
 
-The browser never receives an API key. DeepSeek is now the default provider. Configure the key in the PHP server environment:
+The browser never receives an API key. DeepSeek is now the default provider. Configure the key in the PHP server environment or copy `.env.example` to a Git-ignored `.env.production` file in the ZekNova application root:
 
 ```text
 ZEKNOVA_AI_PROVIDER=deepseek
@@ -223,9 +227,15 @@ ZEKNOVA_AI_MODEL=provider-model-id
 
 Restart PHP or the hosting runtime after changing environment variables. Without a configured provider, SCOUT-01 remains available through its deterministic local reasoning fallback.
 
+On shared Apache hosting, upload `.env.production` separately from the public
+application bundle and set its permissions to `600`. The root `.htaccess`
+denies web access to `.env` files, and host-level environment variables take
+precedence over file values. Deployment bundles intentionally exclude the
+secret file so updates cannot publish or overwrite production credentials.
+
 ## Persistence and multiplayer status
 
-This is a playable vertical slice. It persists a shared team snapshot through PHP and provides a leaderboard endpoint, but it is not yet real-time multiplayer. Before the public hackathon, move file-backed saves into the existing database and add server-authoritative versioning, event logs, conflict resolution, team permissions, rate limiting, and live synchronization.
+This is a playable live-service vertical slice. It provides near-real-time team presence, interpolated teammate avatars, team chat, synchronized construction and harvesting, and shared ZekNovan relationship events through ordinary PHP hosting. Combat enemies and projectile physics remain client-local. Before a larger public launch, move file-backed rooms into the existing database and add server-authoritative combat, stronger conflict resolution, team permissions, and rate limiting.
 
 V7 save snapshots use schema version 4. The PHP endpoint accepts versions 1–4. Old saves remain compatible; version 4 persists mined rocks, mission activity counters, and the permanent First Contact outcome in addition to harvested trees and collected power-ups.
 
@@ -246,7 +256,7 @@ V7 save snapshots use schema version 4. The PHP endpoint accepts versions 1–4.
 
 - Connect real Medallion XLN user and team tables
 - Move saves and leaderboard data into SQL
-- Add real-time team presence and synchronized construction events
+- Move positional presence from polling to WebSockets when concurrent room sizes outgrow small cooperative teams
 - Add officer permissions and promotion workflows
 - Add high-quality GLB replacements for Lieutenant and Captain while keeping procedural low-poly fallback models
 - Add utility connections, roads, worker task queues, research tree, biome expansion, reforestation, and judge-facing scoring dashboard
@@ -266,7 +276,7 @@ V7 save snapshots use schema version 4. The PHP endpoint accepts versions 1–4.
 
 The biome is divided into Forest, Desert, Highlands, Arctic, and Wetlands operations. Each AO has a distinct terrain palette, perimeter beacons, resource table, environmental hazard, two tactical objectives, and a permanent strategic completion reward. Completing an AO grants 5 Colony Credits plus its regional bonus.
 
-Three static Meshy environment models use Meshopt geometry compression and WebP textures. The world contains 672 fully harvestable trees divided evenly between angular triangular canopies and substantially larger faceted-spherical alien canopies. Eight sub-variants add continuous height, width, depth, lean, color, and rotation variation. Five instanced low-poly batches keep the complete forest visible even in direct `file://` mode. Over HTTP, a fixed pool of 24 detailed GLBs—12 per alien-tree species—moves among the nearest visible trees, so scene-object and GPU-resource counts stay bounded regardless of forest density. Three instanced alien flower species and three lightweight animated fauna types add ground-level life. Frustum culling, distance culling, idle loading, and hardware-aware fallback keep the environment scalable. The deployed model set is about 7.3 MB. The heavier coral landmark loads only on capable desktop-class devices. See `BIOME_ASSETS.md` for the complete inventory.
+Six static Meshy environment models use browser-optimized textures, with Meshopt geometry compression retained where available. The world contains 672 fully harvestable trees divided evenly between angular triangular canopies and substantially larger faceted-spherical alien canopies. Eight sub-variants add continuous height, width, depth, lean, color, and rotation variation. Five instanced low-poly batches keep the complete forest visible even in direct `file://` mode. Over HTTP, a fixed pool of 24 detailed GLBs—12 per alien-tree species—moves among the nearest visible trees, so scene-object and GPU-resource counts stay bounded regardless of forest density. Three instanced alien flower species and three lightweight animated fauna types add ground-level life. The three Arctic village structures load sequentially only near their settlement and atomically replace the procedural fallback. Frustum culling, distance culling, idle loading, and hardware-aware fallback keep the environment scalable. The core deployed environment set is about 11.3 MB. The heavier coral landmark loads only on capable desktop-class devices. See `BIOME_ASSETS.md` for the complete inventory.
 
 
 ## V7 activity-credit economy

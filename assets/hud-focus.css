@@ -83,8 +83,7 @@ html.zk-hud:not(.zk-log-open) .team-card {
 }
 html.zk-hud:not(.zk-log-open) .team-card > .section-title,
 html.zk-hud:not(.zk-log-open) .team-card > .leaderboard,
-html.zk-hud:not(.zk-log-open) .team-card > .message-center-heading,
-html.zk-hud:not(.zk-log-open) .team-card > .multiplayer-status { display: none; }
+html.zk-hud:not(.zk-log-open) .team-card > .message-center-heading { display: none; }
 
 /* Notifications: fixed top-center, one visible at a time. */
 html.zk-hud .team-card .toast-stack,
@@ -234,6 +233,49 @@ html.zk-command:not(.zk-paused) .mode-button { min-width: 220px; }
     padding-bottom: 12px;
   }
   html.zk-command:not(.zk-paused) .build-options { min-width: 900px; }
+}
+
+/* Recipient switch: colony systems and ZekNovan aid never compete in the same
+   construction row. Aid projects use the local teal/violet visual language. */
+.dock-heading { align-items: center; gap: 12px; }
+.build-audience-tabs { display: flex; gap: 5px; margin-left: auto; }
+.build-audience-tabs button {
+  border: 1px solid rgba(111, 221, 255, 0.24);
+  background: rgba(0, 8, 13, 0.72);
+  color: #85a9b5;
+  padding: 5px 10px;
+  font: 700 0.48rem/1 "Chakra Petch", sans-serif;
+  letter-spacing: 0.09em;
+  cursor: pointer;
+}
+.build-audience-tabs button.active {
+  color: #e7fff7;
+  border-color: #62efc5;
+  background: rgba(30, 125, 102, 0.28);
+  box-shadow: 0 0 15px rgba(93, 241, 196, 0.14);
+}
+.build-button.zeknovan-build {
+  border-color: rgba(161, 116, 255, 0.48);
+  background: linear-gradient(180deg, rgba(30, 78, 73, 0.92), rgba(20, 11, 42, 0.94));
+}
+.build-button.zeknovan-build b { color: #8df6d4; }
+.build-button.zeknovan-build em {
+  color: #c9a9ff;
+  font: 700 0.4rem/1 "Chakra Petch", sans-serif;
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+html.zk-command:not(.zk-paused) .build-dock[data-build-filter="zeknovan"] .build-options {
+  grid-template-columns: repeat(9, minmax(104px, 1fr));
+  max-width: none;
+}
+html.zk-command:not(.zk-paused) .build-dock[data-build-filter="zeknovan"] .build-button {
+  height: 82px;
+}
+@media (max-width: 1180px) {
+  html.zk-command:not(.zk-paused) .build-dock[data-build-filter="zeknovan"] .build-options {
+    min-width: 1060px;
+  }
 }
 
 /* ---------- Tier 3 · pause command interface ---------- */

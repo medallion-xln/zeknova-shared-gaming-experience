@@ -1,0 +1,60 @@
+#open-relations-panel {
+  width: 100%;
+  margin-top: 7px;
+  padding: 7px 9px;
+  border: 1px solid rgba(93, 241, 196, .35);
+  background: rgba(7, 32, 36, .72);
+  color: #8ff8dc;
+  font: 700 .52rem/1.2 "Chakra Petch", sans-serif;
+  letter-spacing: .1em;
+  cursor: pointer;
+}
+
+.zeknovan-relations-panel {
+  display: none;
+  position: fixed;
+  top: 82px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 63;
+  width: min(920px, calc(100vw - 34px));
+  max-height: calc(100vh - 112px);
+  overflow: auto;
+  padding: 22px;
+  border-top: 2px solid #5df1c4;
+}
+html.zk-paused[data-zk-tab="relations"] .zeknovan-relations-panel { display: block; }
+.zeknovan-relations-panel header { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+.zeknovan-relations-panel h2 { margin: 4px 0; font: 800 1.55rem/1.1 "Chakra Petch", sans-serif; }
+.zeknovan-relations-panel header small { color: #5df1c4; letter-spacing: .15em; }
+.zeknovan-relations-panel > p { margin: 8px 0 18px; color: #a7c2cd; font-size: .74rem; }
+.relations-score { display: flex; gap: 8px; }
+.relations-score span { min-width: 110px; padding: 8px 10px; border: 1px solid rgba(112,230,255,.2); color: #8baab6; font-size: .58rem; }
+.relations-score b { float: right; color: #f3ffff; font-size: .8rem; }
+.relations-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.relations-actions button { display: grid; gap: 7px; min-height: 126px; padding: 15px; text-align: left; border: 1px solid rgba(112,230,255,.2); background: rgba(0,9,14,.68); cursor: pointer; }
+.relations-actions button:hover:not(:disabled) { border-color: #5df1c4; background: rgba(17,64,61,.62); }
+.relations-actions button:disabled { opacity: .48; cursor: not-allowed; }
+.relations-actions strong { color: #eafff9; font: 700 .72rem/1.2 "Chakra Petch", sans-serif; letter-spacing: .05em; }
+.relations-actions span { color: #a5bec8; font-size: .67rem; line-height: 1.45; }
+.relations-actions small { color: #79eacb; font-size: .56rem; }
+.zeknovan-relations-panel footer { display: grid; grid-template-columns: 190px 190px 1fr; gap: 8px; align-items: center; margin-top: 14px; }
+.zeknovan-relations-panel footer button { min-height: 42px; border: 1px solid rgba(112,230,255,.26); background: #06151d; color: #c5e8ef; cursor: pointer; font: 700 .58rem "Chakra Petch", sans-serif; }
+.zeknovan-relations-panel footer button[data-active="true"] { border-color: #5df1c4; color: #78f5d2; background: rgba(26,80,67,.7); }
+.zeknovan-relations-panel footer span { color: #7f9ba6; font-size: .58rem; line-height: 1.4; }
+
+#multiplayer-status { cursor: pointer; }
+#multiplayer-roster { display: none; gap: 4px; margin-top: 7px; }
+#multiplayer-roster.open,
+html.zk-paused[data-zk-tab="comms"] #multiplayer-roster { display: grid; }
+#multiplayer-roster:empty { display: none; }
+.multiplayer-roster-entry { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 7px; padding: 6px 7px; border: 1px solid rgba(93,241,196,.16); background: rgba(0,10,14,.48); font-size: .54rem; }
+.multiplayer-roster-entry b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #dffcf5; }
+.multiplayer-roster-entry span { color: #8eb4bd; }
+.multiplayer-roster-entry button { padding: 3px 6px; border: 1px solid rgba(93,241,196,.35); background: transparent; color: #78f4d2; cursor: pointer; font-size: .48rem; }
+
+@media (max-width: 760px) {
+  .relations-actions { grid-template-columns: 1fr; }
+  .zeknovan-relations-panel footer { grid-template-columns: 1fr; }
+  .relations-score { display: grid; }
+}

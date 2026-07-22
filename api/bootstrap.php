@@ -1,6 +1,53 @@
 <?php
 declare(strict_types=1);
 
+/**
+ * Shared Apache hosts do not normally read project .env files. Load protected
+ * server-side values before any feature calls getenv(); host-level variables
+ * always take precedence over file values.
+ */
+function zeknova_load_environment_file(string $path): void
+{
+    if (!is_file($path) || !is_readable($path)) {
+        return;
+    }
+    $lines = file($path, FILE_IGNORE_NEW_LINES);
+    if (!is_array($lines)) {
+        return;
+    }
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#')) {
+            continue;
+        }
+        $separator = strpos($line, '=');
+        if ($separator === false) {
+            continue;
+        }
+        $name = trim(substr($line, 0, $separator));
+        if (!preg_match('/^[A-Z][A-Z0-9_]*$/', $name)) {
+            continue;
+        }
+        $existing = getenv($name);
+        if ($existing !== false && trim((string)$existing) !== '') {
+            continue;
+        }
+        $value = trim(substr($line, $separator + 1));
+        if (strlen($value) >= 2) {
+            $first = $value[0];
+            $last = $value[strlen($value) - 1];
+            if (($first === '"' && $last === '"') || ($first === "'" && $last === "'")) {
+                $value = substr($value, 1, -1);
+            }
+        }
+        putenv($name . '=' . $value);
+        $_ENV[$name] = $value;
+    }
+}
+
+zeknova_load_environment_file(dirname(__DIR__) . '/.env.production');
+zeknova_load_environment_file(dirname(__DIR__) . '/.env');
+
 // Production is the safe default. `npm run dev` explicitly sets
 // ZEKNOVA_ENV=local so contributors bypass the parent Medallion login while
 // still exercising the PHP session, persistence, and multiplayer APIs.

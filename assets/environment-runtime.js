@@ -31,6 +31,17 @@ const ASSETS = {
   purplePodPlant: { path: './assets/models/environment/purple-pod-plant.glb', height: 3.4, distance: 42, shadow: false },
 };
 
+const ARCTIC_VILLAGE_ASSETS = [
+  { key: 'arcticVillageCouncil', path: './assets/models/environment/zeknovan-village-council-arctic.glb', height: 5.8, directionX: 0, directionZ: -1, rotation: 0.18 },
+  { key: 'arcticVillageShrine', path: './assets/models/environment/zeknovan-village-shrine-arctic.glb', height: 5.2, directionX: -0.866, directionZ: 0.5, rotation: 1.02 },
+  { key: 'arcticVillageHabitat', path: './assets/models/environment/zeknovan-village-habitat-arctic.glb', height: 4.9, directionX: 0.866, directionZ: 0.5, rotation: -0.72 },
+];
+
+// The three structures form a triangle around a navigable central plaza. Their
+// final distance is derived from the normalized GLB footprint so a wider Meshy
+// export cannot silently overlap its neighbours.
+const ARCTIC_VILLAGE_COURTYARD_RADIUS = 7.5;
+
 // Share a small high-detail pool, but give each AO its own nearby tree recipe.
 const TREE_ASSET_MIX = {
   forest: ['giantCanopyTree', 'palmTree', 'palmTree', 'spikyPlant'],
@@ -251,7 +262,7 @@ function idleTurn(delay = 2400) {
   });
 }
 
-export function createAreaEnvironment({ areas, placements, heightAt, areaAt, harvestableTrees = [], updateTreeInstance, onAssetLoaded }) {
+export function createAreaEnvironment({ areas, placements, heightAt, areaAt, harvestableTrees = [], updateTreeInstance, settlements = [], settlementFallbacks = [], onAssetLoaded, onVillageReady }) {
   const root = new Group();
   root.name = 'areaOfOperationEnvironment';
   const areaGroups = new Map();
@@ -259,7 +270,13 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
   const treePools = new Map();
   const treeCandidates = new Map();
   const windObjects = [];
+  const villageRoots = [];
+  const villageHiddenTrees = [];
   const ambientLife = createAmbientLife(heightAt);
+  const arcticSettlementIndex = settlements.findIndex((center) => areaAt?.(center.x, center.z)?.id === 'arctic');
+  const arcticSettlement = arcticSettlementIndex >= 0 ? settlements[arcticSettlementIndex] : null;
+  const arcticFallbackObjects = arcticSettlementIndex >= 0 ? (settlementFallbacks[arcticSettlementIndex] || []) : [];
+  let villageLoadPromise = null;
   let disposed = false;
   let lastTreePoolUpdateAt = 0;
   let lastTreePoolX = Number.POSITIVE_INFINITY;
@@ -376,6 +393,79 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
     }
   }
 
+  async function loadArcticVillage() {
+    if (!arcticSettlement || disposed) return;
+    const prepared = [];
+    try {
+      await MeshoptDecoder.ready;
+      for (const definition of ARCTIC_VILLAGE_ASSETS) {
+        if (disposed) {
+          disposeSharedModels(prepared);
+          return;
+        }
+        const gltf = await loader.loadAsync(definition.path);
+        if (disposed) {
+          disposeSharedModels(prepared);
+          return;
+        }
+        const model = prepareModel(gltf.scene, definition.height, true);
+        model.name = definition.key;
+        model.userData.areaId = 'arctic';
+        model.userData.environmentAsset = definition.key;
+        model.userData.arcticVillage = true;
+        const bounds = new Box3().setFromObject(model);
+        const size = bounds.getSize(new Vector3());
+        const footprintRadius = Math.max(2.2, Math.min(8, Math.hypot(size.x, size.z) * 0.5));
+        const slotDistance = ARCTIC_VILLAGE_COURTYARD_RADIUS + footprintRadius + 1;
+        const x = arcticSettlement.x + definition.directionX * slotDistance;
+        const z = arcticSettlement.z + definition.directionZ * slotDistance;
+        model.position.set(
+          x,
+          heightAt(x, z) - 0.14,
+          z,
+        );
+        model.rotation.y = definition.rotation;
+        model.userData.collisionRadius = Math.max(1.8, Math.min(5.5, Math.min(size.x, size.z) * 0.4));
+        model.userData.footprint = { width: size.x, depth: size.z };
+        model.userData.footprintRadius = footprintRadius;
+        prepared.push(model);
+        await idleTurn(700);
+      }
+      if (disposed) {
+        disposeSharedModels(prepared);
+        return;
+      }
+      const arcticGroup = areaGroups.get('arctic');
+      for (const model of prepared) {
+        arcticGroup?.add(model);
+        sharedModels.push(model);
+        villageRoots.push(model);
+      }
+      // Preserve a clear courtyard and approach lanes. These protected trees
+      // are restored if the upgraded village is ever disposed or fails over.
+      for (const tree of harvestableTrees) {
+        const inCourtyard = Math.hypot(tree.position.x - arcticSettlement.x, tree.position.z - arcticSettlement.z) <= ARCTIC_VILLAGE_COURTYARD_RADIUS + 1.5;
+        const inStructure = villageRoots.some((model) => Math.hypot(tree.position.x - model.position.x, tree.position.z - model.position.z) <= Number(model.userData.footprintRadius || 3) + 1.5);
+        if (!tree.visible || (!inCourtyard && !inStructure)) continue;
+        tree.visible = false;
+        villageHiddenTrees.push(tree);
+        updateTreeInstance?.(tree);
+      }
+      for (const fallback of arcticFallbackObjects) fallback.visible = false;
+      onVillageReady?.(villageRoots.map((model) => ({
+        x: model.position.x,
+        z: model.position.z,
+        radius: Number(model.userData.collisionRadius || 2.5),
+        kind: model.name,
+      })));
+      console.info(`ZekNova Arctic village replaced ${arcticFallbackObjects.length} procedural pieces with ${villageRoots.length} optimized structures and conservative collision proxies.`);
+      onAssetLoaded?.('arcticVillage', villageRoots.length);
+    } catch (error) {
+      disposeSharedModels(prepared);
+      console.warn('ZekNova Arctic village upgrade unavailable; procedural settlement remains active.', error);
+    }
+  }
+
   const ready = (async () => {
     await MeshoptDecoder.ready;
     // Keep GLTF decoding serialized. Loading several Meshy scenes together can
@@ -402,6 +492,9 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
     ready,
     update(playerPosition) {
       if (!playerPosition) return;
+      if (arcticSettlement && !villageLoadPromise && Math.hypot(playerPosition.x - arcticSettlement.x, playerPosition.z - arcticSettlement.z) <= 52) {
+        villageLoadPromise = ready.then(() => disposed ? undefined : loadArcticVillage());
+      }
       for (const area of areas) {
         const group = areaGroups.get(area.id);
         if (!group) continue;
@@ -461,6 +554,9 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
         lastTreePoolZ = playerPosition.z;
       }
       ambientLife.update(playerPosition);
+      for (const model of villageRoots) {
+        model.visible = Math.hypot(playerPosition.x - model.position.x, playerPosition.z - model.position.z) <= 64;
+      }
     },
     animate(time) {
       if (time - lastAnimationAt < 1 / 30) return;
@@ -498,6 +594,12 @@ export function createAreaEnvironment({ areas, placements, heightAt, areaAt, har
       }
       treePools.clear();
       treeCandidates.clear();
+      for (const tree of villageHiddenTrees) {
+        tree.visible = true;
+        updateTreeInstance?.(tree);
+      }
+      villageHiddenTrees.length = 0;
+      for (const fallback of arcticFallbackObjects) fallback.visible = true;
       root.removeFromParent();
       disposeSharedModels(sharedModels);
       sharedModels.length = 0;

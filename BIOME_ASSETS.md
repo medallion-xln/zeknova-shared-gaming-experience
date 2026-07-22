@@ -56,15 +56,25 @@
 
 ## Optimized Meshy environment models
 
+- Arctic ZekNovan village council, shrine, and habitat structures. These load
+  sequentially only near the Arctic settlement, use simple collision proxies,
+  and replace the procedural village only after the complete set succeeds. The
+  three buildings form a triangular settlement around a 7.5m courtyard; their
+  final spacing is calculated from each normalized GLB footprint so differently
+  proportioned exports cannot overlap.
+
 | Asset | Original | Browser LOD | Approx. triangles | Loading policy |
 |---|---:|---:|---:|---|
 | Blue alien spiky plant | 54 MB | 579 KB | 20,680 | Initial light batch |
 | Alien palm tree | 70 MB | 740 KB | 28,806 | Initial light batch |
 | Alien coral ground | 115 MB | 6.0 MB | 417,810 | Desktop, idle, near-distance only |
+| Arctic village council | 31.1 MB | 1.4 MB | 20,543 | Arctic proximity, sequential |
+| Arctic village shrine | 29.0 MB | 1.4 MB | 20,740 | Arctic proximity, sequential |
+| Arctic village habitat | 27.4 MB | 1.2 MB | 19,895 | Arctic proximity, sequential |
 | ZekNovan Juggernaut walk | 32.8 MB | 468 KB | 10,426 | Lazy-load on Juggernaut contact |
 | ZekNovan Juggernaut run | 32.8 MB | 467 KB | 10,426 | Lazy-load with walk model |
 
-All optimized models use Meshopt-compressed geometry and WebP textures. The two detailed alien-tree species share geometry and materials through a fixed 24-model proximity pool: 12 palm and 12 spiky models are reassigned to the nearest visible logical trees. Flowers use four instanced draw calls, while nearby fauna alone are animated. Every mesh uses frustum and distance culling; the heavy coral ground landmark is skipped on smaller or lower-memory devices.
+The pooled environment models use Meshopt-compressed geometry and WebP textures. The Arctic village preserves the source geometry while replacing its oversized embedded PNGs with 1024px WebP textures. The two detailed alien-tree species share geometry and materials through a fixed 24-model proximity pool: 12 palm and 12 spiky models are reassigned to the nearest visible logical trees. Flowers use four instanced draw calls, while nearby fauna alone are animated. Every mesh uses frustum and distance culling; the heavy coral ground landmark is skipped on smaller or lower-memory devices.
 
 Every harvestable tree has a built-in low-poly alien silhouette, but those components are consolidated into five `InstancedMesh` batches instead of thousands of individual scene objects. This keeps all 672 trees visible through `file://`. Over HTTP, only the nearest 24 eligible trees upgrade to detailed GLBs at once; their corresponding fallback instances are hidden until the detailed models move elsewhere.
 
