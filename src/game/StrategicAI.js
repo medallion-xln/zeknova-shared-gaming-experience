@@ -12,8 +12,8 @@ export class StrategicAI {
 
   async install({ game = globalThis.ZekNovaGame } = {}) {
     if (!game) throw new Error('The live ZekNova game is not available to AZL.');
-    await import('../../azl/zeknova-adapter.js?v=azl2');
-    await import('../../azl/azl-engine.js?v=azl2');
+    await import('../../azl/zeknova-adapter.js?v=azl4');
+    await import('../../azl/azl-engine.js?v=azl4');
     if (!globalThis.AZL_ADAPTER || !globalThis.AZL?.StrategicEngine) throw new Error('AZL adapter or engine failed to load.');
     this.game = game;
     this.originalAdvisor = game.askAdvisor.bind(game);
@@ -57,19 +57,26 @@ export class StrategicAI {
         catch (error) { reject(error); }
       }, 2500);
       this.pending.set(id, { resolve, reject, timer });
-      this.worker.postMessage({ id, state, options: this.options });
+      this.worker.postMessage({ id, type: 'search', state, options: this.options });
     });
   }
 
   createWorker() {
     try {
-      this.worker = new Worker(new URL('../../azl/azl-worker.js?v=azl2', import.meta.url));
+      this.worker = new Worker(new URL('../../azl/azl-worker.js?v=azl4', import.meta.url));
       this.worker.onmessage = ({ data }) => {
         const entry = this.pending.get(data?.id);
         if (!entry) return;
         this.pending.delete(data.id);
         clearTimeout(entry.timer);
-        data.error ? entry.reject(new Error(data.error)) : entry.resolve(data.result);
+        if (data?.ok === false || data?.type === 'search-error' || data?.error) {
+          const message = typeof data?.error === 'object'
+            ? data.error.message
+            : data?.error;
+          entry.reject(new Error(message || 'AZL worker search failed.'));
+        } else {
+          entry.resolve(data.result);
+        }
       };
       this.worker.onerror = (event) => {
         console.warn('AZL worker stopped; future searches will use the main-thread fallback.', event.message);

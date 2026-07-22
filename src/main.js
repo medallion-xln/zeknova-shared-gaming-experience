@@ -1,6 +1,6 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
-document.documentElement.dataset.zeknovaSource = "zeknovan-aid3";
+document.documentElement.dataset.zeknovaSource = "azl4";
 
 function loadGameStyles() {
   const styles = [
@@ -9,7 +9,7 @@ function loadGameStyles() {
     ["./assets/message-center.css?v=azl1", "game-messages"],
     ["./assets/team-chat.css?v=azl1", "game-chat"],
     ["./assets/weapon-system.css?v=azl1", "game-weapons"],
-    ["./assets/hud-focus.css?v=zeknovan-aid3", "game-hud-focus"],
+    ["./assets/hud-focus.css?v=azl4", "game-hud-focus"],
     ["./assets/relations-multiplayer.css?v=live-relations2", "game-live-relations"],
   ];
   for (const [href, id] of styles) {

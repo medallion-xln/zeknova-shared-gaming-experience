@@ -33,6 +33,12 @@ assert(result.ranked.length >= 3);
 assert(result.ranked.every((entry) => Number.isFinite(entry.value) && Number.isFinite(entry.visitShare)));
 assert(Math.abs(Object.values(result.expertWeights).reduce((sum, value) => sum + value, 0) - 1) < 1e-9);
 assert(result.principalVariation.length > 0);
+assert.equal(result.stateSource, 'fallback');
+
+const liveState = adapter.sim.clone(state);
+liveState.telemetryValid = true;
+const liveResult = engine.search(adapter, liveState, { simulations: 64, minimumSimulations: 64, depth: 4, timeBudgetMs: 500, seed: 7 });
+assert.equal(liveResult.stateSource, 'live');
 
 const threatState = adapter.sim.clone(state);
 threatState.threat = 120;
@@ -47,6 +53,6 @@ assert.match(text, /Primary action:/);
 assert.match(text, /Advisory only:/);
 
 const workerSource = fs.readFileSync(path.join(__dirname, '..', 'azl', 'azl-worker.js'), 'utf8');
-assert.match(workerSource, /importScripts\('\.\/zeknova-adapter\.js', '\.\/azl-engine\.js'\)/);
+assert.match(workerSource, /importScripts\('\.\/zeknova-adapter\.js\?v=azl4', '\.\/azl-engine\.js\?v=azl4'\)/);
 
 console.log('AZL MoE + PUCT engine checks passed.');

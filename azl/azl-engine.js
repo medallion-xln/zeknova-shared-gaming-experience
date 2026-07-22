@@ -170,7 +170,7 @@
       return { index: child.action, key: adapter.actions[child.action].key, label: adapter.actions[child.action].label, visits: child.visits, visitShare: child.visits / Math.max(1, root.visits), value: child.valueSum / Math.max(1, child.visits), prior: child.prior };
     }).sort(function (a, b) { return b.visits - a.visits || b.value - a.value; });
     var elapsed = (g.performance && g.performance.now ? g.performance.now() : Date.now()) - started;
-    return { engine: 'AZL-MOE-PUCT', simulations: completed, depth: maxDepth, elapsedMs: elapsed, best: ranked[0] || null, ranked: ranked.slice(0, 5), principalVariation: principalVariation(adapter, root, 4), expertWeights: root.policy.weights, stateSource: rootState && rootState.seed === 0 && rootState.t === 0 ? 'fallback' : 'live' };
+    return { engine: 'AZL-MOE-PUCT', simulations: completed, depth: maxDepth, elapsedMs: elapsed, best: ranked[0] || null, ranked: ranked.slice(0, 5), principalVariation: principalVariation(adapter, root, 4), expertWeights: root.policy.weights, stateSource: rootState && rootState.telemetryValid === true ? 'live' : 'fallback' };
   }
 
   function formatResult(result, state) {
@@ -192,5 +192,5 @@
     return lines.join('\n');
   }
 
-  AZL.StrategicEngine = { version: 1, search: search, formatResult: formatResult, expertRoute: expertRoute };
+  AZL.StrategicEngine = { version: 2, search: search, formatResult: formatResult, expertRoute: expertRoute };
 })(typeof self !== 'undefined' ? self : globalThis);

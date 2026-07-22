@@ -74,11 +74,30 @@ ok('oracleGroups reference valid indices', Object.values(adapter.oracleGroups).f
   const before = hashState(s);
   const c = sim.clone(s);
   const rng = new RNG(999);
-  for (let i = 0; i < 25; i++) sim.step(c, i % N, rng);
+  const mask = new Uint8Array(N);
+  for (let i = 0; i < 25; i++) {
+    sim.legalMask(c, mask);
+    const preferred = i % N;
+    const action = mask[preferred]
+      ? preferred
+      : Array.from(mask).findIndex(Boolean);
+    sim.step(c, action, rng);
+  }
   ok('clone isolation (original unchanged after mutating clone)', hashState(s) === before);
   ok('clone diverged from original', hashState(c) !== before);
   // deep-copy proof: nested objects are distinct references
   ok('clone deep-copies nested objects', c.resources !== s.resources && c.buildings !== s.buildings && c.missionTargets !== s.missionTargets);
+})();
+
+// --- 2b. adapter v2 rejects illegal actions instead of mutating state ---
+(function () {
+  const s = sim.init(2);
+  const rng = new RNG(101);
+  const buildPower = adapter.actions.findIndex((action) => action.key === 'build_power');
+  let rejected = false;
+  try { sim.step(s, buildPower, rng); }
+  catch (error) { rejected = /Illegal action/.test(String(error?.message)); }
+  ok('illegal actions are rejected without fallback mutation', rejected);
 })();
 
 // --- 3. determinism: same seed + same action sequence -> same state hash ---
@@ -165,7 +184,15 @@ ok('oracleGroups reference valid indices', Object.values(adapter.oracleGroups).f
 (function () {
   const s = sim.init(5);
   const rng = new RNG(77);
-  for (let i = 0; i < 20; i++) sim.step(s, i % N, rng);
+  const mask = new Uint8Array(N);
+  for (let i = 0; i < 20; i++) {
+    sim.legalMask(s, mask);
+    const preferred = i % N;
+    const action = mask[preferred]
+      ? preferred
+      : Array.from(mask).findIndex(Boolean);
+    sim.step(s, action, rng);
+  }
   const ents = sim.entities(s);
   const shapeOk = Array.isArray(ents) && ents.length > 0 && ents.every(e =>
     typeof e.id === 'string' && typeof e.type === 'string' &&
@@ -279,7 +306,32 @@ ok('oracleGroups reference valid indices', Object.values(adapter.oracleGroups).f
     ],
     diplomacyOutcome: 'negotiate', diplomacyTension: 33, specialAttackGauge: 40,
     currentAO: { id: 'highlands' }, completedAOs: ['forest', 'desert'],
-    user: { officerClass: 'captain' }
+    user: { officerClass: 'captain' },
+    getAdvisorTelemetry: function () {
+      const liveEnemies = this.enemies.filter((enemy) => !enemy.userData.guardian && enemy.userData.health > 0);
+      return {
+        version: 1,
+        tick: 42,
+        resources: { ...this.simulation.resources },
+        indicators: { ...this.simulation.indicators },
+        buildings: this.buildings.countByType(),
+        score: this.simulation.civilizationScore,
+        phase: this.simulation.phase,
+        threat: liveEnemies.length * 8,
+        diplomacyOutcome: this.diplomacyOutcome,
+        diplomacyTension: this.diplomacyTension,
+        enemyCount: liveEnemies.length,
+        specialGauge: this.specialAttackGauge,
+        currentAO: this.currentAO.id,
+        completedAOs: [...this.completedAOs],
+        officerClass: this.user.officerClass,
+        officerBonus: 1.1,
+        missionProgress: 25,
+        missionTargets: ['power'],
+        missionComplete: false,
+        activeModifiers: {}
+      };
+    }
   };
 
   const s = adapter.captureSearchState();
@@ -289,6 +341,7 @@ ok('oracleGroups reference valid indices', Object.values(adapter.oracleGroups).f
   ok('captureSearchState maps diplomacy + tension', s.diplomacyOutcome === 'negotiate' && s.tension === 33);
   ok('captureSearchState maps AO + completed', s.currentAO === 'highlands' && s.completedAOs.length === 2);
   ok('captureSearchState applies captain officer bonus', s.officerBonus === 1.1);
+  ok('captureSearchState marks versioned live telemetry valid', s.telemetryValid === true);
 
   // the captured state must be a valid, steppable sim-state
   let stepThrew = null;
@@ -303,10 +356,12 @@ ok('oracleGroups reference valid indices', Object.values(adapter.oracleGroups).f
   } catch (e) { stepThrew = e; }
   ok('captured live state is steppable', stepThrew === null, stepThrew && stepThrew.stack);
 
-  // no game handle -> safe default colony, never throws
+  // Player-facing adapter v2 fails closed when no live telemetry is available.
   globalThis.ZekNovaGame = null;
-  const fallback = adapter.captureSearchState();
-  ok('captureSearchState falls back to init() with no live game', fallback && fallback.resources.energy === 42 && fallback.t === 0);
+  let missingGameRejected = false;
+  try { adapter.captureSearchState(); }
+  catch (error) { missingGameRejected = /live game state is unavailable/.test(String(error?.message)); }
+  ok('captureSearchState rejects missing live telemetry', missingGameRejected);
 })();
 
 console.log(failures === 0 ? '\nALL ZEKNOVA ADAPTER TESTS PASSED' : '\n' + failures + ' TEST(S) FAILED');
