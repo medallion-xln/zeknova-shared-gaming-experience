@@ -29,5 +29,12 @@ const zeknovanAidTypes = ["zek_clinic", "zek_watershed", "zek_beacon", "zek_grov
 for (const type of zeknovanAidTypes) {
   assert.match(runtime, new RegExp(`type:"${type}"[\\s\\S]*?cost:\\{minerals:\\d+,credits:\\d+\\}`));
 }
+assert.match(runtime, /PR\.prototype\.isHabitatSite=function/);
+assert.match(runtime, /e==="habitat"\?!!i\?\.isHabitatSite/);
+assert.match(runtime, /PR\.prototype\.bridgeDeckHeightAt=function/);
+assert.match(runtime, /e\?\.type==="bridge"&&this\.utilityTerrain\?\.bridgeDeckHeightAt/);
+assert.match(runtime, /LR\.prototype\.bridgeWalkHeightAt=function/);
+assert.match(runtime, /PR\.prototype\.isWaterWorksLocation=function/);
+assert.match(runtime, /t\.type==="water"&&!e\.utilityTerrain\?\.isWaterWorksLocation/);
 
 console.log("ZekNova source modules passed structural checks.");
