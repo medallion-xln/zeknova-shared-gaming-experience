@@ -37,6 +37,12 @@ function diagnosticUrl(flag) {
   return url.href;
 }
 
+function localQaOfficer(user) {
+  const local = ["localhost", "127.0.0.1", "::1"].includes(location.hostname);
+  const rank = local ? new URLSearchParams(location.search).get("qaRank") : null;
+  return ["ensign", "lieutenant", "captain"].includes(rank) ? { ...user, officerClass: rank } : user;
+}
+
 function createStartupCover() {
   document.getElementById("zeknova-startup-cover")?.remove();
   const cover = document.createElement("section");
@@ -82,7 +88,7 @@ function createStartupCover() {
 }
 
 export class Game {
-  constructor({ runtime = "../../assets/index-02987539.js?v=utilityfix1" } = {}) {
+  constructor({ runtime = "../../assets/index-02987539.js?v=knight3" } = {}) {
     this.runtimeUrl = new URL(runtime, import.meta.url);
     this.started = false;
   }
@@ -90,17 +96,18 @@ export class Game {
   async start({ user } = {}) {
     if (this.started) return;
     if (!user) throw new Error("An authenticated officer is required to start the game runtime.");
+    const activeUser = localQaOfficer(user);
     const startup = createStartupCover();
     const ready = new Promise((resolve) => window.addEventListener("zeknova:gameplay-ready", (event) => resolve(event.detail), { once: true }));
     try {
       startup.set("Loading the game engine…", "engine");
       await nextPaint();
-      await importRuntimeWithSession(this.runtimeUrl.href, user);
+      await importRuntimeWithSession(this.runtimeUrl.href, activeUser);
       const bridge = globalThis.ZekNovaLegacyBridge;
       if (!bridge?.start) throw new Error("The direct game-runtime bridge is unavailable.");
       startup.set("Building terrain, vegetation, and collision maps…", "world");
       await nextPaint();
-      await bridge.start(user);
+      await bridge.start(activeUser);
       const diagnostics = await ready;
       startup.finish(diagnostics);
       this.started = true;

@@ -45,9 +45,13 @@ if ($method === 'POST') {
 
 $personalCount = count($profile['personalObjectives'] ?? []);
 $teamCompleted = (int)($profile['teamCompleted'] ?? 0);
-$rank = $teamCompleted >= 8 && $personalCount >= 8
+// Rank tracks campaign progress alone: missions 1-4 are flown as an Ensign,
+// 5-8 as a Lieutenant, 9-12 as a Captain. Personal objectives are still tracked
+// and reported, but they no longer gate promotion - requiring both meant a player
+// could clear four missions and still be denied the Lieutenant loadout.
+$rank = $teamCompleted >= 8
     ? 'captain'
-    : ($teamCompleted >= 4 && $personalCount >= 4 ? 'lieutenant' : 'ensign');
+    : ($teamCompleted >= 4 ? 'lieutenant' : 'ensign');
 $profile['rank'] = $rank;
 $profile['updatedAt'] = gmdate('c');
 

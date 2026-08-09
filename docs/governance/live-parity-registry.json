@@ -1,0 +1,457 @@
+{
+  "registry_version": 1,
+  "registry_id": "zeknova-live-parity-v1-development",
+  "status": "development",
+  "phase": "W0-P",
+  "environment_id": "zeknova-forest-ao-live-runtime",
+  "parity_space_id": "zeknova-forest-defensive-live-parity-v1",
+  "action_space_id": "zeknova-forest-defensive-action-space-v1",
+  "mode": "measurement-only",
+  "authority": "none-no-action-execution",
+  "production_ready": false,
+  "purpose": "Bind every W0-AF planning declaration to explicit current ZekNova runtime evidence. Unsupported declarations remain unbound rather than being treated as implemented.",
+  "verdict": {
+    "exact_bindings": 0,
+    "partial_bindings": 5,
+    "unbound_bindings": 8,
+    "production_parity": false
+  },
+  "source_inventory": {
+    "legacy_runtime_bundle": {
+      "path": "assets/index-02987539.js",
+      "sha256": "82c7345b8976d9d8e1a5c987c011cde55752c1d3057f56d874ca22c4830a5446",
+      "classification": "authoritative bundled gameplay runtime",
+      "anchors": [
+        "processEnemySpawning(",
+        "spawnEnemy(",
+        "updateEnemies(",
+        "fireEnemyProjectile("
+      ]
+    },
+    "perception_integration": {
+      "path": "src/game/PerceptionEventIntegration.js",
+      "sha256": "138f5a28ce9e247d415bb59960207ecedf96917e47eb595af0a17fe9c9e2ef86",
+      "classification": "grounded W0-O.1 event integration",
+      "anchors": [
+        "shareEvent({",
+        "this.stream.share({",
+        "originalEventId"
+      ]
+    },
+    "relations_panel": {
+      "path": "src/game/RelationsPanel.js",
+      "sha256": "22cc64fead4588ea4a15eee56b2189fe23a7a46134a080cd0a747d378c137501",
+      "classification": "player-facing diplomacy and ceasefire runtime",
+      "anchors": [
+        "perform(action)",
+        "recordDelta({ tension, trust, reason })",
+        "beginCeasefire()",
+        "updateCeasefire()"
+      ]
+    },
+    "forest_planning_integration": {
+      "path": "src/game/ForestDefensiveActionIntegration.js",
+      "sha256": "1d8f94d68235c3e65de26a6d5dc4f14d4817315dcb3f2c81a2c8e054bb7f509a",
+      "classification": "read-only W0-AF planning integration",
+      "anchors": [
+        "captureForFaction(",
+        "projectForFaction("
+      ]
+    }
+  },
+  "bindings": [
+    {
+      "actionIndex": 0,
+      "actionKey": "hold_settlement_perimeter",
+      "completionSignal": "enemy spawn/update loop continues; no canonical macro completion signal",
+      "declaredStatus": "partial",
+      "dimensions": {
+        "actionExistence": "partial",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "partial",
+        "target": "not_applicable"
+      },
+      "handler": "ZekNovaGame.processEnemySpawning / ZekNovaGame.spawnEnemy autonomous perimeter pressure",
+      "requiredSurfaceFlags": [
+        "gameEnemyArray",
+        "gameProcessEnemySpawning",
+        "gameSpawnEnemy"
+      ],
+      "sourceAnchors": [
+        "processEnemySpawning(",
+        "spawnEnemy(",
+        "ZekNovan patrol entering the biome"
+      ],
+      "sourceFile": "assets/index-02987539.js",
+      "sourceKind": "bundled-autonomous-runtime-behavior",
+      "unsupportedEffects": [
+        "readiness recovery is not implemented as a live faction metric",
+        "settlement security delta is not measurable from a canonical completion event",
+        "the behavior is autonomous and cannot be selected by W0-AF"
+      ],
+      "bindingId": "zkpb:v1:5fff1c29ecb5af8b"
+    },
+    {
+      "actionIndex": 1,
+      "actionKey": "patrol_known_route",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "no route-targeted ZekNovan patrol command exists",
+        "no canonical route patrol completion signal exists"
+      ],
+      "bindingId": "zkpb:v1:b6f405fa6541dd44"
+    },
+    {
+      "actionIndex": 2,
+      "actionKey": "reconnoiter_forest_lane",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "no faction recon command exists",
+        "no observation-production completion event is bound to a ZekNovan patrol"
+      ],
+      "bindingId": "zkpb:v1:d0b453a0ffe39c26"
+    },
+    {
+      "actionIndex": 3,
+      "actionKey": "intercept_hostile_contact",
+      "completionSignal": "enemy health/removal exists, but no action-bound intercept completion signal",
+      "declaredStatus": "partial",
+      "dimensions": {
+        "actionExistence": "partial",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "partial",
+        "failure": "none",
+        "outcome": "partial",
+        "target": "none"
+      },
+      "handler": "ZekNovaGame.updateEnemies autonomous chase/attack loop",
+      "requiredSurfaceFlags": [
+        "gameEnemyArray",
+        "gameUpdateEnemies"
+      ],
+      "sourceAnchors": [
+        "updateEnemies(",
+        "fireEnemyProjectile(",
+        "spawnEnemy("
+      ],
+      "sourceFile": "assets/index-02987539.js",
+      "sourceKind": "bundled-autonomous-runtime-behavior",
+      "unsupportedEffects": [
+        "no canonical W0-AF target ID is accepted by the runtime loop",
+        "readiness and patrol-slot costs are not live faction resources",
+        "tension +2 is not action-bound",
+        "the autonomous enemy loop is not a selectable macro action"
+      ],
+      "bindingId": "zkpb:v1:e88b047e6238066c"
+    },
+    {
+      "actionIndex": 4,
+      "actionKey": "screen_combat_alert",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "combat alerts do not dispatch defender screening behavior",
+        "no action-bound settlement security effect exists"
+      ],
+      "bindingId": "zkpb:v1:f34938f5920271e7"
+    },
+    {
+      "actionIndex": 5,
+      "actionKey": "reinforce_threatened_structure",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "no ZekNovan reinforcement command targets damaged structures",
+        "no patrol-slot or materials parity exists"
+      ],
+      "bindingId": "zkpb:v1:e20fe4ceb39aaefc"
+    },
+    {
+      "actionIndex": 6,
+      "actionKey": "repair_known_structure",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "no ZekNovan repair crew command exists",
+        "building records have no action-bound repair completion event"
+      ],
+      "bindingId": "zkpb:v1:6fa511e57d8b4b67"
+    },
+    {
+      "actionIndex": 7,
+      "actionKey": "fortify_known_route",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "no route fortification runtime command exists",
+        "route security is not a live authoritative metric"
+      ],
+      "bindingId": "zkpb:v1:3c3c2ba3620d44b1"
+    },
+    {
+      "actionIndex": 8,
+      "actionKey": "secure_known_resource",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "no ZekNovan resource-security patrol command exists",
+        "resource security is not a live authoritative metric"
+      ],
+      "bindingId": "zkpb:v1:ba84b38bfb1fe5d9"
+    },
+    {
+      "actionIndex": 9,
+      "actionKey": "stabilize_known_infrastructure",
+      "completionSignal": null,
+      "declaredStatus": "unbound",
+      "dimensions": {
+        "actionExistence": "none",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "none",
+        "failure": "none",
+        "outcome": "none",
+        "target": "none"
+      },
+      "handler": null,
+      "requiredSurfaceFlags": [],
+      "sourceAnchors": [],
+      "sourceFile": null,
+      "sourceKind": "none",
+      "unsupportedEffects": [
+        "no ZekNovan infrastructure stabilization command exists",
+        "repair crew and materials costs are not bound to live runtime state"
+      ],
+      "bindingId": "zkpb:v1:9595f57149fe7de7"
+    },
+    {
+      "actionIndex": 10,
+      "actionKey": "share_direct_intelligence",
+      "completionSignal": "validated intelligence_shared event appended to W0-O.1 stream",
+      "declaredStatus": "partial",
+      "dimensions": {
+        "actionExistence": "exact",
+        "cost": "none",
+        "duration": "partial",
+        "eligibility": "exact",
+        "failure": "exact",
+        "outcome": "partial",
+        "target": "exact"
+      },
+      "handler": "PerceptionEventIntegration.shareEvent",
+      "requiredSurfaceFlags": [
+        "perceptionShareEvent"
+      ],
+      "sourceAnchors": [
+        "shareEvent({",
+        "this.stream.share({",
+        "originalEventId"
+      ],
+      "sourceFile": "src/game/PerceptionEventIntegration.js",
+      "sourceKind": "explicit-grounded-intelligence-envelope",
+      "unsupportedEffects": [
+        "readiness cost is not a live resource",
+        "trust +1 is not produced by intelligence sharing",
+        "cooldown is not action-bound in the live runtime"
+      ],
+      "bindingId": "zkpb:v1:ad05b1aa79461040"
+    },
+    {
+      "actionIndex": 11,
+      "actionKey": "open_defensive_channel",
+      "completionSignal": "player-facing diplomacy or reconciliation action updates tension/trust",
+      "declaredStatus": "partial",
+      "dimensions": {
+        "actionExistence": "partial",
+        "cost": "none",
+        "duration": "none",
+        "eligibility": "partial",
+        "failure": "partial",
+        "outcome": "partial",
+        "target": "not_applicable"
+      },
+      "handler": "RelationsPanel.perform / RelationsPanel.recordDelta / ZekNovaGame.resolveDiplomacy",
+      "requiredSurfaceFlags": [
+        "gameResolveDiplomacy",
+        "relationsPerform",
+        "relationsRecordDelta"
+      ],
+      "sourceAnchors": [
+        "perform(action)",
+        "recordDelta({ tension, trust, reason })",
+        "cooldownRemaining(action)"
+      ],
+      "sourceFile": "src/game/RelationsPanel.js",
+      "sourceKind": "player-facing-diplomacy-runtime",
+      "unsupportedEffects": [
+        "no exact -10 tension +8 trust action exists",
+        "cooldowns are wall-clock seconds rather than control quanta",
+        "the surface is player initiated, not ZekNovan faction controlled",
+        "readiness cost is not live"
+      ],
+      "bindingId": "zkpb:v1:f31703d29057c3c0"
+    },
+    {
+      "actionIndex": 12,
+      "actionKey": "withdraw_exposed_patrol",
+      "completionSignal": "30-second no-fire ceasefire completion updates tension/trust",
+      "declaredStatus": "partial",
+      "dimensions": {
+        "actionExistence": "partial",
+        "cost": "none",
+        "duration": "partial",
+        "eligibility": "partial",
+        "failure": "partial",
+        "outcome": "partial",
+        "target": "none"
+      },
+      "handler": "RelationsPanel.beginCeasefire / RelationsPanel.updateCeasefire",
+      "requiredSurfaceFlags": [
+        "relationsBeginCeasefire",
+        "relationsUpdateCeasefire"
+      ],
+      "sourceAnchors": [
+        "beginCeasefire()",
+        "updateCeasefire()",
+        "Observed ceasefire"
+      ],
+      "sourceFile": "src/game/RelationsPanel.js",
+      "sourceKind": "player-facing-ceasefire-runtime",
+      "unsupportedEffects": [
+        "no canonical patrol target is accepted",
+        "no patrol slot is released",
+        "readiness +8 is not live",
+        "the effect is player ceasefire behavior, not faction patrol withdrawal"
+      ],
+      "bindingId": "zkpb:v1:72d01034d5c9015a"
+    }
+  ],
+  "parity_dimensions": [
+    "actionExistence",
+    "cost",
+    "duration",
+    "eligibility",
+    "failure",
+    "outcome",
+    "target"
+  ],
+  "binding_rules": {
+    "exact": "All existence, target, eligibility, cost, duration, outcome, failure, and completion semantics match live runtime evidence.",
+    "partial": "A related runtime surface exists but one or more planning semantics are missing or materially different.",
+    "unbound": "No qualifying live implementation surface exists. The planning declaration remains non-authoritative.",
+    "runtime_probe_is_non_mutating": true,
+    "no_implicit_binding_from_similar_behavior": true
+  },
+  "next_gate": {
+    "name": "live-handler implementation and exact parity closure",
+    "requirement": "Implement or expose canonical faction handlers for every unbound/partial action, then prove target, eligibility, cost, duration, outcome, failure, and completion parity without granting Sentinel authority."
+  },
+  "contract": {
+    "path": "public_html/azl/zeknova-live-parity-contract-v1.js",
+    "implementation_sha256": "b72c9f817325779a7293ee828463ca0533cbbd8ca812c7ce2c280fe312e2759b"
+  }
+}

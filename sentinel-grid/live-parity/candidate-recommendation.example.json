@@ -1,0 +1,18 @@
+{
+  "candidateId": "candidate-policy-version",
+  "engineId": "candidate-engine-id",
+  "selectedActionKey": "PASTE_OPAQUE_ACTION_KEY",
+  "ranking": [
+    { "actionKey": "PASTE_OPAQUE_ACTION_KEY" }
+  ],
+  "sourceStateHash": "PASTE_64_HEX_SOURCE_STATE_HASH",
+  "sourceStateHashAfter": "PASTE_SAME_64_HEX_SOURCE_STATE_HASH",
+  "latencyMs": 0,
+  "baselineLatencyMs": 1,
+  "simulations": 320,
+  "authority": {
+    "tier": "R0",
+    "canDispatch": false,
+    "canMutateLiveWorld": false
+  }
+}

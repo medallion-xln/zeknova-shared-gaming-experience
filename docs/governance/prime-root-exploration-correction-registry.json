@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "registryId": "zeknova-prime-root-exploration-correction-v1-development",
+  "stage": "Stage 1A-Z.3",
+  "status": "provisional-linux-only",
+  "mode": "evaluation-only-root-exploration-correction-no-live-command-execution",
+  "authority": "none-no-live-command-execution",
+  "dependencies": [
+    "zeknova-forest-objective-scenario-contract-v1",
+    "zeknova-sentinel-prime-policy-evaluation-contract-v1",
+    "zeknova-prime-search-observability-contract-v1"
+  ],
+  "frozenSearchParameters": {
+    "simulations": 96,
+    "maxDepth": 8,
+    "valueMode": "raw-lexicographic-scalar",
+    "rolloutPolicy": "none",
+    "priors": "uniform-legal"
+  },
+  "ablations": [
+    "mandatory-root-coverage",
+    "deterministic-state-hashed-tie-breaking",
+    "parent-mean-first-play-urgency",
+    "root-specific-cpuct-2.0"
+  ],
+  "selectedCandidate": "sentinel-prime-puct-v1-root-coverage-candidate-development",
+  "claims": {
+    "strategicCompetenceCertified": false,
+    "productionAuthority": false,
+    "liveCommandAuthority": false,
+    "actualIncumbentSuperiority": false
+  }
+}

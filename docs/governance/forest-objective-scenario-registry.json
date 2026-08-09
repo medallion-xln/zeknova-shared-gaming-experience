@@ -1,0 +1,465 @@
+{
+  "registryId": "zeknova-forest-objective-scenarios-v1-development",
+  "contractId": "zeknova-forest-objective-scenario-contract-v1",
+  "objectiveProfileId": "zeknova-forest-defensive-objective-v1",
+  "certificationId": "zeknova-forest-defensive-scenario-certification-v1",
+  "status": "development-failure-possible-scenario-certification-no-sentinel-authority",
+  "mode": "evaluation-only-no-live-command-execution",
+  "authority": "none-no-live-command-execution",
+  "objectiveProfile": {
+    "comparison": "lexicographic-no-weighted-tradeoff",
+    "id": "zeknova-forest-defensive-objective-v1",
+    "priorities": [
+      {
+        "direction": "maximize",
+        "key": "settlement_survival",
+        "rank": 0,
+        "rationale": "No lower objective may justify settlement destruction."
+      },
+      {
+        "direction": "maximize",
+        "key": "critical_structure_integrity",
+        "rank": 1,
+        "rationale": "Preserve the settlement core and other mission-critical structures."
+      },
+      {
+        "direction": "maximize",
+        "key": "settlement_security",
+        "rank": 2,
+        "rationale": "Keep the civilian defensive perimeter viable."
+      },
+      {
+        "direction": "maximize",
+        "key": "infrastructure_reliability",
+        "rank": 3,
+        "rationale": "Keep essential infrastructure operational."
+      },
+      {
+        "direction": "maximize",
+        "key": "route_security",
+        "rank": 4,
+        "rationale": "Maintain usable movement and logistics routes."
+      },
+      {
+        "direction": "maximize",
+        "key": "force_preservation",
+        "rank": 5,
+        "rationale": "Preserve patrol capacity before optional gains."
+      },
+      {
+        "direction": "maximize",
+        "key": "recovery_capacity",
+        "rank": 6,
+        "rationale": "Retain readiness, materials, and repair capability."
+      },
+      {
+        "direction": "maximize",
+        "key": "resource_security",
+        "rank": 7,
+        "rationale": "Protect known resources after survival needs are met."
+      },
+      {
+        "direction": "maximize",
+        "key": "deescalation",
+        "rank": 8,
+        "rationale": "Reduce tension and improve trust without sacrificing higher priorities."
+      }
+    ],
+    "rootStance": "defensive",
+    "terminalFailure": "settlement_destroyed"
+  },
+  "scenarioCount": 7,
+  "scenarios": [
+    {
+      "criticalActions": [
+        "intercept_hostile_contact",
+        "screen_combat_alert"
+      ],
+      "failurePlan": [
+        "open_defensive_channel",
+        "hold_settlement_perimeter",
+        "hold_settlement_perimeter"
+      ],
+      "flags": {
+        "combatAlertActive": true,
+        "contactFresh": true,
+        "directIntelligence": true,
+        "infrastructureDegraded": false,
+        "patrolExposed": false,
+        "resourceKnown": false,
+        "resourceSecured": false,
+        "routeDamaged": false,
+        "settlementAlive": true,
+        "structureDamaged": false
+      },
+      "hazardModel": "perimeter-pressure-v1",
+      "horizonQuanta": 6,
+      "id": "perimeter-breach",
+      "initial": {
+        "criticalStructureHealth": 88,
+        "hostilePressure": 72,
+        "informationReach": 20,
+        "infrastructureReliability": 65,
+        "materials": 20,
+        "patrolIntegrity": 85,
+        "patrolSlots": 1,
+        "readiness": 42,
+        "repairCrewSlots": 1,
+        "resourceSecurity": 55,
+        "routeSecurity": 48,
+        "settlementSecurity": 42,
+        "structureSupport": 60,
+        "tension": 48,
+        "trust": 44
+      },
+      "objective": "Keep the settlement alive while reducing immediate hostile pressure and preserving a viable perimeter.",
+      "requiredActions": [
+        "intercept_hostile_contact",
+        "screen_combat_alert"
+      ],
+      "successCondition": "alive_perimeter_pressure_controlled",
+      "successPlan": [
+        "intercept_hostile_contact",
+        "screen_combat_alert",
+        "hold_settlement_perimeter"
+      ],
+      "title": "Perimeter Breach",
+      "version": 1
+    },
+    {
+      "criticalActions": [
+        "repair_known_structure"
+      ],
+      "failurePlan": [
+        "reinforce_threatened_structure",
+        "hold_settlement_perimeter",
+        "hold_settlement_perimeter"
+      ],
+      "flags": {
+        "combatAlertActive": true,
+        "contactFresh": false,
+        "directIntelligence": true,
+        "infrastructureDegraded": false,
+        "patrolExposed": false,
+        "resourceKnown": false,
+        "resourceSecured": false,
+        "routeDamaged": false,
+        "settlementAlive": true,
+        "structureDamaged": true
+      },
+      "hazardModel": "core-decay-v1",
+      "horizonQuanta": 6,
+      "id": "damaged-core",
+      "initial": {
+        "criticalStructureHealth": 46,
+        "hostilePressure": 50,
+        "informationReach": 18,
+        "infrastructureReliability": 55,
+        "materials": 20,
+        "patrolIntegrity": 80,
+        "patrolSlots": 1,
+        "readiness": 34,
+        "repairCrewSlots": 1,
+        "resourceSecurity": 50,
+        "routeSecurity": 45,
+        "settlementSecurity": 48,
+        "structureSupport": 25,
+        "tension": 52,
+        "trust": 40
+      },
+      "objective": "Repair the critical settlement structure before continuing pressure destroys it.",
+      "requiredActions": [
+        "repair_known_structure"
+      ],
+      "successCondition": "alive_core_repaired",
+      "successPlan": [
+        "repair_known_structure"
+      ],
+      "title": "Damaged Core Under Pressure",
+      "version": 1
+    },
+    {
+      "criticalActions": [
+        "stabilize_known_infrastructure",
+        "fortify_known_route"
+      ],
+      "failurePlan": [
+        "patrol_known_route",
+        "hold_settlement_perimeter",
+        "hold_settlement_perimeter"
+      ],
+      "flags": {
+        "combatAlertActive": false,
+        "contactFresh": false,
+        "directIntelligence": true,
+        "infrastructureDegraded": true,
+        "patrolExposed": false,
+        "resourceKnown": false,
+        "resourceSecured": false,
+        "routeDamaged": true,
+        "settlementAlive": true,
+        "structureDamaged": false
+      },
+      "hazardModel": "cascade-v1",
+      "horizonQuanta": 8,
+      "id": "route-infrastructure-cascade",
+      "initial": {
+        "criticalStructureHealth": 82,
+        "hostilePressure": 34,
+        "informationReach": 24,
+        "infrastructureReliability": 34,
+        "materials": 30,
+        "patrolIntegrity": 84,
+        "patrolSlots": 1,
+        "readiness": 46,
+        "repairCrewSlots": 1,
+        "resourceSecurity": 55,
+        "routeSecurity": 26,
+        "settlementSecurity": 58,
+        "structureSupport": 54,
+        "tension": 45,
+        "trust": 48
+      },
+      "objective": "Stabilize degraded infrastructure and restore the damaged logistics route before the cascade reaches the settlement.",
+      "requiredActions": [
+        "stabilize_known_infrastructure",
+        "fortify_known_route"
+      ],
+      "successCondition": "alive_infrastructure_and_route_restored",
+      "successPlan": [
+        "stabilize_known_infrastructure",
+        "fortify_known_route"
+      ],
+      "title": "Route and Infrastructure Cascade",
+      "version": 1
+    },
+    {
+      "criticalActions": [
+        "secure_known_resource"
+      ],
+      "failurePlan": [
+        "patrol_known_route",
+        "hold_settlement_perimeter",
+        "secure_known_resource"
+      ],
+      "flags": {
+        "combatAlertActive": false,
+        "contactFresh": false,
+        "directIntelligence": true,
+        "infrastructureDegraded": false,
+        "patrolExposed": false,
+        "resourceKnown": true,
+        "resourceSecured": false,
+        "routeDamaged": false,
+        "settlementAlive": true,
+        "structureDamaged": false
+      },
+      "hazardModel": "resource-loss-v1",
+      "horizonQuanta": 6,
+      "id": "resource-corridor",
+      "initial": {
+        "criticalStructureHealth": 86,
+        "hostilePressure": 38,
+        "informationReach": 26,
+        "infrastructureReliability": 60,
+        "materials": 18,
+        "patrolIntegrity": 82,
+        "patrolSlots": 1,
+        "readiness": 36,
+        "repairCrewSlots": 1,
+        "resourceSecurity": 20,
+        "routeSecurity": 40,
+        "settlementSecurity": 56,
+        "structureSupport": 55,
+        "tension": 46,
+        "trust": 46
+      },
+      "objective": "Secure a known resource before hostile pressure permanently cuts off the site.",
+      "requiredActions": [
+        "secure_known_resource"
+      ],
+      "successCondition": "alive_resource_secured",
+      "successPlan": [
+        "secure_known_resource"
+      ],
+      "title": "Exposed Resource Corridor",
+      "version": 1
+    },
+    {
+      "criticalActions": [
+        "withdraw_exposed_patrol"
+      ],
+      "failurePlan": [
+        "intercept_hostile_contact",
+        "hold_settlement_perimeter"
+      ],
+      "flags": {
+        "combatAlertActive": true,
+        "contactFresh": true,
+        "directIntelligence": true,
+        "infrastructureDegraded": false,
+        "patrolExposed": true,
+        "resourceKnown": false,
+        "resourceSecured": false,
+        "routeDamaged": false,
+        "settlementAlive": true,
+        "structureDamaged": false
+      },
+      "hazardModel": "patrol-attrition-v1",
+      "horizonQuanta": 4,
+      "id": "exposed-patrol",
+      "initial": {
+        "criticalStructureHealth": 84,
+        "hostilePressure": 76,
+        "informationReach": 30,
+        "infrastructureReliability": 58,
+        "materials": 16,
+        "patrolIntegrity": 56,
+        "patrolSlots": 1,
+        "readiness": 30,
+        "repairCrewSlots": 1,
+        "resourceSecurity": 48,
+        "routeSecurity": 44,
+        "settlementSecurity": 52,
+        "structureSupport": 52,
+        "tension": 58,
+        "trust": 38
+      },
+      "objective": "Withdraw an exposed patrol before it is lost, accepting temporary pressure to preserve the force.",
+      "requiredActions": [
+        "withdraw_exposed_patrol"
+      ],
+      "successCondition": "alive_patrol_preserved",
+      "successPlan": [
+        "withdraw_exposed_patrol"
+      ],
+      "title": "Exposed Patrol",
+      "version": 1
+    },
+    {
+      "criticalActions": [
+        "repair_known_structure"
+      ],
+      "failurePlan": [
+        "secure_known_resource",
+        "hold_settlement_perimeter"
+      ],
+      "flags": {
+        "combatAlertActive": true,
+        "contactFresh": false,
+        "directIntelligence": true,
+        "infrastructureDegraded": false,
+        "patrolExposed": false,
+        "resourceKnown": true,
+        "resourceSecured": false,
+        "routeDamaged": false,
+        "settlementAlive": true,
+        "structureDamaged": true
+      },
+      "hazardModel": "multi-crisis-v1",
+      "horizonQuanta": 4,
+      "id": "multi-crisis-priority",
+      "initial": {
+        "criticalStructureHealth": 54,
+        "hostilePressure": 54,
+        "informationReach": 28,
+        "infrastructureReliability": 54,
+        "materials": 12,
+        "patrolIntegrity": 78,
+        "patrolSlots": 1,
+        "readiness": 32,
+        "repairCrewSlots": 1,
+        "resourceSecurity": 20,
+        "routeSecurity": 42,
+        "settlementSecurity": 46,
+        "structureSupport": 24,
+        "tension": 54,
+        "trust": 40
+      },
+      "objective": "Preserve the critical settlement core even when doing so means losing an exposed resource.",
+      "requiredActions": [
+        "repair_known_structure",
+        "secure_known_resource"
+      ],
+      "successCondition": "alive_core_priority_preserved",
+      "successPlan": [
+        "repair_known_structure"
+      ],
+      "title": "Core Versus Resource Priority",
+      "version": 1
+    },
+    {
+      "criticalActions": [
+        "open_defensive_channel"
+      ],
+      "failurePlan": [
+        "hold_settlement_perimeter",
+        "hold_settlement_perimeter",
+        "hold_settlement_perimeter"
+      ],
+      "flags": {
+        "combatAlertActive": false,
+        "contactFresh": false,
+        "directIntelligence": true,
+        "infrastructureDegraded": false,
+        "patrolExposed": false,
+        "resourceKnown": false,
+        "resourceSecured": false,
+        "routeDamaged": false,
+        "settlementAlive": true,
+        "structureDamaged": false
+      },
+      "hazardModel": "tension-escalation-v1",
+      "horizonQuanta": 5,
+      "id": "deescalation-window",
+      "initial": {
+        "criticalStructureHealth": 88,
+        "hostilePressure": 42,
+        "informationReach": 35,
+        "infrastructureReliability": 62,
+        "materials": 16,
+        "patrolIntegrity": 84,
+        "patrolSlots": 1,
+        "readiness": 28,
+        "repairCrewSlots": 1,
+        "resourceSecurity": 52,
+        "routeSecurity": 50,
+        "settlementSecurity": 58,
+        "structureSupport": 58,
+        "tension": 82,
+        "trust": 25
+      },
+      "objective": "Use the available defensive channel before escalating tension closes the diplomatic window.",
+      "requiredActions": [
+        "open_defensive_channel"
+      ],
+      "successCondition": "alive_deescalated",
+      "successPlan": [
+        "open_defensive_channel"
+      ],
+      "title": "Defensive De-escalation Window",
+      "version": 1
+    }
+  ],
+  "thresholds": {
+    "successWitnessMinimumRate": 0.8,
+    "failureWitnessMinimumRate": 0.8,
+    "ablatedFailureMinimumRate": 0.8,
+    "objectiveVectorWinRequired": true,
+    "defaultSeedCount": 16
+  },
+  "claims": {
+    "allScenariosFailurePossible": true,
+    "allScenariosSolvableByAuthoredWitness": true,
+    "allScenariosRequireObjectiveRelevantActions": true,
+    "strategicCompetence": false,
+    "productionAuthority": false,
+    "sentinelAuthority": false,
+    "fullGameDynamics": false
+  },
+  "inherited": {
+    "w0p3CommandParityRequired": true,
+    "w0p3ExactBindingCount": 13
+  },
+  "contractSha256": "627ac1664a395e61c5423e4e07bbf99471055e4bd57c3d26dd2b3b7b36b36f2c"
+}

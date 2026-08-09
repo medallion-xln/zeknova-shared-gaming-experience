@@ -1,0 +1,17 @@
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)));
+const marker = JSON.parse(await readFile(path.join(root, '..', 'integration.json'), 'utf8'));
+const args = process.argv.slice(2);
+const get = (flag) => { const i = args.indexOf(flag); if (i < 0 || !args[i + 1]) throw new Error(`Missing ${flag}`); return path.resolve(args[i + 1]); };
+const shadowRecord = JSON.parse(await readFile(get('--record'), 'utf8'));
+const candidateRecommendation = JSON.parse(await readFile(get('--candidate'), 'utf8'));
+const output = get('--output');
+const moduleUrl = pathToFileURL(path.join(marker.kernelPath, 'src', 'lab', 'zeknova-controlled-evaluation.js')).href;
+const { evaluateControlledCandidateRecommendation } = await import(moduleUrl);
+const result = evaluateControlledCandidateRecommendation({ shadowRecord, candidateRecommendation });
+await mkdir(path.dirname(output), { recursive: true });
+await writeFile(output, `${JSON.stringify(result, null, 2)}\n`);
+console.log(JSON.stringify(result, null, 2));
+if (!result.pass) process.exitCode = 1;

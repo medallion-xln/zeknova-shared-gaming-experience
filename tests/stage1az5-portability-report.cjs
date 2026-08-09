@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'); const ROOT=path.resolve(__dirname,'..');
+for(const f of ['zeknova-identity-contract-v1.js','zeknova-perception-event-contract-v1.js','zeknova-knowledge-ledger-contract-v1.js','zeknova-faction-observation-contract-v1.js','zeknova-forest-defensive-action-contract-v1.js','zeknova-forest-defensive-command-contract-v2.js','zeknova-live-parity-closure-contract-v1.js','zeknova-forest-objective-scenario-contract-v1.js','zeknova-sentinel-prime-policy-evaluation-contract-v1.js','zeknova-prime-search-observability-contract-v1.js','zeknova-prime-root-exploration-correction-contract-v1.js','zeknova-prime-value-objective-calibration-contract-v1.js','zeknova-prime-horizon-delayed-consequences-contract-v1.js'])vm.runInThisContext(fs.readFileSync(path.join(ROOT,'azl',f),'utf8'),{filename:f});
+process.stdout.write(JSON.stringify(globalThis.ZekNovaPrimeHorizonDelayedConsequencesContract.evaluateAll(),null,2)+'\n');

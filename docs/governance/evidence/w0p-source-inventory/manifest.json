@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "evidence_id": "w0p-source-inventory-frozen-v1",
+  "phase": "W0-P",
+  "purpose": "Historical source bytes used by the frozen W0-P parity measurement. Later phases may modify live runtime files without rewriting this evidence.",
+  "files": [
+    {
+      "path": "assets/index-02987539.js",
+      "sha256": "82c7345b8976d9d8e1a5c987c011cde55752c1d3057f56d874ca22c4830a5446"
+    },
+    {
+      "path": "src/game/PerceptionEventIntegration.js",
+      "sha256": "138f5a28ce9e247d415bb59960207ecedf96917e47eb595af0a17fe9c9e2ef86"
+    },
+    {
+      "path": "src/game/RelationsPanel.js",
+      "sha256": "22cc64fead4588ea4a15eee56b2189fe23a7a46134a080cd0a747d378c137501"
+    },
+    {
+      "path": "src/game/ForestDefensiveActionIntegration.js",
+      "sha256": "1d8f94d68235c3e65de26a6d5dc4f14d4817315dcb3f2c81a2c8e054bb7f509a"
+    }
+  ]
+}

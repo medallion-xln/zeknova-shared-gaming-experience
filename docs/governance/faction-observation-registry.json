@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "registry_id": "zeknova-faction-observation-v1-development",
+  "status": "development-contract-not-production-prime-observation-authority",
+  "contract": {
+    "id": "zeknova-faction-observation-contract-v1",
+    "implementation_path": "azl/zeknova-faction-observation-contract-v1.js",
+    "implementation_sha256": "997ff7c2d69bfd35a1c36bc52705f3f07a4d1d70cc733a76276dac37f097322d"
+  },
+  "feature_layout": {
+    "id": "zeknova-prime-observation-layout-v1",
+    "header_width": 16,
+    "slot_width": 16,
+    "total_slots": 36,
+    "feature_count": 592,
+    "position_scale_cells": 256,
+    "max_age_quanta": 64,
+    "max_contradictions": 8,
+    "topic_order": [
+      "unit_contact",
+      "combat_alert",
+      "structure_status",
+      "resource_location",
+      "route_status",
+      "infrastructure_status"
+    ],
+    "slot_capacities": {
+      "unit_contact": 8,
+      "combat_alert": 4,
+      "structure_status": 8,
+      "resource_location": 8,
+      "route_status": 4,
+      "infrastructure_status": 4
+    }
+  },
+  "semantics": {
+    "input_is_validated_w0o2_ledger_only": true,
+    "authoritative_world_reads_are_forbidden": true,
+    "other_faction_private_records_are_excluded": true,
+    "stale_records_are_excluded": true,
+    "event_ids_and_global_event_sequences_are_excluded": true,
+    "explicit_quantum_is_required": true,
+    "fixed_capacity_selection_is_deterministic": true,
+    "overflow_is_counted_but_not_implicitly_resolved": true,
+    "feature_vector_is_fixed_width_finite_and_bounded": true,
+    "observation_id_binds_canonical_packet_body": true,
+    "snapshots_are_clone_isolated": true,
+    "action_legality_changes_are_out_of_scope": true,
+    "prime_authority_is_out_of_scope": true
+  }
+}

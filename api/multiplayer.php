@@ -39,6 +39,11 @@ if (!is_array($room)) {
             'treeHarvestedAt' => [],
             'collectedPowerUpIds' => [],
             'minedRockIds' => [],
+            'rockMinedAt' => [],
+            'zeknovanAidCooldownUntil' => 0,
+            'bossEncounter' => null,
+            'bossDamageEventIds' => [],
+            'bossDefeats' => [],
         ],
     ];
 }
@@ -113,6 +118,7 @@ foreach ($chat['messages'] as $message) {
 $chatMessages = array_slice($chatMessages, -50);
 
 $changed = false;
+$bossDamageEventAcks = [];
 $world = is_array($input['world'] ?? null) ? $input['world'] : [];
 $allowedTypes = ['power', 'water', 'habitat', 'research', 'culture', 'governance', 'defense', 'bridge', 'boat', 'zek_clinic', 'zek_watershed', 'zek_beacon', 'zek_grove', 'zek_habitat', 'zek_archive', 'zek_market', 'zek_watch', 'zek_transit'];
 $storedBuildings = is_array($room['world']['buildings'] ?? null) ? $room['world']['buildings'] : [];
@@ -151,7 +157,20 @@ foreach (($world['buildings'] ?? []) as $building) {
 }
 $room['world']['buildings'] = $storedBuildings;
 
-foreach (['collectedPowerUpIds', 'minedRockIds'] as $key) {
+// ZekNovan diplomatic infrastructure uses one shared team cooldown. Clients
+// may extend it after a successful placement, but may never shorten it or set
+// a window beyond the balanced ten-minute ceiling.
+$aidNowMs = (int)floor(microtime(true) * 1000);
+$storedAidCooldown = max(0, (int)($room['world']['zeknovanAidCooldownUntil'] ?? 0));
+$incomingAidCooldown = max(0, (int)($world['zeknovanAidCooldownUntil'] ?? 0));
+$incomingAidCooldown = min($incomingAidCooldown, $aidNowMs + (10 * 60 * 1000));
+if ($incomingAidCooldown > $storedAidCooldown) {
+    $storedAidCooldown = $incomingAidCooldown;
+    $changed = true;
+}
+$room['world']['zeknovanAidCooldownUntil'] = $storedAidCooldown;
+
+foreach (['collectedPowerUpIds'] as $key) {
     $stored = is_array($room['world'][$key] ?? null) ? $room['world'][$key] : [];
     if ($key === 'collectedPowerUpIds') {
         $before = count($stored);
@@ -171,6 +190,42 @@ foreach (['collectedPowerUpIds', 'minedRockIds'] as $key) {
     }
     $room['world'][$key] = array_slice(array_keys($set), 0, 10000);
 }
+
+// Ore formations are shared world resources, but unlike permanent pickups
+// they recover after a deterministic 60-90 minute window. Keeping the mined
+// timestamp beside each ID lets every connected client observe the same
+// formation and prevents an old room file from exhausting a biome forever.
+$oreRespawnMinMs = 60 * 60 * 1000;
+$oreRespawnMaxMs = 90 * 60 * 1000;
+$oreNowMs = (int)floor(microtime(true) * 1000);
+$oreRespawnDelay = static function (string $id) use ($oreRespawnMinMs, $oreRespawnMaxMs): int {
+    $minuteRange = (int)floor(($oreRespawnMaxMs - $oreRespawnMinMs) / 60000);
+    $hash = (int)hexdec(hash('fnv1a32', $id));
+    return $oreRespawnMinMs + ($hash % ($minuteRange + 1)) * 60000;
+};
+$storedRockTimes = is_array($room['world']['rockMinedAt'] ?? null) ? $room['world']['rockMinedAt'] : [];
+$incomingRockTimes = is_array($world['rockMinedAt'] ?? null) ? $world['rockMinedAt'] : [];
+foreach (($room['world']['minedRockIds'] ?? []) as $id) {
+    $key = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+    if ($key !== '' && !isset($storedRockTimes[$key])) $storedRockTimes[$key] = $oreNowMs;
+}
+foreach (($world['minedRockIds'] ?? []) as $id) {
+    $key = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)$id) ?? '';
+    if ($key === '' || strlen($key) > 120) continue;
+    $incomingAt = max(0, min($oreNowMs, (int)($incomingRockTimes[$key] ?? $oreNowMs)));
+    if (!isset($storedRockTimes[$key]) || $incomingAt > (int)$storedRockTimes[$key]) {
+        $storedRockTimes[$key] = $incomingAt;
+        $changed = true;
+    }
+}
+foreach ($storedRockTimes as $id => $minedAt) {
+    if ((int)$minedAt <= 0 || ($oreNowMs - (int)$minedAt) >= $oreRespawnDelay((string)$id)) {
+        unset($storedRockTimes[$id]);
+        $changed = true;
+    }
+}
+$room['world']['rockMinedAt'] = array_slice($storedRockTimes, 0, 10000, true);
+$room['world']['minedRockIds'] = array_slice(array_keys($storedRockTimes), 0, 10000);
 
 // Ammo cache cooldowns follow the authenticated player, not the team. This
 // prevents one crew member from consuming everybody's field supplies while
@@ -271,6 +326,96 @@ if ($storedRelations === null) {
 $room['world']['relations'] = $storedRelations;
 $room['world']['relationEventIds'] = array_slice(array_keys($relationIdSet), -500);
 
+// Mission bosses use one shared encounter and event-sourced damage. Clients
+// reproduce projectile patterns locally from the seed, so no projectile data
+// crosses the network and simultaneous hits cannot heal or overwrite damage.
+$allowedBossMissions = ['grid', 'water', 'habitat', 'tower-one', 'tower-ring', 'supply-route', 'research', 'culture', 'governance', 'population', 'advanced-research', 'stronghold'];
+$incomingBoss = is_array($world['bossEncounter'] ?? null) ? $world['bossEncounter'] : null;
+$storedBoss = is_array($room['world']['bossEncounter'] ?? null) ? $room['world']['bossEncounter'] : null;
+if ($incomingBoss !== null) {
+    $missionId = preg_replace('/[^a-z0-9-]/', '', (string)($incomingBoss['missionId'] ?? '')) ?? '';
+    $encounterId = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($incomingBoss['encounterId'] ?? '')) ?? '';
+    $bossId = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($incomingBoss['bossId'] ?? '')) ?? '';
+    if (in_array($missionId, $allowedBossMissions, true) && $encounterId !== '' && $bossId !== '') {
+        if ($storedBoss === null || (($storedBoss['status'] ?? '') === 'defeated' && ($storedBoss['missionId'] ?? '') !== $missionId)) {
+            $maxHealth = max(1.0, min(100000.0, (float)($incomingBoss['maxHealth'] ?? 1)));
+            $storedBoss = [
+                'encounterId' => $encounterId,
+                'missionId' => $missionId,
+                'bossId' => $bossId,
+                'seed' => max(0, (int)($incomingBoss['seed'] ?? 1)),
+                'status' => 'active',
+                'health' => max(0.0, min($maxHealth, (float)($incomingBoss['health'] ?? $maxHealth))),
+                'maxHealth' => $maxHealth,
+                'startedAt' => max(0, (int)($incomingBoss['startedAt'] ?? $nowMs)),
+                'x' => max(-90.0, min(90.0, (float)($incomingBoss['x'] ?? 0))),
+                'z' => max(-90.0, min(90.0, (float)($incomingBoss['z'] ?? 0))),
+                'phase' => 'phase_1',
+                'activePatternId' => 'awakening',
+                'projectileCount' => 0,
+            ];
+            $changed = true;
+        } elseif (($storedBoss['encounterId'] ?? '') === $encounterId && ($storedBoss['status'] ?? '') !== 'defeated') {
+            $storedBoss['phase'] = substr((string)($incomingBoss['phase'] ?? $storedBoss['phase'] ?? 'phase_1'), 0, 24);
+            $storedBoss['activePatternId'] = substr((string)($incomingBoss['activePatternId'] ?? $storedBoss['activePatternId'] ?? ''), 0, 60);
+            $storedBoss['projectileCount'] = max(0, min(250, (int)($incomingBoss['projectileCount'] ?? 0)));
+        }
+    }
+}
+
+$storedBossDamageIds = is_array($room['world']['bossDamageEventIds'] ?? null) ? $room['world']['bossDamageEventIds'] : [];
+$bossDamageIdSet = array_fill_keys(array_map('strval', $storedBossDamageIds), true);
+$incomingBossDamage = is_array($world['bossDamageEvents'] ?? null) ? array_slice($world['bossDamageEvents'], 0, 30) : [];
+foreach ($incomingBossDamage as $event) {
+    if (!is_array($event) || $storedBoss === null) continue;
+    $id = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($event['id'] ?? '')) ?? '';
+    $encounterId = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($event['encounterId'] ?? '')) ?? '';
+    if ($id === '' || strlen($id) > 140 || $encounterId !== (string)($storedBoss['encounterId'] ?? '')) continue;
+    $bossDamageEventAcks[] = $id;
+    if (isset($bossDamageIdSet[$id]) || ($storedBoss['status'] ?? '') === 'defeated') continue;
+    $damage = max(0.0, min(250.0, (float)($event['amount'] ?? 0)));
+    $storedBoss['health'] = max(0.0, (float)($storedBoss['health'] ?? 0) - $damage);
+    if ($storedBoss['health'] <= 0) $storedBoss['status'] = 'awaiting_reward';
+    $bossDamageIdSet[$id] = true;
+    $changed = true;
+}
+$room['world']['bossDamageEventIds'] = array_slice(array_keys($bossDamageIdSet), -2000);
+
+$storedBossDefeats = is_array($room['world']['bossDefeats'] ?? null) ? $room['world']['bossDefeats'] : [];
+$incomingBossDefeats = is_array($world['bossDefeats'] ?? null) ? $world['bossDefeats'] : [];
+foreach ($incomingBossDefeats as $missionId => $defeat) {
+    $missionId = preg_replace('/[^a-z0-9-]/', '', (string)$missionId) ?? '';
+    if (!in_array($missionId, $allowedBossMissions, true) || isset($storedBossDefeats[$missionId]) || !is_array($defeat)) continue;
+    $rewardId = preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($defeat['rewardId'] ?? '')) ?? '';
+    if ($rewardId === '') continue;
+    $multiplier = max(1.0, min(2.0, (float)($defeat['multiplier'] ?? 1)));
+    $grade = in_array((string)($defeat['grade'] ?? ''), ['C', 'B', 'A', 'S', 'S+'], true) ? (string)$defeat['grade'] : 'C';
+    $storedBossDefeats[$missionId] = [
+        'missionId' => $missionId,
+        'bossId' => substr(preg_replace('/[^a-zA-Z0-9_.:-]/', '', (string)($defeat['bossId'] ?? 'boss')) ?? 'boss', 0, 100),
+        'bossName' => substr((string)($defeat['bossName'] ?? 'Mission guardian'), 0, 100),
+        'rewardId' => $rewardId,
+        'grade' => $grade,
+        'multiplier' => $multiplier,
+        'rewards' => [
+            'credits' => (int)round(100 * $multiplier),
+            'timber' => (int)round(25 * $multiplier),
+            'iron' => (int)round(15 * $multiplier),
+            'tensionReduction' => 50,
+        ],
+        'defeatedAt' => max(0, (int)($defeat['defeatedAt'] ?? $nowMs)),
+        'telemetry' => is_array($defeat['telemetry'] ?? null) ? $defeat['telemetry'] : [],
+    ];
+    if ($storedBoss !== null && ($storedBoss['missionId'] ?? '') === $missionId) {
+        $storedBoss['health'] = 0;
+        $storedBoss['status'] = 'defeated';
+        $storedBoss['defeat'] = $storedBossDefeats[$missionId];
+    }
+    $changed = true;
+}
+$room['world']['bossEncounter'] = $storedBoss;
+$room['world']['bossDefeats'] = $storedBossDefeats;
+
 if ($changed) {
     $room['revision'] = (int)($room['revision'] ?? 0) + 1;
 }
@@ -310,6 +455,7 @@ $responseWorld['buildings'] = array_values($storedBuildings);
 $responseWorld['personalAmmoCacheCollectedAt'] = $personalAmmoTimes;
 unset($responseWorld['personalAmmoCaches']);
 unset($responseWorld['relationEventIds']);
+unset($responseWorld['bossDamageEventIds']);
 zeknova_response([
     'ok' => true,
     'revision' => (int)$room['revision'],
@@ -317,6 +463,7 @@ zeknova_response([
     'players' => $players,
     'world' => $responseWorld,
     'relationEventAcks' => array_values(array_unique($ackedRelationIds)),
+    'bossDamageEventAcks' => array_values(array_unique($bossDamageEventAcks)),
     'chat' => [
         'seq' => (int)$chat['seq'],
         'messages' => $chatMessages,

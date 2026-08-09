@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "registry_id": "zeknova-live-parity-closure-v1-development",
+  "parity_space_id": "zeknova-forest-defensive-live-parity-closure-v1",
+  "status": "development-command-parity-closure-no-sentinel-authority",
+  "mode": "measurement-only-parity-closure",
+  "authority": "none-no-action-execution",
+  "action_count": 13,
+  "exact_binding_count": 13,
+  "partial_binding_count": 0,
+  "unbound_count": 0,
+  "command_parity_complete": true,
+  "production_ready": false,
+  "sentinel_prime_authority": false,
+  "router_authority": false,
+  "strategic_competence_claim": false,
+  "historical_w0p_disposition": "preserved-as-historical-pre-command-runtime-measurement",
+  "contract": {
+    "path": "public_html/azl/zeknova-live-parity-closure-contract-v1.js",
+    "sha256": "5b2058d0b8e74f4a04cec95dca515127cab13bc90482b2df5e99b7b7cd2679fa"
+  },
+  "bindings": [
+    {"actionIndex":0,"actionKey":"hold_settlement_perimeter","runtimeHandler":"holdSettlementPerimeter","parityStatus":"exact-command-parity"},
+    {"actionIndex":1,"actionKey":"patrol_known_route","runtimeHandler":"patrolKnownRoute","parityStatus":"exact-command-parity"},
+    {"actionIndex":2,"actionKey":"reconnoiter_forest_lane","runtimeHandler":"reconnoiterForestLane","parityStatus":"exact-command-parity"},
+    {"actionIndex":3,"actionKey":"intercept_hostile_contact","runtimeHandler":"interceptHostileContact","parityStatus":"exact-command-parity"},
+    {"actionIndex":4,"actionKey":"screen_combat_alert","runtimeHandler":"screenCombatAlert","parityStatus":"exact-command-parity"},
+    {"actionIndex":5,"actionKey":"reinforce_threatened_structure","runtimeHandler":"reinforceThreatenedStructure","parityStatus":"exact-command-parity"},
+    {"actionIndex":6,"actionKey":"repair_known_structure","runtimeHandler":"repairKnownStructure","parityStatus":"exact-command-parity"},
+    {"actionIndex":7,"actionKey":"fortify_known_route","runtimeHandler":"fortifyKnownRoute","parityStatus":"exact-command-parity"},
+    {"actionIndex":8,"actionKey":"secure_known_resource","runtimeHandler":"secureKnownResource","parityStatus":"exact-command-parity"},
+    {"actionIndex":9,"actionKey":"stabilize_known_infrastructure","runtimeHandler":"stabilizeKnownInfrastructure","parityStatus":"exact-command-parity"},
+    {"actionIndex":10,"actionKey":"share_direct_intelligence","runtimeHandler":"shareDirectIntelligence","parityStatus":"exact-command-parity"},
+    {"actionIndex":11,"actionKey":"open_defensive_channel","runtimeHandler":"openDefensiveChannel","parityStatus":"exact-command-parity"},
+    {"actionIndex":12,"actionKey":"withdraw_exposed_patrol","runtimeHandler":"withdrawExposedPatrol","parityStatus":"exact-command-parity"}
+  ],
+  "parity_dimensions": ["actionExistence","authority","completion","cost","duration","eligibility","failure","target"],
+  "source_inventory": {
+    "forest_action_contract": "public_html/azl/zeknova-forest-defensive-action-contract-v1.js",
+    "command_contract_v2": "public_html/azl/zeknova-forest-defensive-command-contract-v2.js",
+    "command_registry_v2": "docs/governance/forest-defensive-command-registry-v2.json",
+    "command_runtime_v2": "src/game/ForestDefensiveCommandIntegrationV2.js",
+    "closure_integration": "src/game/LiveParityClosureIntegration.js"
+  },
+  "guards": {
+    "read_only_measurement": true,
+    "mutating_probe_count_zero": true,
+    "historical_w0p_not_rewritten": true,
+    "incumbent_only_command_authority": true,
+    "prime_and_router_authority_denied": true,
+    "production_authority_claim": false,
+    "strategic_competence_claim": false
+  }
+}

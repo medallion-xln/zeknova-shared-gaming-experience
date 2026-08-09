@@ -1,0 +1,39 @@
+{
+  "contractId": "zeknova-strategic-state-contract-v2",
+  "snapshotFormat": "zeknova/stage2f-strategic-state-json@2",
+  "observationCodecId": "zeknova-strategic-observation-v2-87f",
+  "featureCount": 87,
+  "schemaVersion": 2,
+  "authority": {
+    "tier": "R0",
+    "canDispatch": false,
+    "canMutateLiveWorld": false
+  },
+  "historicalV1": {
+    "preserve592FeatureCodec": true,
+    "rewriteEvidence": false
+  },
+  "includedDomains": [
+    "identity",
+    "mission",
+    "strategicMetrics",
+    "knowledge",
+    "actionSurface",
+    "terminal"
+  ],
+  "excludedCaptureMetadata": [
+    "tick",
+    "wallClockTime",
+    "sessionId",
+    "sequence",
+    "timings"
+  ],
+  "qualification": {
+    "canonicalStates": 10,
+    "observationHashes": 3,
+    "legalMasks": 3,
+    "tensionBands": 2,
+    "infrastructureBands": 2,
+    "omittedLiveLegalActions": 0
+  }
+}

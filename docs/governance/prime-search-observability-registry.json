@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "zeknova-prime-search-observability-v1-development",
+  "phase": "Stage 1A-Z.2",
+  "status": "provisional-linux-only",
+  "classification": "evaluation-only-observability-no-policy-change",
+  "authority": "none-no-live-command-execution",
+  "inherits": {
+    "stage1az1": "frozen-policy-and-results"
+  },
+  "scope": {
+    "policyChanges": false,
+    "liveAuthority": false,
+    "canonicalLatency": false,
+    "failureClassificationsAreEvidenceNotCausalProof": true
+  },
+  "requiredOutputs": [
+    "root ranking",
+    "first visit simulation",
+    "root entropy",
+    "visit margin",
+    "value margin",
+    "depth",
+    "terminal leaf rate",
+    "deterministic trace id",
+    "failure evidence category"
+  ]
+}

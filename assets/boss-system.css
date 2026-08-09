@@ -1,0 +1,54 @@
+.boss-encounter-hud {
+  --boss-accent: #ffb24c;
+  position: fixed;
+  z-index: 72;
+  left: 50%;
+  top: clamp(5.9rem, 8.5vh, 6.8rem);
+  width: min(35rem, calc(100vw - 32rem));
+  transform: translateX(-50%);
+  padding: .38rem .65rem .42rem;
+  border: 1px solid color-mix(in srgb, var(--boss-accent) 72%, transparent);
+  border-left: .22rem solid var(--boss-accent);
+  background: linear-gradient(105deg, rgba(2, 18, 27, .97), rgba(8, 40, 40, .94));
+  box-shadow: 0 .7rem 2.2rem rgba(0, 0, 0, .45), 0 0 1.8rem rgba(255, 126, 46, .14);
+  color: #e9fff8;
+  pointer-events: none;
+}
+.boss-encounter-hud[data-phase="2"] { --boss-accent: #ffcf58; }
+.boss-encounter-hud[data-phase="3"] { --boss-accent: #ff6255; }
+.boss-encounter-hud.hidden { display: none; }
+.boss-encounter-hud.boss-hit { animation: bossDamageConfirm .22s ease-out; }
+@keyframes bossDamageConfirm {
+  0% { filter: brightness(1.75); box-shadow: 0 0 2.8rem rgba(255, 205, 82, .72); }
+  100% { filter: brightness(1); }
+}
+.boss-heading { display: grid; grid-template-columns: 1fr auto; gap: .08rem .7rem; align-items: center; }
+.boss-heading > span { display: none; }
+.boss-heading strong { overflow: hidden; font-size: clamp(.72rem, 1.2vw, .9rem); letter-spacing: .045em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.boss-heading > b { color: var(--boss-accent); font-size: .58rem; letter-spacing: .12em; white-space: nowrap; }
+.boss-hp-line { margin-top: .18rem; }
+.boss-hp-line label { display: flex; justify-content: space-between; color: #cce7e4; font-size: .6rem; font-weight: 800; letter-spacing: .14em; }
+.boss-hp-line output { color: #fff; font-variant-numeric: tabular-nums; }
+.boss-health { position: relative; height: .42rem; margin-top: .12rem; overflow: hidden; border: 1px solid rgba(186, 255, 220, .5); background: rgba(0, 6, 10, .88); }
+.boss-health i { display: block; height: 100%; background: linear-gradient(90deg, #49d978, #ffd05f 62%, #ff654d); box-shadow: 0 0 .8rem var(--boss-accent); transition: width .14s linear; }
+.boss-health em { position: absolute; inset-block: 0; width: 2px; background: rgba(2, 15, 20, .95); }
+.boss-health em:first-of-type { left: 33.33%; }
+.boss-health em:last-of-type { left: 66.66%; }
+.boss-status-line { position: absolute; right: .65rem; top: .32rem; display: block; }
+.boss-status-line > span,
+.boss-status-line > small { display: none; }
+.boss-status-line > b { display: none; }
+.boss-status-line > b.active { color: #69f7e2; animation: bossDefensePulse .65s ease-in-out infinite alternate; }
+.boss-status-line > b.ready { color: #9ff07b; }
+@keyframes bossDefensePulse { to { filter: brightness(1.65); } }
+.boss-status-line small { grid-column: 1 / -1; color: #91aaa9; font-size: .56rem; letter-spacing: .075em; text-transform: uppercase; }
+html.zk-boss-active .toast-stack,
+html.zk-boss-active .team-card .toast-stack { top: auto !important; right: 1rem !important; bottom: clamp(7.5rem, 15vh, 10rem) !important; left: auto !important; width: min(20rem, calc(100vw - 2rem)) !important; transform: none !important; }
+html.zk-boss-active .toast-stack .toast { padding: .55rem .7rem; }
+html.zk-boss-active .toast-stack .toast p { margin: .2rem 0; font-size: .72rem; }
+@media (max-width: 760px) {
+  .boss-encounter-hud { top: 4.35rem; width: calc(100vw - 1rem); padding: .38rem .55rem; }
+  .boss-status-line > span { display: none; }
+  .boss-status-line { grid-template-columns: 1fr; }
+  .boss-status-line > b { justify-self: start; }
+}

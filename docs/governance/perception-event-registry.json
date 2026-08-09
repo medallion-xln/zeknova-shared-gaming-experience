@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "registry_id": "zeknova-perception-events-v1-development",
+  "status": "development",
+  "phase": "W0-O.1",
+  "contract": {
+    "contract_id": "zeknova-perception-event-contract-v1",
+    "implementation_path_zeknova": "azl/zeknova-perception-event-contract-v1.js",
+    "implementation_path_sentinel": "public_html/azl/zeknova-perception-event-contract-v1.js",
+    "implementation_sha256": "7e4d5dffa70b5cda4992ec0c81eda088b842828813fd56cd64c244c704345c8c"
+  },
+  "identity_dependency": {
+    "contract_id": "zeknova-identity-contract-v1",
+    "contract_sha256": "b92f7cc21e1def95014c5b8ee1ff4f2d3f0fb45e1d9e5b2988768336fce1e9c1",
+    "w0o0_sentinel_portability_digest": "5d6e4872e1dab3f7e3062f1b9cf118a329252823ece3c6357ce794058ce0eb34",
+    "w0o0_zeknova_portability_digest": "0b424ff21f1def34f3a156e1c02396e47872e753e9fe3ca27714ae1814b617a9"
+  },
+  "event_identity": {
+    "format": "zkev:v1:<MONOTONIC_SEQUENCE>:<FNV1A64X2_CANONICAL_BODY>",
+    "sequence_starts_at": 1,
+    "sequence_is_contiguous": true,
+    "event_ids_are_content_bound": true,
+    "event_ids_may_not_be_reused": true,
+    "wall_clock_fields_forbidden": true
+  },
+  "common_fields": [
+    "schemaVersion",
+    "contractId",
+    "registryId",
+    "worldId",
+    "eventId",
+    "eventSequence",
+    "eventType",
+    "observerFactionId",
+    "sourceFactionId",
+    "sourceEntityId",
+    "subjectId",
+    "observedAtQuantum",
+    "sourceType",
+    "payload"
+  ],
+  "grounding_rules": {
+    "observer_faction_must_be_registered": true,
+    "source_faction_must_be_registered": true,
+    "source_entity_must_be_active": true,
+    "source_entity_must_be_owned_by_source_faction": true,
+    "non_share_events_require_observer_equal_source_faction": true,
+    "subject_must_be_active_or_retired_in_identity_snapshot": true,
+    "event_world_must_match_identity_snapshot": true,
+    "payload_unknown_fields_are_rejected": true,
+    "non_finite_numbers_are_rejected": true,
+    "positions_are_integer_world_cells": true,
+    "automatic_omniscient_enemy_enumeration_is_forbidden": true
+  },
+  "event_types": {
+    "enemy_sighted": {
+      "subject_kinds": ["unit"],
+      "source_types": ["line_of_sight", "proximity_sensor", "combat_contact"],
+      "payload_fields": ["classification", "hostility", "movementBand", "positionCell"]
+    },
+    "enemy_lost": {
+      "subject_kinds": ["unit"],
+      "source_types": ["line_of_sight", "proximity_sensor"],
+      "payload_fields": ["lastKnownPositionCell", "reason"]
+    },
+    "combat_alert": {
+      "subject_kinds": ["unit", "structure", "settlement", "area"],
+      "source_types": ["combat_contact", "damage_sensor"],
+      "payload_fields": ["contactRole", "positionCell", "severity"]
+    },
+    "structure_observed": {
+      "subject_kinds": ["structure", "settlement"],
+      "source_types": ["line_of_sight", "proximity_sensor", "structure_sensor"],
+      "payload_fields": ["observedOwnerFactionId", "positionCell", "statusBand", "structureKind"]
+    },
+    "structure_damaged": {
+      "subject_kinds": ["structure", "settlement"],
+      "source_types": ["combat_contact", "damage_sensor", "structure_sensor"],
+      "payload_fields": ["damageBand", "positionCell"]
+    },
+    "structure_destroyed": {
+      "subject_kinds": ["structure", "settlement"],
+      "source_types": ["line_of_sight", "combat_contact", "damage_sensor", "structure_sensor"],
+      "payload_fields": ["confirmation", "positionCell"]
+    },
+    "resource_discovered": {
+      "subject_kinds": ["resource"],
+      "source_types": ["line_of_sight", "proximity_sensor", "resource_sensor"],
+      "payload_fields": ["abundanceBand", "positionCell", "resourceKind"]
+    },
+    "route_observed": {
+      "subject_kinds": ["route"],
+      "source_types": ["line_of_sight", "proximity_sensor", "route_sensor"],
+      "payload_fields": ["observedCell", "status"]
+    },
+    "infrastructure_status_observed": {
+      "subject_kinds": ["structure", "route"],
+      "source_types": ["line_of_sight", "infrastructure_sensor"],
+      "payload_fields": ["infrastructureKind", "positionCell", "status"]
+    },
+    "intelligence_shared": {
+      "subject_kinds": ["unit", "structure", "settlement", "resource", "route", "area"],
+      "source_types": ["intelligence_share"],
+      "payload_fields": ["shareMode", "sharedEvent"],
+      "preserves_original_event": true,
+      "nested_sharing_forbidden": true,
+      "sender_must_be_original_observer": true,
+      "sharing_may_not_precede_observation": true
+    }
+  },
+  "scope": {
+    "includes": [
+      "canonical event identity",
+      "monotonic event stream",
+      "registered observer/source/subject validation",
+      "exact event payload schemas",
+      "grounded source ownership",
+      "explicit intelligence sharing envelope",
+      "event stream persistence and clone isolation",
+      "read-only Sentinel-compatible event snapshots"
+    ],
+    "excludes": [
+      "knowledge ledger",
+      "knowledge freshness or expiry",
+      "observation packet generation",
+      "observation-sensitive action legality",
+      "automatic line-of-sight or occlusion engine",
+      "Prime world authority"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stage": "Stage 1A-Z.6",
+  "status": "provisional-linux-only",
+  "contractId": "zeknova-prime-search-efficiency-contract-v1",
+  "candidatePolicyId": "sentinel-prime-puct-v1-z5-deterministic-memoization-development",
+  "authority": "none-no-live-command-execution",
+  "canonicalMetrics": [
+    "computationTotal",
+    "cacheHitTotal",
+    "meanComputationsPerDecision"
+  ],
+  "wallClockCanonical": false
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "stage": "Stage 1A-Z.12",
+  "contractId": "zeknova-authority-readiness-contract-v1",
+  "authority": "none-assess-and-deny-by-default",
+  "defaultReadinessLevel": "R0_OBSERVATION_ONLY",
+  "defaultDecision": "DENIED",
+  "executionPolicy": "incumbent-only",
+  "selfAuthorizationForbidden": true,
+  "authorityTokenIssuanceForbidden": true
+}

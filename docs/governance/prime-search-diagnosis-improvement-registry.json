@@ -1,0 +1,787 @@
+{
+  "registryId": "zeknova-prime-search-diagnosis-improvement-v1-development",
+  "status": "development-search-improvement-no-sentinel-authority",
+  "contractId": "zeknova-prime-search-diagnosis-improvement-contract-v1",
+  "contractSha256": "541cb02bdaf768caa88d386e540078acf6e826069b0eae637950a046dd2fc695",
+  "evaluationId": "zeknova-prime-search-diagnosis-improvement-v1",
+  "mode": "evaluation-only-search-diagnosis-no-live-command-execution",
+  "authority": "none-no-live-command-execution",
+  "scenarioContractId": "zeknova-forest-objective-scenario-contract-v1",
+  "baselineEvaluationContractId": "zeknova-sentinel-prime-policy-evaluation-contract-v1",
+  "inherits": {
+    "stage1az1ManifestSha256": "4fa945f338ab495168c54d4762a6aaf6b026092818e0979e59d89a232d3669c0",
+    "stage1az1SentinelDigest": "1e1c565d3817ba2cc5d8d5bb68ce4e6ea016340fa603992b7fbe32b7d7736897",
+    "stage1az1ZeknovaDigest": "fadf30db72caf7cdafc1d834f4ff279af24e78879b2d6ac0a78378ba1da034c9",
+    "stage1az1Status": "frozen",
+    "frozenBaselineReportId": "zkpe-report:v1:3f4d58e9410a80a7"
+  },
+  "candidate": {
+    "policyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+    "simulationsPerDecision": 96,
+    "maxDepth": 8,
+    "cPuct": 1.35,
+    "valueMode": "normalized-order-preserving",
+    "mandatoryRootCoverage": true,
+    "rolloutPolicy": "none-minimal-fix",
+    "readsAuthoredWitnessPlans": false,
+    "liveAuthority": false
+  },
+  "diagnosis": {
+    "baselineRolloutExecutionStatus": "helper-declared-but-not-invoked-by-frozen-primeDecision",
+    "candidateRolloutPolicy": "none-minimal-fix",
+    "candidateUsesAuthoredWitnessPlans": false,
+    "deeperTreeOnlyChangedSuccessRate": 0,
+    "moreSimulationsOnlyChangedSuccessRate": 0.276786,
+    "normalizedValueOnlyChangedSuccessRate": 0.133929,
+    "primaryFinding": "root-action-exploration-starvation",
+    "rolloutRequiredToPassCurrentSuite": false,
+    "rootCoverageOnlyChangedSuccessRate": 0.5625,
+    "valueScaleFinding": "raw-positive-leaf-values-weaken-first-play-exploration",
+    "witnessPlanReadStatus": "forbidden-and-not-used"
+  },
+  "diagnosisSeedCount": 16,
+  "holdoutSeedCount": 32,
+  "variantCount": 6,
+  "holdoutPolicyCount": 6,
+  "canonicalEvaluation": {
+    "reportId": "zkpdi-report:v1:c471fc9eb54c0418",
+    "totalRunCount": 2016,
+    "diagnosisResults": [
+      {
+        "illegalProposalRate": 0,
+        "mandatoryRootCoverage": false,
+        "maxDepth": 8,
+        "meanDecisionCount": 3.830357,
+        "meanRootCoverageFraction": 0,
+        "objectiveSuccessRate": 0.4375,
+        "policyId": "prime-v1-frozen-reproduction",
+        "rolloutPolicy": "none",
+        "runCount": 112,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0.0625,
+            "runCount": 16,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1,
+        "simulations": 96,
+        "valueMode": "raw-lexicographic-scalar"
+      },
+      {
+        "illegalProposalRate": 0,
+        "mandatoryRootCoverage": false,
+        "maxDepth": 8,
+        "meanDecisionCount": 2.714286,
+        "meanRootCoverageFraction": 0,
+        "objectiveSuccessRate": 0.714286,
+        "policyId": "prime-v1-more-simulations-only",
+        "rolloutPolicy": "none",
+        "runCount": 112,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1,
+        "simulations": 384,
+        "valueMode": "raw-lexicographic-scalar"
+      },
+      {
+        "illegalProposalRate": 0,
+        "mandatoryRootCoverage": false,
+        "maxDepth": 12,
+        "meanDecisionCount": 3.830357,
+        "meanRootCoverageFraction": 0,
+        "objectiveSuccessRate": 0.4375,
+        "policyId": "prime-v1-deeper-tree-only",
+        "rolloutPolicy": "none",
+        "runCount": 112,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0.0625,
+            "runCount": 16,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1,
+        "simulations": 96,
+        "valueMode": "raw-lexicographic-scalar"
+      },
+      {
+        "illegalProposalRate": 0,
+        "mandatoryRootCoverage": false,
+        "maxDepth": 8,
+        "meanDecisionCount": 3.428571,
+        "meanRootCoverageFraction": 0,
+        "objectiveSuccessRate": 0.571429,
+        "policyId": "prime-v1-normalized-value-only",
+        "rolloutPolicy": "none",
+        "runCount": 112,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 16,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1,
+        "simulations": 96,
+        "valueMode": "normalized-order-preserving"
+      },
+      {
+        "illegalProposalRate": 0,
+        "mandatoryRootCoverage": true,
+        "maxDepth": 8,
+        "meanDecisionCount": 1.857143,
+        "meanRootCoverageFraction": 1,
+        "objectiveSuccessRate": 1,
+        "policyId": "prime-v1-root-coverage-only",
+        "rolloutPolicy": "none",
+        "runCount": 112,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1,
+        "simulations": 96,
+        "valueMode": "raw-lexicographic-scalar"
+      },
+      {
+        "illegalProposalRate": 0,
+        "mandatoryRootCoverage": true,
+        "maxDepth": 8,
+        "meanDecisionCount": 1.857143,
+        "meanRootCoverageFraction": 1,
+        "objectiveSuccessRate": 1,
+        "policyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+        "rolloutPolicy": "none",
+        "runCount": 112,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 16,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1,
+        "simulations": 96,
+        "valueMode": "normalized-order-preserving"
+      }
+    ],
+    "holdoutPolicyResults": [
+      {
+        "illegalProposalRate": 0,
+        "mandatoryRootCoverage": true,
+        "maxDepth": 8,
+        "meanDecisionCount": 1.857143,
+        "meanRootCoverageFraction": 1,
+        "objectiveSuccessRate": 1,
+        "policyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+        "rolloutPolicy": "none",
+        "runCount": 224,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1,
+        "simulations": 96,
+        "valueMode": "normalized-order-preserving"
+      },
+      {
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.419643,
+        "policyId": "sentinel-prime-puct-v1-development",
+        "runCount": 224,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0.03125,
+            "runCount": 32,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0.90625,
+            "runCount": 32,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1
+      },
+      {
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.428571,
+        "policyId": "incumbent-scripted-proxy-v1-development",
+        "runCount": 224,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 0
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 0.857143
+      },
+      {
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 1,
+        "policyId": "deterministic-defensive-rules-v1",
+        "runCount": 224,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 1,
+            "runCount": 32,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 1
+          }
+        ],
+        "settlementSurvivalRate": 1
+      },
+      {
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.267857,
+        "policyId": "random-legal-v1",
+        "runCount": 224,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 0.28125,
+            "runCount": 32,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0.21875,
+            "runCount": 32,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 0.3125
+          },
+          {
+            "objectiveSuccessRate": 0.40625,
+            "runCount": 32,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0.125,
+            "runCount": 32,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0.125,
+            "runCount": 32,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 0.125
+          },
+          {
+            "objectiveSuccessRate": 0.375,
+            "runCount": 32,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 0.9375
+          },
+          {
+            "objectiveSuccessRate": 0.34375,
+            "runCount": 32,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 0.53125
+          }
+        ],
+        "settlementSurvivalRate": 0.700893
+      },
+      {
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0,
+        "policyId": "always-hold-v1",
+        "runCount": 224,
+        "scenarioResults": [
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "perimeter-breach",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "damaged-core",
+            "settlementSurvivalRate": 0
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "route-infrastructure-cascade",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "resource-corridor",
+            "settlementSurvivalRate": 1
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "exposed-patrol",
+            "settlementSurvivalRate": 0
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "multi-crisis-priority",
+            "settlementSurvivalRate": 0.875
+          },
+          {
+            "objectiveSuccessRate": 0,
+            "runCount": 32,
+            "scenarioId": "deescalation-window",
+            "settlementSurvivalRate": 0.09375
+          }
+        ],
+        "settlementSurvivalRate": 0.566964
+      }
+    ],
+    "holdoutPairwise": [
+      {
+        "baselinePolicyId": "sentinel-prime-puct-v1-development",
+        "cases": 224,
+        "losses": 0,
+        "nonLossRate": 1,
+        "ties": 94,
+        "winRate": 0.580357,
+        "wins": 130
+      },
+      {
+        "baselinePolicyId": "incumbent-scripted-proxy-v1-development",
+        "cases": 224,
+        "losses": 64,
+        "nonLossRate": 0.714286,
+        "ties": 32,
+        "winRate": 0.571429,
+        "wins": 128
+      },
+      {
+        "baselinePolicyId": "deterministic-defensive-rules-v1",
+        "cases": 224,
+        "losses": 32,
+        "nonLossRate": 0.857143,
+        "ties": 160,
+        "winRate": 0.142857,
+        "wins": 32
+      },
+      {
+        "baselinePolicyId": "random-legal-v1",
+        "cases": 224,
+        "losses": 9,
+        "nonLossRate": 0.959821,
+        "ties": 28,
+        "winRate": 0.834821,
+        "wins": 187
+      },
+      {
+        "baselinePolicyId": "always-hold-v1",
+        "cases": 224,
+        "losses": 0,
+        "nonLossRate": 1,
+        "ties": 0,
+        "winRate": 1,
+        "wins": 224
+      }
+    ],
+    "searchImprovementGates": {
+      "allSearchImprovementGatesPassed": true,
+      "candidateHoldoutObjectiveGate": true,
+      "candidateSurvivalGate": true,
+      "deterministic": true,
+      "frozenV1NoLossGate": true,
+      "frozenV1WinGate": true,
+      "incumbentProxyNonLossGate": true,
+      "legalProposalGate": true,
+      "randomNonLossGate": true,
+      "rootCoverageDiagnosisGate": true,
+      "rulesNonLossGate": true
+    }
+  },
+  "claims": {
+    "evaluationReproducible": true,
+    "rootExplorationDefectDiagnosed": true,
+    "searchImprovementGatesPassed": true,
+    "candidateLegal": true,
+    "candidateHoldoutObjectiveSuccess": true,
+    "sentinelAuthority": false,
+    "productionAuthority": false,
+    "strategicCompetence": false,
+    "primeOutperformsActualIncumbent": false,
+    "fullGameDynamics": false
+  }
+}

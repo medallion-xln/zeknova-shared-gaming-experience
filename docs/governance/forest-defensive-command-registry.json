@@ -1,0 +1,174 @@
+{
+  "registry_version": 1,
+  "registry_id": "zeknova-forest-defensive-commands-v1-development",
+  "status": "development",
+  "phase": "W0-P.1",
+  "environment_id": "zeknova-forest-ao-live-command-runtime",
+  "command_space_id": "zeknova-forest-defensive-command-space-v1",
+  "action_space_id": "zeknova-forest-defensive-action-space-v1",
+  "mode": "live-incumbent-command-runtime",
+  "required_authority": "incumbent-scripted-ai",
+  "sentinel_prime_authority": false,
+  "router_authority": false,
+  "production_authority": false,
+  "purpose": "Create the first canonical live Forest Defensive command path for route patrol, hostile interception, and exposed-patrol withdrawal while preserving incumbent-only execution authority.",
+  "authority_policy": {
+    "accepted": [
+      "incumbent-scripted-ai"
+    ],
+    "rejected": [
+      "sentinel-prime",
+      "sentinel-router",
+      "shadow-replay",
+      "test-projection"
+    ],
+    "public_adapter": "read-only-inspection",
+    "live_controller": "zeknova-incumbent-forest-command-controller-v1",
+    "capability_gate": "unforgeable-module-private-runtime-capability"
+  },
+  "lifecycle": [
+    "candidate",
+    "accepted",
+    "active",
+    "completed",
+    "failed",
+    "interrupted"
+  ],
+  "cost_policy": {
+    "timing": "acceptance",
+    "deduct_exactly_once": true,
+    "patrol_and_intercept": "reserve-new-patrol-slot",
+    "withdraw": "reuse-existing-patrol-assignment",
+    "release": "terminal-command-state",
+    "cooldown_begins": "terminal-command-quantum"
+  },
+  "bindings": [
+    {
+      "actionIndex": 1,
+      "actionKey": "patrol_known_route",
+      "handler": "ForestDefensiveCommandIntegration.processActiveCommand",
+      "target": "canonical fresh route_status target",
+      "executionQuanta": 2,
+      "cooldownQuanta": 1,
+      "commitmentQuanta": 2,
+      "readinessCost": 4,
+      "patrolSlotMode": "reserve-new-patrol-slot",
+      "completionSignals": [
+        "route_patrol_circuit_completed"
+      ],
+      "failureSignals": [
+        "runtime_assignment_missing",
+        "completion_signal_missing"
+      ],
+      "liveEffects": [
+        "patrol_reached_route_endpoint",
+        "patrol_returned_to_defensive_origin"
+      ],
+      "w0p1_command_interface_status": "exact",
+      "full_w0p_outcome_parity": "partial"
+    },
+    {
+      "actionIndex": 3,
+      "actionKey": "intercept_hostile_contact",
+      "handler": "ForestDefensiveCommandIntegration.processActiveCommand",
+      "target": "canonical fresh hostile unit_contact target resolved to live identity",
+      "executionQuanta": 1,
+      "cooldownQuanta": 2,
+      "commitmentQuanta": 1,
+      "readinessCost": 10,
+      "patrolSlotMode": "reserve-new-patrol-slot",
+      "completionSignals": [
+        "patrol_entered_intercept_range",
+        "hostile_contact_retired"
+      ],
+      "failureSignals": [
+        "runtime_assignment_missing",
+        "intercept_range_not_reached",
+        "completion_signal_missing"
+      ],
+      "liveEffects": [
+        "patrol_entered_intercept_range",
+        "hostile_contact_no_longer_active"
+      ],
+      "w0p1_command_interface_status": "exact",
+      "full_w0p_outcome_parity": "partial"
+    },
+    {
+      "actionIndex": 12,
+      "actionKey": "withdraw_exposed_patrol",
+      "handler": "ForestDefensiveCommandIntegration.processActiveCommand",
+      "target": "canonical fresh hostile unit_contact or attacker combat_alert target",
+      "executionQuanta": 1,
+      "cooldownQuanta": 0,
+      "commitmentQuanta": 0,
+      "readinessCost": 0,
+      "patrolSlotMode": "reuse-existing-patrol-assignment",
+      "completionSignals": [
+        "patrol_entered_defensive_return_zone"
+      ],
+      "failureSignals": [
+        "runtime_assignment_missing",
+        "completion_signal_missing"
+      ],
+      "liveEffects": [
+        "patrol_assignment_transferred_to_withdrawal",
+        "patrol_returned_to_defensive_origin"
+      ],
+      "w0p1_command_interface_status": "exact",
+      "full_w0p_outcome_parity": "partial"
+    }
+  ],
+  "source_inventory": {
+    "shared_contract": {
+      "path": "azl/zeknova-forest-defensive-command-contract-v1.js",
+      "sha256": "83f5699a14f1ce37d1b37e4e14f2deb2af3d7a293f6bc6735de8cff3cb8cfc62",
+      "anchors": [
+        "createCommandRequest",
+        "createAcceptedCommand",
+        "advanceCommand",
+        "CommandEventLedger"
+      ]
+    },
+    "runtime_integration": {
+      "path": "src/game/ForestDefensiveCommandIntegration.js",
+      "sha256": "0e2aaa86fff30d66a518b8e72f2770f16e557fc74a3e9e10cf6f76db00c60e89",
+      "anchors": [
+        "issueCommand(",
+        "advanceToQuantum(",
+        "processActiveCommand(",
+        "REQUIRED_AUTHORITY"
+      ]
+    },
+    "public_adapter": {
+      "path": "azl/zeknova-forest-defensive-command-adapter-v1.js",
+      "sha256": "4e36013a2b78426fb86268a2f0924e5b1d8e75514f4eaad7d844a18cae493859",
+      "anchors": [
+        "captureRuntimeSnapshot",
+        "getCommand"
+      ]
+    },
+    "world_wrapper": {
+      "path": "src/world/ForestDefensiveCommands.js",
+      "sha256": "fc0ba24f3460818ec776be104ac95cbbc261fdaa33dcd0eb12b4a6a9b3a72f8e",
+      "anchors": [
+        "FOREST_DEFENSIVE_COMMAND_AUTHORITY",
+        "FOREST_DEFENSIVE_COMMAND_ACTIONS"
+      ]
+    }
+  },
+  "inherited_w0p_verdict": {
+    "exact_bindings": 0,
+    "partial_bindings": 5,
+    "unbound_bindings": 8,
+    "production_parity": false
+  },
+  "claims": {
+    "first_three_command_lifecycles_are_live": true,
+    "target_eligibility_cost_duration_failure_and_completion_are_canonical": true,
+    "intercept_command_does_not_apply_combat_damage": true,
+    "prime_remains_shadow_only": true,
+    "remaining_ten_actions_not_bound_by_this_phase": true,
+    "full_action_outcome_parity_not_claimed": true,
+    "spoofed_incumbent_source_without_capability_is_rejected": true
+  }
+}

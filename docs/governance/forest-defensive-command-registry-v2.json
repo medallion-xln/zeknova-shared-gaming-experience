@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "registry_id": "zeknova-forest-defensive-commands-v2-development",
+  "command_space_id": "zeknova-forest-defensive-command-space-v2",
+  "status": "development-incumbent-only-live-command-runtime",
+  "mode": "live-incumbent-command-runtime",
+  "required_authority": "incumbent-scripted-ai",
+  "sentinel_prime_authority": false,
+  "router_authority": false,
+  "public_adapter": "read-only",
+  "cost_timing": "acceptance-exactly-once",
+  "action_count": 13,
+  "bindings": [
+    {"actionIndex":0,"actionKey":"hold_settlement_perimeter","assignmentMode":"none","completionSignals":["perimeter_hold_completed"],"runtimeHandler":"holdSettlementPerimeter","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":1,"actionKey":"patrol_known_route","assignmentMode":"patrol","completionSignals":["route_patrol_circuit_completed"],"runtimeHandler":"patrolKnownRoute","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":2,"actionKey":"reconnoiter_forest_lane","assignmentMode":"patrol","completionSignals":["forest_lane_recon_completed"],"runtimeHandler":"reconnoiterForestLane","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":3,"actionKey":"intercept_hostile_contact","assignmentMode":"patrol","completionSignals":["patrol_entered_intercept_range","hostile_contact_retired"],"runtimeHandler":"interceptHostileContact","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":4,"actionKey":"screen_combat_alert","assignmentMode":"patrol","completionSignals":["combat_alert_screened"],"runtimeHandler":"screenCombatAlert","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":5,"actionKey":"reinforce_threatened_structure","assignmentMode":"patrol","completionSignals":["structure_reinforcement_completed"],"runtimeHandler":"reinforceThreatenedStructure","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":6,"actionKey":"repair_known_structure","assignmentMode":"repair","completionSignals":["structure_repair_completed"],"runtimeHandler":"repairKnownStructure","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":7,"actionKey":"fortify_known_route","assignmentMode":"patrol-and-repair","completionSignals":["route_fortification_completed"],"runtimeHandler":"fortifyKnownRoute","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":8,"actionKey":"secure_known_resource","assignmentMode":"patrol","completionSignals":["resource_security_established"],"runtimeHandler":"secureKnownResource","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":9,"actionKey":"stabilize_known_infrastructure","assignmentMode":"repair","completionSignals":["infrastructure_stabilized"],"runtimeHandler":"stabilizeKnownInfrastructure","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":10,"actionKey":"share_direct_intelligence","assignmentMode":"none","completionSignals":["intelligence_share_delivered"],"runtimeHandler":"shareDirectIntelligence","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":11,"actionKey":"open_defensive_channel","assignmentMode":"none","completionSignals":["defensive_channel_opened"],"runtimeHandler":"openDefensiveChannel","parityStatus":"exact-command-lifecycle"},
+    {"actionIndex":12,"actionKey":"withdraw_exposed_patrol","assignmentMode":"reuse-patrol","completionSignals":["patrol_entered_defensive_return_zone"],"runtimeHandler":"withdrawExposedPatrol","parityStatus":"exact-command-lifecycle"}
+  ],
+  "source_inventory": {
+    "shared_contract": {"path":"public_html/azl/zeknova-forest-defensive-command-contract-v2.js","sha256":"5cfec8bb0c7de88061910085fb8f53a81bfd8e6b818f9c57ccb9ed43d55789f4"},
+    "zeknova_runtime": {"path":"src/game/ForestDefensiveCommandIntegrationV2.js"},
+    "zeknova_adapter": {"path":"azl/zeknova-forest-defensive-command-adapter-v2.js"}
+  },
+  "guards": {
+    "module_private_authority_capability": true,
+    "prime_and_router_rejected": true,
+    "canonical_w0af_targets_required": true,
+    "targetless_actions_require_null_target": true,
+    "costs_applied_once_at_acceptance": true,
+    "explicit_completion_failure_and_interrupt": true,
+    "intercept_applies_no_combat_damage": true,
+    "strategic_competence_claim": false,
+    "production_authority_claim": false
+  }
+}

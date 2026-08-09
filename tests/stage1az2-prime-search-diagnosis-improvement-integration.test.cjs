@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+'use strict';
+const assert=require('node:assert/strict'),path=require('node:path'),{pathToFileURL}=require('node:url');
+(async()=>{
+ globalThis.document={documentElement:{dataset:{}}};
+ const mod=await import(pathToFileURL(path.resolve(__dirname,'../src/game/PrimeSearchDiagnosisImprovementIntegration.js')).href+'?t=1');
+ const C=globalThis.ZekNovaPrimeSearchDiagnosisImprovementContract,A=globalThis.ZekNovaPrimeSearchDiagnosisImprovementAdapter;
+ let checks=0;function test(n,fn){fn();checks++;console.log('  PASS '+n)}
+ test('integration starts uninstalled',()=>assert.equal(globalThis.ZekNovaPrimeSearchDiagnosisImprovementIntegration==null,true));
+ const x=new mod.PrimeSearchDiagnosisImprovementIntegration();x.install();
+ test('integration installed',()=>assert.equal(x.installed,true));
+ test('integration global installed',()=>assert.equal(globalThis.ZekNovaPrimeSearchDiagnosisImprovementIntegration,x));
+ test('document marker installed',()=>assert.equal(document.documentElement.dataset.zeknovaPrimeSearchDiagnosis,'stage1az2-v1'));
+ test('adapter installed',()=>assert.ok(A));
+ test('adapter read only identity',()=>assert.equal(A.id,'zeknova-prime-search-diagnosis-improvement-adapter-v1'));
+ test('adapter contract identity',()=>assert.equal(A.contractId,C.CONTRACT_ID));
+ test('adapter authority none',()=>assert.equal(A.authority,C.AUTHORITY));
+ test('adapter variant count six',()=>assert.equal(A.variantCount,6));
+ test('adapter candidate exact',()=>assert.equal(A.candidatePolicyId,C.V2_POLICY_ID));
+ test('adapter exposes no execute',()=>assert.equal(typeof A.execute,'undefined'));
+ test('adapter exposes no dispatch',()=>assert.equal(typeof A.dispatch,'undefined'));
+ test('adapter exposes no issue',()=>assert.equal(typeof A.issue,'undefined'));
+ test('adapter exposes no apply',()=>assert.equal(typeof A.apply,'undefined'));
+ const declaration=x.captureDeclaration();
+ test('declaration evaluation exact',()=>assert.equal(declaration.evaluationId,C.EVALUATION_ID));
+ test('declaration candidate exact',()=>assert.equal(declaration.candidatePolicyId,C.V2_POLICY_ID));
+ test('declaration simulations 96',()=>assert.equal(declaration.candidateSimulations,96));
+ test('declaration search improvement evaluated',()=>assert.equal(declaration.searchImprovementEvaluated,true));
+ test('declaration strategic competence false',()=>assert.equal(declaration.strategicCompetenceCertified,false));
+ test('declaration live authority false',()=>assert.equal(declaration.liveAuthorityApproved,false));
+ test('declaration detached',()=>{declaration.candidatePolicyId='bad';assert.equal(x.captureDeclaration().candidatePolicyId,C.V2_POLICY_ID);});
+ const run=x.runCandidate({scenarioId:'route-infrastructure-cascade',seed:26003});
+ test('integration candidate run canonical',()=>assert.match(run.runId,/^zkpdi-run:v1:/));
+ test('integration candidate completes',()=>assert.equal(run.objectiveComplete,true));
+ test('integration candidate no authority',()=>assert.equal(run.authority,C.AUTHORITY));
+ const report=x.runEvaluation({diagnosisSeedCount:1,holdoutSeedCount:1});
+ test('integration evaluation canonical',()=>assert.match(report.reportId,/^zkpdi-report:v1:/));
+ test('integration evaluation has 84 runs',()=>assert.equal(report.totalRunCount,84));
+ test('adapter evaluation equals integration',()=>assert.deepEqual(A.runEvaluation(1,1),report));
+ test('evaluation creates no command runtime',()=>assert.equal(globalThis.ZekNovaIncumbentForestCommandControllerV2==null,true));
+ test('evaluation exposes no live mutation surface',()=>assert.equal(typeof x.execute,'undefined'));
+ const prior=JSON.parse(JSON.stringify(report));x.dispose();
+ test('dispose clears global',()=>assert.equal(globalThis.ZekNovaPrimeSearchDiagnosisImprovementIntegration,null));
+ test('prior report detached',()=>assert.deepEqual(report,prior));
+ assert.throws(()=>x.captureDeclaration(),/not installed/);checks++;console.log('  PASS uninstalled capture rejected');
+ console.log(`STAGE 1A-Z.2 PRIME SEARCH DIAGNOSIS AND IMPROVEMENT INTEGRATION TESTS PASS (${checks}/${checks})`);
+})().catch(e=>{console.error(e);process.exit(1)});

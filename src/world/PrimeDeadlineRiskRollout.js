@@ -1,0 +1,20 @@
+import "../../azl/zeknova-identity-contract-v1.js";
+import "../../azl/zeknova-perception-event-contract-v1.js";
+import "../../azl/zeknova-knowledge-ledger-contract-v1.js";
+import "../../azl/zeknova-faction-observation-contract-v1.js";
+import "../../azl/zeknova-forest-defensive-action-contract-v1.js";
+import "../../azl/zeknova-forest-defensive-command-contract-v2.js";
+import "../../azl/zeknova-live-parity-closure-contract-v1.js";
+import "../../azl/zeknova-forest-objective-scenario-contract-v1.js";
+import "../../azl/zeknova-sentinel-prime-policy-evaluation-contract-v1.js";
+import "../../azl/zeknova-prime-search-diagnosis-improvement-contract-v1.js";
+import "../../azl/zeknova-prime-adversarial-generalization-contract-v1.js";
+import "../../azl/zeknova-prime-deadline-risk-rollout-contract-v1.js";
+export const PRIME_DEADLINE_RISK_ROLLOUT_CONTRACT_ID="zeknova-prime-deadline-risk-rollout-contract-v1";
+export const PRIME_DEADLINE_RISK_ROLLOUT_EVALUATION_ID="zeknova-prime-deadline-risk-rollout-v1";
+export const PRIME_DEADLINE_RISK_ROLLOUT_MODE="evaluation-only-deadline-risk-short-rollout-no-live-command-execution";
+export const PRIME_DEADLINE_RISK_ROLLOUT_AUTHORITY="none-no-live-command-execution";
+export const PRIME_DEADLINE_RISK_ROLLOUT_VARIANT_COUNT=14;
+export const PRIME_DEADLINE_RISK_ROLLOUT_DEPTH=3;
+export const PRIME_DEADLINE_RISK_ROLLOUT_POLICY_ID="sentinel-prime-v3-deadline-risk-short-rollout-development";
+export function primeDeadlineRiskRolloutContract(){const api=globalThis.ZekNovaPrimeDeadlineRiskRolloutContract;if(!api||api.CONTRACT_ID!==PRIME_DEADLINE_RISK_ROLLOUT_CONTRACT_ID)throw new Error("Prime deadline-risk rollout contract is unavailable.");return api;}

@@ -7,10 +7,17 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "dev:production": "node scripts/dev.mjs --production",
+    "assets:ktx2-loader": "node scripts/build-ktx2-loader.mjs",
+    "assets:lod": "npm run assets:ktx2-loader && node scripts/build-model-lods.mjs",
     "check": "node scripts/check-source.mjs",
-    "test": "npm run check && node tests/azl-zeknova-adapter.test.cjs && node tests/azl-engine.test.cjs"
+    "test": "npm run check && node tests/azl-zeknova-adapter.test.cjs && node tests/azl-engine.test.cjs && node tests/w0o-identity-contract.test.cjs && node tests/w0o-identity-integration.test.cjs && node tests/w0o1-perception-event-contract.test.cjs && node tests/w0o1-perception-event-integration.test.cjs && node tests/stage1az2-prime-search-observability-contract.test.cjs"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "^4.4.2",
+    "esbuild": "^0.25.11",
+    "three": "^0.185.0"
   }
 }

@@ -1,0 +1,504 @@
+{
+  "registry_version": 1,
+  "registry_id": "zeknova-forest-defensive-actions-v1-development",
+  "status": "development",
+  "phase": "W0-AF",
+  "environment_id": "zeknova-forest-ao",
+  "action_space_id": "zeknova-forest-defensive-action-space-v1",
+  "root_stance": "defensive",
+  "authority": "read-only-planning-no-action-execution",
+  "not_production_action_authority": true,
+  "purpose": "Ground the first real ZekNovan settlement macro-action space in Forest AO world concepts without granting live action authority. W0-P must demonstrate parity before these projections may be used as a transition model.",
+  "grounding": {
+    "biome_source": "src/world/Biomes.js: forest AO uses Timber/Biomass, neurospore canopy hazard, and a protected logistics lane objective",
+    "runtime_sources": [
+      "local ZekNovan settlements and territory rings",
+      "guardian patrol and defender behavior",
+      "damaged-building repair surface",
+      "route/crossing status",
+      "ZekNovan Guardian Watch and Transit Gate infrastructure",
+      "diplomacy tension/trust cycle"
+    ],
+    "observation_source": "W0-O.3 canonical faction observation only",
+    "hidden_state_reads": false
+  },
+  "cost_model": {
+    "classification": "planning-capacity-and-lifecycle-contract",
+    "units": {
+      "readiness": "bounded 0-100 planning readiness",
+      "materials": "bounded 0-100 local repair/fortification stock",
+      "patrolSlots": "available patrol commitments 0-8",
+      "repairCrewSlots": "available repair commitments 0-4",
+      "executionQuanta": "control quanta",
+      "cooldownQuanta": "control quanta",
+      "commitmentQuanta": "control quanta"
+    },
+    "warning": "Capacity numbers are contract values for deterministic planning. W0-P must map them to live ZekNova signals before competence or parity claims."
+  },
+  "outcome_model": {
+    "classification": "deterministic one-step projection",
+    "bounded_metrics": [
+      "readiness",
+      "hostilePressure",
+      "routeSecurity",
+      "settlementSecurity",
+      "structureSupport",
+      "resourceSecurity",
+      "infrastructureReliability",
+      "informationReach",
+      "trust",
+      "tension"
+    ],
+    "warning": "Outcome deltas are planning projections, not live mutations. The adapter exposes no execute/apply/dispatch/commit method."
+  },
+  "forbidden_action_classes": [
+    "raid",
+    "pursue_retreating_unit",
+    "attack_settlement",
+    "destroy_civilian_structure",
+    "resource_denial",
+    "preemptive_strike"
+  ],
+  "safe_fallback": "hold_settlement_perimeter",
+  "declared_interrupts": [
+    "hold_settlement_perimeter",
+    "withdraw_exposed_patrol"
+  ],
+  "actions": [
+    {
+      "index": 0,
+      "key": "hold_settlement_perimeter",
+      "label": "Hold Settlement Perimeter",
+      "interrupt": true,
+      "safeFallback": true,
+      "requiresTarget": false,
+      "targetTopics": [],
+      "eligibility": "always at a nonterminal defensive node",
+      "cost": {
+        "executionQuanta": 1,
+        "cooldownQuanta": 0,
+        "commitmentQuanta": 0,
+        "readiness": 0,
+        "materials": 0,
+        "patrolSlots": 0,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": 6,
+        "hostilePressure": 0,
+        "routeSecurity": 0,
+        "settlementSecurity": 2,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 0,
+        "trust": 0,
+        "tension": 0
+      }
+    },
+    {
+      "index": 1,
+      "key": "patrol_known_route",
+      "label": "Patrol Known Route",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "route_status"
+      ],
+      "eligibility": "any fresh known route",
+      "cost": {
+        "executionQuanta": 2,
+        "cooldownQuanta": 1,
+        "commitmentQuanta": 2,
+        "readiness": 4,
+        "materials": 0,
+        "patrolSlots": 1,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -4,
+        "hostilePressure": -2,
+        "routeSecurity": 8,
+        "settlementSecurity": 2,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 3,
+        "trust": 0,
+        "tension": 0
+      }
+    },
+    {
+      "index": 2,
+      "key": "reconnoiter_forest_lane",
+      "label": "Reconnoiter Forest Lane",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "route_status"
+      ],
+      "eligibility": "any fresh known route",
+      "cost": {
+        "executionQuanta": 2,
+        "cooldownQuanta": 2,
+        "commitmentQuanta": 2,
+        "readiness": 5,
+        "materials": 0,
+        "patrolSlots": 1,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -5,
+        "hostilePressure": 0,
+        "routeSecurity": 3,
+        "settlementSecurity": 0,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 12,
+        "trust": 0,
+        "tension": 0
+      }
+    },
+    {
+      "index": 3,
+      "key": "intercept_hostile_contact",
+      "label": "Intercept Hostile Contact",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "unit_contact"
+      ],
+      "eligibility": "fresh hostile unit contact",
+      "cost": {
+        "executionQuanta": 1,
+        "cooldownQuanta": 2,
+        "commitmentQuanta": 1,
+        "readiness": 10,
+        "materials": 0,
+        "patrolSlots": 1,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -10,
+        "hostilePressure": -15,
+        "routeSecurity": 0,
+        "settlementSecurity": 5,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 0,
+        "trust": -1,
+        "tension": 2
+      }
+    },
+    {
+      "index": 4,
+      "key": "screen_combat_alert",
+      "label": "Screen Active Combat Alert",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "combat_alert"
+      ],
+      "eligibility": "fresh attacker alert of medium severity or higher",
+      "cost": {
+        "executionQuanta": 1,
+        "cooldownQuanta": 1,
+        "commitmentQuanta": 1,
+        "readiness": 7,
+        "materials": 0,
+        "patrolSlots": 1,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -7,
+        "hostilePressure": -8,
+        "routeSecurity": 0,
+        "settlementSecurity": 10,
+        "structureSupport": 3,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 0,
+        "trust": 0,
+        "tension": 1
+      }
+    },
+    {
+      "index": 5,
+      "key": "reinforce_threatened_structure",
+      "label": "Reinforce Threatened Structure",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "structure_status"
+      ],
+      "eligibility": "fresh damaged or disabled structure",
+      "cost": {
+        "executionQuanta": 2,
+        "cooldownQuanta": 2,
+        "commitmentQuanta": 2,
+        "readiness": 6,
+        "materials": 4,
+        "patrolSlots": 1,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -6,
+        "hostilePressure": -3,
+        "routeSecurity": 0,
+        "settlementSecurity": 12,
+        "structureSupport": 10,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 0,
+        "trust": 0,
+        "tension": 0
+      }
+    },
+    {
+      "index": 6,
+      "key": "repair_known_structure",
+      "label": "Repair Known Structure",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "structure_status"
+      ],
+      "eligibility": "fresh damaged or disabled structure",
+      "cost": {
+        "executionQuanta": 3,
+        "cooldownQuanta": 3,
+        "commitmentQuanta": 3,
+        "readiness": 3,
+        "materials": 12,
+        "patrolSlots": 0,
+        "repairCrewSlots": 1
+      },
+      "outcome": {
+        "readiness": -3,
+        "hostilePressure": 0,
+        "routeSecurity": 0,
+        "settlementSecurity": 4,
+        "structureSupport": 20,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 2,
+        "informationReach": 0,
+        "trust": 0,
+        "tension": 0
+      }
+    },
+    {
+      "index": 7,
+      "key": "fortify_known_route",
+      "label": "Fortify Known Route",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "route_status"
+      ],
+      "eligibility": "fresh blocked or damaged route",
+      "cost": {
+        "executionQuanta": 3,
+        "cooldownQuanta": 3,
+        "commitmentQuanta": 3,
+        "readiness": 8,
+        "materials": 18,
+        "patrolSlots": 1,
+        "repairCrewSlots": 1
+      },
+      "outcome": {
+        "readiness": -8,
+        "hostilePressure": -2,
+        "routeSecurity": 16,
+        "settlementSecurity": 5,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 3,
+        "informationReach": 0,
+        "trust": 0,
+        "tension": 1
+      }
+    },
+    {
+      "index": 8,
+      "key": "secure_known_resource",
+      "label": "Secure Known Forest Resource",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "resource_location"
+      ],
+      "eligibility": "fresh known resource location",
+      "cost": {
+        "executionQuanta": 2,
+        "cooldownQuanta": 2,
+        "commitmentQuanta": 2,
+        "readiness": 6,
+        "materials": 0,
+        "patrolSlots": 1,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -6,
+        "hostilePressure": -1,
+        "routeSecurity": 0,
+        "settlementSecurity": 0,
+        "structureSupport": 0,
+        "resourceSecurity": 14,
+        "infrastructureReliability": 0,
+        "informationReach": 2,
+        "trust": 0,
+        "tension": 0
+      }
+    },
+    {
+      "index": 9,
+      "key": "stabilize_known_infrastructure",
+      "label": "Stabilize Known Infrastructure",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "infrastructure_status"
+      ],
+      "eligibility": "fresh degraded or offline infrastructure",
+      "cost": {
+        "executionQuanta": 2,
+        "cooldownQuanta": 2,
+        "commitmentQuanta": 2,
+        "readiness": 4,
+        "materials": 10,
+        "patrolSlots": 0,
+        "repairCrewSlots": 1
+      },
+      "outcome": {
+        "readiness": -4,
+        "hostilePressure": 0,
+        "routeSecurity": 2,
+        "settlementSecurity": 3,
+        "structureSupport": 2,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 18,
+        "informationReach": 0,
+        "trust": 0,
+        "tension": 0
+      }
+    },
+    {
+      "index": 10,
+      "key": "share_direct_intelligence",
+      "label": "Share Direct Intelligence",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "unit_contact",
+        "combat_alert",
+        "structure_status",
+        "resource_location",
+        "route_status",
+        "infrastructure_status"
+      ],
+      "eligibility": "fresh directly acquired record only",
+      "cost": {
+        "executionQuanta": 1,
+        "cooldownQuanta": 1,
+        "commitmentQuanta": 0,
+        "readiness": 1,
+        "materials": 0,
+        "patrolSlots": 0,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -1,
+        "hostilePressure": 0,
+        "routeSecurity": 0,
+        "settlementSecurity": 0,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 10,
+        "trust": 1,
+        "tension": 0
+      }
+    },
+    {
+      "index": 11,
+      "key": "open_defensive_channel",
+      "label": "Open Defensive Diplomatic Channel",
+      "interrupt": false,
+      "safeFallback": false,
+      "requiresTarget": false,
+      "targetTopics": [],
+      "eligibility": "available at a nonterminal defensive node when not cooling down",
+      "cost": {
+        "executionQuanta": 1,
+        "cooldownQuanta": 4,
+        "commitmentQuanta": 0,
+        "readiness": 1,
+        "materials": 0,
+        "patrolSlots": 0,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": -1,
+        "hostilePressure": 0,
+        "routeSecurity": 0,
+        "settlementSecurity": 0,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 2,
+        "trust": 8,
+        "tension": -10
+      }
+    },
+    {
+      "index": 12,
+      "key": "withdraw_exposed_patrol",
+      "label": "Withdraw Exposed Patrol",
+      "interrupt": true,
+      "safeFallback": false,
+      "requiresTarget": true,
+      "targetTopics": [
+        "unit_contact",
+        "combat_alert"
+      ],
+      "eligibility": "fresh hostile unit contact or attacker combat alert",
+      "cost": {
+        "executionQuanta": 1,
+        "cooldownQuanta": 0,
+        "commitmentQuanta": 0,
+        "readiness": 0,
+        "materials": 0,
+        "patrolSlots": 1,
+        "repairCrewSlots": 0
+      },
+      "outcome": {
+        "readiness": 8,
+        "hostilePressure": 3,
+        "routeSecurity": -1,
+        "settlementSecurity": -2,
+        "structureSupport": 0,
+        "resourceSecurity": 0,
+        "infrastructureReliability": 0,
+        "informationReach": 1,
+        "trust": 0,
+        "tension": -1
+      }
+    }
+  ],
+  "contract": {
+    "path": "public_html/azl/zeknova-forest-defensive-action-contract-v1.js",
+    "implementation_sha256": "7e0b4eb52498a6f1d782ba89eb9234c5e4e023fa7dba5d71327d94011f4b0488"
+  }
+}

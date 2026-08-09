@@ -1,0 +1,84 @@
+{
+  "contractId": "zeknova-strategic-action-catalog-v2",
+  "schemaVersion": 2,
+  "authority": {
+    "tier": "R0",
+    "canDispatch": false,
+    "canMutateLiveWorld": false
+  },
+  "actionCount": 13,
+  "actions": [
+    {
+      "index": 0,
+      "actionKey": "hold_settlement_perimeter",
+      "requiresTarget": false
+    },
+    {
+      "index": 1,
+      "actionKey": "patrol_known_route",
+      "requiresTarget": true
+    },
+    {
+      "index": 2,
+      "actionKey": "reconnoiter_forest_lane",
+      "requiresTarget": true
+    },
+    {
+      "index": 3,
+      "actionKey": "intercept_hostile_contact",
+      "requiresTarget": true
+    },
+    {
+      "index": 4,
+      "actionKey": "screen_combat_alert",
+      "requiresTarget": true
+    },
+    {
+      "index": 5,
+      "actionKey": "reinforce_threatened_structure",
+      "requiresTarget": true
+    },
+    {
+      "index": 6,
+      "actionKey": "repair_known_structure",
+      "requiresTarget": true
+    },
+    {
+      "index": 7,
+      "actionKey": "fortify_known_route",
+      "requiresTarget": true
+    },
+    {
+      "index": 8,
+      "actionKey": "secure_known_resource",
+      "requiresTarget": true
+    },
+    {
+      "index": 9,
+      "actionKey": "stabilize_known_infrastructure",
+      "requiresTarget": true
+    },
+    {
+      "index": 10,
+      "actionKey": "share_direct_intelligence",
+      "requiresTarget": true
+    },
+    {
+      "index": 11,
+      "actionKey": "open_defensive_channel",
+      "requiresTarget": false
+    },
+    {
+      "index": 12,
+      "actionKey": "withdraw_exposed_patrol",
+      "requiresTarget": true
+    }
+  ],
+  "hardRules": [
+    "No legal live action may be omitted.",
+    "Illegal actions receive zero search visits.",
+    "Every legal targeted action requires at least one canonical target slot.",
+    "open_defensive_channel remains distinct from share_direct_intelligence.",
+    "The adapter is advisory-only under R0."
+  ]
+}

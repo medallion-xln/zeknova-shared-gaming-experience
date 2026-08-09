@@ -1,0 +1,1786 @@
+{
+  "registryId": "zeknova-prime-adversarial-generalization-v1-development",
+  "status": "development-adversarial-generalization-evaluation-no-sentinel-authority",
+  "contractId": "zeknova-prime-adversarial-generalization-contract-v1",
+  "contractSha256": "5b51f89dd329c52b849cef9195cff250cf86b4f212791916641670a06598bf10",
+  "evaluationId": "zeknova-prime-adversarial-generalization-v1",
+  "mode": "evaluation-only-adversarial-generalization-no-live-command-execution",
+  "authority": "none-no-live-command-execution",
+  "inherits": {
+    "stage1az2ManifestSha256": "42cc646b555e638efc2f00d9517e07629c6f6fd43ba90234e97d9fb790408821",
+    "stage1az2Status": "frozen",
+    "stage1az2SentinelDigest": "68b4a8ce6356d95e4b556620084ab5c9bdb74ff8c9bd7a5dc91ecff636e7704a",
+    "stage1az2ZeknovaDigest": "67666dab0578d78bd2a060428ae95ac6a4922c7b053c963a3b945854c579c09e",
+    "stage1az2ReportId": "zkpdi-report:v1:c471fc9eb54c0418"
+  },
+  "candidate": {
+    "policyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+    "simulationsPerDecision": 96,
+    "maxDepth": 8,
+    "valueMode": "normalized-order-preserving",
+    "mandatoryRootCoverage": true,
+    "rolloutPolicy": "none-minimal-fix",
+    "readsAuthoredWitnessPlans": false,
+    "liveAuthority": false
+  },
+  "evaluationDesign": {
+    "variantCount": 14,
+    "seedCount": 24,
+    "policyCount": 6,
+    "totalRunCount": 2016,
+    "adversaryClasses": [
+      "lower-priority-decoy",
+      "temporary-action-denial",
+      "deadline-order-trap"
+    ],
+    "baseScenarioCount": 7,
+    "disjointSeedFamily": "stage1az21-adversarial-seeds-v1",
+    "statePerturbationJitter": true,
+    "authoredWitnessPlansRead": false
+  },
+  "canonicalEvaluation": {
+    "analysis": {
+      "alwaysHoldLossCases": 12,
+      "candidateReadsAuthoredWitnessPlans": false,
+      "candidateSettlementLossCount": 16,
+      "deadlineOrderTrapSuccessRate": 0.322917,
+      "lowerPriorityDecoySuccessRate": 0.708333,
+      "nextEngineeringTarget": "deadline-sensitive-risk-aware-leaf-and-short-rollout-evaluation",
+      "primaryFinding": "root-coverage-fixed-but-leaf-remains-myopic-under-decoys-and-order-sensitive-deadlines",
+      "secondaryFinding": "candidate-can-lose-settlement-where-always-hold-survives",
+      "temporaryActionDenialSuccessRate": 1
+    },
+    "authority": "none-no-live-command-execution",
+    "candidatePolicyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+    "contractId": "zeknova-prime-adversarial-generalization-contract-v1",
+    "evaluationId": "zeknova-prime-adversarial-generalization-v1",
+    "gates": {
+      "adversaryClassFloorGate": false,
+      "allAdversarialGeneralizationGatesPassed": false,
+      "alwaysHoldNonLossGate": false,
+      "deterministic": true,
+      "frozenV1NonLossGate": true,
+      "frozenV1WinGate": true,
+      "incumbentProxyNonLossGate": true,
+      "legalProposalGate": true,
+      "objectiveSuccessGate": false,
+      "randomNonLossGate": true,
+      "rulesNonLossGate": true,
+      "settlementSurvivalGate": true,
+      "variantFloorGate": false
+    },
+    "incumbentComparisonStatus": "proxy-only-no-canonical-live-incumbent-policy-interface",
+    "mode": "evaluation-only-adversarial-generalization-no-live-command-execution",
+    "pairwise": [
+      {
+        "baselinePolicyId": "prime-v1-frozen-reproduction",
+        "cases": 336,
+        "losses": 0,
+        "nonLossRate": 1,
+        "ties": 76,
+        "winRate": 0.77381,
+        "wins": 260
+      },
+      {
+        "baselinePolicyId": "incumbent-scripted-proxy-v1-development",
+        "cases": 336,
+        "losses": 33,
+        "nonLossRate": 0.901786,
+        "ties": 25,
+        "winRate": 0.827381,
+        "wins": 278
+      },
+      {
+        "baselinePolicyId": "deterministic-defensive-rules-v1",
+        "cases": 336,
+        "losses": 33,
+        "nonLossRate": 0.901786,
+        "ties": 144,
+        "winRate": 0.473214,
+        "wins": 159
+      },
+      {
+        "baselinePolicyId": "random-legal-v1",
+        "cases": 336,
+        "losses": 10,
+        "nonLossRate": 0.970238,
+        "ties": 12,
+        "winRate": 0.934524,
+        "wins": 314
+      },
+      {
+        "baselinePolicyId": "always-hold-v1",
+        "cases": 336,
+        "losses": 12,
+        "nonLossRate": 0.964286,
+        "ties": 1,
+        "winRate": 0.96131,
+        "wins": 323
+      }
+    ],
+    "policyResults": [
+      {
+        "adversaryClassResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "objectiveSuccessRate": 0.708333,
+            "runCount": 168,
+            "settlementSurvivalRate": 0.958333
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "objectiveSuccessRate": 1,
+            "runCount": 72,
+            "settlementSurvivalRate": 1
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "objectiveSuccessRate": 0.322917,
+            "runCount": 96,
+            "settlementSurvivalRate": 0.90625
+          }
+        ],
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.660714,
+        "policyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+        "runCount": 336,
+        "settlementSurvivalRate": 0.952381,
+        "variantResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-diplomatic-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-intercept-cooldown"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "repair_known_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "core-resource-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "core-repair-delay"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "stabilize_known_infrastructure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-route-first-collapse"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "stabilize_known_infrastructure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-fortify-delay"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "secure_known_resource",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0.541667,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-diplomacy-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-alert-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 1
+              },
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 23
+              }
+            ],
+            "objectiveSuccessRate": 0.291667,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.958333,
+            "variantId": "patrol-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0.416667,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "patrol-diplomacy-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "repair_known_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-route-decoy"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "repair_known_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-deescalation-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.666667,
+            "variantId": "deescalation-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.708333,
+            "variantId": "deescalation-resource-lure"
+          }
+        ]
+      },
+      {
+        "adversaryClassResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "objectiveSuccessRate": 0.345238,
+            "runCount": 168,
+            "settlementSurvivalRate": 0.958333
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "objectiveSuccessRate": 0,
+            "runCount": 72,
+            "settlementSurvivalRate": 1
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "objectiveSuccessRate": 0.072917,
+            "runCount": 96,
+            "settlementSurvivalRate": 0.90625
+          }
+        ],
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.193452,
+        "policyId": "prime-v1-frozen-reproduction",
+        "runCount": 336,
+        "settlementSurvivalRate": 0.952381,
+        "variantResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-diplomatic-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-intercept-cooldown"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "repair_known_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "core-resource-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 3
+              },
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 21
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "core-repair-delay"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "stabilize_known_infrastructure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-route-first-collapse"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-fortify-delay"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-diplomacy-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-alert-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 1
+              },
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 23
+              }
+            ],
+            "objectiveSuccessRate": 0.291667,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.958333,
+            "variantId": "patrol-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0.416667,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "patrol-diplomacy-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 8
+              },
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 6
+              },
+              {
+                "actionKey": "repair_known_structure",
+                "count": 10
+              }
+            ],
+            "objectiveSuccessRate": 0.416667,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-route-decoy"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 4
+              },
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 6
+              },
+              {
+                "actionKey": "repair_known_structure",
+                "count": 14
+              }
+            ],
+            "objectiveSuccessRate": 0.583333,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-deescalation-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.666667,
+            "variantId": "deescalation-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.708333,
+            "variantId": "deescalation-resource-lure"
+          }
+        ]
+      },
+      {
+        "adversaryClassResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "objectiveSuccessRate": 0.142857,
+            "runCount": 168,
+            "settlementSurvivalRate": 0.690476
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "objectiveSuccessRate": 0.333333,
+            "runCount": 72,
+            "settlementSurvivalRate": 1
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "objectiveSuccessRate": 0,
+            "runCount": 96,
+            "settlementSurvivalRate": 0.34375
+          }
+        ],
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.142857,
+        "policyId": "incumbent-scripted-proxy-v1-development",
+        "runCount": 336,
+        "settlementSurvivalRate": 0.657738,
+        "variantResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-diplomatic-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-intercept-cooldown"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.833333,
+            "variantId": "core-resource-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "core-repair-delay"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "patrol_known_route",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "cascade-route-first-collapse"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "patrol_known_route",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-fortify-delay"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "patrol_known_route",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-diplomacy-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-alert-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "patrol-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "patrol-diplomacy-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-route-decoy"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-deescalation-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.375,
+            "variantId": "deescalation-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "patrol_known_route",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "deescalation-resource-lure"
+          }
+        ]
+      },
+      {
+        "adversaryClassResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "objectiveSuccessRate": 0.708333,
+            "runCount": 168,
+            "settlementSurvivalRate": 0.916667
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "objectiveSuccessRate": 0.666667,
+            "runCount": 72,
+            "settlementSurvivalRate": 1
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "objectiveSuccessRate": 0.322917,
+            "runCount": 96,
+            "settlementSurvivalRate": 0.833333
+          }
+        ],
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.589286,
+        "policyId": "deterministic-defensive-rules-v1",
+        "runCount": 336,
+        "settlementSurvivalRate": 0.910714,
+        "variantResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-diplomatic-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-intercept-cooldown"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "repair_known_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "core-resource-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "core-repair-delay"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "stabilize_known_infrastructure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-route-first-collapse"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "stabilize_known_infrastructure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-fortify-delay"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "secure_known_resource",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0.541667,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-diplomacy-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-alert-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0.291667,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.958333,
+            "variantId": "patrol-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0.416667,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "patrol-diplomacy-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "repair_known_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-route-decoy"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "repair_known_structure",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 1,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "multi-deescalation-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.375,
+            "variantId": "deescalation-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "secure_known_resource",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.416667,
+            "variantId": "deescalation-resource-lure"
+          }
+        ]
+      },
+      {
+        "adversaryClassResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "objectiveSuccessRate": 0.077381,
+            "runCount": 168,
+            "settlementSurvivalRate": 0.482143
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "objectiveSuccessRate": 0.125,
+            "runCount": 72,
+            "settlementSurvivalRate": 0.847222
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "objectiveSuccessRate": 0.03125,
+            "runCount": 96,
+            "settlementSurvivalRate": 0.354167
+          }
+        ],
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0.074405,
+        "policyId": "random-legal-v1",
+        "runCount": 336,
+        "settlementSurvivalRate": 0.52381,
+        "variantResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 4
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 3
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 2
+              },
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 2
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 4
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 5
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 4
+              }
+            ],
+            "objectiveSuccessRate": 0.083333,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-diplomatic-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 5
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 2
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 7
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 3
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 2
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 5
+              }
+            ],
+            "objectiveSuccessRate": 0.125,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-intercept-cooldown"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 1
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 8
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 2
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 3
+              },
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 1
+              },
+              {
+                "actionKey": "repair_known_structure",
+                "count": 2
+              },
+              {
+                "actionKey": "secure_known_resource",
+                "count": 4
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 2
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 1
+              }
+            ],
+            "objectiveSuccessRate": 0.083333,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.25,
+            "variantId": "core-resource-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 4
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 2
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 6
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 3
+              },
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 1
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 2
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 6
+              }
+            ],
+            "objectiveSuccessRate": 0.125,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.541667,
+            "variantId": "core-repair-delay"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 3
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 4
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 5
+              },
+              {
+                "actionKey": "fortify_known_route",
+                "count": 4
+              },
+              {
+                "actionKey": "stabilize_known_infrastructure",
+                "count": 5
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 2
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 1
+              }
+            ],
+            "objectiveSuccessRate": 0.125,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.208333,
+            "variantId": "cascade-route-first-collapse"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 3
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 5
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 5
+              },
+              {
+                "actionKey": "stabilize_known_infrastructure",
+                "count": 5
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 4
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 2
+              }
+            ],
+            "objectiveSuccessRate": 0.125,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-fortify-delay"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 3
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 4
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 5
+              },
+              {
+                "actionKey": "secure_known_resource",
+                "count": 7
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 4
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 1
+              }
+            ],
+            "objectiveSuccessRate": 0.125,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-diplomacy-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 5
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 3
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 1
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 5
+              },
+              {
+                "actionKey": "secure_known_resource",
+                "count": 3
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 4
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 3
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-alert-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 6
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 4
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 2
+              },
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 2
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 1
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 2
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 5
+              },
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 2
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.083333,
+            "variantId": "patrol-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 4
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 4
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 1
+              },
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 2
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 4
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 1
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 4
+              },
+              {
+                "actionKey": "withdraw_exposed_patrol",
+                "count": 4
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.166667,
+            "variantId": "patrol-diplomacy-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 3
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 6
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 2
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 5
+              },
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 2
+              },
+              {
+                "actionKey": "repair_known_structure",
+                "count": 1
+              },
+              {
+                "actionKey": "secure_known_resource",
+                "count": 3
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 1
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 1
+              }
+            ],
+            "objectiveSuccessRate": 0.083333,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.458333,
+            "variantId": "multi-route-decoy"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 1
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 2
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 5
+              },
+              {
+                "actionKey": "screen_combat_alert",
+                "count": 3
+              },
+              {
+                "actionKey": "reinforce_threatened_structure",
+                "count": 2
+              },
+              {
+                "actionKey": "repair_known_structure",
+                "count": 4
+              },
+              {
+                "actionKey": "secure_known_resource",
+                "count": 1
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 2
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 4
+              }
+            ],
+            "objectiveSuccessRate": 0.166667,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.333333,
+            "variantId": "multi-deescalation-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 5
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 1
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 8
+              },
+              {
+                "actionKey": "intercept_hostile_contact",
+                "count": 4
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 3
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 3
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.125,
+            "variantId": "deescalation-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 2
+              },
+              {
+                "actionKey": "patrol_known_route",
+                "count": 5
+              },
+              {
+                "actionKey": "reconnoiter_forest_lane",
+                "count": 4
+              },
+              {
+                "actionKey": "secure_known_resource",
+                "count": 7
+              },
+              {
+                "actionKey": "share_direct_intelligence",
+                "count": 3
+              },
+              {
+                "actionKey": "open_defensive_channel",
+                "count": 3
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.166667,
+            "variantId": "deescalation-resource-lure"
+          }
+        ]
+      },
+      {
+        "adversaryClassResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "objectiveSuccessRate": 0,
+            "runCount": 168,
+            "settlementSurvivalRate": 0.357143
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "objectiveSuccessRate": 0,
+            "runCount": 72,
+            "settlementSurvivalRate": 0.708333
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "objectiveSuccessRate": 0,
+            "runCount": 96,
+            "settlementSurvivalRate": 0.25
+          }
+        ],
+        "illegalProposalRate": 0,
+        "objectiveSuccessRate": 0,
+        "policyId": "always-hold-v1",
+        "runCount": 336,
+        "settlementSurvivalRate": 0.401786,
+        "variantResults": [
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-diplomatic-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "perimeter-intercept-cooldown"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "core-resource-decoy"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.125,
+            "variantId": "core-repair-delay"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "cascade-route-first-collapse"
+          },
+          {
+            "adversaryClass": "temporary-action-denial",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "cascade-fortify-delay"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-diplomacy-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 1,
+            "variantId": "resource-alert-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "patrol-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "patrol-diplomacy-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.333333,
+            "variantId": "multi-route-decoy"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0.166667,
+            "variantId": "multi-deescalation-decoy"
+          },
+          {
+            "adversaryClass": "deadline-order-trap",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "deescalation-contact-lure"
+          },
+          {
+            "adversaryClass": "lower-priority-decoy",
+            "firstActionCounts": [
+              {
+                "actionKey": "hold_settlement_perimeter",
+                "count": 24
+              }
+            ],
+            "objectiveSuccessRate": 0,
+            "runCount": 24,
+            "settlementSurvivalRate": 0,
+            "variantId": "deescalation-resource-lure"
+          }
+        ]
+      }
+    ],
+    "primeOutperformsActualIncumbentClaim": false,
+    "productionAuthorityClaim": false,
+    "registryId": "zeknova-prime-adversarial-generalization-v1-development",
+    "reportId": "zkpag-report:v1:cc3a145f1b38a929",
+    "schemaVersion": 1,
+    "seedCount": 24,
+    "strategicCompetenceCertified": false,
+    "totalRunCount": 2016,
+    "variantCount": 14
+  },
+  "claims": {
+    "adversarialGeneralizationGatesPassed": false,
+    "candidateLegal": true,
+    "candidateSettlementSurvivalRate": 0.952381,
+    "candidateObjectiveSuccessRate": 0.660714,
+    "sentinelAuthority": false,
+    "productionAuthority": false,
+    "strategicCompetence": false,
+    "primeOutperformsActualIncumbent": false,
+    "fullGameDynamics": false
+  }
+}

@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+'use strict';
+const assert=require('node:assert/strict'),path=require('node:path'),{pathToFileURL}=require('node:url');
+(async()=>{
+ globalThis.document={documentElement:{dataset:{}}};
+ const mod=await import(pathToFileURL(path.resolve(__dirname,'../src/game/SentinelPrimePolicyEvaluationIntegration.js')).href+'?t=1');
+ const C=globalThis.ZekNovaSentinelPrimePolicyEvaluationContract,A=globalThis.ZekNovaSentinelPrimePolicyEvaluationAdapter;
+ let checks=0;function test(n,fn){fn();checks++;console.log('  PASS '+n)}
+ test('integration starts uninstalled',()=>assert.equal(globalThis.ZekNovaSentinelPrimePolicyEvaluationIntegration==null,true));
+ const x=new mod.SentinelPrimePolicyEvaluationIntegration();x.install();
+ test('integration installed',()=>assert.equal(x.installed,true));
+ test('integration global installed',()=>assert.equal(globalThis.ZekNovaSentinelPrimePolicyEvaluationIntegration,x));
+ test('document marker installed',()=>assert.equal(document.documentElement.dataset.zeknovaPrimePolicyEvaluation,'stage1az1-v1'));
+ test('adapter installed',()=>assert.ok(A));
+ test('adapter read only identity',()=>assert.equal(A.id,'zeknova-sentinel-prime-policy-evaluation-adapter-v1'));
+ test('adapter contract identity',()=>assert.equal(A.contractId,C.CONTRACT_ID));
+ test('adapter authority none',()=>assert.equal(A.authority,C.AUTHORITY));
+ test('adapter policy count eighteen',()=>assert.equal(A.policyCount,18));
+ test('adapter exposes no execute',()=>assert.equal(typeof A.execute,'undefined'));
+ test('adapter exposes no dispatch',()=>assert.equal(typeof A.dispatch,'undefined'));
+ test('adapter exposes no issue',()=>assert.equal(typeof A.issue,'undefined'));
+ test('adapter exposes no apply',()=>assert.equal(typeof A.apply,'undefined'));
+ const declaration=x.captureDeclaration();
+ test('declaration evaluation id exact',()=>assert.equal(declaration.evaluationId,C.EVALUATION_ID));
+ test('declaration policy count',()=>assert.equal(declaration.policyCount,18));
+ test('declaration spam count',()=>assert.equal(declaration.spamPolicyCount,13));
+ test('declaration Prime simulations',()=>assert.equal(declaration.primeSimulations,96));
+ test('declaration strategic competence false',()=>assert.equal(declaration.strategicCompetenceCertified,false));
+ test('declaration incumbent claim false',()=>assert.equal(declaration.primeOutperformsActualIncumbentClaim,false));
+ test('declaration detached',()=>{declaration.primaryPolicyIds[0]='bad';assert.equal(x.captureDeclaration().primaryPolicyIds[0],C.PRIMARY_POLICY_IDS[0]);});
+ const run=x.runPolicy({scenarioId:'damaged-core',policyId:C.PRIMARY_POLICY_IDS[0],seed:26003});
+ test('integration policy run canonical',()=>assert.match(run.runId,/^zkpe-run:v1:/));
+ test('integration policy run no authority',()=>assert.equal(run.authority,C.AUTHORITY));
+ const report=x.runEvaluation({seedCount:2});
+ test('integration evaluation canonical',()=>assert.match(report.reportId,/^zkpe-report:v1:/));
+ test('integration evaluation has 252 runs',()=>assert.equal(report.totalRunCount,252));
+ test('adapter evaluation equals integration',()=>assert.deepEqual(A.runEvaluation(2),report));
+ test('evaluation creates no command runtime',()=>assert.equal(globalThis.ZekNovaIncumbentForestCommandControllerV2==null,true));
+ test('evaluation exposes no live mutation surface',()=>assert.equal(typeof x.execute,'undefined'));
+ const prior=JSON.parse(JSON.stringify(report));x.dispose();
+ test('dispose clears global',()=>assert.equal(globalThis.ZekNovaSentinelPrimePolicyEvaluationIntegration,null));
+ test('prior report detached',()=>assert.deepEqual(report,prior));
+ assert.throws(()=>x.captureDeclaration(),/not installed/);checks++;console.log('  PASS uninstalled capture rejected');
+ console.log(`STAGE 1A-Z.1 SENTINEL PRIME POLICY EVALUATION INTEGRATION TESTS PASS (${checks}/${checks})`);
+})().catch(e=>{console.error(e);process.exit(1)});

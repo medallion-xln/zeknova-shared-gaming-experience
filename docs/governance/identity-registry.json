@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "registry_id": "zeknova-identity-v1-development",
+  "status": "development",
+  "contract": {
+    "contract_id": "zeknova-identity-contract-v1",
+    "implementation_path": "public_html/azl/zeknova-identity-contract-v1.js",
+    "implementation_sha256": "b92f7cc21e1def95014c5b8ee1ff4f2d3f0fb45e1d9e5b2988768336fce1e9c1"
+  },
+  "normalization": {
+    "unicode": "NFKC",
+    "team_code_case": "uppercase",
+    "role_case": "lowercase",
+    "transport_encoding": "encodeURIComponent",
+    "identity_prefix": "zkid:v1:"
+  },
+  "world_identity": {
+    "format": "zkid:v1:world:<TEAM_KEY>:<BIOME_SEED>",
+    "required_inputs": [
+      "teamCode",
+      "biomeSeed"
+    ]
+  },
+  "faction_identity": {
+    "human_team": "zkid:v1:faction:human:<TEAM_KEY>",
+    "zeknovan_settlement": "zkid:v1:faction:zeknovan:<TEAM_KEY>:<BIOME_SEED>:settlement:<ORDINAL>"
+  },
+  "entity_identity": {
+    "settlement": "zkid:v1:entity:settlement:zeknovan:<TEAM_KEY>:<BIOME_SEED>:<ORDINAL>",
+    "local_human_unit": "zkid:v1:entity:unit:human:<TEAM_KEY>:<BIOME_SEED>:user:<USER_KEY>",
+    "remote_human_unit": "zkid:v1:entity:unit:human:<TEAM_KEY>:<BIOME_SEED>:client:<CLIENT_KEY>",
+    "zeknovan_unit": "zkid:v1:entity:unit:zeknovan:<TEAM_KEY>:<BIOME_SEED>:spawn:<MONOTONIC_SEQUENCE>:<ROLE_KEY>",
+    "structure": "zkid:v1:entity:structure:<TEAM_KEY>:<BIOME_SEED>:<RECORD_KEY>",
+    "resource": "zkid:v1:entity:resource:<TEAM_KEY>:<BIOME_SEED>:<RESOURCE_KIND>:<SOURCE_KEY>",
+    "area": "zkid:v1:entity:area:<TEAM_KEY>:<BIOME_SEED>:<AREA_KEY>",
+    "route": "zkid:v1:entity:route:<TEAM_KEY>:<BIOME_SEED>:<ROUTE_KEY>"
+  },
+  "lifecycle_rules": {
+    "spawn_sequence_starts_at": 1,
+    "spawn_sequence_is_strictly_monotonic": true,
+    "retired_entity_ids_are_never_reused": true,
+    "persistent_source_keys_map_to_one_entity_id": true,
+    "owner_faction_must_be_registered_first": true,
+    "runtime_array_index_is_not_an_identity": true
+  },
+  "snapshot": {
+    "canonical_json": "recursive key sort over plain JSON values",
+    "runtime_hash": "fnv1a64x2",
+    "records_sorted_by": [
+      "factionId",
+      "entityId",
+      "retiredEntityId"
+    ],
+    "threejs_objects_forbidden": true,
+    "non_finite_numbers_forbidden": true,
+    "cyclic_metadata_forbidden": true
+  },
+  "scope": {
+    "phase": "W0-O.0",
+    "includes": [
+      "stable world identity",
+      "human team faction identity",
+      "two ZekNovan settlement faction identities",
+      "persistent player, structure, resource, area and route identities",
+      "monotonic ZekNovan spawn identities",
+      "retirement and no-reuse enforcement",
+      "snapshot persistence and clone isolation"
+    ],
+    "excludes": [
+      "perception events",
+      "knowledge ledger",
+      "observation expiry",
+      "intelligence sharing",
+      "observation-sensitive action legality",
+      "Prime authority"
+    ]
+  }
+}

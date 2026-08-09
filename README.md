@@ -31,6 +31,8 @@ src/
 
 Biomes, mission definitions, player progression, enemy profiles, and collision radii in these modules are consumed by the live game. The generated Three.js renderer and main simulation loop remain in `assets/index-02987539.js` as a compatibility layer while their classes are migrated incrementally. See `CONTRIBUTING.md` before opening a pull request.
 
+Runtime budgets, automatic quality tiers, and asset delivery rules are documented in [`docs/PERFORMANCE.md`](docs/PERFORMANCE.md).
+
 ## V7 gameplay
 
 - Hybrid third-person exploration and overhead command mode
@@ -50,7 +52,7 @@ Biomes, mission definitions, player progression, enemy profiles, and collision r
 - Mineral and biomass collection, companion-robot rock mining, and individually harvestable alien trees
 - Collidable stones and highland formations that become passable after the companion robot mines them
 - Size-based tree chopping: small trees fall in one chop, while medium and large trees take longer and award more timber
-- Nine construction systems: power, water, habitat, research, culture, governance, defense, bridge, and Survey Skiff
+- Seventeen human construction systems spanning planetary utilities, civic institutions, and Captain-scale corporate infrastructure
 - A separate ZekNovan Aid construction tab provides nine shared projects: Field Clinic, Watershed Renewal, Peace Beacon, Sacred Grove Nursery, Village Habitat, Cultural Archive, Trade Pavilion, Guardian Watch, and Transit Gate. Every project costs minerals plus Colony Credits, remains destructible and repairable, and reduces tension by 10–20 points without counting toward human colony missions.
 - Local bridge crossings and automatic boat deployment over open water
 - Phase III hydro-suit traversal remains a later technology upgrade
@@ -75,7 +77,7 @@ Biomes, mission definitions, player progression, enemy profiles, and collision r
 - Direct utility networks: Water Works must be river-adjacent and directly connected to a Solar Grid; dependent buildings only operate when their required power, water, and data sources are within cable range
 - Visible color-coded utility runs connect every consumer directly to its source, while disconnected structures stop contributing production, readiness, and mission progress
 - Interconnected colony production, readiness indicators, four mission phases, and Civilization Readiness Score
-- Twelve installation-driven missions across four outpost tiers: Basic Outpost, Perimeter Defense, Expanded Operations, and Frontier Stronghold
+- Twelve installation-driven missions across three career eras: Planetary Infrastructure (Ensign, missions 1–4), Public Civilization (Lieutenant, missions 5–9), and Corporate Power (Captain, missions 10–12)
 - Every mission has three field-and-construction sub-objectives with live counters; the mission renders complete only after its full checklist is finished
 - Environmental hazards, protected local territories, diplomacy choices, and defensive encounters
 - Recurring ZekNovan diplomatic incidents appear at randomized 7–10 minute intervals after First Contact; every incident offers three choices that raise or lower persistent tension, trust, hostility, patrol pressure, and related colony systems

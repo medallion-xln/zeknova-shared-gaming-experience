@@ -1,0 +1,982 @@
+{
+  "id": "zeknova-prime-deadline-risk-rollout-v1-development",
+  "schemaVersion": 1,
+  "status": "development-deadline-risk-short-rollout-no-sentinel-authority",
+  "phase": "Stage 1A-Z.2.2",
+  "contractId": "zeknova-prime-deadline-risk-rollout-contract-v1",
+  "contractSha256": "8bf8cfbe6ba74971d6f9540d6f3994bc3a6e4ad276e232063674317965985cef",
+  "evaluationDesign": {
+    "candidatePolicyId": "sentinel-prime-v3-deadline-risk-short-rollout-development",
+    "inheritedCandidatePolicyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+    "holdoutVariantCount": 14,
+    "seedCount": 8,
+    "policyCount": 6,
+    "totalRunCount": 672,
+    "rolloutDepth": 3,
+    "mandatoryRootCoverage": true,
+    "deadlineAware": true,
+    "riskTailPolicy": "hold-to-horizon",
+    "oracleAuditUsedForScoringOnly": true,
+    "candidateReadsOracleAudit": false,
+    "readsAuthoredWitnesses": false,
+    "adversaryClasses": [
+      "deadline-risk",
+      "objective-decoy",
+      "resource-tight",
+      "temporary-denial"
+    ]
+  },
+  "canonicalEvaluation": {
+    "authority": "none-no-live-command-execution",
+    "candidatePolicyId": "sentinel-prime-v3-deadline-risk-short-rollout-development",
+    "contractId": "zeknova-prime-deadline-risk-rollout-contract-v1",
+    "evaluationId": "zeknova-prime-deadline-risk-rollout-v1",
+    "gates": {
+      "allDeadlineRiskRolloutGatesPassed": true,
+      "alwaysHoldNonLossGate": true,
+      "deterministic": true,
+      "holdoutAvoidableObjectiveFailureGate": true,
+      "holdoutAvoidableSettlementLossGate": true,
+      "holdoutLegalProposalGate": true,
+      "holdoutSolvableObjectiveGate": true,
+      "holdoutSurvivalOptimalityGate": true,
+      "holdoutVariantFloorGate": true,
+      "priorAvoidableObjectiveFailureGate": true,
+      "priorAvoidableSettlementLossGate": true,
+      "priorSolvableObjectiveGate": true,
+      "v2NonLossGate": true
+    },
+    "holdout": {
+      "auditedCaseCount": 112,
+      "objectiveSolvableCaseCount": 112,
+      "oracleUnavoidableObjectiveFailureCount": 0,
+      "oracleUnavoidableSettlementLossCount": 0,
+      "pairwise": [
+        {
+          "baselinePolicyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+          "cases": 112,
+          "losses": 4,
+          "nonLossRate": 0.964286,
+          "ties": 43,
+          "winRate": 0.580357,
+          "wins": 65
+        },
+        {
+          "baselinePolicyId": "incumbent-scripted-proxy-v1-development",
+          "cases": 112,
+          "losses": 7,
+          "nonLossRate": 0.9375,
+          "ties": 16,
+          "winRate": 0.794643,
+          "wins": 89
+        },
+        {
+          "baselinePolicyId": "deterministic-defensive-rules-v1",
+          "cases": 112,
+          "losses": 7,
+          "nonLossRate": 0.9375,
+          "ties": 35,
+          "winRate": 0.625,
+          "wins": 70
+        },
+        {
+          "baselinePolicyId": "random-legal-v1",
+          "cases": 112,
+          "losses": 2,
+          "nonLossRate": 0.982143,
+          "ties": 8,
+          "winRate": 0.910714,
+          "wins": 102
+        },
+        {
+          "baselinePolicyId": "always-hold-v1",
+          "cases": 112,
+          "losses": 0,
+          "nonLossRate": 1,
+          "ties": 0,
+          "winRate": 1,
+          "wins": 112
+        }
+      ],
+      "policyResults": [
+        {
+          "avoidableObjectiveFailureCount": 0,
+          "avoidableSettlementLossCount": 0,
+          "illegalProposalRate": 0,
+          "objectiveSuccessRateAll": 1,
+          "objectiveSuccessRateSolvable": 1,
+          "policyId": "sentinel-prime-v3-deadline-risk-short-rollout-development",
+          "runCount": 112,
+          "settlementSurvivalRate": 1,
+          "survivalOptimalityRate": 1,
+          "variantResults": [
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-resource-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-screen-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-contact-lure"
+            },
+            {
+              "adversaryClass": "resource-tight",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-exact-materials"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-stabilize-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-route-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-channel-lure"
+            },
+            {
+              "adversaryClass": "deadline-risk",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-resource-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-repair-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-route-lure"
+            }
+          ]
+        },
+        {
+          "avoidableObjectiveFailureCount": 4,
+          "avoidableSettlementLossCount": 0,
+          "illegalProposalRate": 0,
+          "objectiveSuccessRateAll": 0.964286,
+          "objectiveSuccessRateSolvable": 0.964286,
+          "policyId": "sentinel-prime-puct-v2-normalized-root-coverage-development",
+          "runCount": 112,
+          "settlementSurvivalRate": 1,
+          "survivalOptimalityRate": 1,
+          "variantResults": [
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-resource-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-screen-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-contact-lure"
+            },
+            {
+              "adversaryClass": "resource-tight",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-exact-materials"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-stabilize-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-route-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-channel-lure"
+            },
+            {
+              "adversaryClass": "deadline-risk",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-resource-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0.5,
+              "objectiveSuccessRateSolvable": 0.5,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-repair-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-route-lure"
+            }
+          ]
+        },
+        {
+          "avoidableObjectiveFailureCount": 90,
+          "avoidableSettlementLossCount": 20,
+          "illegalProposalRate": 0,
+          "objectiveSuccessRateAll": 0.196429,
+          "objectiveSuccessRateSolvable": 0.196429,
+          "policyId": "incumbent-scripted-proxy-v1-development",
+          "runCount": 112,
+          "settlementSurvivalRate": 0.821429,
+          "survivalOptimalityRate": 0.821429,
+          "variantResults": [
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-resource-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-screen-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-contact-lure"
+            },
+            {
+              "adversaryClass": "resource-tight",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-exact-materials"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-stabilize-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-route-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-channel-lure"
+            },
+            {
+              "adversaryClass": "deadline-risk",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-resource-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.625,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-repair-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.75,
+              "objectiveSuccessRateSolvable": 0.75,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.875,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-route-lure"
+            }
+          ]
+        },
+        {
+          "avoidableObjectiveFailureCount": 26,
+          "avoidableSettlementLossCount": 0,
+          "illegalProposalRate": 0,
+          "objectiveSuccessRateAll": 0.767857,
+          "objectiveSuccessRateSolvable": 0.767857,
+          "policyId": "deterministic-defensive-rules-v1",
+          "runCount": 112,
+          "settlementSurvivalRate": 1,
+          "survivalOptimalityRate": 1,
+          "variantResults": [
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-resource-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-screen-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-contact-lure"
+            },
+            {
+              "adversaryClass": "resource-tight",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-exact-materials"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-stabilize-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-route-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-channel-lure"
+            },
+            {
+              "adversaryClass": "deadline-risk",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-resource-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 1,
+              "objectiveSuccessRateSolvable": 1,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-repair-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.75,
+              "objectiveSuccessRateSolvable": 0.75,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-route-lure"
+            }
+          ]
+        },
+        {
+          "avoidableObjectiveFailureCount": 82,
+          "avoidableSettlementLossCount": 23,
+          "illegalProposalRate": 0,
+          "objectiveSuccessRateAll": 0.267857,
+          "objectiveSuccessRateSolvable": 0.267857,
+          "policyId": "random-legal-v1",
+          "runCount": 112,
+          "settlementSurvivalRate": 0.794643,
+          "survivalOptimalityRate": 0.794643,
+          "variantResults": [
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.25,
+              "objectiveSuccessRateSolvable": 0.25,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-resource-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0.125,
+              "objectiveSuccessRateSolvable": 0.125,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-screen-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.125,
+              "objectiveSuccessRateSolvable": 0.125,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.375,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-contact-lure"
+            },
+            {
+              "adversaryClass": "resource-tight",
+              "objectiveSuccessRateAll": 0.375,
+              "objectiveSuccessRateSolvable": 0.375,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.5,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-exact-materials"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.5,
+              "objectiveSuccessRateSolvable": 0.5,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0.375,
+              "objectiveSuccessRateSolvable": 0.375,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-stabilize-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.25,
+              "objectiveSuccessRateSolvable": 0.25,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-route-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.25,
+              "objectiveSuccessRateSolvable": 0.25,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-channel-lure"
+            },
+            {
+              "adversaryClass": "deadline-risk",
+              "objectiveSuccessRateAll": 0.125,
+              "objectiveSuccessRateSolvable": 0.125,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.25,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.25,
+              "objectiveSuccessRateSolvable": 0.25,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.25,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-resource-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.375,
+              "objectiveSuccessRateSolvable": 0.375,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.875,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0.125,
+              "objectiveSuccessRateSolvable": 0.125,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-repair-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.375,
+              "objectiveSuccessRateSolvable": 0.375,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0.25,
+              "objectiveSuccessRateSolvable": 0.25,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.875,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-route-lure"
+            }
+          ]
+        },
+        {
+          "avoidableObjectiveFailureCount": 112,
+          "avoidableSettlementLossCount": 39,
+          "illegalProposalRate": 0,
+          "objectiveSuccessRateAll": 0,
+          "objectiveSuccessRateSolvable": 0,
+          "policyId": "always-hold-v1",
+          "runCount": 112,
+          "settlementSurvivalRate": 0.651786,
+          "survivalOptimalityRate": 0.651786,
+          "variantResults": [
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-resource-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-perimeter-screen-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-contact-lure"
+            },
+            {
+              "adversaryClass": "resource-tight",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-core-exact-materials"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-cascade-stabilize-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-route-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-resource-channel-lure"
+            },
+            {
+              "adversaryClass": "deadline-risk",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-patrol-resource-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.625,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-contact-lure"
+            },
+            {
+              "adversaryClass": "temporary-denial",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 1,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-multi-repair-delay"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.625,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-alert-lure"
+            },
+            {
+              "adversaryClass": "objective-decoy",
+              "objectiveSuccessRateAll": 0,
+              "objectiveSuccessRateSolvable": 0,
+              "runCount": 8,
+              "settlementSurvivalRate": 0.875,
+              "solvableCaseCount": 8,
+              "variantId": "holdout-deescalation-route-lure"
+            }
+          ]
+        }
+      ],
+      "variantCount": 14
+    },
+    "incumbentComparisonStatus": "proxy-only-no-canonical-live-incumbent-policy-interface",
+    "mode": "evaluation-only-deadline-risk-short-rollout-no-live-command-execution",
+    "priorAdversarialAudit": {
+      "avoidableObjectiveFailureCount": 0,
+      "avoidableSettlementLossCount": 0,
+      "caseCount": 112,
+      "objectiveSolvableCaseCount": 73,
+      "oracleUnavoidableObjectiveFailureCount": 39,
+      "oracleUnavoidableSettlementLossCount": 7,
+      "settlementSurvivableCaseCount": 105,
+      "v2ObjectiveSuccessRateSolvable": 1,
+      "v3ObjectiveSuccessRateAll": 0.651786,
+      "v3ObjectiveSuccessRateSolvable": 1,
+      "v3SettlementSurvivalRate": 1,
+      "v3SurvivalOptimalityRate": 1
+    },
+    "productionAuthorityClaim": false,
+    "registryId": "zeknova-prime-deadline-risk-rollout-v1-development",
+    "reportId": "zkpdr-report:v1:b0d089f65e880ea8",
+    "rolloutDesign": {
+      "deadlineAware": true,
+      "mandatoryRootCoverage": true,
+      "readsAuthoredWitnesses": false,
+      "riskTailPolicy": "hold-to-horizon",
+      "rolloutDepth": 3
+    },
+    "schemaVersion": 1,
+    "seedCount": 8,
+    "strategicCompetenceCertified": false,
+    "totalRunCount": 672
+  },
+  "claims": {
+    "deadlineRiskRolloutMeasured": true,
+    "developmentGatesPassed": true,
+    "candidateLegal": true,
+    "candidateDeterministic": true,
+    "oracleAuditSeparatesImpossibleCases": true,
+    "sentinelAuthority": false,
+    "productionAuthority": false,
+    "strategicCompetence": false,
+    "primeOutperformsActualIncumbent": false,
+    "fullGameDynamics": false
+  }
+}

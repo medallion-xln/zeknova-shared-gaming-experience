@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "contractId": "zeknova-expert-evaluation-contract-v1",
+  "authority": "none-evaluation-shadow-recommendation-only",
+  "experts": [
+    {
+      "id": "vanguard-v1",
+      "kind": "heuristic-policy-prior",
+      "learned": false,
+      "scope": "immediate defensive priority"
+    },
+    {
+      "id": "horizon-v1",
+      "kind": "deterministic-temporal",
+      "learned": false,
+      "scope": "delayed consequence risk"
+    },
+    {
+      "id": "oracle-v1",
+      "kind": "deterministic-trend-baseline",
+      "learned": false,
+      "scope": "metric trend and terminal risk"
+    },
+    {
+      "id": "nexus-v1",
+      "kind": "deterministic-relational",
+      "learned": false,
+      "scope": "dependency and prerequisite integrity"
+    }
+  ],
+  "routerLearningApproved": false,
+  "expertFusionApproved": false,
+  "status": "provisional-linux-only"
+}

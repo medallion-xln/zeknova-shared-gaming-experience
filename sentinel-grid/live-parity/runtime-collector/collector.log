@@ -1,0 +1,37 @@
+{
+  "pass": true,
+  "event": "collector-listening",
+  "collectorVersion": "0.9.2",
+  "collectorId": "sentinel-grid-stage2f-runtime-collector-v1",
+  "online": true,
+  "host": "127.0.0.1",
+  "port": 43127,
+  "activeSessions": [
+    {
+      "sessionId": "zeknova-live-20260802224550-9123802d82a4cea7",
+      "startedAt": "2026-08-02T22:45:50.989Z",
+      "nextSequence": 0,
+      "acceptedRecordCount": 0,
+      "rejectedRecordCount": 0
+    }
+  ],
+  "fixtureCount": 1749,
+  "recordCount": 1749,
+  "manifestCount": 41,
+  "quarantineCount": 0,
+  "samplingStateIdentityCount": 1735,
+  "samplingStateIdentityMissingCount": 12,
+  "samplingStateIdentityInvalidBindingCount": 0,
+  "samplingStateIdentityDuplicateEvidenceCount": 2,
+  "provenance": {
+    "repositoryHead": "d40cbbb44f41ddefc73d3787c25b7b46b7fb494a",
+    "repositoryDirty": true,
+    "runtimeBuildHash": "122ddb1d13c31eae04039d44aa02d56362562e3e4e34b543beecd80194f63c04",
+    "runtimeFileCount": 8
+  },
+  "authority": {
+    "tier": "R0",
+    "canDispatch": false,
+    "canMutateLiveWorld": false
+  }
+}

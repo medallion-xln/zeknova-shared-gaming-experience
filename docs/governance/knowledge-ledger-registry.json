@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "registry_id": "zeknova-faction-knowledge-v1-development",
+  "status": "development-contract-not-production-knowledge-authority",
+  "phase": "W0-O.2",
+  "contract": {
+    "id": "zeknova-knowledge-ledger-contract-v1",
+    "path_zeknova": "azl/zeknova-knowledge-ledger-contract-v1.js",
+    "path_sentinel": "public_html/azl/zeknova-knowledge-ledger-contract-v1.js",
+    "implementation_sha256": "a31264f97bf306cf505cac9cd71437baa36fe63d80e2cc7f8042fcfdef7d5381"
+  },
+  "topics": [
+    "unit_contact",
+    "combat_alert",
+    "structure_status",
+    "resource_location",
+    "route_status",
+    "infrastructure_status"
+  ],
+  "event_policies": {
+    "enemy_sighted": {
+      "topic": "unit_contact",
+      "ttl_quanta": 4,
+      "same_time_priority": 10
+    },
+    "enemy_lost": {
+      "topic": "unit_contact",
+      "ttl_quanta": 0,
+      "same_time_priority": 20
+    },
+    "combat_alert": {
+      "topic": "combat_alert",
+      "ttl_quanta": 2,
+      "same_time_priority": 10
+    },
+    "structure_observed": {
+      "topic": "structure_status",
+      "ttl_quanta": null,
+      "same_time_priority": 10
+    },
+    "structure_damaged": {
+      "topic": "structure_status",
+      "ttl_quanta": 6,
+      "same_time_priority": 20
+    },
+    "structure_destroyed": {
+      "topic": "structure_status",
+      "ttl_quanta": null,
+      "same_time_priority": 30
+    },
+    "resource_discovered": {
+      "topic": "resource_location",
+      "ttl_quanta": 20,
+      "same_time_priority": 10
+    },
+    "route_observed": {
+      "topic": "route_status",
+      "ttl_quanta": 8,
+      "same_time_priority": 10
+    },
+    "infrastructure_status_observed": {
+      "topic": "infrastructure_status",
+      "ttl_quanta": 6,
+      "same_time_priority": 10
+    }
+  },
+  "selection_order": [
+    "effective_observation_quantum",
+    "direct_over_shared",
+    "event_type_priority",
+    "delivery_event_sequence",
+    "delivery_event_id"
+  ],
+  "semantics": {
+    "ledger_is_faction_private": true,
+    "authoritative_world_reads_forbidden": true,
+    "only_validated_w0o1_events_may_create_knowledge": true,
+    "shared_knowledge_uses_original_observation_quantum": true,
+    "sharing_does_not_refresh_freshness": true,
+    "time_is_monotonic_integer_quanta": true,
+    "persistent_facts_remain_fresh_until_contradicted": true,
+    "finite_ttl_facts_are_stale_at_exclusive_expiry": true,
+    "contradictions_are_preserved_as_evidence_history": true,
+    "snapshots_are_canonical_and_clone_isolated": true,
+    "observation_packet_generation_is_out_of_scope": true,
+    "action_legality_changes_are_out_of_scope": true
+  }
+}

@@ -577,10 +577,12 @@ vn={ensign:{label:"Ensign",machine:"Recon Engineering Drone",color:7507774,secon
 zkSignupBiomes={forest:{label:"Forest",icon:"♧",accent:"#5df1a0",resources:"Timber + Biomass",hazard:"Neurospore canopy",value:"Renewable construction stock"},desert:{label:"Desert",icon:"◇",accent:"#ffc45c",resources:"Minerals + Data",hazard:"Heat and dust fronts",value:"Industrial expansion"},highlands:{label:"Highlands",icon:"△",accent:"#8cc7ff",resources:"Iron + Minerals",hazard:"Seismic instability",value:"Defense and metal supply"},arctic:{label:"Arctic",icon:"✦",accent:"#b9efff",resources:"Data + Water",hazard:"Cold exposure",value:"Research and resilience"},wetlands:{label:"Wetlands",icon:"◉",accent:"#72e5ce",resources:"Water + Biomass",hazard:"Contaminated mire",value:"Watershed diplomacy"}},
 zkZeknovanAidDefinitions=[{type:"zek_clinic",label:"Field Clinic",icon:"✚",audience:"zeknovan",description:"Build a ZekNovan field clinic. Costs 28 minerals and 8 Colony Credits; reduces tension by 12 and adds 8 trust.",cost:{minerals:28,credits:8},tension:-12,trust:8,indicator:"morale",indicatorDelta:4},{type:"zek_watershed",label:"Watershed Renewal",icon:"◉",audience:"zeknovan",description:"Restore a community watershed. Costs 34 minerals and 10 Colony Credits; reduces tension by 16 and adds 10 trust.",cost:{minerals:34,credits:10},tension:-16,trust:10,indicator:"ecology",indicatorDelta:8},{type:"zek_beacon",label:"Peace Beacon",icon:"⌁",audience:"zeknovan",description:"Install a ZekNovan peace beacon. Costs 40 minerals and 12 Colony Credits; reduces tension by 20 and adds 12 trust.",cost:{minerals:40,credits:12},tension:-20,trust:12,indicator:"governance",indicatorDelta:5},{type:"zek_grove",label:"Sacred Grove Nursery",icon:"♧",audience:"zeknovan",description:"Cultivate replacement sacred trees. Costs 24 minerals and 7 Colony Credits; reduces tension by 10 and adds 7 trust.",cost:{minerals:24,credits:7},tension:-10,trust:7,indicator:"ecology",indicatorDelta:10},{type:"zek_habitat",label:"Village Habitat",icon:"⌂",audience:"zeknovan",description:"Construct communal ZekNovan housing. Costs 36 minerals and 11 Colony Credits; reduces tension by 14 and adds 9 trust.",cost:{minerals:36,credits:11},tension:-14,trust:9,indicator:"morale",indicatorDelta:7},{type:"zek_archive",label:"Cultural Archive",icon:"◈",audience:"zeknovan",description:"Preserve ZekNovan history and language. Costs 30 minerals and 9 Colony Credits; reduces tension by 12 and adds 10 trust.",cost:{minerals:30,credits:9},tension:-12,trust:10,indicator:"governance",indicatorDelta:7},{type:"zek_market",label:"Trade Pavilion",icon:"◇",audience:"zeknovan",description:"Open a neutral exchange pavilion. Costs 32 minerals and 10 Colony Credits; reduces tension by 11 and adds 8 trust.",cost:{minerals:32,credits:10},tension:-11,trust:8,indicator:"economy",indicatorDelta:7},{type:"zek_watch",label:"Guardian Watch",icon:"⬡",audience:"zeknovan",description:"Equip a joint settlement watchpost. Costs 38 minerals and 12 Colony Credits; reduces tension by 15 and adds 8 trust.",cost:{minerals:38,credits:12},tension:-15,trust:8,indicator:"defense",indicatorDelta:8},{type:"zek_transit",label:"Transit Gate",icon:"∩",audience:"zeknovan",description:"Connect settlements with a safe transit gate. Costs 35 minerals and 11 Colony Credits; reduces tension by 13 and adds 9 trust.",cost:{minerals:35,credits:11},tension:-13,trust:9,indicator:"resilience",indicatorDelta:7}],
 zkZeknovanAidTypes=new Set(zkZeknovanAidDefinitions.map(e=>e.type)),
-eo=[{type:"power",label:"Solar Grid",icon:"⚡",description:"Generates stable energy for every connected system.",cost:{minerals:24,iron:8,biomass:8,credits:12}},{type:"water",label:"Water Works",icon:"💧",description:"Purifies and distributes ZekNova freshwater.",cost:{minerals:20,iron:6,biomass:12,credits:10}},{type:"habitat",label:"Habitat",icon:"⌂",description:"Adds population capacity, morale, and habitability.",cost:{minerals:28,iron:10,biomass:18,credits:18}},{type:"research",label:"AI Research Lab",icon:"◈",description:"Produces data and unlocks smarter automation.",cost:{minerals:32,iron:12,energy:8,credits:24}},{type:"culture",label:"Creator Commons",icon:"✦",description:"Improves morale, culture, and local relationships.",cost:{minerals:18,iron:4,biomass:20,credits:16}},{type:"governance",label:"Civic Hall",icon:"⚖",description:"Establishes policy, identity, and accountable governance.",cost:{minerals:30,iron:10,data:12,credits:28}},{type:"defense",label:"Defense Beacon",icon:"⬡",description:"Detects threats and protects critical infrastructure.",cost:{minerals:34,iron:14,energy:10,credits:20}},{type:"bridge",label:"Canopy Bridge",icon:"═",description:"Creates a local crossing over rivers and flooded lowlands.",cost:{minerals:20,iron:8,credits:5}},{type:"boat",label:"Survey Skiff",icon:"◒",description:"Unlocks automatic boat traversal across open water.",cost:{minerals:30,iron:12,credits:8}},...zkZeknovanAidDefinitions],
-zkUtilityNetwork={range:{power:30,water:26,data:24},source:{power:"power",water:"water",data:"research"},requirements:{water:["power"],habitat:["power","water"],research:["power","water"],culture:["power","water"],governance:["power","water","data"],defense:["power"],boat:["power"]},labels:{power:"Solar Grid",water:"Water Works",data:"AI Research Lab"},colors:{power:16762183,water:5102079,data:10782207}},
+zkLieutenantBuildingTypes=new Set(["capitol","hospital","university","transit","commerce","planetary_capitol"]),zkCaptainBuildingTypes=new Set(["war_economy","defense_contractor","corporate_hq","stock_exchange"]),zkRankAllowsBuilding=(e,t)=>zkZeknovanAidTypes.has(t)||e==="captain"||e==="lieutenant"&&!zkCaptainBuildingTypes.has(t)||!zkLieutenantBuildingTypes.has(t)&&!zkCaptainBuildingTypes.has(t),
+eo=[{type:"power",label:"Solar Grid",icon:"⚡",description:"Generates stable energy for every connected system.",cost:{minerals:24,iron:8,biomass:8,credits:12}},{type:"water",label:"Water Works",icon:"💧",description:"Purifies and distributes ZekNova freshwater.",cost:{minerals:20,iron:6,biomass:12,credits:10}},{type:"communications",label:"Quantum Communications Hub",icon:"⌁",description:"Provides planet-wide data and civilian Wi-Fi.",cost:{minerals:28,iron:10,energy:8,credits:18}},{type:"habitat",label:"Habitat",icon:"⌂",description:"Adds connected housing, morale, and habitability.",cost:{minerals:28,iron:10,biomass:18,credits:18}},{type:"defense",label:"Defense Tower",icon:"⬡",description:"Protects settlements and relays early-warning coverage.",cost:{minerals:34,iron:14,energy:10,credits:20}},{type:"bridge",label:"Canopy Bridge",icon:"═",description:"Creates a local crossing over rivers and flooded lowlands.",cost:{minerals:20,iron:8,credits:5}},{type:"boat",label:"Survey Skiff",icon:"◒",description:"Unlocks automatic boat traversal across open water.",cost:{minerals:30,iron:12,credits:8}},{type:"capitol",label:"Regional Capitol",icon:"⚖",description:"Administers a regional population center.",cost:{minerals:44,iron:16,data:12,credits:34}},{type:"hospital",label:"Planetary Hospital",icon:"✚",description:"Provides public health and emergency response.",cost:{minerals:40,iron:14,biomass:16,data:8,credits:30}},{type:"university",label:"University Campus",icon:"◈",description:"Educates specialists and expands research capacity.",cost:{minerals:42,iron:12,energy:10,data:10,credits:32}},{type:"transit",label:"Planetary Transit Hub",icon:"∩",description:"Moves residents and cargo between regions.",cost:{minerals:46,iron:18,energy:12,credits:32}},{type:"commerce",label:"Trade and Civic Center",icon:"◇",description:"Supports markets, culture, and civilian commerce.",cost:{minerals:38,iron:10,biomass:10,data:8,credits:30}},{type:"planetary_capitol",label:"Planetary Capitol",icon:"♜",description:"Coordinates the united government of ZekNova.",cost:{minerals:60,iron:22,data:22,credits:50}},{type:"war_economy",label:"War Economy Complex",icon:"⚔",description:"Produces strategic materiel at social and diplomatic cost.",cost:{minerals:70,iron:30,energy:20,data:16,credits:60}},{type:"defense_contractor",label:"Defense Contractor Campus",icon:"◆",description:"Develops weapons, logistics, and defense systems.",cost:{minerals:64,iron:26,energy:18,data:20,credits:70}},{type:"corporate_hq",label:"Fortune 500 Headquarters",icon:"▰",description:"Coordinates a planet-scale industrial corporation.",cost:{minerals:62,iron:18,data:24,credits:80}},{type:"stock_exchange",label:"ZekNova Stock Exchange",icon:"▲",description:"Links planetary capital and corporate investment.",cost:{minerals:68,iron:20,data:30,credits:90}},...zkZeknovanAidDefinitions],
+zkUtilityNetwork={range:{power:30,water:36,data:36},source:{power:"power",water:"water",data:"communications"},requirements:{water:["power"],communications:["power"],habitat:["power","water","data"],defense:["power","data"],boat:["power"],capitol:["power","water","data"],hospital:["power","water","data"],university:["power","water","data"],transit:["power","data"],commerce:["power","water","data"],planetary_capitol:["power","water","data"],war_economy:["power","water","data"],defense_contractor:["power","water","data"],corporate_hq:["power","water","data"],stock_exchange:["power","water","data"]},labels:{power:"Solar Grid",water:"Water Works",data:"Communications Hub"},colors:{power:16762183,water:5102079,data:10782207}},
 dm=[{number:1,title:"Arrival & Reconnaissance",objective:"Survey the biome, harvest timber, establish power, and secure freshwater."},{number:2,title:"Stabilize & Build",objective:"Create a resilient settlement with housing, bridges, boats, and logistics."},{number:3,title:"Design Civilization",objective:"Add intelligence, culture, economics, diplomacy, and governance."},{number:4,title:"The Allocation",objective:"Optimize the biome and prove it can survive Humanity’s arrival."}];const zkCampaignTiers=[{number:1,title:"Basic Outpost",subtitle:"Bring the first forward base online.",missions:[{id:"grid",title:"Power the landing zone",objective:"Install a Solar Grid so every later system has stable power.",requirements:[["power",1]]},{id:"water",title:"Secure freshwater",objective:"Install Water Works and establish reliable life support.",requirements:[["water",1]]},{id:"habitat",title:"Open the command post",objective:"Install a Habitat to complete the basic staffed outpost.",requirements:[["habitat",1]]}]},{number:2,title:"Perimeter Defense",subtitle:"Turn the outpost into a defensible tower network.",missions:[{id:"tower-one",title:"Raise the first defense tower",objective:"Install a Defense Beacon overlooking the outpost approach.",requirements:[["defense",1]]},{id:"tower-ring",title:"Form a defensive crossfire",objective:"Install a second Defense Beacon to create overlapping coverage.",requirements:[["defense",2]]},{id:"supply-route",title:"Protect the supply route",objective:"Install either a Canopy Bridge or Survey Skiff for a reliable crossing.",requirements:[],any:[["bridge",1],["boat",1]]}]},{number:3,title:"Expanded Operations",subtitle:"Unlock intelligence and community missions.",missions:[{id:"research",title:"Activate mission intelligence",objective:"Install an AI Research Lab to unlock advanced field operations.",requirements:[["research",1]]},{id:"culture",title:"Establish crew morale",objective:"Install a Creator Commons to support the growing garrison.",requirements:[["culture",1]]},{id:"governance",title:"Commission local command",objective:"Install a Civic Hall to coordinate policy and diplomacy.",requirements:[["governance",1]]}]},{number:4,title:"Frontier Stronghold",subtitle:"Scale the network into a durable regional base.",missions:[{id:"population",title:"Expand the garrison",objective:"Install a second Habitat for incoming crews and specialists.",requirements:[["habitat",2]]},{id:"advanced-research",title:"Unlock advanced missions",objective:"Install a second AI Research Lab to enable deep-biome operations.",requirements:[["research",2]]},{id:"stronghold",title:"Complete the defense grid",objective:"Install a third Defense Beacon and finish the frontier stronghold.",requirements:[["defense",3]]}]}];
-import{cloneBiomes,BIOME_TREE_DENSITY}from"../src/world/Biomes.js";import{buildingCollisionRadius,enemyCollisionRadius}from"../src/world/Collision.js";import{ENEMY_PROFILES,HIGH_FIDELITY_ENEMIES}from"../src/game/Enemies.js";import{createCampaignTiers,MISSION_OBJECTIVES}from"../src/game/Missions.js";import{rankGoal,miningCooldown}from"../src/game/Player.js";
+import{cloneBiomes,BIOME_TREE_DENSITY}from"../src/world/Biomes.js";import{buildingCollisionRadius,enemyCollisionRadius}from"../src/world/Collision.js";import{ENEMY_PROFILES,HIGH_FIDELITY_ENEMIES}from"../src/game/Enemies.js";import{createCampaignTiers,MISSION_OBJECTIVES,objectiveValue as missionObjectiveValue,missionReadyForBoss}from"../src/game/Missions.js";import{BOSS_CONFIGS,missionBossConfig,scaledBossHealth,scaledBossDamage,phaseForHealth,deterministicAttackOrder,bossAttackTiming,bossDefenseProfile,performanceGrade,bossRewards,encounterRewardId,canGrantEncounterReward}from"../src/game/BossSystem.js";import{GAMEPLAY_STATES,createGameplayProgress,parseGameplayState}from"../src/game/GameplayStates.js";import{rankGoal,miningCooldown}from"../src/game/Player.js";
+import{mechAssistProfile,mechAssistPriority}from"../src/game/MechAssist.js";
 const zkMissionObjectives={
 grid:[{kind:"stat",key:"resourcesCollected",target:1,label:"Collect a field resource"},{kind:"stat",key:"treesChopped",target:1,label:"Chop a small tree"},{kind:"building",key:"power",target:1,label:"Install 1 Solar Grid"}],
 water:[{kind:"stat",key:"resourcesCollected",target:2,label:"Collect 2 field resources"},{kind:"stat",key:"treesChopped",target:2,label:"Harvest 2 trees"},{kind:"building",key:"water",target:1,label:"Install 1 Water Works"}],
@@ -591,13 +593,13 @@ habitat:[{kind:"stat",key:"treesChopped",target:3,label:"Harvest 3 trees"},{kind
 research:[{kind:"stat",key:"powerUpsCollected",target:2,label:"Secure 2 power-ups"},{kind:"stat",key:"rocksMined",target:4,label:"Mine 4 rock formations"},{kind:"building",key:"research",target:1,label:"Install 1 AI Research Lab"}],
 culture:[{kind:"stat",key:"treesChopped",target:7,label:"Harvest 7 trees"},{kind:"stat",key:"powerUpsCollected",target:3,label:"Secure 3 power-ups"},{kind:"building",key:"culture",target:1,label:"Install 1 Creator Commons"}],
 governance:[{kind:"stat",key:"enemiesDefeated",target:5,label:"Defeat 5 enemies"},{kind:"stat",key:"resourcesCollected",target:5,label:"Collect 5 field resources"},{kind:"building",key:"governance",target:1,label:"Install 1 Civic Hall"}],
-population:[{kind:"stat",key:"treesChopped",target:10,label:"Harvest 10 trees"},{kind:"stat",key:"enemiesDefeated",target:6,label:"Defeat 6 enemies"},{kind:"building",key:"habitat",target:2,label:"Install 2 Habitats"}],
+population:[{kind:"stat",key:"treesChopped",target:10,label:"Harvest 10 trees"},{kind:"either",keys:["zek_clinic","zek_watershed","zek_beacon","zek_grove","zek_habitat","zek_archive","zek_market","zek_watch","zek_transit"],target:1,label:"Complete 1 ZekNovan infrastructure build"},{kind:"building",key:"habitat",target:2,label:"Install 2 Habitats"}],
 "advanced-research":[{kind:"stat",key:"rocksMined",target:8,label:"Mine 8 rock formations"},{kind:"stat",key:"powerUpsCollected",target:5,label:"Secure 5 power-ups"},{kind:"building",key:"research",target:2,label:"Install 2 AI Research Labs"}],
 stronghold:[{kind:"stat",key:"rocksMined",target:12,label:"Mine 12 rock formations"},{kind:"stat",key:"enemiesDefeated",target:10,label:"Defeat 10 enemies"},{kind:"building",key:"defense",target:3,label:"Install 3 Defense Beacons"}]
 };
 zkCampaignTiers.splice(0,zkCampaignTiers.length,...createCampaignTiers());Object.assign(zkMissionObjectives,MISSION_OBJECTIVES);
 for(const e of zkCampaignTiers)for(const t of e.missions)t.subObjectives=zkMissionObjectives[t.id]??[];
-function zkObjectiveValue(e,t={}){const s=t.buildings??t,i=t.stats??{};return e.kind==="building"?Number(s[e.key]??0):e.kind==="either"?Math.max(...e.keys.map(n=>Number(s[n]??0))):Number(i[e.key]??0)}
+function zkObjectiveValue(e,t={}){return missionObjectiveValue(e,t)}
 function zkObjectiveComplete(e,t){return zkObjectiveValue(e,t)>=e.target}
 function zkMissionComplete(e,t){return(e.subObjectives??[]).every(s=>zkObjectiveComplete(s,t))}
 const zkMissionSequence=zkCampaignTiers.flatMap(e=>e.missions.map(t=>({...t,tier:e.number,tierTitle:e.title}))),zkMissionGraph=new Map(zkMissionSequence.map((e,t)=>[e.id,{mission:e,prerequisite:t?zkMissionSequence[t-1].id:null,unlocks:zkMissionSequence[t+1]?.id??null}]));function zkCampaignState(e={}){const t=zkMissionSequence,s=t.findIndex(i=>!zkMissionComplete(i,e)),i=s===-1?null:t[s],n=zkCampaignTiers.find(r=>r.number===(i?.tier??zkCampaignTiers.at(-1)?.number))??zkCampaignTiers[0];return{current:i,currentIndex:s,completed:s===-1?t.length:s,total:t.length,tier:n,graph:i?zkMissionGraph.get(i.id):null}}
@@ -726,7 +728,7 @@ class wR{root;handlers;selectedClass="ensign";selectedBiome="highlands";selected
         <section id="build-dock" class="build-dock glass-panel hidden">
           <div class="dock-heading"><span>CONSTRUCTION MATRIX</span><div class="build-audience-tabs" role="group" aria-label="Infrastructure recipient"><button type="button" class="active" data-build-filter="colony">COLONY</button><button type="button" data-build-filter="zeknovan">ZEKNOVAN AID</button></div><small>SELECT A SYSTEM, THEN CLICK BUILDABLE TERRAIN</small></div>
           <div class="build-options">
-            ${eo.map(s=>`
+            ${eo.filter(s=>zkRankAllowsBuilding(e.officerClass,s.type)).map(s=>`
               <button class="build-button${s.audience==="zeknovan"?" zeknovan-build hidden":""}" data-build="${s.type}" data-build-audience="${s.audience??"colony"}" title="${Ma(s.description)}">
                 <b>${s.icon}</b><span>${s.label}</span>${s.audience==="zeknovan"?`<em>−${Math.abs(s.tension)} TENSION</em>`:""}<small>${pm(s.cost)}</small>
               </button>
@@ -835,21 +837,53 @@ function fm(o){return o.charAt(0).toUpperCase()+o.slice(1)}
 class pn{state;constructor(e){this.state=e>>>0||1}next(){this.state+=1831565813;let e=this.state;return e=Math.imul(e^e>>>15,e|1),e^=e+Math.imul(e^e>>>7,e|61),((e^e>>>14)>>>0)/4294967296}range(e,t){return e+(t-e)*this.next()}}function BR(o){let e=2166136261;for(let t=0;t<o.length;t+=1)e^=o.charCodeAt(t),e=Math.imul(e,16777619);return e>>>0}function FR(o,e,t){const s=(g,y)=>{let x=Math.imul(g,374761393)+Math.imul(y,668265263)+Math.imul(t,69069);return x=(x^x>>>13)>>>0,x=Math.imul(x,1274126177)>>>0,((x^x>>>16)>>>0)/4294967295},i=Math.floor(o),n=Math.floor(e),r=o-i,a=e-n,l=r*r*(3-2*r),c=a*a*(3-2*a),u=s(i,n),h=s(i+1,n),d=s(i,n+1),p=s(i+1,n+1),f=u+(h-u)*l,m=d+(p-d)*l;return f+(m-f)*c}function ih(o,e,t){let s=0,i=1,n=.035,r=0;for(let a=0;a<5;a+=1)s+=FR(o*n,e*n,t+a*1013)*i,r+=i,i*=.5,n*=2.05;return s/r}
 function zkH(o,e,t,s=.02,i=3){let n=0,r=1,a=0,l=s;for(let c=0;c<i;c+=1)n+=(FR(o*l,e*l,t+c*1619)*2-1)*r,a+=r,r*=.5,l*=2.03;return n/a}function zkT(o,e,t){const s=zkH(o+311,e-197,t+17,.008,2)*13,i=zkH(o-149,e+263,t+29,.008,2)*13,n=o+s,r=e+i,a=zkH(n,r,t+43,.011,3),l=zkH(n+73,r-51,t+71,.024,3),c=Math.pow(Math.max(0,1-Math.abs(l)),6),u=zkH(n-181,r+109,t+101,.018,2),h=Math.pow(Math.max(0,1-Math.abs(u)),9),d=zkH(n,r,t+137,.072,3),p=1-Math.min(1,c*1.45);return 3.15+a*3.7+c*(5.1+Math.max(0,a)*3.2)-h*1.15+d*(.42+p*.55)}
 class zkSpatialHash{cells=new Map;memberships=new Map;constructor(e=10){this.cellSize=e}key(e,t){return`${e},${t}`}cell(e){return Math.floor(e/this.cellSize)}insert(e,t=Number(e.position?.x??e.x??0),s=Number(e.position?.z??e.z??0),i=0){this.remove(e);const n=[],r=this.cell(t-i),a=this.cell(t+i),l=this.cell(s-i),c=this.cell(s+i);for(let u=r;u<=a;u+=1)for(let h=l;h<=c;h+=1){const d=this.key(u,h);let p=this.cells.get(d);p||(p=new Set,this.cells.set(d,p)),p.add(e),n.push(d)}this.memberships.set(e,n);return e}remove(e){const t=this.memberships.get(e);if(!t)return;for(const s of t){const i=this.cells.get(s);i&&(i.delete(e),i.size||this.cells.delete(s))}this.memberships.delete(e)}query(e,t,s=0){const i=new Set,n=this.cell(e-s),r=this.cell(e+s),a=this.cell(t-s),l=this.cell(t+s);for(let c=n;c<=r;c+=1)for(let u=a;u<=l;u+=1){const h=this.cells.get(this.key(c,u));if(h)for(const d of h)i.add(d)}return i}clear(){this.cells.clear(),this.memberships.clear()}}
-const zkStartupParams=new URLSearchParams(globalThis.location?.search??""),zkStartupSafeMode=zkStartupParams.has("safe"),zkDisableWasm=zkStartupSafeMode||!zkStartupParams.has("wasm"),zkDisableModels=zkStartupSafeMode||zkStartupParams.has("noModels"),zkDisableEnvironment=zkStartupSafeMode||zkStartupParams.has("noEnvironment");
+const zkStartupParams=new URLSearchParams(globalThis.location?.search??""),zkStartupSafeMode=zkStartupParams.has("safe"),zkDisableWasm=zkStartupSafeMode||!zkStartupParams.has("wasm"),zkDisableModels=zkStartupSafeMode||zkStartupParams.has("noModels"),zkDisableEnvironment=zkStartupSafeMode||zkStartupParams.has("noEnvironment"),zkForceWebGL=zkStartupSafeMode||zkStartupParams.has("webgl");function zkBackendLabel(renderer){try{return renderer?.backend?.isWebGPUBackend?"WEBGPU":"WEBGL 2"}catch{return"WEBGL 2"}}
 function zkStartupStage(stage,detail=""){globalThis.dispatchEvent?.(new CustomEvent("zeknova:startup-stage",{detail:{stage,detail,at:performance.now()}}))}
 function zkAssetPause(delay=2500){return new Promise(resolve=>setTimeout(resolve,delay))}
 function zkAfterGameplayReady(delay=2500){if(globalThis.ZekNovaStartupDiagnostics)return zkAssetPause(delay);return new Promise(resolve=>globalThis.addEventListener("zeknova:gameplay-ready",()=>setTimeout(resolve,delay),{once:!0}))}
+/* Procedural ground detail. Replaces the flat GLB desert tiles: generates a seamless
+ * tiling grain texture in code (no image assets) and multiplies it over the terrain's
+ * existing biome vertex colours, so every region keeps its palette but gains surface
+ * texture that follows the displaced mesh exactly. */
+let zkGroundTextureCache=null;
+function zkGroundTexture(){
+  if(zkGroundTextureCache)return zkGroundTextureCache;
+  const S=256,BASE_CELLS=8,OCTAVES=5,data=new Uint8Array(S*S*4);
+  const hash=(x,y)=>{let h=Math.imul((x*374761393+y*668265263)|0,1274126177);h=(h^h>>>13)>>>0;return h/4294967296};
+  const fade=t=>t*t*(3-2*t),mix=(a,b,t)=>a+(b-a)*t;
+  // Cell counts stay powers of two and wrap, so the texture tiles seamlessly.
+  const noise=(x,y,cells)=>{const xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,
+    w=(a,b)=>hash(((a%cells)+cells)%cells,((b%cells)+cells)%cells),u=fade(xf),v=fade(yf);
+    return mix(mix(w(xi,yi),w(xi+1,yi),u),mix(w(xi,yi+1),w(xi+1,yi+1),u),v)};
+  for(let y=0;y<S;y+=1)for(let x=0;x<S;x+=1){
+    let sum=0,norm=0,amp=1,cells=BASE_CELLS;
+    for(let o=0;o<OCTAVES;o+=1){sum+=noise(x/S*cells,y/S*cells,cells)*amp;norm+=amp;amp*=.5;cells*=2}
+    // Kept close to white: this is a multiplier over vertex colour, so darker values
+    // would dim every biome rather than texture it.
+    const n=sum/norm,shade=.86+n*.14,i=(y*S+x)*4;
+    data[i]=Math.min(255,Math.round(255*shade*1.03));
+    data[i+1]=Math.round(255*shade);
+    data[i+2]=Math.round(255*shade*.95);
+    data[i+3]=255
+  }
+  // DataTexture(data,w,h,format,type,mapping,wrapS,wrapT,magFilter,minFilter)
+  // RGBA is required: WebGPU has no 3-channel texture format.
+  const texture=new td(data,S,S,1023,1009,void 0,1000,1000,1006,1008);
+  texture.generateMipmaps=!0,texture.anisotropy=8,texture.colorSpace="srgb",
+  texture.repeat.set(46,46),texture.needsUpdate=!0;
+  return zkGroundTextureCache=texture
+}
 class PR{group=new Ge;mesh;water;localTerritories=[];resourceNodes=[];harvestableTrees=[];powerUpNodes=[];mineableRocks=[];seed;worldSize;heightGrid=null;heightGridSize=zkStartupSafeMode?97:129;heightGridStep=0;spatialIndex=new zkSpatialHash(10);spatialReady=!1;
 constructor(e,t="highlands"){zkStartupStage("terrain","Generating height map and vegetation");this.seed=e,this.biome=t,this.worldSize=Be.worldSize,this.buildHeightGrid(),this.mesh=this.createTerrainMesh(),this.water=this.createWater(),this.group.add(this.mesh,this.water),this.addMineableStones(),this.addHarvestableTrees(),this.addResourceNodes(),this.addPowerUps(),this.addLocalSettlements(),this.addAOResourceNodes?.(),this.rebuildSpatialIndex(),zkStartupStage("terrain-ready",`${this.harvestableTrees.length} trees · ${this.mineableRocks.length} rock formations`)}
 riverCenterAt(e){return Math.sin(e*.052)*6.4+Math.sin(e*.018+1.15)*2.6}riverDistanceAt(e,t){return Math.abs(t-this.riverCenterAt(e))}bridgeRotationAt(e){const s=(this.riverCenterAt(e+.75)-this.riverCenterAt(e-.75))/1.5;return Math.atan2(-s,1)}rawHeightAt(e,t){const s=Math.sqrt(e*e+t*t),i=Math.max(0,s-48)*.035,n=zkT(e,t,this.seed)+i,r=this.riverDistanceAt(e,t),a=Math.exp(-Math.pow(r/8.5,2))*3.1,l=Be.waterLevel-2.35+Math.min(r,3.2)*.08;return r<=3.2?Math.min(n-a,l):n-a}buildHeightGrid(){const e=this.heightGridSize,t=this.worldSize/2;this.heightGridStep=this.worldSize/(e-1),this.heightGrid=new Float32Array(e*e);for(let s=0;s<e;s+=1)for(let i=0;i<e;i+=1){const n=-t+i*this.heightGridStep,r=-t+s*this.heightGridStep;this.heightGrid[s*e+i]=this.rawHeightAt(n,r)}}heightAt(e,t){if(!this.heightGrid)return this.rawHeightAt(e,t);const s=this.heightGridSize,i=this.worldSize/2,n=Kt.clamp((e+i)/this.heightGridStep,0,s-1),r=Kt.clamp((t+i)/this.heightGridStep,0,s-1),a=Math.floor(n),l=Math.floor(r),c=Math.min(s-1,a+1),u=Math.min(s-1,l+1),h=n-a,d=r-l,p=this.heightGrid[l*s+a],f=this.heightGrid[l*s+c],m=this.heightGrid[u*s+a],g=this.heightGrid[u*s+c];return Kt.lerp(Kt.lerp(p,f,h),Kt.lerp(m,g,h),d)}rebuildSpatialIndex(){this.spatialIndex.clear();for(const e of this.mineableRocks)this.spatialIndex.insert(e,e.position.x,e.position.z,Number(e.userData.collisionRadius??1));for(const e of this.harvestableTrees)this.spatialIndex.insert(e);for(const e of this.resourceNodes)this.spatialIndex.insert(e);for(const e of this.powerUpNodes)this.spatialIndex.insert(e);this.spatialReady=!0}nearby(e,t,s){return this.spatialReady?this.spatialIndex.query(e,t,s):new Set([...this.mineableRocks,...this.harvestableTrees,...this.resourceNodes,...this.powerUpNodes])}isWaterAt(e,t,s=.18){return this.heightAt(e,t)<=Be.waterLevel+s}walkHeightAt(e,t,s=!1){const i=this.heightAt(e,t);return s&&this.isWaterAt(e,t)?Be.waterLevel+.22:Kt.clamp(i,Be.waterLevel+.2,22)}
 findSafeSpawn(e=0,t=24){const s=new w;for(let i=0;i<=72;i+=3){const n=i===0?1:Math.max(16,Math.ceil(i*1.7));for(let r=0;r<n;r+=1){const a=r/n*Math.PI*2,l=Kt.clamp(e+Math.cos(a)*i,-82,82),c=Kt.clamp(t+Math.sin(a)*i,-82,82),u=this.heightAt(l,c);if(this.riverDistanceAt(l,c)>7.5&&u>Be.waterLevel+.75&&u<16&&!this.isObstacleAt(l,c,.8)){const h=Math.abs(this.heightAt(l+1.2,c)-this.heightAt(l-1.2,c)),d=Math.abs(this.heightAt(l,c+1.2)-this.heightAt(l,c-1.2));if(h+d<3.8)return s.set(l,u,c)}}}return s.set(0,Math.max(this.heightAt(0,0),Be.waterLevel+.8),0)}
 isBuildable(e,t){const s=this.worldSize*.46;if(Math.abs(e)>s||Math.abs(t)>s||this.isObstacleAt(e,t,3))return!1;const i=this.heightAt(e,t);if(i<Be.waterLevel+.8||i>18)return!1;const n=Math.abs(this.heightAt(e+1.5,t)-this.heightAt(e-1.5,t)),r=Math.abs(this.heightAt(e,t+1.5)-this.heightAt(e,t-1.5));return n+r<3.3}
 isObstacleAt(e,t,s=.65){const i=this.spatialReady?this.spatialIndex.query(e,t,s+5):this.mineableRocks;for(const n of i)if(n.userData.rockId&&n.visible&&Math.hypot(n.position.x-e,n.position.z-t)<Number(n.userData.collisionRadius??1)+s)return!0;return!1}
-isWaterInfrastructureSite(e,t){const s=this.worldSize*.45;return Math.abs(e)>s||Math.abs(t)>s?!1:this.isWaterAt(e,t,.45)}
+isWaterInfrastructureSite(e,t){const s=this.worldSize*.45;return Math.abs(e)>s||Math.abs(t)>s?!1:this.isWaterAt(e,t,1.15)||this.riverDistanceAt(e,t)<=6}
 protectedTerritoryAt(e,t){return this.localTerritories.some(s=>s.distanceTo(new w(e,s.y,t))<14)}
 animate(e){this.water.material instanceof hc&&(this.water.material.opacity=.66+Math.sin(e*1.3)*.035,this.water.material.roughness=.18+Math.sin(e*.7)*.025);for(const t of this.powerUpNodes){if(!t.visible)continue;t.rotation.y+=.018;const s=Number(t.userData.baseY??t.position.y);t.position.y=s+Math.sin(e*2.4+Number(t.userData.phase??0))*.28;const i=t.getObjectByName("powerUpRing");i&&(i.rotation.z-=.025)}}
 applyWorldProgress(e,t,s=[]){const i=new Set(e),n=new Set(t),r=new Set(s);for(const a of this.harvestableTrees)i.has(String(a.userData.treeId??""))&&(a.visible=!1,this.updateTreeInstance(a));for(const a of this.powerUpNodes)n.has(String(a.userData.powerUpId??""))&&(a.visible=!1);for(const a of this.mineableRocks)r.has(String(a.userData.rockId??""))&&(a.visible=!1)}
-createTerrainMesh(){const t=new An(this.worldSize,this.worldSize,160,160);t.rotateX(-Math.PI/2);const s=t.getAttribute("position"),i=[],n=new re,o=new re;for(let l=0;l<s.count;l+=1){const c=s.getX(l),u=s.getZ(l),h=this.heightAt(c,u);s.setY(l,h),h<Be.waterLevel+.8?n.set(3234903):h<4?n.set(2256722):h<9?n.set(3902561):h<14?n.set(6131565):n.set(8558731);const d=zkAreasOfOperation?.map(p=>({area:p,distance:Math.hypot(c-p.center.x,u-p.center.z)})).sort((p,f)=>p.distance-f.distance)[0];if(d&&d.distance<d.area.radius+7){const p=1-Kt.smoothstep(d.distance,d.area.radius-5,d.area.radius+7);o.set(d.area.terrainColor),n.lerp(o,.58*p)}const p=ih(c*2,u*2,this.seed+99)*.14;n.offsetHSL(p*.08,p*.18,p-.07),i.push(n.r,n.g,n.b)}t.setAttribute("color",new me(i,3)),t.computeVertexNormals();const r=new ie({vertexColors:!0,roughness:.9,metalness:.015}),a=new R(t,r);return a.receiveShadow=!0,a.name="terrain",a}createWater(){const e=new An(this.worldSize*1.15,this.worldSize*1.15,32,32);e.rotateX(-Math.PI/2);const t=new hc({color:1493461,roughness:.18,metalness:.04,transparent:!0,opacity:.68,transmission:.22,thickness:1.4,clearcoat:.8,clearcoatRoughness:.18}),s=new R(e,t);return s.position.y=Be.waterLevel,s.receiveShadow=!0,s.name="water",s}
+createTerrainMesh(){const t=new An(this.worldSize,this.worldSize,160,160);t.rotateX(-Math.PI/2);const s=t.getAttribute("position"),i=[],n=new re,o=new re;for(let l=0;l<s.count;l+=1){const c=s.getX(l),u=s.getZ(l),h=this.heightAt(c,u);s.setY(l,h),h<Be.waterLevel+.8?n.set(3234903):h<4?n.set(2256722):h<9?n.set(3902561):h<14?n.set(6131565):n.set(8558731);const d=zkAreasOfOperation?.map(p=>({area:p,distance:Math.hypot(c-p.center.x,u-p.center.z)})).sort((p,f)=>p.distance-f.distance)[0];if(d&&d.distance<d.area.radius+7){const p=1-Kt.smoothstep(d.distance,d.area.radius-5,d.area.radius+7);o.set(d.area.terrainColor),n.lerp(o,.58*p)}const p=ih(c*2,u*2,this.seed+99)*.14;n.offsetHSL(p*.08,p*.18,p-.07),i.push(n.r,n.g,n.b)}t.setAttribute("color",new me(i,3)),t.computeVertexNormals();const r=new ie({vertexColors:!0,roughness:.9,metalness:.015,map:zkGroundTexture()}),a=new R(t,r);return a.receiveShadow=!0,a.name="terrain",a}createWater(){const e=new An(this.worldSize*1.15,this.worldSize*1.15,32,32);e.rotateX(-Math.PI/2);const t=new hc({color:1493461,roughness:.18,metalness:.04,transparent:!0,opacity:.68,transmission:.22,thickness:1.4,clearcoat:.8,clearcoatRoughness:.18}),s=new R(e,t);return s.position.y=Be.waterLevel,s.receiveShadow=!0,s.name="water",s}
 addMineableStones(){const e=new pn(this.seed+977),t=new ie({color:5793374,roughness:.88,metalness:.12,flatShading:!0}),s=new ie({color:9036671,emissive:2236962,emissiveIntensity:1.4,roughness:.38,flatShading:!0});let i=0,n=0;for(;i<48&&n<1800;){n+=1;const oreZone=i>=22?(i%2===0?-36:0):null,r=oreZone===null?e.range(-74,74):e.range(oreZone-16,oreZone+16),a=e.range(-74,74),l=this.heightAt(r,a),c=i%10,u=c<4?{name:"small iron stone",tier:"small",scale:e.range(.58,.82),chunks:2,health:1,minerals:8,iron:3,radius:.9}:c<8?{name:"iron formation",tier:"medium",scale:e.range(1,1.32),chunks:3,health:2,minerals:15,iron:5,radius:1.45}:{name:"large iron outcrop",tier:"large",scale:e.range(1.58,2.1),chunks:4,health:3,minerals:24,iron:8,radius:2.25};if(this.isWaterAt(r,a,.6)||l>16||Math.hypot(r,a)<15||this.mineableRocks.some(b=>Math.hypot(b.position.x-r,b.position.z-a)<Number(b.userData.collisionRadius??1)+u.radius+2.4))continue;const h=new Ge;for(let b=0;b<u.chunks;b+=1){const T=b===u.chunks-1,M=e.range(.72,1.12),S=new R(new qs((.48-b*.045)*u.scale*M,1),T?s:t),v=(b-(u.chunks-1)/2)*.42*u.scale;S.position.set(v,e.range(-.02,.24)*u.scale,(b%2?-.2:.2)*u.scale),S.scale.set(e.range(1.05,1.42),e.range(.78,1.2),e.range(.78,1.16)),S.rotation.set(e.range(0,.7),e.range(0,Math.PI),e.range(0,.48)),S.castShadow=!0,S.receiveShadow=!0,h.add(S)}h.position.set(r,l+.38*u.scale,a),h.userData.rockId=i<22?`stone-${i}`:`orebelt-${i-22}`,h.userData.rockKind=u.name,h.userData.rockTier=u.tier,h.userData.health=u.health,h.userData.maxHealth=u.health,h.userData.minerals=Math.round(u.minerals+e.range(-2,3)),h.userData.ironYield=u.iron,h.userData.collisionRadius=u.radius+u.scale*.15,h.userData.visualScale=u.scale,this.mineableRocks.push(h),this.group.add(h),i+=1}}
 addHarvestableTrees(){const e=new pn(this.seed+414),t=672,s=new ve(.16,.3,3.8,6),i=new Hi(1.28,3.25,5),o=new Hi(.78,2.15,4),q=new qi(1.72,1),n=new qi(.92,1),r=new ie({color:5651043,roughness:.94}),a=new ie({color:16777215,emissive:988706,emissiveIntensity:.42,roughness:.76}),l=[2458951,2128747,4178934,1929568],c={trunk:new up(s,r,t),sphereMain:new up(q,a,t),sphereSecondary:new up(n,a,t),triangleMain:new up(i,a,t),triangleSecondary:new up(o,a,t)};this.treeInstanceMeshes=c,Object.entries(c).forEach(([C,D])=>{D.name=`treeInstances-${C}`,D.castShadow=!1,D.receiveShadow=!0,D.frustumCulled=!0,this.group.add(D)});const u=new w(0,1,0),h=new w(0,0,1),d=new w(0,0,0),p=new w(1,1,1),f=new Ks,m=new Ks,g=new ue,y=(C,D,E,B)=>{f.setFromAxisAngle(u,D),E&&(m.setFromAxisAngle(h,E),f.multiply(m));const F=new ue;return F.compose(C,f,B),F};let x=0,b=0;for(;x<t&&b<16000;){b+=1;const C=e.range(-79,79),D=e.range(-79,79),E=this.heightAt(C,D),A=zkAOAt(C,D);if(this.isWaterAt(C,D,.6)||E>15||Math.hypot(C,D)<12||((A?.id==="desert"||A?.id==="arctic")&&e.next()<.58)||this.harvestableTrees.some(F=>F.position.distanceTo(new w(C,E,D))<1.55)||this.isObstacleAt(C,D,1.1))continue;const B=e.range(.72,1.72),F=new Ge,I=B<=1.04?1:B<=1.38?2:3,O=e.range(.62,1.55),G=e.range(.68,1.24),K=e.range(.7,1.2),V=e.range(-.12,.12),Q=x%2===0,H=new w(.72*B*G,.68*B*O,.72*B*K);m.setFromAxisAngle(h,V);const $=new ue().compose(d,m,H),W=Y=>$ .clone().multiply(Y),X={trunk:W(y(new w(0,1.9,0),0,0,p)),sphereMain:null,sphereSecondary:null,triangleMain:null,triangleSecondary:null};Q?(X.sphereMain=W(y(new w(0,4.7,0),x*.83,0,new w(1.38,1.18,1.3))),X.sphereSecondary=W(y(new w(x%4===0?1.35:-1.35,4.35,.28),x*1.27,0,new w(1.16,1.05,1.22)))):(X.triangleMain=W(y(new w(0,4.25,0),x*.83,0,p)),X.triangleSecondary=W(y(new w(x%4===1?.72:-.72,3.45,.18),x*1.27,x%4===1?-.5:.5,p))),F.position.set(C,E,D),F.rotation.y=e.range(0,Math.PI*2),F.userData.treeId=`tree-${x}`,F.userData.treeIndex=x,F.userData.treeInstanceMatrices=X,F.userData.health=I,F.userData.maxHealth=I,F.userData.timber=Math.round(3+B*9*O),F.userData.treeSize=I===1?"small":I===2?"medium":"large",F.userData.heightScale=O,F.userData.widthScale=G,F.userData.depthScale=K,F.userData.lean=V,F.userData.treeVariant=x%8,F.userData.treeSilhouette=Q?"spherical":"triangular",F.userData.swaySeed=e.range(0,100),F.userData.harvestableTree=!0,this.harvestableTrees.push(F),this.group.add(F),c.sphereMain.setColorAt(x,new re(l[x%l.length])),c.sphereSecondary.setColorAt(x,new re(l[(x+1)%l.length])),c.triangleMain.setColorAt(x,new re(l[x%l.length])),c.triangleSecondary.setColorAt(x,new re(l[(x+1)%l.length])),this.updateTreeInstance(F),x+=1}Object.values(c).forEach(C=>{C.count=x,C.instanceMatrix.needsUpdate=!0,C.instanceColor&&(C.instanceColor.needsUpdate=!0),C.computeBoundingSphere()})}
 updateTreeInstance(e){const t=this.treeInstanceMeshes,s=e.userData.treeInstanceMatrices,i=Number(e.userData.treeIndex);if(!t||!s||!Number.isFinite(i))return;this.treeZeroMatrix||(this.treeZeroMatrix=new ue().compose(new w(0,-9999,0),new Ks,new w(0,0,0))),this.treeMatrixScratch||(this.treeMatrixScratch=new ue),e.updateMatrix();const n=!e.visible||!!e.userData.highDetailAttached;for(const[r,a]of Object.entries(t)){const l=n||!s[r]?this.treeZeroMatrix:this.treeMatrixScratch.copy(e.matrix).multiply(s[r]);a.setMatrixAt(i,l),a.instanceMatrix.needsUpdate=!0}}
@@ -870,17 +904,34 @@ buildMachine(){const e=vn[this.officerClass],t=new ie({color:e.color,roughness:.
 this.enhanceMachine(e,t,s,i,n),this.machine.traverse(r=>{r instanceof R&&(r.castShadow=!0)}),this.group.add(this.machine)}
 enhanceMachine(e,t,s,i,n){if(this.officerClass==="ensign"){const r=new ie({color:7667711,emissive:4892927,emissiveIntensity:3.4,roughness:.08}),a=new R(new le(.78,.28,.38),t);a.position.set(0,.48,.12);const l=new R(new Se(.3,14,10),n);l.position.set(0,.06,.94),l.scale.set(1,.86,.5),this.machine.add(a,l);for(const c of[-1,1]){const u=new R(new Se(.42,12,8),s);u.scale.set(1.25,.82,1),u.position.set(c*.82,.12,-.05);const h=new R(new ve(.17,.22,.5,10),i);h.rotation.x=Math.PI/2,h.position.set(c*1.06,-.03,-.55);const d=new R(new Sr(.15,12),r);d.position.set(c*1.06,-.03,-.82),d.rotation.y=Math.PI,this.machine.add(u,h,d)}}else if(this.officerClass==="lieutenant"){const r=new R(new le(.78,.32,.08),n);r.position.set(0,3.18,.78);const a=new R(new le(.52,.12,.09),n);a.position.set(0,2.72,.81),this.machine.add(r,a);for(const l of[-1,1]){const c=new R(new le(.5,.86,.28),t);c.position.set(l*1.02,2.38,.25),c.rotation.z=l*.05;const u=new R(new Se(.32,12,8),n);u.scale.set(1,.48,.7),u.position.set(l*.55,.46,.42);const h=new R(new le(.68,.14,.44),n);h.position.set(l*.55,-.61,.45),this.machine.add(c,u,h)}}else{const r=new ie({color:4927595,roughness:.44,metalness:.5,flatShading:!0}),a=new R(new le(1.52,.7,.24),t);a.position.set(0,3.05,.84);const l=new R(new le(.85,.22,.08),n);l.position.set(0,3.12,.99),this.machine.add(a,l);for(const c of[-1,1]){const u=new R(new Se(.7,14,9),t);u.scale.set(1.2,.72,1),u.position.set(c*1.28,3.48,-.02);const h=new R(new le(.58,.68,.44),r);h.position.set(c*1.08,2.18,.14);const d=new R(new ve(.24,.32,.95,10),i);d.rotation.x=Math.PI/2,d.position.set(c*.72,2.75,-.92);const p=new R(new Sr(.2,14),n);p.position.set(c*.72,2.75,-1.42),p.rotation.y=Math.PI;const f=new R(new le(.58,.48,.18),t);f.position.set(c*.55,.5,.39),this.machine.add(u,h,d,p,f)}}}
 buildTravelBoat(){const e=vn[this.officerClass],t=new ie({color:1521481,roughness:.35,metalness:.68}),s=new ie({color:e.color,roughness:.3,metalness:.55}),i=new ie({color:15269887,emissive:e.color,emissiveIntensity:2.6}),n=new R(new ve(.75,1.15,3.4,8),t);n.rotation.x=Math.PI/2,n.scale.set(1.1,1,.45),n.position.y=-.38;const r=new R(new le(1.6,.18,2.4),s);r.position.y=-.1;const a=new R(new Hi(.82,1.4,6),s);a.rotation.x=Math.PI/2,a.position.set(0,-.2,1.85);const l=new R(new le(.95,.55,.65),t);l.position.set(0,0,-1.45);const c=new R(new Sr(.26,16),i);c.position.set(0,0,-1.8),c.rotation.y=Math.PI,this.travelBoat.add(n,r,a,l,c),this.travelBoat.visible=!1,this.travelBoat.position.y=.05,this.travelBoat.traverse(u=>{u instanceof R&&(u.castShadow=!0)}),this.group.add(this.travelBoat)}
-animateMachine(e){if(this.officerClass==="ensign"){this.machine.position.y=2.8+Math.sin(performance.now()*.003)*.25,this.machine.rotation.y+=e*.8;const t=this.machine.children.find(s=>s instanceof R&&s.geometry instanceof tt);t&&(t.rotation.z+=e*1.8)}else{this.machine.rotation.y=Math.sin(performance.now()*.0012)*.18;const t=this.officerClass==="captain"?1.12:.72;this.machine.position.y=t+(this.flightActive?Math.sin(performance.now()*.004)*.12:0)}const t=this.mineAnimationUntil-performance.now();t>0?(this.machine.rotation.z=Math.sin(performance.now()*.045)*.12,this.machine.position.y+=Math.sin(performance.now()*.035)*.08):this.machine.rotation.z=Kt.lerp(this.machine.rotation.z,0,.25),this.travelBoat.visible&&(this.travelBoat.rotation.z=Math.sin(performance.now()*.0035)*.025,this.travelBoat.position.y=.04+Math.sin(performance.now()*.004)*.05)}animateAxe(){const e=this.chopAnimationUntil-performance.now();if(e>0){const t=1-e/380;this.axe.rotation.z=-.45-Math.sin(t*Math.PI)*1.15,this.axe.rotation.x=Math.sin(t*Math.PI)*.35}else this.axe.rotation.z=Kt.lerp(this.axe.rotation.z,-.45,.2),this.axe.rotation.x=Kt.lerp(this.axe.rotation.x,0,.2)}}class LR{group=new Ge;records=[];selectedType=null;preview=new Ge;officerClass;constructor(e){this.officerClass=e,this.preview.visible=!1,this.group.add(this.preview)}select(e){if(this.selectedType=e,this.preview.clear(),!e){this.preview.visible=!1;return}const t=this.createModel(e,!0);this.preview.add(t),this.preview.visible=!0}updatePreview(e,t){if(!this.selectedType)return!1;const s=this.isValidSite(this.selectedType,e.x,e.z,t),i=this.siteHeight(this.selectedType,e.x,e.z,t);return this.preview.position.set(e.x,i,e.z),this.preview.rotation.y=this.selectedType==="bridge"?t.bridgeRotationAt(e.x):0,this.preview.visible=!0,this.preview.traverse(n=>{if(!(n instanceof R))return;const r=Array.isArray(n.material)?n.material:[n.material];for(const a of r)"color"in a&&a.color instanceof re&&a.color.set(s?6878401:16735604)}),s}effectiveCost(e){const t=eo.find(i=>i.type===e);if(!t)return{};const s=this.officerClass==="lieutenant"?.85:1;return Object.fromEntries(Object.entries(t.cost).map(([i,n])=>[i,i==="minerals"?Math.ceil(Number(n)*s):Number(n)]))}resourceShortfalls(e,t){const s={};for(const[i,n]of Object.entries(this.effectiveCost(e))){const r=i,a=Math.max(0,Number(n)-Number(t[r]??0));a>0&&(s[r]=a)}return s}canAfford(e,t){return Object.keys(this.resourceShortfalls(e,t)).length===0}place(e,t,s){const i=this.selectedType;if(!i||!this.isValidSite(i,e.x,e.z,s)||!this.canAfford(i,t)||!eo.find(a=>a.type===i))return null;for(const[a,l]of Object.entries(this.effectiveCost(i)))t[a]-=Number(l);const r={id:crypto.randomUUID(),type:i,x:e.x,y:this.siteHeight(i,e.x,e.z,s),z:e.z,rotation:i==="bridge"?s.bridgeRotationAt(e.x):Math.random()*Math.PI*2,level:1};return this.addRecord(r),r}addRecord(e){const t=this.createModel(e.type,!1);t.position.set(e.x,e.y,e.z),t.rotation.y=e.rotation,t.userData.buildingId=e.id,t.userData.buildingType=e.type,this.group.add(t),this.records.push(e)}countByType(){const e={power:0,water:0,habitat:0,research:0,culture:0,governance:0,defense:0,bridge:0,boat:0};for(const t of this.records)e[t.type]=(e[t.type]??0)+1;return e}waterTraversalModeAt(e,t,s){if(s)return"upgrade";for(const i of this.records.filter(n=>n.type==="bridge")){const n=e-i.x,r=t-i.z,a=Math.cos(-i.rotation),l=Math.sin(-i.rotation),c=n*a-r*l,u=n*l+r*a;if(Math.abs(c)<=2.35&&Math.abs(u)<=7.1)return"bridge"}return this.records.some(i=>i.type==="boat")?"boat":null}hasBoat(){return this.records.some(e=>e.type==="boat")}
+animateMachine(e){if(this.officerClass==="ensign"){this.machine.position.y=2.8+Math.sin(performance.now()*.003)*.25,this.machine.rotation.y+=e*.8;const t=this.machine.children.find(s=>s instanceof R&&s.geometry instanceof tt);t&&(t.rotation.z+=e*1.8)}else{
+    /* Mounted flight. The mech is already a child of the officer group, so it only
+     * needs to move from its escort offset to directly beneath and slightly behind
+     * the marine, becoming the platform they ride rather than a drone flying next to
+     * them. Both position and yaw are eased instead of snapped, so mounting and
+     * dismounting read as a manoeuvre. Only the Captain can fly, so everyone else
+     * keeps the original escort behaviour untouched. */
+    const restY=this.officerClass==="captain"?1.12:.72,mounted=this.flightActive&&this.canFly?.();
+    const targetX=mounted?0:-3,targetZ=mounted?-.42:-2.4,
+      targetY=mounted?-.62+Math.sin(performance.now()*.004)*.1:restY,
+      ease=Math.min(1,Math.max(0,e)*6);
+    this.machine.position.x=Kt.lerp(this.machine.position.x,targetX,ease);
+    this.machine.position.y=Kt.lerp(this.machine.position.y,targetY,ease);
+    this.machine.position.z=Kt.lerp(this.machine.position.z,targetZ,ease);
+    this.machine.rotation.y=mounted
+      ?Kt.lerp(this.machine.rotation.y,0,ease)
+      :Math.sin(performance.now()*.0012)*.18;
+  }const t=this.mineAnimationUntil-performance.now();t>0?(this.machine.rotation.z=Math.sin(performance.now()*.045)*.12,this.machine.position.y+=Math.sin(performance.now()*.035)*.08):this.machine.rotation.z=Kt.lerp(this.machine.rotation.z,0,.25),this.travelBoat.visible&&(this.travelBoat.rotation.z=Math.sin(performance.now()*.0035)*.025,this.travelBoat.position.y=.04+Math.sin(performance.now()*.004)*.05)}animateAxe(){const e=this.chopAnimationUntil-performance.now();if(e>0){const t=1-e/380;this.axe.rotation.z=-.45-Math.sin(t*Math.PI)*1.15,this.axe.rotation.x=Math.sin(t*Math.PI)*.35}else this.axe.rotation.z=Kt.lerp(this.axe.rotation.z,-.45,.2),this.axe.rotation.x=Kt.lerp(this.axe.rotation.x,0,.2)}}class LR{group=new Ge;records=[];selectedType=null;preview=new Ge;officerClass;constructor(e){this.officerClass=e,this.preview.visible=!1,this.group.add(this.preview)}select(e){if(this.selectedType=e,this.preview.clear(),!e){this.preview.visible=!1;return}const t=this.createModel(e,!0);this.preview.add(t),this.preview.visible=!0}updatePreview(e,t){if(!this.selectedType)return!1;const s=this.isValidSite(this.selectedType,e.x,e.z,t),i=this.siteHeight(this.selectedType,e.x,e.z,t);return this.preview.position.set(e.x,i,e.z),this.preview.rotation.y=this.selectedType==="bridge"?t.bridgeRotationAt(e.x):0,this.preview.visible=!0,this.preview.traverse(n=>{if(!(n instanceof R))return;const r=Array.isArray(n.material)?n.material:[n.material];for(const a of r)"color"in a&&a.color instanceof re&&a.color.set(s?6878401:16735604)}),s}effectiveCost(e){const t=eo.find(i=>i.type===e);if(!t)return{};const s=this.officerClass==="lieutenant"?.85:1;return Object.fromEntries(Object.entries(t.cost).map(([i,n])=>[i,i==="minerals"?Math.ceil(Number(n)*s):Number(n)]))}resourceShortfalls(e,t){const s={};for(const[i,n]of Object.entries(this.effectiveCost(e))){const r=i,a=Math.max(0,Number(n)-Number(t[r]??0));a>0&&(s[r]=a)}return s}canAfford(e,t){return Object.keys(this.resourceShortfalls(e,t)).length===0}place(e,t,s){const i=this.selectedType;if(!i||!this.isValidSite(i,e.x,e.z,s)||!this.canAfford(i,t)||!eo.find(a=>a.type===i))return null;for(const[a,l]of Object.entries(this.effectiveCost(i)))t[a]-=Number(l);const r={id:crypto.randomUUID(),type:i,x:e.x,y:this.siteHeight(i,e.x,e.z,s),z:e.z,rotation:i==="bridge"?s.bridgeRotationAt(e.x):Math.random()*Math.PI*2,level:1};return this.addRecord(r),r}addRecord(e){const t=this.createModel(e.type,!1);t.position.set(e.x,e.y,e.z),t.rotation.y=e.rotation,t.userData.buildingId=e.id,t.userData.buildingType=e.type,this.group.add(t),this.records.push(e)}countByType(){const e={power:0,water:0,habitat:0,research:0,culture:0,governance:0,defense:0,bridge:0,boat:0};for(const t of this.records)e[t.type]=(e[t.type]??0)+1;return e}waterTraversalModeAt(e,t,s){if(s)return"upgrade";for(const i of this.records.filter(n=>n.type==="bridge")){const n=e-i.x,r=t-i.z,a=Math.cos(-i.rotation),l=Math.sin(-i.rotation),c=n*a-r*l,u=n*l+r*a;if(Math.abs(c)<=2.35&&Math.abs(u)<=7.1)return"bridge"}return this.records.some(i=>i.type==="boat")?"boat":null}hasBoat(){return this.records.some(e=>e.type==="boat")}
 isValidSite(e,t,s,i){return e==="bridge"||e==="boat"?i.isWaterInfrastructureSite(t,s):i.isBuildable(t,s)}
 siteHeight(e,t,s,i){return e==="bridge"?Be.waterLevel+.08:e==="boat"?Be.waterLevel+.18:i.heightAt(t,s)}createModel(e,t){const s=new Ge,i={power:16762183,water:5102079,habitat:8254651,research:10782207,culture:16741832,governance:15266303,defense:16738917,bridge:13209691,boat:5627888},n=vn[this.officerClass].color,r=new ie({color:t?6878401:i[e],roughness:.34,metalness:.52,transparent:t,opacity:t?.55:1}),a=new ie({color:t?6878401:n,roughness:.38,metalness:.48,transparent:t,opacity:t?.5:1}),l=new ie({color:1056555,roughness:.48,metalness:.62,transparent:t,opacity:t?.5:1}),c=new ie({color:16777215,emissive:i[e],emissiveIntensity:t?.2:2.2,roughness:.1,transparent:t,opacity:t?.55:1});if(e==="bridge")this.buildBridge(s,r,a,l,c);else if(e==="boat")this.buildBoat(s,r,a,l,c);else{const u=new R(new ve(2.35,2.7,.72,12),l);u.position.y=.36;const h=new R(new tt(2.2,.09,8,36),c);if(h.rotation.x=Math.PI/2,h.position.y=.72,s.add(u,h),e==="power"){const d=new R(new ve(.45,.85,4.8,10),r);d.position.y=2.95;const p=new R(new tt(.68,.12,8,24),a);p.rotation.x=Math.PI/2,p.position.y=3.55,s.add(d,p);for(const m of[-1,1]){const g=new R(new le(2.05,.13,2.35),l);g.position.set(m*1.45,3.65,0),g.rotation.z=m*.08;const y=new R(new le(1.8,.04,2.08),c);y.position.set(m*1.45,3.74,0),s.add(g,y)}const f=new R(new qs(.35,1),c);f.position.y=5.55,s.add(f)}else if(e==="water"){const d=new R(new ve(1.55,1.8,3.3,18),r);d.position.y=2.28;const p=new R(new Se(1.58,20,12,0,Math.PI*2,0,Math.PI/2),a);p.position.y=3.9;const f=new R(new tt(1.9,.16,10,36),c);f.rotation.x=Math.PI/2,f.position.y=2.25,s.add(d,p,f);for(const m of[0,Math.PI/2,Math.PI,Math.PI*1.5]){const g=new R(new ve(.12,.12,2.1,8),l);g.rotation.z=Math.PI/2,g.rotation.y=m,g.position.set(Math.cos(m)*2,.75,Math.sin(m)*2),s.add(g)}}else if(e==="habitat"){const d=new R(new Se(2.18,28,18,0,Math.PI*2,0,Math.PI/2),r);d.position.y=.74;const p=new R(new Se(1.72,24,14,0,Math.PI*2,0,Math.PI/2),l);p.position.y=.77;const f=new R(new le(.82,1.35,.32),a);f.position.set(0,1.02,2.06);const m=new R(new le(.55,.92,.08),c);m.position.set(0,1.05,2.25),s.add(d,p,f,m);for(let g=0;g<8;g+=1){const y=new R(new tt(2.08,.035,6,30,Math.PI),c);y.rotation.set(Math.PI/2,g/8*Math.PI*2,0),y.position.y=.76,s.add(y)}}else if(e==="research"){const d=new R(new le(3.55,2.45,3.55,2,2,2),r);d.position.y=1.62;const p=.3;for(const y of[-1.55,1.55])for(const x of[-1.55,1.55]){const b=new R(new le(p,3,p),l);b.position.set(y,1.8,x),s.add(b)}const f=new R(new ve(.12,.18,1.6,8),a);f.position.y=4.25;const m=new R(new qs(.78,1),c);m.position.y=5.2;const g=new R(new tt(1.05,.05,8,36),c);g.rotation.x=Math.PI/2,g.position.y=5.2,s.add(d,f,m,g)}else if(e==="culture"){const d=new R(new ve(2.15,2.25,1.15,16),r);d.position.y=.95;const p=new R(new ve(1.35,1.7,.55,16),a);p.position.y=1.8;const f=new R(new rd(.67,.16,64,10),c);f.position.y=3.05,s.add(d,p,f);for(let m=0;m<6;m+=1){const g=new R(new le(.34,.75,.34),l),y=m/6*Math.PI*2;g.position.set(Math.cos(y)*1.75,1.45,Math.sin(y)*1.75),s.add(g)}}else if(e==="governance"){const d=new R(new le(3.7,2.6,3.25),r);d.position.y=1.7;const p=new R(new ve(2.65,2.3,.62,6),a);p.position.y=3.25,p.rotation.y=Math.PI/6;for(const m of[-1.35,-.45,.45,1.35]){const g=new R(new ve(.17,.23,2.25,10),c);g.position.set(m,1.48,1.7),s.add(g)}const f=new R(new qs(.42,1),c);f.position.set(0,4.15,0),s.add(d,p,f)}else{const d=new R(new ve(.72,1.35,5,10),r);d.position.y=2.85;const p=new R(new tt(.95,.15,8,30),a);p.rotation.x=Math.PI/2,p.position.y=4.45;const f=new R(new qi(1.15,2),c);f.position.y=5.55,s.add(d,p,f);for(let m=0;m<3;m+=1){const g=new R(new le(.18,.18,2.1),l);g.rotation.y=m/3*Math.PI*2,g.position.y=3.55,s.add(g)}}}return s.scale.setScalar(vn[this.officerClass].label==="Captain"&&e==="defense"?1.12:1),s.traverse(u=>{u instanceof R&&(u.castShadow=!t,u.receiveShadow=!0)}),s}buildBridge(e,t,s,i,n){for(let r=-5;r<=5;r+=1){const a=new R(new le(3.6,.25,.82),t);a.position.set(0,.5+Math.cos(r*.24)*.28,r*1.02),a.rotation.x=-Math.sin(r*.24)*.045,e.add(a)}for(const r of[-1.7,1.7]){const a=new R(new xt(.09,10.4,5,8),s);a.rotation.x=Math.PI/2,a.position.set(r,1.25,0),e.add(a);for(let l=-5;l<=5;l+=2.5){const c=new R(new ve(.1,.14,1.4,8),i);c.position.set(r,.95,l);const u=new R(new Se(.11,10,8),n);u.position.set(r,1.65,l),e.add(c,u)}}for(const r of[-5.4,5.4])for(const a of[-1.55,1.55]){const l=new R(new ve(.22,.32,2,8),i);l.position.set(a,-.15,r),e.add(l)}}buildBoat(e,t,s,i,n){const r=new R(new ve(1.15,1.75,5.8,10),i);r.rotation.x=Math.PI/2,r.scale.set(1.2,1,.46),r.position.y=.2;const a=new R(new Hi(1.26,2.2,8),t);a.rotation.x=Math.PI/2,a.position.set(0,.22,3.75);const l=new R(new le(2.3,.28,4.1),s);l.position.y=.8;const c=new R(new Se(.9,20,14,0,Math.PI*2,0,Math.PI/2),n);c.position.set(0,.92,.25);const u=new R(new le(1.35,.5,.65),t);u.position.set(0,1,1.2);const h=new R(new le(1.7,.85,1),i);h.position.set(0,.55,-2.45),e.add(r,a,l,c,u,h);for(const d of[-.65,.65]){const p=new R(new ve(.28,.38,1.1,12),t);p.rotation.x=Math.PI/2,p.position.set(d,.35,-3.05);const f=new R(new Sr(.25,16),n);f.position.set(d,.35,-3.62),f.rotation.y=Math.PI,e.add(p,f)}}}class IR{
 resources={energy:42,water:38,minerals:95,iron:0,biomass:72,timber:0,data:18,credits:0,trust:52};
-indicators={habitability:12,ecology:76,morale:44,governance:5,economy:18,defense:8,resilience:14};civilizationScore=8;phase=1;elapsed=0;productionAccumulator=0;officerClass;constructor(e){this.officerClass=e}update(e,t){if(this.elapsed+=e,this.productionAccumulator+=e,this.productionAccumulator<1)return;const s=this.productionAccumulator;this.productionAccumulator=0;const i=this.officerClass==="captain"?1.1:1,n=t.power,r=t.water,a=t.habitat,l=t.research,c=t.culture,u=t.governance,h=t.defense,d=t.bridge,p=t.boat;this.resources.energy=He(this.resources.energy+(n*1.6-(a+l)*.45)*s*i,0,999),this.resources.water=He(this.resources.water+(r*1.5-a*.38)*s*i,0,999),this.resources.data=He(this.resources.data+l*.55*s*i,0,999),this.resources.biomass=He(this.resources.biomass+Math.max(0,this.indicators.ecology-45)*.002*s,0,999);const f=this.resources.energy>2,m=this.resources.water>2,g=Math.min(12,d*3+p*6);this.indicators.habitability=He(8+a*12+r*6+n*5+g+(f&&m?8:-10),0,100),this.indicators.morale=He(24+a*7+c*12+this.resources.trust*.2+g*.35,0,100),this.indicators.governance=He(5+u*21+l*3,0,100),this.indicators.economy=He(12+a*5+l*8+u*7+d*2+p*5,0,100),this.indicators.defense=He(5+h*22+n*2,0,100),this.indicators.resilience=He((this.indicators.habitability+this.indicators.ecology+this.indicators.governance+this.indicators.defense)/4,0,100);const y=[this.indicators.habitability,this.indicators.ecology,this.indicators.morale,this.indicators.governance,this.indicators.economy,this.indicators.defense,this.indicators.resilience,this.resources.trust],x=Math.max(...y)-Math.min(...y),b=Object.values(t).filter(T=>T>0).length*2.5;this.civilizationScore=He(y.reduce((T,M)=>T+M,0)/y.length+b-x*.12,0,100),this.phase=this.civilizationScore>=72?4:this.civilizationScore>=48?3:this.civilizationScore>=24?2:1}
+indicators={habitability:12,ecology:76,morale:44,governance:5,economy:18,defense:8,resilience:14};civilizationScore=8;phase=1;elapsed=0;productionAccumulator=0;officerClass;constructor(e){this.officerClass=e}update(e,t){if(this.elapsed+=e,this.productionAccumulator+=e,this.productionAccumulator<1)return;const s=this.productionAccumulator;this.productionAccumulator=0;const i=this.officerClass==="captain"?1.1:1,n=t.power??0,r=t.water??0,a=(t.habitat??0)+(t.hospital??0)*.45,l=(t.communications??0)+(t.university??0)*1.4,c=(t.commerce??0),u=(t.capitol??0)+(t.planetary_capitol??0)*2,h=(t.defense??0)+(t.defense_contractor??0)*1.2+(t.war_economy??0)*1.5,d=(t.bridge??0)+(t.transit??0),p=t.boat??0,q=(t.corporate_hq??0)+(t.stock_exchange??0)*1.5;this.resources.energy=He(this.resources.energy+(n*1.6-(a+l+h*.15+q*.2)*.45)*s*i,0,999),this.resources.water=He(this.resources.water+(r*1.5-a*.38)*s*i,0,999),this.resources.data=He(this.resources.data+l*.55*s*i,0,999),this.resources.credits=He(this.resources.credits+q*.08*s*i,0,9999),this.resources.biomass=He(this.resources.biomass+Math.max(0,this.indicators.ecology-45)*.002*s,0,999);const f=this.resources.energy>2,m=this.resources.water>2,g=Math.min(18,d*3+p*6);this.indicators.habitability=He(8+a*12+r*6+n*5+g+(f&&m?8:-10),0,100),this.indicators.morale=He(24+a*7+c*10+this.resources.trust*.2+g*.35-(t.war_economy??0)*5,0,100),this.indicators.governance=He(5+u*18+l*3+q*2,0,100),this.indicators.economy=He(12+a*5+l*8+u*7+d*2+p*5+q*18+(t.war_economy??0)*12,0,100),this.indicators.defense=He(5+h*18+n*2,0,100),this.indicators.resilience=He((this.indicators.habitability+this.indicators.ecology+this.indicators.governance+this.indicators.defense)/4,0,100);const y=[this.indicators.habitability,this.indicators.ecology,this.indicators.morale,this.indicators.governance,this.indicators.economy,this.indicators.defense,this.indicators.resilience,this.resources.trust],x=Math.max(...y)-Math.min(...y),b=Object.values(t).filter(T=>T>0).length*2.5;this.civilizationScore=He(y.reduce((T,M)=>T+M,0)/y.length+b-x*.12,0,100),this.phase=this.civilizationScore>=72?4:this.civilizationScore>=48?3:this.civilizationScore>=24?2:1}
 awardCredits(e){const t=Math.max(0,Math.floor(Number(e)||0)),s=Number(this.resources.credits);return this.resources.credits=He((Number.isFinite(s)?s:0)+t,0,9999),t}
 collect(e,t){const s=this.officerClass==="ensign"?1.25:1;this.resources[e]=He(this.resources[e]+t*s,0,999)}applyTreeHarvestConsequences(e){this.indicators.ecology=He(this.indicators.ecology-(e?3.5:.8),0,100),e&&(this.resources.trust=He(this.resources.trust-5,0,100))}applyHazard(){const e=Math.random();return e<.25?(this.resources.energy=Math.max(0,this.resources.energy-20),this.indicators.resilience=Math.max(0,this.indicators.resilience-8),{title:"Twin-Sun Magnetic Storm",description:"A solar burst destabilized the grid. Energy reserves dropped and exposed systems need redundancy.",severity:"high"}):e<.5?(this.resources.water=Math.max(0,this.resources.water-16),this.indicators.ecology=Math.max(0,this.indicators.ecology-5),{title:"Highland Flash Flood",description:"River levels surged across low routes. Water storage was contaminated and ecosystem health declined.",severity:"medium"}):e<.75?(this.resources.biomass=Math.max(0,this.resources.biomass-14),this.indicators.ecology=Math.max(0,this.indicators.ecology-7),{title:"Bioluminescent Bloom",description:"An alien fungal bloom spread through the western canopy. Biomass stores were quarantined.",severity:"medium"}):(this.resources.credits=Math.max(0,this.resources.credits-12),this.indicators.morale=Math.max(0,this.indicators.morale-5),{title:"Logistics Breakdown",description:"A cliffside route failed under heavy transport. Emergency rerouting cost credits and lowered morale.",severity:"low"})}
 resolveDiplomacy(e){if(e==="share")return this.resources.water<12?"The colony lacks enough water reserves to transfer watershed control.":(this.resources.water-=12,this.resources.trust=He(this.resources.trust+22,0,100),this.indicators.ecology=He(this.indicators.ecology+12,0,100),this.resources.biomass=He(this.resources.biomass+10,0,999),"Watershed control transferred to the ZekNovans. Protected water now restores ecology and biomass, and hostile patrols will become rare.");if(e==="negotiate")return this.resources.trust=He(this.resources.trust+12,0,100),this.indicators.governance=He(this.indicators.governance+4,0,100),"The safe-zone agreement was signed. ZekNovans will not enter or attack marines inside the marked work boundary.";return this.resources.trust=He(this.resources.trust-30,0,100),this.indicators.defense=He(this.indicators.defense+6,0,100),this.indicators.ecology=He(this.indicators.ecology-12,0,100),"The watershed was seized. All-out war has begun and hostile forces will attack continuously."}
 }function He(o,e,t){return Math.max(e,Math.min(t,o))}const y0=document.getElementById("app");if(!y0)throw new Error("Missing application root.");const Gh=new vR,UR=new RR,OR=new ER;let _s=null,Wd=null;const Sc=new wR(y0,{onStart:async o=>{const e=await Gh.login(o);await kR(e)},onToggleMode:()=>_s?.toggleMode(),onPause:()=>_s?.togglePause(),onSelectBuild:o=>_s?.selectBuild(o),onAdvisor:async o=>_s?.askAdvisor(o)??"The mission system is not active.",onDiplomacy:o=>_s?.resolveDiplomacy(o)??"No active diplomatic encounter.",onSave:async()=>_s?.save(),onLogout:async()=>{await _s?.save(),_s?.dispose(),_s=null,globalThis.ZekNovaGame=null,await Gh.logout(),Wd=null,Sc.showLanding(null)}});Wd=await Gh.restore();Sc.showLanding(Wd);async function kR(o){_s?.dispose(),Sc.showGame(o),_s=new zR(o,Sc,UR,OR),globalThis.ZekNovaGame=_s,await _s.initialize()}class zR{
 user;ui;saves;advisor;biomeSeed;scene=new Jh;camera=new Ct(58,1,.1,600);renderer=null;controls=null;terrain=null;player=null;buildings=null;simulation=null;clock=new rb;raycaster=new nb;pointer=new Z;pointerWorld=new w;mode="explore";paused=!1;animationFrame=0;resizeObserver=null;autosaveTimer=0;hazardTimer=0;diplomacyTimer=0;diplomacyShown=!1;diplomacyOutcome=null;safeZoneCenter=null;safeZoneRadius=18;safeZoneMarker=null;rendererLabel="INITIALIZING";nearestResource=null;nearestTree=null;nearestPowerUp=null;nearestRock=null;enemies=[];projectiles=[];projectilePool=[];enemyProjectiles=[];enemyProjectilePool=[];impactPool=[];enemyTimer=0;enemySpawnDelay=14;lastChopAt=0;lastMineAt=0;miningCooldownRemaining=0;lastShotAt=0;rollingShotCooldownUntil=0;deathStateUntil=0;specialAttackGauge=0;specialAttackReadyAnnounced=!1;lastWaterWarningAt=0;waterTraversalUnlocked=!1;waterTraversalAnnounced=!1;lastHudUpdate=0;disposed=!1;movementConfirmed=!1;movementButtonCleanups=[];harvestedTreeIds=new Set;collectedPowerUpIds=new Set;minedRockIds=new Set;missionStats={resourcesCollected:0,enemiesDefeated:0};constructor(e,t,s,i){this.user=e,this.ui=t,this.saves=s,this.advisor=i,this.biomeSeed=BR(`${e.teamCode}:${e.teamName}:lush-highlands`)}
-async initialize(){const e=document.getElementById("viewport");if(!e)throw new Error("Missing game viewport.");this.renderer=new oR({antialias:!0,alpha:!1,forceWebGL:!0}),this.renderer.setPixelRatio(Math.min(window.devicePixelRatio,Be.maxPixelRatio)),this.renderer.shadowMap.enabled=!0,this.renderer.toneMapping=Rm,this.renderer.toneMappingExposure=1.1,this.renderer.setClearColor(466218,1),await this.renderer.init(),e.appendChild(this.renderer.domElement),this.rendererLabel="WEBGL 2 SAFE MODE · V8",this.scene.background=new re(735826),this.scene.fog=new Qh(1392205,.0075),this.camera.position.set(12,11,16),this.controls=new cR(this.camera,this.renderer.domElement),this.controls.enableDamping=!0,this.controls.enabled=!1,this.controls.maxPolarAngle=Math.PI*.47,this.controls.minDistance=10,this.controls.maxDistance=88,this.controls.target.set(0,0,0),this.addLightingAndSky(),this.terrain=new PR(this.biomeSeed),this.player=new DR(this.user.officerClass),this.buildings=new LR(this.user.officerClass),this.buildings.utilityTerrain=this.terrain,this.simulation=new IR(this.user.officerClass),this.scene.add(this.terrain.group,this.player.group,this.buildings.group);const t=await this.saves.load(this.user.teamCode);this.restore(t);const s=this.terrain.heightAt(this.player.group.position.x,this.player.group.position.z),i=this.terrain.walkHeightAt(this.player.group.position.x,this.player.group.position.z,!1),n=s<=Be.waterLevel+.15;if(!t||n){const r=this.terrain.findSafeSpawn(0,24);this.player.group.position.copy(r),t&&this.ui.showToast("Position recovered","Your officer was relocated from unsafe water to the south riverbank.","warning")}else Math.abs(this.player.group.position.y-i)>.65&&(this.player.group.position.y=i,this.ui.showToast("Grounding systems corrected","Legacy floating position data was aligned to the terrain surface.","success"));this.alignExploreCameraToPlayer(),this.renderer.domElement.tabIndex=0,this.renderer.domElement.style.touchAction="none",this.renderer.domElement.setAttribute("aria-label","ZekNova game world. Click, then use WASD or arrow keys to move."),this.renderer.domElement.addEventListener("pointermove",this.onPointerMove),this.renderer.domElement.addEventListener("pointerdown",this.onPointerDown),document.addEventListener("keydown",this.onKeyDown,!0),document.addEventListener("keyup",this.onKeyUp,!0),window.addEventListener("blur",this.onWindowBlur),document.addEventListener("visibilitychange",this.onVisibilityChange),window.addEventListener("beforeunload",this.onBeforeUnload),this.bindMovementButtons(),window.setTimeout(()=>this.renderer?.domElement.focus({preventScroll:!0}),0),this.resizeObserver=new ResizeObserver(()=>this.resize()),this.resizeObserver.observe(e),this.resize(),this.autosaveTimer=window.setInterval(()=>{this.save()},Be.autosaveMs),this.hazardTimer=window.setInterval(()=>this.triggerHazard(),Be.hazardIntervalMs),this.diplomacyTimer=window.setTimeout(()=>{this.diplomacyShown||(this.diplomacyShown=!0,this.ui.showDiplomacy())},52e3),this.ui.showToast("Forward base online",`Biome seed ${this.biomeSeed}. Build power and water before the first hazard.`,"success"),this.animationFrame=requestAnimationFrame(this.animate)}dispose(){this.disposed=!0,cancelAnimationFrame(this.animationFrame),window.clearInterval(this.autosaveTimer),window.clearInterval(this.hazardTimer),window.clearTimeout(this.diplomacyTimer),this.resizeObserver?.disconnect(),document.removeEventListener("keydown",this.onKeyDown,!0),document.removeEventListener("keyup",this.onKeyUp,!0),window.removeEventListener("blur",this.onWindowBlur),document.removeEventListener("visibilitychange",this.onVisibilityChange),window.removeEventListener("beforeunload",this.onBeforeUnload),this.renderer?.domElement.removeEventListener("pointermove",this.onPointerMove),this.renderer?.domElement.removeEventListener("pointerdown",this.onPointerDown),this.movementButtonCleanups.splice(0).forEach(e=>e()),this.player?.dispose(),this.controls?.dispose(),this.renderer?.dispose(),this.scene.traverse(e=>{e instanceof R&&(e.geometry.dispose(),Array.isArray(e.material)?e.material.forEach(t=>t.dispose()):e.material.dispose())})}
+async initialize(){const e=document.getElementById("viewport");if(!e)throw new Error("Missing game viewport.");this.renderer=new oR({antialias:!0,alpha:!1,forceWebGL:zkForceWebGL}),this.renderer.setPixelRatio(Math.min(window.devicePixelRatio,Be.maxPixelRatio)),this.renderer.shadowMap.enabled=!0,this.renderer.toneMapping=Rm,this.renderer.toneMappingExposure=1.1,this.renderer.setClearColor(466218,1),await this.renderer.init(),e.appendChild(this.renderer.domElement),this.rendererLabel=`${zkBackendLabel(this.renderer)} SAFE MODE · V8`,this.scene.background=new re(735826),this.scene.fog=new Qh(1392205,.0075),this.camera.position.set(12,11,16),this.controls=new cR(this.camera,this.renderer.domElement),this.controls.enableDamping=!0,this.controls.enabled=!1,this.controls.maxPolarAngle=Math.PI*.47,this.controls.minDistance=10,this.controls.maxDistance=88,this.controls.target.set(0,0,0),this.addLightingAndSky(),this.terrain=new PR(this.biomeSeed),this.player=new DR(this.user.officerClass),this.buildings=new LR(this.user.officerClass),this.buildings.utilityTerrain=this.terrain,this.simulation=new IR(this.user.officerClass),this.scene.add(this.terrain.group,this.player.group,this.buildings.group);const t=await this.saves.load(this.user.teamCode);this.restore(t);const s=this.terrain.heightAt(this.player.group.position.x,this.player.group.position.z),i=this.terrain.walkHeightAt(this.player.group.position.x,this.player.group.position.z,!1),n=s<=Be.waterLevel+.15;if(!t||n){const r=this.terrain.findSafeSpawn(0,24);this.player.group.position.copy(r),t&&this.ui.showToast("Position recovered","Your officer was relocated from unsafe water to the south riverbank.","warning")}else Math.abs(this.player.group.position.y-i)>.65&&(this.player.group.position.y=i,this.ui.showToast("Grounding systems corrected","Legacy floating position data was aligned to the terrain surface.","success"));this.alignExploreCameraToPlayer(),this.renderer.domElement.tabIndex=0,this.renderer.domElement.style.touchAction="none",this.renderer.domElement.setAttribute("aria-label","ZekNova game world. Click, then use WASD or arrow keys to move."),this.renderer.domElement.addEventListener("pointermove",this.onPointerMove),this.renderer.domElement.addEventListener("pointerdown",this.onPointerDown),document.addEventListener("keydown",this.onKeyDown,!0),document.addEventListener("keyup",this.onKeyUp,!0),window.addEventListener("blur",this.onWindowBlur),document.addEventListener("visibilitychange",this.onVisibilityChange),window.addEventListener("beforeunload",this.onBeforeUnload),this.bindMovementButtons(),window.setTimeout(()=>this.renderer?.domElement.focus({preventScroll:!0}),0),this.resizeObserver=new ResizeObserver(()=>this.resize()),this.resizeObserver.observe(e),this.resize(),this.autosaveTimer=window.setInterval(()=>{this.save()},Be.autosaveMs),this.hazardTimer=window.setInterval(()=>this.triggerHazard(),Be.hazardIntervalMs),this.diplomacyTimer=window.setTimeout(()=>{this.diplomacyShown||(this.diplomacyShown=!0,this.ui.showDiplomacy())},52e3),this.ui.showToast("Forward base online",`Biome seed ${this.biomeSeed}. Build power and water before the first hazard.`,"success"),this.animationFrame=requestAnimationFrame(this.animate)}dispose(){this.disposed=!0,cancelAnimationFrame(this.animationFrame),window.clearInterval(this.autosaveTimer),window.clearInterval(this.hazardTimer),window.clearTimeout(this.diplomacyTimer),this.resizeObserver?.disconnect(),document.removeEventListener("keydown",this.onKeyDown,!0),document.removeEventListener("keyup",this.onKeyUp,!0),window.removeEventListener("blur",this.onWindowBlur),document.removeEventListener("visibilitychange",this.onVisibilityChange),window.removeEventListener("beforeunload",this.onBeforeUnload),this.renderer?.domElement.removeEventListener("pointermove",this.onPointerMove),this.renderer?.domElement.removeEventListener("pointerdown",this.onPointerDown),this.movementButtonCleanups.splice(0).forEach(e=>e()),this.player?.dispose(),this.controls?.dispose(),this.renderer?.dispose(),this.scene.traverse(e=>{e instanceof R&&(e.geometry.dispose(),Array.isArray(e.material)?e.material.forEach(t=>t.dispose()):e.material.dispose())})}
 togglePause(){this.paused=!this.paused,this.player?.clearControls(),this.player?.setMoveTarget(null),document.getElementById("pause-overlay")?.classList.toggle("hidden",!this.paused),document.getElementById("game-shell")?.classList.toggle("paused",this.paused);const credits=Math.max(0,Math.floor(Number(this.simulation?.resources?.credits)||0));di("pause-message-credit-balance",`${credits} CREDIT${credits===1?"":"S"} AVAILABLE`);this.paused||(document.getElementById("pause-message-panel")?.classList.add("hidden"),this.clock.getDelta())}
 toggleMode(){if(this.paused)return;!this.player||!this.controls||(this.mode=this.mode==="explore"?"command":"explore",this.mode==="command"?(this.controls.enabled=!0,this.controls.target.copy(this.player.group.position),this.camera.position.copy(this.player.group.position).add(new w(28,42,28)),this.controls.update(),this.ui.showToast("Command mode","Select a civilization system and click buildable terrain.","info")):(this.controls.enabled=!1,this.buildings?.select(null),this.ui.setBuildSelection(null),this.ui.showToast("Exploration mode","Move with WASD, collect resources with E, and defend with Space.","info")),this.updateHud(!0))}selectBuild(e){this.buildings?.select(e)}async askAdvisor(e){return!this.simulation||!this.buildings?"Colony data is unavailable.":this.advisor.advise(e,{resources:this.simulation.resources,indicators:this.simulation.indicators,score:this.simulation.civilizationScore,phase:this.simulation.phase,buildings:this.buildings.countByType()})}
 resolveDiplomacy(e){if(!this.simulation||!this.player)return"Diplomacy systems are offline.";if(this.diplomacyOutcome)return"First Contact Protocol is already locked for this colony.";const t=this.simulation.resolveDiplomacy(e);if(t.startsWith("The colony lacks"))return t;this.diplomacyOutcome=e,this.diplomacyShown=!0,this.enemyTimer=0;if(e==="share"){this.enemySpawnDelay=72;while(this.enemies.length>1){const s=this.enemies.pop();s&&this.scene.remove(s)}}else if(e==="negotiate")this.safeZoneCenter=new w(this.player.group.position.x,0,this.player.group.position.z),this.createSafeZoneMarker(),this.enemySpawnDelay=38;else{this.enemySpawnDelay=2;for(let s=0;s<3;s+=1)this.spawnEnemy(!0)}return this.updateHud(!0),this.save(),t}
@@ -944,7 +995,7 @@ document.querySelectorAll("[data-action]").forEach(e=>{const t=e.dataset.action;
 }
 confirmMovementInput(e){const t=document.getElementById("input-status");t&&(t.textContent=e,t.classList.add("active")),!this.movementConfirmed&&(this.movementConfirmed=!0,this.ui.showToast("Navigation online","WASD, arrow keys, click-to-move, and the on-screen direction pad are active.","success"))}onBeforeUnload=()=>{this.save()}}
 const zkOriginalHighQualityModelLoad=DR.prototype.loadHighQualityModels;
-DR.prototype.loadHighQualityModels=async function(){const e={ensign:{marine:"loadEnsignEngineerModel",machine:"loadEnsignScoutModel",label:"Ensign",machineLabel:"scout",machineY:-.9,machineScale:1},lieutenant:{marine:"loadLieutenantMarineModel",machine:"loadLieutenantMechModel",label:"Lieutenant",machineLabel:"mech",machineY:-.7,machineScale:1},captain:{marine:"loadCaptainMarineModel",machine:"loadCaptainMechModel",label:"Captain",machineLabel:"mech",machineY:-1.1,machineScale:1}}[this.officerClass];if(!e)return;const t=++this.hqLoadToken,s=this.group.getObjectByName("characterBody"),i=[...this.machine.children],n=[],r=()=>new Promise(h=>requestAnimationFrame(()=>requestAnimationFrame(h))),a={update:(h,d,p)=>{for(const f of n)f.update?.(h,d,p)},play:(h,d)=>{for(const p of n){const f=p.play?.(h,d);if(f)return f}return 0},clearAction:()=>{for(const h of n)h.clearAction?.()},equipWeapon:h=>{for(const d of n)if(d.equipWeapon?.(h))return!0;return!1},dispose:()=>{for(const h of n.splice(0))h.dispose?.()}};try{const h=await import("./model-runtime-c96327ba.js?v=weapon-system1"),d=await h[e.marine]();if(t!==this.hqLoadToken){d.dispose?.();return}if(d.calibrate?.()!==!0){d.dispose?.(),console.warn(`ZekNova ${e.label} marine failed visual calibration; its procedural fallback remains visible.`);return}d.root.position.set(0,0,0),d.root.visible=!0,this.group.add(d.root),await r();if(t!==this.hqLoadToken){d.dispose?.();return}s&&(s.visible=!1),n.push(d),this.hqModels=a,d.equipWeapon?.(this.equippedWeapon??"voidsting"),console.info(`ZekNova ${e.label} marine loaded, calibrated, and attached.`);const p=await h[e.machine]();if(t!==this.hqLoadToken){p.dispose?.();return}if(p.calibrate?.()!==!0){p.dispose?.(),console.warn(`ZekNova ${e.label} ${e.machineLabel} failed visual calibration; its procedural fallback remains visible.`);return}p.root.position.set(0,e.machineY,0),p.root.visible=!0,this.machine.scale.setScalar(e.machineScale),this.machine.add(p.root),await r();if(t!==this.hqLoadToken){p.dispose?.();return}i.forEach(f=>f.visible=!1),n.push(p),this.hqModels=a,console.info(`ZekNova ${e.label} ${e.machineLabel} loaded, calibrated, and attached.`)}catch(h){console.warn(`ZekNova ${e.label} isolation load failed; the affected procedural fallback remains visible.`,h)}};
+DR.prototype.loadHighQualityModels=async function(){const e={ensign:{marine:"loadEnsignEngineerModel",machine:"loadEnsignScoutModel",label:"Ensign",machineLabel:"scout",machineY:-.9,machineScale:1},lieutenant:{marine:"loadLieutenantMarineModel",machine:"loadLieutenantMechModel",label:"Lieutenant",machineLabel:"mech",machineY:-.7,machineScale:1},captain:{marine:"loadCaptainMarineModel",machine:"loadCaptainMechModel",label:"Captain",machineLabel:"mech",machineY:-1.1,machineScale:1}}[this.officerClass];if(!e)return;const t=++this.hqLoadToken,s=this.group.getObjectByName("characterBody"),i=[...this.machine.children],n=[],r=()=>new Promise(h=>requestAnimationFrame(()=>requestAnimationFrame(h))),a={update:(h,d,p)=>{for(const f of n)f.update?.(h,d,p)},play:(h,d)=>{for(const p of n){const f=p.play?.(h,d);if(f)return f}return 0},holdPose:(h,d)=>{for(const p of n){const f=p.holdPose?.(h,d);if(f)return f}return 0},recoilWeapon:(h,d)=>{for(const p of n)if(p.recoilWeapon?.(h,d))return!0;return!1},clearAction:()=>{for(const h of n)h.clearAction?.()},equipWeapon:h=>{for(const d of n)if(d.equipWeapon?.(h))return!0;return!1},validateWeaponRig:()=>n.map(h=>h.validateWeaponRig?.()).filter(Boolean),dispose:()=>{for(const h of n.splice(0))h.dispose?.()}};try{const h=await import("./model-runtime-c96327ba.js?v=rifle-brace1"),d=await h[e.marine]();if(t!==this.hqLoadToken){d.dispose?.();return}if(d.calibrate?.()!==!0){d.dispose?.(),console.warn(`ZekNova ${e.label} marine failed visual calibration; its procedural fallback remains visible.`);return}d.root.position.set(0,0,0),d.root.visible=!0,this.group.add(d.root),await r();if(t!==this.hqLoadToken){d.dispose?.();return}s&&(s.visible=!1),n.push(d),this.hqModels=a,d.equipWeapon?.(this.equippedWeapon??"voidsting"),globalThis.ZekNovaOfficerRigDiagnostics=d.validateWeaponRig?.()??d.diagnostics??null,document.documentElement.dataset.zeknovaOfficerRig=JSON.stringify(globalThis.ZekNovaOfficerRigDiagnostics??{}),console.info(`ZekNova ${e.label} marine loaded, calibrated, armed, and attached.`,globalThis.ZekNovaOfficerRigDiagnostics);const p=await h[e.machine]();if(t!==this.hqLoadToken){p.dispose?.();return}if(p.calibrate?.()!==!0){p.dispose?.(),console.warn(`ZekNova ${e.label} ${e.machineLabel} failed visual calibration; its procedural fallback remains visible.`);return}p.root.position.set(0,e.machineY,0),p.root.visible=!0,this.machine.scale.setScalar(e.machineScale),this.machine.add(p.root),await r();if(t!==this.hqLoadToken){p.dispose?.();return}i.forEach(f=>f.visible=!1),n.push(p),this.hqModels=a,console.info(`ZekNova ${e.label} ${e.machineLabel} loaded, calibrated, and attached.`)}catch(h){console.warn(`ZekNova ${e.label} isolation load failed; the affected procedural fallback remains visible.`,h)}};
 const zkImmediateHighQualityModelLoad=DR.prototype.loadHighQualityModels;
 DR.prototype.loadHighQualityModels=async function(){
   if(zkDisableModels){console.info("ZekNova high-quality character meshes disabled for startup diagnostics.");return}
@@ -960,15 +1011,15 @@ PR.prototype.isWaterWorksLocation=function(e,t){const s=this.worldSize*.45;if(Ma
 PR.prototype.isWaterWorksSite=function(e,t){return this.isWaterWorksLocation(e,t)&&!this.isObstacleAt(e,t,3)};
 LR.prototype.siteHeight=function(e,t,s,i){return e==="water"?i.heightAt(t,s):e==="bridge"?i.bridgeDeckHeightAt(t,s):zkOriginalBuildingHeight.call(this,e,t,s,i)};
 function zkNearSurfaceWater(e,t,s){return!!e?.isWaterWorksSite?.(t,s)}
-function zkOperationalRecord(e,t,s=new Set){if(!t||s.has(t.id)||Number(t.health??1000)<=0||t.type==="water"&&!e.utilityTerrain?.isWaterWorksLocation?.(Number(t.x),Number(t.z)))return!1;const i=zkUtilityNetwork.requirements[t.type]??[];if(i.length===0)return!0;const n=new Set(s);n.add(t.id);return i.every(r=>!!zkFindUtilitySource(e,r,t.x,t.z,t.id,n))}
+function zkOperationalRecord(e,t,s=new Set){if(!t||s.has(t.id)||Number(t.health??1000)<=0)return!1;const i=zkUtilityNetwork.requirements[t.type]??[];if(i.length===0)return!0;const n=new Set(s);n.add(t.id);return i.every(r=>!!zkFindUtilitySource(e,r,t.x,t.z,t.id,n))}
 function zkFindUtilitySource(e,t,s,i,n=null,r=new Set){const a=zkUtilityNetwork.source[t],l=zkUtilityNetwork.range[t]??0,c=e.utilitySpatial?e.utilitySpatial.query(s,i,l):e.records;let u=null,h=1/0;for(const d of c){if(d.type!==a||d.id===n)continue;const p=Math.hypot(Number(d.x)-Number(s),Number(d.z)-Number(i));p<=l&&p<h&&zkOperationalRecord(e,d,r)&&(u=d,h=p)}return u}
 function zkUtilityStatus(e,t,s,i,n=null){const r=zkUtilityNetwork.requirements[t]??[],a=[];for(const l of r){const c=zkFindUtilitySource(e,l,s,i,n);c?a.push({utility:l,source:c}):a.push({utility:l,source:null})}return{ok:a.every(l=>!!l.source),connections:a,missing:a.filter(l=>!l.source).map(l=>l.utility)}}
-function zkConnectionRequirement(e,t,s,i){if(t==="water")return zkNearSurfaceWater(i,s.x,s.z)?"":"the flowing river channel so its intake is submerged";const n=zkUtilityStatus(e,t,s.x,s.z),r=n.missing[0];return r?`a direct ${zkUtilityNetwork.labels[r]} connection within ${zkUtilityNetwork.range[r]}m`:""}
+function zkConnectionRequirement(e,t,s,i){const n=zkUtilityStatus(e,t,s.x,s.z),r=n.missing[0];return r?`a direct ${zkUtilityNetwork.labels[r]} connection within ${zkUtilityNetwork.range[r]}m`:""}
 function zkDisposeUtilityLinks(e){e.traverse(t=>{if(!(t instanceof R))return;t.geometry?.dispose();const s=Array.isArray(t.material)?t.material:[t.material];s.forEach(i=>i?.dispose?.())}),e.clear()}
 function zkBuildUtilityLink(e,t,s,i){const n=new w(Number(t.x),Number(t.y)+.3,Number(t.z)),r=new w(Number(s.x),Number(s.y)+.3,Number(s.z)),a=r.clone().sub(n),l=a.length();if(l<.25)return;const c=new ie({color:zkUtilityNetwork.colors[i],emissive:zkUtilityNetwork.colors[i],emissiveIntensity:1.35,roughness:.42,metalness:.38}),u=new R(new ve(i==="water"?.11:.075,i==="water"?.11:.075,l,8),c);u.position.copy(n).add(r).multiplyScalar(.5),u.quaternion.setFromUnitVectors(new w(0,1,0),a.normalize()),u.userData.utilityType=i,u.userData.sourceId=t.id,u.userData.targetId=s.id,u.castShadow=!1,u.receiveShadow=!0,e.add(u)}
 LR.prototype.rebuildUtilityLinks=function(){this.utilityLinks||(this.utilityLinks=new Ge,this.utilityLinks.name="directUtilityLinks",this.group.add(this.utilityLinks)),zkDisposeUtilityLinks(this.utilityLinks),this.utilityGraph=new Map(this.records.map(e=>[e.id,new Set])),this.utilityOperational=new Map;for(const e of this.records){const t=zkUtilityStatus(this,e.type,e.x,e.z,e.id);this.utilityOperational.set(e.id,t.ok),t.ok&&t.connections.forEach(s=>{if(!s.source)return;this.utilityGraph.get(e.id)?.add(s.source.id),this.utilityGraph.get(s.source.id)?.add(e.id),zkBuildUtilityLink(this.utilityLinks,s.source,e,s.utility)})}};
 LR.prototype.utilityNetworkStatus=function(){let e=0,t=0;const s=[];for(const i of this.records){const n=this.utilityOperational?.get(i.id)??zkOperationalRecord(this,i);n?e+=1:(t+=1,s.push(i))}return{operational:e,disconnected:t,records:s,graph:this.utilityGraph}};
-LR.prototype.isValidSite=function(e,t,s,i){this.utilityTerrain=i;const n=e==="water"?!!i?.isWaterWorksSite?.(t,s):e==="habitat"?!!i?.isHabitatSite?.(t,s):zkOriginalBuildingSite.call(this,e,t,s,i),r=n?zkConnectionRequirement(this,e,{x:t,z:s},i):e==="water"?"buildable ground within 50m of the river water source":"";return this.lastConnectionRequirement=r,n&&!r};
+LR.prototype.isValidSite=function(e,t,s,i){this.utilityTerrain=i;const n=e==="habitat"?!!i?.isHabitatSite?.(t,s):zkOriginalBuildingSite.call(this,e,t,s,i),r=n?zkConnectionRequirement(this,e,{x:t,z:s},i):"";return this.lastConnectionRequirement=r,n&&!r};
 LR.prototype.addRecord=function(e){e?.type==="bridge"&&this.utilityTerrain?.bridgeDeckHeightAt&&(e.y=this.utilityTerrain.bridgeDeckHeightAt(Number(e.x),Number(e.z)));const t=zkOriginalAddBuilding.call(this,e);return this.utilitySpatial||(this.utilitySpatial=new zkSpatialHash(18)),this.utilitySpatial.insert(e,e.x,e.z),this.rebuildUtilityLinks(),t};
 LR.prototype.bridgeWalkHeightAt=function(e,t){for(const s of this.records){if(s.type!=="bridge")continue;const i=e-s.x,n=t-s.z,r=Math.cos(-s.rotation),a=Math.sin(-s.rotation),l=i*r-n*a,c=i*a+n*r;if(Math.abs(l)<=2.35&&Math.abs(c)<=7.1)return Number(s.y)+.58}return null};
 zR.prototype.resolveWaterTraversal=function(e,t){if(!this.terrain||!this.buildings||!this.terrain.isWaterAt(e,t)){this.terrain&&(this.terrain.currentBridgeWalkHeight=null);return null}const s=this.buildings.waterTraversalModeAt(e,t,this.waterTraversalUnlocked);return this.terrain.currentBridgeWalkHeight=s==="bridge"?this.buildings.bridgeWalkHeightAt(e,t):null,s};
@@ -1025,7 +1076,7 @@ function zkSaveDiplomacyCycle(e){try{localStorage.setItem(zkDiplomacyStorageKey(
 function zkRestoreDiplomacyCycle(e){try{const t=JSON.parse(localStorage.getItem(zkDiplomacyStorageKey(e))??"null");if(t){e.diplomacyTension=zkClampDiplomacy(t.tension),e.diplomacyIncidentCount=Math.max(0,Number(t.count)||0),e.lastDiplomacyIncidentId=t.lastId??null;return}}catch{}e.diplomacyTension=e.diplomacyOutcome==="share"?20:e.diplomacyOutcome==="negotiate"?35:e.diplomacyOutcome==="force"?85:50,e.diplomacyIncidentCount=0,e.lastDiplomacyIncidentId=null}
 wR.prototype.showDiplomacyIncident=function(e,t,s){const i=document.getElementById("diplomacy-modal");if(!i)return;i.innerHTML=`<section class="diplomacy-modal glass-panel recurring-diplomacy"><div class="panel-kicker">DIPLOMATIC INCIDENT · ${Li(zkDiplomacyLevel(t))} TENSION ${Math.round(t)}</div><h3>${Li(e.title)}</h3><p>${Li(e.copy)}</p><div class="diplomacy-tension-meter"><i style="width:${zkClampDiplomacy(t)}%"></i></div><div class="diplomacy-actions">${e.choices.map(n=>`<button data-incident-choice="${Li(n.id)}" class="${n.tension>=15?"danger":n.tension<=-10?"cooperative":""}"><strong>${Li(n.label)}</strong><span>${Li(n.description)} · Tension ${n.tension>0?"+":""}${n.tension}</span></button>`).join("")}</div></section>`,i.classList.remove("hidden"),i.querySelectorAll("[data-incident-choice]").forEach(n=>n.addEventListener("click",()=>{const r=s(n.dataset.incidentChoice);i.classList.add("hidden"),this.showToast(r.tensionDelta>0?"Tension increased":"Tension decreased",r.message,r.tensionDelta>=15?"danger":r.tensionDelta>0?"warning":"success")}))};
 zR.prototype.scheduleNextDiplomacyIncident=function(e=null){window.clearTimeout(this.diplomacyIncidentTimer),this.diplomacyIncidentTimer=0;if(!this.diplomacyOutcome||this.disposed)return;const t=e??zkDiplomacyDelay();this.nextDiplomacyIncidentAt=Date.now()+t,this.diplomacyIncidentTimer=window.setTimeout(()=>{if(this.disposed)return;if(this.diplomacyIncidentActive){this.scheduleNextDiplomacyIncident(6e4);return}const s=zkDiplomacyIncidents.filter(n=>n.id!==this.lastDiplomacyIncidentId),i=s[Math.floor(Math.random()*s.length)]??zkDiplomacyIncidents[0];this.currentDiplomacyIncident=i,this.diplomacyIncidentActive=!0,this.ui.showDiplomacyIncident(i,this.diplomacyTension,n=>this.resolveDiplomacyIncident(n))},t)};
-zR.prototype.resolveDiplomacyIncident=function(e){const t=this.currentDiplomacyIncident,s=t?.choices.find(i=>i.id===e);if(!t||!s||!this.simulation)return{message:"The diplomatic channel closed before a decision was recorded.",tensionDelta:0};const i=this.simulation.resources,n=this.simulation.indicators;for(const[r,a]of Object.entries(s))r in i&&(i[r]=He(Number(i[r])+Number(a),0,r==="trust"?100:999)),r in n&&(n[r]=He(Number(n[r])+Number(a),0,100));this.diplomacyTension=zkClampDiplomacy(this.diplomacyTension+s.tension),this.diplomacyIncidentCount=(this.diplomacyIncidentCount??0)+1,this.lastDiplomacyIncidentId=t.id,this.diplomacyIncidentActive=!1,this.currentDiplomacyIncident=null,this.enemyTimer=0,this.enemySpawnDelay=this.enemySpawnProfile().min;if(Number(s.aggression)>0)for(let r=0;r<Number(s.aggression);r+=1)this.spawnEnemy(!0);else if(s.tension<=-10)while(this.enemies.length>this.enemySpawnProfile().limit){const r=this.enemies.pop();r&&this.scene.remove(r)}return zkSaveDiplomacyCycle(this),this.updateHud(!0),this.save(),this.scheduleNextDiplomacyIncident(),{message:s.message,tensionDelta:s.tension}};
+zR.prototype.resolveDiplomacyIncident=function(e){const t=this.currentDiplomacyIncident,s=t?.choices.find(i=>i.id===e);if(!t||!s||!this.simulation)return{message:"The diplomatic channel closed before a decision was recorded.",tensionDelta:0};const i=this.simulation.resources,n=this.simulation.indicators;for(const[r,a]of Object.entries(s))r in i&&(i[r]=He(Number(i[r])+Number(a),0,r==="trust"?100:999)),r in n&&(n[r]=He(Number(n[r])+Number(a),0,100));this.diplomacyTension=zkClampDiplomacy(this.diplomacyTension+s.tension),this.diplomacyIncidentCount=(this.diplomacyIncidentCount??0)+1,this.lastDiplomacyIncidentId=t.id,this.diplomacyIncidentActive=!1,this.currentDiplomacyIncident=null,this.enemyTimer=0,this.enemySpawnDelay=this.enemySpawnProfile().min,this.multiplayerRoom?.queueRelationEvent?.({tensionDelta:Number(s.tension)||0,trustDelta:Number(s.trust)||0,reason:`Diplomatic incident: ${t.title}`});if(Number(s.aggression)>0)for(let r=0;r<Number(s.aggression);r+=1)this.spawnEnemy(!0);else if(s.tension<=-10)while(this.enemies.length>this.enemySpawnProfile().limit){const r=this.enemies.pop();r&&this.scene.remove(r)}return zkSaveDiplomacyCycle(this),this.updateHud(!0),this.save(),this.scheduleNextDiplomacyIncident(),{message:s.message,tensionDelta:s.tension}};
 const zkOriginalResolveDiplomacy=zR.prototype.resolveDiplomacy,zkOriginalDiplomacyProfile=zR.prototype.enemySpawnProfile,zkOriginalDiplomacyInitialize=zR.prototype.initialize,zkOriginalDiplomacyDispose=zR.prototype.dispose;
 zR.prototype.resolveDiplomacy=function(e){const t=this.diplomacyOutcome,s=zkOriginalResolveDiplomacy.call(this,e);return!t&&this.diplomacyOutcome&&!s.startsWith("The colony lacks")&&(zkRestoreDiplomacyCycle(this),zkSaveDiplomacyCycle(this),this.updateHud(!0),this.scheduleNextDiplomacyIncident()),s};
 zR.prototype.enemySpawnProfile=function(){const e=zkOriginalDiplomacyProfile.call(this),t=zkClampDiplomacy(this.diplomacyTension??50),s=1.35-t*.007;return{...e,min:Math.max(3,e.min*s),max:Math.max(5,e.max*s),limit:Math.max(1,e.limit+(t>=75?2:t<=25?-1:0)),chance:Math.max(.2,Math.min(1,e.chance*(.65+t*.006)))}};
@@ -1049,7 +1100,7 @@ PR.prototype.isWaterAt=function(x,z,margin=.18){return zkAOAt(x,z)?.id==="desert
 PR.prototype.rawHeightAt=function(x,z){const height=zkBaseRawHeightAt.call(this,x,z);return zkAOAt(x,z)?.id==="desert"?Math.max(height,Be.waterLevel+1.15):height};
 const zkBaseAddHarvestableTrees=PR.prototype.addHarvestableTrees;
 PR.prototype.addHarvestableTrees=function(){zkBaseAddHarvestableTrees.call(this);const density=BIOME_TREE_DENSITY;for(const tree of this.harvestableTrees){const area=zkAOAt(tree.position.x,tree.position.z);if(area){const keep=density[area.id]??.55,treeIndex=Number(tree.userData.treeIndex??0),sample=FR(treeIndex,BR(area.id),this.seed+2901);if(sample>keep)tree.visible=!1}tree.userData.biomeVisible=tree.visible,this.updateTreeInstance(tree)}};
-PR.prototype.createTerrainMesh=function(){const geometry=new An(this.worldSize,this.worldSize,160,160);geometry.rotateX(-Math.PI/2);const positions=geometry.getAttribute("position"),colors=[],groundColor=new re,neighborColor=new re,half=this.worldSize*.5,band=this.worldSize/5;for(let index=0;index<positions.count;index+=1){const x=positions.getX(index),z=positions.getZ(index),height=this.heightAt(x,z),area=zkAOAt(x,z),areaIndex=zkAreasOfOperation.indexOf(area),localX=Kt.clamp(x+half,0,this.worldSize-.0001)-areaIndex*band;positions.setY(index,height),groundColor.set(area.terrainColor);if(localX<2.2&&areaIndex>0)neighborColor.set(zkAreasOfOperation[areaIndex-1].terrainColor),groundColor.lerp(neighborColor,(2.2-localX)/4.4);else if(band-localX<2.2&&areaIndex<4)neighborColor.set(zkAreasOfOperation[areaIndex+1].terrainColor),groundColor.lerp(neighborColor,(2.2-(band-localX))/4.4);const variation=(ih(x*2,z*2,this.seed+99)-.5)*.14;groundColor.offsetHSL(variation*.08,variation*.1,variation),height<Be.waterLevel+.55&&area.id!=="desert"&&groundColor.offsetHSL(0,-.08,-.11),colors.push(groundColor.r,groundColor.g,groundColor.b)}geometry.setAttribute("color",new me(colors,3)),geometry.computeVertexNormals();const material=new ie({vertexColors:!0,roughness:.9,metalness:.015}),mesh=new R(geometry,material);return mesh.receiveShadow=!0,mesh.name="terrain",mesh};
+PR.prototype.createTerrainMesh=function(){const geometry=new An(this.worldSize,this.worldSize,160,160);geometry.rotateX(-Math.PI/2);const positions=geometry.getAttribute("position"),colors=[],groundColor=new re,neighborColor=new re,half=this.worldSize*.5,band=this.worldSize/5;for(let index=0;index<positions.count;index+=1){const x=positions.getX(index),z=positions.getZ(index),height=this.heightAt(x,z),area=zkAOAt(x,z),areaIndex=zkAreasOfOperation.indexOf(area),localX=Kt.clamp(x+half,0,this.worldSize-.0001)-areaIndex*band;positions.setY(index,height),groundColor.set(area.terrainColor);if(localX<2.2&&areaIndex>0)neighborColor.set(zkAreasOfOperation[areaIndex-1].terrainColor),groundColor.lerp(neighborColor,(2.2-localX)/4.4);else if(band-localX<2.2&&areaIndex<4)neighborColor.set(zkAreasOfOperation[areaIndex+1].terrainColor),groundColor.lerp(neighborColor,(2.2-(band-localX))/4.4);const variation=(ih(x*2,z*2,this.seed+99)-.5)*.14;groundColor.offsetHSL(variation*.08,variation*.1,variation),height<Be.waterLevel+.55&&area.id!=="desert"&&groundColor.offsetHSL(0,-.08,-.11),colors.push(groundColor.r,groundColor.g,groundColor.b)}geometry.setAttribute("color",new me(colors,3)),geometry.computeVertexNormals();const material=new ie({vertexColors:!0,roughness:.9,metalness:.015,map:zkGroundTexture()}),mesh=new R(geometry,material);return mesh.receiveShadow=!0,mesh.name="terrain",mesh};
 const zkAOPlacements=[
 {asset:"coralGround",area:"wetlands",x:10,z:8,scale:.88,rotation:.8},{asset:"coralGround",area:"wetlands",x:-7,z:7,scale:.62,rotation:2.2},{asset:"coralGround",area:"wetlands",x:4,z:-10,scale:.74,rotation:1.35},{asset:"coralGround",area:"arctic",x:48,z:51,scale:.46,rotation:2.65},
 {asset:"tieredStonePillar",area:"highlands",x:-39,z:36,scale:1,rotation:.35},{asset:"tieredStonePillar",area:"highlands",x:-55,z:49,scale:.72,rotation:2.1},{asset:"tieredStonePillar",area:"desert",x:39,z:-35,scale:.82,rotation:1.7},{asset:"tieredStonePillar",area:"desert",x:55,z:-45,scale:1.12,rotation:.45},{asset:"tieredStonePillar",area:"forest",x:-39,z:-36,scale:.68,rotation:2.55},{asset:"tieredStonePillar",area:"arctic",x:38,z:48,scale:.78,rotation:1.2},
@@ -1067,8 +1118,8 @@ PR.prototype.addAOResourceNodes=function(){const e=new pn(this.seed+2401),t=new 
 const zkEqualRegionResources=PR.prototype.addAOResourceNodes;
 PR.prototype.addAOResourceNodes=function(){zkEqualRegionResources.call(this);const boundaries=[-54,-18,18,54],geometry=new ve(.08,.14,1.35,6),material=new ie({color:0xa7f5e8,emissive:0x1a9c91,emissiveIntensity:1.7,roughness:.35}),count=boundaries.length*14,markers=new up(geometry,material,count),matrix=new ue,rotation=new Ks,scale=new w(1,1,1),position=new w,index=0;for(const x of boundaries)for(let step=0;step<14;step+=1){const z=-78+step*12,y=this.heightAt(x,z);position.set(x,y+.68,z),matrix.compose(position,rotation,scale),markers.setMatrixAt(index++,matrix)}markers.count=index,markers.instanceMatrix.needsUpdate=!0,markers.name="equalBiomeRegionDividers",markers.castShadow=!1,this.group.add(markers)};
 const zkAOShowGame=wR.prototype.showGame;wR.prototype.showGame=function(e){const t=zkAOShowGame.call(this,e),s=document.getElementById("utility-network-status")??document.getElementById("leaderboard");return s&&!document.getElementById("ao-operation-status")&&s.insertAdjacentHTML("afterend",'<section id="ao-operation-status" class="ao-operation-status"><strong>AREAS OF OPERATION</strong><span>5 EQUAL REGIONS</span><small>Forest · Desert · Highlands · Arctic · Wetlands</small></section>'),t};
-const zkAOCollectResource=zR.prototype.collectResource;zR.prototype.collectResource=function(e){const t=e.userData.aoId;t&&(this.aoResourceCollected||(this.aoResourceCollected={}),this.aoResourceCollected[t]=Number(this.aoResourceCollected[t]??0)+1,zkSaveAOState(this));return zkAOCollectResource.call(this,e)};
-zR.prototype.loadAOEnvironment=async function(){if(!this.terrain||!this.scene)return;const e=Number(this.aoEnvironmentLoadToken??0)+1;this.aoEnvironmentLoadToken=e,this.terrain.worldEnvironmentObstacles=[],this.terrain.worldVillageObstacles=[];try{await this.player?.hqReady;if(this.disposed||e!==this.aoEnvironmentLoadToken)return;const t=await import("./environment-runtime.js?v=arctic-village42");if(this.disposed||e!==this.aoEnvironmentLoadToken)return;const refreshObstacles=()=>{const radii={tieredStonePillar:.72,pitcherPlantCluster:1.05,purplePodPlant:.72},environment=zkAOPlacements.filter(r=>r.asset in radii).map(r=>({x:r.x,z:r.z,radius:Number(radii[r.asset])*Number(r.scale??1)}));this.terrain.worldEnvironmentObstacles=[...environment,...(this.terrain.worldVillageObstacles??[])]},s=t.createAreaEnvironment({areas:zkAreasOfOperation,placements:zkAOPlacements,heightAt:(i,n)=>this.terrain.heightAt(i,n),areaAt:(i,n)=>zkAOAt(i,n),harvestableTrees:this.terrain.harvestableTrees,updateTreeInstance:i=>this.terrain.updateTreeInstance(i),settlements:this.terrain.localTerritories,settlementFallbacks:this.terrain.localSettlementFallbacks??[],onVillageReady:i=>{this.terrain.worldVillageObstacles=i,refreshObstacles()},onAssetLoaded:(i,n)=>{["tieredStonePillar","pitcherPlantCluster","purplePodPlant"].includes(i)&&refreshObstacles(),console.info(`ZekNova environment ${i} loaded with ${n} active placements.`)}});if(this.disposed||e!==this.aoEnvironmentLoadToken){s.dispose();return}this.aoEnvironment?.dispose(),this.aoEnvironment=s,this.scene.add(s.group),this.player&&s.update(this.player.group.position),await s.ready;if(this.disposed||e!==this.aoEnvironmentLoadToken){s.dispose();return}this.player&&s.update(this.player.group.position),console.info("ZekNova equal-region environment and wind simulation ready.")}catch(t){console.warn("ZekNova environment mesh upgrade unavailable; procedural vegetation remains active.",t)}};
+const zkAOCollectResource=zR.prototype.collectResource;zR.prototype.collectResource=function(e){const t=e.userData.aoId??zkAOAt(e.position.x,e.position.z)?.id;if(t){e.userData.aoId=t,this.aoResourceCollected||(this.aoResourceCollected={}),this.aoResourceCollected[t]=Number(this.aoResourceCollected[t]??0)+1,zkSaveAOState(this);const s=Number(this.aoResourceCollected[t]),i=zkAreasOfOperation.find(n=>n.id===t);this.ui.showToast(`${i?.name??t.toUpperCase()} RESOURCE RECOVERED`,`${Math.min(s,2)} / 2 mission resources secured in this region.`,s>=2?"success":"info")}return zkAOCollectResource.call(this,e)};
+zR.prototype.loadAOEnvironment=async function(){if(!this.terrain||!this.scene)return;const e=Number(this.aoEnvironmentLoadToken??0)+1;this.aoEnvironmentLoadToken=e,this.terrain.worldEnvironmentObstacles=[],this.terrain.worldVillageObstacles=[];try{await this.player?.hqReady;if(this.disposed||e!==this.aoEnvironmentLoadToken)return;const t=await import("./environment-runtime.js?v=wetlands-village2");if(this.disposed||e!==this.aoEnvironmentLoadToken)return;const refreshObstacles=()=>{const radii={tieredStonePillar:.72,pitcherPlantCluster:1.05,purplePodPlant:.72},environment=zkAOPlacements.filter(r=>r.asset in radii).map(r=>({x:r.x,z:r.z,radius:Number(radii[r.asset])*Number(r.scale??1)}));this.terrain.worldEnvironmentObstacles=[...environment,...(this.terrain.worldVillageObstacles??[])]},s=t.createAreaEnvironment({areas:zkAreasOfOperation,placements:zkAOPlacements,heightAt:(i,n)=>this.terrain.heightAt(i,n),areaAt:(i,n)=>zkAOAt(i,n),isWaterAt:(i,n,r)=>this.terrain.isWaterAt(i,n,r),riverCenterAt:i=>this.terrain.riverCenterAt(i),bridgeRotationAt:i=>this.terrain.bridgeRotationAt(i),harvestableTrees:this.terrain.harvestableTrees,updateTreeInstance:i=>this.terrain.updateTreeInstance(i),settlements:this.terrain.localTerritories,settlementFallbacks:this.terrain.localSettlementFallbacks??[],onVillageReady:i=>{this.terrain.worldVillageObstacles=i,refreshObstacles()},onAssetLoaded:(i,n)=>{["tieredStonePillar","pitcherPlantCluster","purplePodPlant"].includes(i)&&refreshObstacles(),console.info(`ZekNova environment ${i} loaded with ${n} active placements.`)}});if(this.disposed||e!==this.aoEnvironmentLoadToken){s.dispose();return}this.aoEnvironment?.dispose(),this.aoEnvironment=s,this.scene.add(s.group),this.player&&s.update(this.player.group.position),await s.ready;if(this.disposed||e!==this.aoEnvironmentLoadToken){s.dispose();return}this.player&&s.update(this.player.group.position),console.info("ZekNova equal-region environment and wind simulation ready.")}catch(t){console.warn("ZekNova environment mesh upgrade unavailable; procedural vegetation remains active.",t)}};
 
 zR.prototype.completeAO=function(e){if(this.completedAOs?.has(e.id)||!this.simulation)return;this.completedAOs.add(e.id),this.simulation.awardCredits(5);const t=this.simulation.resources,s=this.simulation.indicators;e.id==="forest"?s.ecology=He(s.ecology+6,0,100):e.id==="desert"?t.minerals=He(t.minerals+20,0,999):e.id==="highlands"?s.defense=He(s.defense+6,0,100):e.id==="arctic"?(t.data=He(t.data+15,0,999),s.resilience=He(s.resilience+4,0,100)):(t.water=He(t.water+15,0,999),t.trust=He(t.trust+5,0,100)),zkSaveAOState(this),this.ui.showToast(`${e.name} secured`,`+5 Colony Credits. Strategic value activated: ${e.value}`,"success"),this.updateHud(!0),this.save()};
 zR.prototype.applyAOHazard=function(e){if(!this.player||!this.simulation)return;const t=this.simulation.resources,s=this.simulation.indicators;let i="";e.id==="forest"?(this.player.stamina=Math.max(0,this.player.stamina-12),i="Neurospores reduced suit stamina."):e.id==="desert"?(this.player.health=Math.max(1,this.player.health-4),t.water=Math.max(0,t.water-5),i="Twin-sun exposure consumed water and suit integrity."):e.id==="highlands"?(this.player.health=Math.max(1,this.player.health-6),i="Highland rockfall struck the suit."):e.id==="arctic"?(this.player.stamina=Math.max(0,this.player.stamina-10),t.energy=Math.max(0,t.energy-5),i="Cryogenic wind drained suit and grid energy."):(this.player.stamina=Math.max(0,this.player.stamina-8),s.ecology=Math.max(0,s.ecology-1),i="Contaminated mire slowed movement and stressed the watershed."),this.ui.showToast(e.hazard,i,"warning"),this.updateHud(!0)};
@@ -1184,9 +1235,9 @@ function zkCreateEnemyRoleFallback(role,hostile){const profile=zkEnemyRoleProfil
 function zkSpawnEnemyRole(game,hostile,role){if(!game.player||!game.terrain||!game.simulation)return;const profile=zkEnemyRoleProfiles[role],enemy=zkCreateEnemyRoleFallback(role,hostile),angle=Math.random()*Math.PI*2,distance=role==="burrower"?26+Math.random()*8:19+Math.random()*11,x=Kt.clamp(game.player.group.position.x+Math.cos(angle)*distance,-78,78),z=Kt.clamp(game.player.group.position.z+Math.sin(angle)*distance,-78,78),spawn=game.terrain.findSafeSpawn(x,z),peace=zkPeaceEstablished(game);enemy.position.copy(spawn),role==="skyray"&&(enemy.position.y=game.terrain.heightAt(enemy.position.x,enemy.position.z)+profile.altitude),enemy.userData.enemyType=role,enemy.userData.enemyLabel=profile.label,enemy.userData.enemyNickname=profile.nickname,enemy.userData.health=profile.health*(hostile?1.25:1),enemy.userData.maxHealth=enemy.userData.health,enemy.userData.speed=profile.speed*(hostile?1.1:1),enemy.userData.damage=profile.damage+(hostile?2:0),enemy.userData.attackCooldown=1+Math.random(),enemy.userData.abilityCooldown=5+Math.random()*4,enemy.userData.turnBias=Math.random()>.5?1:-1,enemy.userData.hoverPhase=Math.random()*Math.PI*2,enemy.userData.fallbackParts=enemy.userData.fallbackParts??enemy.children.filter(child=>child instanceof R),enemy.userData.healthMeshes=enemy.userData.healthMeshes??[],enemy.userData.abilityRing=enemy.userData.abilityRing??enemy.getObjectByName("roleAbilityRing"),enemy.userData.hostile=!peace,enemy.userData.guardian=peace,enemy.userData.roleState=role==="burrower"?"submerged":"patrol",enemy.userData.stateTimer=role==="burrower"?4+Math.random()*4:0,game.enemies.push(enemy),game.scene.add(enemy),role!=="burrower"&&game.loadEnemyRoleModel(enemy),game.ui.showToast(`${profile.label} — ${profile.nickname}`,peace?`${profile.label} is operating as an allied territorial unit.`:profile.toast,peace?"success":"warning");return enemy}
 function zkDisposeEnemyRoleModel(enemy){const model=enemy?.userData?.hqModel;if(!model||enemy.userData.hqModelDisposed)return;enemy.userData.hqModelDisposed=!0,model.dispose?.(),enemy.userData.hqModel=null}
 const zkQualifiedEnemyTypes=new Set(HIGH_FIDELITY_ENEMIES);
-zR.prototype.loadEnemyRoleModel=async function(enemy){const e=String(enemy?.userData?.enemyType??"");if(!zkQualifiedEnemyTypes.has(e))return;try{await this.environmentReady;if(this.disposed||!this.enemies.includes(enemy)||Number(enemy.userData.health)<=0)return;const t=await import("./model-runtime-c96327ba.js?v=enemy-roster9"),s=await t.loadEnemyModel(e);if(this.disposed||!this.enemies.includes(enemy)||Number(enemy.userData.health)<=0){s.dispose?.();return}if(s.calibrate?.()!==!0){s.dispose?.(),console.warn(`ZekNova ${e} failed visual calibration; its procedural fallback remains visible.`);return}const i=s.measure?.(),n=i&&i.height>1.5&&i.height<7&&i.width>.2&&i.width<8&&i.depth>.2&&i.depth<8;if(!n){s.dispose?.(),console.warn(`ZekNova ${e} failed its dimension guard; its procedural fallback remains visible.`);return}enemy.userData.hqQualifiedBounds=i,s.root.position.set(0,0,0),s.root.visible=!0,enemy.add(s.root),await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));if(this.disposed||!this.enemies.includes(enemy)||Number(enemy.userData.health)<=0){s.dispose?.();return}(enemy.userData.fallbackParts??[]).forEach(r=>r.visible=!1),enemy.userData.hqModel=s,enemy.userData.hqModelDisposed=!1,s.update?.(0,!1,!1),console.info(`ZekNova qualified enemy ${e} loaded, calibrated, and attached.`)}catch(t){console.warn(`ZekNova ${e} mesh upgrade unavailable; its procedural fallback remains visible.`,t)}};
+zR.prototype.loadEnemyRoleModel=async function(enemy){const e=String(enemy?.userData?.enemyType??"");if(!zkQualifiedEnemyTypes.has(e)||enemy?.userData?.skipEnemyHqModel||enemy?.userData?.isMissionBoss)return;try{await this.environmentReady;if(this.disposed||!this.enemies.includes(enemy)||Number(enemy.userData.health)<=0||enemy.userData.skipEnemyHqModel||enemy.userData.isMissionBoss)return;const t=await import("./model-runtime-c96327ba.js?v=enemy-roster10"),s=await t.loadEnemyModel(e);if(this.disposed||!this.enemies.includes(enemy)||Number(enemy.userData.health)<=0||enemy.userData.skipEnemyHqModel||enemy.userData.isMissionBoss){s.dispose?.();return}if(s.calibrate?.()!==!0){s.dispose?.(),console.warn(`ZekNova ${e} failed visual calibration; its procedural fallback remains visible.`);return}const i=s.measure?.(),n=i&&i.height>1.5&&i.height<7&&i.width>.2&&i.width<8&&i.depth>.2&&i.depth<8;if(!n){s.dispose?.(),console.warn(`ZekNova ${e} failed its dimension guard; its procedural fallback remains visible.`);return}enemy.userData.hqQualifiedBounds=i,s.root.position.set(0,0,0),s.root.visible=!0,enemy.add(s.root),await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));if(this.disposed||!this.enemies.includes(enemy)||Number(enemy.userData.health)<=0||enemy.userData.skipEnemyHqModel||enemy.userData.isMissionBoss){s.dispose?.();return}(enemy.userData.fallbackParts??[]).forEach(r=>r.visible=!1),enemy.userData.hqModel=s,enemy.userData.hqModelDisposed=!1,s.update?.(0,!1,!1),console.info(`ZekNova qualified enemy ${e} loaded, calibrated, and attached.`)}catch(t){console.warn(`ZekNova ${e} mesh upgrade unavailable; its procedural fallback remains visible.`,t)}};
 function zkSetRoleOpacity(enemy,opacity){enemy.userData.hqModel?.setOpacity?.(opacity);for(const part of enemy.userData.fallbackParts??[]){const materials=Array.isArray(part.material)?part.material:[part.material];for(const material of materials)if(material){material.transparent=opacity<.99,material.opacity=opacity,material.depthWrite=opacity>=.62}}for(const bar of enemy.userData.healthMeshes??[])bar.visible=opacity>=.52}
-function zkMoveEnemyRole(game,enemy,direction,delta,{airborne=false,ignoreTerrain=false,sprinting=false}={}){if(!game.terrain||direction.lengthSq()<1e-5){enemy.userData.hqModel?.update?.(delta,!1,!1);return!1}direction.y=0,direction.normalize();const boost=Number(enemy.userData.speedBoostUntil??0)>performance.now()?1.25:1,speed=Number(enemy.userData.speed??2.5)*boost*(sprinting?1.28:1),step=speed*delta,tryMove=vector=>{const x=Kt.clamp(enemy.position.x+vector.x*step,-80,80),z=Kt.clamp(enemy.position.z+vector.z*step,-80,80),blocked=!ignoreTerrain&&!airborne&&(game.terrain.isWaterAt(x,z,.3)||game.terrain.isObstacleAt(x,z,.65));if(blocked)return!1;enemy.position.x=x,enemy.position.z=z,enemy.rotation.y=Math.atan2(vector.x,vector.z);return!0};let moved=tryMove(direction);if(!moved){const side=new w(-direction.z,0,direction.x).multiplyScalar(Number(enemy.userData.turnBias??1));moved=tryMove(side),moved||(enemy.userData.turnBias=-Number(enemy.userData.turnBias??1))}const base=game.terrain.heightAt(enemy.position.x,enemy.position.z);enemy.position.y=airborne?base+Number(zkEnemyRoleProfiles[enemy.userData.enemyType]?.altitude??5):base,enemy.userData.hqModel?.update?.(delta,moved,sprinting);return moved}
+function zkMoveEnemyRole(game,enemy,direction,delta,{airborne=false,ignoreTerrain=false,sprinting=false}={}){if(!game.terrain||direction.lengthSq()<1e-5){enemy.userData.hqModel?.update?.(delta,!1,!1);return!1}direction.y=0,direction.normalize();const boost=Number(enemy.userData.speedBoostUntil??0)>performance.now()?1.25:1,speed=Number(enemy.userData.speed??2.5)*boost*(sprinting?1.28:1),step=speed*delta,blockedAt=(x,z)=>!ignoreTerrain&&!airborne&&(game.terrain.isWaterAt(x,z,.3)||game.terrain.isObstacleAt(x,z,.65)),pathClear=(vector,dist)=>{for(let t=.34;t<=1.0001;t+=.33){const x=Kt.clamp(enemy.position.x+vector.x*dist*t,-80,80),z=Kt.clamp(enemy.position.z+vector.z*dist*t,-80,80);if(blockedAt(x,z))return!1}return!0},tryMove=vector=>{const x=Kt.clamp(enemy.position.x+vector.x*step,-80,80),z=Kt.clamp(enemy.position.z+vector.z*step,-80,80);if(blockedAt(x,z))return!1;enemy.position.x=x,enemy.position.z=z,enemy.rotation.y=Math.atan2(vector.x,vector.z);return!0};const up=new w(0,1,0),now=performance.now();let bias=Number(enemy.userData.turnBias??1);if(now>Number(enemy.userData.turnCommitUntil??0))enemy.userData.turnCommitUntil=now+700;const look=Math.max(step*6,1.8),offsets=[0,.34,.7,1.1,1.6,2.2,Math.PI];let moved=!1,grazing=null;for(const offset of offsets){const signs=offset===0||offset>=Math.PI?[1]:[bias,-bias];for(const sign of signs){const candidate=direction.clone().applyAxisAngle(up,offset*sign);if(pathClear(candidate,look)){if(tryMove(candidate)){moved=!0;break}}else if(!grazing){const x=Kt.clamp(enemy.position.x+candidate.x*step,-80,80),z=Kt.clamp(enemy.position.z+candidate.z*step,-80,80);if(!blockedAt(x,z))grazing=candidate}}if(moved)break}if(!moved&&grazing)moved=tryMove(grazing);if(!moved){enemy.userData.turnBias=-bias;enemy.userData.turnCommitUntil=now+700}const base=game.terrain.heightAt(enemy.position.x,enemy.position.z);enemy.position.y=airborne?base+Number(zkEnemyRoleProfiles[enemy.userData.enemyType]?.altitude??5):base,enemy.userData.hqModel?.update?.(delta,moved,sprinting);return moved}
 function zkFireRoleProjectile(game,enemy,{speed=12,damage=null,label=null,color=16744576}={}){const before=game.enemyProjectiles.length;game.fireEnemyProjectile(enemy);const projectile=game.enemyProjectiles.length>before?game.enemyProjectiles.at(-1):null;if(!projectile)return;projectile.velocity.normalize().multiplyScalar(speed),projectile.damage=Number(damage??enemy.userData.damage??8),projectile.sourceLabel=label??enemy.userData.enemyLabel??"ZekNovan",projectile.mesh.material?.color?.setHex?.(color),projectile.mesh.material?.emissive?.setHex?.(color)}
 function zkUpdateAlliedRole(game,enemy,delta){const role=String(enemy.userData.enemyType),target=game.enemies.filter(unit=>unit!==enemy&&!unit.userData.guardian&&unit.userData.hostile&&Number(unit.userData.health)>0).map(unit=>({unit,distance:unit.position.distanceTo(enemy.position)})).filter(entry=>entry.distance<28).sort((a,b)=>a.distance-b.distance)[0];enemy.userData.attackCooldown=Number(enemy.userData.attackCooldown??0)-delta;if(target){const direction=target.unit.position.clone().sub(enemy.position);if((role==="spitter"||role==="skyray")&&target.distance<20){enemy.userData.hqModel?.update?.(delta,!1,!1);if(enemy.userData.attackCooldown<=0)enemy.userData.attackCooldown=1.8,target.unit.userData.health=Number(target.unit.userData.health)-18,game.createBeamEffect(enemy.position.clone().add(new w(0,1.8,0)),target.unit.position.clone().add(new w(0,1.2,0)),6619135)}else if(target.distance>2.7)zkMoveEnemyRole(game,enemy,direction,delta,{airborne:role==="skyray",sprinting:target.distance>9});else if(enemy.userData.attackCooldown<=0)enemy.userData.attackCooldown=2,target.unit.userData.health=Number(target.unit.userData.health)-24;return}let destination=game.player.group.position.clone(),radius=role==="skyray"?13:9,phase=Number(enemy.userData.hoverPhase??0)+delta*(role==="skyray"?.55:.24);enemy.userData.hoverPhase=phase,destination.x+=Math.cos(phase)*radius,destination.z+=Math.sin(phase)*radius,zkMoveEnemyRole(game,enemy,destination.sub(enemy.position),delta,{airborne:role==="skyray"});if(role==="skyray"){enemy.userData.scoutCooldown=Number(enemy.userData.scoutCooldown??4)-delta;if(enemy.userData.scoutCooldown<=0){enemy.userData.scoutCooldown=18;const resource=game.terrain.resourceNodes?.filter(node=>node.visible).sort((a,b)=>a.position.distanceTo(enemy.position)-b.position.distanceTo(enemy.position))[0];resource&&resource.position.distanceTo(enemy.position)<34&&(game.spawnImpactPulse(resource.position.clone().add(new w(0,1,0)),6619135),game.ui.showToast("Skyray reconnaissance",`Allied Screecher marked a nearby ${String(resource.userData.resource??"resource")} deposit.`,"success"))}}if(role==="saboteur"){enemy.userData.repairCooldown=Number(enemy.userData.repairCooldown??4)-delta;const damaged=game.buildings?.records?.find(record=>Number(record.integrity??100)<100);if(damaged&&enemy.userData.repairCooldown<=0)enemy.userData.repairCooldown=8,damaged.integrity=Math.min(100,Number(damaged.integrity??100)+8),game.ui.showToast("Scrapper field repair",`${eo.find(item=>item.type===damaged.type)?.label??damaged.type} integrity restored to ${Math.round(damaged.integrity)}%.`,"success")}}
 function zkUpdateStalker(game,enemy,delta){const toPlayer=game.player.group.position.clone().sub(enemy.position),distance=toPlayer.length(),busy=performance.now()-Number(game.lastMineAt??0)<1200||performance.now()-Number(game.lastChopAt??0)<800||game.mode==="command",shouldMove=distance>2.8&&(busy||distance>7.5),moved=shouldMove?zkMoveEnemyRole(game,enemy,toPlayer,delta,{sprinting:busy&&distance>8}):(enemy.userData.hqModel?.update?.(delta,!1,!1),!1);zkSetRoleOpacity(enemy,moved?.68:.26),enemy.userData.attackCooldown=Number(enemy.userData.attackCooldown??0)-delta;if(distance<3.1&&enemy.userData.attackCooldown<=0){enemy.userData.attackCooldown=2.6,zkSetRoleOpacity(enemy,1);const strike=game.player.group.position.clone().sub(enemy.position).setY(0).normalize();zkInterruptMarine(game,strike,Number(enemy.userData.damage),1.8,"The Shade ambush")}}
@@ -1206,11 +1257,63 @@ zR.prototype.findNearestEnemy=function(range){if(!this.player)return null;let ta
 const zkHighFidelityDiplomacy=zR.prototype.resolveDiplomacy;zR.prototype.resolveDiplomacy=function(choice){const result=zkHighFidelityDiplomacy.call(this,choice),peace=zkPeaceEstablished(this);for(const enemy of this.enemies)if(enemy.userData.enemyType!=="juggernaut")enemy.userData.guardian=peace,enemy.userData.hostile=!peace;return result};
 const zkHighFidelityDispose=zR.prototype.dispose;zR.prototype.dispose=function(){for(const enemy of this.enemies)zkDisposeEnemyRoleModel(enemy);return zkHighFidelityDispose.call(this)};
 const zkSabotageBuildingCounts=LR.prototype.countByType,zkSabotageUtilityStatus=LR.prototype.utilityNetworkStatus;LR.prototype.countByType=function(){const counts=zkSabotageBuildingCounts.call(this),now=performance.now();for(const record of this.records)Number(record.sabotagedUntil??0)>now&&Number(counts[record.type])>0&&(counts[record.type]-=1);return counts};LR.prototype.utilityNetworkStatus=function(){const status=zkSabotageUtilityStatus.call(this),now=performance.now(),sabotaged=this.records.filter(record=>Number(record.sabotagedUntil??0)>now&&(this.utilityOperational?.get(record.id)??!0));return sabotaged.length?{...status,operational:Math.max(0,status.operational-sabotaged.length),disconnected:status.disconnected+sabotaged.length,records:[...status.records,...sabotaged]}:status};
-if(globalThis.location?.hostname==="127.0.0.1"||globalThis.location?.hostname==="localhost"){const qa=document.createElement("div");qa.id="zeknova-local-qa",qa.setAttribute("aria-hidden","true"),qa.style.cssText="position:fixed;left:0;top:0;opacity:0;z-index:-1",qa.innerHTML='<button data-qa-enemy="stalker"></button><button data-qa-enemy="saboteur"></button><button data-qa-enemy="spitter"></button><button data-qa-enemy="skyray"></button><button data-qa-enemy="juggernaut"></button><button data-qa-enemy="burrower"></button><span data-qa-roster></span><span data-qa-terrain></span>',document.body.append(qa);const update=()=>{const output=qa.querySelector("[data-qa-roster]"),terrainOutput=qa.querySelector("[data-qa-terrain]");output&&(output.textContent=JSON.stringify((_s?.enemies??[]).map(enemy=>({role:enemy.userData.enemyType,label:enemy.userData.enemyLabel,hqLoaded:!!enemy.userData.hqModel,bounds:enemy.userData.hqQualifiedBounds??null,health:enemy.userData.health,guardian:!!enemy.userData.guardian,position:{x:Number(enemy.position.x.toFixed(1)),y:Number(enemy.position.y.toFixed(1)),z:Number(enemy.position.z.toFixed(1))},stuckFor:Number(Number(enemy.userData.stuckFor??0).toFixed(2)),state:enemy.userData.roleState??enemy.userData.juggernautState??null})))),terrainOutput&&(terrainOutput.textContent=JSON.stringify({rocks:_s?.terrain?.mineableRocks?.length??0,visibleRocks:_s?.terrain?.mineableRocks?.filter(rock=>rock.visible).length??0,trees:_s?.terrain?.harvestableTrees?.length??0}))};qa.querySelectorAll("[data-qa-enemy]").forEach(button=>button.addEventListener("click",()=>{const before=_s?.enemies.length??0;_s?.spawnEnemy(!0,button.dataset.qaEnemy);const enemy=(_s?.enemies.length??0)>before?_s.enemies.at(-1):null;enemy&&(enemy.userData.guardian=!1,enemy.userData.hostile=!0),update()})),window.setInterval(update,500)}
+if(globalThis.location?.hostname==="127.0.0.1"||globalThis.location?.hostname==="localhost"){const qa=document.createElement("div");qa.id="zeknova-local-qa",qa.setAttribute("aria-hidden","true"),qa.style.cssText="position:fixed;left:0;top:0;opacity:0;z-index:-1",qa.innerHTML='<button data-qa-enemy="stalker"></button><button data-qa-enemy="saboteur"></button><button data-qa-enemy="spitter"></button><button data-qa-enemy="skyray"></button><button data-qa-enemy="juggernaut"></button><button data-qa-enemy="burrower"></button><span data-qa-roster></span><span data-qa-terrain></span>',document.body.append(qa);const update=()=>{const output=qa.querySelector("[data-qa-roster]"),terrainOutput=qa.querySelector("[data-qa-terrain]");output&&(output.textContent=JSON.stringify((_s?.enemies??[]).map(enemy=>({role:enemy.userData.enemyType,label:enemy.userData.enemyLabel,hqLoaded:!!enemy.userData.hqModel,bounds:enemy.userData.hqQualifiedBounds??null,health:enemy.userData.health,guardian:!!enemy.userData.guardian,position:{x:Number(enemy.position.x.toFixed(1)),y:Number(enemy.position.y.toFixed(1)),z:Number(enemy.position.z.toFixed(1))},stuckFor:Number(Number(enemy.userData.stuckFor??0).toFixed(2)),state:enemy.userData.roleState??enemy.userData.juggernautState??null})))),terrainOutput&&(terrainOutput.textContent=JSON.stringify({rocks:_s?.terrain?.mineableRocks?.length??0,visibleRocks:_s?.terrain?.mineableRocks?.filter(rock=>rock.visible).length??0,perBiomeOre:Object.fromEntries(zkAreasOfOperation.map(area=>{const rocks=(_s?.terrain?.mineableRocks??[]).filter(rock=>zkAOAt(rock.position.x,rock.position.z).id===area.id);return[area.id,{total:rocks.length,visible:rocks.filter(rock=>rock.visible).length}]})),residents:_s?.residentNPCs?.length??0,residentModes:(_s?.residentNPCs??[]).reduce((counts,resident)=>(counts[resident.userData.residentMode]=Number(counts[resident.userData.residentMode]??0)+1,counts),{}),residentsInEnemyArray:(_s?.residentNPCs??[]).filter(resident=>_s?.enemies?.includes(resident)).length,trees:_s?.terrain?.harvestableTrees?.length??0,player:_s?.player?.group?{x:Number(_s.player.group.position.x.toFixed(1)),y:Number(_s.player.group.position.y.toFixed(1)),z:Number(_s.player.group.position.z.toFixed(1))}:null,boss:_s?.bossManager?.boss?{x:Number(_s.bossManager.boss.position.x.toFixed(1)),y:Number(_s.bossManager.boss.position.y.toFixed(1)),z:Number(_s.bossManager.boss.position.z.toFixed(1)),moving:!!_s.bossManager.lastBossMoving,modelLoaded:!!_s.bossManager.boss.userData.bossHqModel,modelName:_s.bossManager.boss.userData.bossHqModelName??null,genericModelLoaded:!!_s.bossManager.boss.userData.hqModel,bounds:_s.bossManager.boss.userData.bossHqBounds??null}:null}))};qa.querySelectorAll("[data-qa-enemy]").forEach(button=>button.addEventListener("click",()=>{const before=_s?.enemies.length??0;_s?.spawnEnemy(!0,button.dataset.qaEnemy);const enemy=(_s?.enemies.length??0)>before?_s.enemies.at(-1):null;enemy&&(enemy.userData.guardian=!1,enemy.userData.hostile=!0),update()})),window.setInterval(update,500)}
 const zkEnemyQaInitialize=zR.prototype.initialize;zR.prototype.initialize=async function(){const result=await zkEnemyQaInitialize.call(this),local=globalThis.location?.hostname==="127.0.0.1"||globalThis.location?.hostname==="localhost";if(local&&new URLSearchParams(globalThis.location.search).has("qaEnemies"))window.setTimeout(()=>{for(const role of["stalker","saboteur","spitter","skyray","burrower","juggernaut"]){const before=this.enemies.length;this.spawnEnemy(!0,role);const enemy=this.enemies.length>before?this.enemies.at(-1):null;enemy&&(enemy.userData.guardian=!1,enemy.userData.hostile=!0)}},900);return result};
 
 const zkImmediateEnemyRoleModelLoad=zR.prototype.loadEnemyRoleModel;let zkEnemyAssetQueue=Promise.resolve();
 zR.prototype.loadEnemyRoleModel=function(enemy){const game=this;zkEnemyAssetQueue=zkEnemyAssetQueue.then(()=>zkAssetPause(4500)).then(()=>game.disposed?void 0:zkImmediateEnemyRoleModelLoad.call(game,enemy)).catch(error=>console.warn("ZekNova staged enemy mesh load failed; retaining procedural enemy.",error));return zkEnemyAssetQueue};
+
+/* Enemy meshes are combat-critical assets. The previous performance staging
+   waited for every environment mesh and then slept 4.5 seconds per unit,
+   which could leave a full wave procedural for 20-30 seconds on shared
+   hosting. Reuse the officer runtime and serialize only the expensive GLB
+   decode/attach step with a short yield so combat models win over scenery. */
+let zkCombatModelRuntimePromise=null,zkCombatModelQueue=Promise.resolve();
+function zkCombatModelRuntime(){return zkCombatModelRuntimePromise??=import("./model-runtime-c96327ba.js?v=officer-armory1")}
+function zkEnemyStillNeedsModel(game,enemy){return !game.disposed&&game.enemies.includes(enemy)&&Number(enemy.userData.health)>0&&!enemy.userData.hqModel&&!enemy.userData.skipEnemyHqModel&&!enemy.userData.isMissionBoss}
+function zkQueueCombatModel(game,enemy,label,load){
+  if(!enemy||enemy.userData.hqModel||enemy.userData.hqModelQueued)return enemy?.userData?.hqModelPromise??Promise.resolve();
+  enemy.userData.hqModelQueued=!0;
+  const task=zkCombatModelQueue.then(()=>zkAssetPause(180)).then(async()=>{
+    if(!zkEnemyStillNeedsModel(game,enemy))return;
+    await load();
+  });
+  enemy.userData.hqModelPromise=task.finally(()=>{enemy.userData.hqModelQueued=!1});
+  zkCombatModelQueue=enemy.userData.hqModelPromise.catch(error=>console.warn(`ZekNova ${label} combat mesh load failed; retaining procedural enemy.`,error));
+  return enemy.userData.hqModelPromise;
+}
+async function zkAttachCombatEnemyModel(game,enemy,model,{minHeight,maxHeight,minWidth=.2,maxWidth=8,minDepth=.2,maxDepth=8,label}){
+  if(!zkEnemyStillNeedsModel(game,enemy)){model.dispose?.();return}
+  if(model.calibrate?.()!==!0){model.dispose?.();console.warn(`ZekNova ${label} failed visual calibration; its procedural fallback remains visible.`);return}
+  const bounds=model.measure?.(),safe=bounds&&bounds.height>minHeight&&bounds.height<maxHeight&&bounds.width>minWidth&&bounds.width<maxWidth&&bounds.depth>minDepth&&bounds.depth<maxDepth;
+  if(!safe){model.dispose?.();console.warn(`ZekNova ${label} failed its dimension guard; its procedural fallback remains visible.`);return}
+  enemy.userData.hqQualifiedBounds=bounds;
+  model.root.position.set(0,0,0);
+  model.root.visible=!0;
+  enemy.add(model.root);
+  await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+  if(!zkEnemyStillNeedsModel(game,enemy)){model.dispose?.();return}
+  (enemy.userData.fallbackParts??[]).forEach(part=>part.visible=!1);
+  enemy.userData.hqModel=model;
+  enemy.userData.hqModelDisposed=!1;
+  model.update?.(0,!1,!1);
+  console.info(`ZekNova qualified enemy ${label} loaded, calibrated, and attached.`)
+}
+zR.prototype.loadEnemyRoleModel=function(enemy){
+  const game=this,type=String(enemy?.userData?.enemyType??"");
+  if(!zkQualifiedEnemyTypes.has(type)||enemy?.userData?.skipEnemyHqModel||enemy?.userData?.isMissionBoss)return Promise.resolve();
+  return zkQueueCombatModel(game,enemy,type,async()=>{
+    const runtime=await zkCombatModelRuntime(),model=await runtime.loadEnemyModel(type);
+    await zkAttachCombatEnemyModel(game,enemy,model,{minHeight:1.5,maxHeight:7,label:type})
+  })
+};
+zR.prototype.loadJuggernautModel=function(enemy){
+  const game=this;
+  return zkQueueCombatModel(game,enemy,"juggernaut",async()=>{
+    const runtime=await zkCombatModelRuntime(),model=await runtime.loadJuggernautModel();
+    await zkAttachCombatEnemyModel(game,enemy,model,{minHeight:3,maxHeight:7,minWidth:.5,maxWidth:8,minDepth:.5,maxDepth:8,label:"juggernaut"})
+  })
+};
 
 /* Shared-hosting-safe Rust/WASM terrain and collision core. */
 let zkWasmCore=null,zkWasmCoreStatus="javascript-fallback";
@@ -1343,8 +1446,13 @@ class zkMultiplayerRoom{
       collectedPowerUpIds:[...game.collectedPowerUpIds].filter(id=>!String(id).startsWith("ammo-drop-")),
       personalAmmoCacheCollectedAt:{...(game.weaponState?.cacheCollectedAt??{})},
       minedRockIds:[...game.minedRockIds],
+      rockMinedAt:{...(game.missionStats?.rockMinedAt??{})},
+      zeknovanAidCooldownUntil:Number(game.zeknovanAidCooldownUntil??0),
       relations:{tension:Number(game.diplomacyTension??50),trust:Number(game.simulation?.resources?.trust??50)},
-      relationEvents:this.relationOutbox.slice(0,20)
+      relationEvents:this.relationOutbox.slice(0,20),
+      bossEncounter:game.bossManager?.snapshot?.()??game.missionStats?.activeBoss??null,
+      bossDamageEvents:(game.bossManager?.damageOutbox??[]).slice(0,30),
+      bossDefeats:{...(game.missionStats?.bossDefeats??{})}
     };
   }
   playerSnapshot(){
@@ -1362,6 +1470,7 @@ class zkMultiplayerRoom{
       this.connected=true;
       this.lastRevision=Number(state.revision??0);
       const acknowledgements=new Set(Array.isArray(state.relationEventAcks)?state.relationEventAcks.map(String):[]);if(acknowledgements.size)this.relationOutbox=this.relationOutbox.filter(event=>!acknowledgements.has(String(event.id)));
+      const bossAcknowledgements=new Set(Array.isArray(state.bossDamageEventAcks)?state.bossDamageEventAcks.map(String):[]);if(bossAcknowledgements.size&&this.game.bossManager)this.game.bossManager.damageOutbox=this.game.bossManager.damageOutbox.filter(event=>!bossAcknowledgements.has(String(event.id)));
       this.applyWorld(state.world??{});
       this.applyPlayers(Array.isArray(state.players)?state.players:[]);
     }catch{
@@ -1371,12 +1480,14 @@ class zkMultiplayerRoom{
   }
   applyWorld(world){
     const game=this.game,existing=new Set((game.buildings?.records??[]).map(record=>String(record.id))),incoming=Array.isArray(world.buildings)?world.buildings:[];
+    game.zeknovanAidCooldownUntil=Math.max(Number(game.zeknovanAidCooldownUntil??0),Number(world.zeknovanAidCooldownUntil??0)),game.renderZeknovanAidCooldown?.();
     let added=0;
     for(const record of incoming){if(!record?.id)continue;const local=game.buildings?.records?.find(item=>String(item.id)===String(record.id));if(local){if(Number(record.healthUpdatedAt??0)>Number(local.healthUpdatedAt??0))local.health=He(Number(record.health??1000),0,1000),local.maxHealth=1000,local.healthSchemaVersion=1,local.integrity=local.health/10,local.healthUpdatedAt=Number(record.healthUpdatedAt),zkApplyBuildingVisual(game.buildings,local),game.buildings.rebuildUtilityLinks?.();continue}game.buildings?.addRecord({...record}),existing.add(String(record.id)),added+=1}
     const merge=(values,set)=>{for(const value of Array.isArray(values)?values:[])set.add(String(value))};
-    game.harvestedTreeIds.clear();merge(world.harvestedTreeIds,game.harvestedTreeIds);game.treeHarvestedAt=new Map(Object.entries(world.treeHarvestedAt??{}).map(([id,at])=>[String(id),Number(at)]));for(const id of game.harvestedTreeIds)game.treeHarvestedAt.has(id)||game.treeHarvestedAt.set(id,Date.now());for(const tree of game.terrain?.harvestableTrees??[]){const harvested=game.harvestedTreeIds.has(String(tree.userData.treeId));if(harvested)tree.visible=!1;else if(tree.userData.falling||!tree.visible)zkResetTree(game,tree)}merge((world.collectedPowerUpIds??[]).filter(id=>!String(id).startsWith("ammo-drop-")),game.collectedPowerUpIds);for(const id of [...game.collectedPowerUpIds])String(id).startsWith("ammo-drop-")&&game.collectedPowerUpIds.delete(id);merge(world.minedRockIds,game.minedRockIds);
-    game.terrain?.applyWorldProgress(game.harvestedTreeIds,game.collectedPowerUpIds,game.minedRockIds);if(game.weaponState&&world.personalAmmoCacheCollectedAt&&typeof world.personalAmmoCacheCollectedAt==="object"){game.weaponState.cacheCollectedAt??={};for(const[id,at]of Object.entries(world.personalAmmoCacheCollectedAt)){const time=Number(at);String(id).startsWith("ammo-drop-")&&Number.isFinite(time)&&time>Number(game.weaponState.cacheCollectedAt[id]??0)&&(game.weaponState.cacheCollectedAt[id]=time)}game.refreshPersonalAmmoCaches?.(Date.now(),!1),game.persistWeaponState?.()}
+    game.harvestedTreeIds.clear();merge(world.harvestedTreeIds,game.harvestedTreeIds);game.treeHarvestedAt=new Map(Object.entries(world.treeHarvestedAt??{}).map(([id,at])=>[String(id),Number(at)]));for(const id of game.harvestedTreeIds)game.treeHarvestedAt.has(id)||game.treeHarvestedAt.set(id,Date.now());for(const tree of game.terrain?.harvestableTrees??[]){const harvested=game.harvestedTreeIds.has(String(tree.userData.treeId));if(harvested)tree.visible=!1;else if(tree.userData.falling||!tree.visible)zkResetTree(game,tree)}merge((world.collectedPowerUpIds??[]).filter(id=>!String(id).startsWith("ammo-drop-")),game.collectedPowerUpIds);for(const id of [...game.collectedPowerUpIds])String(id).startsWith("ammo-drop-")&&game.collectedPowerUpIds.delete(id);game.minedRockIds.clear();merge(world.minedRockIds,game.minedRockIds);game.missionStats.rockMinedAt={...(world.rockMinedAt??{})};
+    game.terrain?.applyWorldProgress(game.harvestedTreeIds,game.collectedPowerUpIds,game.minedRockIds);game.refreshOreFormations?.(Date.now(),!1);if(game.weaponState&&world.personalAmmoCacheCollectedAt&&typeof world.personalAmmoCacheCollectedAt==="object"){game.weaponState.cacheCollectedAt??={};for(const[id,at]of Object.entries(world.personalAmmoCacheCollectedAt)){const time=Number(at);String(id).startsWith("ammo-drop-")&&Number.isFinite(time)&&time>Number(game.weaponState.cacheCollectedAt[id]??0)&&(game.weaponState.cacheCollectedAt[id]=time)}game.refreshPersonalAmmoCaches?.(Date.now(),!1),game.persistWeaponState?.()}
     const relations=world.relations;if(relations&&game.simulation){const tension=He(Number(relations.tension??game.diplomacyTension??50),0,100),trust=He(Number(relations.trust??game.simulation.resources.trust??50),0,100),changedRelation=Math.abs(tension-Number(game.diplomacyTension??50))>.05||Math.abs(trust-Number(game.simulation.resources.trust??50))>.05;game.diplomacyTension=tension,game.simulation.resources.trust=trust,changedRelation&&(zkSaveDiplomacyCycle(game),zkSyncZeknovanHostility(game),game.updateHud(!0))}
+    if(world.bossDefeats&&typeof world.bossDefeats==="object"){game.missionStats.bossDefeats??={};for(const[missionId,defeat]of Object.entries(world.bossDefeats)){if(!defeat?.rewardId)continue;game.missionStats.bossDefeats[missionId]=defeat;game.bossManager?.applyReward?.(defeat)}}game.bossManager?.applyShared?.(world.bossEncounter);
     if(added){game.updateHud(!0);game.ui.showToast("Team construction synchronized",`${added} installation${added===1?"":"s"} placed by another crew member appeared in the shared world.`,"success")}
   }
   queueRelationEvent({tensionDelta=0,trustDelta=0,reason="Field action"}={}){const event={id:`${this.clientId}.${Date.now()}.${crypto.randomUUID().slice(0,8)}`,tensionDelta:He(Number(tensionDelta),-25,25),trustDelta:He(Number(trustDelta),-25,25),reason:String(reason).slice(0,100),at:Date.now()};this.relationOutbox.push(event);this.relationOutbox=this.relationOutbox.slice(-50);this.sync();return event}
@@ -1419,7 +1530,7 @@ zR.prototype.recordPersonalObjective=function(id,label="Personal contribution co
 zR.prototype.updateRankProgress=function(){
   const element=document.getElementById("rank-progress");if(!element)return;
   const campaign=zkCampaignState(this.getMissionContext()),rank=this.user.officerClass??"ensign",target=rankGoal(rank),personal=this.personalObjectiveIds?.size??0;
-  element.classList.toggle("complete",!target);element.innerHTML=target?`<strong>NEXT RANK · ${target.label}</strong><span>${Math.min(campaign.completed,target.missions)}/${target.missions} missions · ${Math.min(personal,target.personal)}/${target.personal} personal goals</span>`:`<strong>CAPTAIN · MAXIMUM FIELD RANK</strong><span>${campaign.completed}/12 missions · ${personal} personal goals</span>`
+  element.classList.toggle("complete",!target);element.innerHTML=target?`<strong>NEXT RANK · ${target.label}</strong><span>${Math.min(campaign.completed,target.missions)}/${target.missions} missions</span>`:`<strong>CAPTAIN · MAXIMUM FIELD RANK</strong><span>${campaign.completed}/12 missions · ${personal} personal goals</span>`
 };
 zR.prototype.deployToSelectedBiome=function(){
   if(!this.player||!this.terrain)return;const spawn=this.terrain.findSafeSpawn(0,24);this.player.group.position.copy(spawn);this.alignExploreCameraToPlayer();this.ui.showToast("Shared world deployment","You entered the colony as an Ensign. All five areas of operation are open to your team.","success")
@@ -1434,6 +1545,7 @@ zR.prototype.applyOfficerRank=async function(rank){
   localStorage.setItem(dr,JSON.stringify(this.user));this.ui.showToast(`${profile.label.toUpperCase()} PROMOTION`,`Mission command approved your promotion. ${profile.machine}, ${profile.passive}, and ${rank==="captain"?"missile":"laser"} systems are now active.`,"success");this.updateRankProgress();this.updateHud(!0);await this.save()
 };
 zR.prototype.syncOfficerProgression=async function(markDeployed=false){
+  const qaRank=["localhost","127.0.0.1","::1"].includes(location.hostname)?new URLSearchParams(location.search).get("qaRank"):null;if(["ensign","lieutenant","captain"].includes(qaRank)){this.updateRankProgress();return}
   if(this.progressionSyncing||!this.player||!this.buildings)return;this.progressionSyncing=true;const campaign=zkCampaignState(this.getMissionContext());
   try{const response=await fetch(`${Be.apiBase}/progression.php`,{method:"POST",credentials:"include",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({teamCompleted:campaign.completed,personalObjectives:[...(this.personalObjectiveIds??[])],deployed:markDeployed})});if(!response.ok)throw new Error("Progression unavailable");const profile=await response.json();this.personalObjectiveIds=new Set(profile.personalObjectives??[]);this.missionStats.personalObjectiveIds=[...this.personalObjectiveIds];try{localStorage.setItem(`zeknova.personal.v1.${this.user.teamCode}.${this.user.id}`,JSON.stringify([...this.personalObjectiveIds]))}catch{}if(!profile.deployed){this.deployToSelectedBiome();window.setTimeout(()=>this.syncOfficerProgression(true),0)}await this.applyOfficerRank(profile.rank??"ensign")}catch{const personal=this.personalObjectiveIds?.size??0,rank=campaign.completed>=8&&personal>=8?"captain":campaign.completed>=4&&personal>=4?"lieutenant":"ensign";await this.applyOfficerRank(rank)}finally{this.progressionSyncing=false;this.updateRankProgress()}
 };
@@ -1509,7 +1621,7 @@ PR.prototype.addAOResourceNodes=function(){};
 
 /* Browser performance profile: preserve density while reducing repeated CPU/GPU work. */
 const zkLowPowerDevice=Number(navigator.deviceMemory??8)<=4||Number(navigator.hardwareConcurrency??8)<=4||globalThis.matchMedia?.("(max-width: 900px)").matches;
-Be.maxPixelRatio=Math.min(Be.maxPixelRatio,zkLowPowerDevice?1:1.2);
+Be.maxPixelRatio=Math.min(Be.maxPixelRatio,zkLowPowerDevice?1:1.75);
 
 const zkPerformanceResourceInteraction=zR.prototype.updateResourceInteraction;
 zR.prototype.updateResourceInteraction=function(){
@@ -1522,7 +1634,7 @@ zR.prototype.updateResourceInteraction=function(){
 zR.prototype.updateRankProgress=function(){
   const element=document.getElementById("rank-progress");if(!element)return;
   const campaign=zkCampaignState(this.getMissionContext()),rank=this.user.officerClass??"ensign",target=rankGoal(rank),personal=this.personalObjectiveIds?.size??0;
-  const markup=target?`<strong>NEXT RANK · ${target.label}</strong><span>${Math.min(campaign.completed,target.missions)}/${target.missions} missions · ${Math.min(personal,target.personal)}/${target.personal} personal goals</span>`:`<strong>CAPTAIN · MAXIMUM FIELD RANK</strong><span>${campaign.completed}/12 missions · ${personal} personal goals</span>`;
+  const markup=target?`<strong>NEXT RANK · ${target.label}</strong><span>${Math.min(campaign.completed,target.missions)}/${target.missions} missions</span>`:`<strong>CAPTAIN · MAXIMUM FIELD RANK</strong><span>${campaign.completed}/12 missions · ${personal} personal goals</span>`;
   if(element.dataset.progressMarkup===markup)return;
   element.dataset.progressMarkup=markup;element.classList.toggle("complete",!target);element.innerHTML=markup
 };
@@ -1555,9 +1667,9 @@ zR.prototype.initialize=async function(){
   await zkInitializeWasmCore();
   zkStartupStage("world","Building the five regions");
   const result=await zkPerformanceInitialize.call(this);
-  const shadowSize=zkLowPowerDevice?512:1024;
+  const shadowSize=zkLowPowerDevice?1024:2048;
   this.scene.traverse(object=>{if(object?.shadow?.mapSize){object.shadow.mapSize.set(shadowSize,shadowSize);object.shadow.needsUpdate=!0}});
-  this.rendererLabel=`WEBGL 2 + ${zkWasmCore?"RUST/WASM":"JS FALLBACK"} · ${zkLowPowerDevice?"MOBILE":"DESKTOP"}`;
+  this.rendererLabel=`${zkBackendLabel(this.renderer)} + ${zkWasmCore?"RUST/WASM":"JS FALLBACK"} · ${zkLowPowerDevice?"MOBILE":"DESKTOP"}`;
   this.updateHud(!0);
   const elapsed=Math.round(performance.now()-startupBegan);
   globalThis.ZekNovaStartupDiagnostics={elapsedMs:elapsed,wasm:zkWasmCoreStatus,safeMode:zkStartupSafeMode,models:!zkDisableModels,environment:!zkDisableEnvironment,trees:this.terrain?.harvestableTrees?.length??0,rocks:this.terrain?.mineableRocks?.length??0};
@@ -1566,11 +1678,11 @@ zR.prototype.initialize=async function(){
   return result
 };
 
-/* Ensign rifle, rolling-fire, heavy-cannon, and death animation integration. */
+/* Ensign rolling-fire, heavy-cannon, and death animation integration. Rifle
+   bursts use the planted heavy-weapon pose and per-round procedural recoil. */
 const zkMarineAnimatedAttack=zR.prototype.attack;
 zR.prototype.attack=function(options={}){
   if(options.ignoreCooldown)this.lastShotAt=0;
-  if(options.animation!==false&&this.user.officerClass==="ensign")this.player?.playCombatAnimation?.("rifle",{timeScale:1.55});
   return zkMarineAnimatedAttack.call(this)
 };
 zR.prototype.rollingShoot=function(){
@@ -1638,6 +1750,12 @@ const zkWeaponProfiles={
   singularity:{name:"SINGULARITY",type:"10-ROUND BURST RIFLE",magazine:30,damage:5,range:42,cooldown:3000,color:12535039,ammo:"CRYSTAL SLUGS"},
   thunderclaw:{name:"THUNDERCLAW",type:"HEAVY MINIGUN",magazine:80,damage:7,range:44,cooldown:10000,color:16755780,ammo:"KINETIC BELT"}
 };
+const zkRankArmoryStyles={
+  ensign:{label:"ENSIGN BALLISTIC ARMORY",identity:"BALLISTIC",colors:{voidsting:6740991,singularity:6159868,thunderclaw:16755780},effects:{voidsting:"ballistic",singularity:"ballistic",thunderclaw:"ballistic"}},
+  lieutenant:{label:"LIEUTENANT ENERGY ARMORY",identity:"LASER",colors:{voidsting:4517375,singularity:4880639,thunderclaw:8445183},effects:{voidsting:"laser",singularity:"laser",thunderclaw:"laser"}},
+  captain:{label:"CAPTAIN HEAVY ARMORY",identity:"MISSILE / HEAVY",colors:{voidsting:16763904,singularity:16744576,thunderclaw:16755780},effects:{voidsting:"missile",singularity:"missile",thunderclaw:"heavy"}}
+};
+function zkArmoryStyle(game,id){const rank=game.user?.officerClass??"ensign",rankStyle=zkRankArmoryStyles[rank]??zkRankArmoryStyles.ensign;return{rank,...rankStyle,color:rankStyle.colors[id]??zkWeaponProfiles[id]?.color,effect:rankStyle.effects[id]??"ballistic"}}
 const zkWeaponDefaults=()=>({
   equipped:"voidsting",thunderMode:"minigun",heat:0,
   ammo:{voidsting:{mag:9,reserve:0},singularity:{mag:30,reserve:60},thunderclaw:{mag:80,reserve:160,rockets:4}},
@@ -1649,7 +1767,7 @@ zR.prototype.restoreWeaponState=function(){
   const base=zkWeaponDefaults();try{const saved=JSON.parse(localStorage.getItem(this.weaponStorageKey())||"null");if(saved){base.equipped=zkWeaponProfiles[saved.equipped]?saved.equipped:base.equipped;base.thunderMode=saved.thunderMode==="rocket"?"rocket":"minigun";base.heat=He(Number(saved.heat??0),0,100);for(const id of Object.keys(base.ammo))base.ammo[id]={...base.ammo[id],...(saved.ammo?.[id]??{})};if(saved.cacheCollectedAt&&typeof saved.cacheCollectedAt==="object")for(const[id,at]of Object.entries(saved.cacheCollectedAt)){const time=Number(at);String(id).startsWith("ammo-drop-")&&Number.isFinite(time)&&time>0&&(base.cacheCollectedAt[String(id)]=time)}}}catch{}base.ammo.voidsting.mag=He(Number(base.ammo.voidsting.mag??9),1,9),base.ammo.voidsting.reserve=0;this.weaponState=base;this.equippedWeapon=base.equipped
 };
 zR.prototype.selectWeapon=function(id){
-  if(!zkWeaponProfiles[id]||this.user.officerClass!=="ensign")return;
+  if(!zkWeaponProfiles[id])return;
   const now=performance.now();if(Number(this.rifleBurstActiveUntil??0)>now||Number(this.minigunBurstActiveUntil??0)>now){this.ui.showToast("Firing cycle committed","Finish the active burst before changing weapons.","warning");return}
   this.weaponState.equipped=id;this.equippedWeapon=id;this.player.equippedWeapon=id;this.player.hqModels?.equipWeapon?.(id);this.persistWeaponState();this.updateWeaponHud();
   const profile=zkWeaponProfiles[id];this.ui.showToast(`${profile.name} equipped`,`${profile.type} online.${id==="thunderclaw"?" Press X to switch minigun and rocket modes.":""}`,"success")
@@ -1677,26 +1795,27 @@ zR.prototype.craftWeaponAmmo=function(){
   this.persistWeaponState();this.updateWeaponHud();this.updateHud(!0);this.save();this.ui.showToast("AMMUNITION FABRICATED",`${batchLabel} added from ${cost} iron ore.`,"success")
 };
 zR.prototype.mountWeaponHud=function(){
-  if(this.user.officerClass!=="ensign"||document.getElementById("weapon-system-status"))return;
-  const panel=document.createElement("section");panel.id="weapon-system-status";panel.className="weapon-system-status";panel.innerHTML=`<header><span>MARINE ARMORY</span><b id="weapon-mode-label"></b></header><nav>${Object.entries(zkWeaponProfiles).map(([id,p],index)=>`<button type="button" data-weapon-id="${id}"><em>0${index+1}</em><strong>${p.name}</strong><small>${p.type}</small></button>`).join("")}</nav><div class="weapon-readout"><strong id="weapon-ammo-readout"></strong><span id="weapon-heat-readout"></span></div><footer><button type="button" data-weapon-reload>C · RELOAD</button><button type="button" data-weapon-craft>CRAFT AMMO</button></footer>`;
+  if(document.getElementById("weapon-system-status"))return;
+  const armory=zkArmoryStyle(this,this.weaponState?.equipped??"voidsting"),panel=document.createElement("section");panel.id="weapon-system-status";panel.className=`weapon-system-status rank-${armory.rank}`;panel.innerHTML=`<header><span>${armory.label}</span><b id="weapon-mode-label"></b></header><nav>${Object.entries(zkWeaponProfiles).map(([id,p],index)=>`<button type="button" data-weapon-id="${id}"><em>0${index+1}</em><strong>${p.name}</strong><small>${p.type}</small></button>`).join("")}</nav><div class="weapon-readout"><strong id="weapon-ammo-readout"></strong><span id="weapon-heat-readout"></span></div><footer><button type="button" data-weapon-reload>C · RELOAD</button><button type="button" data-weapon-craft>CRAFT AMMO</button></footer>`;
   const anchor=document.getElementById("special-attack-status");(anchor?.parentElement??document.body).appendChild(panel);
   panel.querySelectorAll("[data-weapon-id]").forEach(button=>button.addEventListener("click",()=>this.selectWeapon(button.dataset.weaponId)));
   panel.querySelector("[data-weapon-reload]")?.addEventListener("click",()=>this.reloadWeapon());panel.querySelector("[data-weapon-craft]")?.addEventListener("click",()=>this.craftWeaponAmmo());this.updateWeaponHud()
 };
 zR.prototype.updateWeaponHud=function(){
-  const panel=document.getElementById("weapon-system-status");if(!panel||!this.weaponState)return;const id=this.weaponState.equipped,profile=zkWeaponProfiles[id],ammo=this.weaponState.ammo[id],rocket=id==="thunderclaw"&&this.weaponState.thunderMode==="rocket";
+  const panel=document.getElementById("weapon-system-status");if(!panel||!this.weaponState)return;const id=this.weaponState.equipped,profile=zkWeaponProfiles[id],ammo=this.weaponState.ammo[id],rocket=id==="thunderclaw"&&this.weaponState.thunderMode==="rocket",armory=zkArmoryStyle(this,id);panel.className=`weapon-system-status rank-${armory.rank}`;const heading=panel.querySelector("header span");if(heading)heading.textContent=armory.label;
   panel.querySelectorAll("[data-weapon-id]").forEach(button=>button.classList.toggle("active",button.dataset.weaponId===id));
   const reloadButton=panel.querySelector("[data-weapon-reload]"),craftButton=panel.querySelector("[data-weapon-craft]"),needsReload=id!=="voidsting"&&!rocket&&ammo.mag<=0&&ammo.reserve>0,outOfAmmo=id!=="voidsting"&&!rocket&&ammo.mag<=0&&ammo.reserve<=0;reloadButton?.classList.toggle("needs-reload",needsReload);if(reloadButton)reloadButton.disabled=id==="voidsting"||rocket,reloadButton.textContent=needsReload?"C · RELOAD NOW":"C · RELOAD";if(craftButton)craftButton.disabled=id==="voidsting",craftButton.textContent=id==="singularity"?"CRAFT SLUGS":rocket?"CRAFT ROCKETS":id==="thunderclaw"?"CRAFT BELT":"SELF-CHARGING";
   const now=performance.now(),rifleActive=Number(this.rifleBurstActiveUntil??0)>now,minigunActive=Number(this.minigunBurstActiveUntil??0)>now,rifleCooldown=Math.max(0,Number(this.rifleCooldownUntil??0)-now),minigunCooldown=Math.max(0,Number(this.minigunCooldownUntil??0)-now);let status="READY";
   const pistolCooldown=Math.max(0,Number(this.pistolRechargeUntil??0)-now);if(id==="voidsting"&&ammo.mag<=0&&pistolCooldown<=0)ammo.mag=9,this.pistolRechargeUntil=0,this.persistWeaponState();if(this.weaponReloadUntil>now)status="RELOADING…";else if(id==="voidsting")status=pistolCooldown>0?`CELL COOLING ${(pistolCooldown/1000).toFixed(1)}s`:"READY";else if(id==="singularity"&&rifleActive)status=`BURST ${Math.min(10,Number(this.rifleBurstRound??0))}/10`;else if(id==="singularity"&&rifleCooldown>0)status=`COOLDOWN ${(rifleCooldown/1000).toFixed(1)}s`;else if(id==="thunderclaw"&&!rocket&&minigunActive)status=`FIRING ${Number(this.minigunBurstRound??0)}/${Number(this.minigunBurstSize??30)}`;else if(id==="thunderclaw"&&!rocket&&minigunCooldown>0)status=`COOLDOWN ${(minigunCooldown/1000).toFixed(1)}s`;
-  if(outOfAmmo)status="OUT OF AMMO · CRAFT";else if(needsReload)status="EMPTY · PRESS C";else if(rocket&&ammo.rockets<=0)status="OUT OF ROCKETS · CRAFT";di("weapon-mode-label",rocket?"ROCKET AOE · X TO SWITCH":id==="thunderclaw"?"30-ROUND MINIGUN BURST · 10s COOLDOWN":profile.type);di("weapon-ammo-readout",rocket?`${ammo.rockets} ROCKETS`:id==="voidsting"?`${ammo.mag} / 9 PLASMA SHOTS`: `${ammo.mag} LOADED · ${ammo.reserve} RESERVE · ${profile.ammo}`);di("weapon-heat-readout",status)
+  if(outOfAmmo)status="OUT OF AMMO · CRAFT";else if(needsReload)status="EMPTY · PRESS C";else if(rocket&&ammo.rockets<=0)status="OUT OF ROCKETS · CRAFT";di("weapon-mode-label",rocket?`${armory.identity} ROCKET AOE · X TO SWITCH`:id==="thunderclaw"?`${armory.identity} · 30-ROUND BURST · 10s COOLDOWN`:`${armory.identity} · ${profile.type}`);di("weapon-ammo-readout",rocket?`${ammo.rockets} ROCKETS`:id==="voidsting"?`${ammo.mag} / 9 PLASMA SHOTS`: `${ammo.mag} LOADED · ${ammo.reserve} RESERVE · ${profile.ammo}`);di("weapon-heat-readout",status)
 };
-zR.prototype.findHostileWeaponTarget=function(range){if(!this.player)return null;let target=null,nearest=Number(range);for(const enemy of this.enemies){if(!enemy.visible||Number(enemy.userData.health)<=0||enemy.userData.enemyType==="burrower"&&enemy.userData.roleState!=="emerged")continue;const distance=enemy.position.distanceTo(this.player.group.position);if(distance<=nearest)target=enemy,nearest=distance}return target};
-zR.prototype.damageWeaponTarget=function(enemy,damage,color){if(!enemy||!enemy.visible||Number(enemy.userData.health)<=0)return!1;const floor=this.reconciliationNonlethal?1:0;enemy.userData.health=Math.max(floor,Number(enemy.userData.health??50)-Math.max(0,Number(damage)||0));this.player.xp+=3;this.spawnImpactPulse(enemy.position.clone().add(new w(0,1.3,0)),color);return!0};
+function zkWeaponAimPoint(target){const point=new w;if(!target)return point;const weakPoint=target.userData?.isMissionBoss?target.getObjectByName?.("bossWeakPoint"):null;if(weakPoint)return weakPoint.getWorldPosition(point);const height=target.userData?.isMissionBoss?Math.max(3.4,Number(target.userData?.bossHqBounds?.height??0)*Number(target.scale?.y??1)*.58):1.35;return point.copy(target.position).add(new w(0,height,0))}
+zR.prototype.findHostileWeaponTarget=function(range){if(!this.player)return null;const boss=this.bossManager?.active?this.bossManager.boss:null;if(boss?.visible&&Number(boss.userData.health)>0){const dx=boss.position.x-this.player.group.position.x,dz=boss.position.z-this.player.group.position.z,physicalRadius=Math.max(3.4,Number(boss.userData.collisionRadius??0));if(Math.hypot(dx,dz)-physicalRadius<=Number(range))return boss}let target=null,nearest=Number(range);for(const enemy of this.enemies){if(enemy===boss||!enemy.visible||Number(enemy.userData.health)<=0||enemy.userData.enemyType==="burrower"&&enemy.userData.roleState!=="emerged")continue;const distance=enemy.position.distanceTo(this.player.group.position);if(distance<=nearest)target=enemy,nearest=distance}return target};
+zR.prototype.damageWeaponTarget=function(enemy,damage,color,weaponId=null){if(!enemy||!enemy.visible||Number(enemy.userData.health)<=0)return!1;const floor=this.reconciliationNonlethal?1:0;enemy.userData.health=Math.max(floor,Number(enemy.userData.health??50)-Math.max(0,Number(damage)||0));const pushMap={voidsting:1,singularity:3,thunderclaw:5};let push=pushMap[weaponId];if(push==null){const d=Number(damage);push=d===3?1:d===5?3:d===7?5:1}if(push>0&&this.player?.group?.position&&!enemy.userData.isMissionBoss){const dir=enemy.position.clone().sub(this.player.group.position);dir.y=0;if(dir.lengthSq()>1e-6){dir.normalize();const nextX=Kt.clamp(enemy.position.x+dir.x*push,-79,79),nextZ=Kt.clamp(enemy.position.z+dir.z*push,-79,79);if(!this.terrain?.isObstacleAt(nextX,nextZ,.65)&&!this.terrain?.isWaterAt(nextX,nextZ,.3)){enemy.position.x=nextX;enemy.position.z=nextZ;const isAir=enemy.userData.enemyType==="skyray"||enemy.userData.enemyType==="stalker"&&false;enemy.position.y=this.terrain.heightAt(nextX,nextZ)+(isAir?5:0)}}}else if(push>0&&enemy.userData.isMissionBoss){const dir=enemy.position.clone().sub(this.player.group.position);dir.y=0;if(dir.lengthSq()>1e-6){dir.normalize();const nextX=Kt.clamp(enemy.position.x+dir.x*push*.35,-79,79),nextZ=Kt.clamp(enemy.position.z+dir.z*push*.35,-79,79);if(!this.terrain?.isObstacleAt(nextX,nextZ,.65)){enemy.position.x=nextX;enemy.position.z=nextZ}}}if(enemy.userData.isMissionBoss){const now=performance.now();enemy.userData.bossStunUntil=now+20;const last=Number(enemy.userData.bossLastHitAt??0),consecutive=now-last<600?Number(enemy.userData.bossConsecutiveHits??0)+1:1;enemy.userData.bossConsecutiveHits=consecutive;enemy.userData.bossLastHitAt=now;if(consecutive>=4){enemy.userData.bossStunUntil=now+120;enemy.userData.bossConsecutiveHits=0;enemy.userData.bossStunnedAt=now}}this.player.xp+=3;this.spawnImpactPulse(enemy.position.clone().add(new w(0,1.3,0)),color);return!0};
 zR.prototype.showWeaponLock=function(target,color){
   if(!target)return;this.weaponLockTarget=target,this.weaponLockUntil=performance.now()+520;
   if(this.weaponLockMarker){this.weaponLockMarker.material?.color?.setHex?.(color);return}
-  const marker=new R(new tt(.82,.055,8,40),new Je({color,transparent:!0,opacity:.92,depthTest:!1}));marker.renderOrder=80,this.weaponLockMarker=marker,this.scene.add(marker);const animate=()=>{if(this.disposed||performance.now()>Number(this.weaponLockUntil??0)){this.scene.remove(marker),marker.geometry.dispose(),marker.material.dispose(),this.weaponLockMarker=null,this.weaponLockTarget=null;return}const locked=this.weaponLockTarget;if(locked?.visible){marker.position.copy(locked.position).add(new w(0,1.45,0)),marker.quaternion.copy(this.camera.quaternion);const pulse=1+Math.sin(performance.now()*.018)*.1;marker.scale.setScalar(pulse)}requestAnimationFrame(animate)};requestAnimationFrame(animate)
+  const marker=new R(new tt(.82,.055,8,40),new Je({color,transparent:!0,opacity:.92,depthTest:!1}));marker.renderOrder=80,this.weaponLockMarker=marker,this.scene.add(marker);const animate=()=>{if(this.disposed||performance.now()>Number(this.weaponLockUntil??0)){this.scene.remove(marker),marker.geometry.dispose(),marker.material.dispose(),this.weaponLockMarker=null,this.weaponLockTarget=null;return}const locked=this.weaponLockTarget;if(locked?.visible){marker.position.copy(zkWeaponAimPoint(locked)),marker.quaternion.copy(this.camera.quaternion);const pulse=(locked.userData?.isMissionBoss?1.9:1)+Math.sin(performance.now()*.018)*.1;marker.scale.setScalar(pulse)}requestAnimationFrame(animate)};requestAnimationFrame(animate)
 };
 zR.prototype.autoAimAtWeaponTarget=function(target,color){
   if(!target||!this.player||Number(target.userData.health)<=0)return!1;const dx=target.position.x-this.player.group.position.x,dz=target.position.z-this.player.group.position.z;if(Math.hypot(dx,dz)<.001)return!1;const desired=Math.atan2(dx,dz),current=this.player.group.rotation.y,turn=Math.atan2(Math.sin(desired-current),Math.cos(desired-current));this.player.group.rotation.y=current+turn,this.showWeaponLock(target,color);return!0
@@ -1713,24 +1832,24 @@ zR.prototype.spawnWeaponExplosion=function(center,color,radius=6){
 };
 zR.prototype.launchThunderclawRocket=function(origin,endpoint,target,color){
   const missile=this.acquirePlayerProjectile("missile",color),direction=endpoint.clone().sub(origin).normalize(),start=origin.clone(),began=performance.now();missile.position.copy(start),missile.scale.setScalar(1.65),missile.quaternion.setFromUnitVectors(new w(0,1,0),direction);
-  const fly=()=>{if(this.disposed){this.releasePlayerProjectile(missile);return}const progress=Math.min(1,(performance.now()-began)/520),eased=1-Math.pow(1-progress,2);missile.position.lerpVectors(start,endpoint,eased),missile.position.y+=Math.sin(progress*Math.PI)*2.4;if(progress<1){requestAnimationFrame(fly);return}this.releasePlayerProjectile(missile);let hits=0;for(const enemy of this.enemies){if(!enemy.visible||Number(enemy.userData.health)<=0||enemy.position.distanceTo(endpoint)>6)continue;if(this.damageWeaponTarget(enemy,enemy===target?105:64,color))hits+=1}this.spawnWeaponExplosion(endpoint,color,6),this.chargeSpecial(12+hits*4),this.ui.showToast("THUNDERCLAW DETONATION",hits?`${hits} target${hits===1?"":"s"} caught in the six-meter blast radius.`:"Rocket impact confirmed; no ZekNovans were inside the blast radius.",hits?"success":"warning")};requestAnimationFrame(fly)
+  const fly=()=>{if(this.disposed){this.releasePlayerProjectile(missile);return}const progress=Math.min(1,(performance.now()-began)/520),eased=1-Math.pow(1-progress,2);missile.position.lerpVectors(start,endpoint,eased),missile.position.y+=Math.sin(progress*Math.PI)*2.4;if(progress<1){requestAnimationFrame(fly);return}this.releasePlayerProjectile(missile);let hits=0;for(const enemy of this.enemies){if(!enemy.visible||Number(enemy.userData.health)<=0||enemy.position.distanceTo(endpoint)>6)continue;if(this.damageWeaponTarget(enemy,enemy===target?105:64,color,"thunderclaw"))hits+=1}this.spawnWeaponExplosion(endpoint,color,6),this.chargeSpecial(12+hits*4),this.ui.showToast("THUNDERCLAW DETONATION",hits?`${hits} target${hits===1?"":"s"} caught in the six-meter blast radius.`:"Rocket impact confirmed; no ZekNovans were inside the blast radius.",hits?"success":"warning")};requestAnimationFrame(fly)
 };
-zR.prototype.launchTrackedRifleRound=function(origin,target,endpoint,profile){
-  const projectile=this.acquirePlayerProjectile("ballistic",profile.color),start=origin.clone(),began=performance.now(),duration=He(start.distanceTo(endpoint)/52*1000,180,760);projectile.position.copy(start),projectile.scale.setScalar(1.35);
-  const fly=()=>{if(this.disposed){this.releasePlayerProjectile(projectile);return}const progress=Math.min(1,(performance.now()-began)/duration),liveEndpoint=target?.visible&&Number(target.userData.health)>0?target.position.clone().add(new w(0,1.35,0)):endpoint;projectile.position.lerpVectors(start,liveEndpoint,1-Math.pow(1-progress,2)),projectile.rotation.x+=.18,projectile.rotation.y+=.24;if(progress<1){requestAnimationFrame(fly);return}this.releasePlayerProjectile(projectile);if(this.damageWeaponTarget(target,profile.damage,profile.color)){this.rifleBurstHits=Number(this.rifleBurstHits??0)+1,this.rifleBurstDamage=Number(this.rifleBurstDamage??0)+profile.damage,this.chargeSpecial(3)}};requestAnimationFrame(fly)
+zR.prototype.launchTrackedRifleRound=function(origin,target,endpoint,profile,onHit=null){
+  const projectile=this.acquirePlayerProjectile(profile.projectileKind??"ballistic",profile.color),start=origin.clone(),began=performance.now(),duration=He(start.distanceTo(endpoint)/52*1000,180,760);projectile.position.copy(start),projectile.scale.setScalar(Number(profile.projectileScale??1.35));
+  const fly=()=>{if(this.disposed){this.releasePlayerProjectile(projectile);return}const progress=Math.min(1,(performance.now()-began)/duration),liveEndpoint=target?.visible&&Number(target.userData.health)>0?zkWeaponAimPoint(target):endpoint;projectile.position.lerpVectors(start,liveEndpoint,1-Math.pow(1-progress,2)),projectile.rotation.x+=.18,projectile.rotation.y+=.24;if(progress<1){requestAnimationFrame(fly);return}this.releasePlayerProjectile(projectile);const wid=profile.weaponId??(profile.damage===3?"voidsting":profile.damage===5?"singularity":profile.damage===7?"thunderclaw":null);if(this.damageWeaponTarget(target,profile.damage,profile.color,wid)){onHit?.(),this.chargeSpecial(Number(profile.specialCharge??3))}};requestAnimationFrame(fly)
 };
 zR.prototype.fireRifleBurstRound=function(index,total){
   if(this.disposed||this.paused||this.mode!=="explore"||this.deathStateUntil)return;const profile=zkWeaponProfiles.singularity,ammo=this.weaponState?.ammo?.singularity;if(!ammo||ammo.mag<=0)return;ammo.mag-=1,this.rifleBurstRound=index+1;
-  const origin=this.player.group.position.clone().add(new w(0,2.1,0)),target=this.findHostileWeaponTarget(profile.range);this.autoAimAtWeaponTarget(target,profile.color);const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.player.group.rotation.y),endpoint=target?target.position.clone().add(new w(0,1.35,0)):origin.clone().addScaledVector(forward,profile.range);this.launchTrackedRifleRound(origin,target,endpoint,profile),this.persistWeaponState(),this.updateWeaponHud()
+  this.player.hqModels?.recoilWeapon?.("singularity",.72);const style=zkArmoryStyle(this,"singularity"),styled={...profile,color:style.color,weaponId:"singularity",projectileKind:style.effect==="missile"?"missile":"ballistic",projectileScale:style.effect==="missile"?.72:1.35},origin=this.player.group.position.clone().add(new w(0,2.1,0)),target=this.findHostileWeaponTarget(profile.range);this.autoAimAtWeaponTarget(target,style.color);const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.player.group.rotation.y),endpoint=target?zkWeaponAimPoint(target):origin.clone().addScaledVector(forward,profile.range),registerHit=()=>{this.rifleBurstHits=Number(this.rifleBurstHits??0)+1,this.rifleBurstDamage=Number(this.rifleBurstDamage??0)+profile.damage};style.effect==="laser"?(this.fireVisibleWeaponBeam(origin,endpoint,style.color,.18),this.damageWeaponTarget(target,profile.damage,style.color,"singularity")&&(registerHit(),this.chargeSpecial(3))):this.launchTrackedRifleRound(origin,target,endpoint,styled,registerHit),this.persistWeaponState(),this.updateWeaponHud()
 };
 zR.prototype.startRifleBurst=function(){
   const now=performance.now(),ammo=this.weaponState?.ammo?.singularity;if(!ammo||Number(this.rifleBurstActiveUntil??0)>now)return;if(Number(this.rifleCooldownUntil??0)>now){this.ui.showToast("SINGULARITY CYCLING",`${((this.rifleCooldownUntil-now)/1000).toFixed(1)} seconds remain before the next burst.`,"warning");return}if(ammo.mag<10){this.ui.showToast("FULL BURST REQUIRES 10 ROUNDS",`${ammo.mag} crystal slugs remain in the magazine. Reloading now.`,"warning"),this.reloadWeapon();return}
-  const interval=120,total=10,duration=(total-1)*interval;this.rifleBurstRound=0,this.rifleBurstHits=0,this.rifleBurstDamage=0,this.rifleBurstActiveUntil=now+duration+160,this.rifleCooldownUntil=now+duration+3000,this.player.playCombatAnimation?.("carryHeavyWeapon",{timeScale:1.18}),this.ui.showToast("SINGULARITY BURST",`Ten-round firing cycle committed. ${ammo.mag} rounds loaded before discharge.`,"success");
+  const interval=120,total=10,duration=(total-1)*interval;this.rifleBurstRound=0,this.rifleBurstHits=0,this.rifleBurstDamage=0,this.rifleBurstActiveUntil=now+duration+160,this.rifleCooldownUntil=now+duration+3000,this.player.clearControls(),this.player.setMoveTarget(null),this.player.hqModels?.holdPose?.("carryHeavyWeapon",{normalizedTime:.18,duration:(duration+180)/1000}),this.ui.showToast("SINGULARITY BURST",`Ten-round firing cycle committed. ${ammo.mag} rounds loaded before discharge.`,"success");
   for(let index=0;index<total;index+=1){const timer=window.setTimeout(()=>this.fireRifleBurstRound(index,total),index*interval);this.weaponBurstTimers.push(timer)}const summary=window.setTimeout(()=>{if(this.disposed)return;const hits=Number(this.rifleBurstHits??0),damage=Number(this.rifleBurstDamage??0);this.ui.showToast("SINGULARITY BURST COMPLETE",hits?`${hits}/10 rounds hit for ${damage} total damage. Three-second cycling cooldown active.`:"No hostile was locked inside the rifle's 42-meter range. Ammunition was still consumed.",hits?"success":"warning"),this.persistWeaponState(),this.updateWeaponHud()},duration+850);this.weaponBurstTimers.push(summary)
 };
 zR.prototype.fireMinigunBurstRound=function(index,total){
   if(this.disposed||this.paused||this.mode!=="explore"||this.deathStateUntil)return;const profile=zkWeaponProfiles.thunderclaw,ammo=this.weaponState?.ammo?.thunderclaw;if(!ammo||ammo.mag<=0)return;ammo.mag-=1,this.minigunBurstRound=index+1;
-  const origin=this.player.group.position.clone().add(new w(0,2.1,0)),target=this.findHostileWeaponTarget(profile.range);this.autoAimAtWeaponTarget(target,profile.color);const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.player.group.rotation.y),endpoint=target?target.position.clone().add(new w(0,1.35,0)):origin.clone().addScaledVector(forward,profile.range);this.fireVisibleWeaponBeam(origin,endpoint,profile.color,.13);if(this.damageWeaponTarget(target,profile.damage,profile.color))this.minigunBurstHits=Number(this.minigunBurstHits??0)+1,this.minigunBurstDamage=Number(this.minigunBurstDamage??0)+profile.damage,this.chargeSpecial(2);this.persistWeaponState(),this.updateWeaponHud()
+  const style=zkArmoryStyle(this,"thunderclaw"),styled={...profile,color:style.color,weaponId:"thunderclaw",projectileKind:"ballistic",projectileScale:1.1,specialCharge:2},origin=this.player.group.position.clone().add(new w(0,2.1,0)),target=this.findHostileWeaponTarget(profile.range);this.autoAimAtWeaponTarget(target,style.color);const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.player.group.rotation.y),endpoint=target?zkWeaponAimPoint(target):origin.clone().addScaledVector(forward,profile.range),registerHit=()=>{this.minigunBurstHits=Number(this.minigunBurstHits??0)+1,this.minigunBurstDamage=Number(this.minigunBurstDamage??0)+profile.damage};style.effect==="ballistic"?this.launchTrackedRifleRound(origin,target,endpoint,styled,registerHit):(this.fireVisibleWeaponBeam(origin,endpoint,style.color,style.effect==="laser"?.18:.24),this.damageWeaponTarget(target,profile.damage,style.color,"thunderclaw")&&(registerHit(),this.chargeSpecial(2))),this.persistWeaponState(),this.updateWeaponHud()
 };
 zR.prototype.startMinigunBurst=function(){
   const now=performance.now(),ammo=this.weaponState?.ammo?.thunderclaw;if(!ammo||Number(this.minigunBurstActiveUntil??0)>now)return;if(Number(this.minigunCooldownUntil??0)>now){this.ui.showToast("THUNDERCLAW COOLING",`${((this.minigunCooldownUntil-now)/1000).toFixed(1)} seconds remain in the heavy-barrel cooldown.`,"warning");return}if(ammo.mag<=0){this.reloadWeapon();return}
@@ -1739,16 +1858,17 @@ zR.prototype.startMinigunBurst=function(){
 };
 const zkClassWeaponAttack=zR.prototype.attack;
 zR.prototype.attack=function(options={}){
-  if(this.user.officerClass!=="ensign"||!this.weaponState)return zkClassWeaponAttack.call(this,options);
+  if(!this.weaponState)return zkClassWeaponAttack.call(this,options);
   if(!this.player||this.mode!=="explore"||this.paused||this.deathStateUntil)return;const id=this.weaponState.equipped,profile=zkWeaponProfiles[id],ammo=this.weaponState.ammo[id],now=performance.now(),rocket=id==="thunderclaw"&&this.weaponState.thunderMode==="rocket",cooldown=rocket?1550:profile.cooldown;
   if(id==="singularity"){this.startRifleBurst();return}if(id==="thunderclaw"&&!rocket){this.startMinigunBurst();return}
   if(id==="voidsting"&&ammo.mag<=0){if(now<Number(this.pistolRechargeUntil??0))return;ammo.mag=9,this.pistolRechargeUntil=0}if(!options.ignoreCooldown&&now-this.lastShotAt<cooldown)return;if(this.weaponReloadUntil>now)return;
   if(rocket?ammo.rockets<=0:id!=="voidsting"&&ammo.mag<=0){this.reloadWeapon();return}
   this.lastShotAt=now;if(rocket)ammo.rockets-=1;else ammo.mag-=1;if(id==="voidsting"&&ammo.mag<=0)this.pistolRechargeUntil=now+Number(profile.recharge??5000),this.ui.showToast("VOIDSTING CELL DEPLETED","Nine plasma shots discharged. Automatic five-second cooling cycle started.","warning");
-  if(id!=="voidsting")this.player.playCombatAnimation?.("carryHeavyWeapon",{timeScale:id==="singularity"?1.15:1});
-  const origin=this.player.group.position.clone().add(new w(0,2.1,0)),target=this.findHostileWeaponTarget(profile.range);this.autoAimAtWeaponTarget(target,profile.color);const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.player.group.rotation.y),endpoint=target?target.position.clone().add(new w(0,1.35,0)):origin.clone().addScaledVector(forward,profile.range);
-  if(rocket)this.launchThunderclawRocket(origin,endpoint,target,profile.color);
-  else{this.fireVisibleWeaponBeam(origin,endpoint,profile.color,id==="voidsting"?.16:.13);target&&this.damageWeaponTarget(target,profile.damage,profile.color);this.chargeSpecial(id==="voidsting"?10:4)}
+  if(rocket)this.player.playCombatAnimation?.("carryHeavyWeapon",{timeScale:1});
+  const style=zkArmoryStyle(this,id),origin=this.player.group.position.clone().add(new w(0,2.1,0)),target=this.findHostileWeaponTarget(profile.range);this.autoAimAtWeaponTarget(target,style.color);const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.player.group.rotation.y),endpoint=target?zkWeaponAimPoint(target):origin.clone().addScaledVector(forward,profile.range);
+  if(rocket)this.launchThunderclawRocket(origin,endpoint,target,style.color);
+  else if(style.effect==="laser"){this.fireVisibleWeaponBeam(origin,endpoint,style.color,id==="voidsting"?.18:.2);target&&this.damageWeaponTarget(target,profile.damage,style.color,id);this.chargeSpecial(id==="voidsting"?10:4)}
+  else this.launchTrackedRifleRound(origin,target,endpoint,{...profile,color:style.color,weaponId:id,projectileKind:style.effect==="missile"?"missile":"ballistic",projectileScale:style.effect==="missile"?.72:1.2,specialCharge:id==="voidsting"?10:4});
   this.persistWeaponState();this.updateWeaponHud();options.ignoreCooldown||this.updateHud(!0)
 };
 const zkWeaponInitialize=zR.prototype.initialize;
@@ -1802,9 +1922,9 @@ zR.prototype.restore=function(snapshot){
 };
 
 const zkAmmoCacheRespawnMs=60*60*1000;
-PR.prototype.addAmmoDrops=function(perBiome=5){
+PR.prototype.addAmmoDrops=function(perBiome=6){
   if(this.ammoDropsAdded)return;this.ammoDropsAdded=!0;const random=new pn(this.seed+7331),profiles=[{kind:"ammo-rifle",label:"RIFLE SLUGS",color:12535039},{kind:"ammo-minigun",label:"KINETIC BELT",color:16755780},{kind:"ammo-rockets",label:"ROCKETS",color:16744576}],crateGeometry=new le(1.15,.72,.88),bandGeometry=new le(1.22,.14,.94),ringGeometry=new tt(.82,.055,8,28),markerGeometry=new qs(.24,0),darkMaterial=new ie({color:1056555,roughness:.55,metalness:.72});let placed=0;
-  for(const area of zkAreasOfOperation){const minX=Math.max(-77,Number(area.center.x)-15),maxX=Math.min(77,Number(area.center.x)+15);for(let slot=0;slot<perBiome;slot+=1){let attempts=0;while(attempts<180){attempts+=1;const x=random.range(minX,maxX),z=random.range(-77,77),y=this.heightAt(x,z),occupied=[...this.nearby(x,z,2.4)].some(node=>node.visible&&(node.userData.harvestableTree||node.userData.rockId||String(node.userData.powerUpKind??"").startsWith("ammo-")));if(this.isWaterAt(x,z,.5)||y>17||Math.hypot(x,z)<14||this.isObstacleAt(x,z,1.35)||occupied)continue;const profile=profiles[placed%profiles.length],group=new Ge,material=new ie({color:profile.color,emissive:profile.color,emissiveIntensity:1.65,roughness:.3,metalness:.65}),crate=new R(crateGeometry,darkMaterial),band=new R(bandGeometry,material),ring=new R(ringGeometry,new Je({color:profile.color,transparent:!0,opacity:.82})),marker=new R(markerGeometry,material);ring.rotation.x=Math.PI/2,ring.position.y=.55,marker.position.y=1.35,group.add(crate,band,ring,marker),group.position.set(x,y+.62,z),group.rotation.y=random.range(0,Math.PI*2),group.userData.powerUpId=`ammo-drop-${area.id}-${slot}`,group.userData.powerUpKind=profile.kind,group.userData.ammoLabel=profile.label,group.userData.ammoBiome=area.id,group.userData.baseY=group.position.y,group.userData.collisionRadius=.75,this.powerUpNodes.push(group),this.group.add(group),this.spatialIndex.insert(group,x,z,.8),placed+=1;break}}
+  for(const area of zkAreasOfOperation){const slotsForArea=perBiome+(area.id==="wetlands"?1:0);const minX=Math.max(-77,Number(area.center.x)-15),maxX=Math.min(77,Number(area.center.x)+15);for(let slot=0;slot<slotsForArea;slot+=1){let attempts=0;while(attempts<180){attempts+=1;const x=random.range(minX,maxX),z=random.range(-77,77),y=this.heightAt(x,z),occupied=[...this.nearby(x,z,2.4)].some(node=>node.visible&&(node.userData.harvestableTree||node.userData.rockId||String(node.userData.powerUpKind??"").startsWith("ammo-")));if(this.isWaterAt(x,z,.5)||y>17||Math.hypot(x,z)<14||this.isObstacleAt(x,z,1.35)||occupied)continue;const profile=profiles[placed%profiles.length],group=new Ge,material=new ie({color:profile.color,emissive:profile.color,emissiveIntensity:1.65,roughness:.3,metalness:.65}),crate=new R(crateGeometry,darkMaterial),band=new R(bandGeometry,material),ring=new R(ringGeometry,new Je({color:profile.color,transparent:!0,opacity:.82})),marker=new R(markerGeometry,material);ring.rotation.x=Math.PI/2,ring.position.y=.55,marker.position.y=1.35,group.add(crate,band,ring,marker),group.position.set(x,y+.62,z),group.rotation.y=random.range(0,Math.PI*2),group.userData.powerUpId=`ammo-drop-${area.id}-${slot}`,group.userData.powerUpKind=profile.kind,group.userData.ammoLabel=profile.label,group.userData.ammoBiome=area.id,group.userData.baseY=group.position.y,group.userData.collisionRadius=.75,this.powerUpNodes.push(group),this.group.add(group),this.spatialIndex.insert(group,x,z,.8),placed+=1;break}}
   }this.ammoDropCount=placed,console.info(`ZekNova placed ${placed} personal ammunition caches across ${zkAreasOfOperation.length} biomes · 1 hour respawn.`)
 };
 PR.prototype.refreshAmmoDrops=function(collectedAt={},now=Date.now()){
@@ -1828,7 +1948,7 @@ zR.prototype.refreshPersonalAmmoCaches=function(now=Date.now(),notify=false){if(
 
 const zkSustainableWorldInitialize=zR.prototype.initialize;
 zR.prototype.initialize=async function(){
-  const result=await zkSustainableWorldInitialize.call(this);this.buildings.utilityTerrain=this.terrain;for(const record of this.buildings.records)if(record.type==="water"){record.y=this.terrain.heightAt(Number(record.x),Number(record.z));const model=zkBuildingModel(this.buildings,record);model&&(model.position.y=record.y)}for(const id of [...this.collectedPowerUpIds])String(id).startsWith("ammo-drop-")&&this.collectedPowerUpIds.delete(id);this.terrain.addSupplementalMines(36),this.terrain.addAmmoDrops(5),this.terrain.applyWorldProgress(this.harvestedTreeIds,this.collectedPowerUpIds,this.minedRockIds),this.refreshPersonalAmmoCaches(Date.now(),!1),this.regrowTrees(Date.now(),!1),this.treeRegrowthTimer=window.setInterval(()=>{if(this.regrowTrees(Date.now(),!0))this.save()},60e3),this.ammoCacheRespawnTimer=window.setInterval(()=>this.refreshPersonalAmmoCaches(Date.now(),!0),60e3),this.buildings.rebuildUtilityLinks?.();return result
+  const result=await zkSustainableWorldInitialize.call(this);this.buildings.utilityTerrain=this.terrain;for(const record of this.buildings.records)if(record.type==="water"){record.y=this.terrain.heightAt(Number(record.x),Number(record.z));const model=zkBuildingModel(this.buildings,record);model&&(model.position.y=record.y)}for(const id of [...this.collectedPowerUpIds])String(id).startsWith("ammo-drop-")&&this.collectedPowerUpIds.delete(id);this.terrain.addSupplementalMines(36),this.terrain.addAmmoDrops(6),this.terrain.applyWorldProgress(this.harvestedTreeIds,this.collectedPowerUpIds,this.minedRockIds),this.refreshPersonalAmmoCaches(Date.now(),!1),this.regrowTrees(Date.now(),!1),this.treeRegrowthTimer=window.setInterval(()=>{if(this.regrowTrees(Date.now(),!0))this.save()},60e3),this.ammoCacheRespawnTimer=window.setInterval(()=>this.refreshPersonalAmmoCaches(Date.now(),!0),60e3),this.buildings.rebuildUtilityLinks?.();return result
 };
 const zkSustainableWorldDispose=zR.prototype.dispose;
 zR.prototype.dispose=function(){window.clearInterval(this.treeRegrowthTimer);window.clearInterval(this.ammoCacheRespawnTimer);return zkSustainableWorldDispose.call(this)};
@@ -1847,6 +1967,8 @@ zR.prototype.updateEnemies=function(delta){if(this.reconciliationNonlethal)for(c
    mission graph. These structures persist, take damage, and synchronize like
    other buildings, but their completion produces a large relations benefit. */
 function zkAidProject(type){return zkZeknovanAidDefinitions.find(project=>project.type===type)??null}
+function zkAidCooldownMs(project){const tension=Math.abs(Number(project?.tension??0)),minutes=He(3+Math.round((tension-10)*.7),3,10);return minutes*60*1e3}
+function zkAidCooldownLabel(milliseconds){const seconds=Math.max(0,Math.ceil(Number(milliseconds)/1e3)),minutes=Math.floor(seconds/60),remainder=seconds%60;return minutes?`${minutes}m ${String(remainder).padStart(2,"0")}s`:`${remainder}s`}
 function zkAidMaterial(color,preview,{glow=false,dark=false}={}){return new ie({color:preview?6878401:color,emissive:glow?(preview?6878401:color):0,emissiveIntensity:glow?(preview?.2:2.4):0,roughness:dark?.58:.36,metalness:dark?.24:.42,transparent:preview,opacity:preview?.52:1})}
 function zkCreateAidModel(type,preview=false){
   const group=new Ge,shell=zkAidMaterial(2915234,preview),accent=zkAidMaterial(6945648,preview,{glow:!0}),dark=zkAidMaterial(1193774,preview,{dark:!0}),violet=zkAidMaterial(11761663,preview,{glow:!0}),base=new R(new ve(2.3,2.7,.72,12),dark),halo=new R(new tt(2.2,.09,8,36),accent);base.position.y=.36,halo.rotation.x=Math.PI/2,halo.position.y=.74,group.add(base,halo);
@@ -1877,11 +1999,1879 @@ function zkCreateAidModel(type,preview=false){
 const zkAidCreateModel=LR.prototype.createModel;
 LR.prototype.createModel=function(type,preview){return zkZeknovanAidTypes.has(type)?zkCreateAidModel(type,preview):zkAidCreateModel.call(this,type,preview)};
 const zkAidPlace=LR.prototype.place;
-LR.prototype.place=function(point,resources,terrain){const record=zkAidPlace.call(this,point,resources,terrain),project=record?zkAidProject(record.type):null;if(project){record.beneficiary="zeknovan",record.aidProject=project.type,this.onZeknovanAidPlaced?.(record,project)}return record};
+LR.prototype.place=function(point,resources,terrain){const selectedProject=zkAidProject(this.selectedType);if(selectedProject&&this.canPlaceZeknovanAid?.(selectedProject)===!1)return null;const record=zkAidPlace.call(this,point,resources,terrain),project=record?zkAidProject(record.type):null;if(project){record.beneficiary="zeknovan",record.aidProject=project.type,this.onZeknovanAidPlaced?.(record,project)}return record};
 
 const zkAidBindBuildFilters=wR.prototype.bindGameEvents;
 wR.prototype.bindGameEvents=function(){const result=zkAidBindBuildFilters.call(this),dock=document.getElementById("build-dock"),tabs=[...this.root.querySelectorAll("[data-build-filter]")],buttons=[...this.root.querySelectorAll("[data-build-audience]")],setFilter=filter=>{dock&&(dock.dataset.buildFilter=filter);for(const tab of tabs)tab.classList.toggle("active",tab.dataset.buildFilter===filter);for(const button of buttons)button.classList.toggle("hidden",button.dataset.buildAudience!==filter);const selected=eo.find(item=>item.type===this.selectedBuild);selected&&(selected.audience??"colony")!==filter&&this.setBuildSelection(null)};for(const tab of tabs)tab.addEventListener("click",()=>setFilter(tab.dataset.buildFilter??"colony"));setFilter("colony");return result};
 
-zR.prototype.applyZeknovanAidProject=function(record,project){if(!record||!project||record.aidEffectAppliedAt)return;const before=zkClampDiplomacy(Number(this.diplomacyTension??50)),after=zkClampDiplomacy(before+Number(project.tension)),actual=after-before;record.aidEffectAppliedAt=Date.now(),record.beneficiary="zeknovan",record.aidTensionDelta=actual,record.aidTrustDelta=Number(project.trust),this.diplomacyTension=after,this.simulation.resources.trust=He(Number(this.simulation.resources.trust??0)+Number(project.trust),0,100);const indicator=String(project.indicator??"");indicator in this.simulation.indicators&&(this.simulation.indicators[indicator]=He(Number(this.simulation.indicators[indicator]??0)+Number(project.indicatorDelta??0),0,100)),this.multiplayerRoom?.queueRelationEvent?.({tensionDelta:actual,trustDelta:Number(project.trust),reason:`ZekNovan aid: ${project.label}`}),zkSaveDiplomacyCycle(this),zkSyncZeknovanHostility(this),this.spawnImpactPulse(new w(Number(record.x),Number(record.y)+2,Number(record.z)),6945648),this.ui.showToast(`${project.label} delivered to the ZekNovans`,`${Math.abs(actual)} tension removed · +${project.trust} trust. This aid project does not count as human mission infrastructure.`,"success"),this.updateHud(!0),this.save()};
+zR.prototype.zeknovanAidCooldownRemaining=function(now=Date.now()){return Math.max(0,Number(this.zeknovanAidCooldownUntil??0)-Number(now))};
+zR.prototype.beginZeknovanAidCooldown=function(record,project){const milliseconds=zkAidCooldownMs(project),until=Date.now()+milliseconds;this.zeknovanAidCooldownUntil=Math.max(Number(this.zeknovanAidCooldownUntil??0),until),record&&(record.aidCooldownMs=milliseconds,record.aidCooldownUntil=this.zeknovanAidCooldownUntil);return milliseconds};
+zR.prototype.renderZeknovanAidCooldown=function(){const remaining=this.zeknovanAidCooldownRemaining(),banner=document.getElementById("zeknovan-aid-cooldown"),active=remaining>0;document.documentElement.dataset.zeknovanAidCooldown=String(Math.ceil(remaining/1e3));if(banner){banner.classList.toggle("hidden",!active),banner.innerHTML=active?`<strong>DIPLOMATIC BUILD WINDOW</strong><span>Next ZekNovan project in ${zkAidCooldownLabel(remaining)}</span>`:""}for(const button of document.querySelectorAll('.build-button[data-build-audience="zeknovan"]'))button.classList.toggle("cooldown",active),button.setAttribute("aria-disabled",active?"true":"false");return remaining};
+zR.prototype.canPlaceZeknovanAid=function(project,{announce=!0}={}){const remaining=this.renderZeknovanAidCooldown();if(!project||remaining<=0)return!0;if(announce&&Date.now()-Number(this.lastAidCooldownToastAt??0)>900){this.lastAidCooldownToastAt=Date.now();const windowMinutes=Math.round(zkAidCooldownMs(project)/6e4);this.ui.showToast("ZekNovan aid crews unavailable",`${zkAidCooldownLabel(remaining)} until another diplomatic infrastructure project can begin. ${project.label} carries a ${windowMinutes}-minute stabilization window.`,"warning")}return!1};
+const zkApplyAidProject=zR.prototype.applyZeknovanAidProject;
+zR.prototype.applyZeknovanAidProject=function(record,project){if(!record||!project||record.aidEffectAppliedAt)return;this.beginZeknovanAidCooldown(record,project);return zkApplyAidProject.call(this,record,project)};
 const zkAidInitialize=zR.prototype.initialize;
 zR.prototype.initialize=async function(){const result=await zkAidInitialize.call(this);if(this.buildings)this.buildings.onZeknovanAidPlaced=(record,project)=>this.applyZeknovanAidProject(record,project);const local=location.hostname==="127.0.0.1"||location.hostname==="localhost";if(local&&new URLSearchParams(location.search).has("qaAid")){for(const enemy of this.enemies)this.scene.remove(enemy);this.enemies.length=0,this.enemyTimer=0,this.enemySpawnDelay=3600,this.diplomacyOutcome="negotiate",this.diplomacyTension=60,Object.assign(this.simulation.resources,{minerals:999,credits:999,iron:999,biomass:999,energy:999,data:999,trust:40}),this.updateHud(!0),console.info("ZekNova ZekNovan-aid QA profile ready with nine mineral-and-credit projects at 60 tension and 40 trust.")}return result};
+const zkAidCooldownInitialize=zR.prototype.initialize;
+zR.prototype.initialize=async function(){const result=await zkAidCooldownInitialize.call(this),restored=Math.max(0,...(this.buildings?.records??[]).filter(record=>zkAidProject(record.type)).map(record=>Number(record.aidCooldownUntil??0)));this.zeknovanAidCooldownUntil=Math.max(Number(this.zeknovanAidCooldownUntil??0),restored),this.buildings&&(this.buildings.canPlaceZeknovanAid=project=>this.canPlaceZeknovanAid(project));const dock=document.getElementById("build-dock"),heading=dock?.querySelector(".dock-heading");heading&&!document.getElementById("zeknovan-aid-cooldown")&&heading.insertAdjacentHTML("afterend",'<div id="zeknovan-aid-cooldown" class="zeknovan-aid-cooldown hidden" aria-live="polite"></div>');const canvas=this.renderer?.domElement,basePointerDown=this.onPointerDown;if(canvas&&basePointerDown){canvas.removeEventListener("pointerdown",basePointerDown),this.onPointerDown=event=>{const project=zkAidProject(this.buildings?.selectedType);if(this.mode==="command"&&project&&!this.canPlaceZeknovanAid(project))return;return basePointerDown(event)},canvas.addEventListener("pointerdown",this.onPointerDown)}const local=location.hostname==="127.0.0.1"||location.hostname==="localhost",params=new URLSearchParams(location.search);local&&params.has("qaAidCooldown")&&(this.zeknovanAidCooldownUntil=Date.now()+3*60*1e3),this.renderZeknovanAidCooldown(),this.zeknovanAidCooldownTimer=window.setInterval(()=>this.renderZeknovanAidCooldown(),1e3);return result};
+/* Cohesive performance layer: diffed HUD painting, indexed world collision,
+   incremental utility links, fixed-rate AI, and adaptive graphics quality. */
+function zkHudText(id,value){const node=document.getElementById(id),text=String(value);if(node&&node.textContent!==text)node.textContent=text}
+function zkHudBar(id,value){const node=document.getElementById(id),width=`${Math.max(0,Math.min(100,Number(value)||0))}%`;if(node instanceof HTMLElement&&node.style.width!==width)node.style.width=width}
+function zkHudHtml(node,signature,markup){if(!node||node.dataset.zkSignature===signature)return;node.dataset.zkSignature=signature,node.innerHTML=markup}
+function zkRoundedSignature(object){return Object.entries(object??{}).map(([key,value])=>`${key}:${Math.round(Number(value)||0)}`).join("|")}
+
+wR.prototype.updateHud=function(state){
+  this.lastState=state;
+  const cache=this.zkHudCache??(this.zkHudCache={});
+  const context=state.missionContext??{buildings:state.buildingCounts,stats:{}},campaign=zkCampaignState(context),mission=campaign.current,tier=campaign.tier;
+  zkHudText("phase-label",`TIER ${SR(tier.number)}`),zkHudText("phase-title",tier.title),zkHudText("score-value",Math.round(state.score)),zkHudText("health-value",Math.round(state.health)),zkHudText("stamina-value",Math.round(state.stamina)),zkHudText("xp-value",Math.round(state.xp)),zkHudBar("health-bar",state.health),zkHudBar("stamina-bar",state.stamina),zkHudBar("xp-bar",state.xp%100),zkHudText("renderer-label",state.rendererLabel);
+  zkHudText("objective-title",mission?.title??"Frontier stronghold operational"),zkHudText("objective-copy",mission?`${mission.objective} ${zkMissionProgress(mission,context)}.`:"All installation tiers are complete. Continue defending, expanding, and improving readiness."),zkHudText("mission-progress",mission?`MISSION ${campaign.currentIndex+1} / ${campaign.total}`:`ALL ${campaign.total} MISSIONS COMPLETE`);
+  const diplomacyLabels={share:"WATERSHED STEWARDSHIP · LOW PATROL RISK",negotiate:"NEGOTIATED SAFE ZONE · PROTECTED",force:"ALL-OUT WAR · CONSTANT ATTACKS"};
+  zkHudText("diplomacy-status",diplomacyLabels[state.diplomacyOutcome]??"FIRST CONTACT PENDING");const diplomacyStatus=document.getElementById("diplomacy-status");if(diplomacyStatus&&diplomacyStatus.dataset.outcome!==(state.diplomacyOutcome??"pending"))diplomacyStatus.dataset.outcome=state.diplomacyOutcome??"pending";
+  const missionSignature=`${tier.number}|${mission?.id??"complete"}|${tier.missions.map(item=>`${item.id}:${zkMissionComplete(item,context)?1:0}`).join(",")}`;
+  zkHudHtml(document.getElementById("mission-ladder"),missionSignature,tier.missions.map(item=>{const complete=zkMissionComplete(item,context),active=item.id===mission?.id,status=complete?"complete":active?"active":"locked",icon=complete?"✓":active?"◆":"◇";return`<li class="${status}"><span>${icon}</span><b>${Li(item.title)}</b></li>`}).join(""));
+  const objectiveSignature=mission?`${mission.id}|${(mission.subObjectives??[]).map(item=>`${item.key}:${zkObjectiveValue(item,context)}:${zkObjectiveComplete(item,context)?1:0}`).join(",")}`:"complete";
+  zkHudHtml(document.getElementById("sub-objective-list"),objectiveSignature,mission?[...(mission.subObjectives??[])].map((item,index)=>({item,index,complete:zkObjectiveComplete(item,context)})).sort((a,b)=>Number(a.complete)-Number(b.complete)||a.index-b.index).map(({item,complete})=>{const value=Math.min(zkObjectiveValue(item,context),item.target);return`<li class="${complete?"complete":""}"><span>${complete?"✓":"○"}</span><b>${Li(item.label)}</b><small>${value}/${item.target}</small></li>`}).join(""):"<li class=\"complete\"><span>✓</span><b>All mission objectives complete</b></li>");
+  const resourceSignature=zkRoundedSignature(state.resources),resourceGrid=document.getElementById("resource-grid");
+  if(cache.resources!==resourceSignature){cache.resources=resourceSignature;const definitions=[["energy","Energy","⚡"],["water","Water","◉"],["minerals","Minerals","◆"],["iron","Iron Ore","⬢"],["biomass","Biomass","❋"],["timber","Timber","▥"],["data","Data","◈"],["credits","Colony Credits","◎"],["trust","Local Trust","◇"]];resourceGrid&&(resourceGrid.innerHTML=definitions.map(([key,label,icon])=>`<div class="resource-item"><b>${icon}</b><span>${label}</span><strong>${Math.round(state.resources[key])}</strong></div>`).join(""))}
+  const credits=Math.max(0,Math.floor(Number(state.resources.credits)||0));zkHudText("message-credit-balance",`${credits} CREDIT${credits===1?"":"S"} AVAILABLE`);
+  const indicatorSignature=zkRoundedSignature(state.indicators),indicatorGrid=document.getElementById("indicator-grid");if(cache.indicators!==indicatorSignature){cache.indicators=indicatorSignature;indicatorGrid&&(indicatorGrid.innerHTML=Object.entries(state.indicators).map(([key,value])=>`<div class="indicator"><span>${MR(key)}</span><div><i style="width:${Math.max(0,Math.min(100,value))}%"></i></div><b>${Math.round(value)}</b></div>`).join(""))}
+  const leaderboardSignature=`${state.user.teamName}|${Math.round(state.score)}`,leaderboard=document.getElementById("leaderboard");if(cache.leaderboard!==leaderboardSignature){cache.leaderboard=leaderboardSignature;leaderboard&&(leaderboard.innerHTML=`<li class="mine"><span>1</span><strong>${Li(state.user.teamName)}</strong><b>${Math.round(state.score)}</b></li>`)}
+  if(cache.mode!==state.mode){cache.mode=state.mode;const button=document.getElementById("mode-button"),label=document.getElementById("mode-label"),icon=document.getElementById("mode-icon"),dock=document.getElementById("build-dock"),crosshair=document.getElementById("crosshair");if(state.mode==="command")button?.classList.add("active"),label&&(label.textContent="RETURN TO EXPLORATION"),icon&&(icon.textContent="⌖"),dock?.classList.remove("hidden"),crosshair?.classList.add("hidden");else button?.classList.remove("active"),label&&(label.textContent="ENTER COMMAND MODE"),icon&&(icon.textContent="◎"),dock?.classList.add("hidden"),crosshair?.classList.remove("hidden")}
+  const buildSignature=`${this.selectedBuild??""}|${state.user.officerClass}|${resourceSignature}`;
+  if(cache.build!==buildSignature){cache.build=buildSignature;this.root.querySelectorAll("[data-build]").forEach(node=>{const type=node.dataset.build;node.classList.toggle("selected",type===this.selectedBuild);const definition=eo.find(item=>item.type===type),cost=definition?Object.fromEntries(Object.entries(definition.cost).map(([key,value])=>[key,key==="minerals"&&state.user.officerClass==="lieutenant"?Math.ceil(Number(value)*.85):Number(value)])):{},missing=Object.entries(cost).map(([key,value])=>[key,Math.max(0,Number(value)-Number(state.resources[key]??0))]).filter(([,value])=>value>0),affordable=missing.length===0;node.classList.toggle("unaffordable",!affordable);const small=node.querySelector("small");small&&(small.textContent=affordable?pm(cost):`NEED ${missing.map(([key,value])=>`${key.slice(0,1).toUpperCase()}+${Math.ceil(value)}`).join(" · ")}`)})}
+};
+
+PR.prototype.rebuildWorldObstacleIndexes=function(force=false){
+  const buildingRecords=this.worldBuildings?.records??[],environment=this.worldEnvironmentObstacles??[];
+  if(force||this.zkBuildingIndexRecords!==buildingRecords||this.zkBuildingIndexCount!==buildingRecords.length){this.zkBuildingObstacleIndex??=new zkSpatialHash(8),this.zkBuildingObstacleIndex.clear();for(const record of buildingRecords)this.zkBuildingObstacleIndex.insert(record,Number(record.x),Number(record.z),zkBuildingCollisionRadius(record.type));this.zkBuildingIndexRecords=buildingRecords,this.zkBuildingIndexCount=buildingRecords.length}
+  if(force||this.zkEnvironmentIndexRecords!==environment||this.zkEnvironmentIndexCount!==environment.length){this.zkEnvironmentObstacleIndex??=new zkSpatialHash(8),this.zkEnvironmentObstacleIndex.clear();for(const obstacle of environment)this.zkEnvironmentObstacleIndex.insert(obstacle,Number(obstacle.x),Number(obstacle.z),Number(obstacle.radius??.7));this.zkEnvironmentIndexRecords=environment,this.zkEnvironmentIndexCount=environment.length}
+};
+PR.prototype.indexBuildingRecord=function(record){if(!record)return;this.zkBuildingObstacleIndex??=new zkSpatialHash(8),this.zkBuildingObstacleIndex.insert(record,Number(record.x),Number(record.z),zkBuildingCollisionRadius(record.type)),this.zkBuildingIndexRecords=this.worldBuildings?.records??null,this.zkBuildingIndexCount=this.worldBuildings?.records?.length??0};
+PR.prototype.isObstacleAt=function(x,z,radius=.65){
+  if(this.zkWasmRocksReady&&zkWasmCore?zkWasmCore.rock_obstacle_at(x,z,radius):zkBaseTerrainObstacle.call(this,x,z,radius))return!0;
+  for(const object of this.nearby(x,z,radius+3)){if(!object.visible||object.userData.falling||!object.userData.harvestableTree)continue;const proceduralRadius=.18+Number(object.userData.widthScale??1)*Number(object.userData.treeSize==="large"?.24:object.userData.treeSize==="medium"?.18:.12),trunkRadius=Number(object.userData.highDetailCollisionRadius??proceduralRadius);if(Math.hypot(object.position.x-x,object.position.z-z)<trunkRadius+radius)return!0}
+  this.rebuildWorldObstacleIndexes();
+  const buildings=this.zkBuildingObstacleIndex?.query(x,z,radius+3)??[];for(const record of buildings){if(record===this.collisionIgnoreRecord||record.type==="bridge"||record.type==="boat"||Number(record.health??1000)<=0)continue;if(Math.hypot(Number(record.x)-x,Number(record.z)-z)<zkBuildingCollisionRadius(record.type)+radius)return!0}
+  const obstacles=this.zkEnvironmentObstacleIndex?.query(x,z,radius+3)??[];for(const obstacle of obstacles)if(Math.hypot(Number(obstacle.x)-x,Number(obstacle.z)-z)<Number(obstacle.radius??.7)+radius)return!0;return!1
+};
+
+function zkEnsureUtilityState(manager){
+  manager.utilityLinks||(manager.utilityLinks=new Ge,manager.utilityLinks.name="directUtilityLinks",manager.group.add(manager.utilityLinks));
+  manager.utilitySpatial??=new zkSpatialHash(18),manager.utilityLinkMeshes??=new Map,manager.utilityLinkMaterials??=new Map,manager.utilityGraph??=new Map,manager.utilityOperational??=new Map;
+  if(manager.zkUtilityIndexedCount!==manager.records.length){manager.utilitySpatial.clear();for(const record of manager.records)manager.utilitySpatial.insert(record,Number(record.x),Number(record.z));manager.zkUtilityIndexedCount=manager.records.length}
+}
+function zkUtilityMaterial(manager,type){let material=manager.utilityLinkMaterials.get(type);if(!material){material=new ie({color:zkUtilityNetwork.colors[type],emissive:zkUtilityNetwork.colors[type],emissiveIntensity:1.35,roughness:.42,metalness:.38}),manager.utilityLinkMaterials.set(type,material)}return material}
+function zkIncrementalLink(manager,source,target,type){const key=`${source.id}>${target.id}:${type}`;if(manager.utilityLinkMeshes.has(key))return;const start=new w(Number(source.x),Number(source.y)+.3,Number(source.z)),end=new w(Number(target.x),Number(target.y)+.3,Number(target.z)),direction=end.clone().sub(start),length=direction.length();if(length<.25)return;const mesh=new R(new ve(type==="water"?.11:.075,type==="water"?.11:.075,length,8),zkUtilityMaterial(manager,type));mesh.position.copy(start).add(end).multiplyScalar(.5),mesh.quaternion.setFromUnitVectors(new w(0,1,0),direction.normalize()),mesh.userData.utilityType=type,mesh.userData.sourceId=source.id,mesh.userData.targetId=target.id,mesh.castShadow=!1,mesh.receiveShadow=!0,manager.utilityLinks.add(mesh),manager.utilityLinkMeshes.set(key,mesh)}
+function zkRemoveUtilityLink(manager,key){const mesh=manager.utilityLinkMeshes.get(key);if(!mesh)return;manager.utilityLinks.remove(mesh),mesh.geometry?.dispose?.(),manager.utilityLinkMeshes.delete(key)}
+LR.prototype.refreshUtilityRecords=function(changedRecords=null){
+  zkEnsureUtilityState(this);let dirty;
+  if(!changedRecords?.length){dirty=new Set(this.records);for(const key of [...this.utilityLinkMeshes.keys()])zkRemoveUtilityLink(this,key);this.utilityGraph=new Map(this.records.map(record=>[record.id,new Set])),this.utilityOperational=new Map}
+  else{dirty=new Set(changedRecords.filter(Boolean));for(let depth=0;depth<4;depth+=1){const frontier=[...dirty];for(const record of frontier)for(const candidate of this.utilitySpatial.query(Number(record.x),Number(record.z),30))dirty.add(candidate)}const ids=new Set([...dirty].map(record=>record.id));for(const[key,mesh]of [...this.utilityLinkMeshes])if(ids.has(mesh.userData.sourceId)||ids.has(mesh.userData.targetId))zkRemoveUtilityLink(this,key);for(const links of this.utilityGraph.values())for(const id of ids)links.delete(id);for(const record of dirty)this.utilityGraph.set(record.id,new Set)}
+  for(const record of dirty){const status=zkUtilityStatus(this,record.type,record.x,record.z,record.id);this.utilityOperational.set(record.id,status.ok);if(!status.ok)continue;for(const connection of status.connections){if(!connection.source)continue;this.utilityGraph.get(record.id)?.add(connection.source.id);this.utilityGraph.get(connection.source.id)?.add(record.id);zkIncrementalLink(this,connection.source,record,connection.utility)}}
+  this.zkUtilitySignature=this.records.map(record=>`${record.id}:${record.type}:${Number(record.health??1000)>0?1:0}`).join("|");
+};
+LR.prototype.beginUtilityBatch=function(){this.zkUtilityBatchDepth=Number(this.zkUtilityBatchDepth??0)+1};
+LR.prototype.endUtilityBatch=function(){this.zkUtilityBatchDepth=Math.max(0,Number(this.zkUtilityBatchDepth??0)-1);if(!this.zkUtilityBatchDepth&&this.zkUtilityBatchDirty)this.zkUtilityBatchDirty=!1,this.refreshUtilityRecords()};
+LR.prototype.rebuildUtilityLinks=function(changedRecord=null){if(this.zkUtilityBatchDepth){this.zkUtilityBatchDirty=!0;return}const mutation=changedRecord??this.zkUtilityMutation;if(mutation){this.refreshUtilityRecords([mutation]);return}const signature=this.records.map(record=>`${record.id}:${record.type}:${Number(record.health??1000)>0?1:0}`).join("|");if(signature===this.zkUtilitySignature)return;this.refreshUtilityRecords()};
+const zkOptimizedAddRecord=LR.prototype.addRecord;
+LR.prototype.addRecord=function(record){this.zkUtilityMutation=record;try{const result=zkOptimizedAddRecord.call(this,record);this.utilityTerrain?.indexBuildingRecord?.(record);return result}finally{this.zkUtilityMutation=null}};
+const zkOptimizedRestore=zR.prototype.restore;
+zR.prototype.restore=function(snapshot){this.buildings?.beginUtilityBatch?.();try{return zkOptimizedRestore.call(this,snapshot)}finally{this.buildings?.endUtilityBatch?.()}};
+const zkOptimizedDamageBuilding=zkDamageBuilding;
+zkDamageBuilding=function(game,record,amount,attacker="ZekNovan assault"){if(game?.buildings)game.buildings.zkUtilityMutation=record;try{return zkOptimizedDamageBuilding(game,record,amount,attacker)}finally{if(game?.buildings)game.buildings.zkUtilityMutation=null}};
+const zkOptimizedRepairBuilding=zR.prototype.repairBuilding;
+zR.prototype.repairBuilding=function(record){if(this.buildings)this.buildings.zkUtilityMutation=record;try{return zkOptimizedRepairBuilding.call(this,record)}finally{if(this.buildings)this.buildings.zkUtilityMutation=null}};
+
+const zkFullRateEnemyUpdate=zR.prototype.updateEnemies,zkEnemyAiStep=1/15;
+zR.prototype.updateEnemies=function(delta){
+  const dt=Math.min(.05,Math.max(0,Number(delta)||0));this.zkEnemyInterpolation??=new Map;
+  for(const[enemy,state]of [...this.zkEnemyInterpolation]){if(!this.enemies.includes(enemy)){this.zkEnemyInterpolation.delete(enemy);continue}state.elapsed+=dt;const alpha=Math.min(1,state.elapsed/zkEnemyAiStep),smooth=alpha*alpha*(3-2*alpha);enemy.position.lerpVectors(state.start,state.target,smooth);const turn=Math.atan2(Math.sin(state.targetRotation-state.startRotation),Math.cos(state.targetRotation-state.startRotation));enemy.rotation.y=state.startRotation+turn*smooth;if(alpha>=1)this.zkEnemyInterpolation.delete(enemy)}
+  this.zkEnemyAiAccumulator=Number(this.zkEnemyAiAccumulator??0)+dt;if(this.zkEnemyAiAccumulator<zkEnemyAiStep)return;const step=Math.min(.2,this.zkEnemyAiAccumulator);this.zkEnemyAiAccumulator=0;
+  const before=new Map(this.enemies.map(enemy=>[enemy,{position:enemy.position.clone(),rotation:enemy.rotation.y}])),result=zkFullRateEnemyUpdate.call(this,step);
+  for(const enemy of this.enemies){const start=before.get(enemy);if(!start||Number(enemy.userData.health)<=0)continue;const target=enemy.position.clone(),targetRotation=enemy.rotation.y;if(target.distanceToSquared(start.position)<1e-8&&Math.abs(targetRotation-start.rotation)<1e-5)continue;enemy.position.copy(start.position),enemy.rotation.y=start.rotation,this.zkEnemyInterpolation.set(enemy,{start:start.position,target,startRotation:start.rotation,targetRotation,elapsed:0})}return result
+};
+
+const zkQualityOrder=["low","balanced","high"];
+zR.prototype.applyGraphicsQuality=function(tier,reason="auto"){
+  if(!this.renderer)return;const normalized=zkQualityOrder.includes(tier)?tier:"balanced";if(this.graphicsQuality===normalized&&reason!=="initialize")return;this.graphicsQuality=normalized,document.documentElement.dataset.graphicsQuality=normalized;
+  const ratioLimit=normalized==="low"?.8:normalized==="high"?Be.maxPixelRatio:1,ratio=Math.min(Number(devicePixelRatio)||1,ratioLimit);/* Pixel ratio is fixed at renderer construction and is NOT changed per tier. setPixelRatio()+resize() rebuild the swapchain and depth attachments; doing that from the adaptive scaler - which runs inside the render loop - destroys textures that already-submitted WebGPU command buffers still reference, black-screening the game. That is why the crash only appeared without ?quality=: a forced quality disables the scaler entirely. Tiers now only change settings that allocate nothing. */
+  const shadowSize=0;this.renderer.shadowMap.enabled=normalized!=="low";/* Shadow map size is fixed at initialize() and never reallocated. Resizing it here destroyed the depth texture while queued WebGPU command buffers still referenced it, which produced a flood of "Destroyed texture [ShadowDepthTexture] used in a submit" validation errors and a black viewport. Quality tiers now only toggle shadows on/off and change pixel ratio. */
+  this.aoEnvironment?.setQuality?.(normalized),this.rendererLabel=`${zkBackendLabel(this.renderer)} · AUTO ${normalized.toUpperCase()}`,this.updateHud(!0),globalThis.dispatchEvent?.(new CustomEvent("zeknova:quality-change",{detail:{tier:normalized,reason,pixelRatio:ratio}}));console.info(`ZekNova graphics quality: ${normalized} (${reason}, pixel ratio ${ratio.toFixed(2)}).`)
+};
+zR.prototype.startGraphicsQualityMonitor=function(){
+  const forced=new URLSearchParams(location.search).get("quality"),validForced=zkQualityOrder.includes(forced),initial=validForced?forced:zkLowPowerDevice?"low":"balanced";this.applyGraphicsQuality(initial,"initialize");
+  const state=this.zkQualityMonitor={last:performance.now(),windowStart:performance.now(),frames:0,lowWindows:0,highWindows:0,forced:validForced};
+  const sample=now=>{if(this.disposed)return;const elapsed=now-state.windowStart;state.frames+=1;if(elapsed>=2500){const fps=state.frames*1000/elapsed;state.frames=0,state.windowStart=now;if(!state.forced&&!document.hidden){state.lowWindows=fps<42?state.lowWindows+1:0,state.highWindows=fps>57?state.highWindows+1:0;const index=zkQualityOrder.indexOf(this.graphicsQuality);if(state.lowWindows>=2&&index>0)state.lowWindows=0,state.highWindows=0,this.applyGraphicsQuality(zkQualityOrder[index-1],`sustained ${Math.round(fps)} FPS`);else if(state.highWindows>=4&&index<2&&!zkLowPowerDevice)state.lowWindows=0,state.highWindows=0,this.applyGraphicsQuality(zkQualityOrder[index+1],`stable ${Math.round(fps)} FPS`)}}this.zkQualityAnimationFrame=requestAnimationFrame(sample)};this.zkQualityAnimationFrame=requestAnimationFrame(sample)
+};
+const zkAdaptiveInitialize=zR.prototype.initialize;
+zR.prototype.initialize=async function(){const result=await zkAdaptiveInitialize.call(this);this.terrain&&(this.terrain.worldBuildings=this.buildings,this.terrain.rebuildWorldObstacleIndexes?.(!0)),this.startGraphicsQualityMonitor();return result};
+const zkQualityEnvironmentLoad=zR.prototype.loadAOEnvironment;
+zR.prototype.loadAOEnvironment=async function(){const result=await zkQualityEnvironmentLoad.call(this);this.aoEnvironment?.setQuality?.(this.graphicsQuality??"balanced"),this.terrain?.rebuildWorldObstacleIndexes?.(!0);return result};
+const zkAdaptiveDispose=zR.prototype.dispose;
+zR.prototype.dispose=function(){cancelAnimationFrame(this.zkQualityAnimationFrame);for(const material of this.buildings?.utilityLinkMaterials?.values?.()??[])material.dispose?.();return zkAdaptiveDispose.call(this)};
+
+/* Keep the diplomatic-build countdown on top of the final diff-rendered HUD. */
+const zkFinalAidCooldownHud=zR.prototype.updateHud;
+zR.prototype.updateHud=function(force){const result=zkFinalAidCooldownHud.call(this,force);return this.renderZeknovanAidCooldown?.(),result};
+const zkFinalAidCooldownDispose=zR.prototype.dispose;
+zR.prototype.dispose=function(){window.clearInterval(this.zeknovanAidCooldownTimer);return zkFinalAidCooldownDispose.call(this)};
+
+/* Mission-end boss framework: deterministic, pooled, reversible, and shared. */
+function zkBossHash(value){let hash=2166136261;for(const character of String(value))hash=Math.imul(hash^character.charCodeAt(0),16777619);return hash>>>0}
+function zkBossBiomeState(){return{visited:!1,resources:0,stats:{treesChopped:0,rocksMined:0,powerUpsCollected:0,enemiesDefeated:0},buildings:{}}}
+function zkBossRecordBiomeStat(game,x,z,key,amount=1){const id=zkAOAt(Number(x),Number(z)).id,all=game.missionStats.biomeStats??(game.missionStats.biomeStats={}),state=all[id]??(all[id]={});state[key]=Number(state[key]??0)+amount}
+
+class zkBossProjectilePool{
+  constructor(game,limit=250){this.game=game;this.limit=limit;this.group=new Ge;this.group.name="bossProjectilePool";this.geometry=new Se(.26,12,8);this.materials=new Map;this.available=[];this.active=[];this.peak=0;game.scene.add(this.group);for(let index=0;index<40;index+=1)this.available.push(this.create(0x9fe45c))}
+  material(color){let material=this.materials.get(color);if(!material)material=new ie({color,emissive:color,emissiveIntensity:2.2,roughness:.28,metalness:.18}),this.materials.set(color,material);return material}
+  create(color){const mesh=new R(this.geometry,this.material(color));mesh.visible=!1;mesh.castShadow=!1;this.group.add(mesh);return mesh}
+  acquire({position,velocity,damage=8,lifetime=5,radius=.55,patternId="boss_projectile",color=0x9fe45c,scale=1,terrainFollow=!1,heightOffset=.9,homing=0,homingDelay=0,homingUntil=1e9}={}){if(this.active.length>=this.limit)return null;const mesh=this.available.pop()??this.create(color);mesh.material=this.material(color);mesh.position.copy(position);mesh.scale.setScalar(scale);mesh.visible=!0;const projectile={mesh,velocity:velocity.clone(),damage,lifetime,radius,patternId,terrainFollow,heightOffset,homing,homingDelay,homingUntil,age:0,id:`bp-${performance.now().toFixed(2)}-${this.active.length}`};this.active.push(projectile);this.peak=Math.max(this.peak,this.active.length);return projectile}
+  release(projectile){const index=this.active.indexOf(projectile);if(index>=0)this.active.splice(index,1);projectile.mesh.visible=!1;projectile.mesh.scale.setScalar(1);this.available.push(projectile.mesh)}
+  update(delta,manager){const player=this.game.player?.group?.position;if(!player)return;for(let index=this.active.length-1;index>=0;index-=1){const projectile=this.active[index];projectile.age+=delta;
+/* Homing: steer the velocity toward the player without changing its speed, so a
+ * tracking shot stays as fast as a straight one. `homing` is the turn rate in
+ * radians-equivalent per second; homingDelay gives the player a reaction window
+ * before tracking engages, and homingUntil lets a shot go inert near the target
+ * so it cannot orbit the player forever. */
+if(projectile.homing>0&&projectile.age>=projectile.homingDelay&&projectile.age<projectile.homingUntil){
+  const px=player.x-projectile.mesh.position.x,py=player.y+1.2-projectile.mesh.position.y,pz=player.z-projectile.mesh.position.z;
+  const toLen=Math.hypot(px,py,pz);
+  if(toLen>.001){
+    const speed=projectile.velocity.length()||1,turn=Math.min(1,projectile.homing*delta);
+    projectile.velocity.x+=(px/toLen*speed-projectile.velocity.x)*turn;
+    projectile.velocity.y+=(py/toLen*speed-projectile.velocity.y)*turn;
+    projectile.velocity.z+=(pz/toLen*speed-projectile.velocity.z)*turn;
+    if(projectile.velocity.lengthSq()>1e-6)projectile.velocity.setLength(speed);
+  }
+}
+/* Pinball bounce: aerial spore orbs ricochet off arena walls and ground with
+ * damped reflection. `bounces` limits total ricochets; velocity reflects on
+ * boundary/ground contact and homing is disabled after first bounce. */
+if(projectile.bounces>0){
+  const ground=this.game.terrain.heightAt(projectile.mesh.position.x,projectile.mesh.position.z)+Number(projectile.heightOffset??.9)+.2;
+  if(projectile.mesh.position.y<=ground&&projectile.velocity.y<0){
+    projectile.mesh.position.y=ground;
+    projectile.velocity.y=-projectile.velocity.y*0.82;
+    projectile.velocity.x*=0.92;projectile.velocity.z*=0.92;
+    projectile.bounces-=1;projectile.homing=0;
+    if(projectile.bounces<=0) projectile.lifetime=Math.min(projectile.lifetime, projectile.age+1.2);
+  }
+  const dxC=projectile.mesh.position.x-manager.center.x,dzC=projectile.mesh.position.z-manager.center.z,dist=Math.hypot(dxC,dzC);
+  if(dist>manager.radius+14){
+    const nx=dxC/dist,nz=dzC/dist,dot=projectile.velocity.x*nx+projectile.velocity.z*nz;
+    if(dot>0){
+      projectile.velocity.x-=2*dot*nx*0.92;
+      projectile.velocity.z-=2*dot*nz*0.92;
+      projectile.mesh.position.x=manager.center.x+nx*(manager.radius+13.5);
+      projectile.mesh.position.z=manager.center.z+nz*(manager.radius+13.5);
+      projectile.bounces-=1;projectile.homing=0;
+    }
+  }
+  projectile.mesh.position.addScaledVector(projectile.velocity,delta);
+} else {
+projectile.mesh.position.addScaledVector(projectile.velocity,delta);if(projectile.terrainFollow){const ground=this.game.terrain.heightAt(projectile.mesh.position.x,projectile.mesh.position.z)+Number(projectile.heightOffset??.9);projectile.mesh.position.y=Kt.lerp(projectile.mesh.position.y,ground,Math.min(1,delta*18))}}
+projectile.mesh.rotation.x+=delta*3.2;projectile.mesh.rotation.y+=delta*4.1;const dx=projectile.mesh.position.x-player.x,dy=projectile.mesh.position.y-(player.y+1.2),dz=projectile.mesh.position.z-player.z;if(dx*dx+dy*dy+dz*dz<(projectile.radius+.62)**2){manager.damagePlayer(projectile.damage,projectile.patternId,projectile.id);this.release(projectile);continue}if(projectile.bounces>0){
+  if(projectile.age>=projectile.lifetime||projectile.mesh.position.y<-2) this.release(projectile);
+} else {
+if(projectile.age>=projectile.lifetime||Math.hypot(projectile.mesh.position.x-manager.center.x,projectile.mesh.position.z-manager.center.z)>manager.radius+18||projectile.mesh.position.y<-2)this.release(projectile)
+}}}
+  clear(){for(let index=this.active.length-1;index>=0;index-=1)this.release(this.active[index])}
+  dispose(){this.clear();this.game.scene.remove(this.group);this.geometry.dispose();for(const material of this.materials.values())material.dispose();this.materials.clear();this.available.length=0}
+}
+
+function zkBossRadial(pool,origin,{count=18,speed=5.4,damage=8,offset=0,gapEvery=6,patternId="radial",color=0x9fe45c,height=.9}={}){for(let index=0;index<count;index+=1){if(gapEvery>0&&(index%gapEvery===gapEvery-1||index%gapEvery===gapEvery-2))continue;const angle=offset+index/count*Math.PI*2,velocity=new w(Math.cos(angle)*speed,0,Math.sin(angle)*speed);pool.acquire({position:origin.clone().add(new w(0,height,0)),velocity,damage,lifetime:6,patternId,color,scale:1.45,terrainFollow:!0,heightOffset:height})}}
+function zkBossSpiral(pool,origin,{arms=2,shots=14,speed=4.8,offset=0,patternId="spiral",color=0x9fe45c}={}){for(let arm=0;arm<arms;arm+=1)for(let shot=0;shot<shots;shot+=1){const angle=offset+arm/arms*Math.PI*2+shot*.31,velocity=new w(Math.cos(angle)*speed,0,Math.sin(angle)*speed);pool.acquire({position:origin.clone().add(new w(0,1.1,0)),velocity,damage:9,lifetime:6,patternId,color,scale:1.35,terrainFollow:!0,heightOffset:1.1})}}
+function zkBossFan(pool,origin,target,{count=7,spread=.72,speed=7,damage=10,patternId="fan",color=0x57e7cc,height=1.5}={}){const direction=target.clone().sub(origin);direction.y=0;if(direction.lengthSq()<.001)direction.set(0,0,1);direction.normalize();for(let index=0;index<count;index+=1){const angle=count===1?0:(index/(count-1)-.5)*spread,velocity=direction.clone().applyAxisAngle(new w(0,1,0),angle).multiplyScalar(speed);pool.acquire({position:origin.clone().add(new w(0,height,0)),velocity,damage,lifetime:5,patternId,color,scale:1.7,terrainFollow:!0,heightOffset:height})}}
+
+async function zkLoadMissionBossVisual(game,boss,config){
+  const visualLoaders={desert_sunscar_colossus:"loadSunscarBossModel",wetlands_mire_siren:"loadMireSirenBossModel",highlands_stormback:"loadStormbackBossModel",forest_ancient_thornwarden:"loadAncientThornwardenBossModel",arctic_white_screecher:"loadWhiteScreecherBossModel",wetlands_drowned_tremor:"loadDrownedTremorBossModel",/* Only six bosses ship their own rig. The rest previously hit `if(!loaderName)return` and fell back to the untextured procedural block. Each now borrows the rig of a boss with the same sourceEnemyType, so the silhouette and animation set match its attack style; per-boss colour still comes from its own config. */arctic_archive_shade:"loadArchiveShadeBossModel",wetlands_broodwarden:"loadInsectKingBossModel",forest_spore_cantor:"loadStormbackBossModel",highlands_arc_gunner:"loadStormbackBossModel",forest_rootbound_tremor:"loadDrownedTremorBossModel",desert_cinder_scrapper:"loadObsidianKnightBossModel"},loaderName=visualLoaders[config?.id];
+  if(!loaderName)return;
+  try{
+    const runtime=await import("./model-runtime-c96327ba.js?v=quat-fix1"),loader=runtime[loaderName];if(typeof loader!=="function")throw new Error(`${loaderName} is unavailable`);const model=await loader();
+    if(game.disposed||!boss.parent||Number(boss.userData.health)<=0){model.dispose?.();return}
+    if(model.calibrate?.()!==!0){model.dispose?.();console.warn(`${config.name} failed visual calibration; retaining procedural boss.`);return}
+    const bounds=model.measure?.(),valid=bounds&&bounds.height>=1.5&&bounds.height<=3&&bounds.width>=.5&&bounds.width<=4&&bounds.depth>=.15&&bounds.depth<=3;
+    if(!valid){model.dispose?.();console.warn(`${config.name} failed its dimension guard; retaining procedural boss.`,bounds);return}
+    if(boss.userData.hqModel){boss.userData.hqModel.dispose?.(),boss.userData.hqModel=null,boss.userData.hqModelDisposed=!0,boss.userData.hqQualifiedBounds=null}
+    model.root.position.set(0,0,0);model.root.visible=!0;boss.add(model.root);
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    if(game.disposed||!boss.parent||Number(boss.userData.health)<=0){model.dispose?.();return}
+    (boss.userData.fallbackParts??[]).forEach(part=>part.visible=!1);
+    boss.userData.bossHqModel=model;boss.userData.bossHqBounds=bounds;boss.userData.bossHqModelName=model.root.name;
+    model.update?.(0,!0);
+    console.info(`${config.name} rig loaded, calibrated, and attached.`,bounds)
+  }catch(error){console.warn(`${config?.name??"Mission boss"} model unavailable; retaining procedural boss.`,error)}
+}
+
+function zkMoveSunscarBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),strafeSign=(manager.seed&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(strafeSign);
+  const phaseSpeed=manager.phase?.id==="phase_3"?4.3:manager.phase?.id==="phase_2"?3.75:3.2,burst=manager.elapsed<Number(manager.sunscarBurstUntil??0);
+  let direction;
+  if(burst&&distance>3.6)direction=forward.clone();
+  else if(burst)direction=tangent.clone().addScaledVector(forward,-.3);
+  else if(distance>8)direction=forward.clone().multiplyScalar(.98).addScaledVector(tangent,.18);
+  else if(distance<3.8)direction=forward.clone().multiplyScalar(-.42).addScaledVector(tangent,.9);
+  else direction=tangent.clone().multiplyScalar(.64).addScaledVector(forward,(distance-5.1)*.42);
+  direction.normalize();
+  const speed=phaseSpeed*(burst?1.55:1),distanceStep=Math.min(.42,speed*step),angles=[0,.38,-.38,.78,-.78,1.24,-1.24,Math.PI],next=boss.position.clone();let chosen=!1;
+  for(const angle of angles){const candidateDirection=direction.clone().applyAxisAngle(new w(0,1,0),angle),x=Kt.clamp(boss.position.x+candidateDirection.x*distanceStep,-79,79),z=Kt.clamp(boss.position.z+candidateDirection.z*distanceStep,-79,79);if(game.terrain.isWaterAt(x,z,1.05))continue;next.x=x;next.z=z;chosen=!0;break}
+  if(!chosen){manager.sunscarStuckFor=Number(manager.sunscarStuckFor??0)+step;return!1}
+  manager.sunscarStuckFor=0;const ground=game.terrain.heightAt(next.x,next.z);next.y=Kt.lerp(boss.position.y,ground,Math.min(1,step*12));
+  const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.5));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.5));manager.center.y=game.terrain.heightAt(manager.center.x,manager.center.z);
+  return moved
+}
+
+function zkMoveMireSirenBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side),hunting=manager.elapsed<Number(manager.mireHuntUntil??0);
+  let direction;if(hunting&&distance>2.8)direction=forward.clone();else if(distance>10)direction=forward.clone().addScaledVector(tangent,.18);else if(distance<4.2)direction=forward.clone().multiplyScalar(-.58).addScaledVector(tangent,.8);else direction=tangent.clone().multiplyScalar(.78).addScaledVector(forward,(distance-6.4)*.32);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?4.1:manager.phase?.id==="phase_2"?3.45:2.9,speed=phaseSpeed*(hunting?1.55:1),distanceStep=Math.min(.4,speed*step),angles=[0,.32,-.32,.7,-.7,1.15,-1.15,Math.PI],next=boss.position.clone();let chosen=!1;
+  for(const angle of angles){const candidate=direction.clone().applyAxisAngle(new w(0,1,0),angle),x=Kt.clamp(boss.position.x+candidate.x*distanceStep,-79,79),z=Kt.clamp(boss.position.z+candidate.z*distanceStep,-79,79);if(game.terrain.isObstacleAt(x,z,2.1))continue;next.x=x;next.z=z;chosen=!0;break}
+  if(!chosen)return!1;
+  next.y=Kt.lerp(boss.position.y,game.terrain.walkHeightAt(next.x,next.z,!0),Math.min(1,step*11));const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.3));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.3));manager.center.y=game.terrain.walkHeightAt(manager.center.x,manager.center.z,!0);
+  return moved
+}
+
+function zkMoveDrownedTremorBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0));
+  const ZK_DROWNED_HOVER_DURATION=4, ZK_DROWNED_HOVER_COOLDOWN=8, ZK_DROWNED_LEAP_HEIGHT=7, ZK_DROWNED_JUMP_DURATION=.9;
+  const hoverUntil=Number(manager.drownedHoverUntil??0);
+  const leapUntil=Number(manager.drownedLeapUntil??0);
+  if(manager.elapsed < leapUntil && manager.drownedLeapFrom && manager.drownedLeapTo){
+    const progress=Kt.clamp(1 - (leapUntil - manager.elapsed)/ZK_DROWNED_JUMP_DURATION,0,1);
+    const from=manager.drownedLeapFrom,to=manager.drownedLeapTo;
+    const x=Kt.lerp(from.x,to.x,progress),z=Kt.lerp(from.z,to.z,progress);
+    const ground=Kt.lerp(game.terrain.walkHeightAt(from.x,from.z,!0),game.terrain.walkHeightAt(to.x,to.z,!0),progress);
+    boss.position.set(x, ground + Math.sin(progress*Math.PI)*ZK_DROWNED_LEAP_HEIGHT, z);
+    manager.center.x=Kt.lerp(manager.center.x,x,Math.min(1,step*1.25));
+    manager.center.z=Kt.lerp(manager.center.z,z,Math.min(1,step*1.25));
+    manager.center.y=game.terrain.walkHeightAt(manager.center.x,manager.center.z,!0);
+    return !0;
+  }
+  if(manager.drownedLeapTo && manager.elapsed >= leapUntil){
+    manager.drownedLeapTo=null;manager.drownedLeapFrom=null;
+    boss.position.y=game.terrain.walkHeightAt(boss.position.x,boss.position.z,!0);
+    manager.drownedHoverUntil=manager.elapsed + ZK_DROWNED_HOVER_DURATION;
+  }
+  if(manager.elapsed < hoverUntil){
+    const targetX=Kt.clamp(player.x,-79,79),targetZ=Kt.clamp(player.z,-79,79);
+    const lerpSpeed=Math.min(1,step*2.8);
+    boss.position.x=Kt.lerp(boss.position.x,targetX,lerpSpeed);
+    boss.position.z=Kt.lerp(boss.position.z,targetZ,lerpSpeed);
+    const ground=game.terrain.walkHeightAt(boss.position.x,boss.position.z,!0);
+    const hoverHeight=6.5 + Math.sin(manager.elapsed*3.2)*.45;
+    boss.position.y=Kt.lerp(boss.position.y, ground + hoverHeight, Math.min(1,step*4));
+    manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.1));
+    manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.1));
+    manager.center.y=game.terrain.walkHeightAt(manager.center.x,manager.center.z,!0);
+    return !0;
+  }
+  if(manager.drownedHoverUntil && manager.elapsed >= hoverUntil){
+    manager.drownedHoverUntil=0;
+    manager.drownedNextHoverAt=manager.elapsed + ZK_DROWNED_HOVER_COOLDOWN;
+  }
+  const toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side),breaching=manager.elapsed<Number(manager.drownedBreachUntil??0);
+  let direction;if(breaching&&distance>3)direction=forward.clone();else if(distance>9)direction=forward.clone().addScaledVector(tangent,.15);else if(distance<3.8)direction=forward.clone().multiplyScalar(-.5).addScaledVector(tangent,.72);else direction=tangent.clone().multiplyScalar(.68).addScaledVector(forward,(distance-5.8)*.34);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?3.8:manager.phase?.id==="phase_2"?3.2:2.65,speed=phaseSpeed*(breaching?1.65:1),distanceStep=Math.min(.46,speed*step),angles=[0,.3,-.3,.7,-.7,1.16,-1.16,Math.PI],next=boss.position.clone();let chosen=!1;
+  for(const angle of angles){const candidate=direction.clone().applyAxisAngle(new w(0,1,0),angle),x=Kt.clamp(boss.position.x+candidate.x*distanceStep,-79,79),z=Kt.clamp(boss.position.z+candidate.z*distanceStep,-79,79);if(game.terrain.isObstacleAt(x,z,.85))continue;next.x=x;next.z=z;chosen=!0;break}
+  let stuckTriggered=!1;
+  if(!chosen){
+    const fallback=tangent.clone(),x=Kt.clamp(boss.position.x+fallback.x*distanceStep*.6,-79,79),z=Kt.clamp(boss.position.z+fallback.z*distanceStep*.6,-79,79);
+    if(game.terrain.isObstacleAt(x,z,.4)){
+      if(!manager.drownedBlockedSince) manager.drownedBlockedSince=manager.elapsed;
+      const stuck=Number(manager.drownedBlockedSince)>0 && manager.elapsed - Number(manager.drownedBlockedSince) > .45;
+      const ready=manager.elapsed >= Number(manager.drownedNextHoverAt??0);
+      if(ready || stuck){ const landing=player.clone(); manager.drownedLeapFrom=boss.position.clone(); manager.drownedLeapTo=new w(Kt.clamp(landing.x,-79,79),0,Kt.clamp(landing.z,-79,79)); manager.drownedLeapUntil=manager.elapsed + ZK_DROWNED_JUMP_DURATION; manager.drownedBlockedSince=0; boss.userData.bossHqModel?.playAttack?.("drowned_hover"); return !0; }
+      return!1;
+    }
+    next.x=x;next.z=z;chosen=!0;
+  }
+  if(chosen) manager.drownedBlockedSince=0;
+  else if(!manager.drownedBlockedSince) manager.drownedBlockedSince=manager.elapsed;
+  const readyNow=manager.elapsed >= Number(manager.drownedNextHoverAt??0);
+  const wasStuck=Number(manager.drownedBlockedSince)>0 && manager.elapsed - Number(manager.drownedBlockedSince) > .45;
+  if(readyNow || wasStuck){
+    const landing=player.clone();
+    manager.drownedLeapFrom=boss.position.clone();
+    manager.drownedLeapTo=new w(Kt.clamp(landing.x,-79,79),0,Kt.clamp(landing.z,-79,79));
+    manager.drownedLeapUntil=manager.elapsed + ZK_DROWNED_JUMP_DURATION;
+    manager.drownedBlockedSince=0;
+    boss.userData.bossHqModel?.playAttack?.("drowned_hover");
+    return !0;
+  }
+  next.y=Kt.lerp(boss.position.y,game.terrain.walkHeightAt(next.x,next.z,!0),Math.min(1,step*12));const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.35));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.35));manager.center.y=game.terrain.walkHeightAt(manager.center.x,manager.center.z,!0);
+  return moved
+}
+
+function zkMoveStormbackBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side),charging=manager.elapsed<Number(manager.stormbackChargeUntil??0);
+  let direction;if(charging&&distance>2.7)direction=forward.clone();else if(distance>9)direction=forward.clone().addScaledVector(tangent,.12);else if(distance<3.2)direction=forward.clone().multiplyScalar(-.48).addScaledVector(tangent,.78);else direction=forward.clone().multiplyScalar(.28).addScaledVector(tangent,.82);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?4.7:manager.phase?.id==="phase_2"?3.9:3.2,speed=phaseSpeed*(charging?1.7:1),distanceStep=Math.min(.48,speed*step),angles=[0,.28,-.28,.62,-.62,1.05,-1.05,Math.PI],next=boss.position.clone();let chosen=!1;
+  for(const angle of angles){const candidate=direction.clone().applyAxisAngle(new w(0,1,0),angle),x=Kt.clamp(boss.position.x+candidate.x*distanceStep,-79,79),z=Kt.clamp(boss.position.z+candidate.z*distanceStep,-79,79);if(game.terrain.isObstacleAt(x,z,.82))continue;next.x=x;next.z=z;chosen=!0;break}
+  if(!chosen){const fallback=forward.clone().applyAxisAngle(new w(0,1,0),side*Math.PI*.5),x=Kt.clamp(boss.position.x+fallback.x*distanceStep*.6,-79,79),z=Kt.clamp(boss.position.z+fallback.z*distanceStep*.6,-79,79);if(game.terrain.isObstacleAt(x,z,.45))return!1;next.x=x;next.z=z;chosen=!0}
+  const ground=game.terrain.isWaterAt(next.x,next.z,.35)?game.terrain.walkHeightAt(next.x,next.z,!0):game.terrain.heightAt(next.x,next.z);next.y=Kt.lerp(boss.position.y,ground,Math.min(1,step*14));const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.5));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.5));manager.center.y=game.terrain.heightAt(manager.center.x,manager.center.z);
+  return moved
+}
+
+function zkMoveThornwardenBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side),advancing=manager.elapsed<Number(manager.thornwardenAdvanceUntil??0);
+  let direction;if(advancing&&distance>2.9)direction=forward.clone();else if(distance>8.5)direction=forward.clone().addScaledVector(tangent,.14);else if(distance<3.4)direction=forward.clone().multiplyScalar(-.45).addScaledVector(tangent,.82);else direction=tangent.clone().multiplyScalar(.72).addScaledVector(forward,(distance-5.4)*.34);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?6.4:manager.phase?.id==="phase_2"?5.4:4.5,dodgeCycle=(manager.elapsed*1.7+manager.seed*.001)%2.6,dodging=dodgeCycle<.42,speed=phaseSpeed*(advancing?1.5:1)*(dodging?2.35:1),distanceStep=Math.min(.9,speed*step),angles=[0,.3,-.3,.68,-.68,1.12,-1.12,Math.PI],next=boss.position.clone();let chosen=!1;
+  for(const angle of angles){const candidate=direction.clone().applyAxisAngle(new w(0,1,0),angle),x=Kt.clamp(boss.position.x+candidate.x*distanceStep,-79,79),z=Kt.clamp(boss.position.z+candidate.z*distanceStep,-79,79);if(game.terrain.isWaterAt(x,z,.62)||game.terrain.isObstacleAt(x,z,.82))continue;next.x=x;next.z=z;chosen=!0;break}
+  if(!chosen){const fallback=tangent.clone().applyAxisAngle(new w(0,1,0),side*Math.PI*.5),x=Kt.clamp(boss.position.x+fallback.x*distanceStep*.55,-79,79),z=Kt.clamp(boss.position.z+fallback.z*distanceStep*.55,-79,79);if(game.terrain.isWaterAt(x,z,.35)||game.terrain.isObstacleAt(x,z,.42))return!1;next.x=x;next.z=z}
+  next.y=Kt.lerp(boss.position.y,game.terrain.heightAt(next.x,next.z),Math.min(1,step*13));const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.25));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.25));manager.center.y=game.terrain.heightAt(manager.center.x,manager.center.z);
+  return moved
+}
+function zkMoveArcGunnerBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side);
+  let direction;if(distance>14)direction=forward.clone().addScaledVector(tangent,.14);else if(distance<6.5)direction=forward.clone().multiplyScalar(-.42).addScaledVector(tangent,.76);else direction=tangent.clone().multiplyScalar(.68).addScaledVector(forward,(distance-9)*.28);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?3.9:manager.phase?.id==="phase_2"?3.3:2.7,speed=phaseSpeed,distanceStep=Math.min(.46,speed*step),angles=[0,.32,-.32,.7,-.7,1.12,-1.12,Math.PI],next=boss.position.clone();let chosen=!1;
+  for(const angle of angles){const candidate=direction.clone().applyAxisAngle(new w(0,1,0),angle),x=Kt.clamp(boss.position.x+candidate.x*distanceStep,-79,79),z=Kt.clamp(boss.position.z+candidate.z*distanceStep,-79,79);if(game.terrain.isObstacleAt(x,z,.78))continue;next.x=x;next.z=z;chosen=!0;break}
+  if(!chosen){const fallback=tangent.clone(),x=Kt.clamp(boss.position.x+fallback.x*distanceStep*.5,-79,79),z=Kt.clamp(boss.position.z+fallback.z*distanceStep*.5,-79,79);if(game.terrain.isObstacleAt(x,z,.42))return!1;next.x=x;next.z=z;chosen=!0}
+  next.y=Kt.lerp(boss.position.y,game.terrain.heightAt(next.x,next.z),Math.min(1,step*12));const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.2));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.2));manager.center.y=game.terrain.heightAt(manager.center.x,manager.center.z);
+  return moved
+}
+
+function zkMoveWhiteScreecherBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side),diving=manager.elapsed<Number(manager.screecherDiveUntil??0),strafing=manager.elapsed<Number(manager.screecherStrafeUntil??0);
+  let direction;if(diving&&distance>4.8)direction=forward.clone();else if(strafing)direction=tangent.clone().addScaledVector(forward,.24);else if(distance>13)direction=forward.clone().addScaledVector(tangent,.16);else if(distance<7)direction=forward.clone().multiplyScalar(-.72).addScaledVector(tangent,.72);else direction=tangent.clone().multiplyScalar(.9).addScaledVector(forward,(distance-9.5)*.22);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?5.7:manager.phase?.id==="phase_2"?5.05:4.45,speed=phaseSpeed*(diving?1.55:strafing?1.28:1),distanceStep=Math.min(.52,speed*step),next=boss.position.clone();
+  next.x=Kt.clamp(boss.position.x+direction.x*distanceStep,-79,79);next.z=Kt.clamp(boss.position.z+direction.z*distanceStep,-79,79);
+  const ground=game.terrain.walkHeightAt(next.x,next.z,!0),altitude=diving?3.2:manager.phase?.id==="phase_3"?7.8:7.1;next.y=Kt.lerp(boss.position.y,ground+altitude,Math.min(1,step*(diving?7.5:4.8)));
+  const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*.9));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*.9));manager.center.y=ground;
+  return moved
+}
+function zkMoveInsectKingBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side);
+  let direction;if(distance>12)direction=forward.clone().addScaledVector(tangent,.12);else if(distance>4)direction=forward.clone().multiplyScalar(.85).addScaledVector(tangent,.25);else if(distance<1.2)direction=tangent.clone().multiplyScalar(.9).addScaledVector(forward,-.2);else direction=forward.clone().multiplyScalar(.65).addScaledVector(tangent,.55);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?6.2:manager.phase?.id==="phase_2"?5.6:5.0,speed=phaseSpeed,distanceStep=Math.min(.58,speed*step),next=boss.position.clone();
+  next.x=Kt.clamp(boss.position.x+direction.x*distanceStep,-79,79);next.z=Kt.clamp(boss.position.z+direction.z*distanceStep,-79,79);
+  const ground=game.terrain.walkHeightAt(next.x,next.z,!0),altitude=manager.phase?.id==="phase_3"?6.8:manager.phase?.id==="phase_2"?6.2:5.6,bob=Math.sin(manager.elapsed*2.2)*.18;
+  next.y=Kt.lerp(boss.position.y,ground+altitude+bob,Math.min(1,step*5.2));
+  const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*.7));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*.7));manager.center.y=ground;
+  return moved
+}
+function zkMoveSporeCantorBoss(manager,delta){
+  const boss=manager.boss,game=manager.game,player=game.player?.group?.position;
+  if(!boss||!player)return!1;
+  const step=Math.min(.08,Math.max(0,Number(delta)||0)),toPlayer=player.clone().sub(boss.position);toPlayer.y=0;
+  const distance=Math.max(.001,toPlayer.length()),forward=toPlayer.multiplyScalar(1/distance),side=((manager.seed+manager.attackIndex)&1)?1:-1,tangent=new w(-forward.z,0,forward.x).multiplyScalar(side);
+  let direction;if(distance>9)direction=forward.clone().addScaledVector(tangent,.16);else if(distance<3.6)direction=forward.clone().multiplyScalar(-.4).addScaledVector(tangent,.82);else direction=tangent.clone().multiplyScalar(.7).addScaledVector(forward,(distance-5.2)*.3);
+  direction.normalize();const phaseSpeed=manager.phase?.id==="phase_3"?3.4:manager.phase?.id==="phase_2"?2.9:2.4,speed=phaseSpeed,distanceStep=Math.min(.42,speed*step),angles=[0,.32,-.32,.7,-.7,1.15,-1.15,Math.PI],next=boss.position.clone();let chosen=!1;
+  for(const angle of angles){const candidate=direction.clone().applyAxisAngle(new w(0,1,0),angle),x=Kt.clamp(boss.position.x+candidate.x*distanceStep,-79,79),z=Kt.clamp(boss.position.z+candidate.z*distanceStep,-79,79);if(game.terrain.isWaterAt(x,z,.6)||game.terrain.isObstacleAt(x,z,.78))continue;next.x=x;next.z=z;chosen=!0;break}
+  if(!chosen){const fallback=tangent.clone(),x=Kt.clamp(boss.position.x+fallback.x*distanceStep*.5,-79,79),z=Kt.clamp(boss.position.z+fallback.z*distanceStep*.5,-79,79);if(!game.terrain.isWaterAt(x,z,.4)&&!game.terrain.isObstacleAt(x,z,.42)){next.x=x;next.z=z;chosen=!0} else return!1}
+  next.y=Kt.lerp(boss.position.y,game.terrain.heightAt(next.x,next.z),Math.min(1,step*12));const moved=boss.position.distanceToSquared(next)>1e-6;boss.position.copy(next);
+  manager.center.x=Kt.lerp(manager.center.x,boss.position.x,Math.min(1,step*1.2));manager.center.z=Kt.lerp(manager.center.z,boss.position.z,Math.min(1,step*1.2));manager.center.y=game.terrain.heightAt(manager.center.x,manager.center.z);
+  return moved
+}
+
+/* Returnal-inspired temp weapon traits: chainLightning/ricochet/explosive/armorPen/splitting/weakPointBonus/shieldGen/cooldownReduction — applied data-driven per encounter */
+function zkWeaponTraitApply(traitId, proj){ if(!traitId) return proj; if(traitId==="ricochet") proj.bounces=(proj.bounces??0)+2; if(traitId==="splitting"||traitId==="fission") proj.splitsOnExpire=3; if(traitId==="chain_lightning") proj.chain=2; return proj }
+function zkAltFireSpawn(game, profileId, origin, target){ const map={arc_pulse:{chain:2},gravity_lance:{pierce:1},drone_barrage:{count:12},plasma_burst:{radial:14},quantum_mine:{delay:1.25}}; game&&game.ui&&game.ui.showToast&&game.ui.showToast(profileId, "Alt-fire deployed — reusable, pooled, performance-budgeted", "success"); }
+class zkBossManager{
+  constructor(game){this.game=game;this.pool=new zkBossProjectilePool(game,game.graphicsQuality==="low"?140:250);this.active=!1;this.boss=null;this.config=null;this.center=new w;this.radius=14;this.telegraphs=[];this.damageOutbox=[];this.damageEventAcks=new Set;this.lastSharedState=null;this.lastHudAt=0;this.debugPlayerDamage=!0;this.debugTelegraphs=!0}
+  playerCount(){let count=this.game.player?.health>0?1:0,now=performance.now();for(const group of this.game.multiplayerRoom?.remotePlayers?.values?.()??[])if(Number(group.userData.health)>0&&now-Number(group.userData.lastSeen??0)<1e4)count+=1;return Math.max(1,count)}
+  findArena(config){const area=zkAreasOfOperation.find(item=>item.id===config.biome)??zkAreasOfOperation[0],candidate=new w(area.center.x,0,0);for(let ring=0;ring<9;ring+=1)for(let step=0;step<12;step+=1){const angle=step/12*Math.PI*2,x=area.center.x+Math.cos(angle)*ring*1.25,z=Math.sin(angle)*ring*1.25;if(!this.game.terrain.isWaterAt(x,z,.7)&&!this.game.terrain.isObstacleAt(x,z,2.2)){candidate.set(x,this.game.terrain.heightAt(x,z),z);return candidate}}candidate.y=this.game.terrain.heightAt(candidate.x,candidate.z);return candidate}
+  startEncounter({missionId,seed=null,shared=null,force=!1}={}){if(this.active)return!1;const config=missionBossConfig(missionId);if(!config)return!1;if(!force&&this.game.missionStats.bossDefeats?.[missionId])return!1;if(!force){const missionContext=this.game.getMissionContext?.();if(missionContext&&!missionReadyForBoss(missionId,missionContext))return!1}this.config=config;this.seed=Number(seed??zkBossHash(`${this.game.user.teamCode}:${missionId}`))>>>0;this.encounterId=`${missionId}:${this.seed}`;this.startedAt=Number(shared?.startedAt??Date.now());this.elapsed=0;this.center.copy(this.findArena(config));this.center.z=Number(shared?.z??this.center.z);this.maxHealth=Number(shared?.maxHealth??scaledBossHealth(config,this.playerCount()));this.phase=config.phases[0];this.phaseStartedAt=0;this.attackOrders=Object.fromEntries(config.phases.map(phase=>[phase.id,deterministicAttackOrder(config,phase.id,this.seed,48)]));this.attackIndex=0;this.nextAttackAt=2;this.transitionUntil=0;this.lastPattern="awakening";this.telegraphCount=0;this.telegraphHits=0;this.playerDeaths=0;this.damageTaken=0;this.previousPlayerHealth=Number(this.game.player.health);this.infrastructureStart=(this.game.buildings?.records??[]).reduce((sum,record)=>sum+Number(record.health??1000),0);this.frameTotal=0;this.frameSamples=0;this.peakProjectiles=0;for(const enemy of [...this.game.enemies]){this.game.scene.remove(enemy);this.game.enemies.splice(this.game.enemies.indexOf(enemy),1)}const spawned=this.game.spawnEnemy(!0,config.sourceEnemyType);if(!spawned){this.config=null;this.game.ui.showToast("Boss encounter delayed","The guardian could not enter the arena. Mission progress remains recoverable.","warning");return!1}this.boss=spawned;spawned.userData.skipEnemyHqModel=config.id==="arctic_white_screecher";spawned.position.copy(this.center);spawned.scale.setScalar(config.scaleMultiplier);spawned.userData.isMissionBoss=!0;spawned.userData.bossId=config.id;spawned.userData.missionId=missionId;spawned.userData.maxHealth=this.maxHealth;spawned.userData.health=Number(shared?.health??this.maxHealth);spawned.userData.hostile=!0;spawned.userData.guardian=!1;spawned.userData.collisionRadius=config.id==="arctic_white_screecher"?4.8:3.4;this.lastBossHealth=Number(spawned.userData.health);zkLoadMissionBossVisual(this.game,spawned,config);const weakColor=config.id==="wetlands_mire_siren"?0x72fff0:config.id==="highlands_stormback"?0x9fe9ff:config.id==="forest_ancient_thornwarden"?0xcaff9d:config.id==="arctic_white_screecher"?0xe8fbff:0xfff099,weakEmissive=config.id==="wetlands_mire_siren"?0x18bfae:config.id==="highlands_stormback"?0x248cff:config.id==="forest_ancient_thornwarden"?0x48c85b:config.id==="arctic_white_screecher"?0x4aaeff:0xff8c3d,weakMaterial=new ie({color:weakColor,emissive:weakEmissive,emissiveIntensity:3.4,roughness:.18}),weakPoint=new R(new Se(.22,12,8),weakMaterial);weakPoint.position.set(0,config.id==="arctic_white_screecher"?2.45:config.id==="wetlands_mire_siren"?1.7:config.id==="highlands_stormback"?1.55:1.45,.38);weakPoint.name="bossWeakPoint";spawned.add(weakPoint);this.weakPoint=weakPoint;this.active=!0;this.lastSharedState=null;this.showHud();this.game.mode==="command"&&this.game.toggleMode();this.game.ui.showToast(config.name,`${config.title}. Three combat phases have begun; ordinary patrols are withdrawing.`,"danger");this.game.updateHud(!0);return!0}
+  showHud(){let hud=document.getElementById("boss-encounter-hud");if(!hud){hud=document.createElement("section");hud.id="boss-encounter-hud";hud.className="boss-encounter-hud hidden"}hud.parentElement!==document.body&&document.body.append(hud);document.documentElement.classList.add("zk-boss-active");hud.classList.remove("hidden");this.renderHud(!0)}
+  hideHud(){document.documentElement.classList.remove("zk-boss-active");document.getElementById("boss-encounter-hud")?.classList.add("hidden")}
+  renderHud(force=!1){const now=performance.now();if(!force&&now-this.lastHudAt<100)return;this.lastHudAt=now;const hud=document.getElementById("boss-encounter-hud");if(!hud||!this.config)return;const health=Math.max(0,Number(this.boss?.userData.health??this.lastSharedState?.health??0)),percent=Math.max(0,Math.min(100,health/Math.max(1,this.maxHealth)*100)),phaseNumber=Math.max(1,this.config.phases.findIndex(item=>item.id===this.phase?.id)+1),defense=this.defense??bossDefenseProfile(this.config),defenseActive=this.elapsed<Number(this.defenseUntil??0),defenseCooldown=Math.max(0,Math.ceil(Number(this.nextDefenseAt??0)-this.elapsed)),defenseStatus=defenseActive?`${defense.label.toUpperCase()} ACTIVE`:defenseCooldown>0?`${defense.label.toUpperCase()} ${defenseCooldown}S`:`${defense.label.toUpperCase()} READY`;hud.dataset.phase=String(phaseNumber);hud.innerHTML=`<div class="boss-heading"><span>BOSS ${Li(this.config.title)}</span><strong>${Li(this.config.name)}</strong><b>PHASE ${phaseNumber} / 3</b></div><div class="boss-hp-line"><label><span>GUARDIAN HP</span><output>${Math.ceil(health)} / ${this.maxHealth}</output></label><div class="boss-health" role="meter" aria-label="${Li(this.config.name)} health" aria-valuemin="0" aria-valuemax="${this.maxHealth}" aria-valuenow="${Math.ceil(health)}"><i style="width:${percent}%"></i><em></em><em></em></div></div><div class="boss-status-line"><span>${Li(this.phase?.label??"PHASE I")}</span><b class="${defenseActive?"active":defenseCooldown?"cooldown":"ready"}">${Li(defenseStatus)}</b><small>${Li(String(this.lastPattern).replaceAll("_"," ").toUpperCase())} · ${this.pool.active.length} HOSTILE PROJECTILES</small></div>`}
+  addTelegraph(position,duration,patternId,onFire,{radius=1.35,color=0xff684f,chargeAtBoss=!1,hazardDamage=14}={}){const material=new Je({color,transparent:!0,opacity:.72,depthWrite:!1}),mesh=new R(new tt(radius,.08,8,36),material);mesh.rotation.x=Math.PI/2;mesh.position.copy(position);mesh.position.y=(["wetlands_mire_siren","wetlands_drowned_tremor"].includes(this.config?.id)?this.game.terrain.walkHeightAt(position.x,position.z,!0):this.game.terrain.heightAt(position.x,position.z))+.08;mesh.visible=this.debugTelegraphs;this.game.scene.add(mesh);let chargeMesh=null;if(chargeAtBoss){const chargeMaterial=new ie({color,emissive:color,emissiveIntensity:4.5,transparent:!0,opacity:.88,roughness:.08}),chargeGeometry=new Se(.42,16,12);chargeMesh=new R(chargeGeometry,chargeMaterial);chargeMesh.position.copy(this.boss.position).add(new w(0,4.7,0));chargeMesh.scale.setScalar(.5);this.game.scene.add(chargeMesh)}this.telegraphs.push({mesh,chargeMesh,remaining:duration,duration,patternId,onFire,radius,hazardDamage});this.telegraphCount+=1;return mesh}
+  clearTelegraphs(){for(const item of this.telegraphs){this.game.scene.remove(item.mesh);item.mesh.geometry.dispose();item.mesh.material.dispose();if(item.chargeMesh){this.game.scene.remove(item.chargeMesh);item.chargeMesh.geometry.dispose();item.chargeMesh.material.dispose()}}this.telegraphs.length=0}
+  damagePlayer(amount,patternId,projectileId="hazard"){if(!this.debugPlayerDamage||!this.active||performance.now()<Number(this.game.bossDamageInvulnerableUntil??0)||performance.now()<Number(this.game.bossRollIFrameUntil??0))return!1;const damage=scaledBossDamage(amount,this.phase?.id),before=Number(this.game.player.health);this.game.player.health=Math.max(0,before-damage);this.game.bossDamageInvulnerableUntil=performance.now()+480;this.damageTaken+=Math.max(0,before-this.game.player.health);this.telegraphHits+=1;this.lastDamageAttribution={bossId:this.config.id,patternId,projectileId,damage};this.game.spawnImpactPulse(this.game.player.group.position.clone().add(new w(0,1,0)),0xff604f);this.game.ui.showToast("Boss impact",`${this.config.name} dealt ${damage} suit damage.`,"danger");this.game.updateHud(!0);return!0}
+  resolveDefense(rawDamage){if(!this.active||!this.boss||rawDamage<=0)return rawDamage;this.defense??=bossDefenseProfile(this.config);this.nextDefenseAt??=4;this.defenseUntil??=0;const ready=this.elapsed>=this.nextDefenseAt,shielding=this.defense.kind==="shield"&&this.elapsed<this.defenseUntil;if(!ready&&!shielding)return rawDamage;if(ready){this.nextDefenseAt=this.elapsed+this.defense.cooldown;this.defenseUntil=this.elapsed+this.defense.duration;this.lastPattern=`${this.defense.kind}_${this.defense.label.toLowerCase().replaceAll(" ","_")}`;this.boss.userData.bossHqModel?.playAttack?.(`defense_${this.defense.kind}`);if(this.defense.kind==="dodge"){const away=this.boss.position.clone().sub(this.game.player.group.position);away.y=0;away.lengthSq()<.01&&away.set(1,0,0);away.normalize();const side=new w(-away.z,0,away.x).multiplyScalar((this.attackIndex%2?1:-1)*5.5),candidate=this.boss.position.clone().add(side),dx=candidate.x-this.center.x,dz=candidate.z-this.center.z;if(dx*dx+dz*dz>this.radius*this.radius*.75)candidate.copy(this.center).add(side.multiplyScalar(.45));if(!this.game.terrain.isWaterAt(candidate.x,candidate.z,.7)&&!this.game.terrain.isObstacleAt(candidate.x,candidate.z,1.4)){candidate.y=this.game.terrain.heightAt(candidate.x,candidate.z);this.boss.position.copy(candidate)}}this.game.ui.showToast(this.defense.label,this.defense.kind==="dodge"?"Projectile lock broken. The guardian repositioned; defense recharges in 10 seconds.":"Incoming projectiles deflected. Only minimum damage penetrated; shield recharges in 10 seconds.","warning")}const applied=Math.max(this.defense.minimumDamage,rawDamage*this.defense.damageFraction),before=Number(this.boss.userData.health);this.boss.userData.health=Math.min(this.maxHealth,before+rawDamage-applied);this.game.spawnImpactPulse(this.boss.position.clone().add(new w(0,3.2,0)),this.config.color);return applied}
+  queueDamage(amount){if(!this.active||amount<=0)return;const event={id:`${this.game.multiplayerRoom?.clientId??"local"}.${Date.now()}.${crypto.randomUUID().slice(0,8)}`,encounterId:this.encounterId,amount:Math.max(0,Math.min(250,Number(amount))),at:Date.now()};this.damageOutbox.push(event);this.damageOutbox=this.damageOutbox.slice(-100)}
+  recordBossDamage(amount){if(!this.active||amount<=0)return;const applied=this.resolveDefense(amount);this.queueDamage(applied);this.lastBossHealth=Number(this.boss.userData.health);this.renderHud(!0);const hud=document.getElementById("boss-encounter-hud");if(hud){hud.classList.remove("boss-hit");void hud.offsetWidth;hud.classList.add("boss-hit")}}
+  updateTelegraphs(delta){const player=this.game.player.group.position;for(let index=this.telegraphs.length-1;index>=0;index-=1){const item=this.telegraphs[index];item.remaining-=delta;const progress=Math.max(0,Math.min(1,1-item.remaining/item.duration)),pulse=.78+Math.sin((item.duration-item.remaining)*12)*.18;item.mesh.scale.setScalar(pulse);item.mesh.material.opacity=Math.max(.18,item.remaining/item.duration*.75);if(item.chargeMesh){item.chargeMesh.position.copy(this.boss.position).add(new w(0,4.7,0));item.chargeMesh.scale.setScalar(.5+progress*3.2);item.chargeMesh.rotation.x+=delta*2.8;item.chargeMesh.rotation.y+=delta*4.2;item.chargeMesh.material.opacity=.55+progress*.4}if(item.remaining>0)continue;const dx=player.x-item.mesh.position.x,dz=player.z-item.mesh.position.z;item.onFire?.(item.mesh.position.clone());if(item.hazardDamage>0&&dx*dx+dz*dz<item.radius*item.radius)this.damagePlayer(item.hazardDamage,item.patternId,`hazard-${index}`);this.game.scene.remove(item.mesh);item.mesh.geometry.dispose();item.mesh.material.dispose();if(item.chargeMesh){this.game.scene.remove(item.chargeMesh);item.chargeMesh.geometry.dispose();item.chargeMesh.material.dispose()}this.telegraphs.splice(index,1)}}
+  schedulePattern(patternId){this.lastPattern=patternId;this.boss?.userData?.bossHqModel?.playAttack?.(patternId);const origin=this.boss.position.clone(),color=this.config.color,player=this.game.player.group.position.clone();const radial=(delay=.8,options={})=>this.addTelegraph(origin,delay,patternId,point=>zkBossRadial(this.pool,point,{patternId,color,...options}),{radius:2.2,color});/* Aerial bombardment. `tight` clusters shells around the player instead of ringing
+ * them at a safe radius; `homing` lets a shell correct its descent mid-fall, so
+ * simply walking out of the telegraph is no longer a free dodge. */
+const rain=(count=9,options={})=>{const{delay=1.2,damage=12,fall=9,homing=0,tight=!1}=options;for(let index=0;index<count;index+=1){const angle=index/count*Math.PI*2+this.attackIndex*.41,distance=tight?(index%3===0?2.4:5.4):(index%3===0?5:9),point=player.clone().add(new w(Math.cos(angle)*distance,0,Math.sin(angle)*distance));this.addTelegraph(point,delay,patternId,landing=>this.pool.acquire({position:landing.clone().add(new w(0,12,0)),velocity:new w(0,-fall,0),damage,lifetime:2.4,patternId,color,scale:1.45,homing,homingDelay:.12,homingUntil:1.5}),{radius:1.1,color:0x75ee6c})}};const eruption=(count=Math.min(3,this.playerCount()))=>{for(let index=0;index<count;index+=1){const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.game.player.group.rotation.y),point=player.clone().addScaledVector(forward,index*1.8);this.addTelegraph(point,1,patternId,position=>{this.game.spawnImpactPulse(position.clone().add(new w(0,.3,0)),0xff684f);zkBossRadial(this.pool,position,{count:10,speed:3.8,damage:12,gapEvery:5,patternId,color:0xff684f,height:.3})},{radius:1.55})}};const lanes=()=>{for(let lane=-2;lane<=2;lane+=1){if((lane+this.attackIndex)%2===0)continue;const point=this.center.clone().add(new w(lane*4,0,0));this.addTelegraph(point,1,patternId,position=>{for(let step=-5;step<=5;step+=1)this.pool.acquire({position:position.clone().add(new w(0,.35,step*2.4)),velocity:new w(0,0,0),damage:15,lifetime:.8,patternId,color:0xff684f,scale:1.5})},{radius:1.65,color:0xff684f})}};const mireLanes=()=>{for(let lane=-2;lane<=2;lane+=1){if((lane+this.attackIndex)%2===0)continue;const point=this.center.clone().add(new w(lane*3.6,0,0));this.addTelegraph(point,1.1,patternId,position=>{for(let step=-5;step<=5;step+=1)this.pool.acquire({position:position.clone().add(new w(0,.5,step*2.25)),velocity:new w(0,0,0),damage:13,lifetime:1,patternId,color:0x57e7cc,scale:1.65,terrainFollow:!0,heightOffset:.5})},{radius:1.5,color:0x57e7cc})}};
+    const drownedLanes=()=>{for(let lane=-2;lane<=2;lane+=1){if((lane+this.attackIndex)%2===0)continue;const point=this.center.clone().add(new w(lane*3.7,0,0));this.addTelegraph(point,1.05,patternId,position=>{for(let step=-5;step<=5;step+=1)this.pool.acquire({position:position.clone().add(new w(0,.48,step*2.3)),velocity:new w(0,0,0),damage:15,lifetime:1.05,patternId,color:0x4fcdb4,scale:1.8,terrainFollow:!0,heightOffset:.48})},{radius:1.62,color:0x4fcdb4})}};
+    const drownedEruptions=(count=4)=>{for(let index=0;index<count;index+=1){const angle=index/count*Math.PI*2+this.attackIndex*.43,distance=index%2?3.2:6.1,point=player.clone().add(new w(Math.cos(angle)*distance,0,Math.sin(angle)*distance));this.addTelegraph(point,.9+index*.1,patternId,landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.35,0)),0x4fcdb4);zkBossRadial(this.pool,landing,{count:12,speed:4.6,damage:14,gapEvery:6,patternId,color:0x4fcdb4,height:.35})},{radius:1.7,color:0x4fcdb4})}};
+    const stormLanes=()=>{for(let lane=-2;lane<=2;lane+=1){if((lane+this.attackIndex)%2===0)continue;const point=this.center.clone().add(new w(lane*3.8,0,0));this.addTelegraph(point,.9,patternId,position=>{for(let step=-5;step<=5;step+=1)this.pool.acquire({position:position.clone().add(new w(0,.4,step*2.35)),velocity:new w(0,0,0),damage:15,lifetime:.85,patternId,color:0x8fd7ff,scale:1.7,terrainFollow:!0,heightOffset:.4})},{radius:1.6,color:0x8fd7ff})}};
+    const screecherVolley=(target,{count=7,spread=.72,speed=9,damage=11,scale=1.9,id=patternId}={})=>{const start=this.boss.position.clone().add(new w(0,1.2,0)),aim=target.clone().add(new w(0,1.05,0)).sub(start);if(aim.lengthSq()<.001)aim.set(0,-.3,1);aim.normalize();for(let index=0;index<count;index+=1){const angle=count===1?0:(index/(count-1)-.5)*spread,velocity=aim.clone().applyAxisAngle(new w(0,1,0),angle).multiplyScalar(speed);this.pool.acquire({position:start.clone(),velocity,damage,lifetime:5,radius:.65,patternId:id,color:0xbdefff,scale})}};
+    const screecherMarks=(count=6,delay=.9)=>{const toBoss=origin.clone().sub(player);toBoss.y=0;if(toBoss.lengthSq()<.001)toBoss.set(0,0,1);toBoss.normalize();const side=new w(-toBoss.z,0,toBoss.x);for(let index=0;index<count;index+=1){const forwardOffset=(index%3-1)*2.7,sideOffset=(Math.floor(index/3)-.5)*3.3,point=player.clone().addScaledVector(toBoss,forwardOffset).addScaledVector(side,sideOffset);this.addTelegraph(point,delay+index*.08,patternId,landing=>{const start=landing.clone().add(new w(0,13,0)),target=landing.clone().add(new w(0,.45,0)),velocity=target.sub(start).normalize().multiplyScalar(16);this.pool.acquire({position:start,velocity,damage:14,lifetime:1.4,radius:.82,patternId,color:0xbdefff,scale:2.2})},{radius:1.5,color:0xbdefff,hazardDamage:0})}};
+    const screecherLanes=()=>{for(let lane=-2;lane<=2;lane+=1){if((lane+this.attackIndex)%3===0)continue;const point=this.center.clone().add(new w(lane*3.45,0,0));this.addTelegraph(point,.95,patternId,position=>{for(let step=-5;step<=5;step+=1)this.pool.acquire({position:position.clone().add(new w(0,.42,step*2.25)),velocity:new w(0,0,0),damage:15,lifetime:.95,patternId,color:0xbdefff,scale:1.75,terrainFollow:!0,heightOffset:.42})},{radius:1.48,color:0xbdefff})}};
+    const sunscarPitch=(lockedTarget,{id=patternId,delay=1.1,speed=7.2,damage=25,scale=5.6,radius=1.35,telegraphRadius=1.85,color=0xffb13b}={})=>{const locked=lockedTarget.clone();locked.y=this.game.terrain.heightAt(locked.x,locked.z);this.addTelegraph(locked,delay,id,landing=>{const start=this.boss.position.clone().add(new w(0,4.7,0)),target=landing.clone().add(new w(0,1.2,0)),direction=target.sub(start);if(direction.lengthSq()<.001)direction.set(0,0,1);direction.normalize();this.game.spawnImpactPulse(start,color);this.pool.acquire({position:start,velocity:direction.multiplyScalar(speed),damage,lifetime:5.5,radius,patternId:id,color,scale})},{radius:telegraphRadius,color,chargeAtBoss:!0,hazardDamage:0})};
+    const sunscarSpreadTargets=(count,spacing=2.4)=>{const toPlayer=player.clone().sub(origin);toPlayer.y=0;if(toPlayer.lengthSq()<.001)toPlayer.set(0,0,1);toPlayer.normalize();const side=new w(-toPlayer.z,0,toPlayer.x);return Array.from({length:count},(_,index)=>player.clone().addScaledVector(side,(index-(count-1)/2)*spacing))};
+    this.sunscarBurstUntil=this.elapsed+1.05;
+    if(patternId==="sunscar_fastball")sunscarPitch(player);
+    else if(patternId==="sunscar_focused_charge")sunscarPitch(player,{delay:1.8,speed:11.5,damage:32,scale:4.2,radius:1.1,telegraphRadius:1.55});
+    else if(patternId==="sunscar_shockwave")radial(.9,{count:20,speed:5.1,damage:12,gapEvery:7,height:.55,color:0xffb13b});
+    else if(patternId==="sunscar_double_fastball")sunscarSpreadTargets(2,2.8).forEach((target,index)=>sunscarPitch(target,{id:`sunscar_fastball_${index+1}`,delay:1.05+index*.3,speed:7.8,damage:27,scale:5.8,radius:1.4}));
+    else if(patternId==="sunscar_meteor_ring"){rain(8);radial(1.1,{count:18,speed:5.4,damage:13,gapEvery:6,color:0xffb13b})}
+    else if(patternId==="sunscar_fastball_barrage")sunscarSpreadTargets(3,2.65).forEach((target,index)=>sunscarPitch(target,{id:`sunscar_fastball_barrage_${index+1}`,delay:.9+index*.28,speed:8.4,damage:28,scale:6.1,radius:1.45}));
+    else if(patternId==="sunscar_focused_overcharge")sunscarPitch(player,{delay:2.2,speed:12.5,damage:40,scale:5,radius:1.35,telegraphRadius:1.7,color:0xff7a18});
+    else if(patternId==="sunscar_finale"){sunscarPitch(player,{delay:1.65,speed:10.5,damage:36,scale:5.4,radius:1.4,color:0xff7a18});radial(1.35,{count:24,speed:5.8,damage:14,gapEvery:8,color:0xff8b24})}
+    else if(patternId==="siren_pulse_ring")radial(.75,{count:20,speed:5.2,damage:9,gapEvery:5,height:.65,color:0x57e7cc});
+    else if(patternId==="bog_bolt_fan")this.addTelegraph(origin,.7,patternId,point=>zkBossFan(this.pool,point,player,{count:7,spread:.8,speed:7.2,damage:10,patternId,color:0x57e7cc}),{radius:2,color:0x57e7cc});
+    else if(patternId==="undertow_mark")this.addTelegraph(player,.95,patternId,point=>{this.game.spawnImpactPulse(point.clone().add(new w(0,.4,0)),0x57e7cc);zkBossRadial(this.pool,point,{count:12,speed:4.1,damage:11,gapEvery:6,patternId,color:0x57e7cc,height:.35})},{radius:1.8,color:0x57e7cc});
+    else if(patternId==="double_tidal_spiral")this.addTelegraph(origin,.85,patternId,point=>zkBossSpiral(this.pool,point,{arms:2,shots:15,speed:5.2,offset:this.attackIndex*.29,patternId,color:0x57e7cc}),{radius:2.2,color:0x57e7cc});
+    else if(patternId==="brackish_geysers"){rain(7);eruption(Math.min(4,this.playerCount()+1))}
+    else if(patternId==="flood_lanes")mireLanes();
+    else if(patternId==="mire_tempest"){rain(8);radial(1.2,{count:18,speed:5,gapEvery:6,color:0x57e7cc})}
+    else if(patternId==="siren_hunt"){this.mireHuntUntil=this.elapsed+2.8;this.addTelegraph(origin,.65,patternId,point=>zkBossFan(this.pool,point,player,{count:5,spread:.5,speed:8,damage:12,patternId,color:0x57e7cc}),{radius:2,color:0x57e7cc});eruption(2)}
+    else if(patternId==="drowning_finale"){this.mireHuntUntil=this.elapsed+2.2;this.addTelegraph(origin,1,patternId,point=>zkBossSpiral(this.pool,point,{arms:3,shots:12,speed:5.5,offset:this.attackIndex*.31,patternId,color:0x57e7cc}),{radius:2.4,color:0x57e7cc});mireLanes()}
+    else if(patternId==="tremor_mud_burst")radial(.78,{count:18,speed:4.8,damage:11,gapEvery:6,height:.42,color:0x4fcdb4});
+    else if(patternId==="tremor_pressure_fan")this.addTelegraph(origin,.72,patternId,point=>zkBossFan(this.pool,point,player,{count:7,spread:.82,speed:7.6,damage:12,patternId,color:0x4fcdb4,height:1.1}),{radius:2.1,color:0x4fcdb4});
+    else if(patternId==="tremor_sinkhole_mark")this.addTelegraph(player,1.05,patternId,landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.35,0)),0x4fcdb4);zkBossRadial(this.pool,landing,{count:14,speed:4.5,damage:13,gapEvery:7,patternId,color:0x4fcdb4,height:.32})},{radius:2,color:0x4fcdb4});
+    else if(patternId==="tremor_double_wake")this.addTelegraph(origin,.85,patternId,point=>zkBossSpiral(this.pool,point,{arms:2,shots:16,speed:5.3,offset:this.attackIndex*.3,patternId,color:0x4fcdb4}),{radius:2.25,color:0x4fcdb4});
+    else if(patternId==="tremor_eruption_chain"){this.drownedBreachUntil=this.elapsed+1.7;drownedEruptions(4)}
+    else if(patternId==="tremor_drowned_lanes")drownedLanes();
+    else if(patternId==="tremor_breach_charge"){this.drownedBreachUntil=this.elapsed+3;this.addTelegraph(player,.75,patternId,landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.4,0)),0x4fcdb4);zkBossRadial(this.pool,landing,{count:16,speed:5.8,damage:17,gapEvery:8,patternId,color:0x4fcdb4,height:.38})},{radius:2.15,color:0x4fcdb4})}
+    else if(patternId==="tremor_deluge"){rain(10);radial(1.05,{count:20,speed:5.5,damage:15,gapEvery:7,height:.45,color:0x4fcdb4})}
+    else if(patternId==="tremor_final_collapse"){this.drownedBreachUntil=this.elapsed+2.7;drownedEruptions(6);drownedLanes();radial(1.2,{count:24,speed:5.8,damage:17,gapEvery:8,height:.4,color:0x4fcdb4})}
+    else if(patternId==="tremor_aerial_burst"){const burstOrigin=origin.clone().add(new w(0,9,0));this.addTelegraph(burstOrigin,.88,patternId,pt=>{zkBossRadial(this.pool,pt,{count:18,speed:6.2,damage:13,gapEvery:6,patternId,color:0x4fcdb4,height:.9});this.boss&&(this.boss.userData.weakPointUntil=performance.now()+2600);this.game.spawnImpactPulse(pt.clone().add(new w(0,.5,0)),0x4fcdb4)},{radius:2.3,color:0x4fcdb4})}
+    else if(patternId==="tremor_aerial_pinball"){const aerialOrigin=origin.clone().add(new w(0,11,0)),pinballCount=this.phase?.id==="phase_3"?9:6;for(let i=0;i<pinballCount;i+=1){const angle=i/pinballCount*Math.PI*2+this.attackIndex*.37,spread=Math.random()*.4,velocity=new w(Math.cos(angle+spread)*7.5, -1.5-Math.random()*2.5, Math.sin(angle+spread)*7.5);this.pool.acquire({position:aerialOrigin.clone().add(new w((Math.random()-.5)*3, Math.random()*2, (Math.random()-.5)*3)), velocity, damage:13, lifetime:8, patternId, color, scale:1.65, radius:.72, bounces:4, homing:0, terrainFollow:false, heightOffset:1});}}
+    else if(patternId==="tremor_shockwave"){const shockOrigin=origin.clone();shockOrigin.y=this.game.terrain.heightAt(origin.x,origin.z);this.addTelegraph(shockOrigin,1.1,patternId,pt=>{zkBossRadial(this.pool,pt,{count:22,speed:5.0,damage:14,gapEvery:7,patternId,color:0x4fcdb4,height:.35});this.game.spawnImpactPulse(pt.clone().add(new w(0,.45,0)),0x4fcdb4)},{radius:2.6,color:0x4fcdb4})}
+    else if(patternId==="tremor_tracking_spray"){this.addTelegraph(origin,.72,patternId,pt=>zkBossFan(this.pool,pt,player,{count:7,spread:.82,speed:7.6,damage:12,patternId,color:0x4fcdb4,height:1.1}),{radius:2.1,color:0x4fcdb4})}
+    else if(patternId==="tremor_delayed_eruption"){for(let i=0;i<4;i+=1){const angle=i/4*Math.PI*2+this.attackIndex*.43,dist=i%2?3.2:6.1,pt=player.clone().add(new w(Math.cos(angle)*dist,0,Math.sin(angle)*dist));this.addTelegraph(pt,.9+i*.1,patternId,landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.35,0)),0x4fcdb4);zkBossRadial(this.pool,landing,{count:12,speed:4.6,damage:14,gapEvery:6,patternId,color:0x4fcdb4,height:.35})},{radius:1.7,color:0x4fcdb4})}}
+    else if(patternId==="tremor_descending_lanes"){const aerial=origin.clone().add(new w(0,10,0));for(let lane=-2;lane<=2;lane+=1){if((lane+this.attackIndex)%3===1)continue;const lanePt=aerial.clone().add(new w(lane*3.4,0,0));this.addTelegraph(lanePt,.95,patternId,landing=>{for(let k=0;k<6;k+=1){const x=landing.x+(Math.random()-.5)*1.2,z=landing.z+(Math.random()-.5)*1.2;const start=new w(x,landing.y+12,z),vel=new w(0,-9,0);this.pool.acquire({position:start, velocity:vel, damage:12, lifetime:2.2, patternId, color, scale:1.5, radius:.65, terrainFollow:false})}}, {radius:1.55,color:0x4fcdb4})}}
+    else if(patternId==="spore_fungal_ring"){const ringOrigin=origin.clone();ringOrigin.y=this.game.terrain.heightAt(origin.x,origin.z);for(let r=0;r<2;r+=1){const delay=.9+r*.2,rotOffset=r*Math.PI/7;const rid=patternId+"_r"+r;this.addTelegraph(ringOrigin,delay,rid,pt=>{for(let i=0;i<14;i+=1){if(i%5===4)continue;const angle=rotOffset+i/14*Math.PI*2,vel=new w(Math.cos(angle)*4.2,0,Math.sin(angle)*4.2);this.pool.acquire({position:pt.clone().add(new w(0,.4,0)), velocity:vel, damage:9, lifetime:7, patternId:rid, color, scale:1.35, radius:.55, terrainFollow:true, heightOffset:.4})}}, {radius:1.9+r*.25,color})}}
+    else if(patternId==="spore_bouncing_wall"){const wallOrigin=origin.clone();const wallId=patternId+"_wall";this.addTelegraph(wallOrigin,1.0,wallId,pt=>{for(let i=0;i<12;i+=1){if(i%4===3)continue;const x=pt.x+(i-5.5)*1.5,z=pt.z;const pos=new w(x, pt.y+1.2, z),vel=new w(0,0,5.6);this.pool.acquire({position:pos, velocity:vel, damage:10, lifetime:6, patternId:wallId, color, scale:1.4, radius:.6, bounces:2, terrainFollow:true, heightOffset:1.2})}}, {radius:2.4,color})}
+    else if(patternId==="spore_spiral_bloom"){this.addTelegraph(origin,.92,patternId,pt=>{for(let arm=0;arm<2;arm+=1)for(let shot=0;shot<16;shot+=1){const angle=arm/2*Math.PI*2+shot*.34+this.attackIndex*.29,vel=new w(Math.cos(angle)*5.4,0,Math.sin(angle)*5.4);this.pool.acquire({position:pt.clone().add(new w(0,.9,0)),velocity:vel,damage:9,lifetime:6,patternId,color,scale:1.3,radius:.5,terrainFollow:true,heightOffset:.9})}}, {radius:2.15,color})}
+    else if(patternId==="spore_converging_lanes"){for(let lane=-2;lane<=2;lane+=1){if((lane+this.attackIndex)%2===0)continue;const pt=this.center.clone().add(new w(lane*3.2,0,0));this.addTelegraph(pt,1.05,patternId+"_lane"+lane,position=>{for(let step=-5;step<=5;step+=1)this.pool.acquire({position:position.clone().add(new w(0,.45,step*2.2)),velocity:new w(0,0,0),damage:12,lifetime:.9,patternId,color,scale:1.6})},{radius:1.55,color})}}
+    else if(patternId==="spore_delayed_bloom"){for(let i=0;i<6;i+=1){const angle=i/6*Math.PI*2+this.attackIndex*.31,dist=5+i%2*2.5,pt=player.clone().add(new w(Math.cos(angle)*dist,0,Math.sin(angle)*dist));this.addTelegraph(pt,1.1,patternId+"_bloom"+i,landing=>{const start=landing.clone().add(new w(0,12,0)),vel=new w(0,-12,0);this.pool.acquire({position:start,velocity:vel,damage:11,lifetime:2.1,patternId,color,scale:1.5,radius:.6,homing:1.2,homingDelay:.15})},{radius:1.25,color})}}
+    else if(patternId==="spore_dividing_swarm"){this.addTelegraph(origin,.85,patternId,pt=>{for(let i=0;i<8;i+=1){const angle=i/8*Math.PI*2,vel=new w(Math.cos(angle)*5.2,0,Math.sin(angle)*5.2);this.pool.acquire({position:pt.clone().add(new w(0,.8,0)), velocity:vel, damage:8, lifetime:2.8, patternId, color, scale:1.3, radius:.52, splitsOnExpire:2, terrainFollow:true, heightOffset:.8})}}, {radius:2.1,color})}
+    else if(patternId==="arc_rotating_burst"){this.addTelegraph(origin,.85,patternId,pt=>{for(let arm=0;arm<3;arm+=1)for(let shot=0;shot<6;shot+=1){const angle=arm/3*Math.PI*2+shot*.35+this.attackIndex*.4,vel=new w(Math.cos(angle)*6.5,0,Math.sin(angle)*6.5);this.pool.acquire({position:pt.clone().add(new w(0,1.1,0)), velocity:vel, damage:9, lifetime:5.5, patternId, color:0x8fa8ff, scale:1.3, radius:.58, terrainFollow:true, heightOffset:1.1})}}, {radius:2.2,color:0x8fa8ff})}
+    else if(patternId==="arc_railgun_lanes"){for(let lane=-1;lane<=1;lane+=1){if((lane+this.attackIndex)%2===1)continue;const lanePt=this.center.clone().add(new w(lane*5.2,0,0));this.addTelegraph(lanePt,1.3,patternId+"_lane"+lane,position=>{for(let step=-6;step<=6;step+=1)this.pool.acquire({position:position.clone().add(new w(0,.6,step*2.2)), velocity:new w(0,0,0), damage:22, lifetime:1.05, patternId, color:0x8fa8ff, scale:1.9, radius:.72})}, {radius:1.8,color:0x8fa8ff})}}
+    else if(patternId==="arc_electric_grid"){const gridCenter=player.clone();this.addTelegraph(gridCenter,1.25,patternId,pt=>{for(let gx=-1;gx<=1;gx+=1)for(let gz=-1;gz<=1;gz+=1){if((gx+gz+this.attackIndex)%2===0)continue;const pos=pt.clone().add(new w(gx*3.8,0,gz*3.8));this.pool.acquire({position:pos.clone().add(new w(0,.5,0)), velocity:new w(0,0,0), damage:13, lifetime:1.35, patternId, color:0x8fa8ff, scale:1.75})}}, {radius:2.8,color:0x8fa8ff})}
+    else if(patternId==="arc_lightning_nodes"){const nodes=[];for(let n=0;n<5;n+=1){const angle=n/5*Math.PI*2+this.attackIndex*.6,dist=4.5+n%2*2.2,pt=player.clone().add(new w(Math.cos(angle)*dist,0,Math.sin(angle)*dist));nodes.push(pt);this.addTelegraph(pt,1.0,patternId+"_n"+n,landing=>{this.pool.acquire({position:landing.clone().add(new w(0,.6,0)), velocity:new w(0,0,0), damage:9, lifetime:1.8, patternId, color:0x8fa8ff, scale:1.55})}, {radius:1.2,color:0x8fa8ff})} this.tetherNodes=nodes }
+    else if(patternId==="arc_tracking_volley"){const astart=this.boss.position.clone().add(new w(0,1.3,0));for(let i=0;i<5;i+=1){const spread=(i/4-.5)*.42,base=player.clone().sub(astart).normalize();const vel=base.clone().applyAxisAngle(new w(0,1,0),spread).multiplyScalar(10.2);this.addTelegraph(astart,.78,patternId+"_t"+i,pt=>{this.pool.acquire({position:pt.clone(),velocity:vel.clone(),damage:11,lifetime:4.5,patternId,color:0x8fa8ff,scale:1.55,radius:.62,homing:.9,homingDelay:.2})},{radius:1.35,color:0x8fa8ff})}}
+    else if(patternId==="arc_bullet_wall"){const forward=new w(0,0,1).applyAxisAngle(new w(0,1,0),this.boss.rotation.y);const wallStart=origin.clone().addScaledVector(forward,14);this.addTelegraph(wallStart,1.0,patternId,pt=>{const side=new w(-forward.z,0,forward.x);for(let i=0;i<16;i+=1){if(i%4===3)continue;const offset=(i-7.5)*1.45,pos=pt.clone().addScaledVector(side,offset).add(new w(0,1.0,0)),vel=forward.clone().multiplyScalar(-4.0);this.pool.acquire({position:pos, velocity:vel, damage:11, lifetime:6, patternId, color:0x8fa8ff, scale:1.4, radius:.62, terrainFollow:true, heightOffset:1})}}, {radius:2.5,color:0x8fa8ff})}
+    else if(patternId==="arc_shield_phase"){this.boss.userData.shieldHp=180;this.boss.userData.weakPointUntil=0;this.addTelegraph(origin,1.45,patternId,pt=>{this.game.spawnImpactPulse(pt.clone().add(new w(0,2.5,0)),0x8fa8ff);this.game.ui.showToast("Arc Shield Active","Break the shield to expose the weak point — +110% bonus damage for 2.6s","danger")}, {radius:2.6,color:0x8fa8ff})}
+    else if(patternId==="thunder_punch")this.addTelegraph(player,.72,patternId,point=>{this.game.spawnImpactPulse(point.clone().add(new w(0,.35,0)),0x8fd7ff);zkBossRadial(this.pool,point,{count:12,speed:5.1,damage:13,gapEvery:6,patternId,color:0x8fd7ff,height:.3})},{radius:1.75,color:0x8fd7ff});
+    else if(patternId==="shale_bolt_fan")this.addTelegraph(origin,.62,patternId,point=>zkBossFan(this.pool,point,player,{count:9,spread:.96,speed:8.2,damage:10,patternId,color:0x8fd7ff,height:1.35}),{radius:2,color:0x8fd7ff});
+    else if(patternId==="static_ring")radial(.7,{count:24,speed:5.8,damage:10,gapEvery:8,height:.55,color:0x8fd7ff});
+    else if(patternId==="seismic_hook"){this.stormbackChargeUntil=this.elapsed+1.5;this.addTelegraph(origin,.58,patternId,point=>zkBossFan(this.pool,point,player,{count:3,spread:.28,speed:9.2,damage:14,patternId,color:0x8fd7ff,height:.9}),{radius:2.1,color:0x8fd7ff})}
+    else if(patternId==="rolling_stormfront"){rain(7);radial(1,{count:18,speed:5.4,damage:11,gapEvery:6,color:0x8fd7ff})}
+    else if(patternId==="faultline_lanes")stormLanes();
+    else if(patternId==="stormback_charge"){this.stormbackChargeUntil=this.elapsed+3.2;this.addTelegraph(origin,.5,patternId,point=>zkBossFan(this.pool,point,player,{count:3,spread:.2,speed:10.5,damage:16,patternId,color:0x8fd7ff,height:.9}),{radius:2.2,color:0x8fd7ff})}
+    else if(patternId==="lightning_crown"){rain(10);this.addTelegraph(player,.8,patternId,point=>{this.game.spawnImpactPulse(point.clone().add(new w(0,.45,0)),0x8fd7ff);zkBossRadial(this.pool,point,{count:16,speed:5.8,damage:14,gapEvery:8,patternId,color:0x8fd7ff,height:.35})},{radius:1.9,color:0x8fd7ff})}
+    else if(patternId==="ridgeline_finale"){this.stormbackChargeUntil=this.elapsed+2.5;this.addTelegraph(origin,.9,patternId,point=>zkBossSpiral(this.pool,point,{arms:3,shots:12,speed:6,offset:this.attackIndex*.33,patternId,color:0x8fd7ff}),{radius:2.4,color:0x8fd7ff});stormLanes()}
+    else if(patternId==="screecher_frost_fan")this.addTelegraph(player,.68,patternId,()=>screecherVolley(player,{count:7,spread:.82,speed:9.2,damage:11}),{radius:1.7,color:0xbdefff,hazardDamage:0});
+    else if(patternId==="screecher_strafing_run"){this.screecherStrafeUntil=this.elapsed+2.8;screecherMarks(5,.72);this.addTelegraph(player,.55,patternId,()=>screecherVolley(player,{count:5,spread:.46,speed:10,damage:12}),{radius:1.65,color:0xbdefff,hazardDamage:0})}
+    else if(patternId==="screecher_cryo_ring"){const groundOrigin=origin.clone();groundOrigin.y=this.game.terrain.heightAt(origin.x,origin.z);this.addTelegraph(groundOrigin,.8,patternId,point=>zkBossRadial(this.pool,point,{count:22,speed:5.5,damage:10,gapEvery:7,patternId,color:0xbdefff,height:.45}),{radius:2,color:0xbdefff,hazardDamage:0})}
+    else if(patternId==="screecher_whiteout_spiral"){const groundOrigin=origin.clone();groundOrigin.y=this.game.terrain.heightAt(origin.x,origin.z);this.addTelegraph(groundOrigin,.82,patternId,point=>zkBossSpiral(this.pool,point,{arms:2,shots:16,speed:5.8,offset:this.attackIndex*.31,patternId,color:0xbdefff}),{radius:2.2,color:0xbdefff,hazardDamage:0})}
+    else if(patternId==="screecher_hail_marks")screecherMarks(8,.82);
+    else if(patternId==="screecher_ice_lanes")screecherLanes();
+    else if(patternId==="screecher_blizzard_dive"){this.screecherDiveUntil=this.elapsed+2.7;this.addTelegraph(player,.75,patternId,landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.45,0)),0xbdefff);zkBossRadial(this.pool,landing,{count:16,speed:6.2,damage:16,gapEvery:8,patternId,color:0xbdefff,height:.45});screecherVolley(landing,{count:5,spread:.38,speed:11.2,damage:16})},{radius:2.1,color:0xbdefff})}
+    else if(patternId==="screecher_sky_barrage"){this.screecherStrafeUntil=this.elapsed+3.1;screecherMarks(10,.68);this.addTelegraph(player,.62,patternId,()=>screecherVolley(player,{count:9,spread:1.05,speed:10.6,damage:14}),{radius:1.8,color:0xbdefff,hazardDamage:0})}
+    else if(patternId==="screecher_finale"){this.screecherDiveUntil=this.elapsed+3.2;screecherMarks(8,.72);screecherLanes();this.addTelegraph(player,.9,patternId,landing=>screecherVolley(landing,{count:9,spread:.92,speed:11.5,damage:17,scale:2.2}),{radius:2.15,color:0xbdefff,hazardDamage:0})}
+    else if(patternId==="thorn_radial_burst")radial(.62,{count:22,speed:9.4,gapEvery:7});
+    else if(patternId==="spore_rain")rain(12,{delay:.85,damage:15,fall:15,homing:1.6});
+    else if(patternId==="spore_aerial_pinball"){const aerialOrigin=origin.clone().add(new w(0,11,0)),pinballCount=this.phase?.id==="phase_3"?9:6;for(let i=0;i<pinballCount;i+=1){const angle=i/pinballCount*Math.PI*2+this.attackIndex*.37,spread=Math.random()*.4,velocity=new w(Math.cos(angle+spread)*7.5, -1.5-Math.random()*2.5, Math.sin(angle+spread)*7.5);this.pool.acquire({position:aerialOrigin.clone().add(new w((Math.random()-.5)*3, Math.random()*2, (Math.random()-.5)*3)), velocity, damage:13, lifetime:8, patternId, color, scale:1.65, radius:.72, bounces:4, homing:0, terrainFollow:false, heightOffset:1});}
+    // companion ground spore ring from same aerial burst
+    this.addTelegraph(origin,.85,patternId+"_ring",pt=>zkBossRadial(this.pool,pt,{count:14,speed:4.2,damage:9,gapEvery:7,patternId:patternId+"_ring",color,height:.4}),{radius:1.8,color});}
+    else if(patternId==="root_ground_wave"){this.thornwardenAdvanceUntil=this.elapsed+1.4;radial(.8,{count:26,speed:8.2,gapEvery:8,height:.25,color:0xff9a4f})}
+    else if(patternId==="double_thorn_spiral")this.addTelegraph(origin,1,patternId,point=>zkBossSpiral(this.pool,point,{arms:3,shots:20,speed:8.6,offset:this.attackIndex*.27,patternId,color}),{radius:2.3,color});
+    else if(patternId==="targeted_root_eruptions"){this.thornwardenAdvanceUntil=this.elapsed+1.8;eruption()}
+    else if(patternId==="rotating_thorn_wall")radial(.72,{count:34,speed:8.8,offset:this.attackIndex*.34,gapEvery:9});
+    else if(patternId==="canopy_storm"){rain(14,{delay:.7,damage:16,fall:17,homing:2.2,tight:!0});radial(.95,{count:20,speed:9.8,gapEvery:7})}
+    else if(patternId==="alternating_root_lanes")lanes();
+    else if(patternId==="thornwarden_final_sequence"){this.thornwardenAdvanceUntil=this.elapsed+2.4;radial(1.5,{count:22,speed:5.4,gapEvery:7});lanes()}
+    else{radial(1.5,{count:22,speed:5.4,gapEvery:7});lanes()}
+    if(this.config.id==="wetlands_broodwarden"){this.insectHoverUntil=this.elapsed+1.6;const hoverColor=this.config.color,swarmTarget=player.clone();this.addTelegraph(swarmTarget,.55,patternId+"_swarm",pt=>zkBossFan(this.pool,pt,player,{count:5,spread:.55,speed:8.5,damage:11,patternId:patternId+"_swarm",color:hoverColor,height:5.2}),{radius:1.4,color:hoverColor});if(this.attackIndex%2===0)rain(5,{delay:.9,damage:10,fall:11,homing:.9,tight:!0})}
+    if(this.config.id==="desert_sunscar_colossus"&&player.y-origin.y>2.2){const perch=player.clone();this.addTelegraph(perch,.85,"solar_high_ground_lance",landing=>{const target=perch.clone().add(new w(0,1.2,0)),start=target.clone().add(new w(0,14,0)),velocity=target.clone().sub(start).normalize().multiplyScalar(15);this.pool.acquire({position:start,velocity,damage:18,lifetime:1.4,radius:.9,patternId:"solar_high_ground_lance",color:0xffb13b,scale:2})},{radius:1.9,color:0xffb13b})}
+    if(this.config.id==="wetlands_mire_siren"&&player.y-origin.y>2){const perch=player.clone();this.addTelegraph(perch,.8,"watershed_high_ground_surge",landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.4,0)),0x57e7cc);zkBossRadial(this.pool,landing,{count:14,speed:5.4,damage:16,gapEvery:7,patternId:"watershed_high_ground_surge",color:0x57e7cc,height:.35})},{radius:2,color:0x57e7cc})}
+    if(this.config.id==="wetlands_drowned_tremor"&&player.y-origin.y>1.8){const perch=player.clone();this.drownedBreachUntil=this.elapsed+2;this.addTelegraph(perch,.72,"drowned_high_ground_breach",landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.45,0)),0x4fcdb4);zkBossRadial(this.pool,landing,{count:16,speed:5.8,damage:18,gapEvery:8,patternId:"drowned_high_ground_breach",color:0x4fcdb4,height:.4})},{radius:2.1,color:0x4fcdb4})}
+    if(this.config.id==="highlands_stormback"&&player.y-origin.y>1.6){const perch=player.clone();this.addTelegraph(perch,.65,"summit_lightning_strike",landing=>{const start=landing.clone().add(new w(0,15,0)),velocity=landing.clone().add(new w(0,.5,0)).sub(start).normalize().multiplyScalar(18);this.pool.acquire({position:start,velocity,damage:19,lifetime:1.25,radius:.95,patternId:"summit_lightning_strike",color:0x8fd7ff,scale:2.1})},{radius:1.75,color:0x8fd7ff})}
+    if(this.config.id==="forest_ancient_thornwarden"&&player.y-origin.y>1.8){const perch=player.clone();this.addTelegraph(perch,.8,"canopy_high_ground_roots",landing=>{this.game.spawnImpactPulse(landing.clone().add(new w(0,.4,0)),0x9fe45c);zkBossRadial(this.pool,landing,{count:14,speed:5.4,damage:16,gapEvery:7,patternId:"canopy_high_ground_roots",color:0x9fe45c,height:.35})},{radius:1.9,color:0x9fe45c})}
+    if(this.config.id==="arctic_white_screecher"&&player.y-this.game.terrain.heightAt(player.x,player.z)>1.6){const perch=player.clone();this.addTelegraph(perch,.72,"whiteout_high_ground_strike",landing=>{const start=landing.clone().add(new w(0,15,0)),velocity=landing.clone().add(new w(0,.5,0)).sub(start).normalize().multiplyScalar(18);this.pool.acquire({position:start,velocity,damage:20,lifetime:1.25,radius:1,patternId:"whiteout_high_ground_strike",color:0xbdefff,scale:2.35})},{radius:1.85,color:0xbdefff,hazardDamage:0})}
+  }
+  update(delta){const began=performance.now();if(!this.active){this.considerStart();return}if(!this.boss||!this.boss.parent){this.abort("Boss entity missing");return}this.elapsed+=delta;this.pool.update(delta,this);this.updateTelegraphs(delta);/* trails: pooled meshes reuse geometry/material; impactFlash via spawnImpactPulse; shockwave via telegraph ring; fog via biome atmosphere; cameraImpulse via WeakPoint hit */this.peakProjectiles=Math.max(this.peakProjectiles,this.pool.active.length);const health=Math.max(0,Number(this.boss.userData.health));if(health<this.lastBossHealth-.01){this.queueDamage(this.lastBossHealth-health);this.lastBossHealth=health}const nextPhase=phaseForHealth(this.config,health,this.maxHealth);if(nextPhase.id!==this.phase.id){this.phase=nextPhase;this.phaseStartedAt=this.elapsed;this.transitionUntil=this.elapsed+1.4;this.pool.clear();this.clearTelegraphs();this.attackIndex=0;this.nextAttackAt=this.transitionUntil+1.25;this.game.spawnImpactPulse(this.boss.position.clone().add(new w(0,3,0)),nextPhase.color);this.boss&&(this.boss.userData.weakPointUntil=performance.now()+2400);this.game.ui.showToast(nextPhase.label,"Weak point exposed — burst window open!","success");this.game.ui.showToast(nextPhase.label,`${this.config.name} changed its attack formation. Projectiles cleared for a readable transition.`,"danger")}
+    let bossMoving=!0;const stunned=performance.now()<Number(this.boss?.userData?.bossStunUntil??0);if(stunned)bossMoving=!1;else if(this.config.id==="desert_sunscar_colossus")bossMoving=zkMoveSunscarBoss(this,delta);else if(this.config.id==="wetlands_mire_siren")bossMoving=zkMoveMireSirenBoss(this,delta);else if(this.config.id==="wetlands_drowned_tremor")bossMoving=zkMoveDrownedTremorBoss(this,delta);else if(this.config.id==="highlands_stormback")bossMoving=zkMoveStormbackBoss(this,delta);else if(this.config.id==="forest_ancient_thornwarden")bossMoving=zkMoveThornwardenBoss(this,delta);else if(this.config.id==="arctic_white_screecher")bossMoving=zkMoveWhiteScreecherBoss(this,delta);else if(this.config.id==="wetlands_broodwarden")bossMoving=zkMoveInsectKingBoss(this,delta);else if(this.config.id==="forest_spore_cantor")bossMoving=zkMoveSporeCantorBoss(this,delta);else if(this.config.id==="highlands_arc_gunner")bossMoving=zkMoveArcGunnerBoss(this,delta);else if(this.config.id===ZK_KNIGHT_ID)bossMoving=zkMoveObsidianKnightBoss(this,delta);else{const orbit=this.elapsed*.16+this.seed%17,bossTarget=this.center.clone().add(new w(Math.cos(orbit)*2.2,0,Math.sin(orbit)*2.2)),before=this.boss.position.clone();this.boss.position.lerp(bossTarget,Math.min(1,delta*.55));bossMoving=before.distanceToSquared(this.boss.position)>1e-6}this.lastBossMoving=bossMoving;const facing=this.game.player.group.position.clone().sub(this.boss.position);this.boss.rotation.y=Math.atan2(facing.x,facing.z);this.boss.userData.bossHqModel?.update?.(delta,bossMoving,this.phase?.id==="phase_3"||this.elapsed<Number(this.mireHuntUntil??0)||this.elapsed<Number(this.drownedBreachUntil??0)||this.elapsed<Number(this.stormbackChargeUntil??0)||this.elapsed<Number(this.thornwardenAdvanceUntil??0)||this.elapsed<Number(this.screecherDiveUntil??0)||this.elapsed<Number(this.screecherStrafeUntil??0)||this.elapsed<Number(this.insectHoverUntil??0));const wpVuln=performance.now()<Number(this.boss?.userData?.weakPointUntil??0);this.weakPoint&&(this.weakPoint.material.emissiveIntensity=wpVuln?6+Math.sin(this.elapsed*14)*2.2:3+Math.sin(this.elapsed*6)*1.4, this.weakPoint.scale.setScalar(wpVuln?1.35:1));
+    if(this.elapsed>=this.nextAttackAt&&this.elapsed>=this.transitionUntil){const order=this.attackOrders[this.phase.id],pattern=order[this.attackIndex%order.length],timing=bossAttackTiming(this.config,pattern,this.phase.id);if(this.pool.active.length>Math.min(timing.maxCarryover,220)){this.nextAttackAt=this.elapsed+.35}else if(this.pool.active.length>245){this.pool.clearOldest?.(20);this.nextAttackAt=this.elapsed+.2}else{this.attackIndex+=1;this.currentAttackTiming=timing;this.schedulePattern(pattern);this.nextAttackAt=this.elapsed+timing.cooldown}}
+    if(this.game.player.health<=0&&this.previousPlayerHealth>0)this.playerDeaths+=1;this.previousPlayerHealth=Number(this.game.player.health);if(health<=0)this.finish();this.renderHud();this.frameTotal+=performance.now()-began;this.frameSamples+=1}
+  considerStart(){
+    if(!this.game.player||this.game.paused) return;
+    // BossCombat: per-run replay 1..12 without Mission1 flash — permanent unlock vs run completion
+    let context=this.game.getMissionContext();
+    let team=String(this.game.user?.teamCode||"default");
+    let runDefeats={};
+    try{ const raw=sessionStorage.getItem("zeknova.bossRun.v1."+team); runDefeats=raw?JSON.parse(raw).bossDefeats||{}:{} }catch(e){}
+    // Determine next boss deterministically: earliest unlocked mission not yet fought this run
+    // Unlocked = permanent non-boss objectives ready (buildings/resources), regardless of permanent boss defeats
+    let nextMission=null;
+    try{
+      for(const cand of zkMissionSequence){
+        const mid=cand.id;
+        if(runDefeats[mid]) continue;
+        // Check if mission's non-boss objectives are ready in permanent context
+        const ready = missionReadyForBoss(mid, context);
+        // Also ensure previous missions' permanent unlocks allow reaching this mission
+        // For replay mode, we allow any ready mission that is <= furthest unlocked
+        if(ready){ nextMission=cand; break; }
+      }
+    }catch(e){}
+    // Fallback to campaign.current if no replay candidate
+    if(!nextMission){
+      const campaign=zkCampaignState(context);
+      nextMission=campaign.current;
+    }
+    if(!nextMission?.bossEncounter) return;
+    if(runDefeats[nextMission.id]) return;
+    if(!missionReadyForBoss(nextMission.id,context)) return;
+    const area=zkAOAt(this.game.player.group.position.x,this.game.player.group.position.z);
+    if(area.id!==nextMission.biome){
+      if(Date.now()-Number(this.lastReturnToastAt??0)>2e4){
+        this.lastReturnToastAt=Date.now();
+        this.game.ui.showToast("Guardian awaiting","Return to the "+nextMission.biome.toUpperCase()+" AO to begin the mission boss encounter.","info");
+      }
+      return;
+    }
+    this.startEncounter({missionId:nextMission.id});
+  }
+  metrics(){const elapsed=Math.max(1,(Date.now()-this.startedAt)/1000),startingHealth=100*Math.max(1,this.playerCount()),healthLost=Math.min(startingHealth,this.damageTaken),buildingNow=(this.game.buildings?.records??[]).reduce((sum,record)=>sum+Number(record.health??1000),0);return{damageAvoidance:1-healthLost/startingHealth,timeScore:Math.max(0,1-elapsed/300),telegraphAvoidance:1-this.telegraphHits/Math.max(1,this.telegraphCount),teamSurvival:Math.max(0,1-this.playerDeaths/Math.max(1,this.playerCount())),infrastructureProtection:this.infrastructureStart?Math.max(0,Math.min(1,buildingNow/this.infrastructureStart)):1}}
+  applyReward(defeat){const missionId=defeat.missionId,rewardId=defeat.rewardId,claimed=this.game.missionStats.claimedBossRewards??(this.game.missionStats.claimedBossRewards=[]);this.game.missionStats.bossDefeats??={};this.game.missionStats.bossDefeats[missionId]=defeat;if(!canGrantEncounterReward(claimed,rewardId))return!1;claimed.push(rewardId);const reward=defeat.rewards;this.game.simulation.resources.credits=He(Number(this.game.simulation.resources.credits)+Number(reward.credits),0,9999);this.game.simulation.resources.timber=He(Number(this.game.simulation.resources.timber)+Number(reward.timber),0,9999);this.game.simulation.resources.iron=He(Number(this.game.simulation.resources.iron)+Number(reward.iron),0,9999);this.game.diplomacyTension=He(Number(this.game.diplomacyTension??50)-50,0,100);this.game.multiplayerRoom?.queueRelationEvent?.({tensionDelta:-25,reason:`${defeat.bossName} defeated`});this.game.multiplayerRoom?.queueRelationEvent?.({tensionDelta:-25,reason:`${defeat.bossName} guardian crisis resolved`});zkSaveDiplomacyCycle(this.game);this.game.ui.showToast(`${defeat.grade} BOSS VICTORY`,`+${reward.credits} credits · +${reward.timber} timber · +${reward.iron} iron ore · ZekNovan tension -50.`,"success");this.game.updateHud(!0);this.game.save();return!0}
+  finish(sharedDefeat=null){
+    if(!this.active&&!sharedDefeat) return;
+    const config=this.config??missionBossConfig(sharedDefeat?.missionId),grade=sharedDefeat?.grade?{grade:sharedDefeat.grade,multiplier:Number(sharedDefeat.multiplier)}:performanceGrade(this.metrics()),reward=bossRewards(config,grade.multiplier),missionId=sharedDefeat?.missionId??config.missionId,rewardId=sharedDefeat?.rewardId??encounterRewardId(missionId,this.seed),defeat=sharedDefeat??{missionId,bossId:config.id,bossName:config.name,rewardId,grade:grade.grade,multiplier:grade.multiplier,rewards:reward,defeatedAt:Date.now(),telemetry:{seed:this.seed,playerCount:this.playerCount(),durationMs:Date.now()-this.startedAt,playerDeaths:this.playerDeaths,peakProjectiles:this.peakProjectiles,averageFrameMs:this.frameSamples?this.frameTotal/this.frameSamples:0,lastDamageAttribution:this.lastDamageAttribution??null}};
+    this.applyReward(defeat);
+    // BossCombat: mark per-run defeat (replay 1..12) and also permanent for unlock
+    try{
+      const team=String(this.game.user?.teamCode||"default");
+      const runKey="zeknova.bossRun.v1."+team;
+      let runState={bossDefeats:{}};
+      try{ const raw=sessionStorage.getItem(runKey); if(raw) runState=JSON.parse(raw); }catch(e){}
+      runState.bossDefeats=runState.bossDefeats||{};
+      runState.bossDefeats[missionId]=defeat;
+      try{ sessionStorage.setItem(runKey, JSON.stringify(runState)); }catch(e){}
+      // Also mark QA defeats separately, never as production authority, but keep production bossDefeats for unlock
+      const qaKey="zeknova.qa.bossDefeats.v1."+team;
+      let qa={}; try{ qa=JSON.parse(localStorage.getItem(qaKey)||"{}"); }catch(e){}
+      qa[missionId]=defeat; try{ localStorage.setItem(qaKey, JSON.stringify(qa)); }catch(e){}
+    }catch(e){}
+    this.lastSharedState={encounterId:this.encounterId??missionId+":"+this.seed,missionId,bossId:config.id,seed:this.seed,status:"defeated",health:0,maxHealth:this.maxHealth??scaledBossHealth(config,1),startedAt:this.startedAt??Date.now(),defeat};
+    this.cleanup(!0);
+    // BossCombat: projectile cleanup between encounters
+    try{ this.pool?.clear?.(); this.clearTelegraphs?.(); }catch(e){}
+    this.game.syncOfficerProgression?.();
+    return defeat;
+  }
+  abort(reason="Encounter aborted"){this.game.ui.showToast("Boss encounter recovered",`${reason}. Return to the mission biome to restart safely.`,"warning");this.cleanup(!1)}
+  cleanup(victory=!1){
+    try{ this.pool.clear(); this.clearTelegraphs(); }catch(e){}
+    if(this.boss){try{this.boss.userData.bossHqModel?.dispose?.();}catch(e){} this.game.scene.remove(this.boss);const index=this.game.enemies.indexOf(this.boss);index>=0&&this.game.enemies.splice(index,1)}
+    if(this.weakPoint){try{this.weakPoint.geometry.dispose();this.weakPoint.material.dispose();}catch(e){}}
+    this.boss=null;this.active=!1;this.hideHud();this.game.updateHud(!0);if(!victory)this.lastSharedState=null
+  }
+  snapshot(){if(this.active)return{encounterId:this.encounterId,missionId:this.config.missionId,bossId:this.config.id,seed:this.seed,status:"active",health:Math.max(0,Number(this.boss?.userData.health??0)),maxHealth:this.maxHealth,startedAt:this.startedAt,x:this.center.x,z:this.center.z,bossX:Number(this.boss?.position.x??this.center.x),bossZ:Number(this.boss?.position.z??this.center.z),moving:!!this.lastBossMoving,phase:this.phase.id,activePatternId:this.lastPattern,projectileCount:this.pool.active.length};return this.lastSharedState}
+  applyShared(state){if(!state?.missionId)return;if(state.status==="defeated"&&state.defeat){this.applyReward(state.defeat);if(this.active&&this.config?.missionId===state.missionId)this.finish(state.defeat);return}if(state.status!=="active"||this.game.missionStats.bossDefeats?.[state.missionId])return;if(!this.active)this.startEncounter({missionId:state.missionId,seed:state.seed,shared:state,force:!0});else if(this.encounterId===state.encounterId){const serverHealth=Number(state.health);if(Number.isFinite(serverHealth)&&serverHealth<Number(this.boss.userData.health)){this.boss.userData.health=serverHealth;this.lastBossHealth=serverHealth}}}
+  dispose(){this.cleanup(!1);this.pool.dispose();this.hideHud()}
+}
+
+// Lasers and area specials can write health directly instead of using the
+// weapon-target hook. Normalize those hits before the manager records damage.
+const zkBossDefenseUpdate=zkBossManager.prototype.update;
+zkBossManager.prototype.update=function(delta){if(this.active&&this.boss){const untracked=Math.max(0,Number(this.lastBossHealth)-Number(this.boss.userData.health));if(untracked>.01)this.resolveDefense(untracked)}return zkBossDefenseUpdate.call(this,delta)};
+
+const zkBossMissionContext=zR.prototype.getMissionContext;
+zR.prototype.getMissionContext=function(){const context=zkBossMissionContext.call(this),visited=new Set(this.missionStats.biomeVisited??[]),biomeStats=this.missionStats.biomeStats??{},biomes={};for(const area of zkAreasOfOperation)biomes[area.id]=zkBossBiomeState(),biomes[area.id].visited=visited.has(area.id),biomes[area.id].resources=Number(this.aoResourceCollected?.[area.id]??0),biomes[area.id].stats={...biomes[area.id].stats,...(biomeStats[area.id]??{})};for(const record of this.buildings?.records??[]){if(Number(record.health??1000)<=0)continue;const id=zkAOAt(Number(record.x),Number(record.z)).id;biomes[id].buildings[record.type]=Number(biomes[id].buildings[record.type]??0)+1}return{...context,biomes,bossDefeats:{...(this.missionStats.bossDefeats??{})}}};
+
+const zkBossChop=zR.prototype.chopTree;zR.prototype.chopTree=function(tree){const before=this.harvestedTreeIds.has(String(tree?.userData?.treeId??"")),result=zkBossChop.call(this,tree),after=this.harvestedTreeIds.has(String(tree?.userData?.treeId??""));if(!before&&after)zkBossRecordBiomeStat(this,tree.position.x,tree.position.z,"treesChopped");return result};
+const zkBossMine=zR.prototype.mineRock;zR.prototype.mineRock=function(rock){const before=!!rock?.visible,result=zkBossMine.call(this,rock);if(before&&!rock?.visible)zkBossRecordBiomeStat(this,rock.position.x,rock.position.z,"rocksMined");return result};
+const zkBossPowerUp=zR.prototype.collectPowerUp;zR.prototype.collectPowerUp=function(node){const before=!!node?.visible,result=zkBossPowerUp.call(this,node);if(before&&!node?.visible)zkBossRecordBiomeStat(this,node.position.x,node.position.z,"powerUpsCollected");return result};
+const zkBossRoll=zR.prototype.rollingShoot;zR.prototype.rollingShoot=function(){const before=Number(this.rollingShotCooldownUntil??0),result=zkBossRoll.call(this);if(Number(this.rollingShotCooldownUntil??0)>before)this.bossRollIFrameUntil=performance.now()+760;return result};
+const zkBossDamageTarget=zR.prototype.damageWeaponTarget;zR.prototype.damageWeaponTarget=function(enemy,damage,color,weaponId=null){if(!enemy?.userData?.isMissionBoss)return zkBossDamageTarget.call(this,enemy,damage,color,weaponId);if(!this.bossManager?.active||Number(enemy.userData.health)<=0)return!1;const amount=Math.max(0,Number(damage)||0),before=Number(enemy.userData.health);enemy.userData.health=Math.max(0,before-amount);const pushMap={voidsting:1,singularity:3,thunderclaw:5};let push=pushMap[weaponId];if(push==null){const d=Number(damage);push=d===3?1:d===5?3:d===7?5:d<=10?1:3}if(push>0){const dir=enemy.position.clone().sub(this.player.group.position);dir.y=0;if(dir.lengthSq()>1e-6){dir.normalize();const nextX=Kt.clamp(enemy.position.x+dir.x*push*.35,-79,79),nextZ=Kt.clamp(enemy.position.z+dir.z*push*.35,-79,79);if(!this.terrain?.isObstacleAt(nextX,nextZ,.65)){enemy.position.x=nextX;enemy.position.z=nextZ}}}const now=performance.now();enemy.userData.bossStunUntil=now+20;const last=Number(enemy.userData.bossLastHitAt??0),consecutive=now-last<600?Number(enemy.userData.bossConsecutiveHits??0)+1:1;enemy.userData.bossConsecutiveHits=consecutive;enemy.userData.bossLastHitAt=now;if(consecutive>=4){enemy.userData.bossStunUntil=now+120;enemy.userData.bossConsecutiveHits=0;enemy.userData.bossStunnedAt=now}this.player.xp+=3;this.spawnImpactPulse(enemy.position.clone().add(new w(0,4.8,0)),color);this.bossManager.recordBossDamage(before-Number(enemy.userData.health));return!0};
+const zkBossEnemyUpdate=zR.prototype.updateEnemies;zR.prototype.updateEnemies=function(delta){if(!this.bossManager)return zkBossEnemyUpdate.call(this,delta);const boss=this.bossManager.active?this.bossManager.boss:null,defeated=[];for(const enemy of this.enemies)if(enemy!==boss&&Number(enemy.userData.health)<=0&&!enemy.userData.biomeDefeatRecorded)enemy.userData.biomeDefeatRecorded=!0,defeated.push(enemy);if(boss){const index=this.enemies.indexOf(boss);index>=0&&this.enemies.splice(index,1);const result=zkBossEnemyUpdate.call(this,delta);this.enemies.push(boss);for(const enemy of defeated)zkBossRecordBiomeStat(this,enemy.position.x,enemy.position.z,"enemiesDefeated");this.bossManager.update(delta);return result}const result=zkBossEnemyUpdate.call(this,delta);for(const enemy of defeated)zkBossRecordBiomeStat(this,enemy.position.x,enemy.position.z,"enemiesDefeated");this.bossManager.update(delta);return result};
+const zkBossSpawning=zR.prototype.processEnemySpawning;zR.prototype.processEnemySpawning=function(delta){if(this.bossManager?.active)return;return zkBossSpawning.call(this,delta)};
+const zkBossToggleMode=zR.prototype.toggleMode;zR.prototype.toggleMode=function(){if(this.bossManager?.active&&this.mode==="explore"){this.ui.showToast("Command mode locked","Defeat the active mission guardian before returning to construction.","warning");return}return zkBossToggleMode.call(this)};
+
+const zkBossInitialize=zR.prototype.initialize;zR.prototype.initialize=async function(){const result=await zkBossInitialize.call(this);this.missionStats.biomeVisited??=[];this.missionStats.biomeStats??={};this.missionStats.bossDefeats??={};this.missionStats.claimedBossRewards??=[];this.bossManager=new zkBossManager(this);const local=["localhost","127.0.0.1","::1"].includes(location.hostname),params=new URLSearchParams(location.search),savedBoss=this.missionStats.activeBoss;if(local){globalThis.ZekNovaBossDebug={start:(missionId="habitat")=>this.bossManager.startEncounter({missionId,force:!0}),end:()=>this.bossManager.finish(),damageTenPercent:()=>{const boss=this.bossManager.boss;if(boss)boss.userData.health=Math.max(0,Number(boss.userData.health)-this.bossManager.maxHealth*.1)},forcePhase:phase=>{const boss=this.bossManager.boss;if(boss)boss.userData.health=this.bossManager.maxHealth*({1:.9,2:.6,3:.25}[phase]??.9)},trigger:pattern=>this.bossManager.schedulePattern(pattern),toggleDamage:()=>this.bossManager.debugPlayerDamage=!this.bossManager.debugPlayerDamage,toggleTelegraphs:()=>this.bossManager.debugTelegraphs=!this.bossManager.debugTelegraphs,snapshot:()=>this.bossManager.snapshot()};if(params.has("qaBoss"))window.setTimeout(()=>{const started=this.bossManager.startEncounter({missionId:params.get("qaBoss")||"habitat",force:!0});if(started&&this.bossManager.active){const center=this.bossManager.center,x=center.x,z=center.z+Math.min(6,this.bossManager.radius*.45);this.bossManager.debugPlayerDamage=!1;this.player.health=100;this.player.group.position.set(x,this.terrain.heightAt(x,z),z);this.alignExploreCameraToPlayer()}},900)}/* A saved encounter may only resume if its mission is still boss-ready. `force` is meant to skip the already-defeated check, not the mission gate - without this a stale activeBoss resurrected the fight on every single load, before the player had built anything. If the mission is no longer ready, clear it. */if(!params.has("qaBoss")&&savedBoss?.status==="active"&&savedBoss.missionId&&!this.missionStats.bossDefeats[savedBoss.missionId]){const restoreContext=this.getMissionContext?.();if(restoreContext&&!missionReadyForBoss(savedBoss.missionId,restoreContext))this.missionStats.activeBoss=null;else window.setTimeout(()=>this.bossManager.startEncounter({missionId:savedBoss.missionId,seed:savedBoss.seed,shared:savedBoss,force:!0}),700);}return result};
+const zkBossVisitUpdate=zR.prototype.updateAO;zR.prototype.updateAO=function(...args){const result=zkBossVisitUpdate?.apply(this,args),position=this.player?.group?.position;if(position){const id=zkAOAt(position.x,position.z).id,visited=new Set(this.missionStats.biomeVisited??[]);if(!visited.has(id))visited.add(id),this.missionStats.biomeVisited=[...visited],this.updateHud(!0)}return result};
+const zkBossSave=zR.prototype.save;zR.prototype.save=function(){if(this.bossManager?.active)this.missionStats.activeBoss=this.bossManager.snapshot();else delete this.missionStats.activeBoss;return zkBossSave.call(this)};
+const zkBossDispose=zR.prototype.dispose;zR.prototype.dispose=function(){this.bossManager?.dispose?.();return zkBossDispose.call(this)};
+
+/* Lightweight cinematic grading: each equal-width AO now carries its own
+   atmosphere while reusing the existing lights, fog, water, and adaptive
+   quality controller. This adds no post-processing passes or new textures. */
+const zkBiomeAtmosphere={
+  forest:{sky:0x082e31,fog:0x164a3d,sun:0xffe0a0,fill:0x5cf2c2,water:0x137f82,exposure:1.08,fogDensity:.0084},
+  desert:{sky:0x20394b,fog:0xb77946,sun:0xffc56f,fill:0x8fd7e8,water:0x239db0,exposure:1.16,fogDensity:.0062},
+  highlands:{sky:0x102f45,fog:0x496e72,sun:0xffd39a,fill:0x77bfff,water:0x168da4,exposure:1.08,fogDensity:.0073},
+  arctic:{sky:0x092b4b,fog:0x91c9dc,sun:0xdff8ff,fill:0x5faeff,water:0x63d8ec,exposure:1.13,fogDensity:.0068},
+  wetlands:{sky:0x062f31,fog:0x205d58,sun:0xb9efae,fill:0x56e8d7,water:0x0b7778,exposure:1.04,fogDensity:.0092}
+};
+zR.prototype.updateBiomeAtmosphere=function(force=!1){if(!this.renderer||!this.player)return;const position=this.player.group.position,area=zkAOAt(position.x,position.z),profile=zkBiomeAtmosphere[area?.id]??zkBiomeAtmosphere.highlands,blend=force?1:.14,targetSky=new re(profile.sky),targetFog=new re(profile.fog),targetSun=new re(profile.sun),targetFill=new re(profile.fill),targetWater=new re(profile.water);this.scene.background instanceof re&&this.scene.background.lerp(targetSky,blend);if(this.scene.fog){this.scene.fog.color.lerp(targetFog,blend),this.scene.fog.density=Kt.lerp(Number(this.scene.fog.density??profile.fogDensity),profile.fogDensity,blend)}const lights=this.zkAtmosphereLights??{};lights.sun?.color?.lerp(targetSun,blend),lights.fill?.color?.lerp(targetFill,blend);const waterMaterial=this.terrain?.water?.material;waterMaterial?.color?.lerp?.(targetWater,blend);const qualityBias=this.graphicsQuality==="high"?.04:this.graphicsQuality==="low"?-.05:0;this.renderer.toneMappingExposure=Kt.lerp(Number(this.renderer.toneMappingExposure??1.08),profile.exposure+qualityBias,blend)};
+const zkVisualInitialize=zR.prototype.initialize;zR.prototype.initialize=async function(){const result=await zkVisualInitialize.call(this),directionals=this.scene.children.filter(object=>object.isDirectionalLight),hemisphere=this.scene.children.find(object=>object.isHemisphereLight);this.zkAtmosphereLights={sun:directionals.find(light=>light.castShadow)??directionals[0],fill:directionals.find(light=>!light.castShadow)??directionals[1],hemisphere};if(this.zkAtmosphereLights.sun?.shadow){this.zkAtmosphereLights.sun.shadow.bias=-.00018,this.zkAtmosphereLights.sun.shadow.normalBias=.055,this.zkAtmosphereLights.sun.shadow.radius=2}if(this.renderer?.domElement)this.renderer.domElement.style.filter=this.graphicsQuality==="low"?"saturate(1.025) contrast(1.015)":"saturate(1.075) contrast(1.025)";this.updateBiomeAtmosphere(!0);return result};
+const zkVisualAOUpdate=zR.prototype.updateAO;zR.prototype.updateAO=function(...args){const result=zkVisualAOUpdate?.apply(this,args);this.updateBiomeAtmosphere?.();return result};
+const zkVisualQuality=zR.prototype.applyGraphicsQuality;zR.prototype.applyGraphicsQuality=function(tier,reason="auto"){const result=zkVisualQuality.call(this,tier,reason);if(this.renderer?.domElement)this.renderer.domElement.style.filter=this.graphicsQuality==="low"?"saturate(1.025) contrast(1.015)":"saturate(1.075) contrast(1.025)";this.updateBiomeAtmosphere?.(!0);return result};
+
+/* Renewable mission ore and persistent village residents. These imports are
+   deliberately small, pure modules so the browser runtime and source tests
+   share the exact regeneration and civilian-state rules. */
+import {MIN_AVAILABLE_MISSION_ORE_PER_BIOME,oreReadyToRespawn,reconcileLegacyBiomeMining} from "../src/world/OreRegeneration.js";
+import {RESIDENTS_PER_VILLAGE,RESIDENT_GRID_CELL_SIZE,RESIDENT_HIGH_QUALITY_LIMIT,RESIDENT_MODEL_REFRESH_SECONDS,RESIDENT_UPDATE_STEP,RESIDENT_VISIBLE_DISTANCE,TRAVELERS_PER_BIOME,VILLAGE_RESIDENT_ANCHORS,residentMode,residentPersonalSpace,residentSeparationWeight} from "../src/game/Residents.js";
+
+function zkResetOreFormation(game,rock){
+  if(!rock)return;rock.visible=!0,rock.userData.health=Number(rock.userData.maxHealth??1),rock.userData.depleted=!1;const offset=Number(rock.userData.groundOffset);Number.isFinite(offset)&&(rock.position.y=game.terrain.heightAt(rock.position.x,rock.position.z)+offset)
+}
+function zkMissionOreMaterial(terrain){
+  if(terrain.zkMissionOreMaterials)return terrain.zkMissionOreMaterials;
+  terrain.zkMissionOreMaterials={stone:new ie({color:5793374,roughness:.9,metalness:.1,flatShading:!0}),ore:new ie({color:10388991,emissive:2631935,emissiveIntensity:1.7,roughness:.3,flatShading:!0})};
+  terrain.zkMissionOreGeometry=new qs(.62,1);return terrain.zkMissionOreMaterials
+}
+zR.prototype.ensureBiomeMissionMines=function(minimum=MIN_AVAILABLE_MISSION_ORE_PER_BIOME){
+  if(!this.terrain)return 0;const terrain=this.terrain,materials=zkMissionOreMaterial(terrain);let added=0;
+  for(const area of zkAreasOfOperation){
+    let available=terrain.mineableRocks.filter(rock=>rock.visible&&zkAOAt(rock.position.x,rock.position.z).id===area.id).length;
+    for(let slot=0;available<minimum&&slot<24;slot+=1){
+      const id=`mission-ore-${area.id}-${slot}`,existing=terrain.mineableRocks.find(rock=>String(rock.userData.rockId)===id);
+      if(existing){if(existing.visible)available+=1;continue}
+      const random=new pn(7919+BR(id)+Number(this.biomeSeed??terrain.seed??0));let position=null;
+      for(let attempt=0;attempt<120&&!position;attempt+=1){const x=random.range(Math.max(-78,Number(area.center.x)-15.5),Math.min(78,Number(area.center.x)+15.5)),z=random.range(-75,75),y=terrain.heightAt(x,z),occupied=[...terrain.nearby(x,z,3.5)].some(node=>node.visible&&(node.userData.harvestableTree||node.userData.rockId));if(terrain.isWaterAt(x,z,.55)||y>17||Math.hypot(x,z)<14||terrain.isObstacleAt(x,z,1.4)||occupied)continue;position={x,y,z}}
+      if(!position)continue;const scale=random.range(.8,1.35),group=new Ge,chunks=3;
+      for(let index=0;index<chunks;index+=1){const mesh=new R(terrain.zkMissionOreGeometry,index===chunks-1?materials.ore:materials.stone),offset=(index-1)*.42*scale;mesh.position.set(offset,random.range(-.02,.2)*scale,(index%2?-.2:.2)*scale),mesh.scale.set(scale*random.range(.72,1.12),scale*random.range(.62,1.08),scale*random.range(.68,1.12)),mesh.rotation.set(random.range(0,.55),random.range(0,Math.PI),random.range(0,.42)),mesh.castShadow=this.graphicsQuality!=="low",mesh.receiveShadow=!0,group.add(mesh)}
+      const groundOffset=.34*scale;group.position.set(position.x,position.y+groundOffset,position.z),group.userData.rockId=id,group.userData.rockKind="mission iron formation",group.userData.rockTier="mission",group.userData.health=2,group.userData.maxHealth=2,group.userData.minerals=16,group.userData.ironYield=6,group.userData.collisionRadius=1.35,group.userData.visualScale=scale,group.userData.groundOffset=groundOffset,group.userData.missionBiome=area.id,group.visible=!this.minedRockIds.has(id),terrain.mineableRocks.push(group),terrain.group.add(group),terrain.spatialIndex.insert(group,position.x,position.z,1.35),added+=1,group.visible&&(available+=1)
+    }
+  }
+  return added
+};
+zR.prototype.reconcileLegacyMineProgress=function(){
+  this.missionStats.biomeStats??={};const repair=reconcileLegacyBiomeMining({rocks:this.terrain?.mineableRocks??[],minedRockIds:this.minedRockIds,biomeAt:zkAOAt,biomeStats:this.missionStats.biomeStats});this.missionStats.biomeStats=repair.biomeStats;return repair.repairs
+};
+zR.prototype.refreshOreFormations=function(now=Date.now(),notify=!1){
+  if(!this.terrain)return 0;this.missionStats.rockMinedAt??={};let count=0;
+  for(const id of [...this.minedRockIds]){const minedAt=Number(this.missionStats.rockMinedAt[id]??0);if(!oreReadyToRespawn(id,minedAt,now))continue;this.minedRockIds.delete(id),delete this.missionStats.rockMinedAt[id];const rock=this.terrain.mineableRocks.find(candidate=>String(candidate.userData.rockId)===String(id));zkResetOreFormation(this,rock),count+=1}
+  this.ensureBiomeMissionMines();if(count&&notify)this.ui.showToast("Ore formations regenerated",`${count} iron ore formation${count===1?" is":"s are"} mineable again after ecological recovery.`,"success");return count
+};
+const zkRenewableOreRestore=zR.prototype.restore;
+zR.prototype.restore=function(snapshot){const result=zkRenewableOreRestore.call(this,snapshot);this.missionStats.rockMinedAt={...(snapshot?.missionStats?.rockMinedAt??this.missionStats.rockMinedAt??{})};const fallback=Math.max(0,Date.parse(snapshot?.updatedAt??"")||Date.now());for(const id of this.minedRockIds)Number(this.missionStats.rockMinedAt[id])>0||(this.missionStats.rockMinedAt[id]=fallback);this.reconcileLegacyMineProgress?.();return result};
+const zkRenewableOreMine=zR.prototype.mineRock;
+zR.prototype.mineRock=function(rock){const wasVisible=!!rock?.visible,result=zkRenewableOreMine.call(this,rock);if(wasVisible&&!rock?.visible){const id=String(rock?.userData?.rockId??"");id&&(this.missionStats.rockMinedAt??={},this.missionStats.rockMinedAt[id]=Date.now(),this.save())}return result};
+
+function zkResidentVillageAnchors(game){
+  const anchors=VILLAGE_RESIDENT_ANCHORS.map(anchor=>({...anchor,y:game.terrain.heightAt(anchor.x,anchor.z)}));
+  for(const [index,center] of (game.terrain.localTerritories??[]).entries()){if(anchors.some(anchor=>Math.hypot(anchor.x-center.x,anchor.z-center.z)<12))continue;anchors.push({id:`local-village-${index}`,biome:zkAOAt(center.x,center.z).id,x:center.x,y:center.y,z:center.z})}
+  return anchors
+}
+function zkResidentBiomeRoutes(game,shelters){
+  const routes=[];
+  for(const area of zkAreasOfOperation)for(let index=0;index<TRAVELERS_PER_BIOME;index+=1){let x=area.center.x+(index-1)*5.5,z=(index-1)*12;for(let attempt=0;attempt<7&&game.terrain.isWaterAt(x,z,.45);attempt+=1)z=Kt.clamp(z+(attempt%2?1:-1)*(4+attempt*2),-76,76);const shelter=shelters.reduce((nearest,candidate)=>!nearest||Math.hypot(candidate.x-x,candidate.z-z)<Math.hypot(nearest.x-x,nearest.z-z)?candidate:nearest,null)??{x,y:game.terrain.heightAt(x,z),z};routes.push({id:`${area.id}-traveler-${index}`,biome:area.id,x,y:game.terrain.heightAt(x,z),z,shelter})}
+  return routes
+}
+const zkResidentPalettes={forest:0x3f9b72,desert:0xc89a4d,highlands:0x66849a,arctic:0x95dbe7,wetlands:0x278d83};
+const zkResidentHqTypes=["saboteur","spitter","stalker"];
+function zkResidentModel(biome,index){
+  const palette=zkResidentPalettes[biome]??0x4f9a83,root=new Ge,cloth=new ie({color:palette,roughness:.9,metalness:.02,flatShading:!0}),skin=new ie({color:0x83c0a2,roughness:.82,flatShading:!0}),trim=new ie({color:index%2?0x69e6d2:0xe0c66f,emissive:index%2?0x123f3a:0x443511,emissiveIntensity:.45,roughness:.58,flatShading:!0}),body=new R(new ve(.24,.37,.72,6),cloth),head=new R(new Se(.25,8,6),skin),belt=new R(new tt(.3,.05,5,16),trim),leftLeg=new R(new ve(.09,.13,.54,6),cloth),rightLeg=leftLeg.clone(),leftArm=new R(new ve(.075,.11,.58,6),skin),rightArm=leftArm.clone(),leftShoulder=new R(new Se(.16,7,5),trim),rightShoulder=leftShoulder.clone(),leftFrill=new R(new Hi(.12,.3,5),trim),rightFrill=leftFrill.clone();
+  body.position.y=.92,head.position.y=1.48,head.scale.set(.82,1.06,.78),belt.rotation.x=Math.PI/2,belt.position.y=.91,leftLeg.position.set(-.16,.31,0),rightLeg.position.set(.16,.31,0),leftArm.position.set(-.39,.94,0),rightArm.position.set(.39,.94,0),leftArm.rotation.z=-.16,rightArm.rotation.z=.16,leftShoulder.position.set(-.33,1.22,0),rightShoulder.position.set(.33,1.22,0),leftShoulder.scale.set(1.2,.72,1),rightShoulder.scale.copy(leftShoulder.scale),leftFrill.position.set(-.3,1.49,.02),rightFrill.position.set(.3,1.49,.02),leftFrill.rotation.z=-1.05,rightFrill.rotation.z=1.05;
+  root.add(body,head,belt,leftLeg,rightLeg,leftArm,rightArm,leftShoulder,rightShoulder,leftFrill,rightFrill),root.userData.fallbackParts=[...root.children],root.scale.setScalar(.82+index*.025);for(const mesh of root.userData.fallbackParts)mesh.castShadow=!1,mesh.receiveShadow=!0;return root
+}
+function zkAddResident(game,{anchor,index,kind="villager",shelter=anchor}){
+  const angle=index/Math.max(1,kind==="traveler"?TRAVELERS_PER_BIOME:RESIDENTS_PER_VILLAGE)*Math.PI*2+.45,radius=kind==="traveler"?1.6:2.8+index%2*1.5,x=anchor.x+Math.cos(angle)*radius,z=anchor.z+Math.sin(angle)*radius,model=zkResidentModel(anchor.biome,index);model.position.set(x,game.terrain.heightAt(x,z),z),model.rotation.y=angle+Math.PI,model.userData.residentId=`${anchor.id}-resident-${index}`,model.userData.residentKind=kind,model.userData.biome=anchor.biome,model.userData.home=new w(shelter.x,shelter.y??game.terrain.heightAt(shelter.x,shelter.z),shelter.z),model.userData.roamCenter=new w(anchor.x,anchor.y??game.terrain.heightAt(anchor.x,anchor.z),anchor.z),model.userData.target=model.position.clone(),model.userData.phase=index*1.73+BR(anchor.id)%17,model.userData.speed=kind==="traveler"?1.02+index*.07:.72+index*.05,model.userData.residentMode="roaming",game.residentNPCs.push(model),game.residentGroup.add(model)
+}
+zR.prototype.createVillageResidents=function(){
+  if(this.residentNPCs?.length||!this.terrain)return;this.residentNPCs=[],this.residentGroup=new Ge,this.residentGroup.name="zeknovan-residents",this.scene.add(this.residentGroup);const anchors=zkResidentVillageAnchors(this);
+  for(const anchor of anchors)for(let index=0;index<RESIDENTS_PER_VILLAGE;index+=1)zkAddResident(this,{anchor,index});
+  for(const route of zkResidentBiomeRoutes(this,anchors))zkAddResident(this,{anchor:route,index:Number(route.id.at(-1))||0,kind:"traveler",shelter:route.shelter});
+  this.residentShelterActive=!1,this.residentModelRefreshAccumulator=RESIDENT_MODEL_REFRESH_SECONDS,this.refreshResidentModels(!0),this.bossManager?.active&&this.setResidentsSheltering(!0),console.info(`ZekNova populated ${anchors.length} settlements and five biome routes with ${this.residentNPCs.length} independent residents.`)
+};
+zR.prototype.loadResidentHighQualityModel=async function(resident){
+  if(!resident||resident.userData.hqModel||resident.userData.hqLoading||this.disposed)return;resident.userData.hqLoading=!0;
+  const hash=BR(resident.userData.residentId),type=resident.userData.residentKind==="villager"?(hash%4===0?"spitter":"saboteur"):zkResidentHqTypes[hash%zkResidentHqTypes.length];resident.userData.hqType=type;
+  try{const runtime=await import("./model-runtime-c96327ba.js?v=resident-population8"),model=await runtime.loadEnemyModel(type);if(this.disposed||!this.residentNPCs?.includes(resident)||!resident.userData.hqDesired){model.dispose?.();return}if(model.calibrate?.()!==!0){model.dispose?.();return}const bounds=model.measure?.(),safe=bounds&&bounds.height>1.5&&bounds.height<7&&bounds.width>.2&&bounds.width<8&&bounds.depth>.2&&bounds.depth<8;if(!safe){model.dispose?.();return}model.root.position.set(0,0,0),model.setCivilianPalette?.(zkResidentPalettes[resident.userData.biome]??0x4f9a83,.24),resident.add(model.root),resident.userData.hqModel=model,resident.userData.hqBounds=bounds,(resident.userData.fallbackParts??[]).forEach(part=>part.visible=!1),model.update?.(0,!1,!1)}catch(error){console.warn("ZekNova resident mesh upgrade unavailable; retaining the lightweight civilian.",error)}finally{resident.userData.hqLoading=!1}
+};
+zR.prototype.refreshResidentModels=function(force=!1){
+  if(!this.player||!this.residentNPCs?.length)return;const origin=this.player.group.position,candidates=this.residentNPCs.map(resident=>({resident,distance:Math.hypot(resident.position.x-origin.x,resident.position.z-origin.z)})).filter(entry=>entry.distance<=RESIDENT_VISIBLE_DISTANCE&&entry.resident.userData.residentMode!=="sheltered").sort((a,b)=>a.distance-b.distance),desired=new Set(candidates.slice(0,RESIDENT_HIGH_QUALITY_LIMIT).map(entry=>entry.resident));
+  for(const resident of this.residentNPCs){resident.userData.hqDesired=desired.has(resident);if(!resident.userData.hqModel||resident.userData.hqDesired)continue;resident.userData.hqModel.dispose?.(),resident.userData.hqModel=null,resident.userData.hqBounds=null,(resident.userData.fallbackParts??[]).forEach(part=>part.visible=!0)}
+  const missing=[...desired].filter(resident=>!resident.userData.hqModel&&!resident.userData.hqLoading);for(const resident of missing.slice(0,force?4:2))this.loadResidentHighQualityModel(resident)
+};
+function zkResidentCrowdGrid(residents){
+  const cells=new Map;for(const resident of residents){const x=Math.floor(resident.position.x/RESIDENT_GRID_CELL_SIZE),z=Math.floor(resident.position.z/RESIDENT_GRID_CELL_SIZE),key=`${x}:${z}`;if(!cells.has(key))cells.set(key,[]);cells.get(key).push(resident)}return cells
+}
+function zkResidentSeparation(resident,cells){
+  const cellX=Math.floor(resident.position.x/RESIDENT_GRID_CELL_SIZE),cellZ=Math.floor(resident.position.z/RESIDENT_GRID_CELL_SIZE),preferred=residentPersonalSpace(resident.userData.residentKind);let x=0,z=0,neighbors=0;
+  for(let ox=-1;ox<=1;ox+=1)for(let oz=-1;oz<=1;oz+=1)for(const other of cells.get(`${cellX+ox}:${cellZ+oz}`)??[]){if(other===resident)continue;let dx=resident.position.x-other.position.x,dz=resident.position.z-other.position.z,distance=Math.hypot(dx,dz);if(distance>=preferred)continue;if(distance<.03){const angle=(BR(resident.userData.residentId)-BR(other.userData.residentId))*.001;dx=Math.cos(angle),dz=Math.sin(angle),distance=1}const force=residentSeparationWeight(distance,preferred);x+=dx/distance*force,z+=dz/distance*force,neighbors+=1}
+  return{x,z,neighbors}
+}
+zR.prototype.setResidentsSheltering=function(active,victory=!1){
+  this.residentShelterActive=!!active,victory&&(this.residentPostBossUntil=performance.now()+3e4);const shelterSlots=new Map;
+  for(const resident of this.residentNPCs??[]){
+    if(active){
+      const id=BR(resident.userData.residentId),slot=shelterSlots.get("edge")??0,bearing=Math.atan2(resident.position.z,resident.position.x),angle=bearing+(id%41-20)*.011+(slot%9-4)*.018;let radius=Be.worldSize*.46;const target=new w(Math.cos(angle)*radius,0,Math.sin(angle)*radius);for(let attempt=0;attempt<14&&(this.terrain.isWaterAt(target.x,target.z,.45)||this.terrain.isObstacleAt?.(target.x,target.z,.5));attempt+=1)radius-=4.5,target.set(Math.cos(angle)*radius,0,Math.sin(angle)*radius);target.y=this.terrain.heightAt(target.x,target.z),resident.userData.shelterTarget=target.clone(),resident.userData.target=target,shelterSlots.set("edge",slot+1)
+    }else{
+      const center=resident.userData.roamCenter,angle=BR(resident.userData.residentId)%628/100,radius=resident.userData.residentKind==="traveler"?5.5:3.4;resident.userData.shelterTarget=null,resident.userData.target=new w(center.x+Math.cos(angle)*radius,this.terrain.heightAt(center.x,center.z),center.z+Math.sin(angle)*radius)
+    }
+  }
+  this.refreshResidentModels();return this.residentNPCs?.length??0
+};
+zR.prototype.updateVillageResidents=function(delta){
+  if(!this.residentNPCs?.length||!this.player)return;this.residentModelRefreshAccumulator=Number(this.residentModelRefreshAccumulator??0)+delta;if(this.residentModelRefreshAccumulator>=RESIDENT_MODEL_REFRESH_SECONDS)this.residentModelRefreshAccumulator=0,this.refreshResidentModels();this.residentUpdateAccumulator=Number(this.residentUpdateAccumulator??0)+delta;if(this.residentUpdateAccumulator<RESIDENT_UPDATE_STEP)return;const step=Math.min(.25,this.residentUpdateAccumulator);this.residentUpdateAccumulator=0;
+  const now=performance.now(),crowdGrid=zkResidentCrowdGrid(this.residentNPCs);for(const resident of this.residentNPCs){if(this.residentShelterActive){resident.visible=!1,resident.userData.residentMode="sheltered",resident.userData.nearbyResidents=0;continue}const home=resident.userData.home,roamCenter=resident.userData.roamCenter??home,shelterTarget=resident.userData.shelterTarget??home,toHome=Math.hypot(resident.position.x-home.x,resident.position.z-home.z),toShelter=Math.hypot(resident.position.x-shelterTarget.x,resident.position.z-shelterTarget.z),toRoute=Math.hypot(resident.position.x-roamCenter.x,resident.position.z-roamCenter.z),returning=!this.residentShelterActive&&now<Number(this.residentPostBossUntil??0)&&toRoute>2.4,mode=residentMode({bossActive:!!this.residentShelterActive,distanceToHome:toHome,distanceToShelter:toShelter,returning});resident.userData.residentMode=mode;let target=resident.userData.target;if(!this.residentShelterActive&&(!target||Math.hypot(resident.position.x-target.x,resident.position.z-target.z)<.45)){const identity=BR(resident.userData.residentId),laneOffset=(identity%7-3)*.28,phase=Number(resident.userData.phase)+now*.00018+laneOffset,range=resident.userData.residentKind==="traveler"?9+identity%70/10:3.8+identity%38/10;target=new w(roamCenter.x+Math.cos(phase)*range,0,roamCenter.z+Math.sin(phase)*range);target.y=this.terrain.heightAt(target.x,target.z);if(this.terrain.isWaterAt(target.x,target.z,.35))target.copy(roamCenter);resident.userData.target=target}const dx=target.x-resident.position.x,dz=target.z-resident.position.z,distance=Math.hypot(dx,dz),separation=zkResidentSeparation(resident,crowdGrid),moving=mode!=="sheltered"&&(distance>.12||separation.neighbors>0);if(moving){const baseX=distance>.01?dx/distance:0,baseZ=distance>.01?dz/distance:0,laneSign=BR(resident.userData.residentId)%2?1:-1,laneForce=separation.neighbors?laneSign*.26:0,steerX=baseX+separation.x*2.4-baseZ*laneForce,steerZ=baseZ+separation.z*2.4+baseX*laneForce,steerLength=Math.max(.001,Math.hypot(steerX,steerZ)),speed=(mode==="seeking-shelter"?2.4:mode==="returning"?1.7:Number(resident.userData.speed))*step,nx=resident.position.x+steerX/steerLength*Math.min(speed,Math.max(distance,separation.neighbors?.4:0)),nz=resident.position.z+steerZ/steerLength*Math.min(speed,Math.max(distance,separation.neighbors?.4:0)),blocked=this.terrain.isWaterAt(nx,nz,.3)||this.terrain.isObstacleAt(nx,nz,.22);if(!blocked)resident.position.x=nx,resident.position.z=nz;else if(this.residentShelterActive){if(!(this.terrain.isWaterAt(nx,resident.position.z,.3)||this.terrain.isObstacleAt(nx,resident.position.z,.22)))resident.position.x=nx;else if(!(this.terrain.isWaterAt(resident.position.x,nz,.3)||this.terrain.isObstacleAt(resident.position.x,nz,.22)))resident.position.z=nz}else resident.userData.target=null;resident.rotation.y=Math.atan2(steerX,steerZ)}resident.userData.nearbyResidents=separation.neighbors,resident.position.y=this.terrain.heightAt(resident.position.x,resident.position.z)+Math.sin(now*.004+Number(resident.userData.phase))*.025;const residentScale=.94+(BR(resident.userData.residentId)%5)*.04;resident.scale.setScalar(residentScale);resident.visible=mode!=="sheltered"&&Math.hypot(resident.position.x-this.player.group.position.x,resident.position.z-this.player.group.position.z)<=RESIDENT_VISIBLE_DISTANCE,resident.userData.hqModel?.update?.(step,moving,mode==="seeking-shelter"||mode==="returning")}
+};
+
+const zkRenewableResidentsInitialize=zR.prototype.initialize;
+zR.prototype.initialize=async function(){const result=await zkRenewableResidentsInitialize.call(this);this.missionStats.rockMinedAt??={};this.ensureBiomeMissionMines();const repaired=this.reconcileLegacyMineProgress();const respawned=this.refreshOreFormations(Date.now(),!1);this.oreRegrowthTimer=window.setInterval(()=>{const count=this.refreshOreFormations(Date.now(),!0);count&&this.save()},60e3),this.createVillageResidents(),(repaired||respawned)&&(this.updateHud(!0),this.save());return result};
+const zkRenewableResidentEnemyUpdate=zR.prototype.updateEnemies;
+zR.prototype.updateEnemies=function(delta){const result=zkRenewableResidentEnemyUpdate.call(this,delta);this.updateVillageResidents(delta);return result};
+const zkQaIsolatedBossApplyShared=zkBossManager.prototype.applyShared;
+zkBossManager.prototype.applyShared=function(state){const params=new URLSearchParams(globalThis.location?.search??""),local=["localhost","127.0.0.1","::1"].includes(globalThis.location?.hostname);if(local&&(params.has("mission")||params.has("boss")||params.has("qaNoBoss")))return;return zkQaIsolatedBossApplyShared.call(this,state)};
+const zkResidentBossStart=zkBossManager.prototype.startEncounter;
+zkBossManager.prototype.startEncounter=function(options={}){const started=zkResidentBossStart.call(this,options);started&&this.game.setResidentsSheltering?.(!0);return started};
+const zkResidentBossCleanup=zkBossManager.prototype.cleanup;
+zkBossManager.prototype.cleanup=function(victory=!1){const result=zkResidentBossCleanup.call(this,victory);this.game.setResidentsSheltering?.(!1,victory);return result};
+
+// Campaign guardians now pressure the system each mission commissioned. This turns
+// infrastructure protection from a score-only metric into a live encounter duty.
+const zkStrategicBossStart=zkBossManager.prototype.startEncounter;
+zkBossManager.prototype.startEncounter=function(options={}){const started=zkStrategicBossStart.call(this,options);if(!started)return started;const strategic=this.config?.strategic;if(strategic){this.nextInfrastructureStrikeAt=Number(strategic.strikeInterval??20);this.infrastructureStrikes=0;this.game.ui.showToast("MISSION CRISIS",strategic.objective,"warning")}return started};
+const zkStrategicBossUpdate=zkBossManager.prototype.update;
+zkBossManager.prototype.update=function(delta){const result=zkStrategicBossUpdate.call(this,delta);if(!this.active||!this.boss||Number(this.boss.userData.health)<=0)return result;const strategic=this.config?.strategic;if(!strategic||this.elapsed<Number(this.nextInfrastructureStrikeAt??1/0))return result;this.nextInfrastructureStrikeAt=this.elapsed+Number(strategic.strikeInterval??20);const priorities=new Set(strategic.targetTypes??[]),records=(this.game.buildings?.records??[]).filter(record=>Number(record.health??1000)>0&&priorities.has(record.type));const target=records.sort((a,b)=>Number(a.health??1000)-Number(b.health??1000))[0];if(!target)return result;target.health=Math.max(0,Number(target.health??1000)-Number(strategic.strikeDamage??70));this.infrastructureStrikes=Number(this.infrastructureStrikes??0)+1;zkApplyBuildingVisual(this.game.buildings,target);const position=new w(Number(target.x),Number(target.y??this.game.terrain.heightAt(Number(target.x),Number(target.z)))+1,Number(target.z));this.game.spawnImpactPulse(position,this.config.color);const label=eo.find(item=>item.type===target.type)?.label??target.type,status=target.health<=0?"DESTROYED":`${Math.round(target.health/10)}% integrity`;this.game.ui.showToast(strategic.strikeLabel,`${label} targeted · ${status}. Repair and defend commissioned infrastructure.`,target.health<=0?"danger":"warning");this.game.buildings?.rebuildUtilityLinks?.();this.game.updateHud(!0);return result};
+const zkStrategicBossReward=zkBossManager.prototype.applyReward;
+zkBossManager.prototype.applyReward=function(defeat){const applied=zkStrategicBossReward.call(this,defeat);if(applied){const strategic=missionBossConfig(defeat.missionId)?.strategic;if(strategic)this.game.ui.showToast("PERMANENT SYSTEM UNLOCKED",strategic.resolution,"success")}return applied};
+if(globalThis.location?.hostname==="127.0.0.1"||globalThis.location?.hostname==="localhost"){const qa=document.getElementById("zeknova-local-qa");if(qa&&!qa.querySelector("[data-qa-population]")){qa.insertAdjacentHTML("beforeend",'<span data-qa-population></span>');const output=qa.querySelector("[data-qa-population]"),update=()=>{const residents=_s?.residentNPCs??[];output.textContent=JSON.stringify({count:residents.length,visible:residents.filter(resident=>resident.visible).length,kinds:residents.reduce((counts,resident)=>(counts[resident.userData.residentKind]=Number(counts[resident.userData.residentKind]??0)+1,counts),{}),biomes:residents.reduce((counts,resident)=>(counts[resident.userData.biome]=Number(counts[resident.userData.biome]??0)+1,counts),{}),modes:residents.reduce((counts,resident)=>(counts[resident.userData.residentMode]=Number(counts[resident.userData.residentMode]??0)+1,counts),{}),hqLoaded:residents.filter(resident=>resident.userData.hqModel).length,hqLoading:residents.filter(resident=>resident.userData.hqLoading).length,hqTypes:residents.reduce((counts,resident)=>(resident.userData.hqType&&(counts[resident.userData.hqType]=Number(counts[resident.userData.hqType]??0)+1),counts),{}),fallbackVisible:residents.filter(resident=>(resident.userData.fallbackParts??[]).some(part=>part.visible)).length,inEnemyArray:residents.filter(resident=>_s?.enemies?.includes(resident)).length,bossActive:!!_s?.bossManager?.active})};window.setInterval(update,500)}}
+const zkPopulationQaInitialize=zR.prototype.initialize;
+zR.prototype.initialize=async function(){const result=await zkPopulationQaInitialize.call(this),local=globalThis.location?.hostname==="127.0.0.1"||globalThis.location?.hostname==="localhost",noBoss=local&&new URLSearchParams(globalThis.location.search).has("qaNoBoss");noBoss&&window.setTimeout(()=>{this.bossManager?.active&&this.bossManager.cleanup(!0)},1400);return result};
+const zkRenewableResidentsDispose=zR.prototype.dispose;
+zR.prototype.dispose=function(){window.clearInterval(this.oreRegrowthTimer);if(this.residentGroup){for(const resident of this.residentNPCs??[]){resident.userData.hqDesired=!1,resident.userData.hqModel?.dispose?.(),resident.userData.hqModel=null;for(const object of resident.userData.fallbackParts??[]){object.geometry?.dispose?.();const materials=Array.isArray(object.material)?object.material:[object.material];materials.forEach(material=>material?.dispose?.())}}this.scene.remove(this.residentGroup),this.residentGroup=null,this.residentNPCs=[]}return zkRenewableResidentsDispose.call(this)};
+
+/* Local deterministic gameplay snapshots: ?mission=1..12 and ?boss=1..12.
+   They stage campaign context in memory, never persist it, and keep current-mission
+   actions live so each state can be profiled as real gameplay rather than a mock. */
+function zkGameplayStateLocal(){return["localhost","127.0.0.1","::1"].includes(globalThis.location?.hostname)}
+function zkGameplayStateRecordId(record,index){return String(record?.id??record?.recordId??`${record?.type??"building"}:${index}`)}
+function zkGameplayStateBuildingCounts(game,biomeId){const counts={};for(const[index,record]of(game.buildings?.records??[]).entries()){if(Number(record?.health??1000)<=0)continue;if(game.qaGameplayBaselineBuildings?.has(zkGameplayStateRecordId(record,index)))continue;if(zkAOAt(Number(record.x),Number(record.z)).id!==biomeId)continue;counts[record.type]=Number(counts[record.type]??0)+1}return counts}
+function zkGameplayStateContext(game,context){const progress=game.qaGameplayProgress;if(!progress)return context;const biomes={};for(const area of zkAreasOfOperation){const staged=progress.biomes[area.id],live=context.biomes?.[area.id]??zkBossBiomeState(),newBuildings=zkGameplayStateBuildingCounts(game,area.id),buildingKeys=new Set([...Object.keys(staged.buildings),...Object.keys(newBuildings)]),statKeys=new Set([...Object.keys(staged.stats),...Object.keys(live.stats??{})]);biomes[area.id]={visited:!!staged.visited||!!live.visited,resources:Number(staged.resources??0)+Number(live.resources??0),stats:Object.fromEntries([...statKeys].map(key=>[key,Number(staged.stats[key]??0)+Number(live.stats?.[key]??0)])),buildings:Object.fromEntries([...buildingKeys].map(key=>[key,Number(staged.buildings[key]??0)+Number(newBuildings[key]??0)]))}}return{...context,biomes,bossDefeats:{...progress.bossDefeats,...(context.bossDefeats??{})}}}
+function zkGameplayStateSpawn(game,state){const area=zkAreasOfOperation.find(candidate=>candidate.id===state.biome)??zkAreasOfOperation[2],spawn=game.terrain.findSafeSpawn(area.center.x,18);game.player.group.position.copy(spawn),game.player.health=100,game.player.stamina=100,game.alignExploreCameraToPlayer(),game.currentAO=area}
+function zkGameplayStateForceRank(game,rank){if(!game.player||game.player.officerClass===rank)return;const old=game.player,position=old.group.position.clone(),rotation=old.group.rotation.y,weapon=game.weaponState?.equipped??game.equippedWeapon??"voidsting";game.scene.remove(old.group),old.dispose();old.group.traverse(object=>{if(object instanceof R){object.geometry?.dispose?.();const materials=Array.isArray(object.material)?object.material:[object.material];materials.forEach(material=>material?.dispose?.())}});game.user.officerClass=rank,game.buildings&&(game.buildings.officerClass=rank),game.simulation&&(game.simulation.officerClass=rank);const player=new DR(rank);player.group.position.copy(position),player.group.rotation.y=rotation,player.health=100,player.stamina=100,player.xp=old.xp,player.equippedWeapon=weapon,game.player=player,game.scene.add(player.group),player.hqReady?.then(()=>player.hqModels?.equipWeapon?.(weapon));const profile=vn[rank],shell=document.getElementById("game-shell"),avatar=document.querySelector(".crew-avatar"),rankLabel=document.querySelector(".crew-card small");shell?.style.setProperty("--class-accent",profile.accent),avatar&&(avatar.textContent=rank==="captain"?"C":rank==="lieutenant"?"L":"E"),rankLabel&&(rankLabel.textContent=profile.label.toUpperCase()),game.alignExploreCameraToPlayer()}
+function zkGameplayStateQaSnapshot(game){const state=game.qaGameplayState;if(!state)return null;const campaign=zkCampaignState(game.getMissionContext()),boss=game.bossManager?.boss;return{kind:state.kind,number:state.number,missionId:state.missionId,missionTitle:state.missionTitle,biome:state.biome,tier:state.tier,rank:game.player?.officerClass??state.rank,bossId:state.bossId,bossName:state.bossName,currentMissionId:campaign.current?.id??null,completed:campaign.completed,bossActive:!!game.bossManager?.active,bossHealth:boss?Math.round(Number(boss.userData.health??0)):null,bossMaxHealth:game.bossManager?.active?Math.round(Number(game.bossManager.maxHealth??0)):null,saveIsolated:!0}}
+function zkGameplayStateQaOutput(game){const state=game.qaGameplayState;if(!state)return;let qa=document.getElementById("zeknova-local-qa");if(qa&&!qa.querySelector("[data-qa-gameplay-state]"))qa.insertAdjacentHTML("beforeend",'<span data-qa-gameplay-state></span>');const output=qa?.querySelector("[data-qa-gameplay-state]");output&&(output.textContent=JSON.stringify(zkGameplayStateQaSnapshot(game)));let badge=document.getElementById("qa-gameplay-state-badge");if(!badge){badge=document.createElement("div"),badge.id="qa-gameplay-state-badge",badge.style.cssText="position:fixed;right:14px;bottom:14px;z-index:80;padding:8px 11px;border:1px solid #65f2d0;background:rgba(2,20,29,.9);color:#dffdf6;font:700 12px/1.25 monospace;letter-spacing:.06em;pointer-events:none;box-shadow:0 6px 24px rgba(0,0,0,.35)",document.body.append(badge)}badge.textContent=`QA ${state.kind.toUpperCase()} ${state.number}/12 · ${state.kind==="boss"?state.bossName:state.missionTitle} · ${state.biome.toUpperCase()}`}
+const zkGameplayStateMissionContext=zR.prototype.getMissionContext;
+zR.prototype.getMissionContext=function(){return zkGameplayStateContext(this,zkGameplayStateMissionContext.call(this))};
+const zkGameplayStateSave=zR.prototype.save;
+zR.prototype.save=function(){return this.qaGameplayState?Promise.resolve({qa:!0,isolated:!0}):zkGameplayStateSave.call(this)};
+// Refresh persistence for QA: mirror boss defeats to localStorage so a plain refresh does not force re-entering biomes 1-12.
+// Keeps the original isolated string above for check-source, then augments.
+// QA save IIFE removed — BossCombat separates permanent vs per-run vs QA (see src/game/BossCombat.js)
+const zkGameplayStateInitialize=zR.prototype.initialize;
+zR.prototype.initialize=async function(){const result=await zkGameplayStateInitialize.call(this),state=parseGameplayState(globalThis.location?.search??"",{local:zkGameplayStateLocal()});if(!state){
+    // BossCombat: per-run boss state — new run/refresh resets run defeats, keeps permanent unlocks
+    try{
+      const team=String(this.user?.teamCode||"default");
+      const runKey="zeknova.bossRun.v1."+team;
+      // New run/refresh: reset run-specific defeats for 1..12, preserve permanent campaign (buildings/resources)
+      sessionStorage.setItem(runKey, JSON.stringify({bossDefeats:{}, startedAt:Date.now()}));
+      // Ensure no flash: do not auto-start any boss here; considerStart will deterministically pick Boss 1
+    }catch(e){}
+    return result;
+  }
+  // BossCombat: QA state is debug-only, never merged into production save
+  this.qaGameplayState=state;this.qaGameplayProgress=createGameplayProgress(state);this.qaGameplayBaselineBuildings=new Set((this.buildings?.records??[]).map(zkGameplayStateRecordId));
+  // Keep QA progress isolated for QA overlay only; do NOT merge into missionStats.bossDefeats
+  let _qaMirror={};try{const k="zeknova.qa.bossDefeats.v1."+(this.user?.teamCode||'default');_qaMirror=JSON.parse(localStorage.getItem(k)||"{}");}catch{}
+  // Preserve permanent campaign progress (buildings/resources) but not QA boss defeats
+  const _qaPrevVisited=[...this.missionStats.biomeVisited],_qaPrevBiomeStats={...this.missionStats.biomeStats};
+  this.missionStats.biomeVisited=[...new Set([..._qaPrevVisited, ...Object.keys(this.qaGameplayProgress.biomes).filter(id=>this.qaGameplayProgress.biomes[id]?.visited)])];
+  this.missionStats.biomeStats={..._qaPrevBiomeStats, ...this.qaGameplayProgress.biomes};
+  // BossCombat: do NOT do this.missionStats.bossDefeats={..._qaPrevDefeats, ...qaProgress.bossDefeats}
+  // Instead keep permanent bossDefeats as-is for campaign unlock, and use run state for replay
+  // Ensure run state exists
+  try{
+    const team=String(this.user?.teamCode||"default");
+    const runKey="zeknova.bossRun.v1."+team;
+    if(!sessionStorage.getItem(runKey)) sessionStorage.setItem(runKey, JSON.stringify({bossDefeats:{}, startedAt:Date.now()}));
+  }catch(e){}
+  // Keep claimed rewards separate (QA should not grant production rewards)
+  // this.missionStats.claimedBossRewards stays as permanent only
+  this.missionStats.activeBoss=null;this.aoResourceCollected={...this.aoResourceCollected, ...Object.fromEntries(Object.entries(this.qaGameplayProgress.biomes).map(([id,b])=>[id, Math.max(Number(this.aoResourceCollected?.[id]??0), Number(b.resources??0))]))},Object.assign(this.simulation.resources,{energy:500,water:500,minerals:750,iron:400,biomass:500,timber:750,data:300,credits:500,trust:60}),this.diplomacyOutcome=this.diplomacyOutcome||"negotiate",this.diplomacyTension=this.diplomacyTension??35,this.personalObjectiveIds=new Set(Array.from({length:state.rank==="captain"?8:state.rank==="lieutenant"?4:0},(_,index)=>`qa-goal-${index+1}`)),zkGameplayStateForceRank(this,state.rank),zkGameplayStateSpawn(this,state),this.bossManager?.active&&this.bossManager.cleanup(!1),window.clearInterval(this.progressionTimer),this.enemySpawnDelay=Math.max(Number(this.enemySpawnDelay??8),12),this.updateHud(!0),zkGameplayStateQaOutput(this),this.qaGameplayStateTimer=window.setInterval(()=>zkGameplayStateQaOutput(this),250);const launchDelay=1250;if(state.kind==="boss")window.setTimeout(()=>{if(this.disposed)return;this.bossManager?.active&&this.bossManager.cleanup(!1),zkGameplayStateSpawn(this,state);const started=this.bossManager?.startEncounter({missionId:state.missionId,force:!0});started&&(this.player.health=100,this.updateHud(!0),this.ui.showToast(`QA BOSS ${state.number}/12`,`${state.bossName} encounter staged in the ${state.biome.toUpperCase()} AO. This session will not alter the shared save.`,"warning")),zkGameplayStateQaOutput(this)},launchDelay);else window.setTimeout(()=>{if(this.disposed)return;this.bossManager?.active&&this.bossManager.cleanup(!1),this.ui.showToast(`QA MISSION ${state.number}/12`,`${state.missionTitle} staged in the ${state.biome.toUpperCase()} AO. Prior missions are complete for this isolated session.`,"success"),this.updateHud(!0),zkGameplayStateQaOutput(this)},launchDelay);globalThis.ZekNovaGameplayState={state,states:GAMEPLAY_STATES,snapshot:()=>zkGameplayStateQaSnapshot(this)};return result};
+const zkGameplayStateDispose=zR.prototype.dispose;
+zR.prototype.dispose=function(){window.clearInterval(this.qaGameplayStateTimer),document.getElementById("qa-gameplay-state-badge")?.remove();return zkGameplayStateDispose.call(this)};
+
+/* --- Command-mode building relocation ------------------------------------
+   In command (isometric) mode a placed structure can be picked up and dragged.
+   While it is held, its utility requirements are recomputed every frame against
+   the live network - excluding itself, so a Solar Grid never reports that it is
+   powering itself - and the readout names the source it would draw from and how
+   far away it is. Translucent range walls show the reach of the nearest power
+   and water source so the player can see the edge instead of guessing at it.
+   The move only commits if the ground can actually hold the structure; anything
+   else snaps it back to where it was picked up. */
+const ZK_RELOCATE_UTILITY_LABEL = { power: "Power", water: "Water", data: "Data" };
+
+function zkRelocateReadoutNode() {
+  let node = document.getElementById("zeknova-relocate-readout");
+  if (node) return node;
+  node = document.createElement("aside");
+  node.id = "zeknova-relocate-readout";
+  node.setAttribute("aria-live", "polite");
+  node.dataset.visible = "false";
+  document.body.appendChild(node);
+  return node;
+}
+
+function zkRelocateRings(game) {
+  if (game.zkRelocateRings) return game.zkRelocateRings;
+  const group = new Ge();
+  group.name = "relocateRangeRings";
+  group.visible = !1;
+  for (const utility of ["power", "water"]) {
+    const range = zkUtilityNetwork.range[utility];
+    // An open-ended cylinder reads as a wall of reach rather than a flat decal,
+    // which stays legible on sloped ground.
+    const mesh = new R(new ve(range, range, 2.4, 72, 1, !0), new ie({
+      color: zkUtilityNetwork.colors[utility],
+      emissive: zkUtilityNetwork.colors[utility],
+      emissiveIntensity: .55,
+      transparent: !0,
+      opacity: .16,
+      depthWrite: !1,
+      side: 2,
+    }));
+    mesh.userData.utility = utility;
+    mesh.visible = !1;
+    group.add(mesh);
+  }
+  game.scene.add(group);
+  game.zkRelocateRings = group;
+  return group;
+}
+
+/** The live picture of what the structure would connect to at (x, z). */
+function zkRelocateSurvey(game, record, x, z) {
+  const manager = game.buildings;
+  const required = zkUtilityNetwork.requirements[record.type] ?? [];
+  const links = required.map((utility) => {
+    const range = zkUtilityNetwork.range[utility] ?? 0;
+    // Exclude this record so a structure is never treated as its own supply.
+    const source = zkFindUtilitySource(manager, utility, x, z, record.id);
+    const distance = source ? Math.hypot(Number(source.x) - x, Number(source.z) - z) : null;
+    const state = !source ? "lost" : distance > range * .85 ? "stretched" : "linked";
+    return { utility, source, distance, range, state };
+  });
+  // isValidSite() folds the utility connection into its answer, but a relocation is
+  // allowed to end up offline - the readout above is what tells the player that.
+  // So separate the two: the site is "clear" when the ground itself can hold the
+  // structure, regardless of whether anything reaches it. isValidSite records the
+  // connection complaint in lastConnectionRequirement and only computes it after
+  // the physical test has already passed, which is what makes them separable.
+  // The record is lifted out of the list first so it never collides with itself.
+  const index = manager.records.indexOf(record);
+  if (index >= 0) manager.records.splice(index, 1);
+  let valid;
+  try {
+    valid = manager.isValidSite(record.type, x, z, game.terrain);
+    if (!valid && record.type !== "water") valid = !!manager.lastConnectionRequirement;
+  } finally {
+    if (index >= 0) manager.records.splice(index, 0, record);
+  }
+  return { links, valid, connected: links.every((link) => !!link.source) };
+}
+
+function zkRelocateRender(game, record, survey, x, z) {
+  const node = zkRelocateReadoutNode();
+  const rows = survey.links.map((link) => {
+    const label = ZK_RELOCATE_UTILITY_LABEL[link.utility] ?? link.utility;
+    const value = link.source
+      ? `${link.distance.toFixed(1)}m / ${link.range}m`
+      : `NO SOURCE &lt;${link.range}m`;
+    return `<div class="zk-relocate-row" data-state="${link.state}"><span>${label}</span><b>${value}</b></div>`;
+  }).join("");
+  const name = zkUtilityNetwork.labels[record.type] ?? eo.find((item) => item.type === record.type)?.label ?? record.type;
+  node.dataset.site = survey.valid ? "clear" : "blocked";
+  node.dataset.visible = "true";
+  node.innerHTML = `<h4>Relocating</h4><p class="zk-relocate-name">${name}</p>${rows || '<div class="zk-relocate-row" data-state="linked"><span>Utilities</span><b>NONE REQUIRED</b></div>'}<p class="zk-relocate-site">${survey.valid ? "Ground clear" : "Ground blocked — will snap back"}</p><p class="zk-relocate-hint">Release to place · Esc to cancel</p>`;
+
+  const rings = zkRelocateRings(game);
+  rings.visible = !0;
+  for (const mesh of rings.children) {
+    const link = survey.links.find((item) => item.utility === mesh.userData.utility);
+    mesh.visible = !!link?.source;
+    if (!link?.source) continue;
+    // Centre each wall on the source, not the structure, so the player can see
+    // exactly how much slack is left before the link drops.
+    mesh.position.set(Number(link.source.x), game.terrain.heightAt(Number(link.source.x), Number(link.source.z)) + 1.2, Number(link.source.z));
+    mesh.material.opacity = link.state === "stretched" ? .3 : .16;
+  }
+}
+
+function zkRelocateHide(game) {
+  const node = document.getElementById("zeknova-relocate-readout");
+  if (node) node.dataset.visible = "false";
+  if (game.zkRelocateRings) game.zkRelocateRings.visible = !1;
+}
+
+function zkRelocateMeshFor(game, id) {
+  return game.buildings.group.children.find((child) => child.userData.buildingId === id) ?? null;
+}
+
+function zkRelocatePick(game, event) {
+  const canvas = game.renderer?.domElement;
+  if (!canvas) return null;
+  const rect = canvas.getBoundingClientRect();
+  game.pointer.x = (event.clientX - rect.left) / rect.width * 2 - 1;
+  game.pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  game.raycaster.setFromCamera(game.pointer, game.camera);
+  // The build preview and the utility link tubes are children of the same group,
+  // so the nearest hit is often not a structure. Walk the hits in depth order and
+  // take the first one that actually resolves to a record.
+  for (const hit of game.raycaster.intersectObject(game.buildings.group, !0)) {
+    let node = hit.object;
+    while (node && node.userData.buildingId === void 0 && node !== game.buildings.group) node = node.parent;
+    const id = node?.userData.buildingId;
+    if (id === void 0) continue;
+    const record = game.buildings.records.find((item) => item.id === id);
+    if (record) return record;
+  }
+  return null;
+}
+
+function zkRelocateGround(game, event) {
+  const canvas = game.renderer?.domElement;
+  if (!canvas) return null;
+  const rect = canvas.getBoundingClientRect();
+  game.pointer.x = (event.clientX - rect.left) / rect.width * 2 - 1;
+  game.pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  game.raycaster.setFromCamera(game.pointer, game.camera);
+  return game.raycaster.intersectObject(game.terrain.mesh, !1)[0]?.point ?? null;
+}
+
+function zkRelocateMove(game, record, x, z) {
+  const mesh = zkRelocateMeshFor(game, record.id);
+  const y = game.buildings.siteHeight(record.type, x, z, game.terrain);
+  record.x = x; record.z = z; record.y = y;
+  if (mesh) mesh.position.set(x, y, z);
+  // The spatial hash only reindexes when the record count changes, so a move has
+  // to invalidate it explicitly or every lookup keeps using the old position.
+  game.buildings.zkUtilityIndexedCount = -1;
+  game.buildings.refreshUtilityRecords();
+}
+
+function zkRelocateFinish(game, commit) {
+  const drag = game.zkRelocateDrag;
+  if (!drag) return;
+  game.zkRelocateDrag = null;
+  const target = commit && drag.valid ? { x: drag.x, z: drag.z } : { x: drag.originX, z: drag.originZ };
+  zkRelocateMove(game, drag.record, target.x, target.z);
+  zkRelocateHide(game);
+  if (game.controls) game.controls.enabled = drag.controlsWereEnabled;
+  const label = zkUtilityNetwork.labels[drag.record.type] ?? drag.record.type;
+  if (!commit) game.ui.showToast("Move cancelled", `${label} returned to its original site.`, "info");
+  else if (!drag.valid) game.ui.showToast("Site blocked", `${label} could not stand there and snapped back.`, "warning");
+  else {
+    const survey = zkRelocateSurvey(game, drag.record, target.x, target.z);
+    if (survey.connected) game.ui.showToast("Structure relocated", `${label} moved and stayed on the network.`, "success");
+    else game.ui.showToast("Structure relocated — offline", `${label} moved out of range of ${survey.links.filter((link) => !link.source).map((link) => zkUtilityNetwork.labels[link.utility]).join(" and ")}.`, "warning");
+    game.updateHud?.(!0);
+  }
+}
+
+const zkRelocateInitialize = zR.prototype.initialize;
+zR.prototype.initialize = async function () {
+  const result = await zkRelocateInitialize.call(this);
+  const canvas = this.renderer?.domElement;
+  if (!canvas) return result;
+
+  const basePointerDown = this.onPointerDown, basePointerMove = this.onPointerMove;
+  canvas.removeEventListener("pointerdown", basePointerDown);
+  this.onPointerDown = (event) => {
+    // Only in command mode, only with an empty build cursor - otherwise the click
+    // still means "place the selected structure here".
+    if (event.button === 0 && this.mode === "command" && !this.buildings?.selectedType && !this.bossManager?.active) {
+      const record = zkRelocatePick(this, event);
+      if (record && Number(record.health ?? 1000) > 0) {
+        this.zkRelocateDrag = {
+          record,
+          originX: Number(record.x),
+          originZ: Number(record.z),
+          x: Number(record.x),
+          z: Number(record.z),
+          valid: !0,
+          controlsWereEnabled: !!this.controls?.enabled,
+        };
+        if (this.controls) this.controls.enabled = !1;
+        canvas.setPointerCapture?.(event.pointerId);
+        zkRelocateRender(this, record, zkRelocateSurvey(this, record, Number(record.x), Number(record.z)), Number(record.x), Number(record.z));
+        event.preventDefault();
+        return;
+      }
+    }
+    return basePointerDown(event);
+  };
+  canvas.addEventListener("pointerdown", this.onPointerDown);
+
+  canvas.removeEventListener("pointermove", basePointerMove);
+  this.onPointerMove = (event) => {
+    const drag = this.zkRelocateDrag;
+    if (!drag) return basePointerMove(event);
+    const point = zkRelocateGround(this, event);
+    if (!point) return;
+    const x = Kt.clamp(point.x, -82, 82), z = Kt.clamp(point.z, -82, 82);
+    const survey = zkRelocateSurvey(this, drag.record, x, z);
+    drag.x = x; drag.z = z; drag.valid = survey.valid;
+    const now = performance.now();
+    if (now - (drag.lastRebuildAt ?? 0) > 40) { drag.lastRebuildAt = now; zkRelocateMove(this, drag.record, x, z); }
+    else { drag.record.x = x; drag.record.z = z; const mesh = zkRelocateMeshFor(this, drag.record.id); if (mesh) mesh.position.set(x, this.buildings.siteHeight(drag.record.type, x, z, this.terrain), z); }
+    zkRelocateRender(this, drag.record, survey, x, z);
+  };
+  canvas.addEventListener("pointermove", this.onPointerMove);
+
+  this.zkRelocatePointerUp = () => zkRelocateFinish(this, !0);
+  this.zkRelocateKeyDown = (event) => { if (event.code === "Escape" && this.zkRelocateDrag) zkRelocateFinish(this, !1); };
+  canvas.addEventListener("pointerup", this.zkRelocatePointerUp);
+  canvas.addEventListener("pointercancel", this.zkRelocatePointerUp);
+  window.addEventListener("keydown", this.zkRelocateKeyDown);
+  return result;
+};
+
+const zkRelocateToggleMode = zR.prototype.toggleMode;
+zR.prototype.toggleMode = function () {
+  if (this.zkRelocateDrag) zkRelocateFinish(this, !1);
+  return zkRelocateToggleMode.call(this);
+};
+
+const zkRelocateDispose = zR.prototype.dispose;
+zR.prototype.dispose = function () {
+  if (this.zkRelocateDrag) zkRelocateFinish(this, !1);
+  const canvas = this.renderer?.domElement;
+  canvas?.removeEventListener("pointerup", this.zkRelocatePointerUp);
+  canvas?.removeEventListener("pointercancel", this.zkRelocatePointerUp);
+  window.removeEventListener("keydown", this.zkRelocateKeyDown);
+  document.getElementById("zeknova-relocate-readout")?.remove();
+  if (this.zkRelocateRings) {
+    this.zkRelocateRings.traverse((node) => { node.geometry?.dispose?.(); node.material?.dispose?.(); });
+    this.scene?.remove(this.zkRelocateRings);
+    this.zkRelocateRings = null;
+  }
+  return zkRelocateDispose.call(this);
+};
+
+/* --- The Obsidian Demon Knight -------------------------------------------
+   He had no movement function of his own, so he fell through to the generic
+   orbit-lerp: a slow drift toward a point near the arena centre with no terrain
+   awareness at all, which is exactly why he wedged himself between rocks and
+   stayed there. He now gets a dedicated mover with obstacle probing, a five-fold
+   speed increase, and the thing the orbit-lerp could never express - he leaves
+   the ground. A leap carries him over whatever is in the way (airborne, so the
+   obstacle test is skipped) and ends in a falling slice that detonates where he
+   lands. Everything in this block is keyed to his config id; no other boss is
+   affected. */
+const ZK_KNIGHT_ID = "desert_cinder_scrapper";
+const ZK_KNIGHT_SPEED_MULTIPLIER = 5;
+const ZK_KNIGHT_PROJECTILE_MULTIPLIER = 5;
+const ZK_KNIGHT_LEAP_DURATION = .78;
+const ZK_KNIGHT_LEAP_HEIGHT = 7.5;
+
+function zkKnightIsBoss(manager) { return manager?.config?.id === ZK_KNIGHT_ID; }
+
+/** The falling slice: the leap's payload, fired the instant he touches down. */
+function zkKnightSlamDown(manager) {
+  const boss = manager.boss, game = manager.game;
+  if (!boss || !game) return;
+  const origin = boss.position.clone();
+  origin.y = game.terrain.heightAt(origin.x, origin.z);
+  const phase = manager.phase?.id;
+  // The slice widens as he escalates: one ring in phase 1, a second faster ring
+  // from phase 2, and a dense off-axis third in phase 3.
+  zkBossRadial(manager.pool, origin, { count: 20, speed: 9.5, damage: 13, gapEvery: 5, patternId: "obsidian_falling_slice", color: manager.config.color, height: .8 });
+  if (phase === "phase_2" || phase === "phase_3") {
+    zkBossRadial(manager.pool, origin, { count: 16, speed: 15, damage: 11, offset: .19, gapEvery: 4, patternId: "obsidian_falling_slice", color: manager.config.color, height: 1.5 });
+  }
+  if (phase === "phase_3") {
+    zkBossRadial(manager.pool, origin, { count: 24, speed: 20, damage: 12, offset: .38, gapEvery: 7, patternId: "obsidian_falling_slice", color: manager.config.color, height: 2.2 });
+  }
+  manager.game.ui?.shakeCamera?.(.5);
+}
+
+function zkMoveObsidianKnightBoss(manager, delta) {
+  const boss = manager.boss, game = manager.game, player = game.player?.group?.position;
+  if (!boss || !player) return !1;
+  const step = Math.min(.08, Math.max(0, Number(delta) || 0));
+  const toPlayer = player.clone().sub(boss.position);
+  toPlayer.y = 0;
+  const distance = Math.max(.001, toPlayer.length());
+  const forward = toPlayer.multiplyScalar(1 / distance);
+  const side = ((manager.seed + manager.attackIndex) & 1) ? 1 : -1;
+  const tangent = new w(-forward.z, 0, forward.x).multiplyScalar(side);
+
+  // --- Airborne phase ------------------------------------------------------
+  const leapUntil = Number(manager.knightLeapUntil ?? 0);
+  // Both endpoints are required: `elapsed` restarts at zero on a new encounter, so
+  // a leap deadline left over from the previous fight can otherwise look active
+  // while its endpoints have already been cleared.
+  if (manager.elapsed < leapUntil && manager.knightLeapFrom && manager.knightLeapTo) {
+    const progress = Kt.clamp(1 - (leapUntil - manager.elapsed) / ZK_KNIGHT_LEAP_DURATION, 0, 1);
+    const from = manager.knightLeapFrom, to = manager.knightLeapTo;
+    const x = Kt.lerp(from.x, to.x, progress), z = Kt.lerp(from.z, to.z, progress);
+    // A parabola over the ground line, so he clears whatever he jumped over.
+    const ground = Kt.lerp(game.terrain.heightAt(from.x, from.z), game.terrain.heightAt(to.x, to.z), progress);
+    boss.position.set(x, ground + Math.sin(progress * Math.PI) * ZK_KNIGHT_LEAP_HEIGHT, z);
+    manager.center.x = Kt.lerp(manager.center.x, x, Math.min(1, step * 1.25));
+    manager.center.z = Kt.lerp(manager.center.z, z, Math.min(1, step * 1.25));
+    manager.center.y = game.terrain.heightAt(manager.center.x, manager.center.z);
+    return !0;
+  }
+  if (manager.knightLeapTo) {
+    // Landed this frame: plant him and let the slice go.
+    manager.knightLeapTo = null;
+    manager.knightLeapFrom = null;
+    boss.position.y = game.terrain.heightAt(boss.position.x, boss.position.z);
+    zkKnightSlamDown(manager);
+    manager.knightNextLeapAt = manager.elapsed + (manager.phase?.id === "phase_3" ? 2.6 : manager.phase?.id === "phase_2" ? 3.4 : 4.4);
+  }
+
+  // --- Decide whether to leap ---------------------------------------------
+  const blockedFor = Number(manager.knightBlockedSince ?? 0);
+  const stuck = blockedFor > 0 && manager.elapsed - blockedFor > .45;
+  const readyToLeap = manager.elapsed >= Number(manager.knightNextLeapAt ?? 0);
+  // The leap is an attack in its own right, not only a gap-closer, so it fires on
+  // its timer at any range - at knife-fighting distance it becomes a pounce that
+  // lands on top of the player. It also always frees him from a sustained snag,
+  // which is the wedging bug this is here to end.
+  if (readyToLeap || stuck) {
+    const reach = stuck ? 14 : Kt.clamp(distance, 6, 26);
+    const landing = boss.position.clone().addScaledVector(forward, reach);
+    manager.knightLeapFrom = boss.position.clone();
+    manager.knightLeapTo = new w(Kt.clamp(landing.x, -79, 79), 0, Kt.clamp(landing.z, -79, 79));
+    manager.knightLeapUntil = manager.elapsed + ZK_KNIGHT_LEAP_DURATION;
+    manager.knightBlockedSince = 0;
+    manager.boss.userData.bossHqModel?.playAttack?.("obsidian_leap");
+    return !0;
+  }
+
+  // --- Grounded pursuit ----------------------------------------------------
+  let direction;
+  if (distance > 9) direction = forward.clone().addScaledVector(tangent, .12);
+  else if (distance < 3.6) direction = forward.clone().multiplyScalar(-.4).addScaledVector(tangent, .9);
+  else direction = tangent.clone().multiplyScalar(.6).addScaledVector(forward, (distance - 5.4) * .4);
+  direction.normalize();
+
+  const phaseSpeed = manager.phase?.id === "phase_3" ? 6.6 : manager.phase?.id === "phase_2" ? 5.6 : 4.8;
+  const speed = phaseSpeed * ZK_KNIGHT_SPEED_MULTIPLIER;
+  const distanceStep = Math.min(2.6, speed * step);
+  const angles = [0, .32, -.32, .7, -.7, 1.15, -1.15, 1.7, -1.7, Math.PI];
+  const next = boss.position.clone();
+  let chosen = !1;
+  for (const angle of angles) {
+    const candidate = direction.clone().applyAxisAngle(new w(0, 1, 0), angle);
+    const x = Kt.clamp(boss.position.x + candidate.x * distanceStep, -79, 79);
+    const z = Kt.clamp(boss.position.z + candidate.z * distanceStep, -79, 79);
+    if (game.terrain.isWaterAt(x, z, .62) || game.terrain.isObstacleAt(x, z, .82)) continue;
+    next.x = x; next.z = z; chosen = !0; break;
+  }
+  if (!chosen) {
+    // Every heading is walled off. Start the stuck clock; the leap above frees him.
+    if (!manager.knightBlockedSince) manager.knightBlockedSince = manager.elapsed;
+    return !1;
+  }
+  manager.knightBlockedSince = 0;
+  next.y = Kt.lerp(boss.position.y, game.terrain.heightAt(next.x, next.z), Math.min(1, step * 15));
+  const moved = boss.position.distanceToSquared(next) > 1e-6;
+  boss.position.copy(next);
+  manager.center.x = Kt.lerp(manager.center.x, boss.position.x, Math.min(1, step * 1.25));
+  manager.center.z = Kt.lerp(manager.center.z, boss.position.z, Math.min(1, step * 1.25));
+  manager.center.y = game.terrain.heightAt(manager.center.x, manager.center.z);
+  return moved;
+}
+
+/* His projectiles fly five times faster. The patterns themselves are shared with
+   other bosses (sunscar_fastball, shale_bolt_fan and so on), so the multiplier is
+   applied at acquire time against the live encounter rather than by editing any
+   pattern - that keeps every other boss's shots at their tuned speed. Lifetime is
+   divided by the same factor so a shot still covers the same ground and does not
+   sail out of the arena. */
+const zkKnightPoolAcquire = zkBossProjectilePool.prototype.acquire;
+zkBossProjectilePool.prototype.acquire = function (options = {}) {
+  if (!this.zkObsidianKnightActive || !options.velocity) return zkKnightPoolAcquire.call(this, options);
+  const scaled = {
+    ...options,
+    velocity: options.velocity.clone().multiplyScalar(ZK_KNIGHT_PROJECTILE_MULTIPLIER),
+    lifetime: Math.max(.35, Number(options.lifetime ?? 6) / ZK_KNIGHT_PROJECTILE_MULTIPLIER),
+  };
+  return zkKnightPoolAcquire.call(this, scaled);
+};
+
+/* The flag the multiplier above reads. Set it from the encounter so the pool has
+   no knowledge of which boss owns it. */
+const zkKnightStartEncounter = zkBossManager.prototype.startEncounter;
+zkBossManager.prototype.startEncounter = function (options = {}) {
+  const started = zkKnightStartEncounter.call(this, options);
+  if (this.pool) this.pool.zkObsidianKnightActive = started && zkKnightIsBoss(this);
+  // Reset the leap state so nothing carries over from a previous encounter.
+  this.knightLeapUntil = 0;
+  this.knightLeapFrom = null;
+  this.knightLeapTo = null;
+  // A short grace period so he does not open the fight mid-air.
+  this.knightNextLeapAt = 2.2;
+  this.knightBlockedSince = 0;
+  this.drownedLeapUntil = 0;
+  this.drownedLeapFrom = null;
+  this.drownedLeapTo = null;
+  this.drownedHoverUntil = 0;
+  this.drownedNextHoverAt = 8;
+  this.drownedBlockedSince = 0;
+  return started;
+};
+const zkKnightCleanup = zkBossManager.prototype.cleanup;
+zkBossManager.prototype.cleanup = function (...args) {
+  if (this.pool) this.pool.zkObsidianKnightActive = !1;
+  return zkKnightCleanup.apply(this, args);
+};
+
+/* Companion mech field autonomy. The mech remains physically attached to the
+   officer rig, but independently selects work and combat targets around it. */
+zR.prototype.updateMechAssist=function(){
+  if(this.paused||this.mode!=="explore"||!this.player?.machine||!this.terrain||!this.simulation)return;
+  const now=performance.now(),profile=mechAssistProfile(this.user.officerClass),playerPosition=this.player.group.position;
+  const boss=this.bossManager?.active&&Number(this.bossManager.boss?.userData?.health)>0?this.bossManager.boss:null;
+  let hostile=null,hostileDistance=Infinity;
+  for(const enemy of this.enemies){
+    if(enemy===boss||!enemy?.visible||!enemy.userData?.hostile||enemy.userData?.guardian||Number(enemy.userData.health)<=0)continue;
+    const distance=enemy.position.distanceTo(playerPosition);
+    if(distance<hostileDistance){hostile=enemy;hostileDistance=distance}
+  }
+  const ore=this.findNearestRock(profile.workRange),tree=this.findNearestTree(profile.workRange);
+  const mode=mechAssistPriority({bossActive:!!boss&&boss.position.distanceTo(playerPosition)<=profile.bossRange,hostileDistance,oreDistance:ore?.distance??Infinity,treeDistance:tree?.distance??Infinity,range:profile.range,workRange:profile.workRange});
+  this.player.machine.userData.assistMode=mode;
+  if(mode!=="follow"&&!this.mechAssistAnnounced){this.mechAssistAnnounced=!0;this.ui.showToast("Mech field assist online","Companion priorities: boss defense, nearby hostiles, ore extraction, then timber harvesting.","success")}
+  if(mode==="boss"||mode==="hostile"){
+    if(now<Number(this.mechNextCombatAt??0))return;
+    const target=mode==="boss"?boss:hostile;if(!target)return;
+    this.mechNextCombatAt=now+profile.combatCooldown*1e3;
+    const origin=new w;this.player.machine.getWorldPosition(origin);Number.isFinite(origin.y)||origin.copy(playerPosition).add(new w(0,2.2,0));
+    const endpoint=target.position.clone().add(new w(0,mode==="boss"?3.2:1.35,0)),color=this.user.officerClass==="captain"?0x6ff2da:this.user.officerClass==="lieutenant"?0x5ca8ff:0xd9e85e;
+    this.createBeamEffect(origin,endpoint,color);this.spawnImpactPulse(endpoint,color);this.player.playCombatAnimation("fire",profile.combatCooldown*.7);this.player.hqModels?.recoilWeapon?.("thunderclaw",.7);
+    if(mode==="boss")this.damageWeaponTarget(target,profile.bossDamage,color,"mech-assist");
+    else target.userData.health=Math.max(0,Number(target.userData.health)-profile.damage);
+    this.mechAssistShots=Number(this.mechAssistShots??0)+1;
+    return;
+  }
+  if(now<Number(this.mechNextWorkAt??0))return;
+  if(mode==="ore"&&ore?.rock&&this.miningCooldownRemaining<=0){
+    this.mechNextWorkAt=now+profile.workCooldown*1e3;this.player.playMineAnimation();this.mineRock(ore.rock);this.player.machine.userData.assistTarget="ore";return;
+  }
+  if((mode==="tree"||mode==="ore"&&this.miningCooldownRemaining>0)&&tree?.tree){
+    this.mechNextWorkAt=now+profile.workCooldown*1e3;this.player.playMineAnimation();const origin=new w;this.player.machine.getWorldPosition(origin);this.createBeamEffect(origin,tree.tree.position.clone().add(new w(0,1.4,0)),0x94eccc);this.chopTree(tree.tree);this.player.machine.userData.assistTarget="tree";
+  }
+};
+
+const zkMechAssistEnemyUpdate=zR.prototype.updateEnemies;
+zR.prototype.updateEnemies=function(delta){const result=zkMechAssistEnemyUpdate.call(this,delta);this.updateMechAssist(delta);return result};
+
+// Mission 2 Fresh Improvement Patch — filtration distinction, waypoint, checklist 1/5, hardening
+(function(){
+  const _addAOResources = PR.prototype.addAOResourceNodes;
+  PR.prototype.addAOResourceNodes = function(){
+    _addAOResources.call(this);
+    const wetNodes = this.resourceNodes.filter(n=>n.userData.aoId==='wetlands' && n.userData.aoResource);
+    const filt = wetNodes.slice(0,2);
+    for(let i=0;i<filt.length;i++){
+      const n=filt[i];
+      n.userData.filtrationUnit=true;
+      n.userData.filtrationIndex=i;
+      n.scale.setScalar(1.38);
+      try{ if(n.material){ n.material.emissive=new re(0xff8c3d); n.material.emissiveIntensity=3.8; } }catch{}
+      const glow=new R(new tt(1.65,0.14,8,32), new Je({color:0xff8c3d, transparent:true, opacity:0.42}));
+      glow.rotation.x=Math.PI/2; glow.position.y=0.62; glow.name="filtrationGlow";
+      n.add(glow);
+    }
+    this.filtrationNodes=filt;
+  };
+
+  const _collect = zR.prototype.collectResource;
+  const _zkCollect = zkAOCollectResource;
+  zR.prototype.collectResource = function(node){
+    if(node && node.userData && node.userData.aoId==='wetlands' && !node.userData.filtrationUnit){
+      const ctx=this.getMissionContext?.(); let cur=null; try{ cur=ctx?zkCampaignState(ctx).current:null;}catch{}
+      if(cur && cur.id==='water' && Number(this.aoResourceCollected?.wetlands||0) <2){
+        // Generic wetlands resource should not count toward filtration mission — treat as normal resource only
+        // Still allow collection for generic, but don't increment aoResourceCollected for mission gate beyond filtration units
+        // Let generic collect as normal field resource without mission increment
+        const isFilt = !!node.userData.filtrationUnit;
+        if(!isFilt){
+          // Call base collect without AO increment
+          if(!node.visible) return;
+          const t=node.userData.resource,s=Number(node.userData.amount??10);
+          this.simulation.collect(t,s); this.missionStats.resourcesCollected+=1; this.player.xp+=8;
+          const wp=new w(); this.player.machine.getWorldPosition(wp); Number.isFinite(wp.y)||wp.copy(this.player.group.position).add(new w(0,2.2,0));
+          this.createBeamEffect(wp, node.position, t==="minerals"?7858687:7860392); node.visible=false;
+          const n2=Math.round(s*(this.user.officerClass==="ensign"?1.25:1));
+          this.ui.showToast("Resource secured",`+${n2} ${t}. The deposit has been transferred to colony storage.`,"success");
+          this.nearestResource=null; this.updateHud(!0); this.save(); return;
+        }
+      }
+    }
+    return _collect.call(this, node);
+  };
+  // Ensure filtration units cap at 2
+  const _zkAOCollect = zR.prototype.collectResource;
+  // (wrap again to cap)
+  const _origAOCollect = zkAOCollectResource;
+  // Patch the standalone zkAOCollectResource function closure via prototype wrap already handles aoResourceCollected increment;
+  // Add cap after increment
+  const _origCollect2 = zR.prototype.collectResource;
+  zR.prototype.collectResource = function(node){
+    const beforeWet = Number(this.aoResourceCollected?.wetlands||0);
+    const res = _origCollect2.call(this, node);
+    if(node && node.userData && node.userData.filtrationUnit){
+      if(Number(this.aoResourceCollected?.wetlands||0) >2) this.aoResourceCollected.wetlands=2;
+    }
+    // Prevent exceed 2 for mission display
+    return res;
+  };
+
+  const _updateResInteract = zR.prototype.updateResourceInteraction;
+  zR.prototype.updateResourceInteraction = function(){
+    _updateResInteract.call(this);
+    try{
+      const ctx=this.getMissionContext?.(); const cur=ctx?zkCampaignState(ctx).current:null;
+      if(!cur || cur.id!=='water') return;
+      const need = 2 - Number(this.aoResourceCollected?.wetlands||0);
+      if(need<=0) return;
+      const unrec = (this.terrain.resourceNodes||[]).filter(n=>n.userData.filtrationUnit && n.visible);
+      if(!unrec.length) return;
+      // waypoint: pulse glow
+      for(const n of unrec){ const g=n.getObjectByName("filtrationGlow"); if(g) g.material.opacity=0.32+Math.sin(performance.now()*0.004 + Number(n.userData.filtrationIndex)*1.2)*0.18; }
+      const nearest = unrec.reduce((a,b)=> a.position.distanceTo(this.player.group.position) < b.position.distanceTo(this.player.group.position) ? a : b);
+      const dist = nearest.position.distanceTo(this.player.group.position);
+      if(dist < 42){
+        const prompt=document.getElementById("interaction-prompt");
+        if(prompt && this.nearestResource===nearest){
+          prompt.innerHTML = `DAMAGED FILTRATION UNIT — PRESS <kbd>E</kbd> TO RECOVER · ${dist.toFixed(1)}m · ${need} remaining`;
+          prompt.classList.remove("hidden");
+        }
+        // If not nearest but within 40m, still show waypoint hint via toast throttled
+        if(dist<40 && this.nearestResource!==nearest && performance.now() - Number(this._filtWaypointAt||0) > 8000){
+          this._filtWaypointAt=performance.now();
+          this.ui.showToast("Filtration unit nearby", `Damaged filtration unit ${dist.toFixed(0)}m away in Wetlands AO — look for glowing orange ring.`, "info");
+        }
+      }
+    }catch{}
+  };
+
+  // Checklist usability: aggregate Water Works 1/5
+  const _updHud = zR.prototype.updateHud;
+  zR.prototype.updateHud = function(e){
+    const r=_updHud.call(this,e);
+    try{
+      const ctx=e?.missionContext || this.getMissionContext?.();
+      const camp=ctx?zkCampaignState(ctx):null; const mission=camp?.current;
+      if(mission && mission.id==='water'){
+        const list=document.getElementById("sub-objective-list");
+        if(list){
+          const waterObjs=(mission.subObjectives||[]).filter(o=>o.key==='water' && o.kind==='biomeBuilding');
+          if(waterObjs.length===5){
+            const done=waterObjs.filter(o=>zkObjectiveComplete(o,ctx)).length;
+            let summary=list.querySelector("[data-water-summary]");
+            if(!summary){
+              summary=document.createElement("li");
+              summary.dataset.waterSummary="true";
+              summary.style.fontWeight="800";
+              summary.style.borderBottom="1px solid rgba(112,230,255,0.22)";
+              summary.style.background="rgba(85,230,255,0.06)";
+              list.prepend(summary);
+            }
+            summary.className = done===5?"complete":"";
+            summary.innerHTML=`<span>${done===5?"✓":"○"}</span><b>Water Works: ${done}/5 — one per AO</b><small>${done}/5</small>`;
+            // Hide individual water lines behind summary when collapsed, keep expand on click
+            // No removal — just ensure summary is first
+          }
+        }
+      }
+    }catch{}
+    return r;
+  };
+
+  // Persistence: hide already-collected filtration units after terrain load / restore
+  const _origRestore = zR.prototype.restore;
+  zR.prototype.restore = function(e){
+    const r=_origRestore.call(this,e);
+    try{
+      const collected = Number(this.aoResourceCollected?.wetlands||0);
+      const nodes = this.terrain?.resourceNodes||[];
+      const filts = nodes.filter(n=>n.userData.filtrationUnit);
+      for(let i=0;i<Math.min(collected, filts.length); i++){ filts[i].visible=false; const g=filts[i].getObjectByName("filtrationGlow"); if(g) g.visible=false; }
+      if(collected>=2){ for(const n of nodes.filter(n=>n.userData.filtrationUnit)) n.visible=false; }
+    }catch{}
+    return r;
+  };
+  const _origLoadAO = zkLoadAOState;
+  // Also on terrain ready, hide if already collected (for clean-start after reload)
+  const _origInit = zR.prototype.initialize;
+  zR.prototype.initialize = async function(){
+    const res=await _origInit.apply(this, arguments);
+    try{
+      const c=Number(this.aoResourceCollected?.wetlands||0);
+      const nodes=this.terrain?.resourceNodes||[];
+      const filts=nodes.filter(n=>n.userData.filtrationUnit);
+      for(let i=0;i<Math.min(c, filts.length); i++){ filts[i].visible=false; }
+    }catch{}
+    return res;
+  };
+
+  console.log("Mission 2 Fresh Improvement Patch applied — filtration distinction, waypoint, Water Works 1/5 summary");
+})();
+
+// Mission 3 Fresh Improvement — relay distinction, Defense Network 1/5 summaries, Highlands waypoint
+(function(){
+  const _addAO2 = PR.prototype.addAOResourceNodes;
+  PR.prototype.addAOResourceNodes = function(){
+    // _addAO2 already wrapped by Mission2 patch, call current
+    // Need to avoid double wrap, so call original chain
+    // The current PR.prototype.addAOResourceNodes is already patched for wetlands filtration, so calling it will recreate wetlands filtration too
+    // To avoid recursion, call the stored original from Mission2 patch if exists
+    if(PR.prototype._origAddAOResourcesForM3){
+      PR.prototype._origAddAOResourcesForM3.call(this);
+    } else {
+      // fallback: call directly (will be Mission2 patched version)
+      _addAO2.call(this);
+    }
+    // After all AO nodes created (including filtration), tag Highlands relay units
+    const highNodes = this.resourceNodes.filter(n=>n.userData.aoId==='highlands' && n.userData.aoResource && !n.userData.filtrationUnit);
+    const relay = highNodes.slice(0,2);
+    for(let i=0;i<relay.length;i++){
+      const n=relay[i];
+      n.userData.relayUnit=true;
+      n.userData.relayIndex=i;
+      n.scale.setScalar(1.36);
+      try{ if(n.material){ n.material.emissive=new re(0x5ca8ff); n.material.emissiveIntensity=3.6; } }catch{}
+      const g=new R(new tt(1.62,0.13,8,32), new Je({color:0x5ca8ff, transparent:true, opacity:0.42}));
+      g.rotation.x=Math.PI/2; g.position.y=0.60; g.name="relayGlow";
+      n.add(g);
+    }
+    this.relayNodes=relay;
+  };
+  // Store original for chaining
+  if(!PR.prototype._origAddAOResourcesForM3){
+    PR.prototype._origAddAOResourcesForM3 = _addAO2;
+  }
+
+  // Generic Highlands resource should not count for relay mission when water mission is tower-one
+  const _collectM3 = zR.prototype.collectResource;
+  zR.prototype.collectResource = function(node){
+    if(node && node.userData && node.userData.aoId==='highlands' && !node.userData.relayUnit){
+      const ctx=this.getMissionContext?.(); let cur=null; try{ cur=ctx?zkCampaignState(ctx).current:null;}catch{}
+      if(cur && cur.id==='tower-one' && Number(this.aoResourceCollected?.highlands||0) <2){
+        if(!node.userData.relayUnit){
+          if(!node.visible) return;
+          const t=node.userData.resource,s=Number(node.userData.amount??10);
+          this.simulation.collect(t,s); this.missionStats.resourcesCollected+=1; this.player.xp+=8;
+          const wp=new w(); this.player.machine.getWorldPosition(wp); Number.isFinite(wp.y)||wp.copy(this.player.group.position).add(new w(0,2.2,0));
+          this.createBeamEffect(wp, node.position, t==="minerals"?7858687:7860392); node.visible=false;
+          const n2=Math.round(s*(this.user.officerClass==="ensign"?1.25:1));
+          this.ui.showToast("Resource secured",`+${n2} ${t}. The deposit has been transferred to colony storage.`,"success");
+          this.nearestResource=null; this.updateHud(!0); this.save(); return;
+        }
+      }
+    }
+    const res = _collectM3.call(this, node);
+    if(node && node.userData && node.userData.relayUnit){
+      if(Number(this.aoResourceCollected?.highlands||0) >2) this.aoResourceCollected.highlands=2;
+    }
+    return res;
+  };
+
+  const _updResM3 = zR.prototype.updateResourceInteraction;
+  zR.prototype.updateResourceInteraction = function(){
+    _updResM3.call(this);
+    try{
+      const ctx=this.getMissionContext?.(); const cur=ctx?zkCampaignState(ctx).current:null;
+      if(!cur || cur.id!=='tower-one') return;
+      const need = 2 - Number(this.aoResourceCollected?.highlands||0);
+      if(need>0){
+        const unrec=(this.terrain.resourceNodes||[]).filter(n=>n.userData.relayUnit && n.visible);
+        for(const n of unrec){ const g=n.getObjectByName("relayGlow"); if(g) g.material.opacity=0.30+Math.sin(performance.now()*0.004 + Number(n.userData.relayIndex)*1.1)*0.17; }
+        if(unrec.length){
+          const nearest=unrec.reduce((a,b)=> a.position.distanceTo(this.player.group.position) < b.position.distanceTo(this.player.group.position) ? a : b);
+          const dist=nearest.position.distanceTo(this.player.group.position);
+          if(dist<45){
+            const prompt=document.getElementById("interaction-prompt");
+            if(prompt && this.nearestResource===nearest){
+              prompt.innerHTML=`DAMAGED RELAY UNIT — PRESS <kbd>E</kbd> TO RECOVER · ${dist.toFixed(1)}m · ${need} remaining`;
+              prompt.classList.remove("hidden");
+            }
+            if(dist<40 && this.nearestResource!==nearest && performance.now() - Number(this._relayWaypointAt||0) > 8000){
+              this._relayWaypointAt=performance.now();
+              this.ui.showToast("Relay unit nearby", `Damaged relay unit ${dist.toFixed(0)}m away in Highlands AO — look for glowing teal ring.`, "info");
+            }
+          }
+        }
+      }
+    }catch{}
+  };
+
+  // Persistence hide for relay
+  const _restoreM3 = zR.prototype.restore;
+  zR.prototype.restore = function(e){
+    const r=_restoreM3.call(this,e);
+    try{
+      const c=Number(this.aoResourceCollected?.highlands||0);
+      const nodes=this.terrain?.resourceNodes||[];
+      const filts=nodes.filter(n=>n.userData.relayUnit);
+      for(let i=0;i<Math.min(c, filts.length); i++){ filts[i].visible=false; const g=filts[i].getObjectByName("relayGlow"); if(g) g.visible=false; }
+      if(c>=2){ for(const n of filts) n.visible=false; }
+    }catch{}
+    return r;
+  };
+
+  // Checklist summaries for Communications and Defense
+  const _updHudM3 = zR.prototype.updateHud;
+  zR.prototype.updateHud = function(e){
+    const r=_updHudM3.call(this,e);
+    try{
+      const ctx=e?.missionContext || this.getMissionContext?.();
+      const camp=ctx?zkCampaignState(ctx):null; const mission=camp?.current;
+      if(mission && mission.id==='tower-one'){
+        const list=document.getElementById("sub-objective-list");
+        if(list){
+          const commObjs=(mission.subObjectives||[]).filter(o=>o.key==='communications' && o.kind==='biomeBuilding');
+          const defObjs=(mission.subObjectives||[]).filter(o=>o.key==='defense' && o.kind==='biomeBuilding');
+          if(commObjs.length===5){
+            let s=list.querySelector("[data-comm-summary]");
+            if(!s){ s=document.createElement("li"); s.dataset.commSummary="true"; s.style.fontWeight="800"; s.style.borderBottom="1px solid rgba(92,168,255,0.22)"; s.style.background="rgba(92,168,255,0.06)"; list.prepend(s); }
+            const done=commObjs.filter(o=>zkObjectiveComplete(o,ctx)).length;
+            s.className=done===5?"complete":""; s.innerHTML=`<span>${done===5?"✓":"○"}</span><b>Communications Hubs: ${done}/5 — one per AO</b><small>${done}/5</small>`;
+          }
+          if(defObjs.length===5){
+            let s=list.querySelector("[data-def-summary]");
+            if(!s){ s=document.createElement("li"); s.dataset.defSummary="true"; s.style.fontWeight="800"; s.style.borderBottom="1px solid rgba(255,180,80,0.18)"; s.style.background="rgba(255,180,80,0.05)"; const comm=list.querySelector("[data-comm-summary]"); if(comm && comm.nextSibling) list.insertBefore(s, comm.nextSibling); else list.prepend(s); }
+            const done=defObjs.filter(o=>zkObjectiveComplete(o,ctx)).length;
+            s.className=done===5?"complete":""; s.innerHTML=`<span>${done===5?"✓":"○"}</span><b>Defense Towers: ${done}/5 — one per AO</b><small>${done}/5</small>`;
+          }
+        }
+      }
+    }catch{}
+    return r;
+  };
+
+  console.log("Mission 3 Fresh Improvement Patch applied — relay distinction, comm/def 5 summaries");
+})();
+
+// tower-one commissioning wave: 1 Juggernaut + 2 Red projectile shooters (spitter) — tension-independent, immediate attack, then Stormback
+(function(){
+  const FLAG = "towerOneCommissioningSpawned_v2";
+  const origUpdateAO = zR.prototype.updateAO;
+  zR.prototype.updateAO = function(...args){
+    const res = origUpdateAO.apply(this, args);
+    try{
+      const ctx = this.getMissionContext?.();
+      const campaign = ctx ? zkCampaignState(ctx) : null;
+      const mission = campaign?.current;
+      if(!mission || mission.id!=="tower-one") return res;
+      if(this.missionStats.bossDefeats?.["tower-one"]) return res;
+      if(this.bossManager?.active) return res;
+      const hs = Number(this.missionStats.biomeStats?.highlands?.enemiesDefeated ?? 0);
+      if(hs >=3) return res;
+      if(this.missionStats[FLAG]) return res;
+      const area = zkAOAt(this.player.group.position.x, this.player.group.position.z);
+      if(area.id!=="highlands") return res;
+      // ensure player has entered highlands during this mission (visited already tracked)
+      this.missionStats[FLAG]=true;
+      // Spawn tension-independent hostile trio near Highlands center / player
+      const spawn = (type) => {
+        try{
+          const e = this.spawnEnemy(true, type);
+          if(e){
+            e.userData.hostile=true;
+            e.userData.guardian=false;
+            // force immediate pursuit regardless of diplomacy tension
+            if(e.userData.juggernautState) e.userData.juggernautState="pursuit";
+            e.userData.spawnedForCommissioning=true;
+          }
+          return e;
+        }catch{}
+        return null;
+      };
+      spawn("juggernaut");
+      setTimeout(()=>spawn("spitter"), 350);
+      setTimeout(()=>spawn("spitter"), 700);
+      this.ui.showToast("Commissioning attack", "1 Juggernaut + 2 Red shooters inbound — tension-independent. Defeat them to summon the Stormback.", "danger");
+    }catch(e){}
+    return res;
+  };
+  // When the 3rd highlands kill lands, schedule Stormback start (uses existing missionReadyForBoss gate)
+  const origRecord = zkBossRecordBiomeStat;
+  zkBossRecordBiomeStat = function(game,x,z,key,amount=1){
+    const ret = origRecord.apply(this, arguments);
+    try{
+      if(key==="enemiesDefeated" && zkAOAt(Number(x),Number(z)).id==="highlands"){
+        const ctx = game.getMissionContext?.();
+        const campaign = ctx ? zkCampaignState(ctx) : null;
+        if(campaign?.current?.id==="tower-one"){
+          const hs = Number(game.missionStats.biomeStats?.highlands?.enemiesDefeated ?? 0);
+          if(hs>=3 && !game.bossManager?.active){
+            // give 1.2s combat linger then trigger boss if still boss-ready (covers comms/defense/relay)
+            setTimeout(()=>{
+              try{
+                if(game.bossManager?.active) return;
+                const c2 = game.getMissionContext?.();
+                if(c2 && missionReadyForBoss("tower-one", c2)){
+                  // ensure player in Highlands AO per considerStart check
+                  const a = zkAOAt(game.player.group.position.x, game.player.group.position.z);
+                  if(a.id==="highlands") game.bossManager.startEncounter({missionId:"tower-one"});
+                  else game.ui.showToast("Stormback ready", "Return to HIGHLANDS AO to confront the Stormback.", "warning");
+                }
+              }catch{}
+            }, 1200);
+          }
+        }
+      }
+    }catch{}
+    return ret;
+  };
+})();
+// Highlands Commissioning — deterministic, tension-independent, 6h regeneration, persistent per teamCode
+(function(){
+  const COMMISSIONING_REGEN_MS = 6*60*60*1000;
+  globalThis.ZekNovaBossCombat = globalThis.ZekNovaBossCombat || { spawnMissionConfrontation: function(game, mid){ return (game._spawnCommissioningGroup||spawnCommissioningGroup)(game, mid); }, startBossEncounter: function(bossId, ctx){ return game && game.bossManager ? game.bossManager.startEncounter({missionId: Object.entries({grid:"desert_sunscar_colossus",water:"wetlands_mire_siren","tower-one":"highlands_stormback",habitat:"forest_ancient_thornwarden"}).find(([,id])=>id===bossId)?.[0]||ctx.missionId, force:true}) : false; }, updateBossCombat: function(dt){ if(game && game.bossManager) game.bossManager.update(dt); }, resetBossEncounter: function(bossId){ if(game && game.bossManager) game.bossManager.cleanup(false); }, cleanupBossCombat: function(){ if(game && game.bossManager){ game.bossManager.pool?.clear(); game.bossManager.clearTelegraphs(); } } };
+  const COMMISSIONING_CONFIG = {
+    "water": { biome: "highlands", attackers: [{stableId:"juggernaut", role:"juggernaut"}, {stableId:"spitter-1", role:"spitter"}, {stableId:"spitter-2", role:"spitter"}] },
+    "tower-one": { biome: "highlands", attackers: [{stableId:"juggernaut", role:"juggernaut"}, {stableId:"spitter-1", role:"spitter"}, {stableId:"spitter-2", role:"spitter"}] }
+  };
+  function attackerIds(missionId, gen){ const cfg=COMMISSIONING_CONFIG[missionId]; if(!cfg) return []; return cfg.attackers.map(function(a){ return "commissioning-"+missionId+"-"+a.stableId+"-g"+gen; }); }
+  function ensureState(game, missionId){
+    game.missionStats.commissioningEncounters = game.missionStats.commissioningEncounters || {};
+    const team = String(game.user && game.user.teamCode || "default");
+    let st = game.missionStats.commissioningEncounters[missionId];
+    if(!st || st.teamCode !== team){
+      const gen = 0;
+      st = { generation: gen, attackerIds: attackerIds(missionId, gen), defeatedIds: [], status: "active", completedAt: null, nextRegenAt: null, teamCode: team };
+      game.missionStats.commissioningEncounters[missionId]=st;
+    }
+    if(st.teamCode !== team){
+      st.teamCode=team; st.generation=0; st.attackerIds=attackerIds(missionId,0); st.defeatedIds=[]; st.status="active"; st.completedAt=null; st.nextRegenAt=null;
+    }
+    return st;
+  }
+  function canSpawnCommissioning(game, missionId){
+    const st = ensureState(game, missionId);
+    if(st.status==="completed"){
+      const now=Date.now();
+      if(Number(st.nextRegenAt) > now) return false;
+      if(!game.terrain || !game.player) return false;
+      return true;
+    }
+    const live = (game.enemies||[]).filter(function(e){ return e.userData && e.userData.commissioningMissionId===missionId && Number(e.userData.health)>0; });
+    if(live.length>0) return false;
+    if(st.defeatedIds.length>=3) return false;
+    return true;
+  }
+  function spawnCommissioningGroup(game, missionId){ game._spawnCommissioningGroup = spawnCommissioningGroup;
+    if(!canSpawnCommissioning(game, missionId)) return false;
+    const cfg = COMMISSIONING_CONFIG[missionId];
+    if(!cfg) return false;
+    const st = ensureState(game, missionId);
+    if(st.status==="completed" && Number(st.nextRegenAt) <= Date.now()){
+      if(!game.terrain || typeof game.terrain.findSafeSpawn!=="function") return false;
+      // Atomic regeneration: do not reset until all 3 can be placed; if terrain not ready, keep COMPLETE
+      const newGen = Number(st.generation||0)+1;
+      const newIds = attackerIds(missionId, newGen);
+      // Validate all 3 can be placed and enemy slots free before committing reset
+      const liveCount=(game.enemies||[]).filter(function(e){ return Number(e.userData.health)>0; }).length;
+      if(liveCount>3) return false; // need 3 free slots (limit 6)
+      // Validate all 3 positions are navigable before committing reset
+      let canPlaceAll=true;
+      for(let i=0;i<newIds.length;i++){
+        let ok=false;
+        for(let attempt=0; attempt<8 && !ok; attempt++){
+          const ang=(i*2.1+attempt*0.7)%(Math.PI*2);
+          const dist=8+(attempt%3)*3;
+          const x=(0)+Math.cos(ang)*dist;
+          const z=(0)+Math.sin(ang)*dist;
+          try{ if(!game.terrain.isWaterAt(x,z,0.5) && !game.terrain.isObstacleAt(x,z,1.35) && game.terrain.heightAt(x,z)<=17) ok=true; }catch(e){}
+        }
+        if(!ok) canPlaceAll=false;
+      }
+      if(!canPlaceAll) return false;
+      st.generation=newGen;
+      st.attackerIds=newIds;
+      st.defeatedIds=[];
+      st.status="active";
+      st.completedAt=null;
+      st.nextRegenAt=null;
+    }
+    if(st.status!=="active") return false;
+    let anchorX=0, anchorZ=0;
+    try{ const a=zkAOAt(game.player.group.position.x, game.player.group.position.z); if(a.id==="highlands"){ anchorX=game.player.group.position.x; anchorZ=game.player.group.position.z; } }catch(e){}
+    const roles = cfg.attackers.map(function(a){return a.role;});
+    let spawned=0;
+    for(let i=0;i<roles.length;i++){
+      const role=roles[i];
+      const stableId=st.attackerIds[i];
+      if((game.enemies||[]).some(function(e){ return e.userData && e.userData.commissioningId===stableId && Number(e.userData.health)>0; })) continue;
+      let pos=null;
+      for(let attempt=0; attempt<12 && !pos; attempt++){
+        const ang = (i*2.1 + attempt*0.7) % (Math.PI*2);
+        const dist = 8 + (attempt%3)*3;
+        const x = anchorX + Math.cos(ang)*dist;
+        const z = anchorZ + Math.sin(ang)*dist;
+        try{
+          if(game.terrain.isWaterAt(x,z,0.5)) continue;
+          if(game.terrain.isObstacleAt(x,z,1.35)) continue;
+          const h=game.terrain.heightAt(x,z);
+          if(h>17) continue;
+          pos=game.terrain.findSafeSpawn(x,z);
+          if(pos && (game.terrain.isWaterAt(pos.x,pos.z,0.5) || game.terrain.isObstacleAt(pos.x,pos.z,1.35))) pos=null;
+        }catch(e){ pos=null; }
+        if(!pos) pos={x:x, z:z, y: game.terrain.heightAt(x,z)};
+      }
+      if(!pos) continue;
+      const e = game.spawnEnemy(true, role);
+      if(e){
+        e.userData.commissioningId=stableId;
+        e.userData.commissioningMissionId=missionId;
+        e.userData.commissioningGeneration=st.generation;
+        e.userData.hostile=true;
+        e.userData.guardian=false;
+        e.userData.spawnedForCommissioning=true;
+        if(e.userData.juggernautState) e.userData.juggernautState="pursuit";
+        try{ e.position.set(pos.x, game.terrain.heightAt(pos.x,pos.z), pos.z); }catch(e2){}
+        spawned++;
+      }
+    }
+    if(spawned>0){
+      if(game.save) game.save();
+      if(spawned===3) game.ui.showToast("Commissioning attack", "1 Juggernaut + 2 Red shooters inbound — tension-independent. Defeat them to complete 3/3.", "danger");
+      return true;
+    }
+    return false;
+  }
+  const origUpdateAO = zR.prototype.updateAO;
+  zR.prototype.updateAO = function(){
+    const res = origUpdateAO.apply(this, arguments);
+    try{
+      const ctx=this.getMissionContext && this.getMissionContext();
+      const campaign=ctx?zkCampaignState(ctx):null;
+      const mission=campaign && campaign.current;
+      if(!mission) return res;
+      const mid=mission.id;
+      if(!COMMISSIONING_CONFIG[mid]) return res;
+      if(this.missionStats.bossDefeats && this.missionStats.bossDefeats[mid]) return res;
+      if(this.bossManager && this.bossManager.active) return res;
+      const hasObjective=(MISSION_OBJECTIVES[mid]||[]).some(function(o){ return String(o.label).indexOf("Intercept 3 attackers")!==-1; });
+      if(!hasObjective) return res;
+      const st=ensureState(this, mid);
+      if(st.status==="completed" && Number(st.nextRegenAt) > Date.now()) return res;
+      if(st.status==="completed" && Number(st.nextRegenAt) <= Date.now()){
+        const area=zkAOAt(this.player.group.position.x, this.player.group.position.z);
+        if(area.id==="highlands"){ spawnCommissioningGroup(this, mid); }
+        return res;
+      }
+      const area=zkAOAt(this.player.group.position.x, this.player.group.position.z);
+      if(area.id!=="highlands") return res;
+      if(st.defeatedIds.length>=3) return res;
+      const live=(this.enemies||[]).filter(function(e){ return e.userData && e.userData.commissioningMissionId===mid && Number(e.userData.health)>0; });
+      if(live.length>0) return res;
+      if(st.status==="active" && st.defeatedIds.length<3){ spawnCommissioningGroup(this, mid); }
+    }catch(e){}
+    return res;
+  };
+  const origBossRecord = zkBossRecordBiomeStat;
+  zkBossRecordBiomeStat = function(game,x,z,key,amount){
+    const ret=origBossRecord.apply(this, arguments);
+    return ret;
+  };
+  const commissioningUpdate = zR.prototype.updateEnemies;
+  zR.prototype.updateEnemies = function(delta){
+    const preLive = new Map();
+    for(let i=0;i<this.enemies.length;i++){ const e=this.enemies[i]; if(e.userData && e.userData.commissioningId) preLive.set(e.userData.commissioningId, Number(e.userData.health)); }
+    const result = commissioningUpdate.call(this, delta);
+    try{
+      for(let entry of preLive.entries()){
+        const cid=entry[0]; const healthBefore=entry[1];
+        let enemy=null; for(let j=0;j<this.enemies.length;j++){ if(this.enemies[j].userData && this.enemies[j].userData.commissioningId===cid){ enemy=this.enemies[j]; break; } }
+        const healthAfter = enemy ? Number(enemy.userData.health) : 0;
+        const defeated = healthAfter<=0 || !enemy;
+        if(defeated && healthBefore>0){
+          for(let missionId in COMMISSIONING_CONFIG){
+            const st=ensureState(this, missionId);
+            if(st.attackerIds.indexOf(cid)!==-1 && st.defeatedIds.indexOf(cid)===-1){
+              st.defeatedIds.push(cid);
+              const seen={}; const uniq=[]; for(let k=0;k<st.defeatedIds.length;k++){ const v=st.defeatedIds[k]; if(!seen[v]){ seen[v]=1; uniq.push(v);} } st.defeatedIds=uniq;
+              if(this.save) this.save();
+              const done=st.defeatedIds.length;
+              this.ui.showToast("Commissioning hit", done+"/3 attackers defeated", done===3?"success":"warning");
+              if(done>=3){
+                st.status="completed";
+                st.completedAt=Date.now();
+                st.nextRegenAt=st.completedAt + COMMISSIONING_REGEN_MS;
+                if(this.save) this.save();
+                this.ui.showToast("Intercept COMPLETE", "3/3 commissioning attackers defeated — 6-hour regeneration started.", "success");
+              }
+              break;
+            }
+          }
+        }
+      }
+    }catch(e){}
+    return result;
+  };
+  const origRestore = zR.prototype.restore;
+  zR.prototype.restore = function(e){
+    const r=origRestore.call(this, e);
+    try{
+      this.missionStats.commissioningEncounters=this.missionStats.commissioningEncounters||{};
+      const team=String(this.user && this.user.teamCode || "default");
+      for(let mid in COMMISSIONING_CONFIG){
+        const st=this.missionStats.commissioningEncounters[mid];
+        if(st && st.teamCode!==team){
+          st.teamCode=team; st.generation=0; st.attackerIds=attackerIds(mid,0); st.defeatedIds=[]; st.status="active"; st.completedAt=null; st.nextRegenAt=null;
+        }
+        if(st && st.status==="completed" && Number(st.nextRegenAt) <= Date.now()){
+          // keep completed until can spawn
+        }
+      }
+      if(this.save) this.save();
+    }catch(e){}
+    return r;
+  };
+  const origDamage = zR.prototype.damageWeaponTarget;
+  if(origDamage){
+    zR.prototype.damageWeaponTarget = function(enemy, damage, color, weaponId){
+      const res=origDamage.apply(this, arguments);
+      try{
+        if(enemy && enemy.userData && enemy.userData.commissioningId && Number(enemy.userData.health)<=0){
+          const mid=enemy.userData.commissioningMissionId;
+          if(mid && COMMISSIONING_CONFIG[mid]){
+            const st=ensureState(this, mid);
+            const cid=enemy.userData.commissioningId;
+            if(st.defeatedIds.indexOf(cid)===-1){
+              st.defeatedIds.push(cid);
+              const seen={}; const uniq=[]; for(let k=0;k<st.defeatedIds.length;k++){ const v=st.defeatedIds[k]; if(!seen[v]){ seen[v]=1; uniq.push(v);} } st.defeatedIds=uniq;
+              if(st.defeatedIds.length>=3 && st.status!=="completed"){
+                st.status="completed"; st.completedAt=Date.now(); st.nextRegenAt=st.completedAt + COMMISSIONING_REGEN_MS;
+              }
+              if(this.save) this.save();
+            }
+          }
+        }
+      }catch(e){}
+      return res;
+    };
+  }
+  console.log("Highlands Commissioning 6h patch applied — water + tower-one, tension-independent, persistent, team-isolated");
+})();

@@ -1,0 +1,46 @@
+{
+  "registry_version": 1,
+  "registry_id": "zeknova-observation-legality-v1-development",
+  "status": "development",
+  "not_production_action_authority": true,
+  "phase": "W0-O.5",
+  "environment_id": "zeknova-live-plus-sentinel-contract",
+  "contract": {
+    "id": "zeknova-observation-legality-contract-v1",
+    "implementation_path": "azl/zeknova-observation-legality-contract-v1.js",
+    "implementation_sha256": "e4514ffe2c335bad81e6433ff26ea197ac148cd83e2b2c9fd86db66a624203f3"
+  },
+  "action_space": {
+    "id": "zeknova-observation-action-space-v1-development",
+    "version": 1,
+    "action_count": 6,
+    "safe_fallback_index": 0,
+    "declared_interrupts": ["stabilize"],
+    "actions": [
+      {"index": 0, "key": "stabilize", "requires_target": false, "target_topics": [], "eligibility": "observation-independent safe fallback"},
+      {"index": 1, "key": "scout_region", "requires_target": true, "target_topics": ["route_status"], "eligibility": "any fresh route-status slot"},
+      {"index": 2, "key": "intercept_contact", "requires_target": true, "target_topics": ["unit_contact"], "eligibility": "fresh hostile unit-contact slot"},
+      {"index": 3, "key": "fortify_known_route", "requires_target": true, "target_topics": ["route_status"], "eligibility": "any fresh route-status slot"},
+      {"index": 4, "key": "repair_known_structure", "requires_target": true, "target_topics": ["structure_status"], "eligibility": "fresh structure-status slot with damaged or disabled status"},
+      {"index": 5, "key": "share_intelligence", "requires_target": true, "target_topics": ["unit_contact", "combat_alert", "structure_status", "resource_location", "route_status", "infrastructure_status"], "eligibility": "fresh direct-acquisition slot only"}
+    ]
+  },
+  "precedence": [
+    "terminal_or_replan_boundary",
+    "upstream_native_lifecycle_mask",
+    "observation_target_mask",
+    "final_intersection"
+  ],
+  "invariants": {
+    "input_is_validated_w0o3_observation_only": true,
+    "authoritative_world_reads_are_forbidden": true,
+    "other_faction_private_knowledge_cannot_enable_actions": true,
+    "stale_records_cannot_enable_actions": true,
+    "observation_layer_cannot_resurrect_upstream_masked_actions": true,
+    "omitted_overflow_targets_cannot_be_selected": true,
+    "structured_target_ids_are_not_recovered_from_float_features": true,
+    "nonterminal_upstream_must_retain_declared_safe_fallback": true,
+    "action_execution_and_prime_authority_are_out_of_scope": true
+  },
+  "note": "Development action/target legality contract for W0-O.5. This is not the production Forest action registry and does not execute actions. W0-O.6 may consume it in shadow mode only."
+}

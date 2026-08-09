@@ -1,0 +1,53 @@
+{
+  "registry_version": 1,
+  "registry_id": "zeknova-prime-shadow-v1-development",
+  "status": "development",
+  "phase": "W0-O.6",
+  "environment_id": "zeknova-live-plus-sentinel-contract",
+  "shadow_only": true,
+  "not_production_action_authority": true,
+  "contract": {
+    "id": "zeknova-prime-shadow-contract-v1",
+    "implementation_path": "azl/zeknova-prime-shadow-contract-v1.js",
+    "implementation_sha256": "d8938f0f02a450a79a5326708a378eae6c31dbc1d839b30bd424853d5f897866"
+  },
+  "engine": {
+    "id": "sentinel-prime-root-puct-v1-development",
+    "policy_version": "sentinel-prime-observation-policy-v1-development",
+    "mode": "shadow-only",
+    "authority": "none-no-action-execution",
+    "search_scope": "deterministic root-only masked PUCT over six W0-O.5 actions",
+    "transition_model": "none",
+    "long_horizon_claim": false,
+    "trained_model_claim": false
+  },
+  "inputs": {
+    "feature_layout_id": "zeknova-prime-observation-layout-v1",
+    "feature_count": 592,
+    "action_space_id": "zeknova-observation-action-space-v1-development",
+    "action_count": 6,
+    "requires_validated_observation": true,
+    "requires_validated_target_view": true,
+    "requires_validated_legality": true,
+    "structured_targets_are_not_recovered_from_float_features": true
+  },
+  "telemetry": {
+    "canonical_recommendation": true,
+    "canonical_incumbent_comparison": true,
+    "monotonic_shadow_ledger": true,
+    "wall_clock_fields_forbidden": true,
+    "counterfactual_ranked_actions_preserved": true
+  },
+  "invariants": {
+    "final_w0o5_mask_is_never_bypassed": true,
+    "hidden_authoritative_state_cannot_change_recommendation": true,
+    "other_faction_private_knowledge_cannot_change_recommendation": true,
+    "stale_targets_cannot_be_recommended": true,
+    "terminal_or_replan_produces_no_selected_action": true,
+    "recommendation_has_no_execution_surface": true,
+    "runtime_adapter_has_no_execute_commit_apply_or_dispatch_method": true,
+    "incumbent_comparison_is_observational_only": true,
+    "gameplay_continues_under_incumbent_scripted_ai": true
+  },
+  "note": "W0-O.6 connects Sentinel Prime to the 592-feature faction observation and six-action legality surface in shadow mode. It emits deterministic recommendations and telemetry only. It does not move units, spend resources, select live targets, mutate the world, or override scripted AI."
+}

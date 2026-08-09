@@ -10,10 +10,51 @@ html.zk-hud .crew-card { padding: 8px 10px; }
 html.zk-hud .crew-card .crew-avatar { width: 30px; height: 30px; font-size: 0.8rem; }
 html.zk-hud .crew-card span { font-size: 0.5rem; }
 html.zk-hud .status-card { padding: 8px 10px; }
-html.zk-hud .left-hud { width: 218px; }
+html.zk-hud .left-hud { width: 260px; }
 
 /* Mission card: collapsed to title + progress; click (or pause) expands. */
-html.zk-hud .objective-card { cursor: pointer; }
+html.zk-hud .objective-card {
+  cursor: pointer;
+  padding: 15px 14px;
+}
+html.zk-hud .objective-card > small {
+  font-size: 0.68rem;
+}
+html.zk-hud .objective-card > strong {
+  margin-top: 7px;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+html.zk-hud .objective-card > p {
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+html.zk-hud .objective-card .mission-progress {
+  font-size: 0.62rem;
+}
+html.zk-hud .objective-card .diplomacy-status {
+  font-size: 0.58rem;
+  line-height: 1.4;
+}
+html.zk-hud .objective-card .mission-ladder li {
+  font-size: 0.65rem;
+  line-height: 1.35;
+}
+html.zk-hud .objective-card .sub-objective-list li {
+  grid-template-columns: 16px 1fr auto;
+  gap: 7px;
+  font-size: 0.64rem;
+  line-height: 1.35;
+}
+html.zk-hud .objective-card .sub-objective-list li.complete {
+  color: #65f1c6;
+  text-decoration: line-through;
+  text-decoration-color: rgba(101, 241, 198, .72);
+}
+html.zk-hud .objective-card .sub-objective-list li.complete span,
+html.zk-hud .objective-card .sub-objective-list li.complete small {
+  color: #65f1c6;
+}
 html.zk-obj-collapsed .objective-card #objective-copy,
 html.zk-obj-collapsed .objective-card #diplomacy-status,
 html.zk-obj-collapsed .objective-card #mission-ladder,
@@ -23,8 +64,15 @@ html.zk-obj-collapsed .objective-card::after {
   display: block;
   margin-top: 5px;
   color: #6f909d;
-  font: 0.46rem/1 "Chakra Petch", sans-serif;
+  font: 0.58rem/1 "Chakra Petch", sans-serif;
   letter-spacing: 0.12em;
+}
+
+/* Directional movement remains available through keyboard, controller, and
+   touch input, but its four-button diagram no longer occupies the main HUD. */
+html.zk-hud .movement-pad {
+  display: none !important;
+  pointer-events: none !important;
 }
 
 /* Controls collapse once the player moves; the ? button restores them. */
@@ -187,9 +235,23 @@ html.zk-hud .action-pad { left: 50%; bottom: 12px; transform: translateX(-50%); 
 html.zk-hud .action-pad button { min-width: 66px; height: 38px; }
 html.zk-hud .mode-switcher { left: auto; right: 16px; bottom: 12px; transform: none; }
 html.zk-hud .mode-button { min-width: 190px; }
-html.zk-hud .team-chat { left: 76px; bottom: 154px; }
+html.zk-hud .team-chat {
+  left: auto;
+  right: 96px;
+  bottom: 92px;
+  justify-items: end;
+}
+html.zk-hud .advisor-orb {
+  left: auto;
+  right: 24px;
+  bottom: 84px;
+}
 html.zk-hud:not(.zk-paused) .logout-button { display: none; }
-html.zk-hud .zk-controls-toggle { left: 16px; right: auto; bottom: 120px; }
+html.zk-hud .zk-controls-toggle {
+  left: auto;
+  right: 24px;
+  bottom: 154px;
+}
 
 /* ---------- Tier 2 · focused construction workspace ---------- */
 
@@ -264,6 +326,32 @@ html.zk-command:not(.zk-paused) .mode-button { min-width: 220px; }
   font: 700 0.4rem/1 "Chakra Petch", sans-serif;
   letter-spacing: 0.05em;
   font-style: normal;
+}
+.zeknovan-aid-cooldown {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 7px 0 9px;
+  padding: 7px 11px;
+  border: 1px solid rgba(201, 169, 255, 0.52);
+  background: linear-gradient(90deg, rgba(51, 27, 82, 0.92), rgba(18, 70, 66, 0.92));
+  color: #e5d7ff;
+  font: 700 0.5rem/1.15 "Chakra Petch", sans-serif;
+  letter-spacing: 0.07em;
+}
+.zeknovan-aid-cooldown span { color: #8df6d4; white-space: nowrap; }
+.build-dock[data-build-filter="zeknovan"] .zeknovan-aid-cooldown:not(.hidden) { display: flex; }
+.build-button.zeknovan-build.cooldown {
+  opacity: 0.55;
+  filter: saturate(0.65);
+  box-shadow: inset 0 0 0 1px rgba(201, 169, 255, 0.18);
+}
+.build-button.zeknovan-build.cooldown::after {
+  content: "CREWS BUSY";
+  color: #e5d7ff;
+  font: 700 0.38rem/1 "Chakra Petch", sans-serif;
+  letter-spacing: 0.06em;
 }
 html.zk-command:not(.zk-paused) .build-dock[data-build-filter="zeknovan"] .build-options {
   grid-template-columns: repeat(9, minmax(104px, 1fr));
