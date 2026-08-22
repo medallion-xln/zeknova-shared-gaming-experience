@@ -1,0 +1,83 @@
+html.zk-clarity .objective-card #sub-objective-list,
+html.zk-clarity .objective-card #mission-ladder { display: none; }
+html.zk-clarity.zk-paused[data-zk-tab="missions"] .objective-card { display:none !important; }
+.zk-next-actions { margin-top: 10px; border-top: 1px solid rgba(99,218,235,.18); padding-top: 9px; }
+.zk-next-actions > header { display:flex; align-items:center; justify-content:space-between; color:#79ddeb; font:600 .58rem/1 "Chakra Petch",sans-serif; letter-spacing:.13em; }
+.zk-next-actions > header button,.zk-next-actions article > button { border:1px solid rgba(93,241,196,.4); background:rgba(6,27,34,.85); color:#75f0cc; font:600 .56rem/1 "Chakra Petch",sans-serif; padding:7px; cursor:pointer; }
+.zk-next-actions article { display:grid; grid-template-columns:19px 1fr auto; gap:8px; align-items:start; margin-top:8px; padding:8px; background:rgba(4,14,24,.72); border:1px solid rgba(107,181,202,.15); }
+.zk-next-actions article > b { color:#071219; background:#5df1c4; width:18px; height:18px; display:grid; place-items:center; }
+.zk-next-actions article div { min-width:0; display:grid; gap:3px; }
+.zk-next-actions article small { color:#6fa7b3; font-size:.52rem; letter-spacing:.1em; text-transform:uppercase; }
+.zk-next-actions article strong { color:#f1fbff; font-size:.66rem; line-height:1.3; }
+.zk-next-actions article span { color:#ffd064; font:600 .56rem/1.2 "Chakra Petch",sans-serif; }
+.zk-next-actions details { color:#8fb1bb; font-size:.58rem; line-height:1.45; }
+.zk-next-actions details summary { cursor:pointer; }
+.zk-next-actions details p { margin:5px 0 0; }
+.zk-guide-waypoint { position:absolute; left:50%; top:17%; transform:translateX(-50%); z-index:18; display:flex; align-items:center; gap:10px; padding:8px 11px; border:1px solid #5df1c4; background:rgba(3,16,25,.92); box-shadow:0 0 24px rgba(93,241,196,.2); pointer-events:auto; }
+.zk-guide-waypoint.hidden { display:none; }
+.zk-guide-waypoint > i { color:#5df1c4; animation:zkGuidePulse 1.2s infinite; }
+.zk-guide-waypoint div { display:grid; min-width:170px; }
+.zk-guide-waypoint small { color:#64aab8; font-size:.49rem; letter-spacing:.14em; }
+.zk-guide-waypoint strong { color:#efffff; font-size:.72rem; }
+.zk-guide-waypoint span { color:#ffd064; font-size:.6rem; }
+.zk-guide-waypoint button { border:0; background:transparent; color:#7596a0; cursor:pointer; font-size:1rem; }
+@keyframes zkGuidePulse { 50% { transform:scale(1.35); filter:drop-shadow(0 0 6px #5df1c4); } }
+.zk-minimap { position:absolute; right:18px; top:88px; z-index:12; width:220px; padding:8px; border:1px solid rgba(86,196,220,.35); background:rgba(2,14,22,.88); pointer-events:auto; }
+.zk-minimap header { display:flex; justify-content:space-between; color:#83cdd9; font:600 .52rem/1 "Chakra Petch",sans-serif; letter-spacing:.12em; }
+.zk-minimap header button { border:1px solid rgba(93,241,196,.4); background:none; color:#5df1c4; cursor:pointer; }
+.zk-minimap > small { color:#f0c85d; font:.53rem/1 "Chakra Petch",sans-serif; }
+.zk-map-surface { position:relative; overflow:hidden; background:linear-gradient(90deg,rgba(22,90,52,.5) 0 20%,rgba(174,117,42,.45) 20% 40%,rgba(83,102,96,.48) 40% 60%,rgba(89,148,185,.45) 60% 80%,rgba(20,115,105,.5) 80%); border:1px solid rgba(112,220,235,.24); }
+.zk-minimap .zk-map-surface { height:92px; margin:6px 0; }
+.zk-map-biome { position:absolute; top:0; width:20%; height:100%; border-right:1px dashed rgba(220,250,255,.22); display:grid; place-content:center; text-align:center; pointer-events:none; }
+.zk-map-biome b { color:rgba(239,251,255,.76); font:600 .46rem/1 "Chakra Petch",sans-serif; letter-spacing:.08em; }
+.zk-map-biome small { display:none; }
+.zk-map-marker { position:absolute; transform:translate(-50%,-50%); border:0; background:none; color:#fff; text-shadow:0 0 5px #000; font-size:.78rem; z-index:3; padding:0; }
+.zk-map-marker[data-kind="player"] { color:#5df1c4; }
+.zk-map-marker[data-kind="mission"] { color:#ffd24f; animation:zkGuidePulse 1.2s infinite; }
+.zk-map-marker[data-kind="boss"],.zk-map-marker[data-kind="arena"],.zk-map-marker[data-kind="patrol"] { color:#ff6e6e; }
+.zk-map-marker[data-kind="arena"] { opacity:.72; }
+.zk-map-marker[data-kind="resource"] { color:#d5f19a; }
+.zk-map-marker[data-kind="transit"] { color:#70dfff; }
+.zk-world-map-panel,.zk-mission-archive-panel { display:none; position:absolute; left:50%; top:54%; transform:translate(-50%,-50%); width:min(1040px,82vw); max-height:72vh; overflow:auto; padding:28px; border:1px solid rgba(82,190,214,.45); background:rgba(3,13,22,.97); box-shadow:0 20px 80px #000; z-index:4; }
+html[data-zk-tab="map"] .zk-world-map-panel,html[data-zk-tab="missions"] .zk-mission-archive-panel { display:block; }
+.zk-world-map-panel > header { display:flex; justify-content:space-between; align-items:start; }
+.zk-world-map-panel h2,.zk-mission-archive-panel h2 { margin:4px 0; color:#effcff; font-size:1.6rem; }
+.zk-world-map-panel header small,.zk-mission-archive-panel header small { color:#5df1c4; letter-spacing:.15em; }
+.zk-world-map-panel header span { color:#7199a5; }
+.zk-world-map-panel .zk-map-surface { height:480px; margin-top:14px; }
+.zk-world-map-panel .zk-map-biome b { font-size:.72rem; }
+.zk-world-map-panel .zk-map-biome small { display:block; margin-top:7px; color:rgba(232,248,250,.54); font-size:.58rem; }
+.zk-world-map-panel .zk-map-marker { font-size:1.2rem; cursor:help; }
+.zk-map-legend { display:flex; flex-wrap:wrap; gap:14px; margin-top:15px; color:#9bb5bd; font-size:.65rem; }
+.zk-mission-archive-panel > header p { color:#88a6af; margin:5px 0 18px; }
+.zk-mission-archive-panel details { border:1px solid rgba(103,188,206,.2); margin-top:9px; background:rgba(11,25,36,.7); }
+.zk-mission-archive-panel summary { cursor:pointer; padding:13px; color:#eafaff; font-weight:700; }
+.zk-mission-archive-panel summary b { float:right; color:#ffd064; }
+.zk-mission-archive-panel article { display:grid; grid-template-columns:24px 1fr auto; gap:10px; padding:11px 13px; border-top:1px solid rgba(103,188,206,.14); }
+.zk-mission-archive-panel article[data-complete="true"] { opacity:.55; }
+.zk-mission-archive-panel article div { display:grid; gap:4px; }
+.zk-mission-archive-panel article small { color:#86a5ae; }
+.zk-mission-archive-panel article button { border:1px solid rgba(93,241,196,.4); background:#071b23; color:#6af0c8; cursor:pointer; }
+.zk-mission-archive-panel article button:disabled { visibility:hidden; }
+.zk-construction-status { margin:10px 0 0; padding:11px; border:1px solid rgba(93,241,196,.28); background:rgba(3,17,25,.92); }
+.zk-construction-status.hidden { display:none; }
+.zk-construction-status header { display:flex; justify-content:space-between; color:#74d7e7; font-size:.58rem; letter-spacing:.1em; }
+.zk-construction-status header strong { color:#efffff; }
+.zk-construction-status [data-chain] { display:flex; align-items:center; gap:6px; margin:9px 0; }
+.zk-construction-status [data-chain] b { padding:5px; border:1px solid #ff6e6e; color:#ff8a8a; font-size:.56rem; }
+.zk-construction-status [data-chain] b[data-ready="true"] { border-color:#5df1c4; color:#5df1c4; }
+.zk-construction-status [data-chain] i { color:#668892; }
+.zk-construction-status ul { display:flex; flex-wrap:wrap; gap:6px; margin:0; padding:0; list-style:none; }
+.zk-construction-status li { display:flex; gap:5px; padding:4px 6px; color:#ff8787; background:rgba(255,80,80,.08); font-size:.54rem; text-transform:uppercase; }
+.zk-construction-status li[data-ready="true"] { color:#83e8c9; background:rgba(83,232,190,.07); }
+.zk-construction-status > small { display:block; margin-top:8px; color:#9ab4bc; font-size:.56rem; line-height:1.4; }
+.build-dock[data-officer-rank="lieutenant"] .dock-heading > span::after { content:" · LIEUTENANT CIVIC & GOVERNANCE"; color:#65a8ff; }
+.build-dock[data-officer-rank="captain"] .dock-heading > span::after { content:" · CAPTAIN PLANETARY AUTHORITY"; color:#ffc45c; }
+.build-dock .build-options { overflow-x:auto; scrollbar-color:rgba(93,241,196,.55) rgba(0,0,0,.25); scrollbar-width:thin; }
+.build-dock .zk-rank-build { position:relative; flex:0 0 180px; }
+.build-dock .zk-rank-build em { position:absolute; top:6px; right:7px; color:#65a8ff; font:600 .42rem/1 "Chakra Petch",sans-serif; letter-spacing:.08em; }
+.build-dock[data-officer-rank="captain"] .zk-rank-build[data-rank-build="captain"] em { color:#ffc45c; }
+.zk-mission-archive-panel { width:min(920px,82vw); }
+.zk-mission-archive-panel details:not([open]) { opacity:.76; }
+.zk-mission-archive-panel details > div { max-height:260px; overflow-y:auto; }
+@media (max-width:900px){.zk-minimap{width:160px}.zk-world-map-panel,.zk-mission-archive-panel{width:88vw;padding:18px}.zk-world-map-panel .zk-map-surface{height:340px}}

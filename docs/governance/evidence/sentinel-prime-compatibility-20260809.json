@@ -1,0 +1,46 @@
+{
+  "artifactId": "zeknova-sentinel-prime-compatibility-20260809",
+  "contractId": "zeknova-prime-compatibility-v1",
+  "authority": { "tier": "R0_EVALUATION", "canDispatch": false, "canMutateLiveWorld": false },
+  "campaign": {
+    "complete": true,
+    "allExpertsScored": true,
+    "statesTested": 95,
+    "authenticEvidenceUsable": false,
+    "authenticEvidenceReason": "Existing captures lack replayable canonical Prime state, legal mask, and outcome triples.",
+    "primeRemainsFinalDecisionAuthority": true,
+    "primeActionChangeCount": 0,
+    "primeRankingChangeCount": 0,
+    "expertOverruleAttemptCount": 0
+  },
+  "scores": {
+    "vanguard-v1": { "compatibility": 75.80, "determinism": 10, "legality": 10, "nonInterference": 10, "signalRelevance": 5.37, "complementarity": 0.79, "calibration": 5.13, "specialization": 7.51, "provenance": 7, "latency": 10, "integration": 10 },
+    "horizon-v1": { "compatibility": 71.15, "determinism": 10, "legality": 10, "nonInterference": 10, "signalRelevance": 5.05, "complementarity": 1.07, "calibration": 5.03, "specialization": 3, "provenance": 7, "latency": 10, "integration": 10 },
+    "oracle-v1": { "compatibility": 88.84, "determinism": 10, "legality": 10, "nonInterference": 10, "signalRelevance": 10, "complementarity": 10, "calibration": 9.84, "specialization": 3, "provenance": 7, "latency": 9, "integration": 10 },
+    "nexus-v1": { "compatibility": 79.86, "determinism": 10, "legality": 10, "nonInterference": 10, "signalRelevance": 6.32, "complementarity": 1.62, "calibration": 5.24, "specialization": 9.68, "provenance": 7, "latency": 10, "integration": 10 },
+    "goban-v1": { "compatibility": 75.82, "determinism": 10, "legality": 10, "nonInterference": 10, "signalRelevance": 8.53, "complementarity": 1.58, "calibration": 5.71, "specialization": 3, "provenance": 7, "latency": 10, "integration": 10 }
+  },
+  "companions": {
+    "bestPrimeCompanion": "oracle-v1",
+    "bestTacticalCompanion": "vanguard-v1",
+    "bestLongHorizonCompanion": "horizon-v1",
+    "bestTemporalCompanion": "oracle-v1",
+    "bestRelationalCompanion": "nexus-v1",
+    "bestSpatialCompanion": "goban-v1",
+    "bestMultiExpertSupportTeam": "prime+goban-v1+oracle-v1",
+    "bestTeamCompatibility": 79.07,
+    "bestTeamClassification": "CONFLICTING",
+    "optimalPrimeSupportTeamIdentified": false
+  },
+  "routing": {
+    "metadataSafeInDeterministicEvaluation": ["oracle-v1", "nexus-v1", "goban-v1", "vanguard-v1"],
+    "requiresRecalibration": ["horizon-v1"],
+    "redundantWithPrime": [],
+    "incompatibleWithPrime": [],
+    "productionPolicy": "PRIME_ONLY_UNTIL_AUTHENTIC_CANONICAL_COMPATIBILITY_EVIDENCE",
+    "deterministicRoutingPolicyReady": false
+  },
+  "picasso": { "primeRuntimeCompatibility": 10, "visualReadabilitySupport": 8, "latencyImpact": 9, "determinism": 10, "authorityIsolation": 10, "decisionQualityCredit": false, "authority": "R0_VISUAL" },
+  "finalAuthority": { "primeR1Authorized": false, "primeLiveExecutionEnabled": false, "canDispatch": false, "primeAuthority": "R0", "gobanAuthority": "R0_EVALUATION" },
+  "nextGate": "EXPERT_RECALIBRATION_AND_PRIME_CENTERED_ROUTING"
+}

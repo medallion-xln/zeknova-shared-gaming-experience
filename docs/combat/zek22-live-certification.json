@@ -1,0 +1,16 @@
+{
+  "baseline": {
+    "mission4": {"p95":16.7,"p99":16.8},
+    "mission8": {"p95":8.9,"p99":9.2},
+    "mission12":{"p95":9.0,"p99":9.3}
+  },
+  "captures": [
+    {"mission":4,"boss":"forest_ancient_thornwarden","match":true,"p95":16.7,"p99":16.8,"worst":57.8,"draws":19,"combatResults":5,"feedbackDispatches":5,"exactOnce":true},
+    {"mission":8,"boss":"forest_spore_cantor","match":true,"p95":9.1,"p99":9.3,"worst":41.8,"draws":11,"combatResults":5,"feedbackDispatches":5,"exactOnce":true},
+    {"mission":12,"boss":"arctic_white_screecher","match":true,"p95":9.0,"p99":9.2,"worst":41.6,"draws":14,"combatResults":5,"feedbackDispatches":5,"exactOnce":true}
+  ],
+  "bounds": {"maxAudioVoices":16,"maxLayersPerAudioEvent":3,"maxVfxSparks":16,"maxCameraImpulses":12,"maxDiagnosticEvents":64},
+  "stress": {"animationHits":25,"audioImpacts":100,"animationDeadlock":false,"permanentFlinch":false,"aiRotationLoss":false,"mixerLeak":false,"audioNodeLeak":false},
+  "performanceRegression": false,
+  "residencyClean": true
+}

@@ -1,0 +1,6 @@
+import {readFile} from 'node:fs/promises';
+const [baselinePath,candidatePath]=process.argv.slice(2);if(!baselinePath||!candidatePath)throw new Error('usage: node scripts/compare-performance-baseline.mjs baseline.json candidate.json');
+const [baseline,candidate]=await Promise.all([baselinePath,candidatePath].map(path=>readFile(path,'utf8').then(JSON.parse)));
+const tolerance=Number(process.env.ZEKNOVA_TIMING_TOLERANCE_PERCENT??20),rows=[];
+for(const expected of baseline.fixtures){const actual=candidate.fixtures.find(item=>item.id===expected.id);if(!actual){rows.push({id:expected.id,status:'MISSING'});continue}if(actual.fixtureHash!==expected.fixtureHash){rows.push({id:expected.id,status:'HASH_MISMATCH'});continue}const delta=(key)=>+(Number(actual.frame[key]??0)-Number(expected.frame[key]??0)).toFixed(2),percent=(key)=>expected.frame[key]?+(delta(key)/expected.frame[key]*100).toFixed(1):0;rows.push({id:expected.id,status:Math.abs(percent('p95'))<=tolerance?'PASS':'TIMING_REGRESSION',callsDelta:Number(actual.renderer.calls)-Number(expected.renderer.calls),trianglesDelta:Number(actual.renderer.triangles)-Number(expected.renderer.triangles),p95DeltaMs:delta('p95'),p95DeltaPercent:percent('p95')})}
+console.table(rows);if(rows.some(row=>row.status!=='PASS'))process.exitCode=1;

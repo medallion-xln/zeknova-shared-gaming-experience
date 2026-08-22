@@ -3,7 +3,7 @@
  * Missions decide WHEN combat starts; BossCombat controls HOW enemies fight.
  */
 import { BOSS_CONFIGS, MISSION_BOSS_IDS } from "./BossSystem.js";
-import { MISSION_OBJECTIVES, COMMISSIONING_CONFIG, COMMISSIONING_REGEN_MS, commissioningAttackerIds } from "./Missions.js";
+import { MISSION_OBJECTIVES, COMMISSIONING_CONFIG, COMMISSIONING_REGEN_MS, commissioningAttackerIds, missionReadyForBoss } from "./Missions.js";
 
 // ---------------------------------------------------------------------------
 // State architecture — separate permanent vs per-run vs QA
@@ -94,10 +94,8 @@ export function nextBossInRunOrder(game, permanentContext) {
   // Find first mission that is unlocked (permanent buildings done) but not yet fought this run
   for (const mid of order) {
     if (runDefeats[mid]) continue;
-    // Permanent unlock check: use permanent context's non-boss objectives only (buildings/resources)
-    // For replay mode we allow fighting any unlocked boss even if permanent says complete
-    // So we just return earliest not in runDefeats
-    return mid;
+    // The run ledger is transient, but permanent mission readiness remains authoritative.
+    if (missionReadyForBoss(mid, permanentContext)) return mid;
   }
   return null;
 }

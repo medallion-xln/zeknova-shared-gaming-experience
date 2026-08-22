@@ -1,0 +1,37 @@
+{
+  "schema": "zeknova.static-submission-audit.v1",
+  "milestone": "ZEK-19",
+  "status": "PARTIAL",
+  "repositoryHead": "9015537fb0e2b6cc3e2d24901e78b40b5de191e0",
+  "fixture": "maximum-reproducible-load",
+  "metric": {
+    "residencyProbeDraws": 3,
+    "embeddedRendererCounterDraws": 2,
+    "representativeFrameDraws": 739,
+    "owner": "PerformanceFixtureMaterializer.measureRepresentativeDraws",
+    "window": "one frozen production scene submitted through the canonical renderer and camera",
+    "valid": true
+  },
+  "topFamilies": [
+    {"family":"scene/Mesh","draws":203,"triangles":14910,"classification":"interactive resource/power-up and procedural runtime meshes","safeFirstPass":false},
+    {"family":"resident/villager","draws":144,"triangles":93124,"classification":"independently skinned actors","safeFirstPass":false},
+    {"family":"resident/traveler","draws":132,"triangles":5904,"classification":"independently animated resident representation","safeFirstPass":false},
+    {"family":"enemy/burrower","draws":25,"triangles":1664,"classification":"independent combat actors","safeFirstPass":false},
+    {"family":"building/habitat","draws":14,"triangles":5156,"classification":"interactive building components","safeFirstPass":false}
+  ],
+  "staticEnvironment": {
+    "vegetation": "already instanced by asset and area",
+    "villageGlb": "visible families already one submission each",
+    "geometrySharing": "existing immutable source geometry reused by InstancedMesh pools",
+    "materialSharing": "existing immutable source material reused by InstancedMesh pools",
+    "perFrameGlobalTraversal": false,
+    "safeOptimizationExhausted": true
+  },
+  "decision": {
+    "optimizationLanded": false,
+    "reason": "No repeated visible static environment family remained above one representative submission. Further reduction requires interactive resource render handles, building-component batching, material atlasing, or skinned actors.",
+    "worldDensityReduced": false,
+    "shadowsWeakened": false,
+    "generatedRuntimeChanged": false
+  }
+}

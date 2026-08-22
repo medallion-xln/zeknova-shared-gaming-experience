@@ -316,14 +316,11 @@
 
     const current = evaluations[currentIndex];
     const objectiveCount = current.completed.length;
-    if (objectiveCount !== 5) {
-      throw new Error(`Certified ZekNova mission ${current.mission.id} must expose exactly five objectives`);
-    }
-
     const completedObjectiveCount = current.completedObjectiveCount;
-    const missionPhase = completedObjectiveCount <= 1
+    const completionRatio = completedObjectiveCount / objectiveCount;
+    const missionPhase = completionRatio <= 0.25
       ? 'opening'
-      : completedObjectiveCount <= 3
+      : completionRatio <= 0.75
         ? 'midgame'
         : 'late';
 

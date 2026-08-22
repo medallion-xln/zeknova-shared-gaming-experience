@@ -26,6 +26,39 @@
       "kind": "deterministic-relational",
       "learned": false,
       "scope": "dependency and prerequisite integrity"
+    },
+    {
+      "id": "sentinel.picasso.visual.v1",
+      "kind": "visual-diffuser",
+      "learned": true,
+      "scope": "visual-only diffusion/style/material/environment/vfx/gaussian-splat",
+      "authority": "R0",
+      "canDispatchGameplay": false,
+      "canMutateWorld": false,
+      "canModifyMissionState": false,
+      "canModifyPhysics": false,
+      "canModifySaveState": false,
+      "canModifyCollision": false,
+      "canModifyCombatOutcomes": false,
+      "canModifyEconomy": false,
+      "canModifyMultiplayerSync": false,
+      "capabilities": [
+        "visual_style",
+        "diffusion",
+        "material_generation",
+        "environment_art",
+        "vfx_design",
+        "gaussian_splat"
+      ],
+      "themes": [
+        "zeknova",
+        "anime",
+        "cartoon",
+        "cinematic",
+        "ultra_realistic",
+        "alien_dream"
+      ],
+      "routerConstraints": "MoE Router only visual_style/diffusion/material_generation/environment_art/vfx_design/gaussian_splat to Picasso"
     }
   ],
   "routerLearningApproved": false,

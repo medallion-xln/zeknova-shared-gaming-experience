@@ -6,10 +6,12 @@
 const TABS = [
   ["overview", "OVERVIEW"],
   ["missions", "MISSIONS"],
+  ["map", "WORLD MAP"],
   ["colony", "COLONY"],
   ["relations", "RELATIONS"],
   ["comms", "TEAM COMMS"],
   ["log", "MESSAGE LOG"],
+  ["picasso", "PICASSO"],
   ["controls", "CONTROLS"],
 ];
 
@@ -128,7 +130,64 @@ export class HudDirector {
       }
       overlay.append(this.tabBar);
     }
+    this.setupPicassoPanel(overlay);
     this.selectTab("overview");
+  }
+
+  setupPicassoPanel(overlay) {
+    if (this.picassoPanel) return;
+    const panel = document.createElement("section");
+    panel.className = "zk-picasso-panel";
+    panel.dataset.testid = "picasso-visualizer";
+    panel.innerHTML = `
+      <header>
+        <div><small>SENTINEL GRID · R0</small><h2>Picasso Visualizer</h2></div>
+        <span class="zk-picasso-authority">APPEARANCE ONLY</span>
+      </header>
+      <p>Transform rendering, materials, lighting, and VFX without changing gameplay.</p>
+      <div class="zk-picasso-themes" role="list" aria-label="Visual themes"></div>
+      <div class="zk-picasso-status" aria-live="polite">
+        <span>Active style</span><strong>Loading…</strong>
+        <small>Cached profile · no per-frame diffusion · WebGL2/WebGPU</small>
+      </div>`;
+    overlay.append(panel);
+    this.picassoPanel = panel;
+    this.paintPicassoPanel();
+    window.addEventListener("zeknova:visual-theme-changed", () => this.paintPicassoPanel());
+  }
+
+  paintPicassoPanel() {
+    const panel = this.picassoPanel;
+    const manager = globalThis.ZekNovaVisualThemeManager;
+    if (!panel) return;
+    const themes = panel.querySelector(".zk-picasso-themes");
+    const active = manager?.activeThemeId?.() || "zeknova";
+    const labels = {
+      zeknova: ["ZekNova Default", "Canonical neon frontier"],
+      anime: ["Anime", "Cel shading and bold outlines"],
+      cinematic: ["Cinematic", "Film-grade PBR and atmosphere"],
+      ultra_realistic: ["Ultra Realistic", "High-fidelity material response"],
+      cartoon: ["Cartoon", "Graphic color and simplified shading"],
+      alien_dream: ["Alien Dream", "Iridescent surreal environment"],
+    };
+    themes.replaceChildren();
+    for (const id of manager?.themes?.() || Object.keys(labels)) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.theme = id;
+      button.dataset.active = String(id === active);
+      button.setAttribute("role", "listitem");
+      button.innerHTML = `<i aria-hidden="true"></i><span><b>${labels[id]?.[0] || id}</b><small>${labels[id]?.[1] || "Visual profile"}</small></span>`;
+      button.addEventListener("click", () => {
+        const liveManager = globalThis.ZekNovaVisualThemeManager;
+        if (!liveManager) return;
+        liveManager.setTheme(id);
+        this.paintPicassoPanel();
+      });
+      themes.append(button);
+    }
+    const status = panel.querySelector(".zk-picasso-status strong");
+    if (status) status.textContent = manager ? labels[active]?.[0] || active : "Visualizer unavailable";
   }
 
   selectTab(id) {
@@ -142,5 +201,7 @@ export class HudDirector {
     if (id === "log") document.getElementById("pause-messages-button")?.click();
     else if (previous === "log") document.getElementById("pause-messages-close")?.click();
     this.chat?.toggle(id === "comms");
+    if (id === "picasso") this.paintPicassoPanel();
+    window.dispatchEvent(new CustomEvent("zeknova:hud-tab", { detail: { id } }));
   }
 }

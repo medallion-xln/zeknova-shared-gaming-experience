@@ -1,0 +1,20 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import vm from "node:vm";
+import { evaluatePrimeCompatibility } from "../src/world/SentinelPrimeCompatibility.js";
+
+const root = path.resolve(import.meta.dirname, "..");
+for (const file of ["zeknova-identity-contract-v1.js","zeknova-perception-event-contract-v1.js","zeknova-knowledge-ledger-contract-v1.js","zeknova-faction-observation-contract-v1.js","zeknova-forest-defensive-action-contract-v1.js","zeknova-forest-defensive-command-contract-v2.js","zeknova-live-parity-closure-contract-v1.js","zeknova-forest-objective-scenario-contract-v1.js","zeknova-sentinel-prime-policy-evaluation-contract-v1.js","zeknova-prime-search-observability-contract-v1.js","zeknova-prime-root-exploration-correction-contract-v1.js","zeknova-prime-value-objective-calibration-contract-v1.js","zeknova-prime-horizon-delayed-consequences-contract-v1.js","zeknova-prime-search-efficiency-contract-v1.js","zeknova-adaptive-compute-allocation-contract-v1.js","zeknova-baseline-incumbent-certification-contract-v1.js","zeknova-expanded-scenario-coverage-contract-v1.js","zeknova-expert-evaluation-contract-v1.js"]) vm.runInThisContext(fs.readFileSync(path.join(root,"azl",file),"utf8"),{filename:file});
+const report = evaluatePrimeCompatibility({ seedCount: 1 });
+assert.equal(report.campaignComplete, true);
+assert.equal(report.allExpertsScored, true);
+assert.equal(report.primeRemainsFinalDecisionAuthority, true);
+assert.equal(report.individuals.length, 5);
+assert.equal(report.teams.length, 7);
+assert.equal(report.individuals.every((row) => row.compatibilityScore >= 0 && row.compatibilityScore <= 100), true);
+assert.equal(report.individuals.every((row) => row.primeActionChangedCount === 0 && row.primeRankingChangedCount === 0 && row.expertOverruleAttemptCount === 0), true);
+assert.equal(report.authority.canDispatch, false);
+assert.equal(report.deterministicRoutingPolicyReady, false);
+assert.equal(typeof report.execute, "undefined");
+console.log("Sentinel Prime compatibility scoring tests passed.");

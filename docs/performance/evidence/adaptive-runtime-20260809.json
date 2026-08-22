@@ -1,0 +1,58 @@
+{
+  "schema": "zeknova.adaptive-runtime.performance.v1",
+  "measuredAt": "2026-08-09T20:55:00-07:00",
+  "baseline": {
+    "scene": "boss-11",
+    "fps": 62.8,
+    "minObservedFps": 6.3,
+    "maxFrameMs": 157.5,
+    "maxJsHeapMb": 384.82,
+    "rendererGeometries": 1203,
+    "rendererTextures": 116,
+    "maxActiveProjectiles": 43
+  },
+  "optimized": {
+    "boss11": {
+      "adaptiveFps": 68.5,
+      "picassoFps": 77.5,
+      "averageFrameMs": 13.65,
+      "heapBytes": 141176509,
+      "rendererGeometries": 632,
+      "rendererTextures": 25,
+      "reductionFactors": {
+        "ai": 2,
+        "resourceScans": 7.95,
+        "hud": 14.54,
+        "missionContext": 8.02,
+        "buildingCountScans": 1351
+      }
+    },
+    "denseStress": {
+      "fps": 59.5,
+      "heapBytes": 381438311,
+      "rendererGeometries": 968,
+      "rendererTextures": 116,
+      "browserRuntimeErrors": 0,
+      "shaderErrors": 0
+    },
+    "mission2": {
+      "fps": 87.4,
+      "averageFrameMs": 13.75,
+      "heapBytes": 212263101,
+      "tierPopulation": { "T0": 17, "T1": 5, "T2": 0, "T3": 0, "T4": 42 }
+    }
+  },
+  "authority": {
+    "tier": "R0_RECOMMENDATION_ONLY",
+    "canDispatch": false,
+    "canMutateLiveWorld": false,
+    "canControlActors": false,
+    "canChangeGameplayOutcome": false,
+    "canModifyMissionState": false,
+    "canModifyPhysics": false,
+    "canModifySaveState": false,
+    "canModifyMultiplayerSync": false
+  },
+  "gameplayOutcomeMutation": false,
+  "deterministicFallback": true
+}

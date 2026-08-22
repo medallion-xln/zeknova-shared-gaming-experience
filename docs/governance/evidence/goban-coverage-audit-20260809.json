@@ -1,0 +1,65 @@
+{
+  "artifactId": "zeknova-goban-coverage-audit-20260809",
+  "extendsArtifact": "zeknova-goban-authentic-parity-20260809",
+  "evidencePolicy": "append-only; prior observations unchanged",
+  "session": { "authenticated": true, "environment": "local", "authority": "R0_EVALUATION" },
+  "newAuthenticRecords": [
+    { "sourceStateHash": "bbd6f648", "planId": "zkgi:v1:6af38b50", "stateBeforeHash": "bbd6f648", "stateAfterHash": "d9daf23f", "commandCount": 15, "firstCommandId": "zkgc:v1:f693090a", "deterministicReplay": true, "incumbentBound": true, "actualOutcomeBound": true, "unauthorizedMutations": 0 },
+    { "sourceStateHash": "d9daf23f", "planId": "zkgi:v1:091ec567", "stateBeforeHash": "d9daf23f", "stateAfterHash": "0a8b5963", "commandCount": 15, "firstCommandId": "zkgc:v1:2c03bb12", "deterministicReplay": true, "incumbentBound": true, "actualOutcomeBound": true, "unauthorizedMutations": 0 }
+  ],
+  "campaignTotals": {
+    "authenticEvidenceCount": 8,
+    "unsupportedCommandCount": 0,
+    "illegalActionCount": 0,
+    "civilianLethalActionCount": 0,
+    "bossUntelegraphedEngagementCount": 0,
+    "unauthorizedMutationCount": 0
+  },
+  "newObservedContext": {
+    "tension": 50,
+    "threatCount": 1,
+    "actorRoles": ["juggernaut", "spitter"],
+    "infrastructureConditions": [],
+    "missionContext": "1",
+    "dayNightPhase": "unknown",
+    "combatStage": "observe"
+  },
+  "measurementAudit": {
+    "survival": { "baselineValue": 1, "candidateValue": null, "measurementSource": "game player health / authentic incumbent window", "sourceStateHashes": ["bbd6f648", "d9daf23f"], "validity": "baseline valid; candidate counterfactual unavailable", "result": "INCOMPLETE" },
+    "civilianSafety": { "baselineValue": null, "candidateValue": null, "measurementSource": null, "sourceStateHashes": [], "validity": "no canonical civilian outcome source", "result": "INCOMPLETE" },
+    "infrastructurePreservation": { "baselineValue": null, "candidateValue": null, "measurementSource": null, "sourceStateHashes": [], "validity": "no registered infrastructure population in session", "result": "INCOMPLETE" },
+    "objectiveCompletion": { "baselineValue": null, "candidateValue": null, "measurementSource": null, "sourceStateHashes": [], "validity": "descriptive mission context only", "result": "INCOMPLETE" },
+    "resourceEfficiency": { "baselineValue": 95, "candidateValue": null, "measurementSource": "game.simulation.resources.minerals / authentic incumbent window", "sourceStateHashes": ["bbd6f648", "d9daf23f"], "validity": "baseline valid; candidate counterfactual unavailable", "result": "INCOMPLETE" },
+    "positioningQuality": { "baselineValue": null, "candidateValue": null, "measurementSource": null, "sourceStateHashes": [], "validity": "no approved positioning evaluator", "result": "INCOMPLETE" },
+    "unnecessaryEscalation": { "baselineValue": 0.5, "candidateValue": null, "measurementSource": "game.diplomacyTension / authentic incumbent window", "sourceStateHashes": ["bbd6f648", "d9daf23f"], "validity": "baseline valid; candidate counterfactual unavailable", "result": "INCOMPLETE" },
+    "missionOutcome": { "baselineValue": null, "candidateValue": null, "measurementSource": null, "sourceStateHashes": [], "validity": "no completed mission outcome in window", "result": "INCOMPLETE" }
+  },
+  "capabilityAudit": {
+    "civilianSafetyMeasured": false,
+    "infrastructurePreservationMeasured": false,
+    "objectiveCompletionMeasured": false,
+    "positioningQualityMeasured": false,
+    "missionOutcomeMeasured": false,
+    "counterfactualOutcomeBinding": false,
+    "counterfactualEvaluatorAvailable": false,
+    "counterfactualEvaluatorReason": "The existing Prime forward model does not model Goban actor commands.",
+    "infrastructureVariation": false,
+    "dayNightVariation": false,
+    "dayNightReason": "Live runtime exposes no day/night state.",
+    "missionContextVariation": false,
+    "bossCombatStageVariation": false,
+    "bossCombatStageReason": "No authentic boss encounter was active.",
+    "counterfactualCoverageComplete": false,
+    "baselineComparisonComplete": false
+  },
+  "decision": {
+    "candidateOutperformsFrozenBaseline": false,
+    "liveAuthorityRecommendation": "REJECT",
+    "r1ManifestPrepared": false,
+    "liveAuthorityAuthorized": false,
+    "canDispatch": false,
+    "canMutateLiveWorld": false,
+    "liveEnemyControl": false,
+    "currentAuthority": "R0_EVALUATION"
+  }
+}

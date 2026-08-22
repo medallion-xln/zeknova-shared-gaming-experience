@@ -1,0 +1,110 @@
+{
+  "packageId": "zeknova-sentinel-prime-r1-authorization-readiness-v1",
+  "phase": "TRACK_A_READINESS_ONLY",
+  "manifest": {
+    "path": "docs/SENTINEL_PRIME_R1_AUTHORIZATION_MANIFEST.md",
+    "sha256": "167e538ff6e142ed3bf6ee26cfad718f40c24c181616654e22503b652f009617",
+    "hashValid": true
+  },
+  "authority": {
+    "primeR1Authorized": false,
+    "canaryStarted": false,
+    "liveExecutionEnabled": false,
+    "currentAuthority": "R0",
+    "explicitHumanAuthorizationRequired": true,
+    "authorizationInferred": false
+  },
+  "files": {
+    "contract": "src/world/PrimeR1Authority.js",
+    "executor": "src/game/SentinelPrimeExecutor.js",
+    "runtimeBinding": "src/main.js",
+    "manifest": "docs/SENTINEL_PRIME_R1_AUTHORIZATION_MANIFEST.md",
+    "authorityTests": "tests/sentinel-prime-r1-authority.test.mjs",
+    "readinessTests": "tests/sentinel-prime-r1-readiness.test.mjs",
+    "readinessPackage": "docs/governance/SENTINEL_PRIME_R1_AUTHORIZATION_PACKAGE.json"
+  },
+  "allowedActions": [
+    { "prime": "stabilize", "command": "hold_settlement_perimeter" },
+    { "prime": "scout_region", "command": "reconnoiter_forest_lane" },
+    { "prime": "intercept_contact", "command": "intercept_hostile_contact" },
+    { "prime": "fortify_known_route", "command": "fortify_known_route" },
+    { "prime": "repair_known_structure", "command": "repair_known_structure" },
+    { "prime": "share_intelligence", "command": "share_verified_intelligence" }
+  ],
+  "prohibitedActions": [
+    "arbitrary_movement",
+    "arbitrary_resource_spending",
+    "save_override",
+    "mission_override",
+    "physics_mutation",
+    "multiplayer_administration",
+    "arbitrary_spawn",
+    "arbitrary_despawn",
+    "unrestricted_economy",
+    "developer_commands",
+    "authority_escalation",
+    "code_modification",
+    "legal_mask_bypass",
+    "hard_safety_bypass"
+  ],
+  "authorityTokenSemantics": {
+    "issuance": "Only after a separate explicit human authorization naming this exact manifest hash.",
+    "scope": "One authenticated local canary session.",
+    "binding": ["contractId", "authorizationId", "sessionId"],
+    "storage": "In-memory unforgeable object identity; not persisted or placed in browser storage.",
+    "invalidOn": ["session mismatch", "kill switch", "automatic R0 fallback", "reload without new explicit authorization"]
+  },
+  "activationProcedure": [
+    "Receive separate explicit human authorization referencing the exact manifest SHA-256.",
+    "Re-run manifest, allowlist, authority, structural, provenance, rollback, kill-switch, JSON, and diff checks.",
+    "Create one in-memory authority token for one authenticated local canary session.",
+    "Expose execution only through the narrow token-gated canary controller; never expose the executor class.",
+    "Start with one allowlisted recommendation and record attempted and executed evidence.",
+    "Remain inside the six-action allowlist and stop immediately on any fallback condition."
+  ],
+  "killSwitchProcedure": [
+    "Call ZekNovaSentinelPrimeR1.killSwitch(reason).",
+    "Invalidate the active in-memory authority state.",
+    "Return status authority to R0 with canDispatch=false and canMutateLiveWorld=false.",
+    "Leave the incumbent scripted controller installed and unchanged.",
+    "Record the reason and stop all further canary dispatch."
+  ],
+  "rollbackProcedure": [
+    "Stop Prime dispatch through the kill switch.",
+    "Use the certified W0-P.2 command rollback/evidence path for the issued reversible command.",
+    "Capture state after rollback and bind it to the attempted command record.",
+    "Verify incumbent control remains available.",
+    "Keep R0 active until a new explicit authorization decision."
+  ],
+  "canaryScope": {
+    "environment": "local authenticated session only",
+    "sessions": 1,
+    "concurrentCommands": 1,
+    "maximumActions": 6,
+    "domains": ["certified W0-P.2 reversible Forest commands"],
+    "excluded": ["Goban", "boss control", "mission mutation", "economy mutation", "world-cycle control", "arbitrary enemy control"]
+  },
+  "automaticR0FallbackConditions": [
+    "illegal dispatch",
+    "stale state",
+    "provenance mismatch",
+    "unsupported action",
+    "target mismatch",
+    "unexpected mutation",
+    "executor failure",
+    "repeated-command loop",
+    "kill-switch activation",
+    "authority-token or session mismatch"
+  ],
+  "publicBrowserController": ["status", "dryRun", "killSwitch"],
+  "gobanBoundary": {
+    "authority": "R0_EVALUATION",
+    "authenticEvidenceCount": 8,
+    "counterfactualCoverageComplete": false,
+    "baselineComparisonComplete": false,
+    "candidateOutperformsBaseline": false,
+    "liveAuthorityRecommendation": "REJECT",
+    "r1ManifestPrepared": false
+  },
+  "nextGate": "SEPARATE_EXPLICIT_HUMAN_AUTHORIZATION_FOR_ONE_LOCAL_PRIME_R1_CANARY"
+}

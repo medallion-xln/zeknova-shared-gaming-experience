@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "builderVersion": "1.0.0",
+  "compatibility": {
+    "entrypoint": "src/runtime-reconstructed/runtime-build.json#compatibility.segments",
+    "segments": [
+      "src/runtime-reconstructed/compat/segments/01-vendor-and-bootstrap.js",
+      "src/runtime-reconstructed/compat/segments/02-missions-and-ui.js",
+      "src/runtime-reconstructed/compat/segments/03-world-and-game-core.js",
+      "src/runtime-reconstructed/compat/segments/04-gameplay-systems.js",
+      "src/runtime-reconstructed/compat/segments/05-legacy-bridge-and-combat.js",
+      "src/runtime-reconstructed/compat/segments/06-world-missions-and-bosses.js",
+      "src/runtime-reconstructed/compat/segments/07-boss-runtime-and-visuals.js",
+      "src/runtime-reconstructed/compat/segments/08-picasso-certification-and-entry.js"
+    ],
+    "output": "artifacts/runtime-reconstruction/index-reconstructed.js"
+  },
+  "model": {
+    "entrypoint": "src/runtime-reconstructed/model/model-runtime.js",
+    "output": "artifacts/runtime-reconstruction/model-runtime-reconstructed.js"
+  }
+}
+

@@ -4,6 +4,7 @@
 export function createStage2FCollectorClient(config) {
   const state = {
     sessionId: null,
+    qualificationIdentityBase: null,
     provider: null,
     lastError: null,
     accepted: 0,
@@ -15,6 +16,9 @@ export function createStage2FCollectorClient(config) {
     autoCollectedStateIdentities: new Set(),
     autoSkippedSameState: 0,
     autoSkippedNotReady: 0,
+    consecutiveFailures: 0,
+    unavailableUntil: 0,
+    suppressedUnavailablePolls: 0,
   };
 
   async function request(path, body = null) {
@@ -36,12 +40,19 @@ export function createStage2FCollectorClient(config) {
   async function startSession(metadata = {}) {
     if (state.sessionId) return state.sessionId;
     const session = await request('/v1/session/start', {
+      evidenceMode: config.evidenceMode,
       environmentId: metadata.environmentId ?? config.environmentId,
       label: metadata.label ?? `ZekNova live runtime ${new Date().toISOString()}`,
       playerCount: metadata.playerCount ?? null,
       gameMode: metadata.gameMode ?? null,
     });
+    if (!session.qualificationIdentityBase
+        || session.qualificationIdentityBase.sessionId !== session.sessionId
+        || session.qualificationIdentityBase.authorityTier !== 'R0') {
+      throw new Error('Collector did not return a valid Stage 2F qualification identity base');
+    }
     state.sessionId = session.sessionId;
+    state.qualificationIdentityBase = structuredClone(session.qualificationIdentityBase);
     globalThis.dispatchEvent?.(new CustomEvent('sentinel-grid:stage2f-session-started', { detail: structuredClone(session) }));
     return state.sessionId;
   }
@@ -49,16 +60,32 @@ export function createStage2FCollectorClient(config) {
   async function submitCapture(capture) {
     try {
       const sessionId = await startSession(capture?.sessionMetadata ?? {});
-      const result = await request('/v1/capture', { sessionId, capture });
+      const samplingIdentity = capture?.envelope?.metadata?.stateIdentity;
+      if (typeof samplingIdentity !== 'string' || !/^[a-f0-9]{64}$/.test(samplingIdentity)) {
+        throw new Error('Stage 2F capture is missing its canonical sampling identity');
+      }
+      if (!state.qualificationIdentityBase) throw new Error('Stage 2F session identity is unavailable');
+      const boundCapture = {
+        ...capture,
+        qualificationIdentity: {
+          ...state.qualificationIdentityBase,
+          samplingIdentity,
+        },
+      };
+      const result = await request('/v1/capture', { sessionId, capture: boundCapture });
       if (result.duplicate) state.duplicate += 1;
       else state.accepted += 1;
       state.lastError = null;
+      state.consecutiveFailures = 0;
+      state.unavailableUntil = 0;
       globalThis.dispatchEvent?.(new CustomEvent('sentinel-grid:stage2f-capture-result', { detail: structuredClone(result) }));
       return result;
     } catch (error) {
       state.rejected += 1;
       state.lastError = error.message;
-      console.error('[Sentinel Grid Stage2F Collector] capture rejected:', error);
+      state.consecutiveFailures += 1;
+      state.unavailableUntil = Date.now() + Math.min(60_000, 2_000 * (2 ** Math.min(state.consecutiveFailures - 1, 5)));
+      if (state.consecutiveFailures === 1) console.warn('[Sentinel Grid Stage2F Collector] collector unavailable; automatic capture will retry with backoff:', error.message);
       globalThis.dispatchEvent?.(new CustomEvent('sentinel-grid:stage2f-capture-error', { detail: { error: error.message } }));
       throw error;
     }
@@ -69,6 +96,7 @@ export function createStage2FCollectorClient(config) {
     const sessionId = state.sessionId;
     const result = await request('/v1/session/end', { sessionId });
     state.sessionId = null;
+    state.qualificationIdentityBase = null;
     globalThis.dispatchEvent?.(new CustomEvent('sentinel-grid:stage2f-session-ended', { detail: structuredClone(result) }));
     return result;
   }
@@ -164,6 +192,10 @@ export function createStage2FCollectorClient(config) {
 
   async function pollOnce() {
     if (state.autoPollInFlight) return { collected: false, reason: 'automatic-poll-already-in-flight' };
+    if (Date.now() < state.unavailableUntil) {
+      state.suppressedUnavailablePolls += 1;
+      return { collected: false, reason: 'collector-unavailable-backoff', retryAt: state.unavailableUntil };
+    }
     state.autoPollInFlight = true;
     try {
       const provider = state.provider ?? discoverProvider();
@@ -208,6 +240,9 @@ export function createStage2FCollectorClient(config) {
       clientVersion: '0.10.0',
       endpoint: config.endpoint,
       sessionId: state.sessionId,
+      stage2fCampaignId: state.qualificationIdentityBase?.stage2fCampaignId ?? null,
+      sentinelRuntimeId: state.qualificationIdentityBase?.sentinelRuntimeId ?? null,
+      evidenceMode: state.qualificationIdentityBase?.evidenceMode ?? config.evidenceMode ?? null,
       providerBound: Boolean(state.provider),
       wrappedMethods: [...state.wrappedMethods],
       accepted: state.accepted,
@@ -218,6 +253,9 @@ export function createStage2FCollectorClient(config) {
       autoUniqueStateCount: state.autoCollectedStateIdentities.size,
       autoSkippedSameState: state.autoSkippedSameState,
       autoSkippedNotReady: state.autoSkippedNotReady,
+      consecutiveFailures: state.consecutiveFailures,
+      unavailableUntil: state.unavailableUntil,
+      suppressedUnavailablePolls: state.suppressedUnavailablePolls,
       authority: { tier: 'R0', canDispatch: false, canMutateLiveWorld: false },
       knownGlobals: [
         'ZekNovaStage2FCaptureProvider',

@@ -58,6 +58,7 @@ function validateConfig(config) {
     assert(typeof config[field] === 'string' && config[field].length > 0, `Collector config ${field} is required`);
   }
   assert(Array.isArray(config.runtimeFiles) && config.runtimeFiles.length >= 3, 'At least three runtime files are required for build provenance');
+  assert(config.evidenceMode === 'QUALIFICATION' || config.evidenceMode === 'DRY_RUN', 'Collector evidenceMode must be explicit');
   return structuredClone(config);
 }
 
@@ -104,20 +105,35 @@ async function loadKernel(config) {
   const contextUrl = pathToFileURL(path.join(config.kernelPath, 'scripts', 'production-context.mjs')).href;
   const shadowUrl = pathToFileURL(path.join(config.kernelPath, 'src', 'lab', 'zeknova-real-state-shadow.js')).href;
   const controlledUrl = pathToFileURL(path.join(config.kernelPath, 'src', 'lab', 'zeknova-controlled-evaluation.js')).href;
+  const identityUrl = pathToFileURL(path.join(config.kernelPath, 'src', 'lab', 'zeknova-stage2f-identity.js')).href;
   const contractsUrl = pathToFileURL(path.join(config.kernelPath, 'src', 'core', 'contracts.js')).href;
   const determinismUrl = pathToFileURL(path.join(config.kernelPath, 'src', 'core', 'determinism.js')).href;
   const legacyUrl = pathToFileURL(path.join(config.kernelPath, 'src', 'compat', 'zeknova-stage1az-legacy.js')).href;
-  const [{ loadProductionRegistry }, shadow, controlled, contracts, determinism, legacy] = await Promise.all([
+  const [{ loadProductionRegistry }, shadow, controlled, identity, contracts, determinism, legacy] = await Promise.all([
     import(`${contextUrl}?collector=${nonce}`),
     import(`${shadowUrl}?collector=${nonce}`),
     import(`${controlledUrl}?collector=${nonce}`),
+    import(`${identityUrl}?collector=${nonce}`),
     import(`${contractsUrl}?collector=${nonce}`),
     import(`${determinismUrl}?collector=${nonce}`),
     import(`${legacyUrl}?collector=${nonce}`),
   ]);
   const { registry } = await loadProductionRegistry();
   const registration = registry.get('zeknova:zeknova-stage1az-shadow-adapter');
-  return { registration, shadow, controlled, contracts, determinism, legacy };
+  return { registration, shadow, controlled, identity, contracts, determinism, legacy };
+}
+
+async function loadQualificationContext(config, kernel) {
+  const identityPath = path.resolve(config.runtimeIdentityPath ?? path.join(config.kernelPath, 'artifacts', 'r0-runtime-identity', 'canonical-runtime-identity.json'));
+  const provenancePath = path.resolve(config.generatedRuntimeProvenancePath ?? path.join(config.kernelPath, 'artifacts', 'r0-runtime-identity', 'generated-runtime-provenance.json'));
+  const campaignPath = path.resolve(config.campaignManifestPath ?? path.join(config.kernelPath, 'artifacts', 'r0-runtime-identity', 'stage2f-campaign-manifest.json'));
+  const [runtimeIdentity, generatedRuntimeProvenance, rawCampaign] = await Promise.all([readJson(identityPath), readJson(provenancePath), readJson(campaignPath)]);
+  const campaignManifest = kernel.identity.validateStage2FCampaignManifest(rawCampaign, { runtimeIdentity, generatedRuntimeProvenance });
+  assert(campaignManifest.sentinelRuntimeId === runtimeIdentity.sentinelRuntimeId, 'Campaign runtime identity is not current', 'RUNTIME_ID_MISMATCH');
+  assert(campaignManifest.generatedRuntimeProvenanceId === generatedRuntimeProvenance.generatedRuntimeProvenanceId, 'Campaign generated provenance is not current', 'PROVENANCE_ID_MISMATCH');
+  const evidenceMode = config.evidenceMode;
+  assert(evidenceMode === campaignManifest.campaignMode, 'Collector evidence mode does not match the campaign manifest', 'CAMPAIGN_ID_MISMATCH');
+  return Object.freeze({ runtimeIdentity, generatedRuntimeProvenance, campaignManifest, evidenceMode, identityPath, provenancePath, campaignPath });
 }
 
 export function deriveCertifiedLegacyEvidence(kernel, envelope, request) {
@@ -264,6 +280,7 @@ export async function createCollectorRuntime(configInput) {
   const config = validateConfig(configInput);
   const provenance = await computeRuntimeProvenance(config);
   const kernel = await loadKernel(config);
+  const qualification = await loadQualificationContext(config, kernel);
   const stateRoot = path.join(config.liveParityRoot, 'runtime-collector', 'state');
   const fixtureDir = path.join(config.liveParityRoot, 'fixtures');
   const recordsDir = path.join(config.liveParityRoot, 'records');
@@ -324,6 +341,7 @@ export async function createCollectorRuntime(configInput) {
       startedAt: session.startedAt,
       endedAt,
       records,
+      campaignManifest: qualification.campaignManifest,
     });
     await atomicWriteJson(path.join(sessionsDir, `${session.sessionId}.json`), manifest);
     return manifest;
@@ -333,6 +351,12 @@ export async function createCollectorRuntime(configInput) {
     const sessionId = safeSessionId(input.sessionId);
     assert(!activeSessions.has(sessionId), `Session is already active: ${sessionId}`, 'SESSION_EXISTS');
     const metadata = normalizeSessionMetadata(input, config);
+    assert(input.evidenceMode === qualification.evidenceMode, 'Session evidenceMode must explicitly match the configured campaign', 'CAMPAIGN_ID_MISMATCH');
+    if (qualification.evidenceMode === 'QUALIFICATION') {
+      assert(qualification.campaignManifest.campaignState === 'ACTIVE' && qualification.campaignManifest.qualificationEligible === true, 'Qualification campaign is not active', 'STALE_CAMPAIGN');
+    } else {
+      assert(qualification.evidenceMode === 'DRY_RUN' && qualification.campaignManifest.qualificationEligible === false, 'Dry-run campaign cannot be qualification eligible', 'AUTHORITY_MISMATCH');
+    }
     const session = {
       sessionStateVersion: 1,
       sessionId,
@@ -348,11 +372,35 @@ export async function createCollectorRuntime(configInput) {
       repositoryHead: provenance.repositoryHead,
       runtimeBuildHash: provenance.runtimeBuildHash,
       collectorId: config.collectorId,
+      stage2fCampaignId: qualification.campaignManifest.stage2fCampaignId,
+      sentinelRuntimeId: qualification.campaignManifest.sentinelRuntimeId,
+      generatedRuntimeProvenanceId: qualification.campaignManifest.generatedRuntimeProvenanceId,
+      evidenceMode: qualification.evidenceMode,
+      qualificationEligible: qualification.campaignManifest.qualificationEligible,
       authority: { tier: 'R0', canDispatch: false, canMutateLiveWorld: false },
     };
     activeSessions.set(sessionId, session);
     await persistRuntimeSession(session);
-    return structuredClone(session);
+    return {
+      ...structuredClone(session),
+      qualificationIdentityBase: {
+        identityEnvelopeVersion: kernel.identity.STAGE2F_QUALIFICATION_IDENTITY_VERSION,
+        sentinelRuntimeId: qualification.campaignManifest.sentinelRuntimeId,
+        generatedRuntimeProvenanceId: qualification.campaignManifest.generatedRuntimeProvenanceId,
+        stage2fCampaignId: qualification.campaignManifest.stage2fCampaignId,
+        sessionId,
+        recordSchemaVersion: qualification.campaignManifest.recordSchemaVersion,
+        collectorSchemaVersion: qualification.campaignManifest.collectorSchemaVersion,
+        authorityTier: 'R0',
+        evidenceMode: qualification.evidenceMode,
+        qualificationEligible: qualification.campaignManifest.qualificationEligible,
+        canonicalStateSchemaVersion: qualification.campaignManifest.canonicalStateSchemaVersion,
+        primeVersion: qualification.campaignManifest.primeVersion,
+        routerVersion: qualification.campaignManifest.routerVersion,
+        authorityPolicyVersion: qualification.campaignManifest.authorityPolicyVersion,
+        certificationPolicyVersion: qualification.campaignManifest.certificationPolicyVersion,
+      },
+    };
   }
 
   async function submitCapture(input) {
@@ -361,7 +409,29 @@ export async function createCollectorRuntime(configInput) {
     const session = activeSessions.get(requestedSession);
     assert(session?.status === 'active', `Active session not found: ${requestedSession}`, 'SESSION_NOT_ACTIVE');
     const capture = validateCaptureInput(input);
-    const samplingStateIdentity = samplingStateIdentityFromCapture(capture);
+    let samplingStateIdentity;
+    try {
+      samplingStateIdentity = samplingStateIdentityFromCapture(capture);
+      kernel.identity.validateStage2FQualificationIdentity(capture.qualificationIdentity, {
+        campaignManifest: qualification.campaignManifest,
+        sessionId: session.sessionId,
+        samplingIdentity: samplingStateIdentity,
+      });
+    } catch (error) {
+      session.rejectedRecordCount += 1;
+      await persistRuntimeSession(session);
+      await atomicWriteJson(path.join(quarantineDir, `rejected-${session.sessionId}-${String(session.nextSequence).padStart(6, '0')}-${randomBytes(4).toString('hex')}.json`), {
+        quarantineVersion: 2,
+        capturedAt: new Date().toISOString(),
+        sessionId: session.sessionId,
+        sequence: session.nextSequence,
+        reason: error.message,
+        code: error.code ?? 'CAPTURE_REJECTED',
+        inputHash: sha256(input),
+        authority: { tier: 'R0', canDispatch: false, canMutateLiveWorld: false, canIssueAuthorityTokens: false },
+      });
+      throw error;
+    }
     if (capture.legacyEvidence?.derivation === 'sentinel-grid-stage2f-certified-legacy-v1') {
       capture.legacyEvidence = deriveCertifiedLegacyEvidence(kernel, capture.envelope, capture.legacyEvidence);
     }
@@ -372,6 +442,7 @@ export async function createCollectorRuntime(configInput) {
       sequence,
       envelope: capture.envelope,
       legacyEvidence: capture.legacyEvidence,
+      qualificationIdentity: capture.qualificationIdentity,
     };
     const captureId = `${session.sessionId}:${String(sequence).padStart(6, '0')}:${sha256(unsignedIdentity).slice(0, 20)}`;
     assert(CAPTURE_ID_RE.test(captureId), 'Generated captureId is invalid');
@@ -381,19 +452,24 @@ export async function createCollectorRuntime(configInput) {
     capture.context = { ...capture.context, sessionId: session.sessionId, sequence };
     capture.source = {
       kind: 'live-runtime',
-      productionEligible: true,
+      productionEligible: capture.qualificationIdentity.qualificationEligible === true,
       repositoryHead: provenance.repositoryHead,
       repositoryDirty: provenance.repositoryDirty,
       runtimeBuildHash: provenance.runtimeBuildHash,
       collectorId: config.collectorId,
-      collectorVersion: '0.9.2',
+      collectorVersion: '1.0.0',
       capturedAt,
       transport: 'loopback-http',
       authority: 'R0',
+      sentinelRuntimeId: capture.qualificationIdentity.sentinelRuntimeId,
+      generatedRuntimeProvenanceId: capture.qualificationIdentity.generatedRuntimeProvenanceId,
+      stage2fCampaignId: capture.qualificationIdentity.stage2fCampaignId,
+      evidenceMode: capture.qualificationIdentity.evidenceMode,
+      qualificationEligible: capture.qualificationIdentity.qualificationEligible,
     };
 
     try {
-      kernel.shadow.validateZekNovaLiveCapture(capture);
+      kernel.shadow.validateZekNovaLiveCapture(capture, { campaignManifest: qualification.campaignManifest });
 
       const existingSamplingState = samplingStateIndex.get(samplingStateIdentity);
       if (existingSamplingState) {
@@ -417,6 +493,7 @@ export async function createCollectorRuntime(configInput) {
         manifest: kernel.registration.manifest,
         configuration: kernel.registration.configuration,
         capture,
+        campaignManifest: qualification.campaignManifest,
       });
       const existingNames = await listJson(recordsDir);
       for (const name of existingNames) {
@@ -496,7 +573,7 @@ export async function createCollectorRuntime(configInput) {
     const manifestCount = (await listJson(sessionsDir)).length;
     const quarantineCount = (await listJson(quarantineDir)).length;
     return {
-      collectorVersion: '0.9.2',
+      collectorVersion: '1.0.0',
       collectorId: config.collectorId,
       online: true,
       host: config.host,
@@ -522,9 +599,19 @@ export async function createCollectorRuntime(configInput) {
         runtimeBuildHash: provenance.runtimeBuildHash,
         runtimeFileCount: provenance.buildDocument.files.length,
       },
+      qualification: {
+        stage2fCampaignId: qualification.campaignManifest.stage2fCampaignId,
+        sentinelRuntimeId: qualification.campaignManifest.sentinelRuntimeId,
+        generatedRuntimeProvenanceId: qualification.campaignManifest.generatedRuntimeProvenanceId,
+        campaignState: qualification.campaignManifest.campaignState,
+        evidenceMode: qualification.evidenceMode,
+        qualificationEligible: qualification.campaignManifest.qualificationEligible,
+        recordSchemaVersion: qualification.campaignManifest.recordSchemaVersion,
+        collectorSchemaVersion: qualification.campaignManifest.collectorSchemaVersion,
+      },
       authority: { tier: 'R0', canDispatch: false, canMutateLiveWorld: false },
     };
   }
 
-  return Object.freeze({ config, provenance, startSession, submitCapture, endSession, status });
+  return Object.freeze({ config, provenance, qualification, startSession, submitCapture, endSession, status });
 }

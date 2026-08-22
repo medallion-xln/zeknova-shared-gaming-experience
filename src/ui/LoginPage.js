@@ -7,10 +7,9 @@ const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character)
 })[character]);
 
 function localDemoEnabled() {
-  return location.protocol === "file:" || (
-    LOCAL_HOSTS.has(location.hostname)
-    && new URLSearchParams(location.search).get("demo") === "1"
-  );
+  // HTTP localhost is a production-like local environment: it must establish
+  // the repository-supported PHP session before protected APIs are started.
+  return location.protocol === "file:";
 }
 
 let widgetPromise;

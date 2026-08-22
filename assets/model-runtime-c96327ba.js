@@ -822,7 +822,7 @@ export function loadCaptainMarineModel() {
 export function loadCaptainMechModel() {
   return loadAnimatedOfficerModel({
     walkPath: './assets/models/captain-mech-walk.glb',
-    runPath: './assets/models/captain-mech-run.anim.glb',
+    runPath: './assets/models/captain-mech-run.glb',
     targetHeight: 4.75,
     name: 'captainMechHighQualityModel',
   });
@@ -860,7 +860,10 @@ function createEnemyMotionController(scene, walkClip, runClip = null) {
 export async function loadJuggernautModel() {
   await MeshoptDecoder.ready;
   const walkingGltf = await loadGlbOneAtATime('./assets/models/zeknovan-juggernaut-walk.glb');
-  const runningGltf = await loadGlbOneAtATime('./assets/models/zeknovan-juggernaut-run.anim.glb');
+  // The stripped .anim export contains corrupt sampler timestamps (its clip
+  // duration decodes to ~2e38 seconds), so AnimationMixer appears frozen.
+  // The full run GLB carries the same rig with a valid one-second loop.
+  const runningGltf = await loadGlbOneAtATime('./assets/models/zeknovan-juggernaut-run.glb');
 
   const root = prepareModel(
     walkingGltf.scene,
@@ -898,25 +901,25 @@ export async function loadJuggernautModel() {
 const ENEMY_MODEL_PROFILES = {
   stalker: {
     walk: './assets/models/zeknovan-stalker-walk.glb',
-    run: './assets/models/zeknovan-stalker-run.anim.glb',
+    run: './assets/models/zeknovan-stalker-run.glb',
     height: 3.35,
     name: 'zeknovanStalkerHighQualityModel',
   },
   saboteur: {
     walk: './assets/models/zeknovan-saboteur-walk.glb',
-    run: './assets/models/zeknovan-saboteur-run.anim.glb',
+    run: './assets/models/zeknovan-saboteur-run.glb',
     height: 2.9,
     name: 'zeknovanSaboteurHighQualityModel',
   },
   spitter: {
     walk: './assets/models/zeknovan-spitter-walk.glb',
-    run: './assets/models/zeknovan-spitter-run.anim.glb',
+    run: './assets/models/zeknovan-spitter-run.glb',
     height: 3.45,
     name: 'zeknovanSpitterHighQualityModel',
   },
   skyray: {
     walk: './assets/models/zeknovan-skyray-walk.glb',
-    run: './assets/models/zeknovan-skyray-run.anim.glb',
+    run: './assets/models/zeknovan-skyray-run.glb',
     height: 3.25,
     name: 'zeknovanSkyrayHighQualityModel',
   },
@@ -1190,7 +1193,9 @@ export async function loadArchiveShadeBossModel() {
         ? judgmentAction
         : /spiral|rotating|whiteout/i.test(id)
           ? spinAction
-          : /fan|burst|hail|cryo/i.test(id)
+          : /burst|hail|cryo|barrage/i.test(id)
+            ? comboAction
+            : /fan/i.test(id)
             ? slashAction
             : judgmentAction;
       if (!action) return;

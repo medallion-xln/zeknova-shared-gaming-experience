@@ -1,3 +1,4 @@
+import { PROJECT_LADDER, missionItems as planMissionItems } from "./CampaignPlan.js";
 import { BOSS_CONFIGS, MISSION_BOSS_IDS } from "./BossSystem.js";
 
 const visit = (biome, label) => ({ kind: "biomeVisit", biome, target: 1, label });
@@ -5,7 +6,12 @@ const recover = (biome, target, label) => ({ kind: "biomeResource", biome, targe
 const act = (biome, key, target, label) => ({ kind: "biomeStat", biome, key, target, label });
 const build = (biome, key, target, label) => ({ kind: "biomeBuilding", biome, key, target, label });
 const buildEither = (biome, keys, target, label) => ({ kind: "biomeEither", biome, keys, target, label });
-const boss = (missionId, label) => ({ kind: "boss", missionId, bossId: MISSION_BOSS_IDS[missionId], target: 1, label });
+const boss = (missionId, label) => {
+  const bossId = MISSION_BOSS_IDS[missionId];
+  const biome = BOSS_CONFIGS[bossId]?.biome;
+  const biomeLabel = biome ? `${biome[0].toUpperCase()}${biome.slice(1)} AO` : "the marked AO";
+  return { kind: "boss", missionId, bossId, target: 1, biome, label: `${label} — Travel to ${biomeLabel} to start the boss fight` };
+};
 
 /**
  * ZekNovan aid projects. These are built from the construction dock like any other
@@ -107,22 +113,77 @@ const legacyObjectives = {
 const allBiomes = ["forest", "desert", "highlands", "arctic", "wetlands"];
 const buildAcross = (type, label) => allBiomes.map((biome) => build(biome, type, 1, `${label} in the ${biome[0].toUpperCase()}${biome.slice(1)} AO`));
 const visitAcross = (label) => allBiomes.map((biome) => visit(biome, `${label} · ${biome[0].toUpperCase()}${biome.slice(1)} AO`));
-const objectives = {
-  grid: [...visitAcross("Survey solar exposure"), recover("desert", 2, "Recover 2 Desert grid cores"), act("desert", "rocksMined", 2, "Mine 2 formations for conductor material"), ...buildAcross("power", "Install a Solar Grid"), boss("grid", "Break the Sunscar Colossus power siphon")],
-  water: [...visitAcross("Survey water access"), recover("wetlands", 2, "Recover 2 filtration compounds — Two damaged filtration units are marked near contaminated water systems in Wetlands AO (glowing rings, press E on Wetlands deposits)"), ...buildAcross("water", "Connect biome-specific Water Works — 5 total, one per AO (Forest, Desert, Highlands, Arctic, Wetlands — list scrolls)"), aid("wetlands", "Commission a shared ZekNovan watershed project"), act("highlands", "enemiesDefeated", 3, "Intercept 3 attackers during commissioning — 1 Juggernaut + 2 Red projectile shooters will immediately attack in Highlands AO."), boss("water", "Purify the Mire Siren's corrupted network")],
-  "tower-one": [...visitAcross("Map the communications corridor"), recover("highlands", 2, "Recover 2 relay components — Two damaged relay units are marked near Highlands comms arrays (glowing teal rings, press E in Highlands AO)"), ...buildAcross("communications", "Activate a Communications Hub — 5 total, one per AO"), ...buildAcross("defense", "Raise a Defense Tower — 5 total, one per AO"), act("highlands", "enemiesDefeated", 3, "Intercept 3 attackers during commissioning — 1 Juggernaut + 2 Red projectile shooters will immediately attack in Highlands AO (tension-independent)"), boss("tower-one", "Triangulate and defeat the Stormback")],
-  habitat: [...visitAcross("Certify settlement terrain"), act("forest", "treesChopped", 3, "Harvest 3 trees for settlement frames"), ...buildAcross("habitat", "Open a connected Habitat"), aid("forest", "Complete a shared ZekNovan settlement project"), boss("habitat", "Resolve the Ancient Thornwarden crisis")],
+/* ── Campaign objectives: generated from the planetary plan ───────────────
+   Every mission now delivers ONE ZekNova project to ALL FIVE biomes as ten
+   items — five preparation (one per biome) then five construction (one per
+   biome). Previously missions 1-4 spanned the planet while 5-12 dropped a
+   single building in a single biome, so a region could finish the campaign
+   with a Solar Grid and nothing else, and nothing told the player which biome
+   was due which project.
 
-  governance: [visit("desert", "Convene the first regional assembly"), recover("desert", 4, "Recover 4 civic fabrication caches"), build("desert", "capitol", 1, "Commission the Desert Regional Capitol"), build("desert", "hospital", 1, "Open the Desert Planetary Hospital"), aid("desert", "Fund one shared public-service project"), boss("governance", "Retake civic command from the Obsidian Demon Knight")],
-  population: [visit("wetlands", "Begin the planetary health response"), recover("wetlands", 4, "Recover 4 medical compounds"), build("wetlands", "hospital", 1, "Open the Wetlands Planetary Hospital"), build("wetlands", "capitol", 1, "Commission the Wetlands Regional Capitol"), aid("wetlands", "Open a ZekNovan Field Clinic"), boss("population", "Contain the Insect King's bio-swarm")],
-  research: [visit("arctic", "Recover the climate archive"), recover("arctic", 4, "Recover 4 archive fragments"), build("arctic", "university", 1, "Open the Arctic University Campus"), build("arctic", "hospital", 1, "Open an Arctic emergency hospital"), boss("research", "Verify the archive and defeat its Shade")],
-  culture: [visit("forest", "Survey the civilian trade corridor"), act("forest", "treesChopped", 5, "Harvest 5 trees for the transit works"), build("forest", "commerce", 1, "Open the Forest Trade and Civic Center"), build("forest", "transit", 1, "Connect the Forest Transit Hub"), aid("forest", "Open a shared ZekNovan trade project"), boss("culture", "Quarantine the Spore Cantor's trade network")],
-  "supply-route": [visit("highlands", "Convene the planetary charter assembly"), act("highlands", "enemiesDefeated", 6, "Defeat 6 attackers threatening the assembly"), build("highlands", "planetary_capitol", 1, "Commission the Planetary Capitol"), build("highlands", "transit", 1, "Open the central Planetary Transit Hub"), aid("highlands", "Ratify one shared ZekNovan civic project"), boss("supply-route", "Defend the Capitol from the Drowned Tremor")],
-
-  stronghold: [visit("forest", "Audit the proposed military-industrial zone"), act("forest", "enemiesDefeated", 8, "Defeat 8 threats to strategic industry"), build("forest", "war_economy", 1, "Commission the War Economy Complex"), build("forest", "defense_contractor", 1, "Open a Defense Contractor Campus"), aid("forest", "Fund one civilian offset project"), boss("stronghold", "Survive the Rootbound Tremor industrial siege")],
-  "advanced-research": [visit("highlands", "Secure the Highlands colony"), build("highlands", "water", 1, "Connect 1 Highland Water Works"), build("highlands", "research", 2, "Operate 2 Highland AI Research Labs"), boss("advanced-research", "Stop the Arc Gunner's hostile takeover")],
-  "tower-ring": [visit("arctic", "Commission ZekNova's financial district"), recover("arctic", 6, "Recover 6 encrypted market ledgers"), build("arctic", "stock_exchange", 1, "Open the ZekNova Stock Exchange"), build("arctic", "corporate_hq", 1, "Open the financial district's Corporate Headquarters"), aid("arctic", "Create one public-benefit investment"), boss("tower-ring", "Stabilize the market and defeat the White Screecher")],
+   CampaignPlan.js owns the biome/project matrix; this file still owns how an
+   item becomes an objective row, so the HUD, the boss gate and the save format
+   are unchanged. Mission ids and boss labels are preserved exactly. */
+const PLAN_ITEM_TO_OBJECTIVE = {
+  survey:        (it) => visit(it.biome, it.label),
+  recover:       (it) => recover(it.biome, it.target, it.label),
+  combat:        (it) => act(it.biome, "enemiesDefeated", it.target, it.label),
+  harvest:       (it) => act(it.biome, "treesChopped", it.target, it.label),
+  aid:           (it) => aid(it.biome, it.label),
+  biomeBuilding: (it) => build(it.biome, it.type, it.target, it.label),
 };
+
+/* Boss labels are carried over verbatim so the Guardian prompts players
+   already recognise do not change under them. */
+const PLAN_BOSS_LABELS = {
+  "grid": "Break the Sunscar Colossus power siphon — Travel to Desert AO to start the boss fight",
+  "water": "Purify the Mire Siren's corrupted network — Travel to Wetlands AO to start the boss fight",
+  "tower-one": "Triangulate and defeat the Stormback — Travel to Highlands AO to start the boss fight",
+  "habitat": "Resolve the Ancient Thornwarden crisis — Travel to Forest AO to start the boss fight",
+  "governance": "Retake civic command from the Obsidian Demon Knight — Travel to Desert AO to start the boss fight",
+  "population": "Contain the Insect King's bio-swarm — Travel to Wetlands AO to start the boss fight",
+  "research": "Verify the archive and defeat its Shade — Travel to Arctic AO to start the boss fight",
+  "culture": "Quarantine the Spore Cantor's trade network — Travel to Forest AO to start the boss fight",
+  "supply-route": "Defeat the Drowned Tremor — Travel to Wetlands AO to start the boss fight",
+  "stronghold": "Survive the Rootbound Tremor industrial siege — Travel to Forest AO to start the boss fight",
+  "advanced-research": "Stop the Arc Gunner's hostile takeover — Travel to Highlands AO to start the boss fight",
+  "tower-ring": "Stabilize the market and defeat the White Screecher — Travel to Arctic AO to start the boss fight",
+};
+
+// CampaignPlan owns the planetary preparation/build matrix, while these rows
+// preserve mission-specific infrastructure contracts consumed by live mission
+// guidance and boss readiness. They are inserted before the terminal boss row.
+const REQUIRED_MISSION_OBJECTIVES = {
+  "tower-one": buildAcross("defense", "Raise 1 defensive early-warning tower"),
+  habitat: [
+    ...buildAcross("habitat", "Open 1 powered planetary habitat"),
+    aid("forest", "Complete 1 Forest ZekNovan aid project"),
+  ],
+  governance: [
+    build("desert", "capitol", 1, "Commission 1 Desert Regional Capitol"),
+    build("desert", "hospital", 1, "Open 1 Desert public hospital"),
+  ],
+  population: [build("wetlands", "hospital", 1, "Open 1 Wetlands population hospital")],
+  research: [build("arctic", "university", 1, "Open 1 Arctic University Campus")],
+  culture: [
+    build("forest", "commerce", 1, "Establish 1 Forest Trade and Civic Center"),
+    build("forest", "transit", 1, "Open 1 Forest regional transit hub"),
+  ],
+  "supply-route": [buildEither("wetlands", ["bridge", "boat"], 1, "Install a Wetland Bridge or Survey Skiff")],
+  stronghold: [
+    build("forest", "war_economy", 1, "Commission 1 Forest War Economy Complex"),
+    build("forest", "defense_contractor", 1, "Commission 1 Forest Defense Contractor Campus"),
+  ],
+};
+
+const objectives = Object.fromEntries(PROJECT_LADDER.map((plan) => [
+  plan.mission,
+  [
+    ...planMissionItems(plan.mission).map((it) => PLAN_ITEM_TO_OBJECTIVE[it.kind](it)),
+    ...(REQUIRED_MISSION_OBJECTIVES[plan.mission] ?? []),
+    boss(plan.mission, PLAN_BOSS_LABELS[plan.mission]),
+  ],
+]));
 
 export const MISSION_OBJECTIVES = Object.freeze(Object.fromEntries(Object.entries(objectives).map(([id, rows]) => [id, Object.freeze(rows.map((row) => Object.freeze(row)))])));
 
@@ -217,7 +278,7 @@ export const CAMPAIGN_TIERS = Object.freeze([
       mission("population", "Planetary healthcare", "Extend hospitals and regional government into a second population center.", [["capitol", 2], ["hospital", 2]]),
       mission("research", "Education and medicine", "Open ZekNova's first University Campus and Arctic emergency hospital.", [["university", 1], ["hospital", 3]]),
       mission("culture", "Commerce and transportation", "Establish a civilian trade center and regional transit hub.", [["commerce", 1], ["transit", 1]]),
-      mission("supply-route", "United ZekNova", "Complete the central transit link and commission the Planetary Capitol.", [["planetary_capitol", 1], ["transit", 2]]),
+      mission("supply-route", "Open the supply route", "Create a reliable Wetlands crossing and clear what waits beneath it.", [], [["bridge", 1], ["boat", 1]]),
     ],
   },
   {
@@ -226,7 +287,7 @@ export const CAMPAIGN_TIERS = Object.freeze([
     subtitle: "Choose the institutions that will control ZekNova's mature economy.",
     missions: [
       mission("stronghold", "The war economy", "Mobilize strategic industry and commission a defense contractor.", [["war_economy", 1], ["defense_contractor", 1]]),
-      mission("advanced-research", "Fortune 500 ZekNova", "Establish planet-scale corporate and defense industry.", [["water", 4], ["research", 2]]),
+      mission("advanced-research", "Fortune 500 ZekNova", "Establish planet-scale corporate and defense industry.", [["corporate_hq", 1], ["defense_contractor", 1]]),
       mission("tower-ring", "The ZekNova Exchange", "Complete the financial district and open the planetary stock exchange.", [["stock_exchange", 1], ["corporate_hq", 1]]),
     ],
   },
@@ -264,4 +325,32 @@ export function objectiveComplete(objective, context) { return objectiveValue(ob
 export function missionReadyForBoss(missionId, context) {
   const rows = (MISSION_OBJECTIVES[missionId] ?? []).filter((objective) => objective.kind !== "boss");
   return rows.length > 0 && rows.every((objective) => objectiveComplete(objective, context));
+}
+
+/**
+ * Explain the boss gate using the same objective functions that authorize it.
+ * UI and routing code must not maintain a second, DOM-derived definition of
+ * readiness: that was the source of encounters which looked ready but stalled.
+ */
+export function bossReadiness(missionId, context = {}) {
+  const objectives = MISSION_OBJECTIVES[missionId] ?? [];
+  const prerequisites = objectives.filter((objective) => objective.kind !== "boss");
+  const bossObjective = objectives.find((objective) => objective.kind === "boss") ?? null;
+  const checks = prerequisites.map((objective) => Object.freeze({
+    id: objective.id,
+    label: objective.label,
+    value: objectiveValue(objective, context),
+    target: objective.target,
+    complete: objectiveComplete(objective, context),
+  }));
+  const missing = checks.filter((check) => !check.complete);
+  return Object.freeze({
+    missionId,
+    ready: prerequisites.length > 0 && missing.length === 0,
+    defeated: Boolean(bossObjective && objectiveComplete(bossObjective, context)),
+    completed: checks.length - missing.length,
+    total: checks.length,
+    checks: Object.freeze(checks),
+    missing: Object.freeze(missing),
+  });
 }

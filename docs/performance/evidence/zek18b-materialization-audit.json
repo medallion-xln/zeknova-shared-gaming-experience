@@ -1,0 +1,35 @@
+{
+  "schema": "zeknova.fixture-materialization-audit.v1",
+  "status": "PARTIAL",
+  "repositoryHead": "9015537fb0e2b6cc3e2d24901e78b40b5de191e0",
+  "generatedRuntimeHashes": {
+    "compatibility": "7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab",
+    "model": "e6af33cdf1f56c098d16156ce34ff435c7fa7a5490ed640a63c6e5e43ca726d0"
+  },
+  "fixturesDefined": 6,
+  "matchedFixtures": 1,
+  "structurallyReproducibleFixtures": 0,
+  "canonicalMatchedBaselineCreated": false,
+  "reason": "Mission 1 matched production state twice, but independent renderer structure diverged. Certification stopped rather than recording an untrustworthy canonical baseline.",
+  "fixtures": [
+    {
+      "id": "mission-1-streamed",
+      "fixtureHash": "ce2fad3d89f957cc1dbf3dbaa5d2af3cca84a6593aeea6ed1146fb091859d41c",
+      "materializedStateHash": "5401e477ec4023587e1c719dc6345718f1db4757a94fd1f5c35283ee9b56a054",
+      "matchedRuns": 2,
+      "streamingSettledRuns": 2,
+      "streamingContaminatedRuns": 0,
+      "population": {"residents":8,"enemies":4,"boss":0,"projectiles":0,"buildings":1},
+      "run1": {
+        "structure": {"calls":10124,"triangles":7160189,"geometries":758,"textures":123,"meshes":1415,"materials":597,"shadowCasters":3},
+        "frame": {"average":17.56,"median":16.7,"p95":24.7,"p99":50.1,"worst":250}
+      },
+      "run2": {
+        "structure": {"calls":10641,"triangles":7817034,"geometries":687,"textures":117,"meshes":1424,"materials":597,"shadowCasters":3},
+        "frame": {"average":19.51,"median":16.7,"p95":25.4,"p99":26,"worst":41.7}
+      },
+      "timingVariancePercent": {"average":10.53,"p95":2.83,"p99":63.54},
+      "structuralReproducibility": "FAIL"
+    }
+  ]
+}

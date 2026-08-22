@@ -1,0 +1,52 @@
+.zk-game-mode-badge { position:absolute; top:102px; left:50%; transform:translateX(-50%); z-index:16; border:1px solid rgba(101,220,238,.42); background:rgba(3,16,24,.9); color:#9edce6; padding:7px 12px; font:700 .55rem/1 "Chakra Petch",sans-serif; letter-spacing:.12em; cursor:pointer; }
+html.zk-civilian-mode .zk-game-mode-badge { border-color:#62efbd; color:#74efc5; box-shadow:0 0 22px rgba(76,226,175,.13); }
+html.zk-battle-mode .zk-game-mode-badge { border-color:#ff9a66; color:#ffad7e; }
+.zk-civilian-hud { display:none; position:absolute; right:18px; top:142px; z-index:13; width:286px; padding:11px; }
+html.zk-civilian-mode:not(.zk-paused) .zk-civilian-hud { display:block; }
+.zk-civilian-hud > header,.zk-civilian-hud > footer { display:flex; justify-content:space-between; align-items:center; gap:8px; color:#67efc2; font:700 .54rem/1 "Chakra Petch",sans-serif; letter-spacing:.1em; }
+.zk-civilian-hud > header b { color:#e9fff8; }
+.zk-civilian-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:9px 0; }
+.zk-civilian-grid article { display:grid; gap:2px; min-height:54px; padding:7px; border:1px solid rgba(95,221,188,.16); background:rgba(1,13,18,.64); }
+.zk-civilian-grid small { color:#6d9da0; font-size:.44rem; letter-spacing:.08em; }
+.zk-civilian-grid strong { color:#f0fffb; font-size:.72rem; text-transform:uppercase; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.zk-civilian-grid span { color:#65cdae; font-size:.48rem; }
+.zk-civilian-hud footer span { color:#91b6b1; font-size:.47rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.zk-civilian-hud footer button { border:1px solid rgba(94,239,191,.38); background:#061c1b; color:#6df0c2; padding:6px; cursor:pointer; font-size:.48rem; }
+.zk-guardian-staging { width:100%; margin:0 0 9px; padding:8px; border:1px solid #ffc45c; background:rgba(77,50,8,.4); color:#ffd477; font:700 .52rem/1.2 "Chakra Petch",sans-serif; cursor:pointer; }
+.zk-guardian-staging:disabled { border-color:rgba(132,157,158,.25); color:#789297; background:rgba(5,16,21,.6); cursor:not-allowed; }
+.zk-game-mode-panel { display:none; position:absolute; z-index:80; left:50%; top:52%; transform:translate(-50%,-50%); width:min(760px,calc(100vw - 40px)); padding:26px; border:1px solid rgba(100,218,236,.4); background:rgba(3,13,21,.98); box-shadow:0 30px 90px #000; }
+.zk-game-mode-panel.open { display:block; }
+.zk-game-mode-panel header small { color:#60ddeb; letter-spacing:.15em; }
+.zk-game-mode-panel h2 { margin:6px 0; color:#f2fdff; }
+.zk-game-mode-panel header p,.zk-game-mode-panel footer { color:#8aa9b2; }
+.zk-game-mode-panel > div { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0; }
+.zk-game-mode-panel > div button { min-height:130px; display:grid; align-content:center; gap:10px; text-align:left; border:1px solid rgba(100,213,232,.22); background:#06141d; color:#eafcff; padding:18px; cursor:pointer; }
+.zk-game-mode-panel > div button:first-child b { color:#64efbd; }
+.zk-game-mode-panel > div button:last-child b { color:#ff9f72; }
+.zk-game-mode-panel > div button[data-active="true"] { border-color:currentColor; box-shadow:inset 0 0 30px rgba(90,220,200,.09); }
+.zk-game-mode-panel > div span { color:#89a6af; line-height:1.5; }
+.zk-game-mode-panel footer { display:flex; justify-content:space-between; align-items:center; font-size:.65rem; }
+.zk-game-mode-panel footer button { border:1px solid rgba(112,220,235,.3); background:#071822; color:#b7e7ed; padding:7px 12px; cursor:pointer; }
+.zk-civilian-activity-label { position:absolute; z-index:11; transform:translate(-50%,-100%); pointer-events:none; padding:3px 5px; border:1px solid rgba(100,239,191,.45); background:rgba(2,18,20,.84); color:#75efc5; font:700 .43rem/1 "Chakra Petch",sans-serif; letter-spacing:.09em; text-shadow:0 1px 3px #000; }
+
+/* Civilian presentation removes combat competition while retaining survival meters. */
+html.zk-civilian-mode #crosshair,
+html.zk-civilian-mode #special-attack-status,
+html.zk-civilian-mode #weapon-system-status,
+html.zk-civilian-mode .boss-hud,
+html.zk-civilian-mode .boss-status,
+html.zk-civilian-mode .boss-warning,
+html.zk-civilian-mode [data-boss-hud],
+html.zk-civilian-mode .enemy-health-bar,
+html.zk-civilian-mode .threat-indicator { display:none !important; }
+html.zk-civilian-mode .action-pad [data-action="fire"],
+html.zk-civilian-mode .action-pad [data-action="special"],
+html.zk-civilian-mode .action-pad [data-action="roll-fire"] { display:none !important; }
+html.zk-civilian-mode .action-pad::before { content:"CIVILIAN INTERACTIONS"; align-self:center; color:#6fdfbd; font:700 .5rem/1 "Chakra Petch",sans-serif; letter-spacing:.1em; }
+html.zk-civilian-mode .right-hud .readiness-card { margin-top:205px; }
+html.zk-civilian-mode .viewport canvas { filter:saturate(.98) contrast(.98) brightness(1.04); }
+html.zk-battle-mode .zk-minimap .zk-map-marker[data-kind="resource"],
+html.zk-battle-mode .zk-minimap .zk-map-marker[data-kind="building"],
+html.zk-battle-mode .zk-minimap .zk-map-marker[data-kind="transit"] { display:none; }
+
+@media(max-width:1050px){.zk-civilian-hud{width:240px}.zk-game-mode-panel>div{grid-template-columns:1fr}.zk-game-mode-panel{max-height:80vh;overflow:auto}}

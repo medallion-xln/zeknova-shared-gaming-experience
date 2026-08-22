@@ -1,0 +1,27 @@
+{
+  "schema": "zeknova.performance-baseline.v1",
+  "capturedAt": "2026-08-20T20:33:00Z",
+  "runtimeHashes": {
+    "compatibility": "7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab",
+    "model": "e6af33cdf1f56c098d16156ce34ff435c7fa7a5490ed640a63c6e5e43ca726d0"
+  },
+  "matched": 0,
+  "status": "STRUCTURAL_ONLY",
+  "reason": "Production QA staging does not yet materialize exact fixture actor/projectile recipes; unmatched live states are not presented as baselines.",
+  "liveBridgeSmoke": {
+    "fixtureId": "mission-1-streamed",
+    "matched": false,
+    "samples": 591,
+    "frame": {"average": 20.88, "median": 8.7, "p95": 66.3, "p99": 149.2, "worst": 250},
+    "renderer": {"calls": 1761, "triangles": 316722, "geometries": 610, "textures": 30},
+    "world": {"enemies": 10, "residents": 54, "projectiles": 1}
+  },
+  "fixtures": [
+    {"id":"mission-1-streamed","fixtureHash":"131f8aa7b0bdfdbedf449e763c4cef43f3fa0acb31cc00a4d0c11ae86d579c6c","captureStatus":"PENDING_MATCHED_STAGE"},
+    {"id":"dense-village","fixtureHash":"c76580466308bd1160be182ffcc8d669a174a2a2759ed87583da88af32d9a942","captureStatus":"PENDING_MATCHED_STAGE"},
+    {"id":"heavy-enemy-combat","fixtureHash":"a0cfe96634c32b820c3489da698ce97b83c2d3124ed95e0e612253414094ada4","captureStatus":"PENDING_MATCHED_STAGE"},
+    {"id":"mission-8-representative","fixtureHash":"4d3a45b05f30d0844644e742dc35976788e1fad489884c2f4ae317d4516f413a","captureStatus":"PENDING_MATCHED_STAGE"},
+    {"id":"mission-12-boss","fixtureHash":"d761cccddd467efbd36f0755a612e83fddb77bb1a8bddf093e8bd352e939b228","captureStatus":"PENDING_MATCHED_STAGE"},
+    {"id":"maximum-reproducible-load","fixtureHash":"f1b86e08692b22a5265869bc2aff5f3bc0050f68674bd4426650993483368da2","captureStatus":"PENDING_MATCHED_STAGE"}
+  ]
+}

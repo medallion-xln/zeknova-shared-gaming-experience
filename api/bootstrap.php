@@ -54,7 +54,8 @@ zeknova_load_environment_file(dirname(__DIR__) . '/.env');
 $zeknovaEnvironment = strtolower(trim((string)(getenv('ZEKNOVA_ENV') ?: 'production')));
 define('ZEKNOVA_ENVIRONMENT', $zeknovaEnvironment === 'local' ? 'local' : 'production');
 define('ZEKNOVA_AUTH_MODE', ZEKNOVA_ENVIRONMENT === 'local' ? 'demo' : 'medallion');
-const ZEKNOVA_DATA_DIR = __DIR__ . '/../data';
+$zeknovaDataDirectory = trim((string)(getenv('ZEKNOVA_DATA_DIR') ?: ''));
+define('ZEKNOVA_DATA_DIR', $zeknovaDataDirectory !== '' ? rtrim($zeknovaDataDirectory, '/\\') : __DIR__ . '/../data');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     if (ZEKNOVA_AUTH_MODE === 'medallion') {
@@ -362,4 +363,9 @@ function zeknova_room_path(string $teamCode): string
 function zeknova_profile_path(string $teamCode, string $userId): string
 {
     return ZEKNOVA_DATA_DIR . '/profile-' . hash('sha256', zeknova_team_key($teamCode) . ':' . $userId) . '.json';
+}
+
+function zeknova_personal_save_path(string $teamCode, string $userId): string
+{
+    return ZEKNOVA_DATA_DIR . '/save-' . hash('sha256', zeknova_team_key($teamCode) . ':' . $userId) . '.json';
 }

@@ -1,3 +1,4 @@
+import { scaleAttackProfile, scaleProjectilePattern } from "./CampaignPlan.js";
 import { ENEMY_PROFILES } from "./Enemies.js";
 
 export const BOSS_HEALTH_MULTIPLIER = 10;
@@ -64,7 +65,28 @@ export function bossAttackTiming(configOrId, patternId = "", phaseId = "phase_1"
   const tier = ULTIMATE_PATTERN.test(patternId) ? "ultimate" : HEAVY_PATTERN.test(patternId) ? "heavy" : "standard";
   const recovery = tier === "ultimate" ? profile.ultimateRecovery : tier === "heavy" ? profile.heavyRecovery : profile.recovery;
   const windup = profile.windup + (tier === "heavy" ? 0.25 : tier === "ultimate" ? 0.55 : 0) + (phaseId === "phase_3" ? 0.1 : 0);
-  return Object.freeze({ tier, windup, recovery, cooldown: windup + recovery, maxCarryover: profile.maxCarryover, projectilePlan: profile.projectilePlan });
+
+  /* Campaign scaling. Every Guardian used to attack at the same cadence in
+     mission 12 as in mission 1, so the late campaign got easier as the player
+     improved. scaleAttackProfile shortens windup and recovery toward mission
+     12 — and clamps windup at a reaction floor, so "faster" never becomes
+     "untelegraphed". The boss's own mission decides the amount, which means a
+     Guardian refought earlier is not permanently harder. */
+  const missionId = typeof configOrId === "string"
+    ? BOSS_CONFIGS?.[configOrId]?.missionId
+    : configOrId?.missionId;
+  const scaled = scaleAttackProfile({ windup, recovery }, missionId);
+  const readableRecovery = Math.max(2, scaled.recovery);
+
+  return Object.freeze({
+    tier,
+    windup: scaled.windup,
+    recovery: readableRecovery,
+    cooldown: scaled.windup + readableRecovery,
+    difficultyProgress: scaled.difficultyProgress,
+    maxCarryover: profile.maxCarryover,
+    projectilePlan: profile.projectilePlan,
+  });
 }
 
 const bossRows = [

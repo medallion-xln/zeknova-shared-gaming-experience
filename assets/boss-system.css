@@ -42,6 +42,26 @@
 .boss-status-line > b.ready { color: #9ff07b; }
 @keyframes bossDefensePulse { to { filter: brightness(1.65); } }
 .boss-status-line small { grid-column: 1 / -1; color: #91aaa9; font-size: .56rem; letter-spacing: .075em; text-transform: uppercase; }
+.boss-encounter-hud::after {
+  content: attr(data-weak-point-label);
+  position: absolute;
+  left: .65rem;
+  top: calc(100% + .24rem);
+  min-width: 5.8rem;
+  padding: .18rem .42rem;
+  border: 1px solid rgba(144, 174, 180, .4);
+  background: rgba(2, 12, 18, .9);
+  color: #8fa2a6;
+  font-size: .54rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-align: center;
+}
+.boss-encounter-hud[data-weak-point-state="OPENING"]::after,
+.boss-encounter-hud[data-weak-point-state="CLOSING"]::after { border-style: dashed; color: #ffd963; }
+.boss-encounter-hud[data-weak-point-state="ACTIVE"]::after { border-width: 2px; border-color: #fff06e; color: #fff; box-shadow: 0 0 1rem rgba(255, 239, 94, .45); }
+.boss-encounter-hud[data-weak-point-state="HIT"]::after { border-color: #fff; background: #fff; color: #09202a; animation: bossWeakPointHit .15s steps(2); }
+@keyframes bossWeakPointHit { 50% { transform: scale(1.15); } }
 html.zk-boss-active .toast-stack,
 html.zk-boss-active .team-card .toast-stack { top: auto !important; right: 1rem !important; bottom: clamp(7.5rem, 15vh, 10rem) !important; left: auto !important; width: min(20rem, calc(100vw - 2rem)) !important; transform: none !important; }
 html.zk-boss-active .toast-stack .toast { padding: .55rem .7rem; }

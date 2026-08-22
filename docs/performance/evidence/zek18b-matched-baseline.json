@@ -1,0 +1,110 @@
+{
+  "schema": "zeknova.matched-performance-baseline.v2",
+  "certification": "ZEK-18D",
+  "status": "PASS",
+  "capturedAt": "2026-08-20",
+  "repository": {
+    "head": "9015537fb0e2b6cc3e2d24901e78b40b5de191e0",
+    "compatibilityRuntimeSha256": "7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab",
+    "modelRuntimeSha256": "e6af33cdf1f56c098d16156ce34ff435c7fa7a5490ed640a63c6e5e43ca726d0"
+  },
+  "runtime": {
+    "os": "macOS 26.5.2 (25F84)",
+    "architecture": "arm64",
+    "kernel": "Darwin 25.5.0",
+    "cachePolicy": "fresh-page, shared browser HTTP cache, independently reconstructed runtime/scene/registry, warm fully resident capture",
+    "residencyBarrier": "resource-residency-v2",
+    "stableFrames": 600,
+    "drawCallPolicy": "historical residency probe; retained for provenance and not valid as representative gameplay submissions"
+  },
+  "drawMetricCorrection": {
+    "historicalStructureCallsField": "rendererProbeDraws",
+    "historicalProbeValue": 3,
+    "representativeOwner": "onBeforeRender submission hooks around one canonical renderer.render(scene,camera)",
+    "scene6RepresentativeFrameDraws": 739,
+    "embeddedRendererCounterAfterReset": 2,
+    "historicalEvidenceRewritten": false
+  },
+  "fixturesDefined": 6,
+  "independentCaptureRuns": 12,
+  "fixtures": [
+    {
+      "id": "mission-1-streamed",
+      "fixtureHash": "ce2fad3d89f957cc1dbf3dbaa5d2af3cca84a6593aeea6ed1146fb091859d41c",
+      "stateHash": "5401e477ec4023587e1c719dc6345718f1db4757a94fd1f5c35283ee9b56a054",
+      "renderResidencyHashV2": "ccb4ca61",
+      "population": {"enemies":4,"residents":8,"projectiles":0,"buildings":1},
+      "lod": {"full":10,"lightweight":0,"procedural":0,"suppressed":4},
+      "structure": {"calls":3,"triangles":7875246,"meshes":1432,"geometries":1010,"materials":605,"textures":203,"shadowCasters":3},
+      "runs": [
+        {"average":16.10,"median":16.7,"p95":17.6,"p99":24.2,"worst":50.0},
+        {"average":16.14,"median":16.7,"p95":17.2,"p99":18.0,"worst":50.9}
+      ]
+    },
+    {
+      "id": "dense-village",
+      "fixtureHash": "35b673a25d356c81e2816d5a8b6e2f1fd4bc134130c1c16abf633fa4cd8a2485",
+      "stateHash": "d0d9105d3c41678f28c678128e7b3bc0256df2c3bffee280b8c02f3ec3c34bba",
+      "renderResidencyHashV2": "b0162407",
+      "population": {"enemies":2,"residents":24,"projectiles":0,"buildings":6},
+      "lod": {"full":21,"lightweight":12,"procedural":0,"suppressed":0},
+      "structure": {"calls":3,"triangles":7863858,"meshes":1467,"geometries":1044,"materials":615,"textures":202,"shadowCasters":77},
+      "runs": [
+        {"average":8.46,"median":8.3,"p95":9.3,"p99":14.5,"worst":42.0},
+        {"average":9.83,"median":8.4,"p95":16.9,"p99":22.2,"worst":49.8}
+      ]
+    },
+    {
+      "id": "heavy-enemy-combat",
+      "fixtureHash": "2a7091fdfb1aabc3a412ebc850ee7c6ce3100c1f4ccac0767f563633af8aefaa",
+      "stateHash": "b541381d1f204b2fbcf8112b9bc93be059f854deb496f4b9000b580923ae5528",
+      "renderResidencyHashV2": "80b45817",
+      "population": {"enemies":18,"residents":8,"projectiles":28,"buildings":2},
+      "lod": {"full":54,"lightweight":0,"procedural":3,"suppressed":0},
+      "structure": {"calls":3,"triangles":7922555,"meshes":1630,"geometries":1178,"materials":757,"textures":208,"shadowCasters":65},
+      "runs": [
+        {"average":8.40,"median":8.3,"p95":9.3,"p99":9.4,"worst":40.7},
+        {"average":8.40,"median":8.3,"p95":9.3,"p99":9.4,"worst":49.1}
+      ]
+    },
+    {
+      "id": "mission-8-representative",
+      "fixtureHash": "5ad94c8d452efbbb5d81142862de03fb7be9c6a5baaee9f897e8756626ef5778",
+      "stateHash": "a846a44d5cacd08d69e563a912e102853bc7db5f49ff19867fb775ac0d985c93",
+      "renderResidencyHashV2": "108b5220",
+      "population": {"enemies":8,"residents":16,"projectiles":8,"buildings":5},
+      "lod": {"full":25,"lightweight":2,"procedural":0,"suppressed":11},
+      "structure": {"calls":3,"triangles":7949236,"meshes":1528,"geometries":1092,"materials":669,"textures":204,"shadowCasters":61},
+      "runs": [
+        {"average":8.96,"median":8.3,"p95":16.5,"p99":17.1,"worst":50.8},
+        {"average":8.93,"median":8.3,"p95":16.1,"p99":16.8,"worst":75.4}
+      ]
+    },
+    {
+      "id": "mission-12-boss",
+      "fixtureHash": "c34c411677225b18703f3afde0bedccf9b5f5db0d037e546d5c4e55d9bb7bfe8",
+      "stateHash": "bda6007372d143ff777b938e74b13bf8e621043af2ab268b2a69809ce2e4d799",
+      "renderResidencyHashV2": "602c169c",
+      "population": {"enemies":1,"residents":0,"projectiles":20,"buildings":3},
+      "lod": {"full":25,"lightweight":0,"procedural":0,"suppressed":0},
+      "structure": {"calls":3,"triangles":7782625,"meshes":1450,"geometries":1018,"materials":625,"textures":200,"shadowCasters":43},
+      "runs": [
+        {"average":8.39,"median":8.3,"p95":9.0,"p99":9.2,"worst":41.6},
+        {"average":8.43,"median":8.3,"p95":9.0,"p99":9.2,"worst":41.6}
+      ]
+    },
+    {
+      "id": "maximum-reproducible-load",
+      "fixtureHash": "c37fb0fc56daa0964408f66d841171c20b7a78a1a6a6f903d72a18c6ea07f491",
+      "stateHash": "b7b5a1f8c9f6cccaaa41f6602c19567e04fe937c93dd72f4b406ae92d8b7bcd3",
+      "renderResidencyHashV2": "cd3de0a2",
+      "population": {"enemies":25,"residents":32,"projectiles":60,"buildings":12},
+      "lod": {"full":106,"lightweight":20,"procedural":4,"suppressed":0},
+      "structure": {"calls":3,"triangles":8033543,"meshes":1857,"geometries":1365,"materials":913,"textures":210,"shadowCasters":121},
+      "runs": [
+        {"average":9.73,"median":8.3,"p95":16.7,"p99":17.0,"worst":58.6},
+        {"average":9.86,"median":8.4,"p95":16.8,"p99":17.5,"worst":58.3}
+      ]
+    }
+  ]
+}

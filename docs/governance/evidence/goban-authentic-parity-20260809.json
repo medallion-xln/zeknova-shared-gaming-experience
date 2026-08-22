@@ -1,0 +1,72 @@
+{
+  "artifactId": "zeknova-goban-authentic-parity-20260809",
+  "session": {
+    "authenticated": true,
+    "environment": "local",
+    "teamCode": "SENT-5975",
+    "authority": "R0_EVALUATION"
+  },
+  "runtimeProvenance": {
+    "adapterVersion": "zeknova-goban-shadow-adapters-v1",
+    "plannerVersion": "sentinel-goban-intelligence-v1",
+    "board": "19x19-361-intersections",
+    "authority": "R0_EVALUATION"
+  },
+  "records": [
+    { "sourceStateHash": "64909392", "planId": "zkgi:v1:c5df3a8f", "stateBeforeHash": "64909392", "stateAfterHash": "366a3d80", "commandCount": 13, "firstCommandId": "zkgc:v1:5950b8a3" },
+    { "sourceStateHash": "366a3d80", "planId": "zkgi:v1:275bd1ae", "stateBeforeHash": "366a3d80", "stateAfterHash": "b0751493", "commandCount": 14, "firstCommandId": "zkgc:v1:93b4464d" },
+    { "sourceStateHash": "b0751493", "planId": "zkgi:v1:97edb1c3", "stateBeforeHash": "b0751493", "stateAfterHash": "b3b6619c", "commandCount": 14, "firstCommandId": "zkgc:v1:8883499a" },
+    { "sourceStateHash": "dd090e9b", "planId": "zkgi:v1:2b3fdccb", "stateBeforeHash": "dd090e9b", "stateAfterHash": "6ee82201", "commandCount": 15, "firstCommandId": "zkgc:v1:f0a54da9" },
+    { "sourceStateHash": "6ee82201", "planId": "zkgi:v1:c5a39f8c", "stateBeforeHash": "6ee82201", "stateAfterHash": "5b4c7c91", "commandCount": 15, "firstCommandId": "zkgc:v1:ea99d58e" },
+    { "sourceStateHash": "5b4c7c91", "planId": "zkgi:v1:90d64373", "stateBeforeHash": "5b4c7c91", "stateAfterHash": "cdd29560", "commandCount": 15, "firstCommandId": "zkgc:v1:90698e39" }
+  ],
+  "observedVariation": {
+    "tensionValuesAcrossAuthenticatedRuns": [59, 65],
+    "actorRoles": ["juggernaut", "saboteur", "spitter", "burrower"],
+    "threatCounts": [1],
+    "missionContexts": ["1"],
+    "infrastructureConditions": [],
+    "dayNightPhases": ["unknown"],
+    "combatStages": ["observe"]
+  },
+  "certification": {
+    "authenticSessionParityTested": true,
+    "authenticEvidenceCount": 6,
+    "deterministicReplayPass": true,
+    "incumbentActionBindingPass": true,
+    "actualOutcomeBindingPass": true,
+    "unsupportedCommandCount": 0,
+    "illegalActionCount": 0,
+    "civilianLethalActionCount": 0,
+    "bossUntelegraphedEngagementCount": 0,
+    "unauthorizedMutationCount": 0,
+    "rollbackPathsVerified": true
+  },
+  "outcomeComparison": {
+    "observedMetrics": ["survival", "resourceEfficiency", "unnecessaryEscalation"],
+    "missingMetrics": ["civilianSafety", "infrastructurePreservation", "objectiveCompletion", "positioningQuality", "missionOutcome"],
+    "candidateCounterfactualOutcomeAvailable": false,
+    "baselineComparisonComplete": false,
+    "candidateOutperformsFrozenBaseline": false,
+    "promotionBlocked": true
+  },
+  "counterfactualCoverage": {
+    "tensionVariation": true,
+    "actorRoleVariation": true,
+    "threatVariation": false,
+    "infrastructureVariation": false,
+    "missionVariation": false,
+    "dayNightVariation": false,
+    "combatStageVariation": false,
+    "complete": false
+  },
+  "decision": {
+    "liveAuthorityRecommendation": "REJECT",
+    "r1ManifestPrepared": false,
+    "liveAuthorityAuthorized": false,
+    "canDispatch": false,
+    "canMutateLiveWorld": false,
+    "liveEnemyControl": false,
+    "currentAuthority": "R0_EVALUATION"
+  }
+}

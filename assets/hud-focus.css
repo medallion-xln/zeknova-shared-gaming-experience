@@ -467,3 +467,73 @@ html.zk-paused[data-zk-tab="controls"] .controls-card {
   width: min(420px, calc(100vw - 32px));
   z-index: 60;
 }
+
+/* Picasso tab: R0 visual style control, isolated from gameplay settings. */
+.zk-picasso-panel {
+  display: none;
+  position: fixed;
+  top: 86px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(820px, calc(100vw - 32px));
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  z-index: 62;
+  padding: 24px;
+  border: 1px solid rgba(112, 230, 255, 0.24);
+  background: linear-gradient(145deg, rgba(5, 22, 34, 0.98), rgba(17, 10, 35, 0.97));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.58);
+  color: #dffaff;
+}
+html.zk-paused[data-zk-tab="picasso"] .zk-picasso-panel { display: block; }
+.zk-picasso-panel header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.zk-picasso-panel h2 { margin: 3px 0 0; font: 700 1.55rem/1.1 "Chakra Petch", sans-serif; }
+.zk-picasso-panel header small { color: #76e9ff; letter-spacing: 0.14em; }
+.zk-picasso-panel > p { margin: 10px 0 20px; color: #91b9c3; }
+.zk-picasso-authority { padding: 6px 9px; border: 1px solid rgba(92, 241, 196, 0.38); color: #5df1c4; font-size: 0.63rem; letter-spacing: 0.1em; }
+.zk-picasso-themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.zk-picasso-themes button { display: flex; align-items: center; gap: 12px; min-height: 78px; padding: 12px; border: 1px solid rgba(112, 230, 255, 0.18); background: rgba(3, 13, 23, 0.72); color: #dffaff; text-align: left; cursor: pointer; }
+.zk-picasso-themes button:hover { border-color: rgba(112, 230, 255, 0.6); background: rgba(17, 45, 59, 0.8); }
+.zk-picasso-themes button[data-active="true"] { border-color: #5df1c4; box-shadow: inset 0 0 0 1px rgba(93, 241, 196, 0.2); }
+.zk-picasso-themes i { flex: 0 0 38px; height: 38px; border-radius: 7px; background: linear-gradient(135deg, #22d3ee, #8b5cf6); }
+.zk-picasso-themes [data-theme="anime"] i { background: linear-gradient(135deg, #38bdf8, #fb7185, #facc15); }
+.zk-picasso-themes [data-theme="cinematic"] i { background: linear-gradient(135deg, #101827, #d6a86d); }
+.zk-picasso-themes [data-theme="ultra_realistic"] i { background: linear-gradient(135deg, #334155, #e2e8f0); }
+.zk-picasso-themes [data-theme="cartoon"] i { background: linear-gradient(135deg, #22c55e, #facc15, #ec4899); }
+.zk-picasso-themes [data-theme="alien_dream"] i { background: linear-gradient(135deg, #581c87, #d946ef, #22d3ee); }
+.zk-picasso-themes b,.zk-picasso-themes small { display: block; }
+.zk-picasso-themes b { font: 650 0.8rem/1.2 "Chakra Petch", sans-serif; }
+.zk-picasso-themes small { margin-top: 5px; color: #7598a3; font-size: 0.67rem; }
+.zk-picasso-status { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin-top: 18px; padding: 12px 14px; border-left: 2px solid #5df1c4; background: rgba(0, 0, 0, 0.2); }
+.zk-picasso-status span { color: #83a9b2; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.zk-picasso-status strong { color: #5df1c4; }
+.zk-picasso-status small { grid-column: 1 / -1; color: #6f8f98; }
+@media (max-width: 720px) { .zk-picasso-themes { grid-template-columns: 1fr; } .zk-picasso-panel { padding: 16px; } }
+
+.zk-mission-action-guide {
+  margin-top: 9px;
+  padding: 9px 10px;
+  border: 1px solid rgba(93, 241, 196, .3);
+  border-left: 3px solid #5df1c4;
+  background: rgba(12, 50, 46, .72);
+  color: #bfeee1;
+  font: 0.62rem/1.45 "Chakra Petch", sans-serif;
+}
+.zk-mission-action-guide strong,
+.zk-mission-action-guide span { display: block; }
+.zk-mission-action-guide strong { color: #72f1ca; letter-spacing: .08em; }
+.zk-mission-action-guide span { margin: 4px 0 7px; }
+.zk-mission-action-guide button {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid rgba(112, 230, 255, .42);
+  background: rgba(7, 28, 42, .9);
+  color: #dffaff;
+  font: 700 0.6rem/1 "Chakra Petch", sans-serif;
+  cursor: pointer;
+}
+.zk-mission-action-guide small { display: block; margin-top: 6px; color: #91b9c3; }
+html.zk-obj-collapsed .zk-mission-action-guide { display: none; }
+.zk-restart-option{border-color:rgba(255,190,92,.42)!important;background:linear-gradient(135deg,rgba(89,52,21,.72),rgba(26,30,39,.9))!important}
+.zk-restart-option:hover,.zk-restart-option:focus-visible{border-color:#ffc95a!important;box-shadow:0 0 0 2px rgba(255,201,90,.18),0 12px 30px rgba(0,0,0,.28)}
+.zk-restart-option:disabled{opacity:.62;cursor:wait}

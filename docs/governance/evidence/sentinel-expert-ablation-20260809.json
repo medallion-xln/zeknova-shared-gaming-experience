@@ -1,0 +1,56 @@
+{
+  "artifactId": "zeknova-sentinel-expert-ablation-20260809",
+  "contractId": "zeknova-sentinel-expert-ablation-v1",
+  "authority": { "tier": "R0_EVALUATION", "canDispatch": false, "canMutateLiveWorld": false, "canChangeAuthority": false },
+  "campaign": {
+    "seedCount": 2,
+    "configurationCount": 25,
+    "scenarioProfileSeedCases": 56,
+    "expertsTested": ["vanguard-v1", "horizon-v1", "oracle-v1", "nexus-v1", "goban-v1"],
+    "deterministicReplayPass": true,
+    "evidenceClass": "FROZEN_CERTIFIED_FIXTURE_ONLY",
+    "authenticScenarioEvidenceUsable": false,
+    "authenticEvidenceReason": "Existing authentic Goban records bind hashes and incumbent outcomes but do not retain reusable canonical Prime states, legal masks, and counterfactual outcomes."
+  },
+  "singleExpertResults": {
+    "vanguard-v1": { "classification": "HARMFUL", "deltaDecisionQuality": -0.375, "deltaOutcomeScore": -4164296559924, "deltaSearchValue": -0.000008586, "deltaCalibration": -0.021991864, "deltaLatencyMs": 3.06, "actionChangedCount": 25, "beneficial": 1, "harmful": 22, "neutral": 33 },
+    "horizon-v1": { "classification": "HARMFUL", "deltaDecisionQuality": -0.392857, "deltaOutcomeScore": -4550539037804, "deltaSearchValue": 0.004223111, "deltaCalibration": -0.027580324, "deltaLatencyMs": 1.788, "actionChangedCount": 25, "beneficial": 1, "harmful": 23, "neutral": 32 },
+    "oracle-v1": { "classification": "HARMFUL", "deltaDecisionQuality": -0.214286, "deltaOutcomeScore": -1662645495228, "deltaSearchValue": 0.018618133, "deltaCalibration": -0.015620906, "deltaLatencyMs": 1.089, "actionChangedCount": 12, "beneficial": 0, "harmful": 12, "neutral": 44 },
+    "nexus-v1": { "classification": "HARMFUL", "deltaDecisionQuality": -0.392857, "deltaOutcomeScore": -4032951889972, "deltaSearchValue": 0.005209175, "deltaCalibration": -0.036301015, "deltaLatencyMs": 0.035, "actionChangedCount": 24, "beneficial": 1, "harmful": 23, "neutral": 32 },
+    "goban-v1": { "classification": "HARMFUL", "deltaDecisionQuality": -0.071429, "deltaOutcomeScore": -549853299756, "deltaSearchValue": 0.012535885, "deltaCalibration": 0.0035088, "deltaLatencyMs": -0.104, "actionChangedCount": 21, "beneficial": 7, "harmful": 11, "neutral": 38 }
+  },
+  "teamResults": {
+    "bestSingleExpert": "prime+goban-v1",
+    "bestPair": "prime+vanguard-v1+goban-v1",
+    "bestThreeExpertTeam": "prime+vanguard-v1+horizon-v1+oracle-v1",
+    "bestOverallTeam": "prime+vanguard-v1+goban-v1",
+    "bestTeamOutcomeDelta": -170738960620,
+    "bestTeamLatencyDeltaMs": 1.117,
+    "bestTeamStillDegradesPrime": true,
+    "synergyInterpretation": "Several pairs lose less than the sum of their individual losses, satisfying the arithmetic synergy definition, but none improves on Prime-only; these are negative-result interactions and are not routing candidates.",
+    "redundantGroups": ["prime+horizon-v1+oracle-v1", "prime+oracle-v1+nexus-v1", "prime+vanguard-v1+oracle-v1"],
+    "interferenceGroups": ["prime+horizon-v1+goban-v1", "prime+oracle-v1+goban-v1"]
+  },
+  "picasso": {
+    "decisionCredit": false,
+    "reason": "Picasso remains R0 visual-only and supplies no measured canonical decision input to Prime.",
+    "separateEvaluation": "npm run test:picasso"
+  },
+  "routing": {
+    "recommendation": "NO_PRODUCTION_ROUTING_POLICY_WITHOUT_CANONICAL_AUTHENTIC_STATES",
+    "primeQualityImproved": false,
+    "evidenceSufficient": false
+  },
+  "canaryFailureIsolation": {
+    "rootCause": "INSUFFICIENT_BOUND_FAILURE_EVIDENCE",
+    "detail": "The canary failed after activation and returned to R0, but the consumed run did not expose its terminal failure event in certifiable evidence; no expert attribution is supported.",
+    "retryRecommendation": "REJECT"
+  },
+  "finalAuthority": {
+    "primeR1Authorized": false,
+    "primeLiveExecutionEnabled": false,
+    "canDispatch": false,
+    "primeAuthority": "R0",
+    "gobanAuthority": "R0_EVALUATION"
+  }
+}

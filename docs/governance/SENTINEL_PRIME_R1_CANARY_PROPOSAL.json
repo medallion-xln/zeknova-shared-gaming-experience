@@ -1,0 +1,112 @@
+{
+  "proposalId": "zeknova-sentinel-prime-r1-one-local-canary-v1",
+  "status": "AWAITING_SEPARATE_EXPLICIT_HUMAN_AUTHORIZATION",
+  "authorizationPackage": {
+    "path": "docs/governance/SENTINEL_PRIME_R1_AUTHORIZATION_PACKAGE.json",
+    "sha256": "76073de4ec75ec174a17ceb4d576394eff8c21f784f061d8200f6d3fe15939a4"
+  },
+  "primeManifest": {
+    "path": "docs/SENTINEL_PRIME_R1_AUTHORIZATION_MANIFEST.md",
+    "sha256": "167e538ff6e142ed3bf6ee26cfad718f40c24c181616654e22503b652f009617"
+  },
+  "runtimeProvenance": {
+    "authorityContract": {
+      "path": "src/world/PrimeR1Authority.js",
+      "sha256": "7debd0d883f7abf6e2b305d5d15df6147167e9b56edbed8ddb7815324839ae65"
+    },
+    "executor": {
+      "path": "src/game/SentinelPrimeExecutor.js",
+      "sha256": "4a9c3b3537adf63615103d0dbb69789dd38434d25faf33466598ccd3548b4569"
+    },
+    "frozenBaseline": {
+      "gitHead": "9015537fb0e2b6cc3e2d24901e78b40b5de191e0",
+      "gitStatusSha256": "6bbb7c1998328a0e63b3c8d2f33f41350d0a7964f91f462f21b0c4ec12e468de",
+      "gitDiffSha256": "901f827130b00197ac3ad66cd45b5573469c7df88117a39974b281bb76c599da",
+      "primeRuntimeSha256": "d8938f0f02a450a79a5326708a378eae6c31dbc1d839b30bd424853d5f897866",
+      "commandContractSha256": "5cfec8bb0c7de88061910085fb8f53a81bfd8e6b818f9c57ccb9ed43d55789f4",
+      "commandRuntimeSha256": "a7831f4b9d7776b6c823bbf80855b696f82a8077ee81fba245c43d3e2f93f49f"
+    }
+  },
+  "configuration": {
+    "canaryScope": "ONE_LOCAL_AUTHENTICATED_SESSION",
+    "canaryAuthority": "R1_LIMITED",
+    "allowedActionCount": 6,
+    "allowedActions": [
+      "stabilize",
+      "scout_region",
+      "intercept_contact",
+      "fortify_known_route",
+      "repair_known_structure",
+      "share_intelligence"
+    ],
+    "maximumConcurrentCommands": 1,
+    "generalPublicExecuteApi": false,
+    "generalPublicAuthorizeApi": false,
+    "automaticR0Fallback": true,
+    "rollbackRequired": true,
+    "killSwitchRequired": true,
+    "attemptAndResultEvidenceRequired": true
+  },
+  "prohibited": [
+    "arbitrary_movement",
+    "unrestricted_combat_control",
+    "goban_enemy_control",
+    "goban_boss_control",
+    "arbitrary_resource_spending",
+    "mission_overrides",
+    "physics_mutation",
+    "unsupported_save_mutation",
+    "multiplayer_administration",
+    "arbitrary_spawning",
+    "arbitrary_despawning",
+    "economy_overrides",
+    "debug_commands",
+    "developer_commands",
+    "authority_escalation"
+  ],
+  "dispatchPipeline": [
+    "canonical_state",
+    "prime_recommendation_search",
+    "legal_mask",
+    "hard_safety",
+    "state_freshness",
+    "state_identity",
+    "target_binding",
+    "runtime_provenance",
+    "authority_token",
+    "narrow_executor",
+    "existing_supported_zeknova_action",
+    "before_after_evidence"
+  ],
+  "automaticR0FallbackConditions": [
+    "illegal_dispatch",
+    "unsupported_action",
+    "stale_state",
+    "identity_mismatch",
+    "provenance_mismatch",
+    "target_mismatch",
+    "unexpected_mutation",
+    "executor_exception",
+    "repeated_command_loop",
+    "kill_switch_activation",
+    "authorization_package_hash_mismatch"
+  ],
+  "currentState": {
+    "primeR1Authorized": false,
+    "primeCanaryStarted": false,
+    "primeLiveExecutionEnabled": false,
+    "primeAuthority": "R0",
+    "authorizationTokenCreated": false,
+    "executionSurfaceExposed": false
+  },
+  "gobanBoundary": {
+    "authority": "R0_EVALUATION",
+    "authorityPathAvailable": false,
+    "r1ManifestPrepared": false,
+    "authenticEvidenceCount": 8,
+    "baselineComparisonComplete": false,
+    "counterfactualCoverageComplete": false,
+    "liveAuthorityRecommendation": "REJECT"
+  },
+  "nextGate": "EXPLICIT_HUMAN_AUTHORIZATION_FOR_ONE_LOCAL_PRIME_R1_CANARY"
+}

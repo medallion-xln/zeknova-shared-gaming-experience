@@ -1249,8 +1249,8 @@ export function createAreaEnvironment({
     if (!disposed) await loadAsset('tieredStonePillar');
   })();
 
-  if (eagerVillageKit) {
-    ready.then(async () => {
+  const residencyReady = eagerVillageKit
+    ? ready.then(async () => {
       if (disposed) return;
       // Decode every static ground and settlement family up front. They are still
       // culled by AO and distance after registration, so eager availability does
@@ -1271,12 +1271,13 @@ export function createAreaEnvironment({
         villageLoadPromise = loadArcticVillage();
         await villageLoadPromise;
       }
-    });
-  }
+    })
+    : ready;
 
   return {
     group: root,
     ready,
+    residencyReady,
     update(playerPosition) {
       if (!playerPosition) return;
       requestDesertGroundTiles(playerPosition);
