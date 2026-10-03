@@ -32,7 +32,7 @@ const runtimeSource = readFileSync(new URL("../assets/index-02987539.js", import
 const bossCombatSource = readFileSync(new URL("../src/game/BossCombat.js", import.meta.url), "utf8");
 
 assert.equal(BIOMES.length, 5);
-assert.equal(HUMAN_BUILDING_TYPES.length, 17);
+assert.equal(HUMAN_BUILDING_TYPES.length, 17);   // the dev tree has no AI Research Lab; medallion does
 assert.equal(buildingUnlocked("hospital", "ensign"), false);
 assert.equal(buildingUnlocked("hospital", "lieutenant"), true);
 assert.equal(buildingUnlocked("stock_exchange", "lieutenant"), false);
@@ -95,11 +95,40 @@ assert.match(runtimeSource, /this\.config\?\.id!=="highlands_stormback"/, "only 
 assert.match(runtimeSource, /area\.id!==nextMission\.biome&&nextMission\.id!=="tower-one"/, "only tower-one may bypass the boss biome gate");
 assert.ok(runtimeSource.indexOf("this.pool.active.length>245") < runtimeSource.indexOf("this.pool.active.length>Math.min(timing.maxCarryover,220)"), "emergency projectile cleanup must be reachable");
 assert.match(bossCombatSource, /missionReadyForBoss\(mid, permanentContext\)/, "boss replay order must preserve permanent mission gates");
-assert.equal(MISSION_OBJECTIVES["supply-route"].some((objective) => objective.kind === "biomeEither" && objective.keys.join(",") === "bridge,boat"), true);
+/* Campaign v8 is planetary: every mission delivers ONE project to ALL FIVE
+   biomes (five preparation rows, then five construction rows), so the per-biome
+   objectives these checks used to name no longer exist. The supply route is now
+   a Planetary Transit Hub in every AO rather than a single Wetland crossing, and
+   the ZekNovan aid objective moved off `habitat` onto the two missions that
+   actually ask for reconciliation. The contract being checked is unchanged —
+   the route is buildable planet-wide, and a live ZekNovan project still
+   completes an aid objective — only the mission it hangs on has moved. */
+const supplyRouteBuilds = MISSION_OBJECTIVES["supply-route"].filter((objective) => objective.kind === "biomeBuilding" && objective.key === "transit");
+assert.equal(supplyRouteBuilds.length, 5, "the supply route must reach every biome");
+assert.deepEqual(supplyRouteBuilds.map((objective) => objective.biome).sort(), ["arctic", "desert", "forest", "highlands", "wetlands"]);
 assert.equal(MISSION_OBJECTIVES["supply-route"].some((objective) => objective.kind === "biomeStat" && objective.key === "treesChopped"), false);
-const habitatAidObjective = MISSION_OBJECTIVES.habitat.find((objective) => objective.kind === "biomeEither" && objective.biome === "forest");
-assert.ok(habitatAidObjective?.keys.includes("zek_grove"));
-assert.equal(objectiveComplete(habitatAidObjective, { biomes: { forest: { buildings: { zek_grove: 1 } } } }), true, "a live Forest ZekNovan project must complete Mission 4's aid objective");
+/* AT MOST ONE AID PROJECT PER MISSION — this is the cooldown guarantee.
+   Every aid build starts a 3-10 minute cooldown. Two missions used to ask for
+   aid in all five biomes, so completing either meant up to fifty minutes of
+   waiting. If a future edit clusters them again this assertion is what
+   catches it. */
+const aidObjectivesFor = (missionId) => (MISSION_OBJECTIVES[missionId] ?? [])
+  .filter((objective) => objective.kind === "biomeEither" && objective.keys.includes("zek_grove"));
+
+let totalAid = 0;
+for (const missionId of Object.keys(MISSION_OBJECTIVES)) {
+  const aid = aidObjectivesFor(missionId);
+  assert.ok(aid.length <= 1, `${missionId} asks for ${aid.length} aid projects; the cooldown allows one per mission`);
+  totalAid += aid.length;
+  for (const objective of aid) {
+    assert.equal(
+      objectiveComplete(objective, { biomes: { [objective.biome]: { buildings: { zek_grove: 1 } } } }),
+      true,
+      `a live ZekNovan project must complete ${missionId}'s ${objective.biome} aid objective`
+    );
+  }
+}
+assert.ok(totalAid >= 4, `the campaign must still ask for reconciliation; found ${totalAid} aid projects`);
 assert.match(runtimeSource, /OPEN ZEKNOVAN AID/);
 assert.match(runtimeSource, /Hostile tension does not prevent construction/);
 for (const [missionId, objectives] of Object.entries(MISSION_OBJECTIVES)) {

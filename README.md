@@ -300,3 +300,32 @@ Six static Meshy environment models use browser-optimized textures, with Meshopt
 - Survey Skiff cost: 30 minerals + 12 iron ore + 8 Colony Credits.
 - Passive credit generation was removed so credits reflect player activity.
 - Construction denial messages report the exact mineral and credit shortfall.
+
+## Audio
+
+Two authored tracks provide the background score, selected by what the player is
+doing:
+
+| track | when it plays |
+|---|---|
+| **Weightless Horizons** | exploration, building, travel — the default bed |
+| **ZekNova Awakens** | a Guardian encounter is live |
+
+`src/game/MusicDirector.js` owns the score. The decision (`trackFor`) is pure
+and tested in Node; playback, crossfade and the `<audio>` elements are kept
+separate so the state machine can be tested without a DOM. Track selection
+polls `bossManager.active` at 250 ms and crossfades over 1.2 s.
+
+Combat audio in `src/game/CombatAudioDirector.js` remains **procedural
+synthesis** (`assetFilesAvailable: 0`) — short percussive hits keyed to
+individual blows. It shares nothing with the score but the speakers, so a
+combat stinger never waits on a music decode.
+
+Players control the score from the pause menu: a mute toggle and a volume
+slider, both real form controls with visible focus, state carried by text as
+well as colour, persisted in `localStorage` under `zeknova.music.v1`. Audio
+never starts before the LAUNCH gesture — browsers refuse autoplay, and a
+rejected `play()` leaves the director silent rather than throwing.
+
+Files live in `assets/audio/` (~15 MB total) and are served as `audio/mpeg`
+with range requests enabled, so seeking works.

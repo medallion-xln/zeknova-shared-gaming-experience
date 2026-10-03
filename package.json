@@ -16,7 +16,7 @@
     "runtime:reconstruct:build": "node scripts/build-reconstructed-runtime.mjs",
     "runtime:reconstruct:test": "node tests/runtime-reconstruction.test.mjs",
     "runtime:reconstruct:verify": "npm run runtime:reconstruct:build && npm run runtime:reconstruct:test",
-    "test:campaign-feasibility": "node tests/campaign-feasibility.test.mjs && node tests/campaign-plan.test.mjs && node tests/stormback-recovery-readability.test.mjs && node tests/supply-route-objective.test.mjs && node tests/habitat-aid-objective.test.mjs",
+    "test:campaign-feasibility": "node tests/campaign-feasibility.test.mjs && node tests/campaign-plan.test.mjs && node tests/stormback-recovery-readability.test.mjs && node tests/supply-route-objective.test.mjs && node tests/zeknovan-aid-objective.test.mjs",
     "test:adaptive": "node tests/adaptive-simulation-director.test.mjs",
     "test:picasso": "node tests/picasso-visual-expert.test.mjs && node tests/picasso-combat-readability.test.mjs && node tests/picasso-performance-report.mjs",
     "test:prime-authority": "node tests/sentinel-prime-r1-authority.test.mjs && node tests/sentinel-prime-r1-readiness.test.mjs && node tests/sentinel-prime-r1-canary.test.mjs",
@@ -28,6 +28,10 @@
     "evaluate:prime-compatibility": "node scripts/run-sentinel-prime-compatibility.mjs",
     "test:game-modes": "node tests/game-mode.test.mjs && node tests/mission-clarity.test.mjs",
     "test:boss-physics": "node tests/boss-encounter-director.test.mjs && node tests/physics-world.test.mjs",
+    "test:music": "node tests/music-director.test.mjs",
+    "test:finale": "node tests/campaign-finale.test.mjs && node tests/zeknovan-aid-objective.test.mjs",
+    "test:officer-rank": "node tests/officer-rank.test.mjs && node tests/officer-rank-parity.test.mjs",
+    "test:worldclaw": "node tests/worldclaw.test.mjs",
     "test:campaign-certification": "node tests/campaign-lifecycle-certification.test.mjs",
     "test:persistence-certification": "node tests/persistence-session-certification.test.mjs",
     "test:network-recovery-certification": "node tests/network-recovery-certification.test.mjs",
@@ -41,8 +45,8 @@
     "test:zek20": "node tests/combat-feedback-director.test.mjs",
     "test:zek21": "node tests/combat-result-semantics.test.mjs",
     "test:zek22": "node tests/combat-choreography.test.mjs",
-    "test:gameplay-release": "npm run test:campaign-feasibility && npm run test:game-modes && npm run test:boss-physics && node tests/game-reset.test.mjs && npm run runtime:reconstruct:test && npm run test:campaign-certification",
-    "test": "npm run check && npm run audit:animations && npm run test:adaptive && npm run test:picasso && npm run test:gameplay-release && npm run test:persistence-certification && npm run test:network-recovery-certification && npm run test:render-performance-certification && npm run test:renderer-ownership-certification && npm run test:zek18 && npm run test:zek18b && npm run test:zek18c && npm run test:zek18d && npm run test:zek19 && npm run test:zek20 && npm run test:zek21 && npm run test:zek22 && node tests/azl-zeknova-adapter.test.cjs && node tests/azl-engine.test.cjs && node tests/w0o-identity-contract.test.cjs && node tests/w0o-identity-integration.test.cjs && node tests/w0o1-perception-event-contract.test.cjs && node tests/w0o1-perception-event-integration.test.cjs && node tests/stage1az2-prime-search-observability-contract.test.cjs"
+    "test:gameplay-release": "npm run test:campaign-feasibility && npm run test:game-modes && npm run test:boss-physics && node tests/game-reset.test.mjs && npm run runtime:reconstruct:test && npm run test:campaign-certification && npm run test:officer-rank && npm run test:music && npm run test:finale",
+    "test": "npm run check && npm run audit:animations && npm run test:adaptive && npm run test:picasso && npm run test:gameplay-release && npm run test:persistence-certification && npm run test:network-recovery-certification && npm run test:render-performance-certification && npm run test:renderer-ownership-certification && npm run test:zek18 && npm run test:zek18b && npm run test:zek18c && npm run test:zek18d && npm run test:zek19 && npm run test:zek20 && npm run test:zek21 && npm run test:zek22 && npm run test:worldclaw && node tests/azl-zeknova-adapter.test.cjs && node tests/azl-engine.test.cjs && node tests/w0o-identity-contract.test.cjs && node tests/w0o-identity-integration.test.cjs && node tests/w0o1-perception-event-contract.test.cjs && node tests/w0o1-perception-event-integration.test.cjs && node tests/stage1az2-prime-search-observability-contract.test.cjs"
   },
   "engines": {
     "node": ">=18"

@@ -1,0 +1,34 @@
+# Sentinel Grid live-parity working tree — operator tooling, not web content.
+#
+# Exactly one file in here is loaded by the browser: src/main.js imports
+# runtime-collector/Stage2FExactProviderBridgeSafe.js, which is self-contained
+# (no imports, no fetches). Everything else is host-side:
+#
+#   runtime-collector/config.json      collector auth token
+#   runtime-collector/activation.json  absolute host paths and collector port
+#   runtime-collector/collector.log    operational log
+#   runtime-collector/server.mjs       the collector itself
+#   runtime-collector/collectorctl.sh  host control script
+#   sessions/ evidence/ records/ fixtures/ quarantine/  parity evidence
+#
+# config.json was previously protected only by its 0600 file mode, which means a
+# routine permission normalisation would have published the token. Deny by
+# default here so the protection does not depend on file modes.
+
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
+
+<Files "Stage2FExactProviderBridgeSafe.js">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
+  </IfModule>
+</Files>

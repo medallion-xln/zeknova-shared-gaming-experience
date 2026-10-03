@@ -65,15 +65,15 @@ const title = (b) => b[0].toUpperCase() + b.slice(1);
 export const PROJECT_LADDER = Object.freeze([
   { mission: "grid",              title: "Bring the lights online", type: "power",          project: "Solar Grid",                 verb: "Power",      prep: "survey",  prepLabel: "Survey solar exposure" },
   { mission: "water",             title: "Water for ZekNova",       type: "water",          project: "Water Works",                verb: "Irrigate",   prep: "recover", prepLabel: "Recover filtration compounds" },
-  { mission: "tower-one",         title: "Connect the planet",      type: "communications", project: "Quantum Communications Hub", verb: "Connect",    prep: "recover", prepLabel: "Recover relay components" },
+  { mission: "tower-one",         title: "Connect the planet",      type: "communications", project: "Quantum Communications Hub", verb: "Connect",    prep: "recover", aidBiome: "forest", prepLabel: "Recover relay components" },
   { mission: "habitat",           title: "Shield the settlements",  type: "defense",        project: "Defense Tower",              verb: "Shield",     prep: "combat",  prepLabel: "Clear hostiles from the build site" },
-  { mission: "governance",        title: "A planetary home",        type: "habitat",        project: "Habitat",                    verb: "Settle",     prep: "harvest", prepLabel: "Harvest frames for settlement" },
-  { mission: "population",        title: "Regional government",     type: "capitol",        project: "Regional Capitol",           verb: "Govern",     prep: "aid",     prepLabel: "Complete a ZekNovan infrastructure build" },
+  { mission: "governance",        title: "A planetary home",        type: "habitat",        project: "Habitat",                    verb: "Settle",     prep: "harvest", aidBiome: "desert", prepLabel: "Harvest frames for settlement" },
+  { mission: "population",        title: "Regional government",     type: "capitol",        project: "Regional Capitol",           verb: "Govern",     prep: "recover", aidBiome: "highlands",     prepLabel: "Complete a ZekNovan infrastructure build" },
   { mission: "research",          title: "Planetary healthcare",    type: "hospital",       project: "Planetary Hospital",         verb: "Heal",       prep: "recover", prepLabel: "Recover medical compounds" },
-  { mission: "culture",           title: "Education for ZekNova",   type: "university",     project: "University Campus",          verb: "Educate",    prep: "recover", prepLabel: "Recover archive fragments" },
+  { mission: "culture",           title: "Education for ZekNova",   type: "university",     project: "University Campus",          verb: "Educate",    prep: "recover", aidBiome: "arctic", prepLabel: "Recover archive fragments" },
   { mission: "supply-route",      title: "Transit and supply",      type: "transit",        project: "Planetary Transit Hub",      verb: "Link",       prep: "survey",  prepLabel: "Chart the transit corridor" },
-  { mission: "stronghold",        title: "Commerce and trade",      type: "commerce",       project: "Trade and Civic Center",     verb: "Trade",      prep: "combat",  prepLabel: "Clear hostiles from the trade corridor" },
-  { mission: "advanced-research", title: "Fortune 500 ZekNova",     type: "corporate_hq",   project: "Fortune 500 Headquarters",   verb: "Incorporate",prep: "aid",     prepLabel: "Complete a ZekNovan infrastructure build" },
+  { mission: "stronghold",        title: "Commerce and trade",      type: "commerce",       project: "Trade and Civic Center",     verb: "Trade",      prep: "combat", aidBiome: "wetlands",  prepLabel: "Clear hostiles from the trade corridor" },
+  { mission: "advanced-research", title: "Fortune 500 ZekNova",     type: "corporate_hq",   project: "Fortune 500 Headquarters",   verb: "Incorporate",prep: "recover", aidBiome: "forest",     prepLabel: "Complete a ZekNovan infrastructure build" },
   { mission: "tower-ring",        title: "The ZekNova Exchange",    type: "stock_exchange", project: "ZekNova Stock Exchange",     verb: "Capitalise", prep: "harvest", prepLabel: "Harvest materials for the exchange floor" },
 ]);
 
@@ -122,12 +122,31 @@ export function missionItems(missionId) {
 
   for (const biome of BIOMES) {
     const where = `${title(biome)} AO`;
+
+    /* AT MOST ONE ZEKNOVAN AID PROJECT PER MISSION.
+       -------------------------------------------------------------------
+       Every aid build starts a cooldown of 3-10 minutes, scaled by how much
+       tension it removes — the guard against buying the natives off in one
+       sitting. Two missions used to ask for aid in ALL FIVE biomes, so
+       finishing either meant up to fifty minutes of waiting with nothing to
+       do. The cooldown is right; asking for five of them back to back was
+       not.
+
+       Aid is now one item on each of six missions, rotating biome, so the
+       cooldown always overlaps work the player can actually get on with.
+       Total aid projects across the campaign: 6, down from 10. Item counts
+       are unchanged at ten per mission. */
+    const isAidSlot = p.aidBiome === biome;
+    const kind = isAidSlot ? "aid" : p.prep;
+
     prep.push({
       category: "preparation",
-      kind: p.prep,
+      kind,
       biome,
-      target: prepTargetFor(p.prep, n),
-      label: `${p.prepLabel} · ${where}`,
+      target: prepTargetFor(kind, n),
+      label: isAidSlot
+        ? `Complete 1 ZekNovan aid project · ${where}`
+        : `${p.prepLabel} · ${where}`,
     });
     build.push({
       category: "construction",
@@ -227,6 +246,30 @@ export const DIFFICULTY = Object.freeze({
   PROJECTILE_SPEED_MAX: 1.65, // projectile speed at mission 12
   COUNT_MAX: 1.4,             // projectile count at mission 12
   MIN_WINDUP_SECONDS: 0.45,   // absolute reaction floor
+
+  /* Guardian HEALTH across the campaign.
+     ---------------------------------------------------------------------
+     Until this existed, boss health had no relationship to campaign
+     position — and the order was actually inverted. Measured:
+
+       mission 1  Sunscar Colossus      1650 hp
+       mission 5  Obsidian Demon Knight  480 hp
+       mission 11 Arc Gunner             740 hp
+
+     Meanwhile the player's special attack scales with rank — 120 as an
+     Ensign, 155 as a Lieutenant, 195 as a Captain — so a Captain reached
+     mission 5 and removed a Guardian in three specials. The rank reward is
+     working as intended; nothing was rising to meet it.
+
+     HEALTH_MIN/MAX is the campaign floor. IDENTITY_MIN/MAX bounds how far a
+     Guardian's own bulk may pull it off that floor, so a Tremor still reads
+     as heavier than a Siren without a first-mission boss outweighing a
+     twelfth-mission one. */
+  HEALTH_MIN: 0.85,           // campaign multiplier at mission 1
+  HEALTH_MAX: 3.20,           // campaign multiplier at mission 12
+  IDENTITY_MIN: 0.85,         // floor on a Guardian's own relative bulk
+  IDENTITY_MAX: 1.30,         // ceiling on it
+  HEALTH_REFERENCE: 740,      // the median base health the identity ratio is taken against
 });
 
 /**
@@ -245,6 +288,28 @@ export function difficultyProgress(missionIdOrNumber) {
 const lerp = (a, b, t) => a + (b - a) * t;
 
 /** The three scalars a Guardian encounter needs, for one mission. */
+/**
+ * Campaign health multiplier for a Guardian, 0.85 at mission 1 rising to 3.2
+ * at mission 12. Paired with identityScale() below.
+ */
+export function healthScale(missionIdOrNumber) {
+  const t = difficultyProgress(missionIdOrNumber);
+  return DIFFICULTY.HEALTH_MIN + t * (DIFFICULTY.HEALTH_MAX - DIFFICULTY.HEALTH_MIN);
+}
+
+/**
+ * How far a Guardian's own bulk may pull it off the campaign floor.
+ *
+ * Bounded deliberately. The Sunscar Colossus is naturally 2.2x the median and
+ * the Obsidian Demon Knight 0.65x; left unbounded that spread swamps the
+ * campaign curve and reproduces the inversion this replaces.
+ */
+export function identityScale(baseHealth) {
+  const ratio = Number(baseHealth) / DIFFICULTY.HEALTH_REFERENCE;
+  if (!Number.isFinite(ratio) || ratio <= 0) return 1;
+  return Math.max(DIFFICULTY.IDENTITY_MIN, Math.min(DIFFICULTY.IDENTITY_MAX, ratio));
+}
+
 export function missionDifficulty(missionIdOrNumber) {
   const t = difficultyProgress(missionIdOrNumber);
   return Object.freeze({

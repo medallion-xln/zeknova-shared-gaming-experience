@@ -1,0 +1,68 @@
+/* ZekNova — background score control (pause menu)
+ *
+ * The score control reuses .pause-option for its box, so it sits in the same
+ * column as Guardian mode and the restart actions. Only what is specific to a
+ * toggle-plus-slider lives here.
+ *
+ * State is carried by TEXT ("Playing" / "Muted") as well as colour — the
+ * button's label changes, not just its tint, so the control is readable
+ * without colour perception and announced correctly by aria-pressed.
+ */
+
+.zk-music {
+  display: grid;
+  gap: 8px;
+}
+
+.zk-music > strong {
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.zk-music > small {
+  opacity: 0.7;
+  line-height: 1.35;
+}
+
+.zk-music-btn {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  text-align: left;
+}
+
+.zk-music-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.zk-music-btn[aria-pressed="true"] {
+  border-color: rgba(249, 201, 76, 0.55);
+  background: rgba(249, 201, 76, 0.12);
+}
+
+/* Visible keyboard focus. The default ring is invisible on this dark panel. */
+.zk-music-btn:focus-visible,
+.zk-music-volume:focus-visible {
+  outline: 2px solid #f9c94c;
+  outline-offset: 2px;
+}
+
+.zk-music-volume {
+  width: 100%;
+  accent-color: #f9c94c;
+  cursor: pointer;
+}
+
+.zk-music-volume:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zk-music-btn { transition: none; }
+}

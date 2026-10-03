@@ -64,19 +64,28 @@ for (const [index, mission] of order.entries()) {
   assert.ok(after >= 0, `${mission.id} defense balance must never be negative`);
 }
 
-const tower = order.find((mission) => mission.id === "tower-one");
-const towerLedger = ledger.find((row) => row.missionId === "tower-one");
-assert.deepEqual(towerLedger, {
-  missionIndex: 3,
-  missionId: "tower-one",
+/* Defense Towers are raised by mission 4 ("Shield the settlements"), not by
+   mission 3. Mission 3 delivers the Quantum Communications Hub. This block used
+   to name tower-one because an earlier build bolted an extra planet-wide defense
+   objective onto it; the ladder in CampaignPlan.js has always assigned defense to
+   the fourth mission, and the campaign now follows the ladder. The contract being
+   checked is unchanged — exactly five Defense Towers, one per biome, produced by
+   one mission and carried forward after it. */
+const shield = order.find((mission) => mission.id === "habitat");
+const shieldLedger = ledger.find((row) => row.missionId === "habitat");
+assert.deepEqual(shieldLedger, {
+  missionIndex: 4,
+  missionId: "habitat",
   defenseBefore: 0,
   defenseProduced: 5,
   defenseConsumed: 0,
   defenseAfter: 5,
   sourceOfChange: "mandatory construction objectives",
 });
-assert.equal(tower.requirements.find(([key]) => key === "defense")?.[1], 5, "Tower One defense requirement must remain five");
-assert.equal(MISSION_OBJECTIVES["tower-one"].filter((objective) => objective.kind === "biomeBuilding" && objective.key === "defense").length, 5, "Tower One must produce one defense tower in every biome");
+assert.equal(shield.requirements.find(([key]) => key === "defense")?.[1], 5, "the defense mission requirement must remain five");
+assert.equal(MISSION_OBJECTIVES.habitat.filter((objective) => objective.kind === "biomeBuilding" && objective.key === "defense").length, 5, "the defense mission must produce one Defense Tower in every biome");
+assert.equal(ledger.find((row) => row.missionId === "tower-one").defenseProduced, 0, "mission 3 delivers communications, not defense");
+assert.equal(MISSION_OBJECTIVES["tower-one"].filter((objective) => objective.kind === "biomeBuilding" && objective.key === "communications").length, 5, "Tower One must produce one communications hub in every biome");
 
 for (const plan of PROJECT_LADDER) {
   const generated = MISSION_OBJECTIVES[plan.mission].filter((objective) => objective.kind === "biomeBuilding" && objective.key === plan.type);

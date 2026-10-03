@@ -369,3 +369,79 @@ function zeknova_personal_save_path(string $teamCode, string $userId): string
 {
     return ZEKNOVA_DATA_DIR . '/save-' . hash('sha256', zeknova_team_key($teamCode) . ':' . $userId) . '.json';
 }
+
+/**
+ * Officer rank from standing infrastructure — the server-side twin of
+ * src/game/OfficerRank.js. Both must agree, and tests/officer-rank-parity.test.mjs
+ * asserts they do rather than trusting this comment.
+ *
+ * Rules, identical to the client:
+ *   - a structure is STANDING when health > 0 (absent health = standing, for
+ *     records written before health tracking)
+ *   - a record carries coordinates, not a biome, so the AO is derived from x
+ *     through the same band formula as world/Biomes.js biomeAt()
+ *   - a project counts only when it stands in ALL FIVE biomes
+ *   - 8 projects is Captain, 4 is Lieutenant, otherwise Ensign
+ */
+const ZEKNOVA_BIOME_BANDS = ['forest', 'desert', 'highlands', 'arctic', 'wetlands'];
+const ZEKNOVA_WORLD_SIZE = 180.0;
+
+/** Mirrors world/Biomes.js biomeAt(): five equal bands along x. */
+function zeknova_biome_at(float $x): string
+{
+    $count = count(ZEKNOVA_BIOME_BANDS);
+    $index = (int)floor(($x + ZEKNOVA_WORLD_SIZE * 0.5) / (ZEKNOVA_WORLD_SIZE / $count));
+    if ($index < 0) $index = 0;
+    if ($index > $count - 1) $index = $count - 1;
+    return ZEKNOVA_BIOME_BANDS[$index];
+}
+
+/** Mirrors CampaignPlan.js PROJECT_LADDER order — one project per mission. */
+function zeknova_project_types(): array
+{
+    return [
+        'power', 'water', 'communications', 'defense', 'habitat', 'capitol',
+        'hospital', 'university', 'transit', 'commerce', 'corporate_hq', 'stock_exchange',
+    ];
+}
+
+/** Completed planetary projects in the team's persisted world. */
+function zeknova_standing_projects(string $teamCode): int
+{
+    $path = zeknova_save_path($teamCode);
+    if (!is_file($path)) return 0;
+    $raw = file_get_contents($path);
+    $save = $raw !== false ? json_decode($raw, true) : null;
+    $buildings = is_array($save) && is_array($save['buildings'] ?? null) ? $save['buildings'] : [];
+
+    $coverage = [];
+    foreach ($buildings as $building) {
+        if (!is_array($building)) continue;
+        // Explicit null/absent health means a pre-health-tracking record, which
+        // is intact. Only a stated non-positive health is rubble.
+        $health = $building['health'] ?? null;
+        if ($health !== null && (float)$health <= 0) continue;
+        $type = (string)($building['type'] ?? '');
+        if ($type === '') continue;
+        $biome = isset($building['biome']) && is_string($building['biome']) && $building['biome'] !== ''
+            ? $building['biome']
+            : (isset($building['x']) && is_numeric($building['x']) ? zeknova_biome_at((float)$building['x']) : null);
+        if ($biome === null) continue;
+        $coverage[$type][$biome] = true;
+    }
+
+    $done = 0;
+    $need = count(ZEKNOVA_BIOME_BANDS);
+    foreach (zeknova_project_types() as $type) {
+        if (count($coverage[$type] ?? []) === $need) $done++;
+    }
+    return $done;
+}
+
+/** Rank owed for a number of completed planetary projects. */
+function zeknova_rank_for_infrastructure(int $completedProjects): string
+{
+    if ($completedProjects >= 8) return 'captain';
+    if ($completedProjects >= 4) return 'lieutenant';
+    return 'ensign';
+}

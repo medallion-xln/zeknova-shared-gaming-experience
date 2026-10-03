@@ -4,7 +4,8 @@
  *
  * WHY THIS EXISTS
  * ----------------------------------------------------------------------
- * "Restart Game" did not restart anything. The old implementation was:
+ * this build ran game.save() AFTER api/reset.php but BEFORE clearing the
+ * in-memory world, so the dirty world was written over the fresh save:
  *
  *     await game.save();          // persist the CURRENT, dirty world
  *     await game.flushAdaptiveSave();
@@ -46,7 +47,7 @@
  */
 
 import { resetRunBossState, cleanupBossCombat, BOSS_RUN_KEY, QA_BOSS_KEY } from "./BossCombat.js";
-import { rankForInfrastructure } from "./CampaignPlan.js";
+import { rankFromRecords } from "./OfficerRank.js";
 
 /**
  * The pristine world, in the same shape the save file uses.
@@ -193,11 +194,23 @@ export function resetRuntimeWorld(game) {
      reset, leaving a Captain in command of an empty world. Derived from the
      (now empty) building list, so this cannot drift from what is actually
      built. */
-  const derived = rankForInfrastructure(game.buildings?.records ?? []);
+  /* The runtime reads `user.officerClass` — 44 sites in the compatibility
+     bundle — and never reads `officerRank` or `user.rank` at all. Writing only
+     the latter two is why the reset appeared to demote and did not: the value
+     was computed correctly and then stored where nothing would look for it.
+     `officerClass` is set first, and the legacy names are kept in step for any
+     caller still reading them.
+
+     rankFromRecords is used in place of rankForInfrastructure because a
+     destroyed structure stays in `records` with health <= 0 and building
+     records carry coordinates rather than a biome — see OfficerRank.js. */
+  const derived = rankFromRecords(game.buildings?.records ?? []);
   game.officerRank = derived.rank;
   game.rankLabel = derived.label;
-  if (game.user) game.user.rank = derived.rank;
-  if (game.player) game.player.rank = derived.rank;
+  if (game.user) { game.user.officerClass = derived.rank; game.user.rank = derived.rank; }
+  if (game.buildings) game.buildings.officerClass = derived.rank;
+  if (game.simulation) game.simulation.officerClass = derived.rank;
+  if (game.player) { game.player.officerClass = derived.rank; game.player.rank = derived.rank; }
 
   // Live combat objects: projectiles and encounter meshes would otherwise
   // outlive the world they belong to.

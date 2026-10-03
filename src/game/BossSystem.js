@@ -1,4 +1,4 @@
-import { scaleAttackProfile, scaleProjectilePattern } from "./CampaignPlan.js";
+import { scaleAttackProfile, scaleProjectilePattern, healthScale, identityScale, DIFFICULTY } from "./CampaignPlan.js";
 import { ENEMY_PROFILES } from "./Enemies.js";
 
 export const BOSS_HEALTH_MULTIPLIER = 10;
@@ -327,8 +327,26 @@ export function bossBaseHealth(configOrId) {
   return source.health * Number(config.healthMultiplier ?? BOSS_HEALTH_MULTIPLIER);
 }
 
+/**
+ * Guardian health, scaled by campaign position as well as party size.
+ *
+ * This used to be base health x party size only, so mission 12's Guardian was
+ * no tougher than mission 1's while the player had gained the Captain armory,
+ * the mech, flight and a special attack worth 195 rather than 120. Late
+ * encounters ended in three specials.
+ *
+ * Health is now built from the campaign floor and pulled toward the Guardian's
+ * own bulk within bounds, so the ramp holds while a Tremor still reads heavier
+ * than a Siren. Party scaling is unchanged and still applies on top.
+ */
 export function scaledBossHealth(configOrId, playerCount = 1) {
-  return Math.round(bossBaseHealth(configOrId) * playerHealthScale(playerCount));
+  const config = typeof configOrId === "string" ? BOSS_CONFIGS[configOrId] : configOrId;
+  const base = bossBaseHealth(config);
+  const identity = identityScale(base);
+  const campaign = healthScale(config?.missionId);
+  return Math.round(
+    DIFFICULTY.HEALTH_REFERENCE * identity * campaign * playerHealthScale(playerCount)
+  );
 }
 
 export function scaledBossDamage(baseDamage, phaseId = "phase_1") {

@@ -38,20 +38,34 @@ if ($method === 'POST') {
         if ($clean !== '' && strlen($clean) <= 100) $set[$clean] = true;
     }
     $profile['personalObjectives'] = array_slice(array_keys($set), 0, 100);
-    $profile['teamCompleted'] = max((int)($profile['teamCompleted'] ?? 0), min(12, (int)($input['teamCompleted'] ?? 0)));
+    // Mission progress is REPORTED progress, not a high-water mark. This used to
+    // be max(stored, incoming), so it could only ever rise: a player who reset
+    // the campaign posted teamCompleted=0 and the server kept the old number,
+    // which then re-issued the old rank on the next sync.
+    $profile['teamCompleted'] = max(0, min(12, (int)($input['teamCompleted'] ?? 0)));
     if (!empty($input['deployed'])) $profile['deployed'] = true;
     $profile['biome'] = 'highlands';
 }
 
 $personalCount = count($profile['personalObjectives'] ?? []);
 $teamCompleted = (int)($profile['teamCompleted'] ?? 0);
-// Rank tracks campaign progress alone: missions 1-4 are flown as an Ensign,
-// 5-8 as a Lieutenant, 9-12 as a Captain. Personal objectives are still tracked
-// and reported, but they no longer gate promotion - requiring both meant a player
-// could clear four missions and still be denied the Lieutenant loadout.
-$rank = $teamCompleted >= 8
-    ? 'captain'
-    : ($teamCompleted >= 4 ? 'lieutenant' : 'ensign');
+
+/**
+ * Rank is earned from STANDING INFRASTRUCTURE, and it is lost with it.
+ *
+ * It used to be derived from $teamCompleted — missions the CLIENT said it had
+ * finished — which made rank a claim the client could make about itself rather
+ * than a fact about the planet. Combined with the high-water mark above, rank
+ * could only ever go up: destroying every structure, or resetting the world,
+ * left a Captain in command of an empty planet.
+ *
+ * The building list is read from the team's own save, so this is computed from
+ * what the server has persisted, not from anything the request supplies.
+ * Missions completed is still tracked and returned for the HUD; it just no
+ * longer decides the rank.
+ */
+$rank = zeknova_rank_for_infrastructure(zeknova_standing_projects($teamCode));
+$profile['completedProjects'] = zeknova_standing_projects($teamCode);
 $profile['rank'] = $rank;
 $profile['updatedAt'] = gmdate('c');
 

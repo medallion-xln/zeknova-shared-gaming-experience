@@ -1,0 +1,120 @@
+/* ZekNova — campaign finale
+ *
+ * Shown once, when the twelfth Guardian is answered and the last project
+ * stands in the last biome. It covers the world deliberately: the game is
+ * over and the player should read, not keep playing behind it.
+ */
+
+.zk-finale {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: radial-gradient(circle at 50% 30%, rgba(20, 34, 58, 0.94), rgba(4, 8, 16, 0.97) 62%);
+    backdrop-filter: blur(6px);
+    animation: zk-finale-in 900ms ease-out both;
+}
+
+.zk-finale-panel {
+    width: min(680px, 100%);
+    max-height: 100%;
+    overflow-y: auto;
+    display: grid;
+    gap: 14px;
+    padding: 32px clamp(20px, 5vw, 44px);
+    border: 1px solid rgba(249, 201, 76, 0.32);
+    border-radius: 18px;
+    background: rgba(9, 13, 22, 0.72);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+    text-align: center;
+}
+
+.zk-finale-kicker {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: #f9c94c;
+    opacity: 0.9;
+}
+
+.zk-finale-title {
+    margin: 0;
+    font-size: clamp(26px, 4.4vw, 40px);
+    line-height: 1.15;
+    color: #fff;
+}
+
+.zk-finale-lede,
+.zk-finale-coda {
+    margin: 0;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 52ch;
+    justify-self: center;
+}
+
+.zk-finale-coda {
+    font-style: italic;
+    opacity: 0.72;
+    font-size: 14px;
+}
+
+/* Two columns on anything but the narrowest screens; the term/value pairing
+   stays readable when it wraps to one. */
+.zk-finale-stats {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 18px;
+    margin: 8px 0;
+    padding: 16px 18px;
+    border-block: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: left;
+}
+
+.zk-finale-stats dt {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+}
+
+.zk-finale-stats dd {
+    margin: 0;
+    text-align: right;
+    font-weight: 700;
+    color: #f9c94c;
+    font-variant-numeric: tabular-nums;
+}
+
+.zk-finale-close {
+    justify-self: center;
+    margin-top: 6px;
+    padding: 11px 26px;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #171308;
+    background: #f9c94c;
+    border: 1px solid #f9c94c;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.zk-finale-close:hover { filter: brightness(1.08); }
+
+.zk-finale-close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+@keyframes zk-finale-in {
+    from { opacity: 0; transform: scale(0.985); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* The ending still appears; it just stops moving. */
+.zk-finale[data-reduced-motion="1"] { animation: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .zk-finale { animation: none; }
+}

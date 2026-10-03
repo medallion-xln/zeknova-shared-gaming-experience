@@ -1,5 +1,41 @@
 import { runLoginPage } from "./ui/LoginPage.js";
 
+/* Gameplay bridges the legacy runtime bundle reads through globalThis.
+   Loaded before Game.js dynamically pulls assets/index-02987539.js, so the
+   globals are installed by the time the bundle looks for them. The bundle
+   optional-chains every one of them, so a bridge that is absent degrades to
+   the bundle's built-in fallback.
+
+   These are DYNAMIC imports, awaited together, and not static ones. A static
+   `import` of a module that does not exist fails the ENTIRE module graph:
+   `launch()` never runs, and the page renders an empty <body> with four 404s
+   in the network log and no error anywhere the player can see. Four of these
+   five modules are not in the repository, so the static form took the whole
+   game down — which is the opposite of the graceful degradation the bridges
+   are here to provide. */
+const GAMEPLAY_BRIDGES = [
+  "./game/HarvestRewards.js",
+  "./game/BossReplaySettings.js",
+  "./game/StructureDesign.js",
+  "./game/DefenseTowers.js",
+  "./game/OfficerRank.js",
+];
+
+async function loadGameplayBridges() {
+  const missing = [];
+  await Promise.all(GAMEPLAY_BRIDGES.map(async (path) => {
+    try {
+      await import(path);
+    } catch {
+      missing.push(path);
+    }
+  }));
+  if (missing.length) {
+    console.warn(`ZekNova gameplay bridges unavailable (${missing.join(", ")}); the runtime bundle's built-in fallbacks remain active.`);
+  }
+  return missing;
+}
+
 document.documentElement.dataset.zeknovaSource = "boss-threat1";
 
 function loadGameStyles() {
@@ -17,6 +53,8 @@ function loadGameStyles() {
     ["./assets/mission-clarity.css?v=clarity2", "game-mission-clarity"],
     ["./assets/game-modes.css?v=civilian1", "game-mode-separation"],
     ["./assets/combat-feedback.css?v=zek20-1", "game-combat-feedback"],
+    ["./assets/music-score.css?v=score1", "game-music-score"],
+    ["./assets/campaign-finale.css?v=finale1", "game-campaign-finale"],
   ];
   for (const [href, id] of styles) {
     if (document.querySelector(`link[data-zeknova-style="${id}"]`)) continue;
@@ -29,6 +67,8 @@ function loadGameStyles() {
 }
 
 async function launch() {
+  // Before anything pulls the runtime bundle.
+  await loadGameplayBridges();
   const root = document.getElementById("app");
   const { user } = await runLoginPage(root);
   if (!user) throw new Error("An authenticated officer is required to launch ZekNova.");
@@ -95,6 +135,57 @@ async function launch() {
   new HudDirector({ chat: teamChat }).arm();
   const game = new Game();
   await game.start({ user });
+  /* MUSE-ZEK-01 Phase 3: First-15-minute onboarding.
+     Guides new officers through land → move → harvest → build → defend →
+     command mode → advisor → first contact. Non-blocking, state-driven,
+     dismissible. Skips entirely for returning players (localStorage). */
+  try {
+    const { FirstFifteenDirector } = await import("./game/FirstFifteenDirector.js");
+    const ff = new FirstFifteenDirector({ game: globalThis.ZekNovaGame || game }).install();
+    if (ff) globalThis.ZekNovaFirstFifteen = ff;
+  } catch (error) {
+    console.warn("First-fifteen onboarding unavailable; core gameplay is unchanged.", error);
+  }
+  /* Background score. Installed before the heavier graphics directors so the
+     first bar is already decoding while they spin up, and armed from inside
+     the LAUNCH gesture that got us here — a play() attempted any later is
+     refused by the autoplay policy. */
+  try {
+    const { MusicDirector } = await import("./game/MusicDirector.js");
+    const music = new MusicDirector({ game: globalThis.ZekNovaGame || game });
+    if (music.install()) {
+      music.arm();
+      globalThis.ZekNovaMusic = Object.freeze({
+        director: music,
+        snapshot: () => music.snapshot(),
+        setMuted: (m) => music.setMuted(m),
+        setVolume: (v) => music.setVolume(v),
+      });
+      document.documentElement.dataset.zeknovaMusic = "authored-score-v1";
+    }
+  } catch (error) {
+    console.warn("Background score unavailable; gameplay audio is unchanged.", error);
+  }
+  /* The ending. Polls for a finished campaign rather than hooking the bundle,
+     so a celebration screen does not cost a runtime re-attestation. */
+  try {
+    const { CampaignFinale } = await import("./game/CampaignFinale.js");
+    const finale = new CampaignFinale({ game: globalThis.ZekNovaGame || game });
+    if (finale.install()) {
+      globalThis.ZekNovaFinale = Object.freeze({
+        director: finale,
+        snapshot: () => finale.snapshot(),
+        // Exposed so QA can see the ending without finishing twelve missions.
+        preview: () => finale.show(finale.constructor === CampaignFinale
+          ? { projects: 12, totalProjects: 12, structures: 60, guardians: 12, biomes: 5, rank: "captain" }
+          : {}),
+      });
+      document.documentElement.dataset.zeknovaFinale = "campaign-ending-v1";
+    }
+  } catch (error) {
+    console.warn("Campaign finale unavailable; the campaign still completes.", error);
+  }
+
   let renderPerformance = null;
   try {
     const { RenderPerformanceDirector } = await import("./game/RenderPerformanceDirector.js");
@@ -144,6 +235,36 @@ async function launch() {
     document.documentElement.dataset.zeknovaAdaptiveRuntime = "tiered-r0";
   } catch (error) {
     console.warn("Adaptive runtime unavailable; deterministic full-fidelity simulation remains active.", error);
+  }
+  /* WorldClaw — developer world generation tooling.
+     Dynamically imported inside try/catch and gated behind an explicit
+     developer flag (?worldclaw=1). It emits world specifications; it has no
+     authority over the live scene, missions, bosses, physics or saves, and a
+     failure here can never prevent the game from starting. */
+  try {
+    const { allowed, WorldClawEditor } = await import("./worldclaw/WorldClawEditor.js");
+    if (allowed()) {
+      const editor = new WorldClawEditor({ game: globalThis.ZekNovaGame || game });
+      if (editor.install()) {
+        const [{ WORLDCLAW_AUTHORITY }, { generateDesertCivilisation, describeDesertCivilisation }] = await Promise.all([
+          import("./worldclaw/WorldClawDirector.js"),
+          import("./worldclaw/DesertCivilization.js"),
+        ]);
+        globalThis.ZekNovaWorldClaw = Object.freeze({
+          editor,
+          authority: WORLDCLAW_AUTHORITY,
+          // Console entry points for QA. `demo`/`describe` never touch the
+          // running world; `show`/`hide` add and remove one scene group.
+          demo: (options) => generateDesertCivilisation(options),
+          describe: (result) => describeDesertCivilisation(result),
+          show: () => editor.showInWorld(),
+          hide: () => editor.removeFromWorld(),
+        });
+        document.documentElement.dataset.zeknovaWorldclaw = "developer-tooling-v1";
+      }
+    }
+  } catch (error) {
+    console.warn("WorldClaw developer tooling is unavailable; the authored world is unchanged.", error);
   }
   try {
     const { PauseMenuDirector } = await import("./ui/PauseMenuDirector.js");

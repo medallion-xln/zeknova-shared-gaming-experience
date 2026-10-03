@@ -154,8 +154,44 @@ if ($roomHandle !== false && flock($roomHandle, LOCK_EX)) {
 }
 if (is_resource($roomHandle)) fclose($roomHandle);
 
+/* ── Officer progression ──────────────────────────────────────────────────
+   Rank lives in profile-{hash}.json, which this endpoint never touched. A
+   "Restart Game" therefore wiped the world and then handed the player back
+   their Captain rank on the next progression sync, because the profile still
+   said captain and the client only ever promoted.
+
+   Rank is derived from standing infrastructure, and a reset leaves none, so
+   the honest value here is ensign with zero projects. Personal objectives are
+   deliberately preserved: they are the player's own record across runs, not a
+   property of the world that was just cleared. */
+$profilePath = zeknova_profile_path($teamCode, (string)($user['id'] ?? ''));
+$profileLock = fopen($profilePath, 'c+');
+if ($profileLock !== false && flock($profileLock, LOCK_EX)) {
+    $rawProfile = stream_get_contents($profileLock);
+    $profile = $rawProfile !== false && trim($rawProfile) !== '' ? json_decode($rawProfile, true) : null;
+    if (!is_array($profile)) {
+        $profile = ['version' => 1, 'biome' => 'highlands', 'personalObjectives' => [], 'deployed' => false];
+    }
+    $profile['rank'] = 'ensign';
+    $profile['teamCompleted'] = 0;
+    $profile['completedProjects'] = 0;
+    $profile['resetAt'] = $nowIso;
+    $encodedProfile = json_encode($profile, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if ($encodedProfile !== false) {
+        rewind($profileLock);
+        ftruncate($profileLock, 0);
+        fwrite($profileLock, $encodedProfile);
+        fflush($profileLock);
+    }
+    flock($profileLock, LOCK_UN);
+}
+if (is_resource($profileLock)) fclose($profileLock);
+$_SESSION['zeknova_user']['officerClass'] = 'ensign';
+
 zeknova_response([
     'ok'      => true,
     'gameId'  => $newGameId,
     'resetAt' => $nowIso,
+    'rank'    => 'ensign',
+    'completedProjects' => 0,
 ]);

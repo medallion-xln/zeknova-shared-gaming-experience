@@ -1,4 +1,4 @@
-import { PROJECT_LADDER, missionItems as planMissionItems } from "./CampaignPlan.js";
+import { PROJECT_LADDER, missionItems as planMissionItems, projectFor } from "./CampaignPlan.js";
 import { BOSS_CONFIGS, MISSION_BOSS_IDS } from "./BossSystem.js";
 
 const visit = (biome, label) => ({ kind: "biomeVisit", biome, target: 1, label });
@@ -150,37 +150,10 @@ const PLAN_BOSS_LABELS = {
   "tower-ring": "Stabilize the market and defeat the White Screecher — Travel to Arctic AO to start the boss fight",
 };
 
-// CampaignPlan owns the planetary preparation/build matrix, while these rows
-// preserve mission-specific infrastructure contracts consumed by live mission
-// guidance and boss readiness. They are inserted before the terminal boss row.
-const REQUIRED_MISSION_OBJECTIVES = {
-  "tower-one": buildAcross("defense", "Raise 1 defensive early-warning tower"),
-  habitat: [
-    ...buildAcross("habitat", "Open 1 powered planetary habitat"),
-    aid("forest", "Complete 1 Forest ZekNovan aid project"),
-  ],
-  governance: [
-    build("desert", "capitol", 1, "Commission 1 Desert Regional Capitol"),
-    build("desert", "hospital", 1, "Open 1 Desert public hospital"),
-  ],
-  population: [build("wetlands", "hospital", 1, "Open 1 Wetlands population hospital")],
-  research: [build("arctic", "university", 1, "Open 1 Arctic University Campus")],
-  culture: [
-    build("forest", "commerce", 1, "Establish 1 Forest Trade and Civic Center"),
-    build("forest", "transit", 1, "Open 1 Forest regional transit hub"),
-  ],
-  "supply-route": [buildEither("wetlands", ["bridge", "boat"], 1, "Install a Wetland Bridge or Survey Skiff")],
-  stronghold: [
-    build("forest", "war_economy", 1, "Commission 1 Forest War Economy Complex"),
-    build("forest", "defense_contractor", 1, "Commission 1 Forest Defense Contractor Campus"),
-  ],
-};
-
 const objectives = Object.fromEntries(PROJECT_LADDER.map((plan) => [
   plan.mission,
   [
     ...planMissionItems(plan.mission).map((it) => PLAN_ITEM_TO_OBJECTIVE[it.kind](it)),
-    ...(REQUIRED_MISSION_OBJECTIVES[plan.mission] ?? []),
     boss(plan.mission, PLAN_BOSS_LABELS[plan.mission]),
   ],
 ]));
@@ -257,41 +230,55 @@ const LEGACY_CAMPAIGN_TIERS = Object.freeze([
   },
 ]);
 
-export const CAMPAIGN_TIERS = Object.freeze([
+/* Tier composition is the only thing stated by hand: which missions sit in the
+   Ensign, Lieutenant and Captain tiers, and what each tier is called.
+   Everything else about a mission — its title, its one-line objective, and the
+   colony total it requires — is DERIVED from the same PROJECT_LADDER that
+   generates its objectives above.
+
+   It used to be written out by hand, and it had drifted a whole mission out of
+   step: mission 4 was titled "A planetary home" while all ten of its objectives
+   raised Defense Towers, and six missions required buildings the campaign never
+   constructs — `stronghold` asked for a War Economy Complex while building
+   Trade and Civic Centers, so its requirement could never be met by playing it.
+   Nothing gated on those values (missions complete on their objectives), but
+   they drove the advisor's target list and the campaign feasibility check.
+
+   Deriving them means a change to the ladder moves the title, the objective and
+   the requirement together, and the three cannot disagree again. */
+const TIER_COMPOSITION = Object.freeze([
   {
     number: 1,
     title: "Planetary Infrastructure · Ensign",
-    subtitle: "Bring light, water, communications, defense, and homes to every biome.",
-    missions: [
-      mission("grid", "Bring the lights online", "Power all five ZekNova biomes with a connected Solar Grid network.", [["power", 5]]),
-      mission("water", "Water for ZekNova", "Connect every biome to the powered planetary water network.", [["water", 5]]),
-      mission("tower-one", "Connect and defend the planet", "Deliver planet-wide communications and defensive early-warning coverage.", [["communications", 5], ["defense", 5]]),
-      mission("habitat", "A planetary home", "Open powered, watered, connected Habitats across all five biomes.", [["habitat", 5]]),
-    ],
+    subtitle: "Bring light, water, communications, and defense to every biome.",
+    missions: ["grid", "water", "tower-one", "habitat"],
   },
   {
     number: 2,
     title: "Public Civilization · Lieutenant",
-    subtitle: "Build capitals, hospitals, education, transit, and civic life.",
-    missions: [
-      mission("governance", "Regional government", "Commission the first Regional Capitol and its public hospital.", [["capitol", 1], ["hospital", 1]]),
-      mission("population", "Planetary healthcare", "Extend hospitals and regional government into a second population center.", [["capitol", 2], ["hospital", 2]]),
-      mission("research", "Education and medicine", "Open ZekNova's first University Campus and Arctic emergency hospital.", [["university", 1], ["hospital", 3]]),
-      mission("culture", "Commerce and transportation", "Establish a civilian trade center and regional transit hub.", [["commerce", 1], ["transit", 1]]),
-      mission("supply-route", "Open the supply route", "Create a reliable Wetlands crossing and clear what waits beneath it.", [], [["bridge", 1], ["boat", 1]]),
-    ],
+    subtitle: "Build homes, capitals, hospitals, education, and transit.",
+    missions: ["governance", "population", "research", "culture", "supply-route"],
   },
   {
     number: 3,
     title: "Corporate Power · Captain",
     subtitle: "Choose the institutions that will control ZekNova's mature economy.",
-    missions: [
-      mission("stronghold", "The war economy", "Mobilize strategic industry and commission a defense contractor.", [["war_economy", 1], ["defense_contractor", 1]]),
-      mission("advanced-research", "Fortune 500 ZekNova", "Establish planet-scale corporate and defense industry.", [["corporate_hq", 1], ["defense_contractor", 1]]),
-      mission("tower-ring", "The ZekNova Exchange", "Complete the financial district and open the planetary stock exchange.", [["stock_exchange", 1], ["corporate_hq", 1]]),
-    ],
+    missions: ["stronghold", "advanced-research", "tower-ring"],
   },
 ]);
+
+export const CAMPAIGN_TIERS = Object.freeze(TIER_COMPOSITION.map((tier) => ({
+  number: tier.number,
+  title: tier.title,
+  subtitle: tier.subtitle,
+  /* One project, delivered to every biome — so the requirement is that project
+     at allBiomes.length, which is exactly what the mission's own build
+     objectives produce. */
+  missions: tier.missions.map((id) => {
+    const plan = projectFor(id);
+    return mission(id, plan.title, `Deliver the ${plan.project} to all five ZekNova biomes.`, [[plan.type, allBiomes.length]]);
+  }),
+})));
 
 export function createCampaignTiers() {
   return CAMPAIGN_TIERS.map((tier) => ({ ...tier, missions: tier.missions.map((item) => ({ ...item, requirements: [...(item.requirements ?? [])], any: [...(item.any ?? [])], bossEncounter: { ...item.bossEncounter }, subObjectives: (MISSION_OBJECTIVES[item.id] ?? []).map((objective) => ({ ...objective, keys: objective.keys ? [...objective.keys] : undefined })) })) }));
