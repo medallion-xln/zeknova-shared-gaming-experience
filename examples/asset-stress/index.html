@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>ZGE asset stress fixture</title>
+<h1>KTX2 worker reliability fixture</h1><pre id="result">Running…</pre>
+<script type="module">
+import { WebGLRenderer } from '../../assets/vendor/three.module.min.js';
+import { runStress } from './stress.js';
+const renderer=new WebGLRenderer();
+try { window.stressResult=await runStress(renderer);document.getElementById('result').textContent=JSON.stringify(window.stressResult,null,2); }
+catch(error){window.stressError=error.stack;document.getElementById('result').textContent=error.stack;}
+finally{renderer.dispose();}
+</script>

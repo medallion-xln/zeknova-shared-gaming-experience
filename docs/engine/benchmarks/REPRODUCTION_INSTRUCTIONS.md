@@ -1,0 +1,15 @@
+# Reproduction and custody
+
+Use the recorded HEAD and the pre-ZGE12 source fingerprints. This dirty checkout includes authorized later ZGE12 SDK/Studio changes; do not treat rerunning current source as an exact preview11 artifact reproduction. No branch reset or golden rewrite is required or authorized.
+
+Baseline: `npm run test:engine`, source/animation checks and all86 legacy test files independently. Evidence records269/269 and83/86 before ZGE12. The same three golden failures remain disclosed.
+
+Original test bodies and the persistent Node/Chrome driver are retained under `evidence/original/harness/`. They reference owned `/tmp/zge-bench01` fixtures and were executed sequentially, including failed attempts. They are **measurement provenance, not a one-command clean-room replay**. To reproduce, start an isolated local `scripts/dev.mjs` with an unused loopback port and private `ZEKNOVA_DATA_DIR`, create a local synthetic identity through the login UI, then follow the physical workflows in each product report. Do not reuse or publish browser storage cookies. Raw failed setup and successful correction are distinguishable in the evidence. Current fresh original smoke is executable as `node scripts/zge12-gameplay.mjs` against the isolated8812 server; it writes separate ZGE12 evidence.
+
+Multiplayer: run `node scripts/zge-bench01-multiplayer.mjs`, `node scripts/zge-bench01-multiplayer-run.mjs` and the physical-browser/reconciliation scripts with their documented environment variables. Inspect each script first for its fresh-fixture/output defaults. Never point disposable fault tests at a real database. Source reports list exact workload profiles, durations and audit evidence. Actual HTTP/SQLite/process faults are used, without changing durability or quotas.
+
+Studio: set `PLAYWRIGHT_MODULE` to an installed Playwright ESM entry, `ZGE_BASE_URL` to the owned local server, and `ZGE_BENCH_STUDIO_OUT` to a new evidence directory; run `node scripts/zge-bench01-studio.mjs`. The completed preview11 capture used installed Chrome155 and two15-second trials per scene/backend. `timings.json` retains exact source hashes and methods. SDK clean installation, executed docs and strict typechecking logs are retained independently.
+
+Charts use actual arrays/trace measurements. RAF intervals are browser timestamps, not GPU present times. One-percent low uses the mean slowest ceil(1% × N) intervals. Quantiles are nearest-rank except explicitly inherited source-workload quantiles. A60Hz headless capture cannot certify120Hz. Renderer estimates are not resident VRAM; TaskDuration is not whole-host CPU. No unmeasured GPU utilization is assigned zero.
+
+Do not copy private storage, service secrets or raw databases into reports. Published evidence includes synthetic commands and safe metrics only. Preserve baseline dirty files, minified bundles, production databases, credentials, historical manifests and all golden assertions. No commit, deployment or live authority transfer occurred.

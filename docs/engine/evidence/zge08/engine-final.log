@@ -1,0 +1,1327 @@
+
+> zeknova-shared-gaming-experience@0.1.0 test:engine
+> node --test --test-concurrency=1 packages/*/test/*.test.mjs
+
+TAP version 13
+# Subtest: request cache coalesces concurrent requests and serves repeats from cache within the byte budget
+ok 1 - request cache coalesces concurrent requests and serves repeats from cache within the byte budget
+  ---
+  duration_ms: 48.43875
+  type: 'test'
+  ...
+# Subtest: request cache passes real errors through and does not cache them
+ok 2 - request cache passes real errors through and does not cache them
+  ---
+  duration_ms: 0.319833
+  type: 'test'
+  ...
+# Subtest: loader watchdog tracks loads, settles both paths, and reports stalls with loader diagnostics
+ok 3 - loader watchdog tracks loads, settles both paths, and reports stalls with loader diagnostics
+  ---
+  duration_ms: 5.349125
+  type: 'test'
+  ...
+# Subtest: worker observer counts live workers and records error events
+ok 4 - worker observer counts live workers and records error events
+  ---
+  duration_ms: 0.365333
+  type: 'test'
+  ...
+# Subtest: index.html import map covers every ?v= variant the bundle imports and maps it to the canonical module
+ok 5 - index.html import map covers every ?v= variant the bundle imports and maps it to the canonical module
+  ---
+  duration_ms: 3.676416
+  type: 'test'
+  ...
+# Subtest: canonical parsed cache coalesces, leases pin resources, clones isolate and budget evicts
+ok 6 - canonical parsed cache coalesces, leases pin resources, clones isolate and budget evicts
+  ---
+  duration_ms: 6.893833
+  type: 'test'
+  ...
+# Subtest: failed loads invalidate and retry; cancellation is per consumer; late success is disposed
+ok 7 - failed loads invalidate and retry; cancellation is per consumer; late success is disposed
+  ---
+  duration_ms: 45.161584
+  type: 'test'
+  ...
+# Subtest: dependencies pin parsed resources until dependents are invalidated
+ok 8 - dependencies pin parsed resources until dependents are invalidated
+  ---
+  duration_ms: 0.78925
+  type: 'test'
+  ...
+# Subtest: real Three skinned clones have independent bones, materials, geometry, clips and transforms
+ok 9 - real Three skinned clones have independent bones, materials, geometry, clips and transforms
+  ---
+  duration_ms: 2.674416
+  type: 'test'
+  ...
+# Subtest: worker limits 1/2/4/8 settle concurrent work, reset on death, restart and release timers
+ok 10 - worker limits 1/2/4/8 settle concurrent work, reset on death, restart and release timers
+  ---
+  duration_ms: 58.548958
+  type: 'test'
+  ...
+# Subtest: timeouts, worker errors, unsupported payload and initialization exceptions are bounded
+ok 11 - timeouts, worker errors, unsupported payload and initialization exceptions are bounded
+  ---
+  duration_ms: 5.74175
+  type: 'test'
+  ...
+# Subtest: loader types cannot collide; aborting a joined consumer preserves other leases
+ok 12 - loader types cannot collide; aborting a joined consumer preserves other leases
+  ---
+  duration_ms: 5.730083
+  type: 'test'
+  ...
+# Subtest: disposing pending assets promptly rejects even when the loader ignores cancellation
+ok 13 - disposing pending assets promptly rejects even when the loader ignores cancellation
+  ---
+  duration_ms: 0.201083
+  type: 'test'
+  ...
+# Subtest: new engine rendering dependencies use only the canonical vendored Three instance
+ok 14 - new engine rendering dependencies use only the canonical vendored Three instance
+  ---
+  duration_ms: 18.010833
+  type: 'test'
+  ...
+# Subtest: engine starts without any game content and initialises an empty world
+ok 15 - engine starts without any game content and initialises an empty world
+  ---
+  duration_ms: 2.268791
+  type: 'test'
+  ...
+# Subtest: fixed-step clock: 60 Hz vs 30 Hz cadence yields identical simulation state (test clock)
+ok 16 - fixed-step clock: 60 Hz vs 30 Hz cadence yields identical simulation state (test clock)
+  ---
+  duration_ms: 0.7785
+  type: 'test'
+  ...
+# Subtest: test clocks produce reproducible results and max catch-up is bounded
+ok 17 - test clocks produce reproducible results and max catch-up is bounded
+  ---
+  duration_ms: 0.422416
+  type: 'test'
+  ...
+# Subtest: delegated clock mode never steps systems (no second simulation authority)
+ok 18 - delegated clock mode never steps systems (no second simulation authority)
+  ---
+  duration_ms: 0.269042
+  type: 'test'
+  ...
+# Subtest: plugins run in dependency order, optional deps order only when present
+ok 19 - plugins run in dependency order, optional deps order only when present
+  ---
+  duration_ms: 0.376042
+  type: 'test'
+  ...
+# Subtest: invalid plugin dependencies are rejected with actionable errors
+ok 20 - invalid plugin dependencies are rejected with actionable errors
+  ---
+  duration_ms: 0.605833
+  type: 'test'
+  ...
+# Subtest: plugin failure is isolated: dependents skipped, others continue, fatal policy rethrows
+ok 21 - plugin failure is isolated: dependents skipped, others continue, fatal policy rethrows
+  ---
+  duration_ms: 0.960875
+  type: 'test'
+  ...
+# Subtest: duplicate initialization and start do not duplicate work
+ok 22 - duplicate initialization and start do not duplicate work
+  ---
+  duration_ms: 0.26425
+  type: 'test'
+  ...
+# Subtest: shutdown disposes owned resources: subscriptions, systems, guards, plugin handles
+ok 23 - shutdown disposes owned resources: subscriptions, systems, guards, plugin handles
+  ---
+  duration_ms: 6.153667
+  type: 'test'
+  ...
+# Subtest: restart works for kernel-owned systems: stop -> start re-runs start hooks, counts stay balanced
+ok 24 - restart works for kernel-owned systems: stop -> start re-runs start hooks, counts stay balanced
+  ---
+  duration_ms: 0.61425
+  type: 'test'
+  ...
+# Subtest: guard: timeout and failure degrade with fallback; required failure throws
+ok 25 - guard: timeout and failure degrade with fallback; required failure throws
+  ---
+  duration_ms: 6.824208
+  type: 'test'
+  ...
+# Subtest: event handler errors are isolated and recorded; subscriptions by owner can be released
+ok 26 - event handler errors are isolated and recorded; subscriptions by owner can be released
+  ---
+  duration_ms: 0.152292
+  type: 'test'
+  ...
+# Subtest: world snapshot/restore round-trips entities, components and resources
+ok 27 - world snapshot/restore round-trips entities, components and resources
+  ---
+  duration_ms: 0.361375
+  type: 'test'
+  ...
+# Subtest: metrics expose per-system timings, frame percentiles and lifecycle transitions
+ok 28 - metrics expose per-system timings, frame percentiles and lifecycle transitions
+  ---
+  duration_ms: 0.5105
+  type: 'test'
+  ...
+# Subtest: system dependencies schedule deterministically and invalid graphs are rejected
+ok 29 - system dependencies schedule deterministically and invalid graphs are rejected
+  ---
+  duration_ms: 2.541667
+  type: 'test'
+  ...
+# Subtest: command IDs, ordering and pending state survive restoration without replaying deductions
+ok 30 - command IDs, ordering and pending state survive restoration without replaying deductions
+  ---
+  duration_ms: 0.542
+  type: 'test'
+  ...
+# Subtest: registered component validation and snapshot restore do not alias caller state
+ok 31 - registered component validation and snapshot restore do not alias caller state
+  ---
+  duration_ms: 0.22175
+  type: 'test'
+  ...
+# Subtest: restore preserves fixed-step remainder and rejects incompatible clock configurations
+ok 32 - restore preserves fixed-step remainder and rejects incompatible clock configurations
+  ---
+  duration_ms: 0.610833
+  type: 'test'
+  ...
+# Subtest: minimal combat result matches legacy publisher numeric damage and defeat semantics
+ok 33 - minimal combat result matches legacy publisher numeric damage and defeat semantics
+  ---
+  duration_ms: 1.954625
+  type: 'test'
+  ...
+# Subtest: illegal targets, hit masks, projectile owners, malformed damage and duplicate conflicts do not write health
+ok 34 - illegal targets, hit masks, projectile owners, malformed damage and duplicate conflicts do not write health
+  ---
+  duration_ms: 0.258917
+  type: 'test'
+  ...
+# Subtest: actual aid cooldown is 3–10 minutes from tension magnitude; valid records retain global maximum
+ok 35 - actual aid cooldown is 3–10 minutes from tension magnitude; valid records retain global maximum
+  ---
+  duration_ms: 1.535792
+  type: 'test'
+  ...
+# Subtest: actual aid place tags already-created record before missing callback fails after cooldown
+ok 36 - actual aid place tags already-created record before missing callback fails after cooldown
+  ---
+  duration_ms: 1.47825
+  type: 'test'
+  ...
+# Subtest: actual aid early return and cooldown gate do not invoke placement or reward effects
+ok 37 - actual aid early return and cooldown gate do not invoke placement or reward effects
+  ---
+  duration_ms: 1.922375
+  type: 'test'
+  ...
+# Subtest: atomic placement, idempotency, occupancy, terrain and resource rejection
+ok 38 - atomic placement, idempotency, occupancy, terrain and resource rejection
+  ---
+  duration_ms: 9.411208
+  type: 'test'
+  ...
+# Subtest: remove, reverse rollback, serialization and deterministic replay
+ok 39 - remove, reverse rollback, serialization and deterministic replay
+  ---
+  duration_ms: 1.356917
+  type: 'test'
+  ...
+# Subtest: throwing validation cannot deduct inventory or modify collision occupancy
+ok 40 - throwing validation cannot deduct inventory or modify collision occupancy
+  ---
+  duration_ms: 0.12875
+  type: 'test'
+  ...
+# Subtest: authority switching invokes exactly one mutator; shadow is immutable
+ok 41 - authority switching invokes exactly one mutator; shadow is immutable
+  ---
+  duration_ms: 0.208834
+  type: 'test'
+  ...
+# Subtest: actual legacy construction methods agree for costs, water sites, discounts and placement outcomes
+ok 42 - actual legacy construction methods agree for costs, water sites, discounts and placement outcomes
+  ---
+  duration_ms: 5.242459
+  type: 'test'
+  ...
+# Subtest: kernel commands execute only at fixed steps; ownership blocks writes and disposal releases handlers
+ok 43 - kernel commands execute only at fixed steps; ownership blocks writes and disposal releases handlers
+  ---
+  duration_ms: 1.862583
+  type: 'test'
+  ...
+# Subtest: standalone demo saves, restores and replays without game or rendering dependencies
+ok 44 - standalone demo saves, restores and replays without game or rendering dependencies
+  ---
+  duration_ms: 1.196708
+  type: 'test'
+  ...
+# Subtest: combat proposal has hit/projectile guards, overkill clamp, effects and one death transition
+ok 45 - combat proposal has hit/projectile guards, overkill clamp, effects and one death transition
+  ---
+  duration_ms: 0.141709
+  type: 'test'
+  ...
+# Subtest: mission progress and rewards are pure and completion is idempotent; twelve legacy missions retained
+ok 46 - mission progress and rewards are pure and completion is idempotent; twelve legacy missions retained
+  ---
+  duration_ms: 1.007292
+  type: 'test'
+  ...
+# Subtest: standalone production module graph imports only independent engine packages
+ok 47 - standalone production module graph imports only independent engine packages
+  ---
+  duration_ms: 1.432291
+  type: 'test'
+  ...
+# Subtest: independent interactive session places, rejects, saves, restores, removes, rolls back and replays
+ok 48 - independent interactive session places, rejects, saves, restores, removes, rolls back and replays
+  ---
+  duration_ms: 14.124084
+  type: 'test'
+  ...
+# Subtest: actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+ok 49 - actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+  ---
+  duration_ms: 2.523584
+  type: 'test'
+  ...
+# Subtest: actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+ok 50 - actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+  ---
+  duration_ms: 1.911083
+  type: 'test'
+  ...
+# Subtest: actual rejected placement has denial UI and no cost, XP, progress or save
+ok 51 - actual rejected placement has denial UI and no cost, XP, progress or save
+  ---
+  duration_ms: 0.804041
+  type: 'test'
+  ...
+# Subtest: actual legacy model failure occurs after spending, with no transaction rollback
+ok 52 - actual legacy model failure occurs after spending, with no transaction rollback
+  ---
+  duration_ms: 0.923083
+  type: 'test'
+  ...
+# Subtest: actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+ok 53 - actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+  ---
+  duration_ms: 0.737875
+  type: 'test'
+  ...
+# Subtest: actual personal construction achievement is a persisted set, not repeat XP application
+ok 54 - actual personal construction achievement is a persisted set, not repeat XP application
+  ---
+  duration_ms: 0.708667
+  type: 'test'
+  ...
+# Subtest: actual relocation mutates record and visual position then invalidates utility index
+ok 55 - actual relocation mutates record and visual position then invalidates utility index
+  ---
+  duration_ms: 0.652084
+  type: 'test'
+  ...
+# Subtest: legacy aid effect wrapper has no earlier implementation in this artifact; exposes partial-failure gate
+ok 56 - legacy aid effect wrapper has no earlier implementation in this artifact; exposes partial-failure gate
+  ---
+  duration_ms: 1.445292
+  type: 'test'
+  ...
+# Subtest: actual patched LR catalog, costs, utilities, terrain and callbacks match detached policy across 702 cases
+ok 57 - actual patched LR catalog, costs, utilities, terrain and callbacks match detached policy across 702 cases
+  ---
+  duration_ms: 81.353125
+  type: 'test'
+  ...
+# Subtest: cooperating migration port uses actual legacy placement then engine transaction and rolls back with shared idempotency
+ok 58 - cooperating migration port uses actual legacy placement then engine transaction and rolls back with shared idempotency
+  ---
+  duration_ms: 9.465
+  type: 'test'
+  ...
+# Subtest: network timeout and save conflict retries transport a snapshot without reapplying the placement
+ok 59 - network timeout and save conflict retries transport a snapshot without reapplying the placement
+  ---
+  duration_ms: 52.960458
+  type: 'test'
+  ...
+# Subtest: remote snapshot update fences stale local construction commands without claiming distributed authority
+ok 60 - remote snapshot update fences stale local construction commands without claiming distributed authority
+  ---
+  duration_ms: 0.344333
+  type: 'test'
+  ...
+# Subtest: source port has one private writer; conflicting flags and live activation are denied
+ok 61 - source port has one private writer; conflicting flags and live activation are denied
+  ---
+  duration_ms: 10.598625
+  type: 'test'
+  ...
+# Subtest: shadow observes immutable candidates without mutating or publishing presentation effects
+ok 62 - shadow observes immutable candidates without mutating or publishing presentation effects
+  ---
+  duration_ms: 2.689708
+  type: 'test'
+  ...
+# Subtest: aid, unsupported repair and relocation are quarantined before spending or event publication
+ok 63 - aid, unsupported repair and relocation are quarantined before spending or event publication
+  ---
+  duration_ms: 0.338084
+  type: 'test'
+  ...
+# Subtest: source-only lifecycle selection/place/mission/reward/remove/checkpoint/restore emits immutable committed effects
+ok 64 - source-only lifecycle selection/place/mission/reward/remove/checkpoint/restore emits immutable committed effects
+  ---
+  duration_ms: 4.998917
+  type: 'test'
+  ...
+# Subtest: source-owned lifecycle atomically commits cost, building, progress, reward and revision
+ok 65 - source-owned lifecycle atomically commits cost, building, progress, reward and revision
+  ---
+  duration_ms: 15.111083
+  type: 'test'
+  ...
+# Subtest: rejected terrain, occupied site and resources have no gameplay effects
+ok 66 - rejected terrain, occupied site and resources have no gameplay effects
+  ---
+  duration_ms: 2.362625
+  type: 'test'
+  ...
+# Subtest: duplicate/conflicting commands and stale revisions never charge or reward twice
+ok 67 - duplicate/conflicting commands and stale revisions never charge or reward twice
+  ---
+  duration_ms: 1.389417
+  type: 'test'
+  ...
+# Subtest: validation throw rolls back entire candidate including mission/rewards and events
+ok 68 - validation throw rolls back entire candidate including mission/rewards and events
+  ---
+  duration_ms: 0.720625
+  type: 'test'
+  ...
+# Subtest: presentation failures, frozen inputs and reentry cannot retry authoritative mutations
+ok 69 - presentation failures, frozen inputs and reentry cannot retry authoritative mutations
+  ---
+  duration_ms: 0.703125
+  type: 'test'
+  ...
+# Subtest: movement and building collision consume one plain authoritative state; removal clears collision
+ok 70 - movement and building collision consume one plain authoritative state; removal clears collision
+  ---
+  duration_ms: 2.403333
+  type: 'test'
+  ...
+# Subtest: grant and selection travel through same boundary; invalid grant stays atomic
+ok 71 - grant and selection travel through same boundary; invalid grant stays atomic
+  ---
+  duration_ms: 1.219875
+  type: 'test'
+  ...
+# Subtest: snapshot restore retains IDs, ledger, mission and reward; deterministic branch replay
+ok 72 - snapshot restore retains IDs, ledger, mission and reward; deterministic branch replay
+  ---
+  duration_ms: 7.021083
+  type: 'test'
+  ...
+# Subtest: malformed restore is rejected before replacing current state
+ok 73 - malformed restore is rejected before replacing current state
+  ---
+  duration_ms: 1.122333
+  type: 'test'
+  ...
+# Subtest: event replay is read-only, stable and idempotent; changed IDs and order reject
+ok 74 - event replay is read-only, stable and idempotent; changed IDs and order reject
+  ---
+  duration_ms: 1.2705
+  type: 'test'
+  ...
+# Subtest: checkpoint acknowledges CAS storage; rejected conflict preserves confirmed snapshot
+ok 75 - checkpoint acknowledges CAS storage; rejected conflict preserves confirmed snapshot
+  ---
+  duration_ms: 2.214417
+  type: 'test'
+  ...
+# Subtest: checkpoint adapter failure has no false durable acknowledgment
+ok 76 - checkpoint adapter failure has no false durable acknowledgment
+  ---
+  duration_ms: 0.259459
+  type: 'test'
+  ...
+# Subtest: two simultaneous clients: first arrival wins, stale client reconciles then overlap rejects
+ok 77 - two simultaneous clients: first arrival wins, stale client reconciles then overlap rejects
+  ---
+  duration_ms: 5.691458
+  type: 'test'
+  ...
+# Subtest: shared funds are not overspent by independent clients
+ok 78 - shared funds are not overspent by independent clients
+  ---
+  duration_ms: 2.788958
+  type: 'test'
+  ...
+# Subtest: duplicate server request and server restart retain accepted receipt and exact charge
+ok 79 - duplicate server request and server restart retain accepted receipt and exact charge
+  ---
+  duration_ms: 2.807541
+  type: 'test'
+  ...
+# Subtest: disconnect after server commit preserves exact outbox request; reconnect cannot double-spend
+ok 80 - disconnect after server commit preserves exact outbox request; reconnect cannot double-spend
+  ---
+  duration_ms: 2.236083
+  type: 'test'
+  ...
+# Subtest: disconnect before receipt, delayed/out-of-order responses and stale rejects reconcile
+ok 81 - disconnect before receipt, delayed/out-of-order responses and stale rejects reconcile
+  ---
+  duration_ms: 2.7755
+  type: 'test'
+  ...
+# Subtest: unauthorized clients and client-side grants never mutate server; persisted rejections are explicit
+ok 82 - unauthorized clients and client-side grants never mutate server; persisted rejections are explicit
+  ---
+  duration_ms: 0.2135
+  type: 'test'
+  ...
+# Subtest: interrupted server storage operation is retryable with original transaction ID
+ok 83 - interrupted server storage operation is retryable with original transaction ID
+  ---
+  duration_ms: 2.106417
+  type: 'test'
+  ...
+# Subtest: disconnect before server receipt persists intention and commits once on reconnect
+ok 84 - disconnect before server receipt persists intention and commits once on reconnect
+  ---
+  duration_ms: 1.076083
+  type: 'test'
+  ...
+# Subtest: server CAS conflict refreshes confirmed state instead of merging stale resources
+ok 85 - server CAS conflict refreshes confirmed state instead of merging stale resources
+  ---
+  duration_ms: 2.282041
+  type: 'test'
+  ...
+# Subtest: checkpoint cannot overwrite another world; malformed envelopes reject
+ok 86 - checkpoint cannot overwrite another world; malformed envelopes reject
+  ---
+  duration_ms: 0.3775
+  type: 'test'
+  ...
+# Subtest: restore rejects inconsistent world receipt, revision, or reordered events atomically
+ok 87 - restore rejects inconsistent world receipt, revision, or reordered events atomically
+  ---
+  duration_ms: 1.266
+  type: 'test'
+  ...
+# Subtest: asynchronous storage adapters cannot issue an early durable acknowledgment
+ok 88 - asynchronous storage adapters cannot issue an early durable acknowledgment
+  ---
+  duration_ms: 0.206208
+  type: 'test'
+  ...
+# Subtest: storage commits but loses acknowledgment; retry recovers durable receipt without a second charge
+ok 89 - storage commits but loses acknowledgment; retry recovers durable receipt without a second charge
+  ---
+  duration_ms: 1.935208
+  type: 'test'
+  ...
+# Subtest: overflowing grants cannot publish invalid inventory in the reusable Construction boundary
+ok 90 - overflowing grants cannot publish invalid inventory in the reusable Construction boundary
+  ---
+  duration_ms: 0.171125
+  type: 'test'
+  ...
+# Subtest: world and inventory revisions reject concurrent stale balances; duplicate commands charge once
+ok 91 - world and inventory revisions reject concurrent stale balances; duplicate commands charge once
+  ---
+  duration_ms: 9.436459
+  type: 'test'
+  ...
+# Subtest: prepare/commit failure and reentrant writes cannot partially publish state
+ok 92 - prepare/commit failure and reentrant writes cannot partially publish state
+  ---
+  duration_ms: 0.456708
+  type: 'test'
+  ...
+# Subtest: pending operation survives reload, aborts safely by default and opt-in recovery is idempotent
+ok 93 - pending operation survives reload, aborts safely by default and opt-in recovery is idempotent
+  ---
+  duration_ms: 0.318834
+  type: 'test'
+  ...
+# Subtest: transaction failure classifications are deterministic and rejections cannot create occupancy
+ok 94 - transaction failure classifications are deterministic and rejections cannot create occupancy
+  ---
+  duration_ms: 0.664167
+  type: 'test'
+  ...
+# Subtest: version-1 snapshots migrate, rollback/replay roundtrip and world schema remain independent
+ok 95 - version-1 snapshots migrate, rollback/replay roundtrip and world schema remain independent
+  ---
+  duration_ms: 1.580542
+  type: 'test'
+  ...
+# Subtest: single writer registration, activation, migration, stale epochs, conflict and rollback
+ok 96 - single writer registration, activation, migration, stale epochs, conflict and rollback
+  ---
+  duration_ms: 0.601709
+  type: 'test'
+  ...
+# Subtest: pure utility graph requires operational chained sources and rejects broken/cyclic supply
+ok 97 - pure utility graph requires operational chained sources and rejects broken/cyclic supply
+  ---
+  duration_ms: 0.262459
+  type: 'test'
+  ...
+# Subtest: parity classes expose mismatches and unobservable fields without erasing semantics
+ok 98 - parity classes expose mismatches and unobservable fields without erasing semantics
+  ---
+  duration_ms: 0.711875
+  type: 'test'
+  ...
+# Subtest: canonical command key order deduplicates; recovery retains intent when commit fails
+ok 99 - canonical command key order deduplicates; recovery retains intent when commit fails
+  ---
+  duration_ms: 0.541917
+  type: 'test'
+  ...
+# Subtest: authority constructor and public diagnostics cannot bypass the activation gate
+ok 100 - authority constructor and public diagnostics cannot bypass the activation gate
+  ---
+  duration_ms: 0.404834
+  type: 'test'
+  ...
+# Subtest: different transport command IDs cannot republish one construction placement event
+ok 101 - different transport command IDs cannot republish one construction placement event
+  ---
+  duration_ms: 1.830791
+  type: 'test'
+  ...
+# Subtest: world state rejects entity/occupancy disagreement and malformed events
+ok 102 - world state rejects entity/occupancy disagreement and malformed events
+  ---
+  duration_ms: 0.412958
+  type: 'test'
+  ...
+# Subtest: parity never normalizes acceptance, missing records or duplicate world identities
+ok 103 - parity never normalizes acceptance, missing records or duplicate world identities
+  ---
+  duration_ms: 0.442333
+  type: 'test'
+  ...
+# Subtest: explicit join creates independent deterministic actors and unrelated movement does not invalidate actor revision
+ok 104 - explicit join creates independent deterministic actors and unrelated movement does not invalidate actor revision
+  ---
+  duration_ms: 15.550417
+  type: 'test'
+  ...
+# Subtest: personal XP and achievements belong to authenticated builder; collective mission XP stays team-only
+ok 105 - personal XP and achievements belong to authenticated builder; collective mission XP stays team-only
+  ---
+  duration_ms: 7.308125
+  type: 'test'
+  ...
+# Subtest: public and own projections exclude peer private state, historical command IDs and provenance
+ok 106 - public and own projections exclude peer private state, historical command IDs and provenance
+  ---
+  duration_ms: 2.704375
+  type: 'test'
+  ...
+# Subtest: old avatar, collective XP and receipts remain exact unassigned provenance, never awarded to joiner
+ok 107 - old avatar, collective XP and receipts remain exact unassigned provenance, never awarded to joiner
+  ---
+  duration_ms: 6.64075
+  type: 'test'
+  ...
+# Subtest: rollback, compact/replay and roster revocation preserve independent player state
+ok 108 - rollback, compact/replay and roster revocation preserve independent player state
+  ---
+  duration_ms: 7.189875
+  type: 'test'
+  ...
+# Subtest: representative legacy objective transitions, prerequisites, ordered eligibility and idempotency
+ok 109 - representative legacy objective transitions, prerequisites, ordered eligibility and idempotency
+  ---
+  duration_ms: 1.323625
+  type: 'test'
+  ...
+# Subtest: bounded queue: drop-oldest and reject-newest policies with stats
+ok 110 - bounded queue: drop-oldest and reject-newest policies with stats
+  ---
+  duration_ms: 0.97875
+  type: 'test'
+  ...
+# Subtest: sequencer: consecutive indices, association latency, stale rejection, discontinuity detection
+ok 111 - sequencer: consecutive indices, association latency, stale rejection, discontinuity detection
+  ---
+  duration_ms: 0.435792
+  type: 'test'
+  ...
+# Subtest: render session: legal transitions, finite frame budget, illegal transition names allowed states
+ok 112 - render session: legal transitions, finite frame budget, illegal transition names allowed states
+  ---
+  duration_ms: 0.166459
+  type: 'test'
+  ...
+# Subtest: presentation controller: NEURAL needs a declared backend; mock is labelled; fallback records reason
+ok 113 - presentation controller: NEURAL needs a declared backend; mock is labelled; fallback records reason
+  ---
+  duration_ms: 0.19
+  type: 'test'
+  ...
+# Subtest: mock backend is functional: ordered output derived from real input with temporal state cleared by reset
+ok 114 - mock backend is functional: ordered output derived from real input with temporal state cleared by reset
+  ---
+  duration_ms: 77.985875
+  type: 'test'
+  ...
+# Subtest: neural renderer: capture→submit→display with ordered presentation, stale drops, HUD-sync event on presented frame
+ok 115 - neural renderer: capture→submit→display with ordered presentation, stale drops, HUD-sync event on presented frame
+  ---
+  duration_ms: 207.532625
+  type: 'test'
+  ...
+# Subtest: backpressure: when the backend cannot keep up, capture stops and presentation falls back to native, then recovers
+ok 116 - backpressure: when the backend cannot keep up, capture stops and presentation falls back to native, then recovers
+  ---
+  duration_ms: 268.687
+  type: 'test'
+  ...
+# Subtest: stall detection and backend failure both trigger native fallback without throwing into the frame loop
+ok 117 - stall detection and backend failure both trigger native fallback without throwing into the frame loop
+  ---
+  duration_ms: 141.345291
+  type: 'test'
+  ...
+# Subtest: camera discontinuity (teleport) resets the model session and restarts the capture sequence
+ok 118 - camera discontinuity (teleport) resets the model session and restarts the capture sequence
+  ---
+  duration_ms: 29.160458
+  type: 'test'
+  ...
+# Subtest: Matrix-Game 4 adapter: loopback enforcement, upstream control contract and proposed bridge against the loopback test service (TRANSPORT_READY)
+ok 119 - Matrix-Game 4 adapter: loopback enforcement, upstream control contract and proposed bridge against the loopback test service (TRANSPORT_READY)
+  ---
+  duration_ms: 35.446125
+  type: 'test'
+  ...
+# Subtest: adapter surfaces service failure as an error the renderer turns into native fallback
+ok 120 - adapter surfaces service failure as an error the renderer turns into native fallback
+  ---
+  duration_ms: 103.89925
+  type: 'test'
+  ...
+# Subtest: mock backend skips CPU crop/resize for pre-processed (model-input) captures and produces identical dimensions
+ok 121 - mock backend skips CPU crop/resize for pre-processed (model-input) captures and produces identical dimensions
+  ---
+  duration_ms: 22.299584
+  type: 'test'
+  ...
+# Subtest: a save is reported saved only after server acknowledgement, with the revision
+ok 122 - a save is reported saved only after server acknowledgement, with the revision
+  ---
+  duration_ms: 15.912125
+  type: 'test'
+  ...
+# Subtest: rapid saves coalesce: only the newest snapshot is posted and older requests never overwrite newer state
+ok 123 - rapid saves coalesce: only the newest snapshot is posted and older requests never overwrite newer state
+  ---
+  duration_ms: 65.3145
+  type: 'test'
+  ...
+# Subtest: transient failures retry with bounded backoff and preserve the dirty snapshot; success after recovery
+ok 124 - transient failures retry with bounded backoff and preserve the dirty snapshot; success after recovery
+  ---
+  duration_ms: 46.37325
+  type: 'test'
+  ...
+# Subtest: degraded after maxRetries but keeps trying and keeps the pending snapshot in the store
+ok 125 - degraded after maxRetries but keeps trying and keeps the pending snapshot in the store
+  ---
+  duration_ms: 66.710791
+  type: 'test'
+  ...
+# Subtest: auth expiry is terminal and surfaced; resume() re-sends the preserved snapshot
+ok 126 - auth expiry is terminal and surfaced; resume() re-sends the preserved snapshot
+  ---
+  duration_ms: 56.568625
+  type: 'test'
+  ...
+# Subtest: permanent rejections (422/413) are surfaced, not retried, and do not block later saves
+ok 127 - permanent rejections (422/413) are surfaced, not retried, and do not block later saves
+  ---
+  duration_ms: 3.628709
+  type: 'test'
+  ...
+# Subtest: 409 conflict refreshes the server revision and retries once with the newer base
+ok 128 - 409 conflict refreshes the server revision and retries once with the newer base
+  ---
+  duration_ms: 8.404959
+  type: 'test'
+  ...
+# Subtest: request timeout is a transient failure that retries
+ok 129 - request timeout is a transient failure that retries
+  ---
+  duration_ms: 39.373458
+  type: 'test'
+  ...
+# Subtest: reload recovery: an unacknowledged snapshot survives in the store and a new transport re-sends it
+ok 130 - reload recovery: an unacknowledged snapshot survives in the store and a new transport re-sends it
+  ---
+  duration_ms: 47.344375
+  type: 'test'
+  ...
+# Subtest: unload: best-effort beacon carries the pending snapshot and is never reported as saved
+ok 131 - unload: best-effort beacon carries the pending snapshot and is never reported as saved
+  ---
+  duration_ms: 0.752541
+  type: 'test'
+  ...
+# Subtest: schema: v1–v4 migrate to the v4 shape with defaults; unsupported versions are rejected; extension round-trips XP
+ok 132 - schema: v1–v4 migrate to the v4 shape with defaults; unsupported versions are rejected; extension round-trips XP
+  ---
+  duration_ms: 0.453625
+  type: 'test'
+  ...
+# Subtest: legacy interceptor: keepalive POST becomes an acknowledged save with XP attached; GET restores pending-newer state and XP after ready
+ok 133 - legacy interceptor: keepalive POST becomes an acknowledged save with XP attached; GET restores pending-newer state and XP after ready
+  ---
+  duration_ms: 29.768
+  type: 'test'
+  ...
+# Subtest: HTTP client retains original command across lost ack and reconciles pending intent once
+ok 134 - HTTP client retains original command across lost ack and reconciles pending intent once
+  ---
+  duration_ms: 12.256625
+  type: 'test'
+  ...
+# Subtest: HTTP client ignores old snapshot and bounds read-only event window
+ok 135 - HTTP client ignores old snapshot and bounds read-only event window
+  ---
+  duration_ms: 257.053541
+  type: 'test'
+  ...
+# Subtest: HTTP client rejects cross-world snapshots rather than publishing them
+ok 136 - HTTP client rejects cross-world snapshots rather than publishing them
+  ---
+  duration_ms: 0.333583
+  type: 'test'
+  ...
+# Subtest: V4 migration losslessly round trips early
+ok 137 - V4 migration losslessly round trips early
+  ---
+  duration_ms: 10.71125
+  type: 'test'
+  ...
+# Subtest: V4 migration losslessly round trips late
+ok 138 - V4 migration losslessly round trips late
+  ---
+  duration_ms: 1.095708
+  type: 'test'
+  ...
+# Subtest: V4 migration losslessly round trips optional
+ok 139 - V4 migration losslessly round trips optional
+  ---
+  duration_ms: 1.158875
+  type: 'test'
+  ...
+# Subtest: V4 migration losslessly round trips unknown-extension
+ok 140 - V4 migration losslessly round trips unknown-extension
+  ---
+  duration_ms: 0.792083
+  type: 'test'
+  ...
+# Subtest: migration failure cannot call write or overwrite source; unsupported versions are not invented
+ok 141 - migration failure cannot call write or overwrite source; unsupported versions are not invented
+  ---
+  duration_ms: 0.474333
+  type: 'test'
+  ...
+# Subtest: known V4 extension preserves exact XP/rank/boss claims and unknown top-level fields
+ok 142 - known V4 extension preserves exact XP/rank/boss claims and unknown top-level fields
+  ---
+  duration_ms: 0.305167
+  type: 'test'
+  ...
+# Subtest: checkpoint replay reconstructs exact gameplay projection and requires durable receipt archive
+ok 143 - checkpoint replay reconstructs exact gameplay projection and requires durable receipt archive
+  ---
+  duration_ms: 6.250209
+  type: 'test'
+  ...
+# Subtest: history cursor, authority and duplicate reward corruption reject
+ok 144 - history cursor, authority and duplicate reward corruption reject
+  ---
+  duration_ms: 0.718209
+  type: 'test'
+  ...
+# Subtest: altered migrated balances cannot pass provenance validation or overwrite a source save
+ok 145 - altered migrated balances cannot pass provenance validation or overwrite a source save
+  ---
+  duration_ms: 0.888084
+  type: 'test'
+  ...
+# Subtest: history uses owned building IDs without changing object prototypes
+ok 146 - history uses owned building IDs without changing object prototypes
+  ---
+  duration_ms: 0.918125
+  type: 'test'
+  ...
+# Subtest: 1000 actual runtime commands keep bounded checkpoint tails and exact archived replay
+ok 147 - 1000 actual runtime commands keep bounded checkpoint tails and exact archived replay
+  ---
+  duration_ms: 922.924958
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback known
+ok 148 - isolated V4 forward export, repeat import and rollback known
+  ---
+  duration_ms: 13.493458
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback missing
+ok 149 - isolated V4 forward export, repeat import and rollback missing
+  ---
+  duration_ms: 2.711125
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback old-extension
+ok 150 - isolated V4 forward export, repeat import and rollback old-extension
+  ---
+  duration_ms: 2.038209
+  type: 'test'
+  ...
+# Subtest: V4 branch rejects identity substitution, schema/revision mismatch and interrupted atomic export
+ok 151 - V4 branch rejects identity substitution, schema/revision mismatch and interrupted atomic export
+  ---
+  duration_ms: 2.668792
+  type: 'test'
+  ...
+# Subtest: replica publishes no state from a malformed event page or mismatched snapshot
+ok 152 - replica publishes no state from a malformed event page or mismatched snapshot
+  ---
+  duration_ms: 1.655042
+  type: 'test'
+  ...
+# Subtest: replica rejects a newer cursor carrying an older revision without changing view
+ok 153 - replica rejects a newer cursor carrying an older revision without changing view
+  ---
+  duration_ms: 0.639083
+  type: 'test'
+  ...
+# Subtest: disconnect invalidates an in-flight acknowledgment and preserves outbox intent
+ok 154 - disconnect invalidates an in-flight acknowledgment and preserves outbox intent
+  ---
+  duration_ms: 0.368458
+  type: 'test'
+  ...
+# Subtest: V4 export preserves changed rank, all reward receipts and rejects stale edit revisions
+ok 155 - V4 export preserves changed rank, all reward receipts and rejects stale edit revisions
+  ---
+  duration_ms: 1.931958
+  type: 'test'
+  ...
+# Subtest: rapid connections resolving out of order retain only the newest connection
+ok 156 - rapid connections resolving out of order retain only the newest connection
+  ---
+  duration_ms: 0.7855
+  type: 'test'
+  ...
+# Subtest: geometry matches upstream crop_and_resize for the shooter path (1280x720 -> 480x864)
+ok 157 - geometry matches upstream crop_and_resize for the shooter path (1280x720 -> 480x864)
+  ---
+  duration_ms: 0.57125
+  type: 'test'
+  ...
+# Subtest: rgba→rgb drops alpha, crop/resize yields exact model dimensions, pipeline is deterministic
+ok 158 - rgba→rgb drops alpha, crop/resize yields exact model dimensions, pipeline is deterministic
+  ---
+  duration_ms: 48.020625
+  type: 'test'
+  ...
+# Subtest: tensor normalisation matches x*2/255-1 in CHW layout and round-trips
+ok 159 - tensor normalisation matches x*2/255-1 in CHW layout and round-trips
+  ---
+  duration_ms: 0.305666
+  type: 'test'
+  ...
+# Subtest: pixel-format validation rejects malformed frames with exact messages
+ok 160 - pixel-format validation rejects malformed frames with exact messages
+  ---
+  duration_ms: 0.322458
+  type: 'test'
+  ...
+# Subtest: length-prefixed envelope round-trips and enforces upstream-style bounds
+ok 161 - length-prefixed envelope round-trips and enforces upstream-style bounds
+  ---
+  duration_ms: 0.35175
+  type: 'test'
+  ...
+# Subtest: capture metadata requires identity fields and versions extensions
+ok 162 - capture metadata requires identity fields and versions extensions
+  ---
+  duration_ms: 0.204958
+  type: 'test'
+  ...
+# Subtest: capture filter hides overlays and restores exactly what it hid
+ok 163 - capture filter hides overlays and restores exactly what it hid
+  ---
+  duration_ms: 0.306291
+  type: 'test'
+  ...
+# Subtest: gpuCropRect: cropping the source then resizing equals upstream resize-then-crop geometry
+ok 164 - gpuCropRect: cropping the source then resizing equals upstream resize-then-crop geometry
+  ---
+  duration_ms: 0.113
+  type: 'test'
+  ...
+# Subtest: actual PHP/SQLite: concurrent arrivals, overlap, funds, durable receipts and reward uniqueness
+ok 165 - actual PHP/SQLite: concurrent arrivals, overlap, funds, durable receipts and reward uniqueness
+  ---
+  duration_ms: 1397.948792
+  type: 'test'
+  ...
+# Subtest: actual PHP authorization rejects cross-world, forged identity, viewer mutations and forged balances
+ok 166 - actual PHP authorization rejects cross-world, forged identity, viewer mutations and forged balances
+  ---
+  duration_ms: 430.053042
+  type: 'test'
+  ...
+# Subtest: actual PHP lost acknowledgment and post-compaction old command replay preserve effectively-once effects
+ok 167 - actual PHP lost acknowledgment and post-compaction old command replay preserve effectively-once effects
+  ---
+  duration_ms: 712.436541
+  type: 'test'
+  ...
+# Subtest: actual PHP process restart crash-before-commit
+ok 168 - actual PHP process restart crash-before-commit
+  ---
+  duration_ms: 678.093125
+  type: 'test'
+  ...
+# Subtest: actual PHP process restart crash-after-commit
+ok 169 - actual PHP process restart crash-after-commit
+  ---
+  duration_ms: 611.821958
+  type: 'test'
+  ...
+# Subtest: actual PHP rollback erases command, events, resources and building; reconnect same intent succeeds
+ok 170 - actual PHP rollback erases command, events, resources and building; reconnect same intent succeeds
+  ---
+  duration_ms: 599.41575
+  type: 'test'
+  ...
+# Subtest: actual PHP paged cursor sync and out-of-order commands converge exactly
+ok 171 - actual PHP paged cursor sync and out-of-order commands converge exactly
+  ---
+  duration_ms: 838.649458
+  type: 'test'
+  ...
+# Subtest: staging route is disabled without explicit environment gates
+ok 172 - staging route is disabled without explicit environment gates
+  ---
+  duration_ms: 56.700084
+  type: 'test'
+  ...
+# Subtest: actual concurrent final mission completions apply one durable reward
+ok 173 - actual concurrent final mission completions apply one durable reward
+  ---
+  duration_ms: 841.690583
+  type: 'test'
+  ...
+# Subtest: actual rollback at mission completion publishes no reward or partial inventory
+ok 174 - actual rollback at mission completion publishes no reward or partial inventory
+  ---
+  duration_ms: 817.149292
+  type: 'test'
+  ...
+# Subtest: expired/revoked credentials and live membership overrides cannot mutate or retrieve private worlds
+ok 175 - expired/revoked credentials and live membership overrides cannot mutate or retrieve private worlds
+  ---
+  duration_ms: 665.837792
+  type: 'test'
+  ...
+# Subtest: persistent session survives renewal while browser connections stay distinct and revocable
+ok 176 - persistent session survives renewal while browser connections stay distinct and revocable
+  ---
+  duration_ms: 431.138042
+  type: 'test'
+  ...
+# Subtest: expiry between preparation and COMMIT rolls back resources, receipt, event and mission reward
+ok 177 - expiry between preparation and COMMIT rolls back resources, receipt, event and mission reward
+  ---
+  duration_ms: 1941.633209
+  type: 'test'
+  ...
+# Subtest: input identities, integer revisions, cursors, SQL strings, origins and body limits fail closed
+ok 178 - input identities, integer revisions, cursors, SQL strings, origins and body limits fail closed
+  ---
+  duration_ms: 431.592166
+  type: 'test'
+  ...
+# Subtest: persistent per-principal rate limits survive reconnect and DB permissions deny public files
+ok 179 - persistent per-principal rate limits survive reconnect and DB permissions deny public files
+  ---
+  duration_ms: 868.047583
+  type: 'test'
+  ...
+# Subtest: corrupt snapshot/checkpoint/archive are denied; audited command replay repairs snapshot without double effects
+ok 180 - corrupt snapshot/checkpoint/archive are denied; audited command replay repairs snapshot without double effects
+  ---
+  duration_ms: 1432.823541
+  type: 'test'
+  ...
+# Subtest: membership revoked while a request waits for SQLite serialization is rechecked after the lock
+ok 181 - membership revoked while a request waits for SQLite serialization is rechecked after the lock
+  ---
+  duration_ms: 711.243083
+  type: 'test'
+  ...
+# Subtest: authenticated archive backfill validates cursor bounds, limits, world and permissions
+ok 182 - authenticated archive backfill validates cursor bounds, limits, world and permissions
+  ---
+  duration_ms: 544.108292
+  type: 'test'
+  ...
+# Subtest: mission-completion process failure crash-before-commit preserves one atomic reward across restart
+ok 183 - mission-completion process failure crash-before-commit preserves one atomic reward across restart
+  ---
+  duration_ms: 846.38475
+  type: 'test'
+  ...
+# Subtest: mission-completion process failure crash-after-commit preserves one atomic reward across restart
+ok 184 - mission-completion process failure crash-after-commit preserves one atomic reward across restart
+  ---
+  duration_ms: 778.813084
+  type: 'test'
+  ...
+# Subtest: SQLite write rejection during reward commit rolls back the complete candidate
+ok 185 - SQLite write rejection during reward commit rolls back the complete candidate
+  ---
+  duration_ms: 956.082084
+  type: 'test'
+  ...
+# Subtest: private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+ok 186 - private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+  ---
+  duration_ms: 352.038958
+  type: 'test'
+  ...
+# Subtest: worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+ok 187 - worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+  ---
+  duration_ms: 2542.251791
+  type: 'test'
+  ...
+# Subtest: competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+ok 188 - competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+  ---
+  duration_ms: 1982.218708
+  type: 'test'
+  ...
+# Subtest: graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+ok 189 - graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+  ---
+  duration_ms: 555.694
+  type: 'test'
+  ...
+# Subtest: actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+ok 190 - actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+  ---
+  duration_ms: 872.483875
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+ok 191 - worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 943.022041
+  type: 'test'
+  ...
+# Subtest: worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+ok 192 - worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 962.165542
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+ok 193 - worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 954.897708
+  type: 'test'
+  ...
+# Subtest: worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+ok 194 - worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 2949.959
+  type: 'test'
+  ...
+# Subtest: worker death after durable commit and before reply cannot duplicate personal or team effects
+ok 195 - worker death after durable commit and before reply cannot duplicate personal or team effects
+  ---
+  duration_ms: 1161.352041
+  type: 'test'
+  ...
+# Subtest: database unavailable and reward-write failure preserve committed player/world state
+ok 196 - database unavailable and reward-write failure preserve committed player/world state
+  ---
+  duration_ms: 1129.839083
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-before-commit
+ok 197 - actual gateway process death at multiplayer mission COMMIT crash-before-commit
+  ---
+  duration_ms: 892.469792
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-after-commit
+ok 198 - actual gateway process death at multiplayer mission COMMIT crash-after-commit
+  ---
+  duration_ms: 886.288791
+  type: 'test'
+  ...
+# Subtest: checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+ok 199 - checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+  ---
+  duration_ms: 1005.740209
+  type: 'test'
+  ...
+# Subtest: multiplayer backup and isolated restore retain private actor records and complete archives
+ok 200 - multiplayer backup and isolated restore retain private actor records and complete archives
+  ---
+  duration_ms: 1778.432083
+  type: 'test'
+  ...
+# Subtest: consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+ok 201 - consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+  ---
+  duration_ms: 2293.49925
+  type: 'test'
+  ...
+# Subtest: operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+not ok 202 - operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+  ---
+  duration_ms: 984.406416
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/server-php/test/zge08-operations.test.mjs:31:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /backup-file-integrity-failed/. Input:
+    
+    'Staging operation rejected: runtime-policy-incompatible'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Staging operation rejected: runtime-policy-incompatible'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/server-php/test/zge08-operations.test.mjs:38:183)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: killed backup and restore never publish a valid partial bundle or change the live world
+ok 203 - killed backup and restore never publish a valid partial bundle or change the live world
+  ---
+  duration_ms: 2365.448583
+  type: 'test'
+  ...
+# Subtest: logical archive corruption is denied even after a file digest is recomputed
+ok 204 - logical archive corruption is denied even after a file digest is recomputed
+  ---
+  duration_ms: 1142.710417
+  type: 'test'
+  ...
+# Subtest: actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+ok 205 - actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+  ---
+  duration_ms: 1650.510583
+  type: 'test'
+  ...
+# Subtest: registry integrity: unique ids, declared deps exist, every entry classified, 32 post-runtime directors
+ok 206 - registry integrity: unique ids, declared deps exist, every entry classified, 32 post-runtime directors
+  ---
+  duration_ms: 1.138917
+  type: 'test'
+  ...
+# Subtest: ZekNova runs through the kernel boundary: install order == main.js order, legacy runtime owns time, no duplicate installs
+ok 207 - ZekNova runs through the kernel boundary: install order == main.js order, legacy runtime owns time, no duplicate installs
+  ---
+  duration_ms: 9.378667
+  type: 'test'
+  ...
+# Subtest: in-page restart only covers directors with complete teardown and no page-only dependents; the rest is page-only
+ok 208 - in-page restart only covers directors with complete teardown and no page-only dependents; the rest is page-only
+  ---
+  duration_ms: 3.285208
+  type: 'test'
+  ...
+# Subtest: full-page restart path sets a marker and reloads; marker is consumed once
+ok 209 - full-page restart path sets a marker and reloads; marker is consumed once
+  ---
+  duration_ms: 0.350666
+  type: 'test'
+  ...
+# Subtest: a failing director is isolated: the game still reaches ready and dependents are skipped
+ok 210 - a failing director is isolated: the game still reaches ready and dependents are skipped
+  ---
+  duration_ms: 2.347333
+  type: 'test'
+  ...
+# Subtest: compat refuses to start without an officer and the runtime host refuses a second in-page start
+ok 211 - compat refuses to start without an officer and the runtime host refuses a second in-page start
+  ---
+  duration_ms: 0.249584
+  type: 'test'
+  ...
+# Subtest: repeated director-layer restart cycles are stable: same restartable set, no failures, balanced install/dispose counts
+ok 212 - repeated director-layer restart cycles are stable: same restartable set, no failures, balanced install/dispose counts
+  ---
+  duration_ms: 4.712166
+  type: 'test'
+  ...
+# Subtest: construction shadow observes one legacy mutation, never persists a prediction, and restores method identity
+ok 213 - construction shadow observes one legacy mutation, never persists a prediction, and restores method identity
+  ---
+  duration_ms: 0.627625
+  type: 'test'
+  ...
+# Subtest: combat audio releases its context once across repeated disposal
+ok 214 - combat audio releases its context once across repeated disposal
+  ---
+  duration_ms: 0.787583
+  type: 'test'
+  ...
+# Subtest: shadow receives frozen facts, has no save/network/progression interface and invokes sole legacy writer once
+ok 215 - shadow receives frozen facts, has no save/network/progression interface and invokes sole legacy writer once
+  ---
+  duration_ms: 1.6335
+  type: 'test'
+  ...
+# Subtest: failed shadow evaluation cannot block or duplicate the legacy placement
+ok 216 - failed shadow evaluation cannot block or duplicate the legacy placement
+  ---
+  duration_ms: 0.175666
+  type: 'test'
+  ...
+1..216
+# tests 216
+# suites 0
+# pass 215
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 48666.162458

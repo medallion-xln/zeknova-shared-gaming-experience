@@ -1,0 +1,44 @@
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter exposes fixed layout
+  PASS adapter exposes 592 features
+  PASS empty observation addresses local faction
+  PASS empty observation uses live quantum
+  PASS empty observation contains no fresh records
+  PASS empty observation still has fixed features
+  PASS empty observation validates
+  PASS hidden enemy receives stable identity
+  PASS FX-OMNISCIENT hidden spawn does not change observation bytes
+  PASS FX-OMNISCIENT hidden spawn does not change observation ID
+  PASS out-of-range perception creates no event
+  PASS out-of-range check leaves observation unchanged
+  PASS grounded sighting changes observation ID
+  PASS grounded sighting creates one fresh record
+  PASS grounded sighting appears in unit section
+  PASS visible packet contains no hidden health
+  PASS visible packet contains no perception event IDs
+  PASS feature vector changes with visible knowledge
+  PASS adapter packet equals integration packet
+  PASS adapter hash equals observation object hash
+  PASS adapter feature vector is detached
+  PASS Prime input carries only fixed read-only fields
+  PASS Prime input feature vector matches packet
+  PASS Prime input omits structured evidence sections
+  PASS FX-LEAK settlement packet excludes unshared human sighting
+  PASS explicit share creates recipient observation record
+  PASS shared slot preserves sender provenance
+  PASS shared slot preserves original observation quantum
+  PASS sharing does not expose sender private ledger wholesale
+  PASS FX-OBS-NONDET repeated live captures are byte-identical
+  PASS FX-OBS-NONDET repeated live IDs are identical
+  PASS FX-STALE-OBSERVATION sighting expires at exact exclusive boundary
+  PASS expiry changes observation ID
+  PASS shared sighting expires from recipient at original boundary
+  PASS live observation cannot move behind ledger quantum
+  PASS fractional live quantum rejected
+  PASS new grounded resource knowledge enters observation
+  PASS new grounded resource changes observation ID
+  PASS repeated resource capture stays deterministic
+  PASS dispose clears global observation integration
+  PASS previous packet remains detached after disposal
+W0-O.3 FACTION OBSERVATION INTEGRATION TESTS PASS (43/43)

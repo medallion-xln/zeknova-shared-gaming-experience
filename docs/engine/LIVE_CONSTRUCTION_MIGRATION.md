@@ -1,0 +1,13 @@
+# Live construction migration decision — ZGE-06
+
+**NO-GO. Live ZekNova remains LEGACY; no legacy mutator is disabled and no production ENGINE switch is exposed.** Owner approval is required for any future live transfer and is not inferred from bounded staging work.
+
+The new source-owned command boundary is actual PHP authorization + durable receipt lookup + existing JS runtime under SQLite transaction + immutable confirmed snapshots/events. A staging session has one authoritative writer; its browser runs no local ConstructionRuntime. Local-only previous demo still has its one independent writer. These worlds do not observe or mutate the live ZekNova world.
+
+SOURCE_WRITER_COVERAGE maps pointer/base place, layered addRecord, diagnostic validation, progression/aid, drag, repair, damage, restore/reset, room merges and broader economic sources. Observing only place still cannot disable these routes. Successful aid benefit semantics remain absent. V4 migration is reversible/readable but incomplete as a game-specific execution seed. New PHP authority is certified in isolation; existing PHP room/saves are unchanged. Original bundle source/build remains unavailable; golden and owner security gates remain open.
+
+The earlier AuthorityDomain fixture still executes actual legacy placement, transitions SHADOW→ENGINE with a certified local policy, blocks inactive writer calls, and rolls back without replaying a committed command using its shared journal. It passes with the full engine suite. Durable server retries additionally retain receipts across compaction and process restart. Neither proof disables unrestricted live record/balance writers or certifies rollback of all live side effects.
+
+Required replacement boundary: source-owned `ConstructionCommandPort` routes place/remove, relocation intention/update/commit/cancel, repair/damage, restore/reset and network reconciliation; all raw record and balance mutations require a private writer lease. Initially dispatch LEGACY through that port. Capture terrain/randomness/time, normalize only declared representation differences, preserve all mission/personal/rank/XP/diplomacy/aid/utility/health/render/save effects, and apply economic grants through the same balance owner. Replace client snapshot spending with a separately production-qualified authenticated transactional server protocol. Migrate full v4/journals under a fresh fence, prove inverse export and rollback to LEGACY without replaying accepted IDs, then rerun browser/campaign/performance certification and obtain owner approval.
+
+No fragile minified patch was added to imply completion. Staging durability materially advances the replacement path while leaving these explicit unmet requirements as blockers.

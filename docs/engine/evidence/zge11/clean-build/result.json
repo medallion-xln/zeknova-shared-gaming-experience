@@ -1,0 +1,135 @@
+{
+  "schema": "zge.sdk.clean-build.v1",
+  "directory": "/tmp/zge11-clean-ohLlvf",
+  "sourceFiles": 27,
+  "inventory": {
+    "packages/sdk/src/rules.js": "3a17578c7af48b28555ed684dfd12f3c06edcd3d82f535d14e8ea6b99a3bfd40",
+    "packages/sdk/src/schema.js": "7039e9a98de1268df05d4b4a7d279bbc931e793a1c40502e844efb2e16982f3c",
+    "packages/core/src/EngineEvents.js": "5e47a705e978a6b80008c6db79005aebb2c081af4d697b2807533c8d48f57b13",
+    "packages/core/src/EngineClock.js": "d744241ae0c39a767e4c5abdc94a9b79314452aaa4ac8402d15ef3a1cd5cd18f",
+    "packages/core/src/LifecycleManager.js": "da3acb5fb408cf864b5a05cebcb17e3945ff46fc5d0f1ba65fe1386330c79d37",
+    "packages/core/src/PluginManager.js": "7d4ec8d34b57806ef0101a2f1fa87b45c1363ff45538511c6042d9418dc17f66",
+    "packages/core/src/EngineMetrics.js": "29cc60d1d1de97465f5ab547271516fff7cb8f99c37bcf7f53664f6eb7d1d2f0",
+    "packages/core/src/Authority.js": "6353288588b67944cd8db1f507ddabf680c6be1b0d1a3504494352c8f9836367",
+    "packages/core/src/CommandQueue.js": "dca8b2511b282e28ddc338ae7316b790cde3eaad307274bf8b65c937c513850b",
+    "packages/core/src/World.js": "74bf790f42a2926b315349999d4f031043e7b1045e7d767eb17f0c54de2086ec",
+    "packages/core/src/EngineKernel.js": "31d4fe251d16c0bc90b24764f774dd0467a88e8e125421e99a872b33e4ed6e11",
+    "packages/core/src/WorldState.js": "af7c8a36a7ceee4acf691813a95fe68a4408b0c10d4cc633ba9b83dae7dfd1a1",
+    "packages/core/src/AuthorityDomain.js": "5d8479c9f58c4e481aa98a049471d38a598940d7964cf29f457183cca190854c",
+    "packages/core/src/GameplayEventJournal.js": "ba4e0fc3bf355a394220cd8841eaded0421db13ef166592628087aa6599a74c0",
+    "packages/core/src/index.js": "041c1f5e7299187815956a6f638a38c2a9579f8bf3eea732af034aac5ee25b2e",
+    "packages/assets/src/AssetService.js": "dfd21708eb2d58bb600ef47239accfab661c5c9e9ff37c8c1662e3fe9ba9a036",
+    "packages/sdk/src/index.js": "3c099432257d1dc0145d5a8a17578a1dd0dc2d6eb3cc179e8824bd72f4e9d81c",
+    "packages/sdk/src/three.js": "1a2ed106f5559a0133b0511c20281e1e0f74244c349994ae5d2a1b230adafa8e",
+    "scripts/zge10-build.mjs": "aada10d2fc8bc969c39722d6495e8bd7961527ca9dfe6c720510b2d38ad2efc5",
+    "packages/sdk/package.json": "67aa6312d10d4be56039d95e5c270684447190bc8238ea2a7222af213b02ed09",
+    "packages/sdk/README.md": "ddaaba61147bbe10a5541414f987ec7c169946d3fd757199090243fd08299a6e",
+    "packages/sdk/test/sdk.test.mjs": "01ea1e6556b6ef56adfd446076aa7d9d4d6aafb9e764df7cf852d9950efcfcdb",
+    "packages/sdk/test/vnext.test.mjs": "945c68bd6d927c4bb4146ffbeec23cf1f3ea8b7ec9fe24cbed8f03abd7d96385",
+    "packages/sdk/src/index.d.ts": "a22543da9b4b65377e14d7915331743a19244991c0027d66b19587027aead769",
+    "packages/sdk/src/three.d.ts": "c46f414d56e9cbbccc79159e2b5ef86e95c69f802775e6ea706cbdd7dfe849e1",
+    "examples/orbital-outpost/project.js": "ca1c1472ea3888be5995d2eaa64e515f3876aa846c6b8e060630c8fcd44edb84",
+    "examples/orbital-outpost/game.js": "4469bd891d10e73f7a945a7117db89c724fea62ae5d04b77edd6334ed7b85a09"
+  },
+  "build": {
+    "schema": "zge.sdk.build.v1",
+    "hashes": {
+      "index": "905a035f531b1ac25e8804818379badc22625ab55e5c032d22a107797d0c4908",
+      "three": "fa0075d09274b821e5822afa3650cd27f712cc560a2af579e08478e1e6719e7e"
+    }
+  },
+  "packageSha256": "d44635dab49cfc1e4c25feb2d39324724b6ef2633f22f42829204945c0d32990",
+  "packageFiles": [
+    "README.md",
+    "dist/build-manifest.json",
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/three.d.ts",
+    "dist/three.js",
+    "package.json"
+  ],
+  "installedPublicTests": 17,
+  "node": "v22.22.2",
+  "boundary": "clean source closure, offline clean npm ci, two builds, packed public SDK installation, independent project and original SDK tests; no legacy assets",
+  "commands": [
+    {
+      "cmd": "npm",
+      "args": [
+        "install",
+        "--package-lock-only",
+        "--ignore-scripts",
+        "--offline"
+      ],
+      "output": "\nup to date, audited 29 packages in 234ms\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "ci",
+        "--ignore-scripts",
+        "--offline"
+      ],
+      "output": "\nadded 3 packages, and audited 4 packages in 586ms\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "scripts/zge10-build.mjs"
+      ],
+      "output": "{\"index\":\"905a035f531b1ac25e8804818379badc22625ab55e5c032d22a107797d0c4908\",\"three\":\"fa0075d09274b821e5822afa3650cd27f712cc560a2af579e08478e1e6719e7e\"}\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "scripts/zge10-build.mjs"
+      ],
+      "output": "{\"index\":\"905a035f531b1ac25e8804818379badc22625ab55e5c032d22a107797d0c4908\",\"three\":\"fa0075d09274b821e5822afa3650cd27f712cc560a2af579e08478e1e6719e7e\"}\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "pack",
+        "./packages/sdk",
+        "--json"
+      ],
+      "output": "[\n  {\n    \"id\": \"@zge/sdk@0.1.0-preview.11\",\n    \"name\": \"@zge/sdk\",\n    \"version\": \"0.1.0-preview.11\",\n    \"size\": 33018,\n    \"unpackedSize\": 123197,\n    \"shasum\": \"9cdb567ee129923275f6beb7c41879995b565043\",\n    \"integrity\": \"sha512-lBc20ouppA4O+ZfqCLihXxgYVqRQj32oRg/Ww7vQ/jLvWwNlAe1rCuMXlSCP9k4AJF+h29olkmpskoo8fBk6yw==\",\n    \"filename\": \"zge-sdk-0.1.0-preview.11.tgz\",\n    \"files\": [\n      {\n        \"path\": \"README.md\",\n        \"size\": 7073,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/build-manifest.json\",\n        \"size\": 214,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/index.d.ts\",\n        \"size\": 8868,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/index.js\",\n        \"size\": 91615,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/three.d.ts\",\n        \"size\": 1154,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/three.js\",\n        \"size\": 13630,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"package.json\",\n        \"size\": 643,\n        \"mode\": 420\n      }\n    ],\n    \"entryCount\": 7,\n    \"bundled\": []\n  }\n]\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "pack",
+        "./packages/sdk",
+        "--json"
+      ],
+      "output": "[\n  {\n    \"id\": \"@zge/sdk@0.1.0-preview.11\",\n    \"name\": \"@zge/sdk\",\n    \"version\": \"0.1.0-preview.11\",\n    \"size\": 33018,\n    \"unpackedSize\": 123197,\n    \"shasum\": \"9cdb567ee129923275f6beb7c41879995b565043\",\n    \"integrity\": \"sha512-lBc20ouppA4O+ZfqCLihXxgYVqRQj32oRg/Ww7vQ/jLvWwNlAe1rCuMXlSCP9k4AJF+h29olkmpskoo8fBk6yw==\",\n    \"filename\": \"zge-sdk-0.1.0-preview.11.tgz\",\n    \"files\": [\n      {\n        \"path\": \"README.md\",\n        \"size\": 7073,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/build-manifest.json\",\n        \"size\": 214,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/index.d.ts\",\n        \"size\": 8868,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/index.js\",\n        \"size\": 91615,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/three.d.ts\",\n        \"size\": 1154,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/three.js\",\n        \"size\": 13630,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"package.json\",\n        \"size\": 643,\n        \"mode\": 420\n      }\n    ],\n    \"entryCount\": 7,\n    \"bundled\": []\n  }\n]\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "install",
+        "--ignore-scripts",
+        "--offline",
+        "/tmp/zge11-clean-ohLlvf/zge-sdk-0.1.0-preview.11.tgz"
+      ],
+      "output": "\nadded 1 package, and audited 5 packages in 214ms\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "--test",
+        "packages/sdk/test/sdk.test.mjs",
+        "packages/sdk/test/vnext.test.mjs"
+      ],
+      "output": "TAP version 13\n# Subtest: public SDK project, detached entities and versioned roundtrip\nok 1 - public SDK project, detached entities and versioned roundtrip\n  ---\n  duration_ms: 4.711333\n  type: 'test'\n  ...\n# Subtest: transactions are atomic, finite, revision/existence/component checked\nok 2 - transactions are atomic, finite, revision/existence/component checked\n  ---\n  duration_ms: 9.188833\n  type: 'test'\n  ...\n# Subtest: all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\nok 3 - all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\n  ---\n  duration_ms: 5.65425\n  type: 'test'\n  ...\n# Subtest: invalid restored scenes never clear current data or history\nok 4 - invalid restored scenes never clear current data or history\n  ---\n  duration_ms: 0.35675\n  type: 'test'\n  ...\n# Subtest: components, systems, plugin lifecycle, permission-aware private inspection\nok 5 - components, systems, plugin lifecycle, permission-aware private inspection\n  ---\n  duration_ms: 1.354458\n  type: 'test'\n  ...\n# Subtest: AI mock is detached preview only, reject/approve/undo and immutable provenance\nok 6 - AI mock is detached preview only, reject/approve/undo and immutable provenance\n  ---\n  duration_ms: 2.22475\n  type: 'test'\n  ...\n# Subtest: independent game collision, collectible, build objective and isolated simulation\nok 7 - independent game collision, collectible, build objective and isolated simulation\n  ---\n  duration_ms: 3.148167\n  type: 'test'\n  ...\n# Subtest: asset lease coalescing, detached mutable instances, bounded eviction/disposal\nok 8 - asset lease coalescing, detached mutable instances, bounded eviction/disposal\n  ---\n  duration_ms: 0.801\n  type: 'test'\n  ...\n# Subtest: plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\nok 9 - plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\n  ---\n  duration_ms: 0.3875\n  type: 'test'\n  ...\n# Subtest: public asset identities resolve through registered loader and unknown scene references fail atomically\nok 10 - public asset identities resolve through registered loader and unknown scene references fail atomically\n  ---\n  duration_ms: 1.419334\n  type: 'test'\n  ...\n# Subtest: renderer preference and owned backend lifecycle are explicit\nok 11 - renderer preference and owned backend lifecycle are explicit\n  ---\n  duration_ms: 0.580709\n  type: 'test'\n  ...\n# Subtest: v1 project migration is detached and v2 roundtrips, future versions reject with typed codes\nok 12 - v1 project migration is detached and v2 roundtrips, future versions reject with typed codes\n  ---\n  duration_ms: 3.958458\n  type: 'test'\n  ...\n# Subtest: declarative component reflection, typed validation and permission/read-only edits\nok 13 - declarative component reflection, typed validation and permission/read-only edits\n  ---\n  duration_ms: 11.023583\n  type: 'test'\n  ...\n# Subtest: hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded\nok 14 - hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded\n  ---\n  duration_ms: 15.143084\n  type: 'test'\n  ...\n# Subtest: portable JSON assets, exact reflected references, prefab overrides and independent instance transforms\nok 15 - portable JSON assets, exact reflected references, prefab overrides and independent instance transforms\n  ---\n  duration_ms: 6.86775\n  type: 'test'\n  ...\n# Subtest: malicious project rules/assets stay data-only and are rejected before any source execution\nok 16 - malicious project rules/assets stay data-only and are rejected before any source execution\n  ---\n  duration_ms: 0.947792\n  type: 'test'\n  ...\n# Subtest: plugin cleanup runs before shared asset disposal and repeated dispose is idempotent\nok 17 - plugin cleanup runs before shared asset disposal and repeated dispose is idempotent\n  ---\n  duration_ms: 1.356792\n  type: 'test'\n  ...\n1..17\n# tests 17\n# suites 0\n# pass 17\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 115.107125\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "--input-type=module",
+        "-e",
+        "import {project} from './examples/orbital-outpost/project.js';import {createEngine} from '@zge/sdk';const e=await createEngine({project});await e.loadWorld();if(e.world.entities().length!==5)throw Error('world');await e.dispose();"
+      ],
+      "output": ""
+    }
+  ]
+}

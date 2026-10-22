@@ -1,0 +1,205 @@
+{
+  "schema": "zge.bench01.player-scorecard.v1",
+  "updatedAt": "2026-10-22T06:22:36.716774+00:00",
+  "method": "Evidence-based automated assessment and direct screenshot inspection; not a human playtest. Scores describe observed scoped quality, not statistical user satisfaction.",
+  "provisionalGameAssessment": 6,
+  "provisionalEngineDeveloperAssessment": 7,
+  "engineAssessmentStatus": "PROVISIONAL_BOUNDED_DEVELOPER_ASSESSMENT_STUDIO_PENDING; SOURCE_INPUT_FAIL_AUTHORITY_PASS",
+  "ratings": [
+    {
+      "category": "First impression",
+      "score": 6,
+      "evidence": "The actual game boots with a visible detailed officer, terrain and HUD. The natural opening begins at40health and falls to4before a health-reset relocation; crowded HUD and immediate pressure need a human onboarding review.",
+      "links": [
+        "evidence/original/full-assets.png",
+        "evidence/original/original-long.json"
+      ]
+    },
+    {
+      "category": "Visual quality",
+      "score": 5,
+      "evidence": "Reviewed screenshots show textured officer/enemy models, terrain, water and visible effects. The world mixes detailed actors with simple environment geometry; dense HUD and the reproduced382px construction layout shift reduce presentation quality. This is a visual judgment from screenshots, not a style-preference survey.",
+      "links": [
+        "evidence/original/full-assets.png",
+        "evidence/original/build-menu-layout.png"
+      ]
+    },
+    {
+      "category": "Loading experience",
+      "score": 7,
+      "evidence": "Three paired cold/warm trials: median physical-click\u2192gameplay-ready321.7/290.5ms; engine-running/cover-gone medians1399.9/1274.3ms. HQ assets continue streaming separately; no watchdog stall occurred. Four missing optional imports remain.",
+      "links": [
+        "evidence/original/original-targeted.json",
+        "evidence/original/original-asset-audit.json"
+      ]
+    },
+    {
+      "category": "Controls and responsiveness",
+      "score": 6,
+      "evidence": "Physical movement, weapon controls, harvest and fixture construction produce actual state changes. Pointer controls work before the unanswered diplomatic decision; keyboard gameplay leaks beneath it. Build selection also shifts the viewport.",
+      "links": [
+        "evidence/original/original-long.json",
+        "evidence/original/original-extra.json",
+        "DEFECT_REGISTER.md"
+      ]
+    },
+    {
+      "category": "Camera behavior",
+      "score": 5,
+      "evidence": "Fifteen camera action intervals complete without timeout in the long run; physical rotation/zoom is exercised. The construction-selection scroll clips39%of the canvas vertically. Full obstruction, edge and every-terrain camera behavior are not certified.",
+      "links": [
+        "evidence/original/original-long.json",
+        "evidence/original/original-asset-audit.json"
+      ]
+    },
+    {
+      "category": "Movement and physics",
+      "score": 7,
+      "evidence": "All54physical movement windows have nonzero endpoint displacement. A corrected isolated physical approach travels7.816metres, stops2.2009metres from the Solar Grid centre and has0sampled grounding error. This is one obstacle/dry-ground fixture, not an exhaustive collision/terrain suite.",
+      "links": [
+        "evidence/original/original-physics-retest.json",
+        "evidence/original/collision-retest.png",
+        "evidence/original-analysis.json"
+      ]
+    },
+    {
+      "category": "Combat feel",
+      "score": 6,
+      "evidence": "Ordinary physical attacks coincide with health changes/kills and actual XP. Two full818HP Sunscar encounters start automatically after the physical final objective, end in49.818/44.935seconds, and record2/3player deaths. Effects, ammo and recovery are visible. This is an automated mechanical assessment; timing feel and sound require human evaluation.",
+      "links": [
+        "evidence/original/original-boss-fixtures.json",
+        "evidence/original/boss-desert-active.png",
+        "evidence/original/boss-highlands-result.png"
+      ]
+    },
+    {
+      "category": "Construction experience",
+      "score": 4,
+      "evidence": "Two fixture-assisted fifth Solar Grids commit by physical input and survive reload. A rapid triple click creates one building; overlap, invalid water, insufficient funds and Shared Water protected terrain create none. The visible-button scroll defect disrupts the player-facing workflow. Natural unseeded construction was not completed in the timed session.",
+      "links": [
+        "evidence/original/original-boss-fixtures.json",
+        "evidence/original/original-extra.json",
+        "evidence/original/original-physics-retest.json",
+        "evidence/original/build-menu-layout.png"
+      ]
+    },
+    {
+      "category": "Mission clarity",
+      "score": 5,
+      "evidence": "The objective panel displays mission requirements and the first boss victory advances the HUD toMission2/12and rank requirement1/4missions. The travel instruction repeats, while the full five-biome checklist and later missions remain unplayed.",
+      "links": [
+        "evidence/original/boss-highlands-result.png",
+        "evidence/original/full-assets.png",
+        "evidence/original/original-boss-fixtures.json"
+      ]
+    },
+    {
+      "category": "Progression and rewards",
+      "score": 6,
+      "evidence": "The natural timed loop reaches1309XP,36kills,14trees and5rocks. The two boss fixtures retain exactly one claim each after reload and unlockMission2. Save/restore carries progression. No rank promotion or complete12-mission campaign is certified.",
+      "links": [
+        "evidence/original-analysis.json",
+        "evidence/original/original-boss-fixtures.json",
+        "evidence/original/original-recovery-retest.json"
+      ]
+    },
+    {
+      "category": "Sound and feedback",
+      "score": null,
+      "status": "NOT_EVALUATED",
+      "evidence": "Visual/HUD effects are observed, but no audible playback or audio quality evaluation was performed. An AudioContext counter or enabled sound option cannot certify heard audio.",
+      "links": [
+        "evidence/original/original-extra.json"
+      ]
+    },
+    {
+      "category": "Stability and performance",
+      "score": 6,
+      "evidence": "The pointer-confirmed prefix averages59.58RAF FPS,1%low35.03FPS and maximum316.7ms stall; the full902.836-second capture includes later modal obstruction. No page exceptions,5workers and31intervals were observed. Renderer estimates, DOM counts and heap trends require further retention analysis.",
+      "links": [
+        "ORIGINAL_GAMEPLAY_ANALYSIS.md",
+        "evidence/original-analysis.json",
+        "evidence/original/original-recovery-retest.json"
+      ]
+    },
+    {
+      "category": "Multiplayer experience",
+      "score": 4,
+      "status": "EVALUATED_BOUNDED_SOURCE_INPUT_FAIL",
+      "evidence": "Independent source-world2/4/8-context functionality and56recovery tests pass, but an eight-context60scontinuous-key trial produces429at21.991s and roughly20seconds of frozen authoritative movement while rendering60FPS. Final outbox empties and replicas/archive converge exactly. Original-game multiplayer remains NOT_EVALUATED.",
+      "links": [
+        "DEFECT_REGISTER.md",
+        "evidence/multiplayer/continuous-input/continuous-input-60s.json",
+        "SOURCE_ENGINE_PERSISTENCE_RECOVERY.md"
+      ]
+    },
+    {
+      "category": "Overall fun and engagement",
+      "score": null,
+      "status": "NOT_EVALUATED",
+      "evidence": "No human playtest or entertainment judgment was performed. Automated engagement/progression and mechanical correctness cannot measure fun.",
+      "links": [
+        "GAMEPLAY_CERTIFICATION.md"
+      ]
+    }
+  ],
+  "weightedCategories": [
+    {
+      "category": "Original gameplay correctness",
+      "weightPercent": 25,
+      "included": false,
+      "reason": "Partial natural campaign, one boss type/two prerequisite fixtures; all12missions and rank progression not fully evaluated."
+    },
+    {
+      "category": "Graphics quality and rendering correctness",
+      "weightPercent": 15,
+      "included": false,
+      "reason": "Actual screenshots/render modes observed, but full world/asset/animation/camera matrix and all encounters not fully evaluated."
+    },
+    {
+      "category": "Frame performance and responsiveness",
+      "weightPercent": 15,
+      "included": false,
+      "reason": "Real frame data exists; all requiredA\u2013Jscenes and observer-attributed repeated conditions are not fully comparable, and the long capture is partly modal-obstructed."
+    },
+    {
+      "category": "Persistence and recovery",
+      "weightPercent": 15,
+      "included": false,
+      "reason": "Acknowledgments, lost reply, conflict, outbox and real401/reload tested; same-page auth recovery and stable save IDs fail, and complete campaign/rank/elapsed-auth continuity is not fully evaluated."
+    },
+    {
+      "category": "Long-run reliability",
+      "weightPercent": 10,
+      "included": false,
+      "reason": "902.836seconds were captured, but this is not900seconds of continuously unobscured gameplay or fixed-state retained-object/restart proof."
+    },
+    {
+      "category": "Multiplayer correctness and stability",
+      "weightPercent": 10,
+      "included": true,
+      "reason": "Bounded source scope evaluated, including failed sustained-input gate and passing durable authority/recovery; not original-game or production multiplayer.",
+      "boundedScope": true,
+      "score": 4
+    },
+    {
+      "category": "Studio/SDK developer workflow",
+      "weightPercent": 10,
+      "included": true,
+      "reason": "Fresh preview11 physical workflow, independent Outpost, both renderers and auto fallback pass. Human/a11y/large scenes outside this milestone.",
+      "score": 8,
+      "boundedScope": true
+    }
+  ],
+  "weightedScore": null,
+  "excludedWeightPercent": 80,
+  "eligiblePendingWeightPercent": 0,
+  "weightedReason": "80% excluded as not fully evaluated; two bounded categories covering20% rate source multiplayer4 and Studio8. Eligible-only normalized score6; overall weighted score remains uncomputed.",
+  "soundEvaluated": false,
+  "funEvaluated": false,
+  "productionVerdict": "NO_GO",
+  "continuedDevelopmentVerdict": "GO_WITH_PRIORITIZED_FIXES",
+  "originalProfessionalQualityVerdict": "NO_GO_PENDING_P1_LAYOUT_AND_BROADER_CERTIFICATION",
+  "eligibleEvaluatedWeightPercent": 20,
+  "eligibleOnlyNormalizedScore": 6
+}

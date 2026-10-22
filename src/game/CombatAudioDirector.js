@@ -26,7 +26,12 @@ export class CombatAudioDirector {
   }
   phase(id) { return this.play({ id, kind: "phase", target: "boss" }); }
   snapshot() { return Object.freeze({ activeVoices: this.voices.size, peakVoices: this.peakVoices, events: this.events.length, policy: COMBAT_AUDIO_POLICY }); }
-  dispose() { this.context?.close?.(); this.voices.clear(); }
+  dispose() {
+    const context = this.context; this.context = null;
+    for (const voice of this.voices) { try { voice.stop?.(); } catch {} }
+    this.voices.clear();
+    if (context && context.state !== "closed") context.close?.()?.catch?.(() => {});
+  }
 }
 
 export default CombatAudioDirector;

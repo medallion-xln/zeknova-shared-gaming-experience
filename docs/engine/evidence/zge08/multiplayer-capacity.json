@@ -1,0 +1,98 @@
+{
+  "scope": "actual authenticated HTTP + PHP gateways + one persistent Node world worker + SQLite FULL WAL; 512 real actor movement commands per run",
+  "quota": "existing supported staging configuration 600 requests/min/IP and 600/principal; burst measurement, not sustained WAN SLA",
+  "rows": [
+    {
+      "clients": 1,
+      "phpGateways": 1,
+      "commands": 512,
+      "elapsedMs": 5284.774292,
+      "commandsPerSecond": 96.8820940517851,
+      "latencyMs": {
+        "count": 512,
+        "p50": 10.494542000000138,
+        "p95": 14.932708000000275,
+        "p99": 16.359375
+      },
+      "revision": 513,
+      "events": 1539,
+      "archiveReceipts": 513,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    },
+    {
+      "clients": 2,
+      "phpGateways": 2,
+      "commands": 512,
+      "elapsedMs": 5108.388708999999,
+      "commandsPerSecond": 100.22729850176718,
+      "latencyMs": {
+        "count": 512,
+        "p50": 10.408708000000843,
+        "p95": 24.891875000001164,
+        "p99": 129.13566700000047
+      },
+      "revision": 514,
+      "events": 1542,
+      "archiveReceipts": 514,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    },
+    {
+      "clients": 4,
+      "phpGateways": 4,
+      "commands": 512,
+      "elapsedMs": 5202.922583,
+      "commandsPerSecond": 98.40623069674456,
+      "latencyMs": {
+        "count": 512,
+        "p50": 11.374165999999605,
+        "p95": 116.98333300000013,
+        "p99": 367.9641670000001
+      },
+      "revision": 516,
+      "events": 1548,
+      "archiveReceipts": 516,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    },
+    {
+      "clients": 8,
+      "phpGateways": 4,
+      "commands": 512,
+      "elapsedMs": 5137.806333999997,
+      "commandsPerSecond": 99.65342535622331,
+      "latencyMs": {
+        "count": 512,
+        "p50": 20.851125000001048,
+        "p95": 305.70600000000195,
+        "p99": 933.1331250000003
+      },
+      "revision": 520,
+      "events": 1560,
+      "archiveReceipts": 520,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    }
+  ]
+}

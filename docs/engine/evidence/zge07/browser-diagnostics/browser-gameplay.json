@@ -1,0 +1,2776 @@
+{
+  "date": "2026-10-21T07:17:46.112Z",
+  "runs": [
+    {
+      "query": "",
+      "initial": {
+        "backend": "WebGPU",
+        "assets": {
+          "loads": 21,
+          "hits": 18,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 5,
+          "cancelled": 0,
+          "entries": 16,
+          "pending": 0,
+          "bytes": 65503290,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "bossActive": false,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": null,
+            "mock": null,
+            "allowMock": true,
+            "history": []
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgpu",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 301,
+            "triangles": 687961,
+            "geometries": 802,
+            "textures": 43,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792567067782
+          }
+        },
+        "player": [
+          2.121320343559643,
+          5.537835278740552,
+          26.121320343559642
+        ],
+        "xp": 0,
+        "paused": false
+      },
+      "movement": {
+        "distance": 9.449716883772352,
+        "end": [
+          -34.591579868257575,
+          4.843317853999334,
+          -43.259209616958756
+        ],
+        "setup": {
+          "healthBefore": 94,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -65
+        },
+        "placed": {
+          "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+          "type": "power",
+          "x": -75,
+          "z": -65
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 325,
+          "after": 320
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -65
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 42,
+                      "water": 38,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 0,
+                      "data": 18,
+                      "credits": 1000,
+                      "trust": 52
+                    },
+                    "records": []
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 42,
+                      "water": 38,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 0,
+                      "data": 18,
+                      "credits": 988,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.872104733078567,
+                        "z": -65,
+                        "rotation": 0.24970306935373646,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                    "type": "power",
+                    "x": -75,
+                    "y": 5.872104733078567,
+                    "z": -65,
+                    "rotation": 0.24970306935373646,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 5.872104733078567,
+                      "z": -65,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLInputElement:input": 1,
+            "HTMLSelectElement:change": 1,
+            "HTMLFormElement:submit": 2
+          },
+          "detachedTotal": 11,
+          "collected": 17,
+          "intervals": 31,
+          "rafPending": 11,
+          "rafTotal": 12212,
+          "at": 1792567088493
+        }
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {
+            "AbortSignal:abort": 1
+          },
+          "listenerTotal": 1,
+          "detachedTotal": 48,
+          "intervals": 0,
+          "rafPending": -2
+        },
+        "before": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLInputElement:input": 1,
+            "HTMLSelectElement:change": 1,
+            "HTMLFormElement:submit": 2
+          },
+          "detachedTotal": 11,
+          "collected": 30,
+          "intervals": 31,
+          "rafPending": 11,
+          "rafTotal": 13057,
+          "at": 1792567090096
+        },
+        "after": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1,
+            "AbortSignal:abort": 1
+          },
+          "listenerTotal": 185,
+          "detached": {
+            "HTMLButtonElement:click": 52,
+            "HTMLInputElement:input": 1,
+            "HTMLSelectElement:change": 4,
+            "HTMLFormElement:submit": 2
+          },
+          "detachedTotal": 59,
+          "collected": 30,
+          "intervals": 31,
+          "rafPending": 9,
+          "rafTotal": 14098,
+          "at": 1792567092073
+        },
+        "intervals": [
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.hookEvents (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:171:25)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:155:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 700,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:156:18)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at MusicDirector.arm (http://127.0.0.1:8790/src/game/MusicDirector.js:148:32)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:162:36)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 1000,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at CampaignFinale.install (http://127.0.0.1:8790/src/game/CampaignFinale.js:100:44)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:171:18)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:167)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.mountTelemetry (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:46:373)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:249)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at AdaptiveSimulationDirector.mountTelemetry (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:424:27)\n    at AdaptiveSimulationDirector.install (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:408:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:209:198)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 750,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at GameModeDirector.install (http://127.0.0.1:8790/src/game/GameModeDirector.js:27:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:248:442)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 200,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:68:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.mountDiagnostics (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:180:20)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:69:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at PhysicsRuntimeBridge.mountDiagnostics (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:40:445)\n    at PhysicsRuntimeBridge.install (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:7:156)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:256:185)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at IdentityIntegration.install (http://127.0.0.1:8790/src/game/IdentityIntegration.js:101:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:266:153)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RelationsPanel.install (http://127.0.0.1:8790/src/game/RelationsPanel.js:105:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:301:146)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          }
+        ]
+      },
+      "frames": {
+        "fps": 58.522311630628934,
+        "p99": 33.29999999999927
+      },
+      "save": {
+        "state": "retrying",
+        "revision": 3,
+        "lastAck": {
+          "seq": 4,
+          "revision": 3,
+          "at": 1792567089343,
+          "duplicate": false
+        },
+        "lastError": {
+          "kind": "transient",
+          "status": 0,
+          "message": "timeout after 8000 ms"
+        },
+        "pendingSeq": null,
+        "inFlightSeq": 7,
+        "failures": 1,
+        "counters": {
+          "submitted": 7,
+          "coalesced": 2,
+          "posted": 5,
+          "acked": 3,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 7,
+        "interceptedGets": 1,
+        "loadedExtension": null,
+        "restoredXp": null
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/StructureDesign.js, ./game/DefenseTowers.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "query": "&safe=1",
+      "initial": {
+        "backend": "WebGL",
+        "assets": {
+          "loads": 6,
+          "hits": 18,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 0,
+          "cancelled": 0,
+          "entries": 6,
+          "pending": 0,
+          "bytes": 18865414,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 3,
+            "failures": 0,
+            "resets": 0,
+            "created": 1,
+            "live": 1,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "bossActive": false,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "tensionSaveTimer",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": null,
+            "mock": null,
+            "allowMock": true,
+            "history": []
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgl2",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 126,
+            "triangles": 138683,
+            "geometries": 415,
+            "textures": 14,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792567111013
+          }
+        },
+        "player": [
+          -34.591579868257575,
+          4.859111209777405,
+          -43.259209616958756
+        ],
+        "xp": 353,
+        "paused": false
+      },
+      "movement": {
+        "distance": 10.56394864187114,
+        "end": [
+          -47.890986106436195,
+          4.321986720608887,
+          -52.02348554324148
+        ],
+        "setup": {
+          "healthBefore": 96,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -60
+        },
+        "placed": {
+          "id": "ec3564fa-a54b-44ae-add5-de0d35079156",
+          "type": "power",
+          "x": -75,
+          "z": -60
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 325,
+          "after": 320
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -60
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 84.0190399999618,
+                      "water": 33,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 17.5,
+                      "data": 18,
+                      "credits": 1000,
+                      "trust": 45
+                    },
+                    "records": [
+                      {
+                        "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.872104733078567,
+                        "z": -65,
+                        "rotation": 0.24970306935373646,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 84.0190399999618,
+                      "water": 33,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 17.5,
+                      "data": 18,
+                      "credits": 988,
+                      "trust": 45
+                    },
+                    "records": [
+                      {
+                        "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.872104733078567,
+                        "z": -65,
+                        "rotation": 0.24970306935373646,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "ec3564fa-a54b-44ae-add5-de0d35079156",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.779496669769287,
+                        "z": -60,
+                        "rotation": 2.6809788544191906,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "ec3564fa-a54b-44ae-add5-de0d35079156",
+                    "type": "power",
+                    "x": -75,
+                    "y": 5.779496669769287,
+                    "z": -60,
+                    "rotation": 2.6809788544191906,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 5.779496669769287,
+                      "z": -60,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:webglcontextlost": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 3,
+            "Worker:messageerror": 1,
+            "Worker:message": 1,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 173,
+          "detached": {
+            "HTMLButtonElement:click": 9,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 10,
+          "collected": 0,
+          "intervals": 31,
+          "rafPending": 11,
+          "rafTotal": 3976,
+          "at": 1792567117459
+        }
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {},
+          "listenerTotal": 0,
+          "detachedTotal": 48,
+          "intervals": 0,
+          "rafPending": 0
+        },
+        "before": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:webglcontextlost": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 3,
+            "Worker:messageerror": 1,
+            "Worker:message": 1,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 173,
+          "detached": {
+            "HTMLButtonElement:click": 9,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 10,
+          "collected": 0,
+          "intervals": 31,
+          "rafPending": 9,
+          "rafTotal": 5006,
+          "at": 1792567119104
+        },
+        "after": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:webglcontextlost": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 3,
+            "Worker:messageerror": 1,
+            "Worker:message": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 173,
+          "detached": {
+            "HTMLButtonElement:click": 54,
+            "HTMLFormElement:submit": 1,
+            "HTMLSelectElement:change": 3
+          },
+          "detachedTotal": 58,
+          "collected": 0,
+          "intervals": 31,
+          "rafPending": 9,
+          "rafTotal": 5993,
+          "at": 1792567120944
+        },
+        "intervals": [
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.hookEvents (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:171:25)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:155:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 700,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:156:18)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at MusicDirector.arm (http://127.0.0.1:8790/src/game/MusicDirector.js:148:32)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:162:36)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 1000,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at CampaignFinale.install (http://127.0.0.1:8790/src/game/CampaignFinale.js:100:44)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:171:18)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:167)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.mountTelemetry (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:46:373)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:249)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at AdaptiveSimulationDirector.mountTelemetry (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:424:27)\n    at AdaptiveSimulationDirector.install (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:408:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:209:198)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 750,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at GameModeDirector.install (http://127.0.0.1:8790/src/game/GameModeDirector.js:27:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:248:442)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 200,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:68:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.mountDiagnostics (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:180:20)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:69:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at PhysicsRuntimeBridge.mountDiagnostics (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:40:445)\n    at PhysicsRuntimeBridge.install (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:7:156)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:256:185)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at IdentityIntegration.install (http://127.0.0.1:8790/src/game/IdentityIntegration.js:101:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:266:153)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RelationsPanel.install (http://127.0.0.1:8790/src/game/RelationsPanel.js:105:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:301:146)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          }
+        ]
+      },
+      "frames": {
+        "fps": 60.17148874327698,
+        "p99": 16.80000000000109
+      },
+      "save": {
+        "state": "saving",
+        "revision": 9,
+        "lastAck": {
+          "seq": 13,
+          "revision": 9,
+          "at": 1792567129387,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": 16,
+        "inFlightSeq": 15,
+        "failures": 0,
+        "counters": {
+          "submitted": 8,
+          "coalesced": 3,
+          "posted": 6,
+          "acked": 4,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 8,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-21T07:18:29.093Z",
+          "player": {
+            "xp": 333,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 333
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 409 (Conflict)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/StructureDesign.js, ./game/DefenseTowers.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "query": "&boss=1",
+      "initial": {
+        "backend": "WebGPU",
+        "assets": {
+          "loads": 28,
+          "hits": 5,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 12,
+          "cancelled": 0,
+          "entries": 16,
+          "pending": 0,
+          "bytes": 66967754,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "boss": "The Sunscar Colossus",
+        "bossActive": true,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "qaGameplayBaselineBuildings",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "bossDamageInvulnerableUntil",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": null,
+            "mock": null,
+            "allowMock": true,
+            "history": []
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgpu",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 274,
+            "triangles": 553135,
+            "geometries": 667,
+            "textures": 50,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792567136395
+          }
+        },
+        "player": [
+          0,
+          3.2964646975199376,
+          6
+        ],
+        "xp": 399,
+        "paused": false
+      },
+      "movement": {
+        "distance": 9.841100116613836,
+        "end": [
+          -46.003970981488855,
+          4.2976062328425,
+          -52.79740879771329
+        ],
+        "setup": {
+          "healthBefore": 100,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -55
+        },
+        "placed": {
+          "id": "c6cd9d85-12a7-44aa-b0d4-37b72d717028",
+          "type": "power",
+          "x": -75,
+          "z": -55
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 760,
+          "after": 755
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -55
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 564.5014399995805,
+                      "water": 500,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 750,
+                      "data": 300,
+                      "credits": 1000,
+                      "trust": 45
+                    },
+                    "records": [
+                      {
+                        "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.872104733078567,
+                        "z": -65,
+                        "rotation": 0.24970306935373646,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "ec3564fa-a54b-44ae-add5-de0d35079156",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.779496669769287,
+                        "z": -60,
+                        "rotation": 2.6809788544191906,
+                        "level": 1,
+                        "health": 860
+                      }
+                    ]
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 564.5014399995805,
+                      "water": 500,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 750,
+                      "data": 300,
+                      "credits": 988,
+                      "trust": 45
+                    },
+                    "records": [
+                      {
+                        "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.872104733078567,
+                        "z": -65,
+                        "rotation": 0.24970306935373646,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "ec3564fa-a54b-44ae-add5-de0d35079156",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.779496669769287,
+                        "z": -60,
+                        "rotation": 2.6809788544191906,
+                        "level": 1,
+                        "health": 860
+                      },
+                      {
+                        "id": "c6cd9d85-12a7-44aa-b0d4-37b72d717028",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.409515557465729,
+                        "z": -55,
+                        "rotation": 2.3606205599915953,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "c6cd9d85-12a7-44aa-b0d4-37b72d717028",
+                    "type": "power",
+                    "x": -75,
+                    "y": 5.409515557465729,
+                    "z": -55,
+                    "rotation": 2.3606205599915953,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 5.409515557465729,
+                      "z": -55,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 85,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 183,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 8,
+          "collected": 1,
+          "intervals": 31,
+          "rafPending": 11,
+          "rafTotal": 12146,
+          "at": 1792567156272
+        },
+        "bossHealth": 755
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {
+            "AbortSignal:abort": 1
+          },
+          "listenerTotal": 1,
+          "detachedTotal": 45,
+          "intervals": 0,
+          "rafPending": -2
+        },
+        "before": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 85,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 183,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 8,
+          "collected": 1,
+          "intervals": 31,
+          "rafPending": 11,
+          "rafTotal": 13058,
+          "at": 1792567157803
+        },
+        "after": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 85,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1,
+            "AbortSignal:abort": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 49,
+            "HTMLFormElement:submit": 1,
+            "HTMLSelectElement:change": 3
+          },
+          "detachedTotal": 53,
+          "collected": 1,
+          "intervals": 31,
+          "rafPending": 9,
+          "rafTotal": 14012,
+          "at": 1792567159689
+        },
+        "intervals": [
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.hookEvents (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:171:25)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:155:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 700,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:156:18)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at MusicDirector.arm (http://127.0.0.1:8790/src/game/MusicDirector.js:148:32)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:162:36)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 1000,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at CampaignFinale.install (http://127.0.0.1:8790/src/game/CampaignFinale.js:100:44)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:171:18)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:167)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.mountTelemetry (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:46:373)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:249)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at AdaptiveSimulationDirector.mountTelemetry (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:424:27)\n    at AdaptiveSimulationDirector.install (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:408:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:209:198)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 750,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at GameModeDirector.install (http://127.0.0.1:8790/src/game/GameModeDirector.js:27:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:248:442)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 200,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:68:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.mountDiagnostics (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:180:20)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:69:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at PhysicsRuntimeBridge.mountDiagnostics (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:40:445)\n    at PhysicsRuntimeBridge.install (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:7:156)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:256:185)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at IdentityIntegration.install (http://127.0.0.1:8790/src/game/IdentityIntegration.js:101:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:266:153)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RelationsPanel.install (http://127.0.0.1:8790/src/game/RelationsPanel.js:105:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:301:146)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          }
+        ]
+      },
+      "frames": {
+        "fps": 60.38039649685047,
+        "p99": 16.80000000000291
+      },
+      "save": {
+        "state": "saved",
+        "revision": 11,
+        "lastAck": {
+          "seq": 18,
+          "revision": 11,
+          "at": 1792567135493,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 1,
+          "coalesced": 1,
+          "posted": 2,
+          "acked": 1,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 1,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-21T07:18:54.402Z",
+          "player": {
+            "xp": 357,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 357
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 409 (Conflict)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/StructureDesign.js, ./game/DefenseTowers.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "query": "&present=neural&neural=none",
+      "initial": {
+        "backend": "WebGPU",
+        "assets": {
+          "loads": 26,
+          "hits": 0,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 10,
+          "cancelled": 0,
+          "entries": 16,
+          "pending": 0,
+          "bytes": 66980636,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 31,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "boss": "The Sunscar Colossus",
+        "bossActive": true,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "bossDamageInvulnerableUntil",
+          "tensionSaveTimer",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": "fallback: no neural backend configured",
+            "mock": null,
+            "allowMock": true,
+            "history": [
+              {
+                "from": "NATIVE",
+                "to": "NATIVE",
+                "reason": "fallback: no neural backend configured",
+                "at": 1792567171190
+              }
+            ]
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgpu",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 229,
+            "triangles": 460068,
+            "geometries": 471,
+            "textures": 51,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792567171188
+          }
+        },
+        "player": [
+          0,
+          3.2964646975199376,
+          6
+        ],
+        "xp": 44,
+        "paused": false
+      },
+      "movement": {
+        "distance": 9.634512624996598,
+        "end": [
+          -45.626379850460545,
+          4.12457098808269,
+          -57.82097713201812
+        ],
+        "setup": {
+          "healthBefore": 100,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -20
+        },
+        "placed": {
+          "id": "5540812a-e62c-421d-88ce-b0eda73fd126",
+          "type": "power",
+          "x": -75,
+          "z": -20
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 704,
+          "after": 703
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -20
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 232.8017599998474,
+                      "water": 28,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 92.5,
+                      "data": 18,
+                      "credits": 1000,
+                      "trust": 45
+                    },
+                    "records": [
+                      {
+                        "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.872104733078567,
+                        "z": -65,
+                        "rotation": 0.24970306935373646,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "ec3564fa-a54b-44ae-add5-de0d35079156",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.779496669769287,
+                        "z": -60,
+                        "rotation": 2.6809788544191906,
+                        "level": 1,
+                        "health": 860
+                      },
+                      {
+                        "id": "c6cd9d85-12a7-44aa-b0d4-37b72d717028",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.409515557465729,
+                        "z": -55,
+                        "rotation": 2.3606205599915953,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 232.8017599998474,
+                      "water": 28,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 92.5,
+                      "data": 18,
+                      "credits": 988,
+                      "trust": 45
+                    },
+                    "records": [
+                      {
+                        "id": "08543cbd-c45f-46ac-baee-28c0d1531689",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.872104733078567,
+                        "z": -65,
+                        "rotation": 0.24970306935373646,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "ec3564fa-a54b-44ae-add5-de0d35079156",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.779496669769287,
+                        "z": -60,
+                        "rotation": 2.6809788544191906,
+                        "level": 1,
+                        "health": 860
+                      },
+                      {
+                        "id": "c6cd9d85-12a7-44aa-b0d4-37b72d717028",
+                        "type": "power",
+                        "x": -75,
+                        "y": 5.409515557465729,
+                        "z": -55,
+                        "rotation": 2.3606205599915953,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "5540812a-e62c-421d-88ce-b0eda73fd126",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.67981677585178,
+                        "z": -20,
+                        "rotation": 2.6901412353619656,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "5540812a-e62c-421d-88ce-b0eda73fd126",
+                    "type": "power",
+                    "x": -75,
+                    "y": 3.67981677585178,
+                    "z": -20,
+                    "rotation": 2.6901412353619656,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 3.67981677585178,
+                      "z": -20,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 8,
+          "collected": 2,
+          "intervals": 31,
+          "rafPending": 11,
+          "rafTotal": 11960,
+          "at": 1792567191637
+        },
+        "bossHealth": 703
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {},
+          "listenerTotal": 0,
+          "detachedTotal": 27,
+          "intervals": 0,
+          "rafPending": 3
+        },
+        "before": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 8,
+          "collected": 2,
+          "intervals": 31,
+          "rafPending": 9,
+          "rafTotal": 12878,
+          "at": 1792567193141
+        },
+        "after": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "window:visibilitychange": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 34,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 35,
+          "collected": 23,
+          "intervals": 31,
+          "rafPending": 12,
+          "rafTotal": 13872,
+          "at": 1792567195127
+        },
+        "intervals": [
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.hookEvents (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:171:25)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:155:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 700,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:156:18)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at MusicDirector.arm (http://127.0.0.1:8790/src/game/MusicDirector.js:148:32)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:162:36)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 1000,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at CampaignFinale.install (http://127.0.0.1:8790/src/game/CampaignFinale.js:100:44)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:171:18)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:167)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.mountTelemetry (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:46:373)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:249)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at AdaptiveSimulationDirector.mountTelemetry (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:424:27)\n    at AdaptiveSimulationDirector.install (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:408:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:209:198)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 750,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at GameModeDirector.install (http://127.0.0.1:8790/src/game/GameModeDirector.js:27:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:248:442)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 200,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:68:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 250,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.mountDiagnostics (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:180:20)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:69:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at PhysicsRuntimeBridge.mountDiagnostics (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:40:445)\n    at PhysicsRuntimeBridge.install (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:7:156)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:256:185)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at IdentityIntegration.install (http://127.0.0.1:8790/src/game/IdentityIntegration.js:101:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:266:153)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          },
+          {
+            "ms": 500,
+            "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RelationsPanel.install (http://127.0.0.1:8790/src/game/RelationsPanel.js:105:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:301:146)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+          }
+        ]
+      },
+      "frames": {
+        "fps": 60.33182503843062,
+        "p99": 16.80000000000291
+      },
+      "save": {
+        "state": "saved",
+        "revision": 16,
+        "lastAck": {
+          "seq": 6,
+          "revision": 16,
+          "at": 1792567197155,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 6,
+          "coalesced": 1,
+          "posted": 5,
+          "acked": 5,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 6,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-21T07:18:54.784Z",
+          "player": {
+            "xp": 0,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": null
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/StructureDesign.js, ./game/DefenseTowers.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    }
+  ],
+  "restore": {
+    "xp": 331,
+    "expectedXp": 321,
+    "buildingsRetained": true,
+    "autoLaunch": "zge03-certification"
+  },
+  "standalone": {
+    "deterministic": true,
+    "transactions": 0
+  }
+}

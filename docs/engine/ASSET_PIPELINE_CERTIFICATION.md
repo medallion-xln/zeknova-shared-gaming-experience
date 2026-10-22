@@ -1,0 +1,21 @@
+# Asset pipeline certification — ZGE-03
+
+`AssetService` is renderer-independent. Resource keys include canonical absolute URL, loader type and explicit variant. Loader registration supplies load/clone/dispose/size functions. Shared in-flight work coalesces, parsed entries cache by resource key, leases pin entries and track owners, and budget pressure evicts unreferenced LRU entries. Dependencies must already be acquired; dependents pin them until eviction. Failed loads are not cached. Retry is explicit and bounded by the caller's count; cancellation is per consumer, and the final cancelled consumer aborts shared work. A disposed service rejects pending work promptly and clears timers. Late completions are disposed. Loader-specific network abort is best effort: the current GLTF callback loader does not accept an AbortSignal.
+
+The default parsed budget is 64 MiB in addition to ZGE-02's 64 MiB fetch cache. Parsed byte estimates count geometry arrays, compressed mip buffers and image dimensions; they are estimates, not GPU residency accounting. Pinned leases can exceed the budget rather than invalidating active resources. `status()` exposes loads, hits, joined work, failures, retries, evictions, cancellations, bytes, pending entries and references. Dependencies currently use same-loader/default-variant resource paths; cross-type dependency descriptors and owner-wide release are future work.
+
+`threeAssetService.js` owns one GLTFLoader, Meshopt decoder and KTX2Loader with a BoundedWorkerPool (default four workers). All three readable model/environment runtime modules use it. Existing LOD selection, source fallback, serialized actor loading and procedural fallbacks remain in the game modules. Texture transcodes have a 15-second deadline; complete GLTF requests have a 45-second deadline. Service failures invalidate entries; later requests can start fresh loads.
+
+## Instance lifetime
+
+Cached parsed GLTFs are templates. `cloneParsedGLTF` uses the existing vendored SkeletonUtils and clones clips, geometry, materials and texture objects for detached instances. Bones, transforms and per-instance animation are independent. Existing model disposal may free geometry/materials/textures aggressively; giving each detached instance its own resource objects prevents that from breaking another actor or the parsed template. Texture source images are immutable shared backing data. Mixers continue to be created per character by the readable runtime.
+
+This stage does **not** share geometry objects across live detached instances. Doing so safely requires lease-aware disposal throughout legacy roots, weapon attachments and environment instancing. The service supports leases for new consumers, but converting the whole legacy disposal tree is deferred. Parsed caching reduces parsing/transcode duplication while conservative cloning can increase CPU/GPU memory; the parsed cache budget does not bound active clone memory. Multi-scene GLTF cloning is also outside current game requirements: the game selects `gltf.scene`, and detached clones expose that scene only.
+
+## Three.js ownership
+
+Two implementations remain: (1) r185 embedded in the authoritative minified `assets/index-02987539.js`, which owns native rendering and legacy objects; (2) the existing vendored `three.module.min.js` / `three.core.min.js` pair used by the readable asset runtimes. The latter is one implementation split into module files, not two extra instances. The minified bundle has not been edited in ZGE-03 and does not export its embedded implementation.
+
+New engine production modules must use the canonical vendored implementation through the adapter. A regression test scans package source import edges to reject other Three.js module specifiers. Browser warning count and actual import ownership must be checked as well; static import checks alone cannot detect a newly embedded copy. Full consolidation requires a reproducible legacy build or a separately authorized, testable bundle gate.
+
+Certification evidence is in `evidence/zge03/`; `KTX2_STRESS_RESULTS.md` records fault injection. Node tests use real vendored Three skeleton/material/geometry/clip objects for clone independence. Browser runs exercise real checked-in GLBs and transcoder WASM under WebGPU and WebGL. Original GLTF hang attribution remains open.

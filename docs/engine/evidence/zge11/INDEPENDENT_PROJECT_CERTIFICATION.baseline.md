@@ -1,0 +1,11 @@
+# Independent SDK integration: Orbital Outpost
+
+This is a small SDK integration project, not the future full external second-game release. `/examples/orbital-outpost/` contains a blue explorer, landing platform, cargo obstacle, gold energy cell and antenna foundation. WASD/arrows move within platform bounds using a simple XZ AABB collision rule. Collecting the cell grants one local resource; holding B consumes it once and builds the antenna, completing the objective. Save/reload uses a separate browser-storage key.
+
+`project.js` imports only `transform` from `@zge/sdk`. `main.js` imports the SDK public core/render entries, the host's single `three/webgpu` namespace, and this project's own manifest/rules. Rules use only public scene/system/event contracts. No ZekNova game-specific mission/faction/building module or minified bundle loads. `project.json` is a deterministic generated data manifest with versioned embedded scene and procedural prefab; there is no media licensing dependency in this tiny demo.
+
+The SDK integration test verifies project loading, entities/components, collision rejection, movement, collectible removal/resource grant, build completion, resource consumption, scene roundtrip and a separate unchanged authoring clone. Browser tests physically hold movement keys, collect the cell, build the antenna and assert the completed objective on WebGPU and WebGL. Save/reload restores the serialized state. Network request inventories assert no legacy bundle, `/src/game/` or private `packages/*/src` request.
+
+Studio opens this exact project, selects its explorer by pointer, changes it through inspector/gizmo transactions, saves/reloads it, then runs a separate simulation clone. Movement in that simulation changes the clone while the authoring snapshot stays identical. Reset restores the authoring view. Public packed-package installation and these integration tests also run in a fresh source-only environment without any legacy game assets.
+
+The collision rule is intentionally small and planar. It is not a general physics solver, multiplayer game, content import pipeline or remotely deployed second game. Full independent developer usability, plugin coverage across every engine tier and a shipped second-game release remain ZGE-11+ work.

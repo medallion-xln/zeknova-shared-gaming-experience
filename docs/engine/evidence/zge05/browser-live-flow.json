@@ -1,0 +1,498 @@
+{
+  "input": {
+    "pending": true,
+    "mode": "command",
+    "selected": "power",
+    "events": [
+      "selected-power",
+      "place-enter",
+      "record-added",
+      "progression",
+      "place-return",
+      "save-requested"
+    ]
+  },
+  "flow": {
+    "before": {
+      "xp": 0,
+      "mission": {
+        "buildings": {
+          "power": 0,
+          "water": 0,
+          "habitat": 0,
+          "research": 0,
+          "culture": 0,
+          "governance": 0,
+          "defense": 0,
+          "bridge": 0,
+          "boat": 0
+        },
+        "stats": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 0,
+          "rockMinedAt": {},
+          "biomeStats": {},
+          "commissioningEncounters": {},
+          "personalObjectiveIds": [],
+          "biomeVisited": [
+            "highlands"
+          ],
+          "bossDefeats": {},
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Desert AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792557698843
+          },
+          "rocksMined": 0,
+          "powerUpsCollected": 0
+        },
+        "biomes": {
+          "forest": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          },
+          "desert": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          },
+          "highlands": {
+            "visited": true,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          },
+          "arctic": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          },
+          "wetlands": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          }
+        },
+        "bossDefeats": {}
+      },
+      "inventory": {
+        "energy": 42,
+        "water": 38,
+        "minerals": 1000,
+        "iron": 1000,
+        "biomass": 1000,
+        "timber": 0,
+        "data": 18,
+        "credits": 1000,
+        "trust": 52
+      },
+      "recordCount": 0
+    },
+    "after": {
+      "xp": 14,
+      "mission": {
+        "buildings": {
+          "power": 1,
+          "water": 0,
+          "habitat": 0,
+          "research": 0,
+          "culture": 0,
+          "governance": 0,
+          "defense": 0,
+          "bridge": 0,
+          "boat": 0
+        },
+        "stats": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 0,
+          "rockMinedAt": {},
+          "biomeStats": {},
+          "commissioningEncounters": {},
+          "personalObjectiveIds": [],
+          "biomeVisited": [
+            "highlands"
+          ],
+          "bossDefeats": {},
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Desert AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792557698843
+          },
+          "rocksMined": 0,
+          "powerUpsCollected": 0
+        },
+        "biomes": {
+          "forest": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          },
+          "desert": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {
+              "power": 1
+            }
+          },
+          "highlands": {
+            "visited": true,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          },
+          "arctic": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          },
+          "wetlands": {
+            "visited": false,
+            "resources": 0,
+            "stats": {
+              "treesChopped": 0,
+              "rocksMined": 0,
+              "powerUpsCollected": 0,
+              "enemiesDefeated": 0
+            },
+            "buildings": {}
+          }
+        },
+        "bossDefeats": {}
+      },
+      "inventory": {
+        "energy": 42,
+        "water": 38,
+        "minerals": 976,
+        "iron": 992,
+        "biomass": 992,
+        "timber": 0,
+        "data": 18,
+        "credits": 988,
+        "trust": 52
+      },
+      "recordCount": 1
+    },
+    "events": [
+      "selected-power",
+      "place-enter",
+      "record-added",
+      "progression",
+      "place-return",
+      "save-requested"
+    ],
+    "id": "live-flow-1792557702689",
+    "comparison": {
+      "fixtureId": "real-ui-pointer",
+      "request": {
+        "id": "live-flow-1792557702689",
+        "type": "power",
+        "x": -44.998237378249755,
+        "z": 20.00077225522295,
+        "rotation": 1.5707963267948966
+      },
+      "canonical": {
+        "before": {
+          "inventory": {
+            "energy": 42,
+            "water": 38,
+            "minerals": 1000,
+            "iron": 1000,
+            "biomass": 1000,
+            "timber": 0,
+            "data": 18,
+            "credits": 1000,
+            "trust": 52
+          },
+          "records": []
+        },
+        "after": {
+          "inventory": {
+            "energy": 42,
+            "water": 38,
+            "minerals": 976,
+            "iron": 992,
+            "biomass": 992,
+            "timber": 0,
+            "data": 18,
+            "credits": 988,
+            "trust": 52
+          },
+          "records": [
+            {
+              "id": "live-flow-1792557702689",
+              "type": "power",
+              "x": -44.998237378249755,
+              "y": 3.8310178167381066,
+              "z": 20.00077225522295,
+              "rotation": 1.5707963267948966,
+              "level": 1,
+              "health": 1000
+            }
+          ]
+        },
+        "actual": {
+          "id": "live-flow-1792557702689",
+          "type": "power",
+          "x": -44.998237378249755,
+          "y": 3.8310178167381066,
+          "z": 20.00077225522295,
+          "rotation": 1.5707963267948966,
+          "level": 1
+        },
+        "predicted": {
+          "ok": true,
+          "cost": {
+            "minerals": 24,
+            "iron": 8,
+            "biomass": 8,
+            "credits": 12
+          },
+          "building": {
+            "id": "live-flow-1792557702689",
+            "type": "power",
+            "x": -44.998237378249755,
+            "y": 3.8310178167381066,
+            "z": 20.00077225522295,
+            "rotation": 1.5707963267948966,
+            "level": 1,
+            "radius": 0,
+            "state": "complete"
+          }
+        },
+        "events": [
+          "selected-power",
+          "place-enter",
+          "record-added",
+          "progression",
+          "place-return",
+          "save-requested"
+        ]
+      },
+      "matched": true,
+      "differences": [],
+      "unobservable": [
+        "full-progression-engine-effects",
+        "distributed-authority",
+        "raw-collision-query",
+        "engine-save-projection"
+      ],
+      "fullyObservable": false,
+      "reproduce": "Replay captured request with before state"
+    }
+  },
+  "save": {
+    "state": "saved",
+    "version": 4,
+    "ids": [
+      "live-flow-1792557702689"
+    ],
+    "shadowPersisted": false
+  },
+  "disconnected": true,
+  "reconnected": true,
+  "restored": 1,
+  "errors": []
+}

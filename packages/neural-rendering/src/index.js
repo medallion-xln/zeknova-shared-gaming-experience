@@ -1,0 +1,11 @@
+export { BoundedQueue } from "./BoundedQueue.js";
+export { FrameSequencer } from "./FrameSequencer.js";
+export { RenderSession, SESSION_STATES } from "./RenderSession.js";
+export { PresentationController, PRESENTATION_MODES } from "./PresentationController.js";
+export { MockNeuralBackend, mockTransform } from "./MockNeuralBackend.js";
+export { NeuralRenderer } from "./NeuralRenderer.js";
+export { MatrixGame4Adapter, UPSTREAM, BRIDGE_PROTOCOL } from "./MatrixGame4Adapter.js";
+export { CanvasPresenter } from "./CanvasPresenter.js";
+export { detectLocalCapabilities } from "./capabilities.js";
+export { createPresentationPlugin } from "./plugin.js";
+export const READINESS_STATES = Object.freeze(["REFERENCE_READY", "TRANSPORT_READY", "UPSTREAM_MODEL_VERIFIED", "ZEKNOVA_NEURAL_VERIFIED"]);

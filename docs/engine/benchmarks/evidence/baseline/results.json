@@ -1,0 +1,62 @@
+{
+  "schema": "zge.bench01.baseline.v1",
+  "completedAt": "2026-10-22T05:27:41.840130+00:00",
+  "engine": {
+    "tests": 269,
+    "pass": 269,
+    "fail": 0,
+    "skipped": 0,
+    "durationMs": 167092.578209
+  },
+  "legacy": {
+    "total": 86,
+    "passed": 83,
+    "failures": [
+      {
+        "file": "tests/renderer-ownership-certification.test.mjs",
+        "exit": 1,
+        "ms": 48
+      },
+      {
+        "file": "tests/runtime-graphics-context.test.mjs",
+        "exit": 1,
+        "ms": 45
+      },
+      {
+        "file": "tests/runtime-reconstruction.test.mjs",
+        "exit": 1,
+        "ms": 43
+      }
+    ]
+  },
+  "historicalFailures": {
+    "tests/renderer-ownership-certification.test.mjs": {
+      "exit": 1,
+      "oldExpectedPresent": true,
+      "unchangedActualPresent": true
+    },
+    "tests/runtime-graphics-context.test.mjs": {
+      "exit": 1,
+      "oldExpectedPresent": true,
+      "unchangedActualPresent": true
+    },
+    "tests/runtime-reconstruction.test.mjs": {
+      "exit": 1,
+      "oldExpectedPresent": true,
+      "unchangedActualPresent": true
+    }
+  },
+  "newRegressions": 0,
+  "baselineCorrection": "263/263 was ZGE10;269/269 is current ZGE11 baseline.",
+  "sourceCheck": "PASS",
+  "animationAudit": {
+    "status": "PASS",
+    "runtimeModels": 70,
+    "clips": 66,
+    "quarantinedCorruptExports": 6
+  },
+  "authority": "Original LEGACY; isolated staging PHP/SQLite single writer; unchanged.",
+  "goldenRepin": false,
+  "gameplayChanged": false,
+  "originalGameplayCertification": "NOT_SUBSTITUTED_BY_UNIT_TESTS"
+}

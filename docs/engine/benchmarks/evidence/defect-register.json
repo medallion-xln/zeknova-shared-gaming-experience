@@ -1,0 +1,208 @@
+{
+  "schema": "zge.bench01.defect-register.v1",
+  "updatedAt": "2026-10-22T06:28:18.626824+00:00",
+  "environment": "macOS 26.5.2, Apple M1 Pro, 16 GiB; Chrome 155.0.8059.85 driven by Playwright; 1440\u00d71000 viewport, DPR 1, native WebGPU unless stated; isolated local PHP fixtures on127.0.0.1:8790. No production account/database was used.",
+  "confirmedCounts": {
+    "P0": 0,
+    "P1": 2,
+    "P2": 3,
+    "P3": 2
+  },
+  "countsScope": "Confirmed original-game and independent source-gameplay findings. Investigations, coverage gaps and harness errors are excluded. Original game has1P1; source world has1P1. Final Studio certification is pending.",
+  "defects": [
+    {
+      "id": "B01",
+      "severity": "P1",
+      "status": "CONFIRMED_BROWSER_REPRODUCTION",
+      "title": "Selecting a visible construction option scrolls the game shell and clips the viewport",
+      "repro": "Open the authenticated original game at1440\u00d71000. Enter command mode. Confirm the Solar Grid button is visible (recorded top845px, height74px). Physically click it, then inspect the canvas and #game-shell scroll position.",
+      "expected": "Selecting a building keeps the full canvas and HUD aligned within the viewport.",
+      "observed": "The canvas top changes0\u2192\u2212382px and its bottom becomes618px; #game-shell scrollTop changes0\u2192382 while window.scrollY remains0. The shell has scrollHeight1660px and clientHeight1000px despite overflow:hidden. Top HUD is clipped and lower map/operations content fills the displaced area.",
+      "evidence": [
+        "evidence/original/original-asset-audit.json",
+        "evidence/original/build-menu-layout.png",
+        "evidence/original/original-physics-retest.json"
+      ],
+      "subsystem": "HUD layout, focus/scroll handling and construction selection; exact triggering focus/scroll call is not isolated.",
+      "confidence": "High confidence in the observed layout symptom, medium confidence in CSS/focus/scroll cause; native human browser reproduction and smaller viewports remain to be checked.",
+      "fix": "Keep the viewport outside scrollable HUD flow; constrain HUD panels and control focus scrolling. Add a physical selection regression asserting canvas rect and shell scroll remain stable.",
+      "regression": "UNKNOWN. No equivalent historical geometry measurement establishes introduction time.",
+      "retest": "At1440\u00d71000 and smaller supported sizes, enter/exit command mode and select every visible building with pointer and keyboard. Canvas remains full-height at the viewport origin, HUD remains reachable, and physical placement uses the intended terrain point."
+    },
+    {
+      "id": "B07",
+      "severity": "P1",
+      "status": "CONFIRMED_SOURCE_GAMEPLAY_INPUT_STALL",
+      "title": "Normal continuous source-world input outruns quotas and stalls authoritative movement",
+      "environment": "Same macOS/Chrome host as original tests; independent supervised PHP/SQLite source-world fixture, native WebGL2 foreground canvas, eight independently authenticated browser contexts. One actor remains foreground throughout; seven peers retain normal1500ms polling. Principal240/min and world-IP600/min quotas unchanged.",
+      "repro": "Open eight authenticated source-world contexts in one isolated world. Keep seven normal polling peers. In the same foreground actor, continuously hold/release alternating movement keys for60seconds using the existing UI. Do not rotate actors, reset quotas, coalesce accepted commands or bypass authentication. Observe HTTP status, original outbox, authoritative pose and rendered frames.",
+      "expected": "Normal continuous controls have an explicit sustainable request budget and responsive authoritative movement. Rate-limit recovery must not conceal a long freeze behind smooth rendering.",
+      "observed": "During60000.7ms,694HTTP responses comprised693\u00d7200and one429rate-limited at21990.78ms. The foreground submitted375movement requests. One pending original command and pending-recovery-required followed; authoritative X stayed0.4from about22.2to42.4seconds and resumed around43.4seconds. The renderer still delivered about60FPS with frame p99=16.8ms. Outbox drained to0, all replicas converged and399archived commands/1207events replayed exactly. This is a user responsiveness failure alongside preserved durable authority, not corruption.",
+      "evidence": [
+        "evidence/multiplayer/continuous-input/continuous-input-60s.json",
+        "evidence/multiplayer/continuous-input/continuous-input-60s.png",
+        "evidence/multiplayer/continuous-input/continuous-source-archive-archive-audit.json"
+      ],
+      "subsystem": "Source UI command cadence, shared polling budget, per-principal/IP quotas and pending-command backpressure/retry scheduling. PHP/SQLite single-writer durability behaved correctly.",
+      "confidence": "High in physical-input/HTTP/pose evidence; exact rate-limit scope should be confirmed from admission metrics before implementation.",
+      "fix": "Budget UI movement and polling within the unchanged server policy, expose backpressure clearly and preserve/retry the original pending command safely. Do not raise quotas or hide/dismiss throttles to obtain a pass. Distinct accepted command semantics and single-writer authority must remain intact.",
+      "regression": "UNKNOWN. Earlier short smoke/burst tests did not sustain the same actor long enough; this run reveals a previously uncertified player path.",
+      "retest": "Repeat2/4/8-context continuous controls for at least60seconds per condition with normal quotas and one unchanged foreground identity. Require bounded measured input-to-authoritative-motion latency throughout, explicit throttling behavior, no multi-second silent freeze, original-command recovery, zero duplicate effects and exact final replay."
+    },
+    {
+      "id": "B02",
+      "severity": "P2",
+      "status": "CONFIRMED_INPUT_ISOLATION_FAILURE",
+      "title": "Gameplay keyboard input continues beneath a blocking diplomacy decision",
+      "repro": "In a local normal game, allow a diplomatic incident modal to open. Leave its decision unanswered. Try pointer Save/camera controls, then press movement/fire keys and observe player position, health and combat state.",
+      "expected": "A blocking decision has a clear input scope; background movement/combat hotkeys cannot unintentionally affect gameplay while the decision owns interaction.",
+      "observed": "The diplomacy modal intercepts pointer events while game.paused remainsfalse and physical movement/combat continues. The timed harness recorded12Save and9camera timeouts after the unanswered incident, with changing gameplay state and continuing RAF delivery. Leaving the modal unanswered is a harness omission; the modal blocking pointer controls is expected. The inconsistent keyboard scope is the product finding.",
+      "evidence": [
+        "evidence/original/original-long.json",
+        "evidence/original/original-targeted.json",
+        "evidence/original/long-end.png"
+      ],
+      "subsystem": "Global gameplay keyboard handlers versus diplomacy modal focus/input ownership.",
+      "confidence": "High for pointer-versus-keyboard inconsistency; final product policy should define whether simulation itself pauses or only gameplay input is suspended.",
+      "fix": "Centralize modal input ownership, release held movement controls on open, and route keyboard actions to the decision UI while preserving deliberate multiplayer simulation policy.",
+      "regression": "UNKNOWN; not newly introduced by this verification.",
+      "retest": "Open every blocking modal while movement is held, then send movement/fire/build shortcuts. No unintended world command occurs; the modal remains keyboard accessible; intended controls resume after a physical decision."
+    },
+    {
+      "id": "B03",
+      "severity": "P2",
+      "status": "CONFIRMED_TRANSPORT_IDEMPOTENCY_FAILURE",
+      "title": "A retried save regenerates its operation identity after a lost acknowledgment",
+      "repro": "Start from a settled acknowledged save. Physically Save. Let the first actual POST commit, but drop its response. Allow the unchanged transport to retry and compare operation IDs, revisions and duplicate flags.",
+      "expected": "The same pending save job reuses one persisted operation ID and recovers its original acknowledgment.",
+      "observed": "The first POST committed revision190. The retry of sequence6 used a different timestamp-suffixed operation ID, encountered a stale-revision conflict, then committed revision191 with duplicate:false. schema.operationId calls Date.now() on each flush. No duplicated charge, resource grant or boss reward was observed; do not classify this as a demonstrated P0 economic duplication.",
+      "evidence": [
+        "evidence/original/original-persistence.json",
+        "../../../packages/persistence/src/schema.js",
+        "../../../packages/persistence/src/SaveTransport.js",
+        "../../../api/save.php"
+      ],
+      "subsystem": "packages/persistence/src/schema.js operationId; SaveTransport.flush/flushBeacon; api/save.php operation-ID comparison.",
+      "confidence": "High: actual commit/lost-reply trace and matching source mechanism. Existing unit tests do not assert stable identity after commit-then-lost-ACK.",
+      "fix": "Generate operation identity once when creating a job, store it with pending state, and reuse it across retry, beacon and reload. Add actual commit-then-lost-reply regression coverage.",
+      "regression": "UNKNOWN; present in the existing implementation before BENCH01 changes.",
+      "retest": "After a committed reply is lost, the same operation ID returns duplicate:true at the original revision; supplies, buildings, XP and claims do not change twice. Repeat across page reload and a competing save."
+    },
+    {
+      "id": "B04",
+      "severity": "P2",
+      "status": "CONFIRMED_RECOVERY_UX_LIMIT",
+      "title": "Restored authentication does not resume saving on the same page",
+      "repro": "Begin with settled authenticated saving. Remove only the isolated test session cookies and verify direct GET401. Physically Save and wait for an actual POST401/auth-expired. Restore the original private cookies, verify authenticated GET200, and physically Save again without reloading.",
+      "expected": "After authentication is valid again, the player has a visible, safe route to resume the retained pending save.",
+      "observed": "Real GET/POST401 and auth-expired were observed. After cookies were restored, the same page remained terminal in auth-expired; a full-page reload recovered and acknowledged the retained job. The transport exposes resume(), but no tested player-facing action resumed it. This is a recoverable usability defect, not proof of permanent save loss or authorization bypass.",
+      "evidence": [
+        "evidence/original/original-recovery-retest.json",
+        "evidence/original/auth-denied-real.png"
+      ],
+      "subsystem": "Persistence/authentication lifecycle and player-facing save feedback/recovery.",
+      "confidence": "High for this cookie-removal/recovery fixture. Elapsed session TTL and a production identity provider were not tested.",
+      "fix": "Show the authentication/save failure clearly, offer reauthentication or a documented reload action, then resume retained work only after verified identity continuity.",
+      "regression": "UNKNOWN. Earlier core tests demonstrate explicit transport.resume(), not the complete player-facing path.",
+      "retest": "A genuine401 cannot mutate durable state. Reauthentication produces a visible successful recovery with the original pending state preserved; no hidden direct test-only flush/resume is required to certify the user workflow."
+    },
+    {
+      "id": "B05",
+      "severity": "P3",
+      "status": "CONFIRMED_VISIBLE_TEXT_DUPLICATION",
+      "title": "Guardian objective repeats the travel instruction",
+      "repro": "Open the original Mission1 objective panel or inspect Mission2 after the first boss victory. Read the Guardian Encounter instruction.",
+      "expected": "One concise boss objective and one canonical destination instruction.",
+      "observed": "The objective repeats \u201cTravel to Desert AO to start the boss fight\u201d twice; Mission2 similarly repeats the Wetlands destination. The duplicated text takes scarce HUD space.",
+      "evidence": [
+        "evidence/original/full-assets.png",
+        "evidence/original/boss-highlands-result.png"
+      ],
+      "subsystem": "Mission objective label composition and HUD presentation; route text already appears in the objective and is appended again.",
+      "confidence": "High, directly visible in screenshots.",
+      "fix": "Render the canonical boss destination in one place and shorten the objective panel text.",
+      "regression": "UNKNOWN; no prior screenshot comparison establishes introduction time.",
+      "retest": "All12mission Guardian objectives show a single correct route instruction in normal and expanded HUD views."
+    },
+    {
+      "id": "B06",
+      "severity": "P3",
+      "status": "CONFIRMED_RETAINED_OPTIONAL_IMPORT_ERRORS",
+      "title": "Four unavailable optional bridge imports generate startup404 errors",
+      "repro": "Launch the unchanged original game and record console/network failures after loading.",
+      "expected": "A shipped local build resolves enabled integrations or deliberately disables absent optional modules without failed requests.",
+      "observed": "HarvestRewards.js, BossReplaySettings.js, StructureDesign.js and DefenseTowers.js are unavailable. Four404messages and a combined fallback warning are emitted; built-in runtime fallbacks allow gameplay to continue. Separate existing Three duplication/deprecation warnings remain.",
+      "evidence": [
+        "evidence/original/original-long.json",
+        "evidence/original/original-targeted.json"
+      ],
+      "subsystem": "Compatibility director import manifest and original-game source/build provenance.",
+      "confidence": "High. The exact gameplay feature consequences of each absent bridge are not comprehensively certified.",
+      "fix": "Restore reproducible sources for intended bridges or explicitly disable unavailable optional imports while retaining tested runtime fallbacks. Consolidate Three only through a reviewed reproducible source strategy.",
+      "regression": "UNCHANGED_HISTORICAL: documented since ZGE00.",
+      "retest": "A clean boot has no missing integration requests; affected harvesting/boss/build/defense workflows retain their expected semantics and the three golden provenance failures are resolved through approved lineage, not repinning to hide changes."
+    }
+  ],
+  "investigationsAndGaps": [
+    {
+      "id": "I01",
+      "priority": "P2_INVESTIGATION",
+      "title": "Attribute rare frame stalls before setting the release performance budget",
+      "evidence": "original-analysis.json: full timed capture59.50FPS,1%low32.31FPS,106intervals>33.33ms,36>100ms,max316.7ms; pointer-confirmed prefix59.58FPS,1%low35.03FPS.",
+      "expected": "A scoped frame budget and controlled capture should distinguish rendering/simulation/GC from observer overhead.",
+      "repro": "Repeat the same physical scene with fixed viewport/renderer and reduced instrumentation, preserving all raw frames.",
+      "subsystem": "Unassigned: gameplay, rendering, streaming, GC and benchmark checkpoint/screenshot instrumentation are candidates.",
+      "confidence": "High in observed RAF intervals; insufficient evidence for causal attribution or a new regression.",
+      "fix": "Capture narrow traces around spikes, correlate task/GC/asset/GPU events where supported, and compare instrumented versus minimal observer runs.",
+      "regression": "NONCOMPARABLE to earlier120Hz interactive measurements.",
+      "retest": "Repeat equivalent scenes, retain inclusive frame distributions, attribute long frames and demonstrate compliance with an explicitly accepted budget."
+    },
+    {
+      "id": "I02",
+      "priority": "P2_INVESTIGATION",
+      "title": "Measure fixed-state retention and reduce renderer/HUD resource pressure",
+      "evidence": "original-analysis.json: renderer-reported estimate84.72\u2192982.99MiB, CDP heap48.92\u2192126.75MiB, performance.memory137.23\u2192832.10MiB; DOM nodes5796\u219222716; live listeners184\u2192199; workers5and intervals31remain bounded.",
+      "expected": "A defined resource budget and bounded retained owners after equivalent warm states, disposal and repeated restart.",
+      "repro": "Warm the same content, hold comparable state, sample retained allocations and repeat owned scene/page restart.",
+      "subsystem": "Asset instances, backend resource estimates, HUD DOM churn and normal streaming/GC accounting.",
+      "confidence": "High in samples; leak status unresolved. Distinct byte scopes must not be summed or called exact GPU allocations.",
+      "fix": "Use allocation/retaining-path evidence, deterministic warmed scenes and lifecycle audits before optimizing shared ownership/cache limits.",
+      "regression": "INSUFFICIENT_DATA; no equivalent retained-object baseline.",
+      "retest": "Show plateau or explained bounded growth under fixed-state runs and disposal, while preserving independent animation/material behavior."
+    },
+    {
+      "id": "G01",
+      "priority": "RELEASE_CERTIFICATION_GAP",
+      "title": "Complete natural campaign, rank and broader world/boss coverage",
+      "evidence": "Two fixtures complete Mission1/Sunscar from final objectives in Desert and Highlands, then unlock Mission2; the natural902.836sloop stays on Mission1.",
+      "expected": "Natural end-to-end progression through all12missions, rank unlocks and representative world/encounter failure paths.",
+      "repro": "Start a fresh unseeded local campaign and use physical controls for prerequisites, construction and rank progression.",
+      "subsystem": "Campaign/economy/onboarding coverage; absence of certification is not an invented gameplay bug.",
+      "confidence": "High in the stated coverage limit.",
+      "fix": "Add recorded natural progression checkpoints and targeted integration cases for remaining missions/bosses; assess early pressure and deaths in human testing.",
+      "regression": "NOT_APPLICABLE: coverage gap.",
+      "retest": "Each mission and boss is individually exercised, rewards remain once-only after reload, rank gates/unlocks and new-player completion routes are verified."
+    },
+    {
+      "id": "G02",
+      "priority": "RELEASE_CERTIFICATION_GAP",
+      "title": "Retain original source, live authority and production security/operations gates",
+      "evidence": "Baseline manifests/reports retain absent original reproducible build, three golden mismatches, unresolved historical GLTF attribution, legacy authority and owner-controlled release/security gates.",
+      "expected": "A reproducible approved artifact lineage, complete writer/effect migration and approved production identity/TLS/operations/credential remediation.",
+      "repro": "Review the current baseline manifest, clean original build capability and migration/security gate checklist without printing credentials.",
+      "subsystem": "Build provenance, authority migration and release operations.",
+      "confidence": "High in documented unmet gates; no production credential mutation or full security audit was attempted in BENCH01.",
+      "fix": "Run an explicitly scoped source/release milestone; retain legacy authority until closure and owner approval.",
+      "regression": "UNCHANGED_HISTORICAL.",
+      "retest": "Clean approved original build and semantic/golden lineage verification, complete fenced writer/effect coverage, identity/TLS/operational/security postchecks and owner release approval."
+    }
+  ],
+  "sourceQuotaFinding": {
+    "status": "FAIL_CONTINUOUS_INPUT",
+    "defectId": "B07",
+    "durableAuthority": "PASS_WITH_LIMITS",
+    "functionalIntegrationTests": 56,
+    "exactBackendMatrixConditions": 36
+  },
+  "gameplayPatched": false
+}

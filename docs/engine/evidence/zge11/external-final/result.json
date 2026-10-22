@@ -1,0 +1,30 @@
+{
+  "schema": "zge.external-consumer.v1",
+  "desktop": "/Users/dwaynecampbell/Desktop/zge11-signal-garden",
+  "fresh": "/tmp/zge11-consumer-verify-y9t7gr",
+  "files": [
+    "project.json",
+    "main.mjs",
+    "index.html",
+    "game.test.mjs",
+    "consumer.ts",
+    "tsconfig.json",
+    "server.mjs"
+  ],
+  "packageSha256": "d44635dab49cfc1e4c25feb2d39324724b6ef2633f22f42829204945c0d32990",
+  "packageFiles": [
+    "README.md",
+    "dist/build-manifest.json",
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/three.d.ts",
+    "dist/three.js",
+    "package.json"
+  ],
+  "install": "\nup to date, audited 4 packages in 247ms\n\nfound 0 vulnerabilities\n\nadded 3 packages, and audited 4 packages in 577ms\n\nfound 0 vulnerabilities\n",
+  "test": "\n> test\n> node --test game.test.mjs\n\nTAP version 13\n# Subtest: custom component, public rules, objective, asset and persistence\nok 1 - custom component, public rules, objective, asset and persistence\n  ---\n  duration_ms: 30.322875\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 79.239\n",
+  "typecheck": "\n> typecheck\n> tsc --noEmit\n\n",
+  "desktopTest": "\n> test\n> node --test game.test.mjs\n\nTAP version 13\n# Subtest: custom component, public rules, objective, asset and persistence\nok 1 - custom component, public rules, objective, asset and persistence\n  ---\n  duration_ms: 34.8145\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 90.619291\n",
+  "desktopTypes": "\n> typecheck\n> tsc --noEmit\n\n",
+  "publicImportsOnly": true
+}

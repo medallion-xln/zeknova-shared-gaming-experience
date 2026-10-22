@@ -1,0 +1,40 @@
+{
+  "initialFiveTestPass": {
+    "tests": 5,
+    "durationMs": 25775.732917,
+    "automaticLauncherRecoveryMs": 9850.574625000001
+  },
+  "completeSevenTestPass": {
+    "tests": 7,
+    "durationMs": 44716.550833,
+    "automaticLauncherRecoveryMs": 9876.883249999999,
+    "heartbeatRecoveryMs": 11016.586375000003,
+    "beforeCommitRecoveryMs": 2732.8680410000015,
+    "afterCommitRecoveryMs": 2828.946916000001
+  },
+  "finalTargetedChecks": {
+    "operatorControlPass": true,
+    "gatewayDeathPass": true,
+    "beforeCommitRecoveryMs": 740.3102079999999,
+    "afterCommitRecoveryMs": 1005.8306660000001
+  },
+  "directLauncherCompatibilityPass": true,
+  "inodeGuardCertification": {
+    "tests": 7,
+    "passed": 7,
+    "durationMs": 40605.715875,
+    "missingFileRecreated": false,
+    "emptyReplacementInitialized": false,
+    "originalInodeResume": true,
+    "duplicateReceipt": true,
+    "personalXP": 14,
+    "newAuditIdentityRequired": true
+  },
+  "finalInodeControlChecks": {
+    "tests": 2,
+    "passed": 2,
+    "durationMs": 12834.66575,
+    "standaloneManagedDirectoryDenied": true,
+    "auditWithoutIdentityDenied": true
+  }
+}

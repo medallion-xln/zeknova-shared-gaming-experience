@@ -171,14 +171,15 @@ export class FirstFifteenDirector {
     this._moveTracker = setInterval(trackMove, 500);
 
     // Command mode entry
-    window.addEventListener("keydown", (e) => {
-      if (e.code === "Tab") this.game._ffCommandMode = true;
-    });
+    const onKeydown = (e) => { if (e.code === "Tab") this.game._ffCommandMode = true; };
     // Advisor open (SCOUT-01 console)
-    window.addEventListener("zeknova:scout-open", () => { this.game._ffAdvisor = true; });
+    const onScoutOpen = () => { this.game._ffAdvisor = true; };
     // Patrol / threat signals
-    window.addEventListener("zeknova:patrol-encounter", () => { this.game._ffPatrol = true; });
-    window.addEventListener("zeknova:threat-resolved", () => { this.game._ffThreatResolved = true; });
+    const onPatrol = () => { this.game._ffPatrol = true; };
+    const onThreatResolved = () => { this.game._ffThreatResolved = true; };
+    // ZGE-02: every listener is owned and removed by teardown() (previously leaked 5 listeners per cycle).
+    this._windowListeners = [["keydown", onKeydown], ["zeknova:scout-open", onScoutOpen], ["zeknova:patrol-encounter", onPatrol], ["zeknova:threat-resolved", onThreatResolved]];
+    for (const [type, handler] of this._windowListeners) window.addEventListener(type, handler);
   }
 
   buildOverlay() {
@@ -197,7 +198,8 @@ export class FirstFifteenDirector {
           <button data-ff-dismiss type="button">Dismiss guidance</button>
         </div>
       </div>`;
-    el.querySelector("[data-ff-dismiss]").addEventListener("click", () => this.dismiss());
+    this._onDismiss = () => this.dismiss();
+    el.querySelector("[data-ff-dismiss]").addEventListener("click", this._onDismiss);
     // Bottom-left, never blocks center view
     Object.assign(el.style, {
       position: "fixed", left: "16px", bottom: "16px", zIndex: 40,
@@ -239,10 +241,14 @@ export class FirstFifteenDirector {
   }
 
   teardown() {
-    if (this.timer) clearInterval(this.timer);
-    if (this._moveTracker) clearInterval(this._moveTracker);
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    if (this._moveTracker) { clearInterval(this._moveTracker); this._moveTracker = null; }
+    for (const [type, handler] of this._windowListeners ?? []) window.removeEventListener(type, handler);
+    this._windowListeners = [];
+    if (this.overlay && this._onDismiss) { this.overlay.querySelector("[data-ff-dismiss]")?.removeEventListener("click", this._onDismiss); this._onDismiss = null; }
     this.overlay?.classList.add("ff-done");
-    setTimeout(() => this.overlay?.remove(), 600);
+    if (this._fadeTimer) clearTimeout(this._fadeTimer);
+    this._fadeTimer = setTimeout(() => { this.overlay?.remove(); this._fadeTimer = null; }, 600);
   }
 
   tick() {

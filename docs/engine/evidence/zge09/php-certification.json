@@ -1,0 +1,417 @@
+{
+  "implementation": "actual PHP + SQLite + existing JS runtime",
+  "scenarios": [
+    {
+      "scenario": "concurrency-and-reward",
+      "revision": 3,
+      "cursor": 26,
+      "accepted": 3,
+      "rejected": 3,
+      "rewards": 1,
+      "inventory": {
+        "stone": 0
+      },
+      "checkpointCount": 2,
+      "duplicateSuppressed": 1,
+      "resourceInvariant": true,
+      "transactions": [
+        {
+          "id": "b",
+          "player": "bob",
+          "revision": 1,
+          "accepted": true,
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "b-b",
+              "type": "shelter",
+              "x": 6,
+              "y": 0.13959411746781122,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            },
+            "transactionId": "[\"bob\",\"b\"]",
+            "revision": 1,
+            "eventIds": [
+              "[\"valley\",\"[\\\"bob\\\",\\\"b\\\"]\",0]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"b\\\"]\",1]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"b\\\"]\",2]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"b\\\"]\",3]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"b\\\"]\",4]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"b\\\"]\",5]"
+            ]
+          }
+        },
+        {
+          "id": "a",
+          "player": "alice",
+          "revision": 1,
+          "accepted": false,
+          "result": {
+            "ok": false,
+            "reason": "stale-world-revision",
+            "transactionId": "[\"alice\",\"a\"]",
+            "revision": 1,
+            "eventIds": [
+              "[\"valley\",\"[\\\"alice\\\",\\\"a\\\"]\",0]",
+              "[\"valley\",\"[\\\"alice\\\",\\\"a\\\"]\",1]"
+            ]
+          }
+        },
+        {
+          "id": "overlap",
+          "player": "bob",
+          "revision": 1,
+          "accepted": false,
+          "result": {
+            "ok": false,
+            "reason": "occupied",
+            "transactionId": "[\"bob\",\"overlap\"]",
+            "revision": 1,
+            "eventIds": [
+              "[\"valley\",\"[\\\"bob\\\",\\\"overlap\\\"]\",0]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"overlap\\\"]\",1]"
+            ]
+          }
+        },
+        {
+          "id": "second",
+          "player": "carol",
+          "revision": 2,
+          "accepted": true,
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "b-second",
+              "type": "shelter",
+              "x": 2,
+              "y": 0.08871960002725558,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            },
+            "transactionId": "[\"carol\",\"second\"]",
+            "revision": 2,
+            "eventIds": [
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",0]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",1]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",2]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",3]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",4]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",5]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",6]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",7]",
+              "[\"valley\",\"[\\\"carol\\\",\\\"second\\\"]\",8]"
+            ]
+          }
+        },
+        {
+          "id": "third",
+          "player": "bob",
+          "revision": 3,
+          "accepted": true,
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "b-third",
+              "type": "shelter",
+              "x": 6,
+              "y": -0.03842809558023306,
+              "z": 6,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            },
+            "transactionId": "[\"bob\",\"third\"]",
+            "revision": 3,
+            "eventIds": [
+              "[\"valley\",\"[\\\"bob\\\",\\\"third\\\"]\",0]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"third\\\"]\",1]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"third\\\"]\",2]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"third\\\"]\",3]",
+              "[\"valley\",\"[\\\"bob\\\",\\\"third\\\"]\",4]"
+            ]
+          }
+        },
+        {
+          "id": "poor",
+          "player": "alice",
+          "revision": 3,
+          "accepted": false,
+          "result": {
+            "ok": false,
+            "reason": "resources",
+            "shortfalls": {
+              "stone": 4
+            },
+            "transactionId": "[\"alice\",\"poor\"]",
+            "revision": 3,
+            "eventIds": [
+              "[\"valley\",\"[\\\"alice\\\",\\\"poor\\\"]\",0]",
+              "[\"valley\",\"[\\\"alice\\\",\\\"poor\\\"]\",1]"
+            ]
+          }
+        }
+      ],
+      "revisionSequence": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "scenario": "authorization",
+      "crossWorld": 403,
+      "forgedIdentity": 403,
+      "viewer": 403,
+      "forgedBalance": 422,
+      "invalidToken": 401,
+      "mutations": 0
+    },
+    {
+      "scenario": "lost-ack-old-replay",
+      "duplicateSuppressed": 2,
+      "revision": 2,
+      "inventory": {
+        "stone": 4
+      },
+      "xp": 25
+    },
+    {
+      "scenario": "crash-before-commit",
+      "recovered": true,
+      "duplicateSuppressed": 0,
+      "revision": 1,
+      "inventory": {
+        "stone": 8
+      }
+    },
+    {
+      "scenario": "crash-after-commit",
+      "recovered": true,
+      "duplicateSuppressed": 1,
+      "revision": 1,
+      "inventory": {
+        "stone": 8
+      }
+    },
+    {
+      "scenario": "rollback-and-reconnect",
+      "partialEffects": 0,
+      "revision": 1
+    },
+    {
+      "scenario": "delayed-command-and-reconciliation",
+      "revision": 1,
+      "cursor": 8,
+      "converged": true
+    },
+    {
+      "scenario": "concurrent-mission-completion",
+      "accepted": 1,
+      "rejected": 1,
+      "rewards": 1,
+      "xp": 25
+    },
+    {
+      "scenario": "reward-transaction-rollback",
+      "partialRewards": 0,
+      "retryRewards": 1
+    }
+  ],
+  "httpLatency": {
+    "unit": "ms; actual HTTP + PHP + SQLite + JS worker startup",
+    "samples": [
+      {
+        "status": 200,
+        "ms": 136.52533399999993
+      },
+      {
+        "status": 200,
+        "ms": 215.75170899999995
+      },
+      {
+        "status": 200,
+        "ms": 79.86275
+      },
+      {
+        "status": 200,
+        "ms": 128.972709
+      },
+      {
+        "status": 200,
+        "ms": 140.2331250000001
+      },
+      {
+        "status": 200,
+        "ms": 120.2064170000001
+      },
+      {
+        "status": 200,
+        "ms": 121.765625
+      },
+      {
+        "status": 200,
+        "ms": 60.346416999999974
+      },
+      {
+        "status": 403,
+        "ms": 4.057291999999961
+      },
+      {
+        "status": 403,
+        "ms": 2.2135000000000673
+      },
+      {
+        "status": 403,
+        "ms": 2.275916999999936
+      },
+      {
+        "status": 422,
+        "ms": 2.203166999999894
+      },
+      {
+        "status": 422,
+        "ms": 2.255957999999964
+      },
+      {
+        "status": 503,
+        "ms": 63.76224999999977
+      },
+      {
+        "status": 200,
+        "ms": 59.376667
+      },
+      {
+        "status": 200,
+        "ms": 116.89729100000022
+      },
+      {
+        "status": 200,
+        "ms": 58.932458000000224
+      },
+      {
+        "status": 200,
+        "ms": 59.95820800000001
+      },
+      {
+        "status": 200,
+        "ms": 58.01175000000012
+      },
+      {
+        "status": 200,
+        "ms": 113.40312500000027
+      },
+      {
+        "status": 200,
+        "ms": 59.505457999999635
+      },
+      {
+        "status": 200,
+        "ms": 60.43287499999997
+      },
+      {
+        "status": 503,
+        "ms": 61.590916999999536
+      },
+      {
+        "status": 200,
+        "ms": 195.13991600000008
+      },
+      {
+        "status": 200,
+        "ms": 119.78141700000015
+      },
+      {
+        "status": 200,
+        "ms": 122.36095800000021
+      },
+      {
+        "status": 200,
+        "ms": 59.92650000000049
+      },
+      {
+        "status": 200,
+        "ms": 61.02612500000032
+      },
+      {
+        "status": 200,
+        "ms": 59.78191700000025
+      },
+      {
+        "status": 200,
+        "ms": 60.20916699999998
+      },
+      {
+        "status": 200,
+        "ms": 122.46991700000035
+      },
+      {
+        "status": 200,
+        "ms": 115.55683299999964
+      },
+      {
+        "status": 200,
+        "ms": 174.74725000000035
+      },
+      {
+        "status": 200,
+        "ms": 58.76249999999982
+      },
+      {
+        "status": 200,
+        "ms": 118.87670799999978
+      },
+      {
+        "status": 503,
+        "ms": 69.13337500000034
+      },
+      {
+        "status": 200,
+        "ms": 82.16320799999994
+      },
+      {
+        "status": 200,
+        "ms": 117.48850000000039
+      }
+    ]
+  }
+}

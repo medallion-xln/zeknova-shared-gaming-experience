@@ -4,11 +4,10 @@ import {
   Group,
   Vector3,
 } from './vendor/three.module.min.js';
-import { GLTFLoader } from './vendor/GLTFLoader.js';
+import { getThreeAssetService } from '../packages/assets/src/threeAssetService.js';
 import { MeshoptDecoder } from './vendor/meshopt_decoder.module.js';
 
-const loader = new GLTFLoader();
-loader.setMeshoptDecoder(MeshoptDecoder);
+const loader = getThreeAssetService();
 
 function prepareModel(scene, targetHeight, name) {
   const root = new Group();

@@ -1,0 +1,3333 @@
+{
+  "schema": "zge.retention-diagnostic.v1",
+  "scope": "separate isolated evaluator, 9000 committed candidate moves, one synthetic player, no HTTP/PHP; full GC only here; private raw snapshots deleted after class aggregation; self size is not dominator retained size",
+  "samples": [
+    {
+      "label": "warm",
+      "memory": {
+        "rss": 92110848,
+        "heapTotal": 39993344,
+        "heapUsed": 5329000,
+        "external": 1905930,
+        "arrayBuffers": 24987
+      },
+      "classes": {
+        "Float64Array": {
+          "count": 13,
+          "selfBytes": 1248
+        },
+        "global": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "Object": {
+          "count": 1268,
+          "selfBytes": 68184
+        },
+        "Uint8Array": {
+          "count": 9,
+          "selfBytes": 752
+        },
+        "process": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Map": {
+          "count": 26,
+          "selfBytes": 808
+        },
+        "Set": {
+          "count": 23,
+          "selfBytes": 752
+        },
+        "WeakMap": {
+          "count": 10,
+          "selfBytes": 336
+        },
+        "WeakSet": {
+          "count": 3,
+          "selfBytes": 112
+        },
+        "Uint32Array": {
+          "count": 7,
+          "selfBytes": 672
+        },
+        "Array": {
+          "count": 315,
+          "selfBytes": 10176
+        },
+        "Int32Array": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "system / Context": {
+          "count": 883,
+          "selfBytes": 83296
+        },
+        "Generator": {
+          "count": 60,
+          "selfBytes": 5464
+        },
+        "ArrayBuffer": {
+          "count": 38,
+          "selfBytes": 3312
+        },
+        "BigInt64Array": {
+          "count": 2,
+          "selfBytes": 192
+        },
+        "ModuleWrap": {
+          "count": 33,
+          "selfBytes": 2640
+        },
+        "Array Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncGenerator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Map Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Set Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "String": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "JSON": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Promise": {
+          "count": 80,
+          "selfBytes": 3824
+        },
+        "WebAssembly": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Tag": {
+          "count": 1,
+          "selfBytes": 48
+        },
+        "EventEmitter": {
+          "count": 7,
+          "selfBytes": 328
+        },
+        "TypedArray": {
+          "count": 11,
+          "selfBytes": 616
+        },
+        "Channel": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "BigUint64Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "Symbol": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Error": {
+          "count": 195,
+          "selfBytes": 5000
+        },
+        "FixedQueue": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "InactiveAsyncContextFrame": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "FixedCircularBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "TextDecoder": {
+          "count": 2,
+          "selfBytes": 176
+        },
+        "TypeError": {
+          "count": 97,
+          "selfBytes": 2328
+        },
+        "PriorityQueue": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "ImmediateList": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "Boolean": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "URL": {
+          "count": 3,
+          "selfBytes": 152
+        },
+        "AsyncWrap": {
+          "count": 29,
+          "selfBytes": 1624
+        },
+        "HandleWrap": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "Buffer": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "RangeError": {
+          "count": 31,
+          "selfBytes": 744
+        },
+        "Float32Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "BigInt": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WeakRefMap": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "FinalizationRegistry": {
+          "count": 6,
+          "selfBytes": 400
+        },
+        "WeakReference": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "WeakRef": {
+          "count": 13,
+          "selfBytes": 432
+        },
+        "TextEncoder": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "Atomics": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "console": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Math": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Reflect": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Event": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "AsyncFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "CustomEvent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "EventTarget": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "DataView": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "DOMException": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Intl.Collator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DisplayNames": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.ListFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.PluralRules": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.RelativeTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DateTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Locale": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.NumberFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Segmenter": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "URLSearchParams": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Async-from-Sync Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncGeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Hash": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "WebAssembly.Module": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Instance": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Table": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Memory": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Global": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Tag": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Exception": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "GeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Segmenter String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "SystemError": {
+          "count": 12,
+          "selfBytes": 288
+        },
+        "NodeError": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "StatsBase": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "RegExp String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "SharedArrayBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Number": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "Dirent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "CountQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Blob": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "SyntaxError": {
+          "count": 4,
+          "selfBytes": 96
+        },
+        "URIError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Int8Array": {
+          "count": 5,
+          "selfBytes": 480
+        },
+        "URLSearchParams Iterator": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "BuiltinModule": {
+          "count": 359,
+          "selfBytes": 28720
+        },
+        "AggregateError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "ByteLengthQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Duplex": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "Readable": {
+          "count": 3,
+          "selfBytes": 136
+        },
+        "Stream": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Scheduler": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "Transform": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "URLContext": {
+          "count": 2,
+          "selfBytes": 208
+        },
+        "AsymmetricKeyObject": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "KeyObject": {
+          "count": 3,
+          "selfBytes": 72
+        },
+        "ResolveCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "LoadCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "ModuleJob": {
+          "count": 32,
+          "selfBytes": 3072
+        },
+        "LazyTransform": {
+          "count": 6,
+          "selfBytes": 336
+        },
+        "ModuleLoader": {
+          "count": 1,
+          "selfBytes": 136
+        },
+        "ModuleJobBase": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "MultiplayerConstructionRuntime": {
+          "count": 1,
+          "selfBytes": 80
+        },
+        "GameplayEventJournal": {
+          "count": 1,
+          "selfBytes": 72
+        },
+        "Crypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "AbortSignal": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "AbortController": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "InterfaceConstructor": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Deserializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Serializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Writable": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "Module": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "WorldEvaluator": {
+          "count": 1,
+          "selfBytes": 144
+        },
+        "CryptoKey": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "X509Certificate": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "SubtleCrypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "TracingChannel": {
+          "count": 1,
+          "selfBytes": 104
+        },
+        "Iterator Helper": {
+          "count": 1,
+          "selfBytes": 56
+        }
+      },
+      "totals": {
+        "synthetic": {
+          "count": 33,
+          "selfBytes": 2576
+        },
+        "hidden": {
+          "count": 9589,
+          "selfBytes": 364504
+        },
+        "string": {
+          "count": 13823,
+          "selfBytes": 751056
+        },
+        "code": {
+          "count": 26597,
+          "selfBytes": 2874336
+        },
+        "array": {
+          "count": 1694,
+          "selfBytes": 785360
+        },
+        "object shape": {
+          "count": 6470,
+          "selfBytes": 602840
+        },
+        "number": {
+          "count": 291,
+          "selfBytes": 4656
+        },
+        "symbol": {
+          "count": 272,
+          "selfBytes": 6528
+        },
+        "object": {
+          "count": 3733,
+          "selfBytes": 234184
+        },
+        "closure": {
+          "count": 6693,
+          "selfBytes": 396368
+        },
+        "concatenated string": {
+          "count": 650,
+          "selfBytes": 20800
+        },
+        "bigint": {
+          "count": 29,
+          "selfBytes": 672
+        },
+        "native": {
+          "count": 168,
+          "selfBytes": 38543
+        },
+        "regexp": {
+          "count": 51,
+          "selfBytes": 2856
+        },
+        "sliced string": {
+          "count": 5,
+          "selfBytes": 160
+        }
+      }
+    },
+    {
+      "label": "after5000",
+      "memory": {
+        "rss": 94208000,
+        "heapTotal": 41304064,
+        "heapUsed": 6043024,
+        "external": 1904603,
+        "arrayBuffers": 24987
+      },
+      "classes": {
+        "Float64Array": {
+          "count": 13,
+          "selfBytes": 1248
+        },
+        "global": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "Object": {
+          "count": 1421,
+          "selfBytes": 74336
+        },
+        "Uint8Array": {
+          "count": 9,
+          "selfBytes": 752
+        },
+        "process": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Map": {
+          "count": 26,
+          "selfBytes": 808
+        },
+        "Set": {
+          "count": 23,
+          "selfBytes": 752
+        },
+        "WeakMap": {
+          "count": 10,
+          "selfBytes": 336
+        },
+        "WeakSet": {
+          "count": 3,
+          "selfBytes": 112
+        },
+        "Uint32Array": {
+          "count": 7,
+          "selfBytes": 672
+        },
+        "Array": {
+          "count": 315,
+          "selfBytes": 10176
+        },
+        "Int32Array": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "system / Context": {
+          "count": 883,
+          "selfBytes": 83296
+        },
+        "Generator": {
+          "count": 60,
+          "selfBytes": 5464
+        },
+        "ArrayBuffer": {
+          "count": 38,
+          "selfBytes": 3312
+        },
+        "BigInt64Array": {
+          "count": 2,
+          "selfBytes": 192
+        },
+        "ModuleWrap": {
+          "count": 33,
+          "selfBytes": 2640
+        },
+        "URL": {
+          "count": 3,
+          "selfBytes": 152
+        },
+        "URLContext": {
+          "count": 2,
+          "selfBytes": 208
+        },
+        "Crypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "Readable": {
+          "count": 3,
+          "selfBytes": 136
+        },
+        "Transform": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Duplex": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "Stream": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Scheduler": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "WeakReference": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "WeakRef": {
+          "count": 13,
+          "selfBytes": 432
+        },
+        "Channel": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "Promise": {
+          "count": 80,
+          "selfBytes": 3824
+        },
+        "AsyncWrap": {
+          "count": 29,
+          "selfBytes": 1624
+        },
+        "ModuleJobBase": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "WorldEvaluator": {
+          "count": 1,
+          "selfBytes": 144
+        },
+        "AbortSignal": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "FinalizationRegistry": {
+          "count": 6,
+          "selfBytes": 400
+        },
+        "AbortController": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "ModuleJob": {
+          "count": 32,
+          "selfBytes": 3072
+        },
+        "AsyncFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "ModuleLoader": {
+          "count": 1,
+          "selfBytes": 136
+        },
+        "EventTarget": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "EventEmitter": {
+          "count": 7,
+          "selfBytes": 328
+        },
+        "InterfaceConstructor": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Deserializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Serializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "TypedArray": {
+          "count": 11,
+          "selfBytes": 616
+        },
+        "AsyncGeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "TypeError": {
+          "count": 97,
+          "selfBytes": 2328
+        },
+        "Math": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Writable": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "Module": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "JSON": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "GeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "BuiltinModule": {
+          "count": 359,
+          "selfBytes": 28720
+        },
+        "AsymmetricKeyObject": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "KeyObject": {
+          "count": 3,
+          "selfBytes": 72
+        },
+        "ResolveCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "LoadCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "LazyTransform": {
+          "count": 6,
+          "selfBytes": 336
+        },
+        "Error": {
+          "count": 195,
+          "selfBytes": 5000
+        },
+        "MultiplayerConstructionRuntime": {
+          "count": 1,
+          "selfBytes": 80
+        },
+        "GameplayEventJournal": {
+          "count": 1,
+          "selfBytes": 72
+        },
+        "Hash": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "TextDecoder": {
+          "count": 2,
+          "selfBytes": 176
+        },
+        "Tag": {
+          "count": 1,
+          "selfBytes": 48
+        },
+        "HandleWrap": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "CryptoKey": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "X509Certificate": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "SubtleCrypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "TracingChannel": {
+          "count": 1,
+          "selfBytes": 104
+        },
+        "Buffer": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "console": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "DataView": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Boolean": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "Number": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "String": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "Iterator Helper": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Array Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncGenerator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Map Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Set Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "BigUint64Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "Symbol": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "FixedQueue": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "InactiveAsyncContextFrame": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "FixedCircularBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "PriorityQueue": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "ImmediateList": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "RangeError": {
+          "count": 31,
+          "selfBytes": 744
+        },
+        "Float32Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "BigInt": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WeakRefMap": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "TextEncoder": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "Atomics": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Reflect": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "RegExp String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "SharedArrayBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Tag": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "StatsBase": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Dirent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "CountQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Blob": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "SyntaxError": {
+          "count": 4,
+          "selfBytes": 96
+        },
+        "AggregateError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Int8Array": {
+          "count": 5,
+          "selfBytes": 480
+        },
+        "ByteLengthQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Event": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "CustomEvent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "DOMException": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Intl.Collator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DisplayNames": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.ListFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.PluralRules": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.RelativeTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DateTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Locale": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.NumberFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Segmenter": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "URLSearchParams": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Async-from-Sync Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Module": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Instance": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Table": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Memory": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Global": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Exception": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Segmenter String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "SystemError": {
+          "count": 12,
+          "selfBytes": 288
+        },
+        "NodeError": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "URIError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "URLSearchParams Iterator": {
+          "count": 1,
+          "selfBytes": 24
+        }
+      },
+      "totals": {
+        "synthetic": {
+          "count": 33,
+          "selfBytes": 2576
+        },
+        "hidden": {
+          "count": 9753,
+          "selfBytes": 381888
+        },
+        "string": {
+          "count": 13842,
+          "selfBytes": 752344
+        },
+        "code": {
+          "count": 26958,
+          "selfBytes": 3181448
+        },
+        "array": {
+          "count": 1696,
+          "selfBytes": 791720
+        },
+        "object shape": {
+          "count": 6494,
+          "selfBytes": 605088
+        },
+        "number": {
+          "count": 303,
+          "selfBytes": 4848
+        },
+        "symbol": {
+          "count": 272,
+          "selfBytes": 6528
+        },
+        "object": {
+          "count": 3886,
+          "selfBytes": 240336
+        },
+        "closure": {
+          "count": 6693,
+          "selfBytes": 396368
+        },
+        "concatenated string": {
+          "count": 650,
+          "selfBytes": 20800
+        },
+        "bigint": {
+          "count": 29,
+          "selfBytes": 672
+        },
+        "native": {
+          "count": 168,
+          "selfBytes": 38543
+        },
+        "regexp": {
+          "count": 51,
+          "selfBytes": 2856
+        },
+        "sliced string": {
+          "count": 5,
+          "selfBytes": 160
+        }
+      }
+    },
+    {
+      "label": "after9000",
+      "memory": {
+        "rss": 90472448,
+        "heapTotal": 41566208,
+        "heapUsed": 6083080,
+        "external": 1904603,
+        "arrayBuffers": 24987
+      },
+      "classes": {
+        "Float64Array": {
+          "count": 13,
+          "selfBytes": 1248
+        },
+        "global": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "Object": {
+          "count": 1573,
+          "selfBytes": 80448
+        },
+        "Uint8Array": {
+          "count": 9,
+          "selfBytes": 752
+        },
+        "process": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Map": {
+          "count": 26,
+          "selfBytes": 808
+        },
+        "Set": {
+          "count": 23,
+          "selfBytes": 752
+        },
+        "WeakMap": {
+          "count": 10,
+          "selfBytes": 336
+        },
+        "WeakSet": {
+          "count": 3,
+          "selfBytes": 112
+        },
+        "Uint32Array": {
+          "count": 7,
+          "selfBytes": 672
+        },
+        "Array": {
+          "count": 315,
+          "selfBytes": 10176
+        },
+        "Int32Array": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "system / Context": {
+          "count": 883,
+          "selfBytes": 83296
+        },
+        "Generator": {
+          "count": 60,
+          "selfBytes": 5464
+        },
+        "ArrayBuffer": {
+          "count": 38,
+          "selfBytes": 3312
+        },
+        "BigInt64Array": {
+          "count": 2,
+          "selfBytes": 192
+        },
+        "ModuleWrap": {
+          "count": 33,
+          "selfBytes": 2640
+        },
+        "RegExp String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "TypedArray": {
+          "count": 11,
+          "selfBytes": 616
+        },
+        "ImmediateList": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "Set Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "SharedArrayBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "GeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncGeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Tag": {
+          "count": 1,
+          "selfBytes": 48
+        },
+        "WebAssembly.Tag": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Error": {
+          "count": 195,
+          "selfBytes": 5000
+        },
+        "PriorityQueue": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "TypeError": {
+          "count": 97,
+          "selfBytes": 2328
+        },
+        "RangeError": {
+          "count": 31,
+          "selfBytes": 744
+        },
+        "Number": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "StatsBase": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Dirent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "TextEncoder": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "CountQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Blob": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "FixedCircularBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "InactiveAsyncContextFrame": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "SyntaxError": {
+          "count": 4,
+          "selfBytes": 96
+        },
+        "KeyObject": {
+          "count": 3,
+          "selfBytes": 72
+        },
+        "CryptoKey": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "SystemError": {
+          "count": 12,
+          "selfBytes": 288
+        },
+        "URIError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "NodeError": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Int8Array": {
+          "count": 5,
+          "selfBytes": 480
+        },
+        "URLSearchParams Iterator": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Event": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "CustomEvent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Atomics": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "EventTarget": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "DataView": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "JSON": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "DOMException": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Intl": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Intl.Collator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DisplayNames": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.ListFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.PluralRules": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.RelativeTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DateTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Locale": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.NumberFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Segmenter": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "URLSearchParams": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "console": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Channel": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "Async-from-Sync Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncGenerator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Hash": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "WebAssembly.Module": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Instance": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Table": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Memory": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Global": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Exception": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "EventEmitter": {
+          "count": 7,
+          "selfBytes": 328
+        },
+        "HandleWrap": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "AsyncWrap": {
+          "count": 29,
+          "selfBytes": 1624
+        },
+        "Array Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Map Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "String": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "Segmenter String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Buffer": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "Promise": {
+          "count": 80,
+          "selfBytes": 3824
+        },
+        "Duplex": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "Readable": {
+          "count": 3,
+          "selfBytes": 136
+        },
+        "Stream": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Scheduler": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "BigUint64Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "Symbol": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "FixedQueue": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "TextDecoder": {
+          "count": 2,
+          "selfBytes": 176
+        },
+        "Boolean": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "URL": {
+          "count": 3,
+          "selfBytes": 152
+        },
+        "Float32Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "BigInt": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WeakRefMap": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "FinalizationRegistry": {
+          "count": 6,
+          "selfBytes": 400
+        },
+        "WeakReference": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "WeakRef": {
+          "count": 13,
+          "selfBytes": 432
+        },
+        "Math": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Reflect": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "BuiltinModule": {
+          "count": 359,
+          "selfBytes": 28720
+        },
+        "AggregateError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "ByteLengthQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "WorldEvaluator": {
+          "count": 1,
+          "selfBytes": 144
+        },
+        "ModuleJob": {
+          "count": 32,
+          "selfBytes": 3072
+        },
+        "Module": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "GameplayEventJournal": {
+          "count": 1,
+          "selfBytes": 72
+        },
+        "ModuleLoader": {
+          "count": 1,
+          "selfBytes": 136
+        },
+        "ModuleJobBase": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Iterator Helper": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "URLContext": {
+          "count": 2,
+          "selfBytes": 208
+        },
+        "Crypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "Transform": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "AbortSignal": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "AbortController": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "InterfaceConstructor": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Deserializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Serializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Writable": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "AsymmetricKeyObject": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "ResolveCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "LoadCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "LazyTransform": {
+          "count": 6,
+          "selfBytes": 336
+        },
+        "MultiplayerConstructionRuntime": {
+          "count": 1,
+          "selfBytes": 80
+        },
+        "X509Certificate": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "SubtleCrypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "TracingChannel": {
+          "count": 1,
+          "selfBytes": 104
+        }
+      },
+      "totals": {
+        "synthetic": {
+          "count": 33,
+          "selfBytes": 2576
+        },
+        "hidden": {
+          "count": 9760,
+          "selfBytes": 393136
+        },
+        "string": {
+          "count": 13842,
+          "selfBytes": 752344
+        },
+        "code": {
+          "count": 26984,
+          "selfBytes": 3197568
+        },
+        "array": {
+          "count": 1697,
+          "selfBytes": 797928
+        },
+        "object shape": {
+          "count": 6497,
+          "selfBytes": 605448
+        },
+        "number": {
+          "count": 308,
+          "selfBytes": 4928
+        },
+        "symbol": {
+          "count": 272,
+          "selfBytes": 6528
+        },
+        "object": {
+          "count": 4038,
+          "selfBytes": 246448
+        },
+        "closure": {
+          "count": 6693,
+          "selfBytes": 396368
+        },
+        "concatenated string": {
+          "count": 650,
+          "selfBytes": 20800
+        },
+        "bigint": {
+          "count": 29,
+          "selfBytes": 672
+        },
+        "native": {
+          "count": 168,
+          "selfBytes": 38543
+        },
+        "regexp": {
+          "count": 51,
+          "selfBytes": 2856
+        },
+        "sliced string": {
+          "count": 5,
+          "selfBytes": 160
+        }
+      }
+    },
+    {
+      "label": "disposed",
+      "memory": {
+        "rss": 125517824,
+        "heapTotal": 23478272,
+        "heapUsed": 6005848,
+        "external": 1904603,
+        "arrayBuffers": 24987
+      },
+      "classes": {
+        "Float64Array": {
+          "count": 13,
+          "selfBytes": 1248
+        },
+        "global": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "Object": {
+          "count": 1450,
+          "selfBytes": 71080
+        },
+        "Uint8Array": {
+          "count": 9,
+          "selfBytes": 752
+        },
+        "process": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Map": {
+          "count": 24,
+          "selfBytes": 744
+        },
+        "Set": {
+          "count": 23,
+          "selfBytes": 752
+        },
+        "WeakMap": {
+          "count": 10,
+          "selfBytes": 336
+        },
+        "WeakSet": {
+          "count": 3,
+          "selfBytes": 112
+        },
+        "Uint32Array": {
+          "count": 7,
+          "selfBytes": 672
+        },
+        "Array": {
+          "count": 262,
+          "selfBytes": 8480
+        },
+        "Int32Array": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "system / Context": {
+          "count": 882,
+          "selfBytes": 83256
+        },
+        "Generator": {
+          "count": 60,
+          "selfBytes": 5464
+        },
+        "ArrayBuffer": {
+          "count": 38,
+          "selfBytes": 3312
+        },
+        "BigInt64Array": {
+          "count": 2,
+          "selfBytes": 192
+        },
+        "ModuleWrap": {
+          "count": 33,
+          "selfBytes": 2640
+        },
+        "RegExp String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "TypedArray": {
+          "count": 11,
+          "selfBytes": 616
+        },
+        "ImmediateList": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "Set Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "SharedArrayBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "GeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncGeneratorFunction": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Tag": {
+          "count": 1,
+          "selfBytes": 48
+        },
+        "WebAssembly.Tag": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Error": {
+          "count": 195,
+          "selfBytes": 5000
+        },
+        "PriorityQueue": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "TypeError": {
+          "count": 97,
+          "selfBytes": 2328
+        },
+        "RangeError": {
+          "count": 31,
+          "selfBytes": 744
+        },
+        "Number": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "StatsBase": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Dirent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "TextEncoder": {
+          "count": 2,
+          "selfBytes": 56
+        },
+        "CountQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Blob": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "FixedCircularBuffer": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "InactiveAsyncContextFrame": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "SyntaxError": {
+          "count": 4,
+          "selfBytes": 96
+        },
+        "KeyObject": {
+          "count": 3,
+          "selfBytes": 72
+        },
+        "CryptoKey": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "SystemError": {
+          "count": 12,
+          "selfBytes": 288
+        },
+        "URIError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "NodeError": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Int8Array": {
+          "count": 5,
+          "selfBytes": 480
+        },
+        "URLSearchParams Iterator": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Array Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "AsyncGenerator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Map Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "String": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "JSON": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Promise": {
+          "count": 80,
+          "selfBytes": 3824
+        },
+        "AsyncWrap": {
+          "count": 29,
+          "selfBytes": 1624
+        },
+        "EventEmitter": {
+          "count": 7,
+          "selfBytes": 328
+        },
+        "Channel": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "BigUint64Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "Symbol": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "FixedQueue": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "TextDecoder": {
+          "count": 2,
+          "selfBytes": 176
+        },
+        "Boolean": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "URL": {
+          "count": 3,
+          "selfBytes": 152
+        },
+        "HandleWrap": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "Buffer": {
+          "count": 3,
+          "selfBytes": 288
+        },
+        "Float32Array": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "BigInt": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WeakRefMap": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "FinalizationRegistry": {
+          "count": 6,
+          "selfBytes": 400
+        },
+        "WeakReference": {
+          "count": 11,
+          "selfBytes": 528
+        },
+        "WeakRef": {
+          "count": 13,
+          "selfBytes": 432
+        },
+        "Atomics": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "console": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Math": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Reflect": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "BuiltinModule": {
+          "count": 359,
+          "selfBytes": 28720
+        },
+        "AggregateError": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "EventTarget": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "ByteLengthQueuingStrategy": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "DataView": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "ModuleJob": {
+          "count": 32,
+          "selfBytes": 3072
+        },
+        "Module": {
+          "count": 1,
+          "selfBytes": 32
+        },
+        "ModuleLoader": {
+          "count": 1,
+          "selfBytes": 136
+        },
+        "ModuleJobBase": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "Iterator Helper": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Transform": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Duplex": {
+          "count": 2,
+          "selfBytes": 80
+        },
+        "URLContext": {
+          "count": 2,
+          "selfBytes": 208
+        },
+        "AsymmetricKeyObject": {
+          "count": 2,
+          "selfBytes": 48
+        },
+        "ResolveCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "LoadCache": {
+          "count": 1,
+          "selfBytes": 128
+        },
+        "LazyTransform": {
+          "count": 6,
+          "selfBytes": 336
+        },
+        "Readable": {
+          "count": 3,
+          "selfBytes": 136
+        },
+        "Stream": {
+          "count": 2,
+          "selfBytes": 112
+        },
+        "Hash": {
+          "count": 1,
+          "selfBytes": 40
+        },
+        "Writable": {
+          "count": 3,
+          "selfBytes": 168
+        },
+        "Serializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Deserializer": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "InterfaceConstructor": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Scheduler": {
+          "count": 1,
+          "selfBytes": 96
+        },
+        "X509Certificate": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Crypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "SubtleCrypto": {
+          "count": 2,
+          "selfBytes": 128
+        },
+        "TracingChannel": {
+          "count": 1,
+          "selfBytes": 104
+        },
+        "AbortSignal": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "AbortController": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Event": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "CustomEvent": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "DOMException": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Intl.Collator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DisplayNames": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.ListFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.PluralRules": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.RelativeTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.DateTimeFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Locale": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.NumberFormat": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Intl.Segmenter": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "URLSearchParams": {
+          "count": 1,
+          "selfBytes": 24
+        },
+        "Async-from-Sync Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Module": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Instance": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Table": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Memory": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Global": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "WebAssembly.Exception": {
+          "count": 1,
+          "selfBytes": 56
+        },
+        "Segmenter String Iterator": {
+          "count": 1,
+          "selfBytes": 56
+        }
+      },
+      "totals": {
+        "synthetic": {
+          "count": 33,
+          "selfBytes": 2576
+        },
+        "hidden": {
+          "count": 9481,
+          "selfBytes": 370296
+        },
+        "string": {
+          "count": 12815,
+          "selfBytes": 709656
+        },
+        "code": {
+          "count": 26990,
+          "selfBytes": 3206712
+        },
+        "array": {
+          "count": 1670,
+          "selfBytes": 800496
+        },
+        "object shape": {
+          "count": 6175,
+          "selfBytes": 576488
+        },
+        "number": {
+          "count": 170,
+          "selfBytes": 2720
+        },
+        "symbol": {
+          "count": 272,
+          "selfBytes": 6528
+        },
+        "object": {
+          "count": 3856,
+          "selfBytes": 234984
+        },
+        "closure": {
+          "count": 6692,
+          "selfBytes": 396312
+        },
+        "concatenated string": {
+          "count": 650,
+          "selfBytes": 20800
+        },
+        "bigint": {
+          "count": 29,
+          "selfBytes": 672
+        },
+        "native": {
+          "count": 168,
+          "selfBytes": 38543
+        },
+        "regexp": {
+          "count": 51,
+          "selfBytes": 2856
+        },
+        "sliced string": {
+          "count": 5,
+          "selfBytes": 160
+        }
+      }
+    }
+  ],
+  "evaluations": {
+    "created": 1,
+    "restored": 0,
+    "cacheHits": 9000
+  },
+  "objectDeltas": [
+    {
+      "name": "Object",
+      "countBefore": 1268,
+      "countAfter": 1573,
+      "deltaCount": 305,
+      "selfBytesDelta": 12264
+    },
+    {
+      "name": "Float64Array",
+      "countBefore": 13,
+      "countAfter": 13,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "global",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Uint8Array",
+      "countBefore": 9,
+      "countAfter": 9,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "process",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Map",
+      "countBefore": 26,
+      "countAfter": 26,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Set",
+      "countBefore": 23,
+      "countAfter": 23,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WeakMap",
+      "countBefore": 10,
+      "countAfter": 10,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WeakSet",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Uint32Array",
+      "countBefore": 7,
+      "countAfter": 7,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Array",
+      "countBefore": 315,
+      "countAfter": 315,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Int32Array",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "system / Context",
+      "countBefore": 883,
+      "countAfter": 883,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Generator",
+      "countBefore": 60,
+      "countAfter": 60,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ArrayBuffer",
+      "countBefore": 38,
+      "countAfter": 38,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "BigInt64Array",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ModuleWrap",
+      "countBefore": 33,
+      "countAfter": 33,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "RegExp String Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "TypedArray",
+      "countBefore": 11,
+      "countAfter": 11,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ImmediateList",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Set Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "SharedArrayBuffer",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AsyncFunction",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "GeneratorFunction",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AsyncGeneratorFunction",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Tag",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly.Tag",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Error",
+      "countBefore": 195,
+      "countAfter": 195,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "PriorityQueue",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "TypeError",
+      "countBefore": 97,
+      "countAfter": 97,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "RangeError",
+      "countBefore": 31,
+      "countAfter": 31,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Number",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "StatsBase",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Dirent",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "TextEncoder",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "CountQueuingStrategy",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Blob",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "FixedCircularBuffer",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "InactiveAsyncContextFrame",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "SyntaxError",
+      "countBefore": 4,
+      "countAfter": 4,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "KeyObject",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "CryptoKey",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "SystemError",
+      "countBefore": 12,
+      "countAfter": 12,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "URIError",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "NodeError",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Int8Array",
+      "countBefore": 5,
+      "countAfter": 5,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "URLSearchParams Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Event",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "CustomEvent",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Atomics",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "EventTarget",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "DataView",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "JSON",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "DOMException",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.Collator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.DisplayNames",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.ListFormat",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.PluralRules",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.RelativeTimeFormat",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.DateTimeFormat",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.Locale",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.NumberFormat",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Intl.Segmenter",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "URLSearchParams",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "console",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Channel",
+      "countBefore": 11,
+      "countAfter": 11,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Async-from-Sync Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AsyncGenerator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Hash",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly.Module",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly.Instance",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly.Table",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly.Memory",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly.Global",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WebAssembly.Exception",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "EventEmitter",
+      "countBefore": 7,
+      "countAfter": 7,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "HandleWrap",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AsyncWrap",
+      "countBefore": 29,
+      "countAfter": 29,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Array Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Map Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "String Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "String",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Segmenter String Iterator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Buffer",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Promise",
+      "countBefore": 80,
+      "countAfter": 80,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Duplex",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Readable",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Stream",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Scheduler",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "BigUint64Array",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Symbol",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "FixedQueue",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "TextDecoder",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Boolean",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "URL",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Float32Array",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "BigInt",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WeakRefMap",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "FinalizationRegistry",
+      "countBefore": 6,
+      "countAfter": 6,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WeakReference",
+      "countBefore": 11,
+      "countAfter": 11,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WeakRef",
+      "countBefore": 13,
+      "countAfter": 13,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Math",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Reflect",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "BuiltinModule",
+      "countBefore": 359,
+      "countAfter": 359,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AggregateError",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ByteLengthQueuingStrategy",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "WorldEvaluator",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ModuleJob",
+      "countBefore": 32,
+      "countAfter": 32,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Module",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "GameplayEventJournal",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ModuleLoader",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ModuleJobBase",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Iterator Helper",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "URLContext",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Crypto",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Transform",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AbortSignal",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AbortController",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "InterfaceConstructor",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Deserializer",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Serializer",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "Writable",
+      "countBefore": 3,
+      "countAfter": 3,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "AsymmetricKeyObject",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "ResolveCache",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "LoadCache",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "LazyTransform",
+      "countBefore": 6,
+      "countAfter": 6,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "MultiplayerConstructionRuntime",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "X509Certificate",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "SubtleCrypto",
+      "countBefore": 2,
+      "countAfter": 2,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    },
+    {
+      "name": "TracingChannel",
+      "countBefore": 1,
+      "countAfter": 1,
+      "deltaCount": 0,
+      "selfBytesDelta": 0
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+  PASS contract identity
+  PASS registry identity
+  PASS action space identity
+  PASS root stance is defensive
+  PASS authority is read-only
+  PASS thirteen actions declared
+  PASS indexes canonical
+  PASS keys unique
+  PASS safe fallback exact
+  PASS declared interrupts exact
+  PASS no offensive registry keys
+  PASS all timings are integer
+  PASS state ID canonical
+  PASS state validates
+  PASS state addresses observation
+  PASS state capacity source explicit
+  PASS derived metrics bounded
+  PASS candidate set ID canonical
+  PASS candidate set validates
+  PASS candidate set has every action
+  PASS all actions legal with complete fresh observation
+  PASS hold targetless
+  PASS patrol route target
+  PASS recon route target
+  PASS intercept hostile target
+  PASS combat screen target
+  PASS reinforce structure target
+  PASS repair structure target
+  PASS fortify damaged route target
+  PASS secure resource target
+  PASS stabilize infrastructure target
+  PASS share sees six direct records
+  PASS diplomatic channel targetless
+  PASS withdraw accepts hostile contact and attacker alert
+  PASS target IDs action-bound
+  PASS hidden other-faction event does not change observation
+  PASS FX-HIDDEN candidate set unchanged
+  PASS expired observation retains targetless actions
+  PASS expired contact masks intercept
+  PASS expired alert masks screen
+  PASS persistent structure remains available
+  PASS safe fallback survives zero capacity
+  PASS open channel requires readiness
+  PASS patrol capacity gate
+  PASS cooldown masks intercept
+  PASS commitment retains active action
+  PASS commitment masks unrelated action
+  PASS commitment retains hold interrupt
+  PASS commitment retains withdraw interrupt
+  PASS terminal masks all actions
+  PASS replan masks all actions
+  PASS outcome ID canonical
+  PASS outcome validates
+  PASS outcome binds candidate set
+  PASS outcome deducts readiness
+  PASS outcome reserves patrol slot
+  PASS intercept reduces hostile pressure
+  PASS intercept raises tension by two
+  PASS projection does not mutate state
+  PASS hold restores readiness bounded
+  PASS channel reduces tension
+  PASS channel increases trust
+  PASS wrong defensive stance rejected
+  PASS invented target rejected
+  PASS targetless action rejects target
+  PASS illegal action projection rejected
+  PASS candidate tamper rejected
+  PASS clone mutation detached
+  PASS contract exposes no execute method
+  PASS contract exposes no dispatch method
+  PASS contract exposes no apply method
+W0-AF FOREST DEFENSIVE ACTION CONTRACT TESTS PASS (71/71)

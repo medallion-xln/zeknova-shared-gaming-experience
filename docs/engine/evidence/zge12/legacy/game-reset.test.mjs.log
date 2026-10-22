@@ -1,0 +1,103 @@
+
+=== BEFORE RESET: the world is genuinely dirty ===
+  STRUCTURES_BEFORE_RESET=8
+  BRIDGES_BEFORE_RESET=2
+  BOATS_BEFORE_RESET=1
+  MISSION_INFRA_BEFORE_RESET=5
+  BOSSES_DEFEATED_BEFORE=3
+  PASS  MISSIONS_COMPLETED > 0
+  PASS  BOSSES_DEFEATED > 0
+  PASS  PLAYER_STRUCTURES > 0
+  PASS  MISSION_INFRASTRUCTURE > 0
+  PASS  WORLD_MUTATIONS > 0
+  PASS  ACTIVE_BOSS_ENCOUNTER is true before reset
+  PASS  CURRENT_PHASE > 1 before reset
+
+=== PRE-SEED: progress AND preferences in storage ===
+  PASS  progress keys are classified as progress
+  PASS  preference keys are NOT classified as progress
+
+=== INVOKE THE REAL RESET ===
+  PASS  reset reports success
+  PASS  the server reset endpoint was called
+  PASS  it was a POST
+  PASS  the world reloads without the player refreshing
+
+=== AFTER RESET: world object counts ===
+  STRUCTURES_AFTER_RESET=0
+  BRIDGES_AFTER_RESET=0
+  BOATS_AFTER_RESET=0
+  MISSION_INFRA_AFTER_RESET=0
+  PASS  PLAYER_STRUCTURES=0
+  PASS  BRIDGES=0
+  PASS  BOATS=0
+  PASS  MISSION_INFRASTRUCTURE=0
+  PASS  the building scene group was cleared too (no orphan meshes)
+
+=== AFTER RESET: mission + boss progression ===
+  PASS  MISSIONS_COMPLETED=0
+  PASS  OBJECTIVES_COMPLETED=0
+  PASS  BOSSES_DEFEATED=0
+  PASS  ACTIVE_BOSS_ENCOUNTER=false
+  PASS  claimed boss rewards cleared
+  PASS  biome visit ledger cleared
+  PASS  AO resource ledger cleared
+  PASS  CURRENT_PHASE = canonical initial
+  PASS  civilization score reset
+
+=== AFTER RESET: OFFICER RANK RETURNS TO ENSIGN ===
+  PASS  officer rank is Ensign after reset
+  PASS  rank label reads Ensign
+  PASS  the user record is demoted too
+
+=== AFTER RESET: world mutation ledgers ===
+  PASS  trees chopped counter reset
+  PASS  harvested tree ids cleared
+  PASS  mined rock ids cleared
+  PASS  collected power-up ids cleared
+  PASS  tree harvest timestamps cleared
+  PASS  personal objective ids cleared
+
+=== AFTER RESET: no stale runtime objects ===
+  PASS  no stale enemy projectiles
+  PASS  no stale enemies
+  PASS  HUD objective list cleared
+  PASS  mission ladder cleared
+  PASS  HUD was refreshed
+
+=== PERSISTED RESET (survives reload) ===
+  PASS  boss run state cleared from sessionStorage
+  PASS  QA boss ledger cleared
+  PASS  local save blob cleared
+  PASS  reconciliation/relations progress cleared
+
+=== USER PREFERENCES PRESERVED ===
+  PASS  visual theme preserved
+  PASS  signed-in user preserved
+  PASS  game mode preserved
+
+=== MISSION-SPECIFIC REGRESSIONS ===
+  PASS  Mission 2 — filtration compounds recovered = 0
+  PASS  Mission 2 — Mire Siren gate not completed
+  PASS  Highlands — mission confrontation not defeated
+  PASS  Boss run order starts from the first boss
+  PASS  Mission 9 — wetland bridges/boats removed
+  PASS  Mission 9 — aid/survey construction removed
+
+=== CANCEL IS SAFE ===
+  PASS  cancelling returns false
+  PASS  cancelling leaves the world untouched
+
+=== NO BACKEND (local/demo) STILL RESETS ===
+  PASS  reset still succeeds without a backend
+  PASS  it reports the server reset did NOT happen
+  PASS  the runtime world is still fully reset
+  PASS  progress storage still cleared
+  PASS  preferences still preserved offline
+
+=== IDEMPOTENCE ===
+  PASS  resetting an already-fresh world is safe
+  PASS  counts stay at zero
+
+----------------------------------------------------------
+  RESULT: 63 passed, 0 failed

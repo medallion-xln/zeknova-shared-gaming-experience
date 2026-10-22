@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+ok 1 - actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+  ---
+  duration_ms: 88.081625
+  type: 'test'
+  ...
+# Subtest: actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+ok 2 - actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+  ---
+  duration_ms: 100.22175
+  type: 'test'
+  ...
+# Subtest: actual rejected placement has denial UI and no cost, XP, progress or save
+ok 3 - actual rejected placement has denial UI and no cost, XP, progress or save
+  ---
+  duration_ms: 3.993791
+  type: 'test'
+  ...
+# Subtest: actual legacy model failure occurs after spending, with no transaction rollback
+ok 4 - actual legacy model failure occurs after spending, with no transaction rollback
+  ---
+  duration_ms: 23.532625
+  type: 'test'
+  ...
+# Subtest: actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+ok 5 - actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+  ---
+  duration_ms: 3.054208
+  type: 'test'
+  ...
+# Subtest: actual personal construction achievement is a persisted set, not repeat XP application
+ok 6 - actual personal construction achievement is a persisted set, not repeat XP application
+  ---
+  duration_ms: 10.54025
+  type: 'test'
+  ...
+# Subtest: actual relocation mutates record and visual position then invalidates utility index
+ok 7 - actual relocation mutates record and visual position then invalidates utility index
+  ---
+  duration_ms: 24.31
+  type: 'test'
+  ...
+# Subtest: legacy aid effect wrapper has no earlier implementation in this artifact; exposes partial-failure gate
+ok 8 - legacy aid effect wrapper has no earlier implementation in this artifact; exposes partial-failure gate
+  ---
+  duration_ms: 9.748333
+  type: 'test'
+  ...
+# Subtest: source-owned lifecycle atomically commits cost, building, progress, reward and revision
+ok 9 - source-owned lifecycle atomically commits cost, building, progress, reward and revision
+  ---
+  duration_ms: 165.56825
+  type: 'test'
+  ...
+# Subtest: rejected terrain, occupied site and resources have no gameplay effects
+ok 10 - rejected terrain, occupied site and resources have no gameplay effects
+  ---
+  duration_ms: 21.374208
+  type: 'test'
+  ...
+# Subtest: duplicate/conflicting commands and stale revisions never charge or reward twice
+ok 11 - duplicate/conflicting commands and stale revisions never charge or reward twice
+  ---
+  duration_ms: 35.873875
+  type: 'test'
+  ...
+# Subtest: validation throw rolls back entire candidate including mission/rewards and events
+ok 12 - validation throw rolls back entire candidate including mission/rewards and events
+  ---
+  duration_ms: 6.3055
+  type: 'test'
+  ...
+# Subtest: presentation failures, frozen inputs and reentry cannot retry authoritative mutations
+ok 13 - presentation failures, frozen inputs and reentry cannot retry authoritative mutations
+  ---
+  duration_ms: 10.469
+  type: 'test'
+  ...
+# Subtest: movement and building collision consume one plain authoritative state; removal clears collision
+ok 14 - movement and building collision consume one plain authoritative state; removal clears collision
+  ---
+  duration_ms: 10.044458
+  type: 'test'
+  ...
+# Subtest: grant and selection travel through same boundary; invalid grant stays atomic
+ok 15 - grant and selection travel through same boundary; invalid grant stays atomic
+  ---
+  duration_ms: 10.42925
+  type: 'test'
+  ...
+# Subtest: snapshot restore retains IDs, ledger, mission and reward; deterministic branch replay
+ok 16 - snapshot restore retains IDs, ledger, mission and reward; deterministic branch replay
+  ---
+  duration_ms: 54.431291
+  type: 'test'
+  ...
+# Subtest: malformed restore is rejected before replacing current state
+ok 17 - malformed restore is rejected before replacing current state
+  ---
+  duration_ms: 5.102417
+  type: 'test'
+  ...
+# Subtest: event replay is read-only, stable and idempotent; changed IDs and order reject
+ok 18 - event replay is read-only, stable and idempotent; changed IDs and order reject
+  ---
+  duration_ms: 8.369
+  type: 'test'
+  ...
+# Subtest: checkpoint acknowledges CAS storage; rejected conflict preserves confirmed snapshot
+ok 19 - checkpoint acknowledges CAS storage; rejected conflict preserves confirmed snapshot
+  ---
+  duration_ms: 9.858958
+  type: 'test'
+  ...
+# Subtest: checkpoint adapter failure has no false durable acknowledgment
+ok 20 - checkpoint adapter failure has no false durable acknowledgment
+  ---
+  duration_ms: 3.456833
+  type: 'test'
+  ...
+# Subtest: two simultaneous clients: first arrival wins, stale client reconciles then overlap rejects
+ok 21 - two simultaneous clients: first arrival wins, stale client reconciles then overlap rejects
+  ---
+  duration_ms: 28.653125
+  type: 'test'
+  ...
+# Subtest: shared funds are not overspent by independent clients
+ok 22 - shared funds are not overspent by independent clients
+  ---
+  duration_ms: 14.889792
+  type: 'test'
+  ...
+# Subtest: duplicate server request and server restart retain accepted receipt and exact charge
+ok 23 - duplicate server request and server restart retain accepted receipt and exact charge
+  ---
+  duration_ms: 15.300667
+  type: 'test'
+  ...
+# Subtest: disconnect after server commit preserves exact outbox request; reconnect cannot double-spend
+ok 24 - disconnect after server commit preserves exact outbox request; reconnect cannot double-spend
+  ---
+  duration_ms: 21.107167
+  type: 'test'
+  ...
+# Subtest: disconnect before receipt, delayed/out-of-order responses and stale rejects reconcile
+ok 25 - disconnect before receipt, delayed/out-of-order responses and stale rejects reconcile
+  ---
+  duration_ms: 10.47475
+  type: 'test'
+  ...
+# Subtest: unauthorized clients and client-side grants never mutate server; persisted rejections are explicit
+ok 26 - unauthorized clients and client-side grants never mutate server; persisted rejections are explicit
+  ---
+  duration_ms: 0.839
+  type: 'test'
+  ...
+# Subtest: interrupted server storage operation is retryable with original transaction ID
+ok 27 - interrupted server storage operation is retryable with original transaction ID
+  ---
+  duration_ms: 4.928292
+  type: 'test'
+  ...
+# Subtest: disconnect before server receipt persists intention and commits once on reconnect
+ok 28 - disconnect before server receipt persists intention and commits once on reconnect
+  ---
+  duration_ms: 2.342292
+  type: 'test'
+  ...
+# Subtest: server CAS conflict refreshes confirmed state instead of merging stale resources
+ok 29 - server CAS conflict refreshes confirmed state instead of merging stale resources
+  ---
+  duration_ms: 2.515084
+  type: 'test'
+  ...
+# Subtest: checkpoint cannot overwrite another world; malformed envelopes reject
+ok 30 - checkpoint cannot overwrite another world; malformed envelopes reject
+  ---
+  duration_ms: 0.702
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1588.832375

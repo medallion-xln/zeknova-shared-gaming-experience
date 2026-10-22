@@ -1,0 +1,43 @@
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter mode measurement only
+  PASS adapter authority none
+  PASS adapter has thirteen bindings
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no apply
+  PASS enemy array observed
+  PASS spawn surface observed
+  PASS enemy loop observed
+  PASS spawn scheduler observed
+  PASS diplomacy surface observed
+  PASS share surface observed
+  PASS relations perform observed
+  PASS relations ceasefire observed
+  PASS runtime probe calls no methods
+  PASS report addresses local faction
+  PASS report binds observation
+  PASS report binds planning state
+  PASS report binds candidate set
+  PASS partial observed count five
+  PASS unbound count eight
+  PASS exact observed zero
+  PASS production ready false
+  PASS mutating probe count zero
+  PASS capture still calls no live methods
+  PASS test fixture explicitly spawned once
+  PASS hidden enemy does not change report id
+  PASS grounded sighting changes candidate set
+  PASS parity report binds changed candidate set
+  PASS binding verdict remains measurement result
+  PASS parity capture does not update enemies
+  PASS parity capture does not resolve diplomacy
+  PASS parity capture does not perform relations action
+  PASS missing source is recorded
+  PASS missing source count one
+  PASS repeated report deterministic
+  PASS adapter equals integration
+  PASS adapter surface equals integration
+  PASS dispose clears global integration
+  PASS prior report detached after disposal
+W0-P LIVE PARITY INTEGRATION TESTS PASS (42/42)

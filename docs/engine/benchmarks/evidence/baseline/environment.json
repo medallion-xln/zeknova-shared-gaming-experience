@@ -1,0 +1,77 @@
+{
+  "os": {
+    "exit": 0,
+    "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84\n",
+    "stderr": ""
+  },
+  "cpu": {
+    "exit": 0,
+    "stdout": "Apple M1 Pro\n",
+    "stderr": ""
+  },
+  "ram": {
+    "exit": 0,
+    "stdout": "17179869184\n",
+    "stderr": ""
+  },
+  "cpuCount": {
+    "exit": 0,
+    "stdout": "10\n",
+    "stderr": ""
+  },
+  "gpuDisplay": {
+    "gpu": "Apple M1 Pro",
+    "gpuCores": "16",
+    "metalSupport": "spdisplays_metal4",
+    "displays": [
+      {
+        "name": "Color LCD",
+        "pixels": "3456 x 2234",
+        "resolution": "1728 x 1117 @ 120.00Hz"
+      }
+    ]
+  },
+  "node": {
+    "exit": 0,
+    "stdout": "v22.22.2\n",
+    "stderr": ""
+  },
+  "php": {
+    "exit": 0,
+    "stdout": "PHP 8.5.9 (cli) (built: Jul 28 2026 13:06:52) (NTS)\nCopyright (c) The PHP Group\nBuilt by Homebrew\nZend Engine v4.5.9, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.9, Copyright (c), by Zend Technologies\n",
+    "stderr": ""
+  },
+  "chrome": {
+    "exit": 0,
+    "stdout": "Google Chrome 155.0.8059.85 \n",
+    "stderr": ""
+  },
+  "phpModules": {
+    "exit": 0,
+    "stdout": "[PHP Modules]\nbcmath\nbz2\ncalendar\nCore\nctype\ncurl\ndate\ndba\ndom\nexif\nFFI\nfileinfo\nfilter\nftp\ngd\ngettext\ngmp\nhash\niconv\nintl\njson\nldap\nlexbor\nlibxml\nmbstring\nmysqli\nmysqlnd\nodbc\nopenssl\npcntl\npcre\nPDO\npdo_dblib\npdo_mysql\nPDO_ODBC\npdo_pgsql\npdo_sqlite\npgsql\nPhar\nposix\nrandom\nreadline\nReflection\nsession\nshmop\nSimpleXML\nsnmp\nsoap\nsockets\nsodium\nSPL\nsqlite3\nstandard\nsysvmsg\nsysvsem\nsysvshm\ntidy\ntokenizer\nuri\nxml\nxmlreader\nxmlwriter\nxsl\nZend OPcache\nzip\nzlib\n\n[Zend Modules]\nZend OPcache\n\n",
+    "stderr": ""
+  },
+  "playwright": {
+    "path": "/Users/dwaynecampbell/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs",
+    "version": "1.64.0-alpha-1790635538000"
+  },
+  "node_modules/three/package.json": {
+    "version": "0.185.0"
+  },
+  "node_modules/esbuild/package.json": {
+    "version": "0.25.11"
+  },
+  "packages/sdk/package.json": {
+    "version": "0.1.0-preview.11"
+  },
+  "capturedAt": "2026-10-22T05:24:10.908065+00:00",
+  "databaseConfiguration": {
+    "source": "packages/server-php/src/bootstrap.php + schema.sql",
+    "foreignKeys": "ON",
+    "busyTimeoutMs": 15000,
+    "synchronous": "FULL",
+    "journalMode": "WAL",
+    "scope": "staging code configuration; fresh fixture runtime checks belong to multiplayer evidence"
+  },
+  "graphicsQualification": "Physical hardware inventory only. Actual selected renderers/WebGPU/WebGL/DPR/viewport are recorded by browser agent per scenario; no graphics PASS inferred here."
+}

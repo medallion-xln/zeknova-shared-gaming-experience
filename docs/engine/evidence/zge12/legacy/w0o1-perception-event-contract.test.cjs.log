@@ -1,0 +1,45 @@
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS ten event types declared
+  PASS identity view accepts W0-O.0 snapshot
+  PASS first sequence starts at one
+  PASS event ID is canonical
+  PASS event ID is bound to canonical body
+  PASS event payload position is preserved
+  PASS source entity belongs to source faction
+  PASS canonical key order produces identical event ID
+  PASS changed payload changes event ID
+  PASS FX-OMNISCIENT aggregate field rejected
+  PASS FX-HIDDEN-STATE hidden health rejected
+  PASS unregistered observer rejected
+  PASS unregistered source entity rejected
+  PASS source ownership mismatch rejected
+  PASS non-share observer/source faction mismatch rejected
+  PASS wrong subject kind rejected
+  PASS wrong source type rejected
+  PASS fractional quantum rejected
+  PASS wall-clock field rejected
+  PASS non-integer position rejected
+  PASS enemy_lost accepted
+  PASS combat alert accepts structure subject
+  PASS structure observation validates visible owner
+  PASS resource discovery accepted
+  PASS route observation accepted
+  PASS explicit share targets recipient faction
+  PASS share preserves original event bytes
+  PASS share preserves original observation quantum
+  PASS FX-LEAK non-observer cannot share event
+  PASS share cannot predate observation
+  PASS nested share rejected
+  PASS private stream query excludes recipient-only share from sender
+  PASS recipient stream includes explicit share
+  PASS snapshot is deterministic
+  PASS snapshot round-trip is byte-identical
+  PASS snapshot hash round-trip
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter stream
+  PASS FX-SEQUENCE-REUSE duplicate sequence snapshot rejected
+  PASS FX-EVENT-ID-TAMPER rejected
+  PASS retired subject remains valid historical subject
+  PASS fixed replay is deterministic
+W0-O.1 PERCEPTION EVENT CONTRACT TESTS PASS (44/44)

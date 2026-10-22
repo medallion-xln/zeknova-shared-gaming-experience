@@ -1,0 +1,51 @@
+  PASS contract identity
+  PASS registry identity
+  PASS command space identity
+  PASS mode live incumbent
+  PASS authority incumbent exact
+  PASS all thirteen actions supported
+  PASS thirteen definitions
+  PASS definition keys match W0-AF
+  PASS hold assignment none
+  PASS fortify uses patrol and repair
+  PASS withdraw reuses patrol
+  PASS prohibited authorities exact
+  PASS every request canonical
+  PASS every request validates
+  PASS request identities unique
+  PASS targetless requests keep null target
+  PASS share requires recipient
+  PASS non-share recipient null
+  PASS sentinel-prime rejected
+  PASS targeted action rejects null target
+  PASS targetless action rejects target
+  PASS share without recipient rejected
+  PASS non-share recipient rejected
+  PASS repair without crew rejected
+  PASS patrol without patrol rejected
+  PASS every accepted record validates
+  PASS costs applied at acceptance
+  PASS readiness exact for repair
+  PASS materials exact for fortify
+  PASS patrol slot exact for recon
+  PASS repair slot exact for stabilize
+  PASS withdraw does not deduct patrol slot
+  PASS all commands complete canonically
+  PASS cooldowns exact
+  PASS completion signals action-bound
+  PASS interrupt status canonical
+  PASS interrupt binds new command
+  PASS interrupt reason exact
+  PASS insufficient materials rejected
+  PASS insufficient readiness rejected
+  PASS no repair crew rejected
+  PASS wrong target rejected
+  PASS ledger sequence monotonic
+  PASS ledger snapshot roundtrip
+  PASS ledger snapshot detached
+  PASS cost tamper rejected
+  PASS contract has no execute method
+  PASS contract has no dispatch method
+  PASS contract has no Prime executor
+  PASS records contain no wall clock
+W0-P.2 FOREST DEFENSIVE COMMAND CONTRACT TESTS PASS (50/50)

@@ -1,0 +1,400 @@
+{
+  "runs": [
+    {
+      "mode": "auto",
+      "transforms": [
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "y",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "z",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": true
+        },
+        {
+          "tool": "rotate",
+          "axis": "y",
+          "cancel": false
+        },
+        {
+          "tool": "scale",
+          "axis": "x",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": false
+        }
+      ],
+      "cameraOrbitPanZoomFocusReset": true,
+      "orthographic": true,
+      "resizedPicking": true,
+      "hierarchy": true,
+      "reflection": true,
+      "assets": true,
+      "prefabOverrides": true,
+      "portableProject": true,
+      "externalEditedRuntime": true,
+      "simulationIsolation": true,
+      "memory": [
+        {
+          "usedSize": 8806636,
+          "totalSize": 10485760,
+          "embedderHeapUsedSize": 2096344,
+          "backingStorageSize": 4038755,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgpu",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 660,
+            "controls": true,
+            "dragging": false
+          }
+        },
+        {
+          "usedSize": 8872980,
+          "totalSize": 9699328,
+          "embedderHeapUsedSize": 1470552,
+          "backingStorageSize": 4038755,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgpu",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 692,
+            "controls": true,
+            "dragging": false
+          }
+        },
+        {
+          "usedSize": 8909136,
+          "totalSize": 9699328,
+          "embedderHeapUsedSize": 1469528,
+          "backingStorageSize": 4038755,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgpu",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 726,
+            "controls": true,
+            "dragging": false
+          }
+        },
+        {
+          "usedSize": 8907936,
+          "totalSize": 9699328,
+          "embedderHeapUsedSize": 1470016,
+          "backingStorageSize": 4038755,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgpu",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 760,
+            "controls": true,
+            "dragging": false
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "webgl",
+      "transforms": [
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "y",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "z",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": true
+        },
+        {
+          "tool": "rotate",
+          "axis": "y",
+          "cancel": false
+        },
+        {
+          "tool": "scale",
+          "axis": "x",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": false
+        },
+        {
+          "tool": "translate",
+          "axis": "x",
+          "cancel": false
+        }
+      ],
+      "cameraOrbitPanZoomFocusReset": true,
+      "orthographic": true,
+      "resizedPicking": true,
+      "hierarchy": true,
+      "reflection": true,
+      "assets": true,
+      "prefabOverrides": true,
+      "portableProject": true,
+      "externalEditedRuntime": true,
+      "simulationIsolation": true,
+      "memory": [
+        {
+          "usedSize": 8827840,
+          "totalSize": 10223616,
+          "embedderHeapUsedSize": 1397272,
+          "backingStorageSize": 4024683,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgl",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 638,
+            "controls": true,
+            "dragging": false
+          }
+        },
+        {
+          "usedSize": 8925488,
+          "totalSize": 9699328,
+          "embedderHeapUsedSize": 1393112,
+          "backingStorageSize": 4024683,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgl",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 670,
+            "controls": true,
+            "dragging": false
+          }
+        },
+        {
+          "usedSize": 8958516,
+          "totalSize": 9961472,
+          "embedderHeapUsedSize": 1391288,
+          "backingStorageSize": 4024683,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgl",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 704,
+            "controls": true,
+            "dragging": false
+          }
+        },
+        {
+          "usedSize": 8958272,
+          "totalSize": 9961472,
+          "embedderHeapUsedSize": 1392248,
+          "backingStorageSize": 4024683,
+          "scene": {
+            "listeners": 2,
+            "undo": 0,
+            "redo": 0,
+            "history": 0,
+            "entities": 5
+          },
+          "assets": {
+            "loads": 0,
+            "hits": 0,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "entries": 0,
+            "pending": 0,
+            "bytes": 0,
+            "references": 0,
+            "budgetBytes": 67108864
+          },
+          "viewport": {
+            "backend": "webgl",
+            "objects": 5,
+            "geometries": 45,
+            "drawCalls": 736,
+            "controls": true,
+            "dragging": false
+          }
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

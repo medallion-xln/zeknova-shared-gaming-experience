@@ -1,0 +1,51 @@
+{
+  "schema": "zge.bench01.harness-review.v1",
+  "reviewedAt": "2026-10-22T05:43:46.614525+00:00",
+  "scope": "Static review of queued command8/9/10 AsyncFunction instrumentation only. No browser runs, heavy tests or gameplay source changes performed during timed gameplay. Root owns running command7 and subsequent command8 natural-construction addition.",
+  "originalMistakesRetained": [
+    {
+      "finding": "Browser fetch Response.status incorrectly called as function",
+      "affected": "Queued8 persistenceRead, queued9 durable, queued10 durable; running7 final serialization also affected",
+      "resolution": "Queued calls corrected; running7 left untouched, result7 retains thrown error and command8 can recover completed longReport with strict >=900-second/nonempty frames+samples guard and final screenshot before navigation"
+    },
+    {
+      "finding": "Browser GET save interceptor may overlay pending client snapshot on actual server response",
+      "resolution": "All durable verification reads in queued8/9/10 now use context.request.get with authenticated same-context cookies, bypassing page interceptor"
+    },
+    {
+      "finding": "Cold cache disabled during load prevented reliable cache population for following warm trial",
+      "resolution": "Clear HTTP cache before cold nav then keep cache enabled for both; label cold OS cache uncontrolled and warm same-profile retained"
+    },
+    {
+      "finding": "Saved state from previous acknowledgment could pass before the physical Save button debounce submitted a new request",
+      "resolution": "Queued9 and10 require fresh acknowledged counter after physical save; fresh transport after outbox/auth reload requires at least one new acknowledgment"
+    },
+    {
+      "finding": "Replacement pages lacked uncaught-error/console observation",
+      "resolution": "Per-page observation added for fallback, boss and recovery pages; natural global error/warning arrays retained"
+    },
+    {
+      "finding": "Engine-running/cover-gone usable gate differs from gameplay-ready timing",
+      "resolution": "Startup probe separately records actual physical click, gameplay-ready event, usable gate, canvas appearance and two-RAF canvas frame proxy; proxy explicitly is not proof of rendered useful pixels"
+    }
+  ],
+  "bossFixtureReview": {
+    "currentObjectiveVersion": "Current CampaignPlan planetary grid mission, five surveys plus one Solar Grid in each biome; obsolete legacyObjectives table is not current mission contract",
+    "prerequisites": "Four powers, all survey visits, supplies and initial position explicitly fixture-seeded; final fifth power uses physical input in Desert and Highlands cases",
+    "health": "No boss/player health writes introduced by review; actual physical attacks remain",
+    "mode": "Actual startEncounter already switches command mode to explore; no mode behavior fix necessary",
+    "save": "Fresh acknowledgment + direct server GET added before durable record",
+    "privateStorage": "Each successful fixture exports boss-storage-{finalBiome}-private.json mode0600 after reload; cookies must not be published"
+  },
+  "queued9Sha256": "8271d93b40e800d4921be55a1fb80192a181714ce3c3e8d741f108f352936651",
+  "queued10Sha256": "ed083cf7d8ac21c8d2d7ecde4a27913bed6c6acefe7c34e48831f3fb458f70ae",
+  "remainingCautions": [
+    "Boss battle may remain undefeated after bounded physical attack window; report actual outcome, not forced success.",
+    "Pointer projection and hit-tested canvas do not alone prove intended ground placement; compare actual committed coordinates and IDs.",
+    "Authentication-cookie removal is not elapsed TTL expiration.",
+    "Physical construction during original timed session currently absent; coordinator plans naturally earned construction immediately afterward.",
+    "Do not infer leak freedom from RSS, nor original gameplay correctness from unit or isolated engine tests.",
+    "Negative protected-terrain placement depends on Shared Water diplomacy policy.",
+    "Fresh ACK proves acknowledgment; compare direct server state to gameplay snapshot for durable gameplay assertions."
+  ]
+}

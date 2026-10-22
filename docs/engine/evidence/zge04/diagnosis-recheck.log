@@ -1,0 +1,84 @@
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS six diagnosis variants
+  PASS candidate id exact
+  PASS candidate retains 96 simulations
+  PASS candidate retains depth eight
+  PASS diagnosis seeds sixteen
+  PASS holdout seeds thirty two
+  PASS variant ids unique
+  PASS every variant denies live authority
+  PASS every variant denies witness plans
+  PASS candidate requires root coverage
+  PASS candidate uses normalized values
+  PASS candidate uses no rollout
+  PASS normalized value finite
+  PASS normalized value bounded
+  PASS normalization preserves better objective
+  PASS candidate decision legal
+  PASS candidate simulations exact
+  PASS candidate root visits sum
+  PASS candidate covers every legal root action
+  PASS candidate root coverage fraction one
+  PASS candidate decision deterministic
+  PASS frozen reproduction has no root coverage
+  PASS frozen reproduction retains raw values
+  PASS candidate run canonical
+  PASS candidate run validates
+  PASS candidate run completes cascade
+  PASS candidate run has zero illegal proposals
+  PASS candidate run has full root coverage
+  PASS candidate run authority none
+  PASS report canonical prefix
+  PASS report id exact
+  PASS diagnosis result count six
+  PASS holdout policy result count six
+  PASS total runs 2016
+  PASS frozen v1 reproduced
+  PASS more simulations only reaches 71.43 percent
+  PASS deeper tree only unchanged
+  PASS normalization only reaches 57.14 percent
+  PASS root coverage only succeeds all diagnosis cases
+  PASS candidate succeeds all diagnosis cases
+  PASS primary diagnosis root exploration starvation
+  PASS root coverage gain exact
+  PASS rollout helper status declared
+  PASS rollout not required for current suite
+  PASS candidate holdout success one
+  PASS candidate holdout survival one
+  PASS frozen v1 holdout measured
+  PASS incumbent proxy holdout measured
+  PASS rules holdout succeeds all
+  PASS random holdout measured
+  PASS always hold holdout succeeds none
+  PASS candidate beats or ties frozen v1 every case
+  PASS candidate frozen v1 wins 130
+  PASS candidate incumbent proxy nonloss gate
+  PASS candidate rules nonloss gate
+  PASS candidate random nonloss gate
+  PASS candidate always hold wins all
+  PASS all search improvement gates pass
+  PASS legal proposal gate passes
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS actual incumbent claim remains false
+  PASS incumbent comparison remains proxy only
+  PASS report contains no wall clock
+  PASS frozen Prime declares no rollout invocation
+  PASS candidate reads no authored witness plans
+  PASS candidate adds no live execution surface
+  PASS small report validates
+  PASS unknown variant rejected
+  PASS unknown scenario rejected
+  PASS zero seed rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.2 PRIME SEARCH DIAGNOSIS AND IMPROVEMENT CONTRACT TESTS PASS (83/83)

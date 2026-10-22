@@ -1,0 +1,13 @@
+# Portable JSON assets and prefabs
+
+The project asset browser extends the SDK's existing AssetService registry and ownership model. This milestone imports **data-only JSON**, at most1MiB per asset and within the overall bounded project JSON envelope. It validates file extension/MIME, parse result, finite plain structure, stable ID, relative path and canonical JSON SHA-256. Network JSON loading uses a bounded stream before parsing. Executable formats, absolute/traversal/URL asset paths and arbitrary script imports are rejected.
+
+Assets carry name/type/path/hash plus optional source/author/SPDX/redistribution metadata. User imports default to unknown redistribution rights, visibly reported; no rights are inferred. Signal Garden's small self-authored palette fixture declares its provenance. Project export embeds supported JSON data so it survives browser storage loss and a fresh install. Original game assets/licensing remain a separate unresolved gate.
+
+The library searches ID/name/type, categorizes with actual type labels, previews parsed JSON, reports references, marks failed loads Unavailable and permits native drag/drop onto the scene. A recognized `{primitive,color}` JSON asset creates a procedural primitive plus stable asset reference; other JSON remains data referenced by an entity. No code is evaluated. Missing bytes/hash/parse errors surface and do not create partial scene entities.
+
+`createPrefab` records a stable template ID from selection; parent linkage is cleared for a standalone template. Instantiation creates a fresh entity ID and source prefab identity. Component/transform overrides are explicit; `prefabStatus` reports differences from the template. Templates/resources are project data, distinct from bounded scene undo. Automatic propagation/rebasing of changed templates, nested prefab hierarchies and arbitrary model imports are unsupported.
+
+Tests verify multiple instances have detached transforms/components while parsed asset `.value` is shared. `.instantiate()` yields a mutable clone; lease release/disposal follows existing AssetService. Browser drag/drop, template creation, instance override, complete export/fresh import and independent runtime consumption are exercised. Shared primitive geometry is presentation-owned; instance materials/transform state are separate. JSON clone tests cover mutable nested state, but no new skeleton/model importer is claimed. Existing GLTF watchdog and native fallback remain unchanged.
+
+Project close disposes its AssetService; tests observe zero active leases/pending work across project switches and stable geometry counts. This bounded observation is not an indefinite GPU-leak certificate or proof that embedded legacy Three duplication is resolved.

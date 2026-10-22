@@ -1,0 +1,13 @@
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {TransformControls} from 'three/addons/controls/TransformControls.js';
+import * as THREE from 'three/webgpu';
+import { createEngine } from '@zge/sdk';
+import { createViewport } from '@zge/sdk/three';
+import { project } from './project.js';
+import { installOutpost } from './game.js';
+const engine=await createEngine({project,renderer:'auto'}),world=await engine.loadWorld();const input=new Set();installOutpost(engine,input);
+const viewport=await createViewport({three:THREE,controls:{OrbitControls,TransformControls},canvas:document.querySelector('canvas'),renderer:new URLSearchParams(location.search).get('renderer')??'auto'});
+const key=e=>{if(e.type==='keydown')input.add(e.key);else input.delete(e.key);};addEventListener('keydown',key);addEventListener('keyup',key);addEventListener('blur',()=>input.clear());
+document.querySelector('#save').onclick=()=>localStorage.setItem('zge10-outpost',JSON.stringify(world.serialize()));document.querySelector('#reload').onclick=()=>{const s=localStorage.getItem('zge10-outpost');if(s)world.restore(JSON.parse(s));};document.querySelector('#backend').textContent=viewport.backend;
+await engine.start();let stopped=false;function frame(t){if(stopped)return;engine.frame(t);viewport.sync(world.entities());viewport.render();document.querySelector('#objective').textContent=world.findEntity('pilot')?.components.state.objective??'';requestAnimationFrame(frame);}requestAnimationFrame(frame);
+window.outpost={engine,world,viewport};addEventListener('pagehide',()=>{stopped=true;viewport.dispose();engine.dispose();},{once:true});

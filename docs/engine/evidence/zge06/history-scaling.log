@@ -1,0 +1,11 @@
+file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge06-history.mjs:22
+ const file=dir+'/'+count+'.ndjson',dbPath=dir+'/'+count+'.sqlite';const php=spawnSync('php',['packages/server-php/src/history-benchmark.php',file],{env:{...process.env,ZGE_STAGING_ENABLED:'1',ZEKNOVA_ENV:'zge-staging',ZGE_STAGING_DB:dbPath},encoding:'utf8',maxBuffer:16*1024*1024});if(php.status!==0)throw Error(php.stderr);const db=JSON.parse(php.stdout);const cp=db.checkpoints[0];const restoreStart=performance.now();const restored=replayWorldEvents(cp.state,events.slice(cp.cursor),{cursor:cp.cursor});const restoreMs=performance.now()-restoreStart;if(restored.checksum!==expected)throw Error('checkpoint checksum mismatch');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+
+Error: checkpoint checksum mismatch
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge06-history.mjs:22:593
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.22.2

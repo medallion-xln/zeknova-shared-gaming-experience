@@ -1,0 +1,226 @@
+{
+  "query": "",
+  "restart": {
+    "cycles": [
+      {
+        "certified": true,
+        "installed": 29
+      },
+      {
+        "certified": true,
+        "installed": 29
+      },
+      {
+        "certified": true,
+        "installed": 29
+      }
+    ],
+    "diff": {
+      "listeners": {},
+      "listenerTotal": 0,
+      "detachedTotal": 14,
+      "intervals": 0,
+      "rafPending": -2
+    },
+    "before": {
+      "listeners": {
+        "window:__playwright_global_listeners_check__": 1,
+        "window:mousemove": 1,
+        "window:pointerdown": 1,
+        "window:pointerup": 1,
+        "window:touchstart": 1,
+        "window:touchend": 1,
+        "window:touchcancel": 1,
+        "window:mousedown": 1,
+        "window:mouseup": 1,
+        "window:click": 1,
+        "window:auxclick": 1,
+        "window:dblclick": 1,
+        "window:contextmenu": 1,
+        "window:pagehide": 2,
+        "window:beforeunload": 2,
+        "HTMLButtonElement:click": 86,
+        "HTMLFormElement:submit": 2,
+        "HTMLInputElement:keydown": 1,
+        "HTMLInputElement:keyup": 1,
+        "HTMLInputElement:keypress": 1,
+        "window:zeknova:visual-theme-changed": 2,
+        "window:error": 1,
+        "window:unhandledrejection": 1,
+        "HTMLTextAreaElement:keydown": 1,
+        "HTMLCanvasElement:pointerdown": 2,
+        "HTMLCanvasElement:pointercancel": 2,
+        "HTMLCanvasElement:contextmenu": 1,
+        "HTMLCanvasElement:wheel": 1,
+        "document:keydown": 2,
+        "document:keyup": 1,
+        "window:blur": 1,
+        "document:visibilitychange": 1,
+        "HTMLButtonElement:pointerdown": 8,
+        "HTMLButtonElement:pointerup": 4,
+        "HTMLButtonElement:pointercancel": 4,
+        "HTMLButtonElement:pointerleave": 4,
+        "HTMLDivElement:click": 2,
+        "HTMLElement:click": 1,
+        "window:keydown": 5,
+        "HTMLDivElement:pointerdown": 1,
+        "HTMLCanvasElement:pointermove": 1,
+        "HTMLCanvasElement:pointerup": 1,
+        "window:zeknova:scout-open": 1,
+        "window:zeknova:patrol-encounter": 1,
+        "window:zeknova:threat-resolved": 1,
+        "Worker:error": 9,
+        "Worker:messageerror": 4,
+        "Worker:message": 4,
+        "window:visibilitychange": 1,
+        "HTMLInputElement:input": 1,
+        "HTMLDivElement:zk-dispose": 1,
+        "window:zeknova:hud-tab": 1,
+        "window:zeknova:perception-event": 2,
+        "window:zeknova:visual-refresh": 1,
+        "window:zeknova:gameplay-ready": 1,
+        "HTMLSelectElement:change": 1
+      },
+      "listenerTotal": 184,
+      "detached": {
+        "HTMLButtonElement:click": 20,
+        "HTMLInputElement:input": 1,
+        "HTMLSelectElement:change": 1,
+        "HTMLFormElement:submit": 2
+      },
+      "detachedTotal": 24,
+      "collected": 17,
+      "intervals": 31,
+      "rafPending": 11,
+      "rafTotal": 12910,
+      "at": 1792609579234
+    },
+    "after": {
+      "listeners": {
+        "window:__playwright_global_listeners_check__": 1,
+        "window:mousemove": 1,
+        "window:pointerdown": 1,
+        "window:pointerup": 1,
+        "window:touchstart": 1,
+        "window:touchend": 1,
+        "window:touchcancel": 1,
+        "window:mousedown": 1,
+        "window:mouseup": 1,
+        "window:click": 1,
+        "window:auxclick": 1,
+        "window:dblclick": 1,
+        "window:contextmenu": 1,
+        "window:pagehide": 2,
+        "window:beforeunload": 2,
+        "HTMLButtonElement:click": 86,
+        "HTMLFormElement:submit": 2,
+        "HTMLInputElement:keydown": 1,
+        "HTMLInputElement:keyup": 1,
+        "HTMLInputElement:keypress": 1,
+        "window:zeknova:visual-theme-changed": 2,
+        "window:error": 1,
+        "window:unhandledrejection": 1,
+        "HTMLTextAreaElement:keydown": 1,
+        "HTMLCanvasElement:pointerdown": 2,
+        "HTMLCanvasElement:pointercancel": 2,
+        "HTMLCanvasElement:contextmenu": 1,
+        "HTMLCanvasElement:wheel": 1,
+        "document:keydown": 2,
+        "document:keyup": 1,
+        "window:blur": 1,
+        "document:visibilitychange": 1,
+        "HTMLButtonElement:pointerdown": 8,
+        "HTMLButtonElement:pointerup": 4,
+        "HTMLButtonElement:pointercancel": 4,
+        "HTMLButtonElement:pointerleave": 4,
+        "HTMLDivElement:click": 2,
+        "HTMLElement:click": 1,
+        "window:keydown": 5,
+        "HTMLDivElement:pointerdown": 1,
+        "HTMLCanvasElement:pointermove": 1,
+        "HTMLCanvasElement:pointerup": 1,
+        "Worker:error": 9,
+        "Worker:messageerror": 4,
+        "Worker:message": 4,
+        "HTMLInputElement:input": 1,
+        "HTMLDivElement:zk-dispose": 1,
+        "window:zeknova:hud-tab": 1,
+        "window:zeknova:scout-open": 1,
+        "window:zeknova:patrol-encounter": 1,
+        "window:zeknova:threat-resolved": 1,
+        "window:visibilitychange": 1,
+        "window:zeknova:perception-event": 2,
+        "window:zeknova:visual-refresh": 1,
+        "window:zeknova:gameplay-ready": 1,
+        "HTMLSelectElement:change": 1
+      },
+      "listenerTotal": 184,
+      "detached": {
+        "HTMLButtonElement:click": 34,
+        "HTMLInputElement:input": 1,
+        "HTMLSelectElement:change": 1,
+        "HTMLFormElement:submit": 2
+      },
+      "detachedTotal": 38,
+      "collected": 51,
+      "intervals": 31,
+      "rafPending": 9,
+      "rafTotal": 13925,
+      "at": 1792609581275
+    },
+    "intervals": [
+      {
+        "ms": 500,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.hookEvents (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:171:25)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:155:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 700,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at FirstFifteenDirector.install (http://127.0.0.1:8790/src/game/FirstFifteenDirector.js:156:18)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:155:181)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 250,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at MusicDirector.arm (http://127.0.0.1:8790/src/game/MusicDirector.js:148:32)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:162:36)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 1000,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at CampaignFinale.install (http://127.0.0.1:8790/src/game/CampaignFinale.js:100:44)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:171:18)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 500,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:167)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 500,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RenderPerformanceDirector.mountTelemetry (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:46:373)\n    at RenderPerformanceDirector.install (http://127.0.0.1:8790/src/game/RenderPerformanceDirector.js:19:249)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:178:195)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 500,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at AdaptiveSimulationDirector.mountTelemetry (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:424:27)\n    at AdaptiveSimulationDirector.install (http://127.0.0.1:8790/src/game/AdaptiveSimulationDirector.js:408:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:209:198)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 750,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at GameModeDirector.install (http://127.0.0.1:8790/src/game/GameModeDirector.js:27:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:248:442)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 200,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:68:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 250,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at BossEncounterDirector.mountDiagnostics (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:180:20)\n    at BossEncounterDirector.install (http://127.0.0.1:8790/src/game/BossEncounterDirector.js:69:10)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:251:180)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 500,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at PhysicsRuntimeBridge.mountDiagnostics (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:40:445)\n    at PhysicsRuntimeBridge.install (http://127.0.0.1:8790/src/game/physics/PhysicsRuntimeBridge.js:7:156)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:256:185)\n    at async Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:44)\n    at async PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:26)\n    at async PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:23)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 500,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at IdentityIntegration.install (http://127.0.0.1:8790/src/game/IdentityIntegration.js:101:42)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:266:153)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      },
+      {
+        "ms": 500,
+        "stack": "Error\n    at window.setInterval (eval at evaluate (:368:30), <anonymous>:1:209)\n    at RelationsPanel.install (http://127.0.0.1:8790/src/game/RelationsPanel.js:105:25)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/directors.js:301:146)\n    at Object.install (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:19:59)\n    at http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:68\n    at PluginManager._run (http://127.0.0.1:8790/packages/core/src/PluginManager.js:82:32)\n    at PluginManager.reinstall (http://127.0.0.1:8790/packages/core/src/PluginManager.js:176:34)\n    at async Object.restartDirectorLayer (http://127.0.0.1:8790/packages/zeknova-compat/src/plugin.js:38:22)\n    at async eval (eval at evaluate (:368:30), <anonymous>:1:178)\n    at async <anonymous>:394:30"
+      }
+    ]
+  }
+}

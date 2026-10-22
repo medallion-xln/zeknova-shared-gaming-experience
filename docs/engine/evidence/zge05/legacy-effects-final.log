@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+ok 1 - actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+  ---
+  duration_ms: 8.566417
+  type: 'test'
+  ...
+# Subtest: actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+ok 2 - actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+  ---
+  duration_ms: 7.411333
+  type: 'test'
+  ...
+# Subtest: actual rejected placement has denial UI and no cost, XP, progress or save
+ok 3 - actual rejected placement has denial UI and no cost, XP, progress or save
+  ---
+  duration_ms: 3.566291
+  type: 'test'
+  ...
+# Subtest: actual legacy model failure occurs after spending, with no transaction rollback
+ok 4 - actual legacy model failure occurs after spending, with no transaction rollback
+  ---
+  duration_ms: 3.532
+  type: 'test'
+  ...
+# Subtest: actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+ok 5 - actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+  ---
+  duration_ms: 2.284417
+  type: 'test'
+  ...
+# Subtest: actual personal construction achievement is a persisted set, not repeat XP application
+ok 6 - actual personal construction achievement is a persisted set, not repeat XP application
+  ---
+  duration_ms: 5.898458
+  type: 'test'
+  ...
+# Subtest: actual relocation mutates record and visual position then invalidates utility index
+ok 7 - actual relocation mutates record and visual position then invalidates utility index
+  ---
+  duration_ms: 3.571958
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 191.344667

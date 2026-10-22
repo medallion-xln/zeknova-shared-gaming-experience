@@ -1,0 +1,23 @@
+  PASS contract identity
+  PASS team codes are canonical and case-insensitive
+  PASS world identity includes biome seed
+  PASS human faction is stable
+  PASS settlement factions are distinct
+  PASS identities validate
+  PASS empty team is rejected
+  PASS fractional seed is rejected
+  PASS malformed encoded identity is rejected
+  PASS persistent entity IDs are stable
+  PASS human player identity prefers user ID
+  PASS remote client identities are distinct
+  PASS canonical JSON ignores object key order
+  PASS canonical metadata rejects non-finite values
+  PASS canonical metadata rejects cycles
+  PASS registry registers factions before entities
+  PASS registry snapshot is canonical and deterministic
+  PASS snapshot round-trip is byte-identical
+  PASS FX-ID-REUSE retired spawn ID cannot return
+  PASS spawn sequence survives snapshot restore
+  PASS FX-ID-COLLISION conflicting source mapping is rejected
+  PASS FX-CLONE-ALIAS snapshot mutations cannot alter registry
+W0-O.0 IDENTITY CONTRACT TESTS PASS (22/22)

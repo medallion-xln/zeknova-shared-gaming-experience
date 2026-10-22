@@ -1,0 +1,97 @@
+{
+  "schema": "zge.verification-manifest.v1",
+  "head": "138220f4909b3fd6a3e0dd2e62ebab63785336d7",
+  "date": "2026-10-21T07:39:09.521543+00:00",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "node": "v22.22.2",
+    "php": "8.5.9",
+    "database": "isolated PDO SQLite WAL synchronous FULL; additive staging schema",
+    "playwright": "/Users/dwaynecampbell/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs",
+    "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  },
+  "commands": {
+    "all": "node scripts/zge07-verify.mjs --browser",
+    "engine": "npm run test:engine",
+    "security": "npm run test:php-security",
+    "history": "npm run benchmark:world-history:hardened",
+    "sessionBrowser": "npm run test:engine:browser:hardened",
+    "legacy": "85 matching .test.mjs/.test.cjs files run individually with 180 s timeout plus Picasso report",
+    "fullBrowserEvidence": "evidence/zge07/browser-diagnostics/browser-gameplay.json"
+  },
+  "results": {
+    "engineBefore": 167,
+    "engineAfter": 191,
+    "engineFailures": 0,
+    "legacyTotal": 86,
+    "legacyPassed": 83,
+    "legacyFailures": [
+      {
+        "file": "tests/renderer-ownership-certification.test.mjs",
+        "exit": 1,
+        "ms": 42
+      },
+      {
+        "file": "tests/runtime-graphics-context.test.mjs",
+        "exit": 1,
+        "ms": 43
+      },
+      {
+        "file": "tests/runtime-reconstruction.test.mjs",
+        "exit": 1,
+        "ms": 44
+      }
+    ],
+    "actualPhpSqliteTests": 21,
+    "newSecurityRecoveryTests": 11,
+    "nodeParityMatched": 702,
+    "browserParityMatched": 390,
+    "browserParitySkipped": 0,
+    "browserAuthenticatedBuilders": 2,
+    "negativeAuthorizationBrowserContexts": 1,
+    "historySizes": [
+      1000,
+      10000,
+      100000
+    ],
+    "historyExactChecksums": true,
+    "httpBackfill100kMs": 5985.917165999999,
+    "browserInitialTransient": "inherited restart probe intervals +1; raw failure retained, diagnostic rerun all four modes passed; cause unresolved",
+    "liveAuthority": "LEGACY",
+    "legacyWriterDisabled": false,
+    "aidBenefit": "UNRESOLVED; quarantined in source world",
+    "v4LiveExecutionMigration": "UNCERTIFIED",
+    "boundedSourceDomain": "RUNNABLE with documented exclusions",
+    "productionReadiness": false
+  },
+  "artifactHashes": {
+    "assets/index-02987539.js": "25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115",
+    "assets/model-runtime-c96327ba.js": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+    "assets/model-runtime.js": "1d7d16eee0ed3d59ea0b7482f0df252d69324690823061f8dc22abb196fc551c",
+    "assets/environment-runtime.js": "44d1c34aca6f6940b463facee706e55d93e5b11f3785f5dfe636b5fa00d8bbc5"
+  },
+  "inventory": {
+    "path": "evidence/zge07/file-inventory.json",
+    "sha256": "dc3d0cf30f168b1dcacc2edf0270540dfd6fb55a5b6eefe54ac95a4b7743947f",
+    "baseline": "evidence/zge07/before-hashes.json",
+    "baselineFileCount": 6934,
+    "missingBaselineFiles": 0,
+    "changedBaselineFiles": 23,
+    "createdFiles": 102,
+    "excludedSelfReferences": [
+      "docs/engine/ZGE_07_VERIFICATION_MANIFEST.json",
+      "docs/engine/evidence/zge07/file-inventory.json"
+    ],
+    "submodule": "pre-existing dirty submodule untouched; not recursively temporally fingerprinted"
+  },
+  "security": {
+    "noCredentialValuesInEvidence": true,
+    "privateFixtureFilesExcluded": true,
+    "processArgumentListsNotCaptured": true,
+    "productionCredentialRotation": "owner gate remains pending"
+  },
+  "noCommit": true,
+  "noProductionMigration": true,
+  "noGoldenRepin": true,
+  "originalBundleBuildMissing": true
+}

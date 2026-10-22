@@ -1,0 +1,37 @@
+{
+  "schema": "zge.source-snapshot.v1",
+  "scope": "independent source-owned engine and headless private PHP/Node authority runtime; excludes browser presentation, original game bundle and media/models",
+  "files": 79,
+  "sourceTreeSha256": "1be9a7411ec80ecea7ea995b8f5590ef1a599e269e940b491315b90c7a52d585",
+  "toolchain": {
+    "node": "v22.22.2",
+    "esbuild": "0.25.11",
+    "php": "8.5.9"
+  },
+  "build": {
+    "format": "esm",
+    "bytes": 146708,
+    "sha256": "36be5f9a1ffda63b6e90780246bdf8f1a46219c336779377dfe6a923214bb0b9",
+    "repeatBuildIdentical": true,
+    "standaloneSmoke": true
+  },
+  "selectedTests": [
+    "packages/core/test/kernel.test.mjs",
+    "packages/core/test/simulation.test.mjs",
+    "packages/gameplay-construction/test/source-runtime.test.mjs",
+    "packages/gameplay-construction/test/source-port.test.mjs",
+    "packages/gameplay-construction/test/zge08-players.test.mjs",
+    "packages/gameplay-missions/test/pipeline.test.mjs",
+    "packages/tooling/test/editor.test.mjs",
+    "packages/server-php/test/supervised-runtime.test.mjs"
+  ],
+  "tests": {
+    "exitCode": 0,
+    "pass": 64,
+    "fail": 0,
+    "durationMs": 9663.968375
+  },
+  "phpSyntaxFiles": 19,
+  "legacyAssetsIncluded": false,
+  "thirdPartyModulesIncluded": false
+}

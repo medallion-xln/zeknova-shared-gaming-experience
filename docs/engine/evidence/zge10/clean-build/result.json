@@ -1,0 +1,127 @@
+{
+  "schema": "zge.sdk.clean-build.v1",
+  "directory": "/tmp/zge10-clean-UVaaeR",
+  "sourceFiles": 22,
+  "inventory": {
+    "packages/core/src/EngineEvents.js": "5e47a705e978a6b80008c6db79005aebb2c081af4d697b2807533c8d48f57b13",
+    "packages/core/src/EngineClock.js": "d744241ae0c39a767e4c5abdc94a9b79314452aaa4ac8402d15ef3a1cd5cd18f",
+    "packages/core/src/LifecycleManager.js": "da3acb5fb408cf864b5a05cebcb17e3945ff46fc5d0f1ba65fe1386330c79d37",
+    "packages/core/src/PluginManager.js": "7d4ec8d34b57806ef0101a2f1fa87b45c1363ff45538511c6042d9418dc17f66",
+    "packages/core/src/EngineMetrics.js": "29cc60d1d1de97465f5ab547271516fff7cb8f99c37bcf7f53664f6eb7d1d2f0",
+    "packages/core/src/Authority.js": "6353288588b67944cd8db1f507ddabf680c6be1b0d1a3504494352c8f9836367",
+    "packages/core/src/CommandQueue.js": "dca8b2511b282e28ddc338ae7316b790cde3eaad307274bf8b65c937c513850b",
+    "packages/core/src/World.js": "74bf790f42a2926b315349999d4f031043e7b1045e7d767eb17f0c54de2086ec",
+    "packages/core/src/EngineKernel.js": "31d4fe251d16c0bc90b24764f774dd0467a88e8e125421e99a872b33e4ed6e11",
+    "packages/core/src/WorldState.js": "af7c8a36a7ceee4acf691813a95fe68a4408b0c10d4cc633ba9b83dae7dfd1a1",
+    "packages/core/src/AuthorityDomain.js": "5d8479c9f58c4e481aa98a049471d38a598940d7964cf29f457183cca190854c",
+    "packages/core/src/GameplayEventJournal.js": "ba4e0fc3bf355a394220cd8841eaded0421db13ef166592628087aa6599a74c0",
+    "packages/core/src/index.js": "041c1f5e7299187815956a6f638a38c2a9579f8bf3eea732af034aac5ee25b2e",
+    "packages/assets/src/AssetService.js": "dfd21708eb2d58bb600ef47239accfab661c5c9e9ff37c8c1662e3fe9ba9a036",
+    "packages/sdk/src/index.js": "8c4135f10205608637477fb9f22883630c2a504b72e06e51f0de555c9b35690a",
+    "packages/sdk/src/three.js": "43f8f8fb95e45f834ff44cb21fce0e278d65bb850a0f9376cfeb0b4604955cd1",
+    "scripts/zge10-build.mjs": "7eb901b53f6482a3df9a24f65e76a752c41a9f2fb675e6022c8dd3a8d01652e8",
+    "packages/sdk/package.json": "45df15f11b054de8437eda3e4ad986b9aa809b227625fc42bb437a788f01f9b8",
+    "packages/sdk/README.md": "db52550afd6e93a096efa7360adb952c4e3b205ca82b48ad902974c044d65a0e",
+    "packages/sdk/test/sdk.test.mjs": "01ea1e6556b6ef56adfd446076aa7d9d4d6aafb9e764df7cf852d9950efcfcdb",
+    "examples/orbital-outpost/project.js": "ca1c1472ea3888be5995d2eaa64e515f3876aa846c6b8e060630c8fcd44edb84",
+    "examples/orbital-outpost/game.js": "4469bd891d10e73f7a945a7117db89c724fea62ae5d04b77edd6334ed7b85a09"
+  },
+  "build": {
+    "schema": "zge.sdk.build.v1",
+    "hashes": {
+      "index": "0860ef9886408a04c31047998d2da816abb02121941cd7c4031548a1c4f7f8e0",
+      "three": "df7943b8d4455099c23a77e7de9f6f863462ad46784c6c714813a86a685ded42"
+    }
+  },
+  "packageSha256": "febddd725ac3457825cf4ca7eff299b4e9f1364e26eddd23e566b32062e03a31",
+  "packageFiles": [
+    "README.md",
+    "dist/build-manifest.json",
+    "dist/index.js",
+    "dist/three.js",
+    "package.json"
+  ],
+  "installedPublicTests": 11,
+  "node": "v22.22.2",
+  "boundary": "clean source closure, offline clean npm ci, two builds, packed public SDK installation, independent project and original SDK tests; no legacy assets",
+  "commands": [
+    {
+      "cmd": "npm",
+      "args": [
+        "install",
+        "--package-lock-only",
+        "--ignore-scripts",
+        "--offline"
+      ],
+      "output": "\nup to date, audited 29 packages in 530ms\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "ci",
+        "--ignore-scripts",
+        "--offline"
+      ],
+      "output": "\nadded 3 packages, and audited 4 packages in 823ms\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "scripts/zge10-build.mjs"
+      ],
+      "output": "{\"index\":\"0860ef9886408a04c31047998d2da816abb02121941cd7c4031548a1c4f7f8e0\",\"three\":\"df7943b8d4455099c23a77e7de9f6f863462ad46784c6c714813a86a685ded42\"}\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "scripts/zge10-build.mjs"
+      ],
+      "output": "{\"index\":\"0860ef9886408a04c31047998d2da816abb02121941cd7c4031548a1c4f7f8e0\",\"three\":\"df7943b8d4455099c23a77e7de9f6f863462ad46784c6c714813a86a685ded42\"}\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "pack",
+        "./packages/sdk",
+        "--json"
+      ],
+      "output": "[\n  {\n    \"id\": \"@zge/sdk@0.1.0-preview.10\",\n    \"name\": \"@zge/sdk\",\n    \"version\": \"0.1.0-preview.10\",\n    \"size\": 23106,\n    \"unpackedSize\": 87545,\n    \"shasum\": \"3a805b25005cb2240b0772b2c7df55616a180dcb\",\n    \"integrity\": \"sha512-JHTreToniZVk9Lbf5yPY38x1Upv4avOQhdj2ABSPffOI3AbB2vt5FhPjMf413q1QG3azOPzvygamC3RLiSXa+A==\",\n    \"filename\": \"zge-sdk-0.1.0-preview.10.tgz\",\n    \"files\": [\n      {\n        \"path\": \"README.md\",\n        \"size\": 4823,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/build-manifest.json\",\n        \"size\": 214,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/index.js\",\n        \"size\": 74020,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/three.js\",\n        \"size\": 8078,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"package.json\",\n        \"size\": 410,\n        \"mode\": 420\n      }\n    ],\n    \"entryCount\": 5,\n    \"bundled\": []\n  }\n]\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "pack",
+        "./packages/sdk",
+        "--json"
+      ],
+      "output": "[\n  {\n    \"id\": \"@zge/sdk@0.1.0-preview.10\",\n    \"name\": \"@zge/sdk\",\n    \"version\": \"0.1.0-preview.10\",\n    \"size\": 23106,\n    \"unpackedSize\": 87545,\n    \"shasum\": \"3a805b25005cb2240b0772b2c7df55616a180dcb\",\n    \"integrity\": \"sha512-JHTreToniZVk9Lbf5yPY38x1Upv4avOQhdj2ABSPffOI3AbB2vt5FhPjMf413q1QG3azOPzvygamC3RLiSXa+A==\",\n    \"filename\": \"zge-sdk-0.1.0-preview.10.tgz\",\n    \"files\": [\n      {\n        \"path\": \"README.md\",\n        \"size\": 4823,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/build-manifest.json\",\n        \"size\": 214,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/index.js\",\n        \"size\": 74020,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/three.js\",\n        \"size\": 8078,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"package.json\",\n        \"size\": 410,\n        \"mode\": 420\n      }\n    ],\n    \"entryCount\": 5,\n    \"bundled\": []\n  }\n]\n"
+    },
+    {
+      "cmd": "npm",
+      "args": [
+        "install",
+        "--ignore-scripts",
+        "--offline",
+        "/tmp/zge10-clean-UVaaeR/zge-sdk-0.1.0-preview.10.tgz"
+      ],
+      "output": "\nadded 1 package, and audited 5 packages in 262ms\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "--test",
+        "packages/sdk/test/sdk.test.mjs"
+      ],
+      "output": "TAP version 13\n# Subtest: public SDK project, detached entities and versioned roundtrip\nok 1 - public SDK project, detached entities and versioned roundtrip\n  ---\n  duration_ms: 4.001084\n  type: 'test'\n  ...\n# Subtest: transactions are atomic, finite, revision/existence/component checked\nok 2 - transactions are atomic, finite, revision/existence/component checked\n  ---\n  duration_ms: 0.7015\n  type: 'test'\n  ...\n# Subtest: all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\nok 3 - all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\n  ---\n  duration_ms: 4.834833\n  type: 'test'\n  ...\n# Subtest: invalid restored scenes never clear current data or history\nok 4 - invalid restored scenes never clear current data or history\n  ---\n  duration_ms: 0.328166\n  type: 'test'\n  ...\n# Subtest: components, systems, plugin lifecycle, permission-aware private inspection\nok 5 - components, systems, plugin lifecycle, permission-aware private inspection\n  ---\n  duration_ms: 1.681958\n  type: 'test'\n  ...\n# Subtest: AI mock is detached preview only, reject/approve/undo and immutable provenance\nok 6 - AI mock is detached preview only, reject/approve/undo and immutable provenance\n  ---\n  duration_ms: 1.516542\n  type: 'test'\n  ...\n# Subtest: independent game collision, collectible, build objective and isolated simulation\nok 7 - independent game collision, collectible, build objective and isolated simulation\n  ---\n  duration_ms: 2.411375\n  type: 'test'\n  ...\n# Subtest: asset lease coalescing, detached mutable instances, bounded eviction/disposal\nok 8 - asset lease coalescing, detached mutable instances, bounded eviction/disposal\n  ---\n  duration_ms: 0.766708\n  type: 'test'\n  ...\n# Subtest: plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\nok 9 - plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\n  ---\n  duration_ms: 0.380792\n  type: 'test'\n  ...\n# Subtest: public asset identities resolve through registered loader and unknown scene references fail atomically\nok 10 - public asset identities resolve through registered loader and unknown scene references fail atomically\n  ---\n  duration_ms: 1.834625\n  type: 'test'\n  ...\n# Subtest: renderer preference and owned backend lifecycle are explicit\nok 11 - renderer preference and owned backend lifecycle are explicit\n  ---\n  duration_ms: 0.5985\n  type: 'test'\n  ...\n1..11\n# tests 11\n# suites 0\n# pass 11\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 83.542833\n"
+    },
+    {
+      "cmd": "/Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node",
+      "args": [
+        "--input-type=module",
+        "-e",
+        "import {project} from './examples/orbital-outpost/project.js';import {createEngine} from '@zge/sdk';const e=await createEngine({project});await e.loadWorld();if(e.world.entities().length!==5)throw Error('world');await e.dispose();"
+      ],
+      "output": ""
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "service": null,
+  "managedService": false,
+  "label": "matrix-4",
+  "profile": "movement",
+  "clients": 4,
+  "distinctIdentities": 4,
+  "phpGateways": 4,
+  "policy": {
+    "scheduledIntentsPerSecond": 6,
+    "principalLimitPerMinute": 240,
+    "ipLimitPerMinute": 600,
+    "mode": "isolated burst under unchanged quota",
+    "syntheticStartingSharedStone": 12
+  },
+  "durationMs": 912.8199169999998,
+  "requests": {
+    "total": 64,
+    "httpAccepted": 64,
+    "acceptedCommands": 64,
+    "duplicateReceipts": 0,
+    "throttled": 0,
+    "rejectedCommands": 0,
+    "transportFailures": 0,
+    "classes": {
+      "movement": 64
+    },
+    "reasons": {}
+  },
+  "requestsPerSecond": 70.11240531466188,
+  "acceptedCommandsPerSecond": 70.11240531466188,
+  "latencyMs": {
+    "count": 64,
+    "p50": 46.296040999999605,
+    "p95": 65.0689169999996,
+    "p99": 70.02762499999972,
+    "max": 74.09470799999963
+  },
+  "stagesMs": {
+    "payload": {
+      "count": 64,
+      "p50": 0.010041,
+      "p95": 0.013625,
+      "p99": 0.015,
+      "max": 0.0185
+    },
+    "databaseOpen": {
+      "count": 64,
+      "p50": 0.296875,
+      "p95": 0.393458,
+      "p99": 0.732292,
+      "max": 0.7775
+    },
+    "quota": {
+      "count": 64,
+      "p50": 0.186583,
+      "p95": 0.258,
+      "p99": 0.294875,
+      "max": 0.446792
+    },
+    "authentication": {
+      "count": 64,
+      "p50": 0.181876,
+      "p95": 0.209959,
+      "p99": 0.275666,
+      "max": 0.351998
+    },
+    "authorization": {
+      "count": 64,
+      "p50": 0.004125,
+      "p95": 0.006333,
+      "p99": 0.007167,
+      "max": 0.015708
+    },
+    "runtimeEnsure": {
+      "count": 64,
+      "p50": 0.265333,
+      "p95": 1.071083,
+      "p99": 1.608833,
+      "max": 2.344834
+    },
+    "admission": {
+      "count": 64,
+      "p50": 33.158334,
+      "p95": 49.549666,
+      "p99": 53.376667,
+      "max": 55.656708
+    },
+    "lockWait": {
+      "count": 64,
+      "p50": 0.007125,
+      "p95": 0.015209,
+      "p99": 0.020208,
+      "max": 0.032042
+    },
+    "validation": {
+      "count": 64,
+      "p50": 0.787416,
+      "p95": 1.146709,
+      "p99": 1.211541,
+      "max": 1.218999
+    },
+    "ipc": {
+      "count": 64,
+      "p50": 6.984709,
+      "p95": 10.705583,
+      "p99": 11.306375,
+      "max": 11.463084
+    },
+    "candidateValidation": {
+      "count": 64,
+      "p50": 0.038125,
+      "p95": 0.051542,
+      "p99": 0.08875,
+      "max": 0.120875
+    },
+    "transactionWrites": {
+      "count": 64,
+      "p50": 0.37,
+      "p95": 0.559458,
+      "p99": 0.619417,
+      "max": 0.760708
+    },
+    "commitValidation": {
+      "count": 64,
+      "p50": 0.008209,
+      "p95": 0.009791,
+      "p99": 0.011666,
+      "max": 0.011917
+    },
+    "commit": {
+      "count": 64,
+      "p50": 0.282417,
+      "p95": 0.5955,
+      "p99": 1.205416,
+      "max": 1.867667
+    },
+    "eventRead": {
+      "count": 64,
+      "p50": 0.354166,
+      "p95": 0.426417,
+      "p99": 0.440208,
+      "max": 0.456666
+    },
+    "receiptConstruction": {
+      "count": 64,
+      "p50": 0.265042,
+      "p95": 0.316167,
+      "p99": 0.356625,
+      "max": 0.368833
+    },
+    "responseSerialization": {
+      "count": 64,
+      "p50": 0.147792,
+      "p95": 0.23325,
+      "p99": 0.26875,
+      "max": 0.288375
+    }
+  },
+  "transactionMs": {
+    "count": 64,
+    "p50": 8.538916,
+    "p95": 12.914625,
+    "p99": 13.638584,
+    "max": 14.613959
+  },
+  "runtimeEvaluationMs": {
+    "count": 64,
+    "p50": 4.3524589999999534,
+    "p95": 7.065124999999853,
+    "p99": 7.230957999999873,
+    "max": 7.45354199999997
+  },
+  "runtimeQueueMs": {
+    "count": 64,
+    "p50": 0.002457999999933236,
+    "p95": 0.004542000000583357,
+    "p99": 0.006416000000172062,
+    "max": 0.010416999999506515
+  },
+  "samples": [
+    {
+      "atMs": 7912.055709,
+      "rssBytes": 278544384,
+      "cpuMs": 1020,
+      "descriptors": 57,
+      "nodeProcessCount": 1,
+      "dbBytes": 180224,
+      "processes": [
+        {
+          "pid": 67293,
+          "rssBytes": 88752128,
+          "cpuMs": 700,
+          "program": "node"
+        },
+        {
+          "pid": 68533,
+          "rssBytes": 32063488,
+          "cpuMs": 60,
+          "program": "php"
+        },
+        {
+          "pid": 68547,
+          "rssBytes": 32178176,
+          "cpuMs": 60,
+          "program": "php"
+        },
+        {
+          "pid": 68561,
+          "rssBytes": 32391168,
+          "cpuMs": 60,
+          "program": "php"
+        },
+        {
+          "pid": 68575,
+          "rssBytes": 32178176,
+          "cpuMs": 60,
+          "program": "php"
+        },
+        {
+          "pid": 68633,
+          "rssBytes": 59277312,
+          "cpuMs": 80,
+          "program": "node"
+        },
+        {
+          "pid": 68779,
+          "rssBytes": 1703936,
+          "cpuMs": 0,
+          "program": "ps"
+        }
+      ]
+    },
+    {
+      "atMs": 8828.049375,
+      "rssBytes": 325255168,
+      "cpuMs": 2120,
+      "descriptors": 57,
+      "nodeProcessCount": 1,
+      "dbBytes": 438272,
+      "processes": [
+        {
+          "pid": 67293,
+          "rssBytes": 111280128,
+          "cpuMs": 900,
+          "program": "node"
+        },
+        {
+          "pid": 68533,
+          "rssBytes": 33734656,
+          "cpuMs": 210,
+          "program": "php"
+        },
+        {
+          "pid": 68547,
+          "rssBytes": 33996800,
+          "cpuMs": 210,
+          "program": "php"
+        },
+        {
+          "pid": 68561,
+          "rssBytes": 34127872,
+          "cpuMs": 210,
+          "program": "php"
+        },
+        {
+          "pid": 68575,
+          "rssBytes": 33685504,
+          "cpuMs": 200,
+          "program": "php"
+        },
+        {
+          "pid": 68633,
+          "rssBytes": 76726272,
+          "cpuMs": 390,
+          "program": "node"
+        },
+        {
+          "pid": 68944,
+          "rssBytes": 1703936,
+          "cpuMs": 0,
+          "program": "ps"
+        }
+      ]
+    }
+  ],
+  "faults": [],
+  "health": {
+    "version": 1,
+    "owner": "supervisor-cf956d49-866c-4d4d-ade9-e8baed24026c",
+    "state": "ready",
+    "limits": {
+      "queueCapacity": 16,
+      "maxWorlds": 16,
+      "maxConnections": 64,
+      "maxFrame": 8388608,
+      "timeoutMs": 2000,
+      "leaseMs": 10000
+    },
+    "metrics": {
+      "accepted": 73,
+      "rejected": 0,
+      "completed": 73,
+      "failed": 0,
+      "restarts": 0,
+      "timeouts": 0,
+      "staleReplies": 0,
+      "authenticationFailures": 0,
+      "leaseFailures": 0,
+      "queuePeak": 1,
+      "workerStarts": 1,
+      "totalEvaluationMs": 357.21203899999364
+    },
+    "worlds": [
+      {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-dd381795-e87b-4738-8e2f-af0517992678",
+        "generation": 1,
+        "expires": 1792611178212,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": {
+          "created": 1,
+          "restored": 2,
+          "cacheHits": 71
+        }
+      }
+    ]
+  },
+  "final": {
+    "revision": 68,
+    "cursor": 204,
+    "archiveReceipts": 68,
+    "personalClaims": 0,
+    "teamClaims": 0,
+    "personalXp": [
+      {
+        "id": "load-0",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-1",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-2",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-3",
+        "xp": 0,
+        "rank": "ensign"
+      }
+    ],
+    "stone": 12,
+    "acceptedPlaces": 0,
+    "deterministicReplay": true
+  },
+  "scope": "loopback real authenticated HTTP; private synthetic starting supplies for construction longevity; all commands/events/claims retained; process CPU/RSS includes harness, owned PHP gateways and worker; source edits/tests may contend during run"
+}

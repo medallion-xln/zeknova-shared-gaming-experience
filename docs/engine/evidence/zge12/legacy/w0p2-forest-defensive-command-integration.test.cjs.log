@@ -1,0 +1,47 @@
+  PASS v2 integration global
+  PASS unified incumbent controller v2
+  PASS all thirteen actions exposed
+  PASS public adapter v2 read only
+  PASS adapter exposes no execute
+  PASS runtime rejects sentinel-prime
+  PASS runtime rejects sentinel-router
+  PASS runtime rejects shadow-replay
+  PASS runtime rejects test-projection
+  PASS spoofed incumbent string rejected
+  PASS hold completes
+  PASS hold recovers readiness
+  PASS recon completes
+  PASS recon moves patrol home
+  PASS recon records route quantum
+  PASS screen completes
+  PASS screen patrol reaches alert
+  PASS reinforce completes
+  PASS reinforcement live flag set
+  PASS repair completes
+  PASS repair status operational
+  PASS repair health restored
+  PASS repair materials deducted once
+  PASS fortify completes
+  PASS route fortified live flag
+  PASS fortify uses both assignments
+  PASS secure resource completes
+  PASS resource secured by faction
+  PASS infrastructure completes
+  PASS infrastructure status operational
+  PASS intelligence share completes
+  PASS recipient receives shared event
+  PASS defensive channel completes
+  PASS defensive channel lowers tension
+  PASS defensive channel raises trust
+  PASS relations runtime called once
+  PASS patrol v2 parity completion
+  PASS intercept v2 parity completion
+  PASS intercept remains non-damaging
+  PASS withdraw interrupts recon
+  PASS withdraw completes from v2 commitment
+  PASS withdraw releases patrol
+  PASS runtime snapshot deterministic
+  PASS adapter snapshot equals runtime
+  PASS dispose clears v2 global
+  PASS prior snapshot detached
+W0-P.2 FOREST DEFENSIVE COMMAND INTEGRATION TESTS PASS (46/46)

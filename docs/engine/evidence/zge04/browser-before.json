@@ -1,0 +1,216 @@
+{
+  "legacy": {
+    "placementP50": 0,
+    "placementP95": 0.10000002384185791,
+    "frameP50": 33.30000000000109,
+    "frameP95": 33.400000000000546,
+    "frameP99": 33.400000000001455,
+    "heap": 147955291,
+    "shadow": {
+      "mode": "LEGACY",
+      "compared": 0,
+      "mismatches": 0,
+      "errors": 0,
+      "differences": []
+    },
+    "assets": {
+      "cache": {
+        "requests": 58,
+        "matched": 18,
+        "hits": 0,
+        "joined": 0,
+        "misses": 18,
+        "bytesDownloaded": 9998913,
+        "bytesServedFromCache": 0,
+        "evictions": 0,
+        "bypassed": 40,
+        "errors": 0,
+        "entries": 18,
+        "bytes": 9998913,
+        "budgetBytes": 67108864,
+        "inFlight": 0,
+        "top": [
+          {
+            "url": "models/zeknovan-saboteur-walk.medium.glb",
+            "hits": 0,
+            "kb": 483
+          },
+          {
+            "url": "basis/basis_transcoder.wasm",
+            "hits": 0,
+            "kb": 515
+          },
+          {
+            "url": "models/zeknovan-spitter-walk.medium.glb",
+            "hits": 0,
+            "kb": 485
+          },
+          {
+            "url": "models/zeknovan-stalker-walk.medium.glb",
+            "hits": 0,
+            "kb": 459
+          },
+          {
+            "url": "models/zeknovan-juggernaut-walk.medium.glb",
+            "hits": 0,
+            "kb": 472
+          }
+        ]
+      },
+      "parsed": {
+        "loads": 17,
+        "hits": 18,
+        "joined": 0,
+        "failures": 0,
+        "retries": 0,
+        "evictions": 0,
+        "cancelled": 0,
+        "entries": 17,
+        "pending": 0,
+        "bytes": 64886634,
+        "references": 0,
+        "budgetBytes": 67108864,
+        "workers": {
+          "completed": 20,
+          "failures": 0,
+          "resets": 0,
+          "created": 4,
+          "live": 4,
+          "pending": 0,
+          "limit": 4
+        }
+      },
+      "loader": {
+        "patched": true,
+        "pending": [],
+        "completed": 17,
+        "failures": 0,
+        "stalls": 0,
+        "loadMs": {
+          "p50": 106.8,
+          "p95": 294,
+          "max": 481.7
+        },
+        "stallMs": 15000
+      },
+      "workers": {
+        "live": 5,
+        "created": 5,
+        "terminated": 0,
+        "errors": 0,
+        "byScript": {
+          "blob:": 4,
+          "workers/adaptive-runtime-worker.js": 1
+        }
+      }
+    },
+    "restartable": 29
+  },
+  "shadow": {
+    "placementP50": 0,
+    "placementP95": 0.2999999523162842,
+    "frameP50": 33.30000000000018,
+    "frameP95": 33.400000000001455,
+    "frameP99": 33.400000000001455,
+    "heap": 292109929,
+    "shadow": {
+      "mode": "SHADOW",
+      "compared": 30,
+      "mismatches": 0,
+      "errors": 0,
+      "differences": []
+    },
+    "assets": {
+      "cache": {
+        "requests": 57,
+        "matched": 18,
+        "hits": 0,
+        "joined": 0,
+        "misses": 18,
+        "bytesDownloaded": 9998913,
+        "bytesServedFromCache": 0,
+        "evictions": 0,
+        "bypassed": 39,
+        "errors": 0,
+        "entries": 18,
+        "bytes": 9998913,
+        "budgetBytes": 67108864,
+        "inFlight": 0,
+        "top": [
+          {
+            "url": "models/zeknovan-spitter-walk.medium.glb",
+            "hits": 0,
+            "kb": 485
+          },
+          {
+            "url": "basis/basis_transcoder.wasm",
+            "hits": 0,
+            "kb": 515
+          },
+          {
+            "url": "models/zeknovan-saboteur-walk.medium.glb",
+            "hits": 0,
+            "kb": 483
+          },
+          {
+            "url": "models/zeknovan-juggernaut-walk.medium.glb",
+            "hits": 0,
+            "kb": 472
+          },
+          {
+            "url": "models/zeknovan-stalker-walk.medium.glb",
+            "hits": 0,
+            "kb": 459
+          }
+        ]
+      },
+      "parsed": {
+        "loads": 17,
+        "hits": 18,
+        "joined": 0,
+        "failures": 0,
+        "retries": 0,
+        "evictions": 0,
+        "cancelled": 0,
+        "entries": 17,
+        "pending": 0,
+        "bytes": 64886634,
+        "references": 0,
+        "budgetBytes": 67108864,
+        "workers": {
+          "completed": 20,
+          "failures": 0,
+          "resets": 0,
+          "created": 4,
+          "live": 4,
+          "pending": 0,
+          "limit": 4
+        }
+      },
+      "loader": {
+        "patched": true,
+        "pending": [],
+        "completed": 17,
+        "failures": 0,
+        "stalls": 0,
+        "loadMs": {
+          "p50": 29.5,
+          "p95": 131.5,
+          "max": 267.7
+        },
+        "stallMs": 15000
+      },
+      "workers": {
+        "live": 5,
+        "created": 5,
+        "terminated": 0,
+        "errors": 0,
+        "byScript": {
+          "blob:": 4,
+          "workers/adaptive-runtime-worker.js": 1
+        }
+      }
+    },
+    "restartable": 29
+  }
+}

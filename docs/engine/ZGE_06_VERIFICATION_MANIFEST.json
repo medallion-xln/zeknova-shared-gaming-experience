@@ -1,0 +1,70 @@
+{
+  "schema": "zge.verification-manifest.v1",
+  "head": "138220f4909b3fd6a3e0dd2e62ebab63785336d7",
+  "date": "2026-10-21T06:32:26.395547+00:00",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "node": "v22.22.2",
+    "php": "8.5.9",
+    "database": "isolated PDO SQLite WAL synchronous FULL",
+    "playwright": "/Users/dwaynecampbell/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs",
+    "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  },
+  "commands": {
+    "all": "node scripts/zge06-verify.mjs --browser",
+    "engine": "npm run test:engine",
+    "php": "npm run test:php-world",
+    "history": "npm run benchmark:world-history",
+    "durableBrowser": "npm run test:engine:browser:durable",
+    "legacy": "85 matching test files individually, 180 s per-file timeout, plus Picasso report",
+    "browserFinalAssessment": "evidence/zge06/browser-final-assessment.json"
+  },
+  "results": {
+    "engineBefore": 140,
+    "engineAfter": 167,
+    "engineFailures": 0,
+    "legacyTotal": 86,
+    "legacyPassed": 83,
+    "legacyFailures": [
+      {
+        "file": "tests/renderer-ownership-certification.test.mjs",
+        "exit": 1,
+        "ms": 46
+      },
+      {
+        "file": "tests/runtime-graphics-context.test.mjs",
+        "exit": 1,
+        "ms": 42
+      },
+      {
+        "file": "tests/runtime-reconstruction.test.mjs",
+        "exit": 1,
+        "ms": 48
+      }
+    ],
+    "nodeParityMatched": 702,
+    "browserParityMatched": 390,
+    "browserParitySkipped": 0,
+    "phpIntegrationTests": 10,
+    "twoBrowserContexts": 2,
+    "historySizes": [
+      1000,
+      10000,
+      100000
+    ],
+    "historyExactChecksums": true,
+    "liveAuthority": "LEGACY",
+    "stagingAuthority": "PHP transaction + JS runtime + SQLite"
+  },
+  "inventory": {
+    "path": "evidence/zge06/file-inventory.json",
+    "sha256": "2ac530e0916a21786f75448512e1f64f39086f143f9941a7fbc69850f8426051",
+    "baseline": "evidence/zge06/before-hashes.json",
+    "submodule": "pre-existing dirty submodule untouched; not recursively temporally fingerprinted"
+  },
+  "security": "production rotation pending; no values included; fixture identities not copied into evidence",
+  "noCommit": true,
+  "noProductionMigration": true,
+  "noGoldenRepin": true,
+  "originalBundleBuildMissing": true
+}

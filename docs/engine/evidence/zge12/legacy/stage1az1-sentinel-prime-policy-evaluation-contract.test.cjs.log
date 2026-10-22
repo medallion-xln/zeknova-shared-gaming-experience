@@ -1,0 +1,76 @@
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS eighteen policies
+  PASS five primary policies
+  PASS thirteen spam controls
+  PASS Prime policy first
+  PASS Prime simulations 96
+  PASS policy ids unique
+  PASS every policy denies live authority
+  PASS every policy denies authored witness plans
+  PASS incumbent is explicit proxy
+  PASS objective scalar preserves settlement survival
+  PASS objective scalar preserves critical priority
+  PASS legal action list nonempty
+  PASS repair legal in damaged core
+  PASS Prime decision legal
+  PASS Prime decision simulations exact
+  PASS Prime root visits sum to simulations
+  PASS Prime decision deterministic
+  PASS sentinel-prime-puct-v1-development run canonical
+  PASS sentinel-prime-puct-v1-development run validates
+  PASS sentinel-prime-puct-v1-development authority none
+  PASS incumbent-scripted-proxy-v1-development run canonical
+  PASS incumbent-scripted-proxy-v1-development run validates
+  PASS incumbent-scripted-proxy-v1-development authority none
+  PASS deterministic-defensive-rules-v1 run canonical
+  PASS deterministic-defensive-rules-v1 run validates
+  PASS deterministic-defensive-rules-v1 authority none
+  PASS random-legal-v1 run canonical
+  PASS random-legal-v1 run validates
+  PASS random-legal-v1 authority none
+  PASS always-hold-v1 run canonical
+  PASS always-hold-v1 run validates
+  PASS always-hold-v1 authority none
+  PASS Prime preserves settlement in exposed patrol
+  PASS Prime proposals legal
+  PASS Prime run deterministic
+  PASS report canonical prefix
+  PASS report validates
+  PASS seed count sixteen
+  PASS total runs 2016
+  PASS policy result count eighteen
+  PASS Prime success rate measured
+  PASS Prime settlement survival perfect
+  PASS incumbent proxy success measured
+  PASS rules baseline succeeds all
+  PASS random legal success measured
+  PASS always hold succeeds none
+  PASS Prime has zero illegal proposal rate
+  PASS Prime pairwise count four
+  PASS Prime development gates fail
+  PASS legality gate passes
+  PASS scenario survival coverage passes
+  PASS random objective gate fails
+  PASS rules nonloss gate passes
+  PASS strategic competence remains false
+  PASS actual incumbent outperformance claim false
+  PASS production authority false
+  PASS incumbent comparison explicitly proxy only
+  PASS report contains no wall clock
+  PASS Prime selector does not read success plans
+  PASS unknown policy rejected
+  PASS unknown scenario rejected
+  PASS zero seed rejected
+  PASS too few simulations rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.1 SENTINEL PRIME POLICY EVALUATION CONTRACT TESTS PASS (75/75)

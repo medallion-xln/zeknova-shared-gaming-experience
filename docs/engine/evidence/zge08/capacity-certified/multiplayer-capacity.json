@@ -1,0 +1,118 @@
+{
+  "scope": "actual authenticated HTTP + PHP gateways + one persistent Node world worker + SQLite FULL WAL; 512 real actor movement commands per run",
+  "quota": "existing supported staging configuration 600 requests/min/IP and 600/principal; burst measurement, not sustained WAN SLA",
+  "rows": [
+    {
+      "clients": 1,
+      "phpGateways": 1,
+      "commands": 512,
+      "elapsedMs": 6552.6428750000005,
+      "commandsPerSecond": 78.13641148572438,
+      "latencyMs": {
+        "count": 512,
+        "p50": 12.603374999999687,
+        "p95": 19.422500000000127,
+        "p99": 28.46633399999996
+      },
+      "revision": 513,
+      "events": 1539,
+      "archiveReceipts": 513,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "evaluator": {
+        "created": 1,
+        "restored": 2,
+        "cacheHits": 513
+      },
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    },
+    {
+      "clients": 2,
+      "phpGateways": 2,
+      "commands": 512,
+      "elapsedMs": 5704.926708999999,
+      "commandsPerSecond": 89.74698994682564,
+      "latencyMs": {
+        "count": 512,
+        "p50": 11.7309580000001,
+        "p95": 25.146166999998968,
+        "p99": 304.3190830000003
+      },
+      "revision": 514,
+      "events": 1542,
+      "archiveReceipts": 514,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "evaluator": {
+        "created": 1,
+        "restored": 2,
+        "cacheHits": 515
+      },
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    },
+    {
+      "clients": 4,
+      "phpGateways": 4,
+      "commands": 512,
+      "elapsedMs": 5830.917291,
+      "commandsPerSecond": 87.8077966892568,
+      "latencyMs": {
+        "count": 512,
+        "p50": 12.83991700000115,
+        "p95": 170.2990409999984,
+        "p99": 404.52774999999747
+      },
+      "revision": 516,
+      "events": 1548,
+      "archiveReceipts": 516,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "evaluator": {
+        "created": 1,
+        "restored": 2,
+        "cacheHits": 519
+      },
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    },
+    {
+      "clients": 8,
+      "phpGateways": 4,
+      "commands": 512,
+      "elapsedMs": 6144.676124999998,
+      "commandsPerSecond": 83.32416381017968,
+      "latencyMs": {
+        "count": 512,
+        "p50": 25.211124999997992,
+        "p95": 341.3304579999967,
+        "p99": 1075.9364580000001
+      },
+      "revision": 520,
+      "events": 1560,
+      "archiveReceipts": 520,
+      "workersStarted": 1,
+      "queuePeak": 1,
+      "workerGeneration": 1,
+      "evaluator": {
+        "created": 1,
+        "restored": 2,
+        "cacheHits": 527
+      },
+      "inventoryInvariant": true,
+      "privateProgressInvariant": true,
+      "deterministic": true,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{"n":100,"loadMs":58.86933399999998,"selectionMs":97.35274999999979,"saveMs":42.04100000000017,"frames":301,"metrics":{"heap":16659206,"dom":706,"viewport":{"backend":"webgl","objects":100,"geometries":8,"drawCalls":630,"controls":true,"dragging":false,"modelAssets":0}},"errors":[]}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.click: Target page, context or browser has been closed
+Call log:
+[2m  - waiting for locator('[data-entity="item-50"]')[22m
+
+    at /private/tmp/zge12/after-browser.mjs:7:605 {
+  log: [ `  - waiting for locator('[data-entity="item-50"]')` ]
+}
+
+Node.js v22.22.2

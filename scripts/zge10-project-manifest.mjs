@@ -1,0 +1,2 @@
+import {project} from '../examples/orbital-outpost/project.js';import {validateProject} from '@zge/sdk';import {writeFileSync,readFileSync} from 'node:fs';
+const output='examples/orbital-outpost/project.json',json=JSON.stringify(validateProject(project),null,2)+'\n';if(process.argv.includes('--check')){if(readFileSync(output,'utf8')!==json)throw Error('project manifest is stale');}else writeFileSync(output,json);console.log('Orbital Outpost project manifest reproducible');

@@ -1,0 +1,44 @@
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter action count thirteen
+  PASS adapter root stance defensive
+  PASS adapter authority read-only
+  PASS adapter exposes no execute
+  PASS adapter exposes no apply
+  PASS empty set addresses local faction
+  PASS default capacity source is explicit development label
+  PASS empty set retains hold
+  PASS empty set retains defensive channel
+  PASS empty set masks intercept
+  PASS hidden spawn gets identity
+  PASS hidden spawn leaves candidate set unchanged
+  PASS out-of-range creates no event
+  PASS out-of-range leaves intercept masked
+  PASS grounded sighting enables intercept
+  PASS grounded sighting enables direct share
+  PASS intercept target references observed subject
+  PASS candidate set contains no event IDs
+  PASS projection binds local observation
+  PASS projection is detached from world enemy
+  PASS projection does not move enemy
+  PASS route enables patrol
+  PASS route enables recon
+  PASS damaged route enables fortify
+  PASS damaged structure enables reinforce
+  PASS damaged structure enables repair
+  PASS low capacity retains hold
+  PASS low capacity masks repair
+  PASS low capacity source preserved
+  PASS other faction cannot use unshared human sighting
+  PASS shared contact enables recipient intercept
+  PASS shared-only recipient cannot reshare
+  PASS repeated candidate set deterministic
+  PASS adapter equals integration
+  PASS contact expires at exact boundary
+  PASS route remains fresh before route expiry
+  PASS terminal masks all
+  PASS replan masks all
+  PASS hostile stance cannot be injected
+  PASS dispose clears global integration
+  PASS prior bundle detached after disposal
+W0-AF FOREST DEFENSIVE ACTION INTEGRATION TESTS PASS (43/43)

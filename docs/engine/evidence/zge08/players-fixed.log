@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: explicit join creates independent deterministic actors and unrelated movement does not invalidate actor revision
+ok 1 - explicit join creates independent deterministic actors and unrelated movement does not invalidate actor revision
+  ---
+  duration_ms: 15.334167
+  type: 'test'
+  ...
+# Subtest: personal XP and achievements belong to authenticated builder; collective mission XP stays team-only
+ok 2 - personal XP and achievements belong to authenticated builder; collective mission XP stays team-only
+  ---
+  duration_ms: 6.764375
+  type: 'test'
+  ...
+# Subtest: public and own projections exclude peer private state, historical command IDs and provenance
+ok 3 - public and own projections exclude peer private state, historical command IDs and provenance
+  ---
+  duration_ms: 2.958041
+  type: 'test'
+  ...
+# Subtest: old avatar, collective XP and receipts remain exact unassigned provenance, never awarded to joiner
+ok 4 - old avatar, collective XP and receipts remain exact unassigned provenance, never awarded to joiner
+  ---
+  duration_ms: 7.372084
+  type: 'test'
+  ...
+# Subtest: rollback, compact/replay and roster revocation preserve independent player state
+ok 5 - rollback, compact/replay and roster revocation preserve independent player state
+  ---
+  duration_ms: 7.831917
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 103.945208

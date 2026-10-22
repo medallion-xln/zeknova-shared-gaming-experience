@@ -1,0 +1,158 @@
+TAP version 13
+# Subtest: actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+not ok 1 - actual canvas handler orders deduction/add/progression before campaign, XP, HUD and save
+  ---
+  duration_ms: 2.75475
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:27:1'
+  failureType: 'testCodeFailure'
+  error: 'game.onPointerDown is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    click (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:25:44)
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:28:46)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+not ok 2 - actual protected shared territory precheck blocks place; ordinary protected build reduces trust/ecology
+  ---
+  duration_ms: 0.893541
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:32:1'
+  failureType: 'testCodeFailure'
+  error: 'game.onPointerDown is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    Object.click (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:25:44)
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:33:86)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: actual rejected placement has denial UI and no cost, XP, progress or save
+not ok 3 - actual rejected placement has denial UI and no cost, XP, progress or save
+  ---
+  duration_ms: 1.000167
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:36:1'
+  failureType: 'testCodeFailure'
+  error: 'game.onPointerDown is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    click (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:25:44)
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:37:62)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: actual legacy model failure occurs after spending, with no transaction rollback
+not ok 4 - actual legacy model failure occurs after spending, with no transaction rollback
+  ---
+  duration_ms: 1.389708
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:39:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /model failed/. Input:
+    
+    'TypeError: game.onPointerDown is not a function'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'game.onPointerDown is not a function'
+  name: 'TypeError'
+  stack: |-
+    click (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:25:44)
+    getActual (node:assert:609:5)
+    Function.throws (node:assert:757:24)
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:40:72)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:40:72)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+not ok 5 - actual legacy toast failure can interrupt post-placement XP/save; source runtime must isolate presentation
+  ---
+  duration_ms: 0.929333
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:42:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /presentation failed/. Input:
+    
+    'TypeError: game.onPointerDown is not a function'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'game.onPointerDown is not a function'
+  name: 'TypeError'
+  stack: |-
+    click (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:25:44)
+    getActual (node:assert:609:5)
+    Function.throws (node:assert:757:24)
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:43:74)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/gameplay-construction/test/legacy-effects.test.mjs:43:74)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: actual personal construction achievement is a persisted set, not repeat XP application
+ok 6 - actual personal construction achievement is a persisted set, not repeat XP application
+  ---
+  duration_ms: 1.023167
+  type: 'test'
+  ...
+# Subtest: actual relocation mutates record and visual position then invalidates utility index
+ok 7 - actual relocation mutates record and visual position then invalidates utility index
+  ---
+  duration_ms: 0.783834
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 2
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 75.089584

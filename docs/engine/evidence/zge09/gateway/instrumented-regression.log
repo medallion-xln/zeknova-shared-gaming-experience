@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: a delayed old-worker reply cannot publish or acknowledge intent after a newer generation
+ok 1 - a delayed old-worker reply cannot publish or acknowledge intent after a newer generation
+  ---
+  duration_ms: 10.913667
+  type: 'test'
+  ...
+# Subtest: backpressure admits no new outbox intent while a failed command awaits reconciliation
+ok 2 - backpressure admits no new outbox intent while a failed command awaits reconciliation
+  ---
+  duration_ms: 0.35375
+  type: 'test'
+  ...
+# Subtest: actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+ok 3 - actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+  ---
+  duration_ms: 894.789416
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+ok 4 - worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 937.256791
+  type: 'test'
+  ...
+# Subtest: worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+ok 5 - worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 1113.178291
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+ok 6 - worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 941.105208
+  type: 'test'
+  ...
+# Subtest: worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+ok 7 - worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 2946.388167
+  type: 'test'
+  ...
+# Subtest: worker death after durable commit and before reply cannot duplicate personal or team effects
+ok 8 - worker death after durable commit and before reply cannot duplicate personal or team effects
+  ---
+  duration_ms: 1156.194709
+  type: 'test'
+  ...
+# Subtest: database unavailable and reward-write failure preserve committed player/world state
+ok 9 - database unavailable and reward-write failure preserve committed player/world state
+  ---
+  duration_ms: 1219.952125
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-before-commit
+ok 10 - actual gateway process death at multiplayer mission COMMIT crash-before-commit
+  ---
+  duration_ms: 923.416375
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-after-commit
+ok 11 - actual gateway process death at multiplayer mission COMMIT crash-after-commit
+  ---
+  duration_ms: 894.118333
+  type: 'test'
+  ...
+# Subtest: checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+ok 12 - checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+  ---
+  duration_ms: 1054.58025
+  type: 'test'
+  ...
+# Subtest: multiplayer backup and isolated restore retain private actor records and complete archives
+ok 13 - multiplayer backup and isolated restore retain private actor records and complete archives
+  ---
+  duration_ms: 1760.2175
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13898.638166

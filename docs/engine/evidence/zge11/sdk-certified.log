@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: public SDK project, detached entities and versioned roundtrip
+ok 1 - public SDK project, detached entities and versioned roundtrip
+  ---
+  duration_ms: 5.963917
+  type: 'test'
+  ...
+# Subtest: transactions are atomic, finite, revision/existence/component checked
+ok 2 - transactions are atomic, finite, revision/existence/component checked
+  ---
+  duration_ms: 10.204833
+  type: 'test'
+  ...
+# Subtest: all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs
+ok 3 - all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs
+  ---
+  duration_ms: 12.259833
+  type: 'test'
+  ...
+# Subtest: invalid restored scenes never clear current data or history
+ok 4 - invalid restored scenes never clear current data or history
+  ---
+  duration_ms: 0.707375
+  type: 'test'
+  ...
+# Subtest: components, systems, plugin lifecycle, permission-aware private inspection
+ok 5 - components, systems, plugin lifecycle, permission-aware private inspection
+  ---
+  duration_ms: 3.618041
+  type: 'test'
+  ...
+# Subtest: AI mock is detached preview only, reject/approve/undo and immutable provenance
+ok 6 - AI mock is detached preview only, reject/approve/undo and immutable provenance
+  ---
+  duration_ms: 2.711125
+  type: 'test'
+  ...
+# Subtest: independent game collision, collectible, build objective and isolated simulation
+ok 7 - independent game collision, collectible, build objective and isolated simulation
+  ---
+  duration_ms: 3.080916
+  type: 'test'
+  ...
+# Subtest: asset lease coalescing, detached mutable instances, bounded eviction/disposal
+ok 8 - asset lease coalescing, detached mutable instances, bounded eviction/disposal
+  ---
+  duration_ms: 0.801625
+  type: 'test'
+  ...
+# Subtest: plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer
+ok 9 - plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer
+  ---
+  duration_ms: 0.722458
+  type: 'test'
+  ...
+# Subtest: public asset identities resolve through registered loader and unknown scene references fail atomically
+ok 10 - public asset identities resolve through registered loader and unknown scene references fail atomically
+  ---
+  duration_ms: 1.3625
+  type: 'test'
+  ...
+# Subtest: renderer preference and owned backend lifecycle are explicit
+ok 11 - renderer preference and owned backend lifecycle are explicit
+  ---
+  duration_ms: 0.57425
+  type: 'test'
+  ...
+# Subtest: v1 project migration is detached and v2 roundtrips, future versions reject with typed codes
+ok 12 - v1 project migration is detached and v2 roundtrips, future versions reject with typed codes
+  ---
+  duration_ms: 6.315709
+  type: 'test'
+  ...
+# Subtest: declarative component reflection, typed validation and permission/read-only edits
+ok 13 - declarative component reflection, typed validation and permission/read-only edits
+  ---
+  duration_ms: 11.843708
+  type: 'test'
+  ...
+# Subtest: hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded
+ok 14 - hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded
+  ---
+  duration_ms: 24.6345
+  type: 'test'
+  ...
+# Subtest: portable JSON assets, exact reflected references, prefab overrides and independent instance transforms
+ok 15 - portable JSON assets, exact reflected references, prefab overrides and independent instance transforms
+  ---
+  duration_ms: 8.472459
+  type: 'test'
+  ...
+# Subtest: malicious project rules/assets stay data-only and are rejected before any source execution
+ok 16 - malicious project rules/assets stay data-only and are rejected before any source execution
+  ---
+  duration_ms: 1.140166
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 114.523625

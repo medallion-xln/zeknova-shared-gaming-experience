@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: HTTP client retains original command across lost ack and reconciles pending intent once
+ok 1 - HTTP client retains original command across lost ack and reconciles pending intent once
+  ---
+  duration_ms: 12.230791
+  type: 'test'
+  ...
+# Subtest: HTTP client ignores old snapshot and bounds read-only event window
+ok 2 - HTTP client ignores old snapshot and bounds read-only event window
+  ---
+  duration_ms: 256.510792
+  type: 'test'
+  ...
+# Subtest: HTTP client rejects cross-world snapshots rather than publishing them
+ok 3 - HTTP client rejects cross-world snapshots rather than publishing them
+  ---
+  duration_ms: 0.306459
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback known
+ok 4 - isolated V4 forward export, repeat import and rollback known
+  ---
+  duration_ms: 13.240208
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback missing
+ok 5 - isolated V4 forward export, repeat import and rollback missing
+  ---
+  duration_ms: 2.699583
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback old-extension
+ok 6 - isolated V4 forward export, repeat import and rollback old-extension
+  ---
+  duration_ms: 2.143
+  type: 'test'
+  ...
+# Subtest: V4 branch rejects identity substitution, schema/revision mismatch and interrupted atomic export
+ok 7 - V4 branch rejects identity substitution, schema/revision mismatch and interrupted atomic export
+  ---
+  duration_ms: 2.780584
+  type: 'test'
+  ...
+# Subtest: replica publishes no state from a malformed event page or mismatched snapshot
+ok 8 - replica publishes no state from a malformed event page or mismatched snapshot
+  ---
+  duration_ms: 1.613583
+  type: 'test'
+  ...
+# Subtest: replica rejects a newer cursor carrying an older revision without changing view
+ok 9 - replica rejects a newer cursor carrying an older revision without changing view
+  ---
+  duration_ms: 0.58225
+  type: 'test'
+  ...
+# Subtest: disconnect invalidates an in-flight acknowledgment and preserves outbox intent
+ok 10 - disconnect invalidates an in-flight acknowledgment and preserves outbox intent
+  ---
+  duration_ms: 0.371958
+  type: 'test'
+  ...
+# Subtest: V4 export preserves changed rank, all reward receipts and rejects stale edit revisions
+ok 11 - V4 export preserves changed rank, all reward receipts and rejects stale edit revisions
+  ---
+  duration_ms: 1.913708
+  type: 'test'
+  ...
+# Subtest: rapid connections resolving out of order retain only the newest connection
+ok 12 - rapid connections resolving out of order retain only the newest connection
+  ---
+  duration_ms: 0.640459
+  type: 'test'
+  ...
+# Subtest: a delayed old-worker reply cannot publish or acknowledge intent after a newer generation
+ok 13 - a delayed old-worker reply cannot publish or acknowledge intent after a newer generation
+  ---
+  duration_ms: 10.424625
+  type: 'test'
+  ...
+# Subtest: backpressure admits no new outbox intent while a failed command awaits reconciliation
+ok 14 - backpressure admits no new outbox intent while a failed command awaits reconciliation
+  ---
+  duration_ms: 0.439125
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 334.482417

@@ -1,0 +1,57 @@
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS six knowledge topics declared
+  PASS nine source event policies declared
+  PASS mobile sighting TTL is four quanta
+  PASS structure identity is persistent
+  PASS ledger starts empty
+  PASS ledger starts at event sequence one
+  PASS stream synchronization consumes every event
+  PASS ledger time advances to latest delivery quantum
+  PASS applied event IDs preserve stream order
+  PASS sender has five subject-topic records
+  PASS recipient receives only explicitly shared record
+  PASS human faction receives no leaked knowledge
+  PASS enemy lost supersedes earlier sighting
+  PASS enemy lost is stale at its exact observation quantum
+  PASS unit contact preserves both evidence entries
+  PASS unit contact records one contradiction
+  PASS record identity is canonical
+  PASS record identity validates
+  PASS shared knowledge carries shared acquisition mode
+  PASS shared knowledge preserves original observation quantum
+  PASS shared knowledge preserves delivery quantum separately
+  PASS sharing does not refresh stale information
+  PASS sharing provenance identifies sender
+  PASS destroyed structure supersedes earlier status
+  PASS destroyed structure knowledge is persistent
+  PASS persistent structure remains fresh far in future
+  PASS structure evidence preserves two contradictions
+  PASS structure evidence history has three entries
+  PASS route is fresh before exclusive expiry
+  PASS route is stale at exclusive expiry
+  PASS resource is fresh before twenty-quantum expiry
+  PASS resource is stale at twenty-quantum expiry
+  PASS same subject can hold separate knowledge topics
+  PASS combat alert is stale after two quanta
+  PASS fresh-only query excludes stale records
+  PASS ledger advances monotonically
+  PASS time advance changes snapshot hash
+  PASS FX-TIME ledger cannot move backward
+  PASS snapshot round-trip is byte-identical
+  PASS snapshot hash round-trip is identical
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter ledger
+  PASS FX-RECORD-ID tamper rejected
+  PASS FX-CONTRADICTION-COUNT tamper rejected
+  PASS FX-EVIDENCE-ALIAS duplicate event sequence rejected
+  PASS FX-EVENT-GAP noncontiguous ingestion rejected
+  PASS FX-EVENT-REUSE duplicate event ingestion rejected
+  PASS direct evidence outranks shared evidence at equal observation time
+  PASS equal-time direct evidence keeps direct facts
+  PASS older late-delivered evidence cannot override newer observation
+  PASS late older evidence remains in evidence history
+  PASS ledger snapshot contains no wall-clock fields
+  PASS fixed replay produces deterministic bytes
+  PASS fixed replay produces deterministic hash
+W0-O.2 KNOWLEDGE LEDGER CONTRACT TESTS PASS (56/56)

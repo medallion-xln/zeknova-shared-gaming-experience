@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: expired/revoked credentials and live membership overrides cannot mutate or retrieve private worlds
+ok 1 - expired/revoked credentials and live membership overrides cannot mutate or retrieve private worlds
+  ---
+  duration_ms: 1012.639833
+  type: 'test'
+  ...
+# Subtest: persistent session survives renewal while browser connections stay distinct and revocable
+ok 2 - persistent session survives renewal while browser connections stay distinct and revocable
+  ---
+  duration_ms: 602.059042
+  type: 'test'
+  ...
+# Subtest: expiry between preparation and COMMIT rolls back resources, receipt, event and mission reward
+ok 3 - expiry between preparation and COMMIT rolls back resources, receipt, event and mission reward
+  ---
+  duration_ms: 3403.325458
+  type: 'test'
+  ...
+# Subtest: input identities, integer revisions, cursors, SQL strings, origins and body limits fail closed
+ok 4 - input identities, integer revisions, cursors, SQL strings, origins and body limits fail closed
+  ---
+  duration_ms: 561.17775
+  type: 'test'
+  ...
+# Subtest: persistent per-principal rate limits survive reconnect and DB permissions deny public files
+ok 5 - persistent per-principal rate limits survive reconnect and DB permissions deny public files
+  ---
+  duration_ms: 1180.6675
+  type: 'test'
+  ...
+# Subtest: corrupt snapshot/checkpoint/archive are denied; audited command replay repairs snapshot without double effects
+ok 6 - corrupt snapshot/checkpoint/archive are denied; audited command replay repairs snapshot without double effects
+  ---
+  duration_ms: 2345.320208
+  type: 'test'
+  ...
+# Subtest: membership revoked while a request waits for SQLite serialization is rechecked after the lock
+ok 7 - membership revoked while a request waits for SQLite serialization is rechecked after the lock
+  ---
+  duration_ms: 748.648542
+  type: 'test'
+  ...
+# Subtest: authenticated archive backfill validates cursor bounds, limits, world and permissions
+ok 8 - authenticated archive backfill validates cursor bounds, limits, world and permissions
+  ---
+  duration_ms: 780.39725
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10710.838833

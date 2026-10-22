@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: a delayed old-worker reply cannot publish or acknowledge intent after a newer generation
+ok 1 - a delayed old-worker reply cannot publish or acknowledge intent after a newer generation
+  ---
+  duration_ms: 10.168875
+  type: 'test'
+  ...
+# Subtest: private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+ok 2 - private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+  ---
+  duration_ms: 349.418916
+  type: 'test'
+  ...
+# Subtest: worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+ok 3 - worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+  ---
+  duration_ms: 2534.357667
+  type: 'test'
+  ...
+# Subtest: competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+ok 4 - competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+  ---
+  duration_ms: 1994.957625
+  type: 'test'
+  ...
+# Subtest: graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+ok 5 - graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+  ---
+  duration_ms: 550.131125
+  type: 'test'
+  ...
+# Subtest: actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+ok 6 - actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+  ---
+  duration_ms: 880.34575
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+ok 7 - worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 959.054625
+  type: 'test'
+  ...
+# Subtest: worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+ok 8 - worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 997.619417
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+ok 9 - worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 951.58825
+  type: 'test'
+  ...
+# Subtest: worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+ok 10 - worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 2952.317417
+  type: 'test'
+  ...
+# Subtest: worker death after durable commit and before reply cannot duplicate personal or team effects
+ok 11 - worker death after durable commit and before reply cannot duplicate personal or team effects
+  ---
+  duration_ms: 1156.477334
+  type: 'test'
+  ...
+# Subtest: database unavailable and reward-write failure preserve committed player/world state
+ok 12 - database unavailable and reward-write failure preserve committed player/world state
+  ---
+  duration_ms: 1118.814666
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-before-commit
+ok 13 - actual gateway process death at multiplayer mission COMMIT crash-before-commit
+  ---
+  duration_ms: 889.371459
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-after-commit
+ok 14 - actual gateway process death at multiplayer mission COMMIT crash-after-commit
+  ---
+  duration_ms: 867.605292
+  type: 'test'
+  ...
+# Subtest: checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+ok 15 - checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+  ---
+  duration_ms: 1005.59425
+  type: 'test'
+  ...
+# Subtest: multiplayer backup and isolated restore retain private actor records and complete archives
+ok 16 - multiplayer backup and isolated restore retain private actor records and complete archives
+  ---
+  duration_ms: 1795.839416
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13632.561166

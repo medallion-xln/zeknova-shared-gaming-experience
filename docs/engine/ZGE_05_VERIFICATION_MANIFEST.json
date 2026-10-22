@@ -1,0 +1,112 @@
+{
+  "schema": "zge.verification-manifest.v1",
+  "head": "138220f4909b3fd6a3e0dd2e62ebab63785336d7",
+  "createdAt": "2026-10-21T04:47:54.024953+00:00",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "node": "v22.22.2",
+  "npm": "10.9.7",
+  "python": "3.14.7",
+  "localServer": "http://127.0.0.1:8790",
+  "playwrightModule": "/Users/dwaynecampbell/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs",
+  "chromePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "commands": {
+    "full": "node scripts/zge05-verify.mjs --browser",
+    "engine": "npm run test:engine",
+    "legacy": "85 tests/*.test.mjs|cjs individually plus tests/picasso-performance-report.mjs; 180s per-file timeout",
+    "browser": [
+      {
+        "script": "zge05-browser-certification.mjs",
+        "exit": 0,
+        "ms": 125886
+      },
+      {
+        "script": "zge04-browser-parity.mjs",
+        "exit": 0,
+        "ms": 9365
+      },
+      {
+        "script": "zge04-browser-live-flow.mjs",
+        "exit": 0,
+        "ms": 10054
+      },
+      {
+        "script": "zge03-browser-followup.mjs",
+        "exit": 0,
+        "ms": 15120
+      },
+      {
+        "script": "zge04-browser-demo.mjs",
+        "exit": 0,
+        "ms": 3525
+      },
+      {
+        "script": "zge05-browser-demo.mjs",
+        "exit": 0,
+        "ms": 6973
+      },
+      {
+        "script": "zge04-browser-performance.mjs",
+        "exit": 0,
+        "ms": 18159
+      }
+    ],
+    "oldBenchmark": "node scripts/zge04-benchmark.mjs",
+    "sourceBenchmark": "node --expose-gc scripts/zge05-benchmark.mjs",
+    "checks": [
+      "npm run check",
+      "npm run audit:animations",
+      "npm run demo:engine"
+    ]
+  },
+  "results": {
+    "engineBefore": {
+      "pass": 106,
+      "total": 106
+    },
+    "engineAfter": {
+      "pass": 140,
+      "total": 140
+    },
+    "legacyBefore": {
+      "pass": 83,
+      "total": 86
+    },
+    "legacyAfter": {
+      "pass": 83,
+      "total": 86,
+      "failures": [
+        {
+          "file": "tests/renderer-ownership-certification.test.mjs",
+          "exit": 1,
+          "ms": 91
+        },
+        {
+          "file": "tests/runtime-graphics-context.test.mjs",
+          "exit": 1,
+          "ms": 147
+        },
+        {
+          "file": "tests/runtime-reconstruction.test.mjs",
+          "exit": 1,
+          "ms": 130
+        }
+      ]
+    },
+    "nodeParity": 702,
+    "browserParity": 390,
+    "browserSkips": 0,
+    "browserScriptsPass": 7,
+    "liveAuthority": "LEGACY",
+    "serverAuthorityScope": "isolated in-process fixture only"
+  },
+  "inventory": {
+    "path": "evidence/zge05/file-inventory.json",
+    "sha256": "3ee51ac02894f1519a93086ed5a44a797d62e6a7919fff1a45b7ce1bdf220672",
+    "baselineHashes": "evidence/zge05/before-hashes.json",
+    "submoduleLimit": "pre-existing dirty gitlink; no recursive temporal fingerprint; untouched"
+  },
+  "security": "owner-controlled urgent revocation/rotation/history remediation pending; no credential values included",
+  "goldenTestsModified": false,
+  "bundleModified": false,
+  "productionFilesModified": false
+}

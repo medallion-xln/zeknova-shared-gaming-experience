@@ -1,0 +1,133 @@
+{
+  "runs": [
+    {
+      "mode": "auto",
+      "backend": "webgpu",
+      "viewportPointerSelection": true,
+      "gizmoPointerDrag": true,
+      "temporaryIsolation": true,
+      "numericTransform": true,
+      "invalidAtomic": true,
+      "saveReload": true,
+      "undoRedo": true,
+      "prefab": true,
+      "AIReview": true,
+      "simulationIsolation": true,
+      "eventFiltering": true,
+      "resizableKeyboard": true,
+      "independentMovement": true,
+      "independentCollectBuildObjective": true,
+      "sceneReloadGeometry": [
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 132
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 142
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 152
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 162
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 172
+        }
+      ],
+      "errors": [],
+      "requests": [
+        "/examples/studio/",
+        "/examples/studio/studio.css",
+        "/examples/studio/studio.js",
+        "/node_modules/three/build/three.webgpu.js",
+        "/packages/sdk/dist/index.js",
+        "/packages/sdk/dist/three.js",
+        "/examples/orbital-outpost/project.js",
+        "/examples/orbital-outpost/game.js",
+        "/node_modules/three/build/three.core.js",
+        "/examples/orbital-outpost/",
+        "/examples/orbital-outpost/main.js"
+      ]
+    },
+    {
+      "mode": "webgl",
+      "backend": "webgl",
+      "viewportPointerSelection": true,
+      "gizmoPointerDrag": true,
+      "temporaryIsolation": true,
+      "numericTransform": true,
+      "invalidAtomic": true,
+      "saveReload": true,
+      "undoRedo": true,
+      "prefab": true,
+      "AIReview": true,
+      "simulationIsolation": true,
+      "eventFiltering": true,
+      "resizableKeyboard": true,
+      "independentMovement": true,
+      "independentCollectBuildObjective": true,
+      "sceneReloadGeometry": [
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 134
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 144
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 154
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 164
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 6,
+          "drawCalls": 174
+        }
+      ],
+      "errors": [],
+      "requests": [
+        "/examples/studio/",
+        "/examples/studio/studio.css",
+        "/examples/studio/studio.js",
+        "/node_modules/three/build/three.webgpu.js",
+        "/packages/sdk/dist/index.js",
+        "/packages/sdk/dist/three.js",
+        "/examples/orbital-outpost/project.js",
+        "/examples/orbital-outpost/game.js",
+        "/node_modules/three/build/three.core.js",
+        "/examples/orbital-outpost/",
+        "/examples/orbital-outpost/main.js"
+      ]
+    }
+  ],
+  "autoUnavailableFallback": "webgl"
+}

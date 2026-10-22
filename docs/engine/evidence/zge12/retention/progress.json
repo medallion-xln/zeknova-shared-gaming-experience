@@ -1,0 +1,128 @@
+[
+  {
+    "label": "fresh",
+    "atMs": 471.452083,
+    "heap": {
+      "rss": 56049664,
+      "heapTotal": 10108928,
+      "heapUsed": 5029592,
+      "external": 2185601,
+      "arrayBuffers": 24991
+    },
+    "code": {
+      "code_and_metadata_size": 135824,
+      "bytecode_and_metadata_size": 670112,
+      "external_script_source_size": 2160654,
+      "cpu_profiler_metadata_size": 0
+    },
+    "file": "fresh.json"
+  },
+  {
+    "label": "warm",
+    "atMs": 4418.172042,
+    "heap": {
+      "rss": 147963904,
+      "heapTotal": 42352640,
+      "heapUsed": 6181080,
+      "external": 2183344,
+      "arrayBuffers": 24991
+    },
+    "code": {
+      "code_and_metadata_size": 372686,
+      "bytecode_and_metadata_size": 615456,
+      "external_script_source_size": 2158357,
+      "cpu_profiler_metadata_size": 0
+    },
+    "file": "warm.json"
+  },
+  {
+    "label": "after11000",
+    "atMs": 43138.464875,
+    "heap": {
+      "rss": 476397568,
+      "heapTotal": 44974080,
+      "heapUsed": 6821600,
+      "external": 2183344,
+      "arrayBuffers": 24991
+    },
+    "code": {
+      "code_and_metadata_size": 613062,
+      "bytecode_and_metadata_size": 616456,
+      "external_script_source_size": 2158357,
+      "cpu_profiler_metadata_size": 0
+    },
+    "file": "after11000.json"
+  },
+  {
+    "label": "after21000",
+    "atMs": 80647.35325,
+    "heap": {
+      "rss": 104382464,
+      "heapTotal": 44974080,
+      "heapUsed": 6880848,
+      "external": 2183344,
+      "arrayBuffers": 24991
+    },
+    "code": {
+      "code_and_metadata_size": 622463,
+      "bytecode_and_metadata_size": 616456,
+      "external_script_source_size": 2158357,
+      "cpu_profiler_metadata_size": 0
+    },
+    "file": "after21000.json"
+  },
+  {
+    "label": "history-replay",
+    "atMs": 87500.008583,
+    "heap": {
+      "rss": 151011328,
+      "heapTotal": 43401216,
+      "heapUsed": 6968176,
+      "external": 2183344,
+      "arrayBuffers": 24991
+    },
+    "code": {
+      "code_and_metadata_size": 657922,
+      "bytecode_and_metadata_size": 617016,
+      "external_script_source_size": 2158357,
+      "cpu_profiler_metadata_size": 0
+    },
+    "file": "history-replay.json"
+  },
+  {
+    "label": "idle",
+    "atMs": 89706.538583,
+    "heap": {
+      "rss": 119341056,
+      "heapTotal": 11943936,
+      "heapUsed": 6962488,
+      "external": 2183344,
+      "arrayBuffers": 24991
+    },
+    "code": {
+      "code_and_metadata_size": 657922,
+      "bytecode_and_metadata_size": 617016,
+      "external_script_source_size": 2158357,
+      "cpu_profiler_metadata_size": 0
+    },
+    "file": "idle.json"
+  },
+  {
+    "label": "disposed",
+    "atMs": 89900.401875,
+    "heap": {
+      "rss": 119242752,
+      "heapTotal": 8798208,
+      "heapUsed": 6872400,
+      "external": 2183344,
+      "arrayBuffers": 24991
+    },
+    "code": {
+      "code_and_metadata_size": 657272,
+      "bytecode_and_metadata_size": 617280,
+      "external_script_source_size": 2158357,
+      "cpu_profiler_metadata_size": 0
+    },
+    "file": "disposed.json"
+  }
+]

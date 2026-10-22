@@ -1,0 +1,132 @@
+{
+  "launches": 3,
+  "restarts": 2,
+  "state": "failed",
+  "audit": [
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611722424,
+      "elapsedMs": 0,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "service-start",
+      "pid": 1243,
+      "port": 65022,
+      "gatewayCount": 1,
+      "knownDatabase": false,
+      "databaseIdentity": null
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611722431,
+      "elapsedMs": 7,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "launcher-start",
+      "launcherPid": 5085,
+      "launch": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611722947,
+      "elapsedMs": 524,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "launcher-ready",
+      "launcherPid": 5085,
+      "gatewayPids": [
+        5131
+      ],
+      "world": {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-bcce15dc-ae1e-4312-b885-e2154d7b4e9a",
+        "generation": 1,
+        "expires": 1792611732805,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": null
+      },
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "490303579"
+      }
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611722958,
+      "elapsedMs": 534,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "launcher-exit",
+      "launcherPid": 5085,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611722963,
+      "elapsedMs": 539,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "restart-scheduled",
+      "reason": "launcher-exited",
+      "backoffMs": 40,
+      "restarts": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611723009,
+      "elapsedMs": 586,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "launcher-start",
+      "launcherPid": 5152,
+      "launch": 2
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611723034,
+      "elapsedMs": 610,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "launcher-exit",
+      "launcherPid": 5152,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611723038,
+      "elapsedMs": 614,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "restart-scheduled",
+      "reason": "launcher-exited",
+      "backoffMs": 80,
+      "restarts": 2
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611723125,
+      "elapsedMs": 702,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "launcher-start",
+      "launcherPid": 5153,
+      "launch": 3
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611723137,
+      "elapsedMs": 713,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "launcher-exit",
+      "launcherPid": 5153,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611723141,
+      "elapsedMs": 717,
+      "serviceId": "service-7d5feff3-5505-451f-aebe-8b02c51fb984",
+      "event": "restart-ceiling",
+      "reason": "launcher-exited",
+      "restarts": 2,
+      "restartLimit": 2
+    }
+  ]
+}

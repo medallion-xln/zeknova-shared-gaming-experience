@@ -1,0 +1,835 @@
+{
+  "legacy": {
+    "placementP50": 0,
+    "placementP95": 0.10000002384185791,
+    "frameP50": 16.700000000000728,
+    "frameP95": 33.29999999999927,
+    "frameP99": 33.400000000001455,
+    "heap": 126387855,
+    "shadow": {
+      "mode": "LEGACY",
+      "compared": 0,
+      "mismatches": 0,
+      "errors": 0,
+      "differences": [],
+      "parity": {
+        "schema": "zge.construction-parity.v1",
+        "total": 0,
+        "matched": 0,
+        "mismatched": 0,
+        "unobservable": 0,
+        "classes": {},
+        "rows": []
+      }
+    },
+    "assets": {
+      "cache": {
+        "requests": 68,
+        "matched": 19,
+        "hits": 0,
+        "joined": 0,
+        "misses": 19,
+        "bytesDownloaded": 10300585,
+        "bytesServedFromCache": 0,
+        "evictions": 0,
+        "bypassed": 49,
+        "errors": 0,
+        "entries": 19,
+        "bytes": 10300585,
+        "budgetBytes": 67108864,
+        "inFlight": 0,
+        "top": [
+          {
+            "url": "models/zeknovan-spitter-walk.medium.glb",
+            "hits": 0,
+            "kb": 485
+          },
+          {
+            "url": "basis/basis_transcoder.wasm",
+            "hits": 0,
+            "kb": 515
+          },
+          {
+            "url": "models/zeknovan-stalker-walk.medium.glb",
+            "hits": 0,
+            "kb": 459
+          },
+          {
+            "url": "models/zeknovan-saboteur-walk.medium.glb",
+            "hits": 0,
+            "kb": 483
+          },
+          {
+            "url": "models/zeknovan-juggernaut-walk.medium.glb",
+            "hits": 0,
+            "kb": 472
+          }
+        ]
+      },
+      "parsed": {
+        "loads": 18,
+        "hits": 13,
+        "joined": 0,
+        "failures": 0,
+        "retries": 0,
+        "evictions": 0,
+        "cancelled": 0,
+        "entries": 18,
+        "pending": 0,
+        "bytes": 66177898,
+        "references": 0,
+        "budgetBytes": 67108864,
+        "workers": {
+          "completed": 21,
+          "failures": 0,
+          "resets": 0,
+          "created": 4,
+          "live": 4,
+          "pending": 0,
+          "limit": 4
+        }
+      },
+      "loader": {
+        "patched": true,
+        "pending": [],
+        "completed": 18,
+        "failures": 0,
+        "stalls": 0,
+        "loadMs": {
+          "p50": 514.3,
+          "p95": 1855.7,
+          "max": 5864.8
+        },
+        "stallMs": 15000
+      },
+      "workers": {
+        "live": 5,
+        "created": 5,
+        "terminated": 0,
+        "errors": 0,
+        "byScript": {
+          "blob:": 4,
+          "workers/adaptive-runtime-worker.js": 1
+        }
+      }
+    },
+    "restartable": 29
+  },
+  "shadow": {
+    "placementP50": 2.199999988079071,
+    "placementP95": 5.800000011920929,
+    "frameP50": 16.69999999999709,
+    "frameP95": 50,
+    "frameP99": 133.29999999999563,
+    "heap": 148104214,
+    "shadow": {
+      "mode": "SHADOW",
+      "compared": 30,
+      "mismatches": 0,
+      "errors": 0,
+      "differences": [],
+      "parity": {
+        "schema": "zge.construction-parity.v1",
+        "total": 30,
+        "matched": 30,
+        "mismatched": 0,
+        "unobservable": 30,
+        "classes": {},
+        "rows": [
+          {
+            "fixtureId": "live-1",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-2",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-3",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-4",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-5",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-6",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-7",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-8",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-9",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-10",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-11",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-12",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-13",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-14",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-15",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-16",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-17",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-18",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-19",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-20",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-21",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-22",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-23",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-24",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-25",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-26",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-27",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-28",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-29",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-30",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "server-save-restore",
+              "inner-events"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          }
+        ]
+      }
+    },
+    "assets": {
+      "cache": {
+        "requests": 80,
+        "matched": 19,
+        "hits": 0,
+        "joined": 0,
+        "misses": 19,
+        "bytesDownloaded": 10036869,
+        "bytesServedFromCache": 0,
+        "evictions": 0,
+        "bypassed": 61,
+        "errors": 0,
+        "entries": 19,
+        "bytes": 10036869,
+        "budgetBytes": 67108864,
+        "inFlight": 0,
+        "top": [
+          {
+            "url": "models/zeknovan-spitter-walk.medium.glb",
+            "hits": 0,
+            "kb": 485
+          },
+          {
+            "url": "basis/basis_transcoder.wasm",
+            "hits": 0,
+            "kb": 515
+          },
+          {
+            "url": "models/zeknovan-saboteur-walk.medium.glb",
+            "hits": 0,
+            "kb": 483
+          },
+          {
+            "url": "models/zeknovan-stalker-walk.medium.glb",
+            "hits": 0,
+            "kb": 459
+          },
+          {
+            "url": "models/zeknovan-juggernaut-walk.medium.glb",
+            "hits": 0,
+            "kb": 472
+          }
+        ]
+      },
+      "parsed": {
+        "loads": 18,
+        "hits": 15,
+        "joined": 0,
+        "failures": 0,
+        "retries": 0,
+        "evictions": 0,
+        "cancelled": 0,
+        "entries": 18,
+        "pending": 0,
+        "bytes": 65567586,
+        "references": 0,
+        "budgetBytes": 67108864,
+        "workers": {
+          "completed": 21,
+          "failures": 0,
+          "resets": 0,
+          "created": 4,
+          "live": 4,
+          "pending": 0,
+          "limit": 4
+        }
+      },
+      "loader": {
+        "patched": true,
+        "pending": [],
+        "completed": 18,
+        "failures": 0,
+        "stalls": 0,
+        "loadMs": {
+          "p50": 1114.8,
+          "p95": 3668.8,
+          "max": 6828.7
+        },
+        "stallMs": 15000
+      },
+      "workers": {
+        "live": 5,
+        "created": 5,
+        "terminated": 0,
+        "errors": 0,
+        "byScript": {
+          "blob:": 4,
+          "workers/adaptive-runtime-worker.js": 1
+        }
+      }
+    },
+    "restartable": 29
+  }
+}

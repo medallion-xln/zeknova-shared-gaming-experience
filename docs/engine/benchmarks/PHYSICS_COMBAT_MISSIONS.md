@@ -1,0 +1,13 @@
+# Physics, combat and missions
+
+The corrected collision fixture uses an actually placed grid and an in-bounds dry approach, with gameplay unpaused. Only initial position is staged; real key pulses move toward the building. The officer moves7.816m and stops2.201m from its center from a10.0m approach. Sampled Y matches `walkHeightAt(...,false)` exactly. The first attempt had an out-of-bounds start and paused gameplay, produced no displacement, and is retained as invalid harness evidence. It is not a collision PASS.
+
+Physical menu/placement negatives create0records on existing grid/water/insufficient supplies,1record for three rapid legal clicks, and0inside protected territory under explicit Shared Water policy. Protected construction may intentionally be permitted with penalties under other diplomatic policies; the certificate does not assert universal denial. Mode-button cancellation returns explore/nullselection. The pause check observed no displacement, but clicking the modal's content can activate a Resume button; corrected collision setup independently verifies actual unpaused state.
+
+Natural-loop endpoints show54/54 movement windows with nonzero displacement, Highlands/Desert crossings, terrain/obstacle handling and death recovery. These endpoints include knockback and relocation; they are not calibrated speeds or a complete map-boundary/slopes test. Camera obstruction, full-five-biome navigation, every terrain type and every building collision remain PARTIAL.
+
+Physical combat coincided with actual health, kills and XP changes, and the boss observer records real weapon damage rather than visual hit effects alone. Timed end1,309XP/36kills/14trees/five rocks; full-health Sunscar818HP defeated twice. Enemy pursuit, attacks, projectiles, knockback, player deaths/recovery and visible health feedback were observed. Auditory quality and every respawn rule were not independently certified.
+
+Mission1's final grid→automaticboss→defeat→reward→unlock→reload is fixture-assisted PASS. Only Mission1 has this browser end-to-end result; Missions2–12 remain PARTIAL regardless of passing campaign logic tests. Natural rank stayed Ensign; no promotion was observed. The HUD shows Guardian-first/duplicated travel text while prerequisites are incomplete, and onboarding initially says Desert while actual spawn is Highlands. These are UX findings, not proof that canonical mission predicates cannot complete.
+
+[Physics raw](evidence/original/original-physics-retest.json), [placement negatives](evidence/original/original-extra.json), [boss result](BOSS_BATTLE_CERTIFICATION.md), [defects](DEFECT_REGISTER.md).

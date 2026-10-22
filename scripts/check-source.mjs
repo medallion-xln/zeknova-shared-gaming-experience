@@ -578,7 +578,8 @@ assert.match(modelRuntime, /boss-drowned-tremor-run\.anim\.glb/);
 assert.match(modelRuntime, /boss-drowned-tremor-volley\.anim\.glb/);
 assert.match(modelRuntime, /drownedTremorBossHighQualityModel/);
 
-const mainSource = readFileSync(new URL("../src/main.js", import.meta.url), "utf8");
+// ZGE-01: the Sentinel/AZL integration chain and its fallback warnings moved from src/main.js into the compat director registry; assertions below are unchanged.
+const mainSource = readFileSync(new URL("../packages/zeknova-compat/src/directors.js", import.meta.url), "utf8");
 assert.match(mainSource, /IdentityIntegration/);
 assert.match(mainSource, /W0-O\.0 identity capture/);
 assert.match(mainSource, /PerceptionEventIntegration/);

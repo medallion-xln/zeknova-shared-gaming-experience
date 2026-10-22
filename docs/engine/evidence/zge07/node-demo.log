@@ -1,0 +1,145 @@
+
+> zeknova-shared-gaming-experience@0.1.0 demo:engine
+> node examples/construction-world/main.mjs
+
+{
+  "deterministic": true,
+  "step": 3,
+  "state": {
+    "version": 2,
+    "revision": 1,
+    "inventoryRevision": 1,
+    "pending": [],
+    "inventory": {
+      "stone": 8
+    },
+    "buildings": [
+      {
+        "id": "shelter-1",
+        "type": "shelter",
+        "x": 2,
+        "y": 0,
+        "z": 2,
+        "rotation": 0,
+        "level": 1,
+        "radius": 1,
+        "state": "complete"
+      }
+    ],
+    "ledger": [
+      {
+        "fingerprint": "{\"action\":\"place\",\"commandId\":\"one\",\"id\":\"shelter-1\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+        "commandId": "one",
+        "command": {
+          "commandId": "one",
+          "action": "place",
+          "id": "shelter-1",
+          "type": "shelter",
+          "x": 2,
+          "z": 2
+        },
+        "result": {
+          "ok": true,
+          "cost": {
+            "stone": 4
+          },
+          "building": {
+            "id": "shelter-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        },
+        "before": {
+          "revision": 0,
+          "inventoryRevision": 0,
+          "inventory": {
+            "stone": 12
+          },
+          "buildings": [],
+          "events": []
+        }
+      },
+      {
+        "fingerprint": "{\"action\":\"place\",\"commandId\":\"blocked\",\"id\":\"shelter-2\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+        "commandId": "blocked",
+        "command": {
+          "commandId": "blocked",
+          "action": "place",
+          "id": "shelter-2",
+          "type": "shelter",
+          "x": 2,
+          "z": 2
+        },
+        "result": {
+          "ok": false,
+          "reason": "occupied"
+        },
+        "before": {
+          "revision": 1,
+          "inventoryRevision": 1,
+          "inventory": {
+            "stone": 8
+          },
+          "buildings": [
+            {
+              "id": "shelter-1",
+              "type": "shelter",
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          ],
+          "events": [
+            {
+              "type": "construction:placed",
+              "commandId": "one",
+              "building": {
+                "id": "shelter-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "events": [
+      {
+        "type": "construction:placed",
+        "commandId": "one",
+        "building": {
+          "id": "shelter-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      }
+    ]
+  },
+  "rejected": {
+    "ok": false,
+    "reason": "occupied"
+  },
+  "entityCount": 1
+}

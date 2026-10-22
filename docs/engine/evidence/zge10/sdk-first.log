@@ -1,0 +1,75 @@
+TAP version 13
+# Subtest: public SDK project, detached entities and versioned roundtrip
+ok 1 - public SDK project, detached entities and versioned roundtrip
+  ---
+  duration_ms: 4.183917
+  type: 'test'
+  ...
+# Subtest: transactions are atomic, finite, revision/existence/component checked
+ok 2 - transactions are atomic, finite, revision/existence/component checked
+  ---
+  duration_ms: 1.495958
+  type: 'test'
+  ...
+# Subtest: all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs
+not ok 3 - all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs
+  ---
+  duration_ms: 4.171708
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/sdk/test/sdk.test.mjs:7:1'
+  failureType: 'testCodeFailure'
+  error: 'nothing to undo'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    requireOK (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/sdk/dist/index.js:1380:18)
+    #travel (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/sdk/dist/index.js:1550:5)
+    Scene.undo (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/sdk/dist/index.js:1561:24)
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/sdk/test/sdk.test.mjs:7:712)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: invalid restored scenes never clear current data or history
+ok 4 - invalid restored scenes never clear current data or history
+  ---
+  duration_ms: 0.319833
+  type: 'test'
+  ...
+# Subtest: components, systems, plugin lifecycle, permission-aware private inspection
+ok 5 - components, systems, plugin lifecycle, permission-aware private inspection
+  ---
+  duration_ms: 1.18275
+  type: 'test'
+  ...
+# Subtest: AI mock is detached preview only, reject/approve/undo and immutable provenance
+ok 6 - AI mock is detached preview only, reject/approve/undo and immutable provenance
+  ---
+  duration_ms: 2.076292
+  type: 'test'
+  ...
+# Subtest: independent game collision, collectible, build objective and isolated simulation
+ok 7 - independent game collision, collectible, build objective and isolated simulation
+  ---
+  duration_ms: 2.875292
+  type: 'test'
+  ...
+# Subtest: asset lease coalescing, detached mutable instances, bounded eviction/disposal
+ok 8 - asset lease coalescing, detached mutable instances, bounded eviction/disposal
+  ---
+  duration_ms: 0.778042
+  type: 'test'
+  ...
+# Subtest: plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer
+ok 9 - plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer
+  ---
+  duration_ms: 0.401791
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 8
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 91.8585

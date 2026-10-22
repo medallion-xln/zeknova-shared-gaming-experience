@@ -1,0 +1,71 @@
+{
+  "schema": "zge.disaster-recovery.v1",
+  "scenarios": [
+    {
+      "scenario": "hot-cold-fresh-restore",
+      "hotMs": 498.415666,
+      "coldMs": 491.0005,
+      "restoreAndReplayMs": 723.8098329999998,
+      "hotCommittedCommands": 9,
+      "coldCommittedCommands": 20,
+      "committedAfterHotSnapshot": 11,
+      "rpoCommittedPrefix": true,
+      "sourceAndBackupBytesIdentical": true,
+      "coldIntegrity": "ok",
+      "personalClaims": 2,
+      "teamRewards": 1
+    },
+    {
+      "scenario": "missing-archive-page",
+      "rejected": true,
+      "archivePreserved": true,
+      "partialRepair": false
+    },
+    {
+      "scenario": "truncated-event-log",
+      "rejected": true,
+      "archivePreserved": true,
+      "partialRepair": false
+    },
+    {
+      "scenario": "damaged-receipt",
+      "rejected": true,
+      "archivePreserved": true,
+      "partialRepair": false
+    },
+    {
+      "scenario": "duplicate-personal-claim",
+      "rejected": true,
+      "archivePreserved": true,
+      "partialRepair": false
+    },
+    {
+      "scenario": "missing-team-claim",
+      "rejected": true,
+      "archivePreserved": true,
+      "partialRepair": false
+    },
+    {
+      "scenario": "duplicate-claim-primary-key",
+      "sqliteCode": 19,
+      "rejected": true
+    },
+    {
+      "scenario": "corrupt-checkpoint-interrupted-recovery",
+      "killedBeforeCommit": true,
+      "partialRepair": false,
+      "auditPreservesDamagedSnapshot": true,
+      "recoveryMs": 580.1143330000014,
+      "commands": 4,
+      "events": 25
+    },
+    {
+      "scenario": "sqlite-busy-locked",
+      "sqliteCode": 5,
+      "measuredWaitMs": 95.318083,
+      "partialEffects": false,
+      "recoveryMs": 73.27525
+    }
+  ],
+  "exhaustionEvidence": "zge08-operations.test.mjs actual SQLITE_FULL allocation exhaustion; separate explicit disposable-volume drill"
+}

@@ -1,0 +1,131 @@
+{
+  "recoveryMs": 10972.035334,
+  "oldGeneration": 1,
+  "newGeneration": 2,
+  "oldOwnerRetired": true,
+  "exactPlayerProgress": true,
+  "audit": [
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646746246,
+      "elapsedMs": 1,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "service-start",
+      "pid": 50929,
+      "port": 54023,
+      "gatewayCount": 1,
+      "knownDatabase": false,
+      "databaseIdentity": null
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646746251,
+      "elapsedMs": 6,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "launcher-start",
+      "launcherPid": 56059,
+      "launch": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646747122,
+      "elapsedMs": 877,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "launcher-ready",
+      "launcherPid": 56059,
+      "gatewayPids": [
+        56198
+      ],
+      "world": {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-c8664949-a636-4644-9e22-040006939314",
+        "generation": 1,
+        "expires": 1792646756800,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": null,
+        "telemetry": null
+      },
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "493012120"
+      }
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646757246,
+      "elapsedMs": 11001,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "health-failed",
+      "reason": "world-fenced-or-unavailable",
+      "failures": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646757251,
+      "elapsedMs": 11006,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "launcher-stop-requested",
+      "reason": "world-fenced-or-unavailable",
+      "launcherPid": 56059
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646757438,
+      "elapsedMs": 11193,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "launcher-exit",
+      "launcherPid": 56059,
+      "code": 0,
+      "signal": null
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646757443,
+      "elapsedMs": 11198,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "restart-scheduled",
+      "reason": "world-fenced-or-unavailable",
+      "backoffMs": 250,
+      "restarts": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646757700,
+      "elapsedMs": 11455,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "launcher-start",
+      "launcherPid": 57006,
+      "launch": 2
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646758096,
+      "elapsedMs": 11851,
+      "serviceId": "service-1228f546-d95b-4f9b-b75b-ef4e97a1f31e",
+      "event": "launcher-ready",
+      "launcherPid": 57006,
+      "gatewayPids": [
+        57056
+      ],
+      "world": {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-0a6dd79f-9bb4-4309-8d2a-ca98484100f0",
+        "generation": 2,
+        "expires": 1792646767897,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": null,
+        "telemetry": null
+      },
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "493012120"
+      }
+    }
+  ]
+}

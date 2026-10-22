@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: public SDK project, detached entities and versioned roundtrip
+ok 1 - public SDK project, detached entities and versioned roundtrip
+  ---
+  duration_ms: 4.770875
+  type: 'test'
+  ...
+# Subtest: transactions are atomic, finite, revision/existence/component checked
+ok 2 - transactions are atomic, finite, revision/existence/component checked
+  ---
+  duration_ms: 8.305375
+  type: 'test'
+  ...
+# Subtest: all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs
+ok 3 - all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs
+  ---
+  duration_ms: 5.54875
+  type: 'test'
+  ...
+# Subtest: invalid restored scenes never clear current data or history
+ok 4 - invalid restored scenes never clear current data or history
+  ---
+  duration_ms: 0.568459
+  type: 'test'
+  ...
+# Subtest: components, systems, plugin lifecycle, permission-aware private inspection
+ok 5 - components, systems, plugin lifecycle, permission-aware private inspection
+  ---
+  duration_ms: 1.410708
+  type: 'test'
+  ...
+# Subtest: AI mock is detached preview only, reject/approve/undo and immutable provenance
+ok 6 - AI mock is detached preview only, reject/approve/undo and immutable provenance
+  ---
+  duration_ms: 2.379833
+  type: 'test'
+  ...
+# Subtest: independent game collision, collectible, build objective and isolated simulation
+ok 7 - independent game collision, collectible, build objective and isolated simulation
+  ---
+  duration_ms: 4.442959
+  type: 'test'
+  ...
+# Subtest: asset lease coalescing, detached mutable instances, bounded eviction/disposal
+ok 8 - asset lease coalescing, detached mutable instances, bounded eviction/disposal
+  ---
+  duration_ms: 0.789667
+  type: 'test'
+  ...
+# Subtest: plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer
+ok 9 - plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer
+  ---
+  duration_ms: 0.3945
+  type: 'test'
+  ...
+# Subtest: public asset identities resolve through registered loader and unknown scene references fail atomically
+ok 10 - public asset identities resolve through registered loader and unknown scene references fail atomically
+  ---
+  duration_ms: 1.586334
+  type: 'test'
+  ...
+# Subtest: renderer preference and owned backend lifecycle are explicit
+ok 11 - renderer preference and owned backend lifecycle are explicit
+  ---
+  duration_ms: 0.638834
+  type: 'test'
+  ...
+# Subtest: v1 project migration is detached and v2 roundtrips, future versions reject with typed codes
+ok 12 - v1 project migration is detached and v2 roundtrips, future versions reject with typed codes
+  ---
+  duration_ms: 3.112458
+  type: 'test'
+  ...
+# Subtest: declarative component reflection, typed validation and permission/read-only edits
+ok 13 - declarative component reflection, typed validation and permission/read-only edits
+  ---
+  duration_ms: 11.093292
+  type: 'test'
+  ...
+# Subtest: hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded
+ok 14 - hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded
+  ---
+  duration_ms: 14.458
+  type: 'test'
+  ...
+# Subtest: portable JSON assets, exact reflected references, prefab overrides and independent instance transforms
+ok 15 - portable JSON assets, exact reflected references, prefab overrides and independent instance transforms
+  ---
+  duration_ms: 6.91475
+  type: 'test'
+  ...
+# Subtest: malicious project rules/assets stay data-only and are rejected before any source execution
+ok 16 - malicious project rules/assets stay data-only and are rejected before any source execution
+  ---
+  duration_ms: 1.00325
+  type: 'test'
+  ...
+# Subtest: plugin cleanup runs before shared asset disposal and repeated dispose is idempotent
+ok 17 - plugin cleanup runs before shared asset disposal and repeated dispose is idempotent
+  ---
+  duration_ms: 1.500791
+  type: 'test'
+  ...
+# Subtest: batch offsets have one history record, all selected move and exact undo/redo
+ok 18 - batch offsets have one history record, all selected move and exact undo/redo
+  ---
+  duration_ms: 13.2265
+  type: 'test'
+  ...
+# Subtest: batch locked, missing, duplicate, nonfinite, stale and out-of-range reject without partial updates
+ok 19 - batch locked, missing, duplicate, nonfinite, stale and out-of-range reject without partial updates
+  ---
+  duration_ms: 1.248458
+  type: 'test'
+  ...
+# Subtest: static GLB import, canonical custody, shared leases and portable prefab references
+ok 20 - static GLB import, canonical custody, shared leases and portable prefab references
+  ---
+  duration_ms: 9.343875
+  type: 'test'
+  ...
+# Subtest: GLB corrupt headers, lengths, bounds, external buffers, extensions, textures and rigs fail closed
+ok 21 - GLB corrupt headers, lengths, bounds, external buffers, extensions, textures and rigs fail closed
+  ---
+  duration_ms: 1.045791
+  type: 'test'
+  ...
+# Subtest: model failure and malicious embedded portable geometry cannot mutate project
+ok 22 - model failure and malicious embedded portable geometry cannot mutate project
+  ---
+  duration_ms: 1.843667
+  type: 'test'
+  ...
+# Subtest: multi-entity mock approval is atomic, cancel and stale conflicts preserve provenance
+ok 23 - multi-entity mock approval is atomic, cancel and stale conflicts preserve provenance
+  ---
+  duration_ms: 1.142
+  type: 'test'
+  ...
+# Subtest: multi-operation unknown asset/component errors prevent partial AI mutation
+ok 24 - multi-operation unknown asset/component errors prevent partial AI mutation
+  ---
+  duration_ms: 0.988
+  type: 'test'
+  ...
+# Subtest: optional reflected fields and v1/preview11 schemas still work; future version fails
+ok 25 - optional reflected fields and v1/preview11 schemas still work; future version fails
+  ---
+  duration_ms: 0.543166
+  type: 'test'
+  ...
+# Subtest: missing prefab identity fails before replacing a working scene
+ok 26 - missing prefab identity fails before replacing a working scene
+  ---
+  duration_ms: 0.782625
+  type: 'test'
+  ...
+# Subtest: asset path aliases and concurrent duplicate IDs are rejected without ambiguous cache ownership
+ok 27 - asset path aliases and concurrent duplicate IDs are rejected without ambiguous cache ownership
+  ---
+  duration_ms: 2.652125
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 96.209

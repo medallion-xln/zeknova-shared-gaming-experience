@@ -1,0 +1,29 @@
+{
+  "schema": "zge.operations-diagnostics.v1",
+  "attempts": [
+    {
+      "name": "volume-create-type-option",
+      "status": "FAIL_SETUP",
+      "reason": "hdiutil: create: invalid argument for -type",
+      "disposition": "Used the platform-supported default read/write image creation without -type."
+    },
+    {
+      "name": "volume-create-format-option",
+      "status": "FAIL_SETUP",
+      "reason": "hdiutil: create: -format requires -srcfolder or -srcdevice",
+      "disposition": "Used hdiutil create -size 32m -fs HFS+ with default read/write format; actual drill passed and detached owned image."
+    },
+    {
+      "name": "disaster-initial",
+      "status": "3/4",
+      "reason": "Movement fixture omitted required expectedRevision, producing a rejected response without result; test then attempted result.ok.",
+      "disposition": "Added required expectedRevision and explicit HTTP-status assertion. Existing command validation and all invariants retained; final 4/4."
+    },
+    {
+      "name": "captured-initial",
+      "status": "FAIL_CLOSED",
+      "reason": "private-parent-required",
+      "disposition": "Evidence parent was public; changed only the owned temporary reproducibility directory to0700 and selected a fresh capture target. Snapshot safety check retained."
+    }
+  ]
+}

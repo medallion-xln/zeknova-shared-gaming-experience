@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: isolated V4 forward export, repeat import and rollback known
+ok 1 - isolated V4 forward export, repeat import and rollback known
+  ---
+  duration_ms: 137.052709
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback missing
+ok 2 - isolated V4 forward export, repeat import and rollback missing
+  ---
+  duration_ms: 27.791417
+  type: 'test'
+  ...
+# Subtest: isolated V4 forward export, repeat import and rollback old-extension
+ok 3 - isolated V4 forward export, repeat import and rollback old-extension
+  ---
+  duration_ms: 16.342917
+  type: 'test'
+  ...
+# Subtest: V4 branch rejects identity substitution, schema/revision mismatch and interrupted atomic export
+ok 4 - V4 branch rejects identity substitution, schema/revision mismatch and interrupted atomic export
+  ---
+  duration_ms: 10.064208
+  type: 'test'
+  ...
+# Subtest: replica publishes no state from a malformed event page or mismatched snapshot
+ok 5 - replica publishes no state from a malformed event page or mismatched snapshot
+  ---
+  duration_ms: 9.108708
+  type: 'test'
+  ...
+# Subtest: replica rejects a newer cursor carrying an older revision without changing view
+ok 6 - replica rejects a newer cursor carrying an older revision without changing view
+  ---
+  duration_ms: 0.66075
+  type: 'test'
+  ...
+# Subtest: disconnect invalidates an in-flight acknowledgment and preserves outbox intent
+ok 7 - disconnect invalidates an in-flight acknowledgment and preserves outbox intent
+  ---
+  duration_ms: 0.376417
+  type: 'test'
+  ...
+# Subtest: V4 export preserves changed rank, all reward receipts and rejects stale edit revisions
+ok 8 - V4 export preserves changed rank, all reward receipts and rejects stale edit revisions
+  ---
+  duration_ms: 5.972708
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 810.829125

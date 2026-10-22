@@ -32,18 +32,35 @@ export class GameModeDirector {
 
   installAmbientSpawnGate() {
     if (typeof this.game.processEnemySpawning !== "function") return;
+    this.originalProcessEnemySpawningRaw = this.game.processEnemySpawning;
     this.originalProcessEnemySpawning = this.game.processEnemySpawning.bind(this.game);
-    this.game.processEnemySpawning = (delta) => {
+    this.spawnGate = (delta) => {
       if (!getModeCapabilities(this.mode).ambientEnemySpawning) return;
       return this.originalProcessEnemySpawning(delta);
     };
+    this.game.processEnemySpawning = this.spawnGate;
+  }
+
+  /** ZGE-02: complete teardown — restores wrapped methods only if they are still ours, clears the timer, removes owned DOM. */
+  dispose() {
+    if (!this.installed) return false;
+    this.installed = false;
+    if (this.timer) { window.clearInterval(this.timer); this.timer = null; }
+    if (this.spawnGate && this.game?.processEnemySpawning === this.spawnGate) this.game.processEnemySpawning = this.originalProcessEnemySpawningRaw;
+    const manager = this.game?.bossManager;
+    if (this.encounterGate && manager && manager.startEncounter === this.encounterGate) manager.startEncounter = this.originalStartEncounterRaw;
+    for (const node of [this.badge, this.modePanel, this.civilianHud]) node?.remove?.();
+    this.badge = null; this.modePanel = null; this.civilianHud = null;
+    if (globalThis.ZekNovaGameMode === this) delete globalThis.ZekNovaGameMode;
+    return true;
   }
 
   installBossInitiationGate() {
     const manager = this.game.bossManager;
     if (!manager || typeof manager.startEncounter !== "function") return;
+    this.originalStartEncounterRaw = manager.startEncounter;
     this.originalStartEncounter = manager.startEncounter.bind(manager);
-    manager.startEncounter = (context = {}) => {
+    this.encounterGate = (context = {}) => {
       if (isCivilianMode(this.mode)) {
         // Mission readiness is the encounter authority. Civilian Mode changes the
         // presentation and ambient simulation, but must never become a hidden
@@ -53,6 +70,7 @@ export class GameModeDirector {
       }
       return this.originalStartEncounter(context);
     };
+    manager.startEncounter = this.encounterGate;
   }
 
   mountModeBadge() {

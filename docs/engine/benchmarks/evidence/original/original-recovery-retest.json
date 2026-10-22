@@ -1,0 +1,4151 @@
+{
+  "setup": "Fresh authorized local fixture context; old scratch-profile pending keys excluded before test. Newly generated pending jobs are preserved throughout each fault.",
+  "requests": [
+    {
+      "at": 1792649069858,
+      "method": "GET",
+      "status": 200,
+      "body": null
+    },
+    {
+      "at": 1792649070130,
+      "method": "POST",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T06:04:30+00:00",
+        "revision": 202
+      }
+    },
+    {
+      "at": 1792649085627,
+      "method": "POST",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T06:04:45+00:00",
+        "revision": 203
+      }
+    },
+    {
+      "at": 1792649087958,
+      "method": "POST",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T06:04:47+00:00",
+        "revision": 204
+      }
+    },
+    {
+      "at": 1792649089006,
+      "method": "POST",
+      "failed": "net::ERR_FAILED"
+    },
+    {
+      "at": 1792649089666,
+      "method": "POST",
+      "failed": "net::ERR_FAILED"
+    },
+    {
+      "at": 1792649089937,
+      "method": "GET",
+      "status": 200,
+      "body": null
+    },
+    {
+      "at": 1792649090490,
+      "method": "POST",
+      "failed": "net::ERR_FAILED"
+    },
+    {
+      "at": 1792649092176,
+      "method": "POST",
+      "failed": "net::ERR_FAILED"
+    },
+    {
+      "at": 1792649095035,
+      "method": "POST",
+      "failed": "net::ERR_FAILED"
+    },
+    {
+      "at": 1792649101376,
+      "method": "POST",
+      "failed": "net::ERR_FAILED"
+    },
+    {
+      "at": 1792649115237,
+      "method": "POST",
+      "status": 409,
+      "body": {
+        "error": "Save snapshot is stale at revision 205."
+      }
+    },
+    {
+      "at": 1792649115238,
+      "method": "GET",
+      "status": 200,
+      "body": null
+    },
+    {
+      "at": 1792649144484,
+      "method": "POST",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T06:05:44+00:00",
+        "revision": 206
+      }
+    },
+    {
+      "at": 1792649145718,
+      "method": "POST",
+      "status": 401,
+      "body": {
+        "error": "Authentication required."
+      }
+    },
+    {
+      "at": 1792649150681,
+      "method": "POST",
+      "status": 409,
+      "body": {
+        "error": "Save snapshot is stale at revision 207."
+      }
+    },
+    {
+      "at": 1792649150683,
+      "method": "GET",
+      "status": 200,
+      "body": null
+    },
+    {
+      "at": 1792649150973,
+      "method": "GET",
+      "status": 200,
+      "body": null
+    },
+    {
+      "at": 1792649151588,
+      "method": "POST",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T06:05:51+00:00",
+        "revision": 208
+      }
+    },
+    {
+      "at": 1792649162417,
+      "method": "POST",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T06:06:02+00:00",
+        "revision": 209
+      }
+    },
+    {
+      "at": 1792649166750,
+      "method": "POST",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T06:06:06+00:00",
+        "revision": 210
+      }
+    }
+  ],
+  "outbox": {
+    "beforeReload": {
+      "status": {
+        "state": "retrying",
+        "revision": 204,
+        "lastAck": {
+          "seq": 4,
+          "revision": 204,
+          "at": 1792649087957,
+          "duplicate": false
+        },
+        "lastError": {
+          "kind": "transient",
+          "status": 0,
+          "message": "Failed to fetch"
+        },
+        "pendingSeq": 5,
+        "inFlightSeq": null,
+        "failures": 1,
+        "counters": {
+          "submitted": 5,
+          "coalesced": 1,
+          "posted": 4,
+          "acked": 3,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 5,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:59:27.791Z",
+          "player": {
+            "xp": 1511,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1511
+      },
+      "world": {
+        "position": [
+          7.13864757583868,
+          2.8232990790908365,
+          10.060403280509709
+        ],
+        "health": 1,
+        "xp": 1511,
+        "rank": "ensign",
+        "mode": "explore",
+        "paused": false,
+        "records": [],
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 38.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 19,
+          "trust": 0
+        },
+        "mission": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 52,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 39,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 5,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792649070372
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 90,
+            "matched": 22,
+            "hits": 0,
+            "joined": 0,
+            "misses": 22,
+            "bytesDownloaded": 12487125,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 68,
+            "errors": 0,
+            "entries": 22,
+            "bytes": 12487125,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 21,
+            "hits": 14,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 5,
+            "cancelled": 0,
+            "entries": 16,
+            "pending": 0,
+            "bytes": 65560918,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 21,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 26.7,
+              "p95": 218,
+              "max": 297
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": {
+            "seq": 4,
+            "revision": 204,
+            "at": 1792649087957,
+            "duplicate": false
+          },
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 5,
+          "inFlightSeq": null,
+          "failures": 1,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 1,
+            "posted": 4,
+            "acked": 3,
+            "retried": 1,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:59:27.791Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        }
+      },
+      "pendingKeys": [
+        {
+          "key": "zge.persistence.pending.v1.BENC-9672.demo-ae303c2e220023fe",
+          "bytes": 4148
+        }
+      ]
+    },
+    "afterReload": {
+      "state": "retrying",
+      "revision": 204,
+      "lastAck": null,
+      "lastError": {
+        "kind": "transient",
+        "status": 0,
+        "message": "Failed to fetch"
+      },
+      "pendingSeq": 9,
+      "inFlightSeq": null,
+      "failures": 5,
+      "counters": {
+        "submitted": 3,
+        "coalesced": 3,
+        "posted": 5,
+        "acked": 0,
+        "retried": 5,
+        "rejected": 0,
+        "conflicts": 0,
+        "authExpired": 0,
+        "beacons": 0,
+        "recoveredFromStore": 1
+      },
+      "unloading": false,
+      "interceptedPosts": 3,
+      "interceptedGets": 1,
+      "loadedExtension": {
+        "schema": "zge.save-extension.v1",
+        "savedAt": "2026-10-22T06:04:49.002Z",
+        "player": {
+          "xp": 1511,
+          "officerClass": "ensign",
+          "rankXp": 0
+        },
+        "extra": null
+      },
+      "restoredXp": 1511
+    },
+    "recovery": {
+      "ok": true,
+      "durationMs": 36342,
+      "states": [
+        {
+          "elapsedMs": 1,
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": null,
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 5,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 5,
+            "acked": 0,
+            "retried": 5,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 1004,
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": null,
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 5,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 5,
+            "acked": 0,
+            "retried": 5,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 2007,
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": null,
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 5,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 5,
+            "acked": 0,
+            "retried": 5,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 3010,
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": null,
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 5,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 5,
+            "acked": 0,
+            "retried": 5,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 4011,
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": null,
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 5,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 5,
+            "acked": 0,
+            "retried": 5,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 5018,
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": null,
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 5,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 5,
+            "acked": 0,
+            "retried": 5,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 6022,
+          "state": "retrying",
+          "revision": 204,
+          "lastAck": null,
+          "lastError": {
+            "kind": "transient",
+            "status": 0,
+            "message": "Failed to fetch"
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 5,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 5,
+            "acked": 0,
+            "retried": 5,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 7025,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 8028,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 9033,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 10036,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 11037,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 12040,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 9,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 3,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 13042,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 10,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 4,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 14047,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 10,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 4,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 15057,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 10,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 4,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 16060,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 10,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 4,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 17068,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 18071,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 19075,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 20109,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 21238,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 22254,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 23259,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 24269,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 25272,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 26275,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 27288,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 11,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 5,
+            "coalesced": 5,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 5,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 28295,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 29310,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 30319,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 31322,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 32325,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 33327,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 34334,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 35339,
+          "state": "retrying",
+          "revision": 205,
+          "lastAck": null,
+          "lastError": {
+            "kind": "conflict",
+            "status": 409,
+            "message": "Save snapshot is stale at revision 205."
+          },
+          "pendingSeq": 12,
+          "inFlightSeq": null,
+          "failures": 6,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 6,
+            "acked": 0,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 36342,
+          "state": "saved",
+          "revision": 206,
+          "lastAck": {
+            "seq": 12,
+            "revision": 206,
+            "at": 1792649144482,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 6,
+            "coalesced": 6,
+            "posted": 7,
+            "acked": 1,
+            "retried": 6,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 6,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:04:49.002Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        }
+      ]
+    },
+    "server": {
+      "status": 200,
+      "save": {
+        "version": 4,
+        "user": {
+          "id": "demo-ae303c2e220023fe",
+          "displayName": "BENCH01 timed natural",
+          "email": "timed-bench01@example.invalid",
+          "teamName": "BENCH01 timed 1792647337721",
+          "teamCode": "BENC-9672",
+          "officerClass": "ensign",
+          "biome": "highlands",
+          "rankXp": 0
+        },
+        "biomeSeed": 995912551,
+        "player": {
+          "x": 7.13864757583868,
+          "y": 2.8232990790908365,
+          "z": 10.060403280509709,
+          "health": 1,
+          "stamina": 100
+        },
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 38.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 21,
+          "trust": 0
+        },
+        "indicators": {
+          "habitability": 0,
+          "ecology": 8.000000000000039,
+          "morale": 24,
+          "governance": 5,
+          "economy": 12,
+          "defense": 5,
+          "resilience": 4.50000000000001
+        },
+        "buildings": [],
+        "phase": 1,
+        "civilizationScore": 4.432500000000006,
+        "worldProgress": {
+          "harvestedTreeIds": [
+            "tree-43",
+            "tree-128",
+            "tree-287",
+            "tree-5",
+            "tree-259",
+            "tree-193",
+            "tree-266",
+            "tree-87",
+            "tree-65",
+            "tree-242",
+            "tree-326",
+            "tree-103",
+            "tree-265",
+            "tree-229",
+            "tree-264"
+          ],
+          "treeHarvestedAt": {
+            "tree-43": 1792647380113,
+            "tree-128": 1792647382043,
+            "tree-287": 1792647383959,
+            "tree-5": 1792647395480,
+            "tree-259": 1792647425887,
+            "tree-193": 1792647428512,
+            "tree-266": 1792647429812,
+            "tree-87": 1792647432444,
+            "tree-65": 1792647467827,
+            "tree-242": 1792647470428,
+            "tree-326": 1792647794066,
+            "tree-103": 1792647795382,
+            "tree-265": 1792647904358,
+            "tree-229": 1792647906358,
+            "tree-264": 1792648470549
+          },
+          "collectedPowerUpIds": [],
+          "minedRockIds": [
+            "stone-10",
+            "supplemental-ore-7",
+            "orebelt-9",
+            "orebelt-11",
+            "orebelt-23"
+          ]
+        },
+        "missionStats": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 54,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 40,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 6,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792649090491
+          }
+        },
+        "combat": {
+          "specialGauge": 100
+        },
+        "diplomacy": {
+          "outcome": "negotiate",
+          "tension": 100,
+          "safeZoneCenter": {
+            "x": -9.273969737712168,
+            "z": 3.958927613148545
+          }
+        },
+        "updatedAt": "2026-10-22T06:05:44+00:00",
+        "zge": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:05:35.705Z",
+          "player": {
+            "xp": 1535,
+            "officerClass": "ensign",
+            "rankXp": 0
+          }
+        },
+        "persistence": {
+          "revision": 206,
+          "baseRevision": 206,
+          "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-12-mvj50kgq",
+          "sharedRevision": 206
+        }
+      }
+    },
+    "afterWorld": {
+      "position": [
+        7.13864757583868,
+        2.8232990790908365,
+        10.060403280509709
+      ],
+      "health": 1,
+      "xp": 1535,
+      "rank": "ensign",
+      "mode": "explore",
+      "paused": false,
+      "records": [],
+      "resources": {
+        "energy": 0,
+        "water": 0,
+        "minerals": 224.25,
+        "iron": 29,
+        "biomass": 38.49462664000622,
+        "timber": 266.25,
+        "data": 18,
+        "credits": 21,
+        "trust": 0
+      },
+      "mission": {
+        "resourcesCollected": 1,
+        "enemiesDefeated": 54,
+        "treesChopped": 15,
+        "rockMinedAt": {
+          "stone-10": 1792647384925,
+          "supplemental-ore-7": 1792647404315,
+          "orebelt-9": 1792647790133,
+          "orebelt-11": 1792647800182,
+          "orebelt-23": 1792647908887
+        },
+        "biomeStats": {
+          "highlands": {
+            "enemiesDefeated": 40,
+            "treesChopped": 11,
+            "rocksMined": 5
+          },
+          "desert": {
+            "treesChopped": 4,
+            "enemiesDefeated": 8
+          },
+          "arctic": {
+            "enemiesDefeated": 6,
+            "rocksMined": 1
+          }
+        },
+        "commissioningEncounters": [],
+        "personalObjectiveIds": [
+          "defeat-enemy",
+          "chop-tree",
+          "mine-rock",
+          "resource-minerals"
+        ],
+        "biomeVisited": [
+          "highlands",
+          "desert"
+        ],
+        "bossDefeats": [],
+        "claimedBossRewards": [],
+        "worldJuggernauts": {
+          "world-juggernaut-forest-1": {
+            "id": "world-juggernaut-forest-1",
+            "biome": "forest",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-forest-2": {
+            "id": "world-juggernaut-forest-2",
+            "biome": "forest",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-1": {
+            "id": "world-juggernaut-desert-1",
+            "biome": "desert",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-2": {
+            "id": "world-juggernaut-desert-2",
+            "biome": "desert",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-1": {
+            "id": "world-juggernaut-highlands-1",
+            "biome": "highlands",
+            "index": 0,
+            "defeatedAt": 1792647946344,
+            "respawnAt": 1792658746344
+          },
+          "world-juggernaut-highlands-2": {
+            "id": "world-juggernaut-highlands-2",
+            "biome": "highlands",
+            "index": 1,
+            "defeatedAt": 1792647644924,
+            "respawnAt": 1792658444924
+          },
+          "world-juggernaut-arctic-1": {
+            "id": "world-juggernaut-arctic-1",
+            "biome": "arctic",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-2": {
+            "id": "world-juggernaut-arctic-2",
+            "biome": "arctic",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-1": {
+            "id": "world-juggernaut-wetlands-1",
+            "biome": "wetlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-2": {
+            "id": "world-juggernaut-wetlands-2",
+            "biome": "wetlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          }
+        },
+        "bossEncounterFlow": {
+          "state": "WAITING_FOR_PREREQUISITES",
+          "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+          "missionId": "grid",
+          "updatedAt": 1792649090491
+        }
+      },
+      "backend": "WebGPU",
+      "assets": {
+        "cache": {
+          "requests": 352,
+          "matched": 87,
+          "hits": 0,
+          "joined": 0,
+          "misses": 87,
+          "bytesDownloaded": 119673253,
+          "bytesServedFromCache": 0,
+          "evictions": 63,
+          "bypassed": 265,
+          "errors": 0,
+          "entries": 24,
+          "bytes": 66482000,
+          "budgetBytes": 67108864,
+          "inFlight": 0,
+          "top": [
+            {
+              "url": "village-kit/timber-walkway-b.glb",
+              "hits": 0,
+              "kb": 48
+            },
+            {
+              "url": "desert-village/elder-communal-dome.glb",
+              "hits": 0,
+              "kb": 5509
+            },
+            {
+              "url": "desert-village/sanctuary-dome.glb",
+              "hits": 0,
+              "kb": 3610
+            },
+            {
+              "url": "forest-village/outdoor-crafting-station.glb",
+              "hits": 0,
+              "kb": 975
+            },
+            {
+              "url": "desert-village/sandstone-dome-dwelling.glb",
+              "hits": 0,
+              "kb": 4664
+            }
+          ]
+        },
+        "parsed": {
+          "loads": 86,
+          "hits": 14,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 84,
+          "cancelled": 0,
+          "entries": 2,
+          "pending": 0,
+          "bytes": 49610572,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 49,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "loader": {
+          "patched": true,
+          "pending": [],
+          "completed": 86,
+          "failures": 0,
+          "stalls": 0,
+          "loadMs": {
+            "p50": 29.6,
+            "p95": 180.9,
+            "max": 307.6
+          },
+          "stallMs": 15000
+        },
+        "workers": {
+          "live": 5,
+          "created": 5,
+          "terminated": 0,
+          "errors": 0,
+          "byScript": {
+            "blob:": 4,
+            "workers/adaptive-runtime-worker.js": 1
+          }
+        }
+      },
+      "persistence": {
+        "state": "saved",
+        "revision": 206,
+        "lastAck": {
+          "seq": 12,
+          "revision": 206,
+          "at": 1792649144482,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 6,
+          "coalesced": 6,
+          "posted": 7,
+          "acked": 1,
+          "retried": 6,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 6,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:04:49.002Z",
+          "player": {
+            "xp": 1511,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1511
+      }
+    }
+  },
+  "auth": {
+    "deniedDirectGET": {
+      "status": 401,
+      "error": "Authentication required."
+    },
+    "states": [
+      {
+        "elapsedMs": 1,
+        "state": "saved",
+        "revision": 206,
+        "lastAck": {
+          "seq": 12,
+          "revision": 206,
+          "at": 1792649144482,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 6,
+          "coalesced": 6,
+          "posted": 7,
+          "acked": 1,
+          "retried": 6,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 6,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:04:49.002Z",
+          "player": {
+            "xp": 1511,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1511
+      },
+      {
+        "elapsedMs": 504,
+        "state": "saved",
+        "revision": 206,
+        "lastAck": {
+          "seq": 12,
+          "revision": 206,
+          "at": 1792649144482,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 6,
+          "coalesced": 6,
+          "posted": 7,
+          "acked": 1,
+          "retried": 6,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 6,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:04:49.002Z",
+          "player": {
+            "xp": 1511,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1511
+      },
+      {
+        "elapsedMs": 1006,
+        "state": "auth-expired",
+        "revision": 206,
+        "lastAck": {
+          "seq": 12,
+          "revision": 206,
+          "at": 1792649144482,
+          "duplicate": false
+        },
+        "lastError": {
+          "kind": "auth-expired",
+          "status": 401,
+          "message": "Authentication required."
+        },
+        "pendingSeq": 13,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 7,
+          "coalesced": 6,
+          "posted": 8,
+          "acked": 1,
+          "retried": 6,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 1,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 7,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:04:49.002Z",
+          "player": {
+            "xp": 1511,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1511
+      }
+    ],
+    "denied": {
+      "state": "auth-expired",
+      "revision": 206,
+      "lastAck": {
+        "seq": 12,
+        "revision": 206,
+        "at": 1792649144482,
+        "duplicate": false
+      },
+      "lastError": {
+        "kind": "auth-expired",
+        "status": 401,
+        "message": "Authentication required."
+      },
+      "pendingSeq": 13,
+      "inFlightSeq": null,
+      "failures": 0,
+      "counters": {
+        "submitted": 7,
+        "coalesced": 6,
+        "posted": 8,
+        "acked": 1,
+        "retried": 6,
+        "rejected": 0,
+        "conflicts": 1,
+        "authExpired": 1,
+        "beacons": 0,
+        "recoveredFromStore": 1
+      },
+      "unloading": false,
+      "interceptedPosts": 7,
+      "interceptedGets": 1,
+      "loadedExtension": {
+        "schema": "zge.save-extension.v1",
+        "savedAt": "2026-10-22T06:04:49.002Z",
+        "player": {
+          "xp": 1511,
+          "officerClass": "ensign",
+          "rankXp": 0
+        },
+        "extra": null
+      },
+      "restoredXp": 1511
+    },
+    "ui": "AI × CRYPTO EXPO\nZEKNOVA\nTIER I\nPlanetary Infrastructure · Ensign\n4\nREADINESS\nE\nENSIGN\nBENCH01 timed natural\nBENCH01 timed 1792647337721 · BENC-9672\nHealth\n1\nStamina\n100\nOfficer XP\n1535\nCURRENT OBJECTIVE\nBring the lights online\nNEXT RANK · LIEUTENANT\n0/4 missions\nMISSION 1 / 12\nZEKNOVAN TENSION\n100 · HOSTILE\nRECONCILIATION ACTIONS\nNEXT ACTIONSALL OBJECTIVES\n1\nGuardian Encounter\nBreak the Sunscar Colossus power siphon — Travel to Desert AO to start the boss fight — Travel to Desert AO to start the boss fight\n0 / 1\nInstructions\nGUIDE ME\n2\nExploration\nSurvey solar exposure · Forest AO\n0 / 1\nInstructions\nGUIDE ME\nSAVE\n⚡\n0\n◉\n0\n⬢\n29\n▥\n266\n◎\n21\nTEAM ROOM\nRECONNECTING…\nThreat contained\n\n+1 Colony Credit and +18 special charge. The defender retreated and local trust declined slightly.\n\n◎ 21 COLONY CREDITS AVAILABLE\nHIGHLANDS AO\n○ Recover 2 Highland resources\n○ Deploy 2 Defense Beacons\nDominant defensive terrain and long-range surveillance.\nROCKET-MINIGUN OVERDRIVE\nREADY · PRESS Q\nDUAL-MODE HEAVY CANNON · 15m AOE · hits and eliminations add charge\n01\nVOIDSTING\n02\nSINGULARITY\n03\nTHUNDERCLAW\n0 LOADED · 0 RESERVE · CRYSTAL SLUGS\nOUT OF AMMO · CRAFT\nC · RELOAD\nCRAFT SLUGS\nE\nHARVEST\nSPACE\nFIRE\nQ\nSPECIAL\nV\nROLL & SHOOT\nP\nPAUSE\n◎\nENTER COMMAND MODE\nTab\nBOT\nPress E to have the robot mine iron seam · 1 cycle · 19 minerals · +6 iron ore\n+\n?\nLOG\n9+\nLOCAL MAPM\nHIGHLANDS AO\nDESERTIron · Minerals\nHIGHLANDSIron · Data\nARCTICWater · Data\nWETLANDSWater · Biomass\n▲⚠⚠⚠⚠⚠⚠⚠⚠⬡⬡⬡⬡⬡\nHIGHLANDS AO\nBATTLE MODE · TACTICAL\nSETTLEMENT OPERATIONSSTABLE\nPOPULATION0CALM\nUTILITY COVERAGE0%NO NETWORK\nCURRENT BUILDNONEPRESS TAB\nRESEARCH0FACILITIES\nTRADE0ROUTES\nDIPLOMACYPENDING50 TENSION\nLOCAL ACTIVITY · OBSERVINGOPEN MAP\nACTIVE RECONCILIATION\nZekNovan Relations\nTENSION 100TRUST 0\n\nRepair the relationship through field work. Costs are paid from colony stores and every completed action is synchronized with the team world.\n\nRESTORE A SACRED GROVEConvert harvested biomass into protected ZekNovan seedlings.8 biomass · -2 tension · +2 trustCLEAN THE WATERSHEDRun a filtration cycle through an operational Water Works.6 minerals · 4 biomass · -4 tension · +3 trustDELIVER VILLAGE AIDTransfer water and minerals directly to a nearby ZekNovan settlement.10 water · 8 minerals · -6 tension · +5 trustSHARE ECOLOGICAL DATAPublish colony research instead of keeping the survey proprietary.5 data · 6 energy · -3 tension · +4 trust\nNONLETHAL MODE: OFF BEGIN 30s CEASEFIRE Combat remains available. Nonlethal mode prevents weapon damage from reducing a ZekNovan below 1 health.\nTEAM COMMS\n[{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":-67,\"y\":6.7,\"z\":-10},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":-74.9,\"y\":6,\"z\":12.1},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":-31,\"y\":4.2,\"z\":-10},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":-41,\"y\":5.8,\"z\":10},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":43.8,\"y\":3.2,\"z\":-8.8},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":34.4,\"y\":5.8,\"z\":18.3},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":66.1,\"y\":2.2,\"z\":8.9},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"juggernaut\",\"label\":\"ZekNovan Juggernaut\",\"hqLoaded\":true,\"bounds\":{\"width\":4.56,\"height\":5.6,\"depth\":3.35},\"health\":325,\"guardian\":false,\"position\":{\"x\":80,\"y\":0.7,\"z\":3.7},\"stuckFor\":0,\"state\":\"pursuit\"},{\"role\":\"stalker\",\"label\":\"ZekNovan Stalker\",\"hqLoaded\":true,\"bounds\":{\"width\":3.49,\"height\":3.35,\"depth\":0.88},\"health\":37.5,\"guardian\":false,\"position\":{\"x\":-5.9,\"y\":11.6,\"z\":25.2},\"stuckFor\":0,\"state\":\"patrol\"},{\"role\":\"spitter\",\"label\":\"ZekNovan Spitter\",\"hqLoaded\":true,\"bounds\":{\"width\":3.82,\"height\":3.45,\"depth\":1.28},\"health\":52.5,\"guardian\":false,\"position\":{\"x\":-4.4,\"y\":9.5,\"z\":24.6},\"stuckFor\":0,\"state\":\"patrol\"},{\"role\":\"spitter\",\"label\":\"ZekNovan Spitter\",\"hqLoaded\":true,\"bounds\":{\"width\":3.82,\"height\":3.45,\"depth\":1.28},\"health\":4.5,\"guardian\":false,\"position\":{\"x\":9.1,\"y\":4.7,\"z\":-6.3},\"stuckFor\":0,\"state\":\"patrol\"},{\"role\":\"stalker\",\"label\":\"ZekNovan Stalker\",\"hqLoaded\":true,\"bounds\":{\"width\":3.49,\"height\":3.35,\"depth\":0.88},\"health\":77.5,\"guardian\":false,\"position\":{\"x\":-1.1,\"y\":6.7,\"z\":25.1},\"stuckFor\":0,\"state\":\"patrol\"},{\"role\":\"stalker\",\"label\":\"ZekNovan Stalker\",\"hqLoaded\":true,\"bounds\":{\"width\":3.49,\"height\":3.35,\"depth\":0.88},\"health\":77.5,\"guardian\":false,\"position\":{\"x\":-2.9,\"y\":8,\"z\":25.1},\"stuckFor\":0,\"state\":\"patrol\"},{\"role\":\"spitter\",\"label\":\"ZekNovan Spitter\",\"hqLoaded\":true,\"bounds\":{\"width\":3.82,\"height\":3.45,\"depth\":1.28},\"health\":92.5,\"guardian\":false,\"position\":{\"x\":-2.1,\"y\":6.8,\"z\":23.8},\"stuckFor\":0,\"state\":\"patrol\"}]{\"rocks\":73,\"visibleRocks\":68,\"perBiomeOre\":{\"forest\":{\"total\":4,\"visible\":4},\"desert\":{\"total\":22,\"visible\":22},\"highlands\":{\"total\":28,\"visible\":24},\"arctic\":{\"total\":15,\"visible\":14},\"wetlands\":{\"total\":4,\"visible\":4}},\"residents\":54,\"residentModes\":{\"roaming\":54},\"residentsInEnemyArray\":0,\"trees\":336,\"player\":{\"x\":7.1,\"y\":2.8,\"z\":10.1},\"boss\":null}{\"count\":54,\"visible\":27,\"kinds\":{\"villager\":24,\"traveler\":30},\"biomes\":{\"forest\":12,\"desert\":18,\"arctic\":12,\"highlands\":6,\"wetlands\":6},\"modes\":{\"roaming\":54},\"hqLoaded\":12,\"hqLoading\":0,\"hqTypes\":{\"saboteur\":7,\"spitter\":7,\"stalker\":6},\"fallbackVisible\":42,\"inEnemyArray\":0,\"bossActive\":false}\n{\"appearanceOnly\":true,\"authority\":{\"level\":\"R0\",\"role\":\"visual-only\",\"canDispatchGameplay\":false,\"canMutateWorld\":false,\"canModifyMissionState\":false,\"canModifyPhysics\":false,\"canModifySaveState\":false,\"canModifyCollision\":false,\"canModifyCombatOutcomes\":false,\"canModifyEconomy\":false,\"canModifyMultiplayerSync\":false},\"theme\":\"zeknova\",\"fps\":59.6,\"geometryFamiliesCached\":3,\"rendererGeometries\":642,\"rendererTextures\":111,\"heapBytes\":795489635,\"bossProjectilesActive\":0,\"bossProjectilePoolLimit\":250,\"impactEffectsActive\":1,\"peakImpactEffects\":2,\"beamEffectsActive\":1,\"peakBeamEffects\":2,\"expensiveLights\":0}\nfreezeresumestressacceptancereset metrics{\"PICASSO_COMBAT_READABILITY_IMPLEMENTED\":true,\"ROLE_SIGNATURES_VERIFIED\":true,\"BOSS_VISUAL_IDENTITIES_VERIFIED\":true,\"TELEGRAPH_READABILITY_PASS\":false,\"WEAK_POINT_LANGUAGE_PASS\":true,\"IMPACT_DIFFERENTIATION_PASS\":true,\"SIX_THEME_GAMEPLAY_PARITY_PASS\":false,\"SIDE_BY_SIDE_ACCEPTANCE_CAPTURE_COMPLETE\":false,\"VISUAL_STRESS_TEST_PASS\":true,\"MIN_OBSERVED_FPS\":5,\"MAX_FRAME_TIME_MS\":200,\"MAX_JS_HEAP_MB\":781.75,\"MAX_ACTIVE_PROJECTILES\":0,\"MAX_IMPACT_EFFECTS\":2,\"MAX_BEAM_EFFECTS\":2,\"RENDERER_GEOMETRIES\":642,\"RENDERER_TEXTURES\":111,\"THEME_SWITCH_AVG_MS\":4.6,\"BROWSER_RUNTIME_ERRORS\":0,\"SHADER_ERRORS\":0,\"GAMEPLAY_STATE_DIVERGENCE_COUNT\":0,\"PICASSO_AUTHORITY_VIOLATIONS\":0,\"CURRENT_AUTHORITY\":\"R0_VISUAL\",\"TELEGRAPH_DURATION_CHANGES\":0,\"ACTIVE_PROJECTILES\":0,\"IMPACT_EFFECT_COUNT\":1,\"BEAM_COUNT\":1,\"ADDED_PROJECTILE_LIGHTS\":0,\"perProjectileDynamicLights\":0,\"paritySnapshots\":[]}\nMove\n\nUse WASD or arrow keys to move. Shift sprints.\n\nMove 10 meters in any direction.\n\nDismiss guidance\n{\"implemented\":true,\"samples\":1800,\"frame\":{\"average\":16.86,\"median\":16.7,\"p95\":16.8,\"p99\":16.8,\"worst\":149.9,\"over16_7\":604,\"over33\":11,\"over50\":2,\"over100\":1},\"renderer\":{\"calls\":9918,\"triangles\":3677827,\"geometries\":640,\"textures\":111},\"hidden\":{\"residents\":34,\"enemies\":3},\"scene\":{\"meshes\":1598,\"geometries\":1116,\"materials\":673,\"textures\":210,\"triangles\":7897620,\"shadowCasters\":62,\"microShadowsDisabled\":0},\"active\":{\"enemies\":14,\"residents\":54,\"projectiles\":0},\"authority\":\"DETERMINISTIC_RENDER_ONLY\",\"gameplayStateMutated\":false}\n{\"implemented\":true,\"authority\":{\"tier\":\"R0_RECOMMENDATION_ONLY\",\"canDispatch\":false,\"canMutateLiveWorld\":false,\"canControlActors\":false,\"canChangeGameplayOutcome\":false,\"canModifyMissionState\":false,\"canModifyPhysics\":false,\"canModifySaveState\":false,\"canModifyMultiplayerSync\":false},\"quality\":\"Ultra\",\"frameBudgetMs\":{\"total\":16.67,\"render\":7.2,\"gameplay\":3.5,\"ai\":2.2,\"physicsCollision\":1.8,\"ui\":0.7,\"sentinel\":0.25,\"background\":0.35},\"fps\":60,\"averageFrameMs\":16.85,\"maxFrameMs\":149.9,\"longFrames\":15,\"tierPopulation\":{\"T0\":16,\"T1\":14,\"T2\":0,\"T3\":0,\"T4\":38},\"aiUpdates\":{\"requested\":0,\"executed\":0,\"deferred\":0,\"reductionFactor\":0},\"resourceScans\":{\"requested\":3295,\"executed\":509,\"reductionFactor\":6.47},\"hudUpdates\":{\"requested\":3306,\"executed\":272,\"reductionFactor\":12.15},\"missionContext\":{\"requested\":4004,\"executed\":498,\"reductionFactor\":8.04},\"buildingCountScans\":{\"requested\":4471,\"executed\":1,\"reductionFactor\":4471},\"saves\":{\"requested\":8,\"flushed\":5,\"batchingFactor\":1.6},\"renderer\":{\"calls\":9924,\"triangles\":3677827,\"geometries\":640,\"textures\":111},\"active\":{\"enemies\":14,\"residents\":54,\"projectiles\":0},\"heapBytes\":798083851,\"prime\":{\"authority\":{\"tier\":\"R0_RECOMMENDATION_ONLY\",\"canDispatch\":false,\"canMutateLiveWorld\":false,\"canControlActors\":false,\"canChangeGameplayOutcome\":false,\"canModifyMissionState\":false,\"canModifyPhysics\":false,\"canModifySaveState\":false,\"canModifyMultiplayerSync\":false},\"samples\":0,\"averageCostMs\":0,\"asynchronous\":true,\"blocksFrame\":false,\"offThread\":true,\"advisories\":110,\"rejected\":0},\"deterministicFallback\":true,\"gameplayOutcomeMutation\":false}\n{\"state\":\"WAITING_FOR_PREREQUISITES\",\"reason\":\"Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)\",\"missionId\":\"grid\",\"missing\":[{\"label\":\"Survey solar exposure · Forest AO\",\"value\":0,\"target\":1,\"complete\":false},{\"label\":\"Survey solar exposure · Arctic AO\",\"value\":0,\"target\":1,\"complete\":false},{\"label\":\"Survey solar exposure · Wetlands AO\",\"value\":0,\"target\":1,\"complete\":false},{\"label\":\"Install 1 Solar Grid in the Forest AO\",\"value\":0,\"target\":1,\"complete\":false},{\"label\":\"Install 1 Solar Grid in the Desert AO\",\"value\":0,\"target\":1,\"complete\":false},{\"label\":\"Install 1 Solar Grid in the Highlands AO\",\"value\":0,\"target\":1,\"complete\":false},{\"label\":\"Install 1 Solar Grid in the Arctic AO\",\"value\":0,\"target\":1,\"complete\":false},{\"label\":\"Install 1 Solar Grid in the Wetlands AO\",\"value\":0,\"target\":1,\"complete\":false}],\"active\":false,\"activeMissionId\":null,\"activeBossId\":null,\"transitions\":[{\"state\":\"WAITING_FOR_PREREQUISITES\",\"reason\":\"Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)\",\"missionId\":\"grid\",\"at\":1792649090491}],\"automatic\":true,\"canonicalArenaOnly\":true,\"hiddenConditions\":false}\n{\"fixedHz\":60,\"deterministicOrdering\":true,\"bodies\":15,\"sleeping\":0,\"activeProjectiles\":0,\"averageContacts\":2.3352566049195262,\"averageCandidates\":4.5481324020649865,\"averagePhysicsMs\":0.04090495027020243,\"clampedFrames\":2,\"constraints\":0,\"integration\":\"compatibility-safe authoritative actor bridge\",\"picassoCollisionExcluded\":true,\"primeMayAdviseTierOnly\":true,\"gameplayAuthority\":\"canonical game runtime\"}\nVisual Style\nZekNova Default\nAnime\nCartoon (preview)\nCinematic / Ultra Realistic\nUltra Realistic\nAlien Dream (preview)\nPicasso · R0 visual only",
+    "restoredDirectGET": {
+      "status": 200,
+      "save": {
+        "version": 4,
+        "user": {
+          "id": "demo-ae303c2e220023fe",
+          "displayName": "BENCH01 timed natural",
+          "email": "timed-bench01@example.invalid",
+          "teamName": "BENCH01 timed 1792647337721",
+          "teamCode": "BENC-9672",
+          "officerClass": "ensign",
+          "biome": "highlands",
+          "rankXp": 0
+        },
+        "biomeSeed": 995912551,
+        "player": {
+          "x": 7.13864757583868,
+          "y": 2.8232990790908365,
+          "z": 10.060403280509709,
+          "health": 1,
+          "stamina": 100
+        },
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 38.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 21,
+          "trust": 0
+        },
+        "indicators": {
+          "habitability": 0,
+          "ecology": 8.000000000000039,
+          "morale": 24,
+          "governance": 5,
+          "economy": 12,
+          "defense": 5,
+          "resilience": 4.50000000000001
+        },
+        "buildings": [],
+        "phase": 1,
+        "civilizationScore": 4.432500000000006,
+        "worldProgress": {
+          "harvestedTreeIds": [
+            "tree-43",
+            "tree-128",
+            "tree-287",
+            "tree-5",
+            "tree-259",
+            "tree-193",
+            "tree-266",
+            "tree-87",
+            "tree-65",
+            "tree-242",
+            "tree-326",
+            "tree-103",
+            "tree-265",
+            "tree-229",
+            "tree-264"
+          ],
+          "treeHarvestedAt": {
+            "tree-43": 1792647380113,
+            "tree-128": 1792647382043,
+            "tree-287": 1792647383959,
+            "tree-5": 1792647395480,
+            "tree-259": 1792647425887,
+            "tree-193": 1792647428512,
+            "tree-266": 1792647429812,
+            "tree-87": 1792647432444,
+            "tree-65": 1792647467827,
+            "tree-242": 1792647470428,
+            "tree-326": 1792647794066,
+            "tree-103": 1792647795382,
+            "tree-265": 1792647904358,
+            "tree-229": 1792647906358,
+            "tree-264": 1792648470549
+          },
+          "collectedPowerUpIds": [],
+          "minedRockIds": [
+            "stone-10",
+            "supplemental-ore-7",
+            "orebelt-9",
+            "orebelt-11",
+            "orebelt-23"
+          ]
+        },
+        "missionStats": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 54,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 40,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 6,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792649090491
+          }
+        },
+        "combat": {
+          "specialGauge": 100
+        },
+        "diplomacy": {
+          "outcome": "negotiate",
+          "tension": 100,
+          "safeZoneCenter": {
+            "x": -9.273969737712168,
+            "z": 3.958927613148545
+          }
+        },
+        "updatedAt": "2026-10-22T06:05:44+00:00",
+        "zge": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:05:35.705Z",
+          "player": {
+            "xp": 1535,
+            "officerClass": "ensign",
+            "rankXp": 0
+          }
+        },
+        "persistence": {
+          "revision": 206,
+          "baseRevision": 206,
+          "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-12-mvj50kgq",
+          "sharedRevision": 206
+        }
+      }
+    },
+    "samePage": {
+      "state": "auth-expired",
+      "revision": 206,
+      "lastAck": {
+        "seq": 12,
+        "revision": 206,
+        "at": 1792649144482,
+        "duplicate": false
+      },
+      "lastError": {
+        "kind": "auth-expired",
+        "status": 401,
+        "message": "Authentication required."
+      },
+      "pendingSeq": 14,
+      "inFlightSeq": null,
+      "failures": 0,
+      "counters": {
+        "submitted": 8,
+        "coalesced": 7,
+        "posted": 8,
+        "acked": 1,
+        "retried": 6,
+        "rejected": 0,
+        "conflicts": 1,
+        "authExpired": 1,
+        "beacons": 0,
+        "recoveredFromStore": 1
+      },
+      "unloading": false,
+      "interceptedPosts": 8,
+      "interceptedGets": 1,
+      "loadedExtension": {
+        "schema": "zge.save-extension.v1",
+        "savedAt": "2026-10-22T06:04:49.002Z",
+        "player": {
+          "xp": 1511,
+          "officerClass": "ensign",
+          "rankXp": 0
+        },
+        "extra": null
+      },
+      "restoredXp": 1511
+    },
+    "afterReload": {
+      "ok": true,
+      "durationMs": 2,
+      "states": [
+        {
+          "elapsedMs": 2,
+          "state": "saved",
+          "revision": 210,
+          "lastAck": {
+            "seq": 19,
+            "revision": 210,
+            "at": 1792649166748,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 2,
+            "posted": 4,
+            "acked": 3,
+            "retried": 1,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:05:50.501Z",
+            "player": {
+              "xp": 1547,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1547
+        }
+      ]
+    },
+    "server": {
+      "status": 200,
+      "save": {
+        "version": 4,
+        "user": {
+          "id": "demo-ae303c2e220023fe",
+          "displayName": "BENCH01 timed natural",
+          "email": "timed-bench01@example.invalid",
+          "teamName": "BENCH01 timed 1792647337721",
+          "teamCode": "BENC-9672",
+          "officerClass": "ensign",
+          "biome": "highlands",
+          "rankXp": 0
+        },
+        "biomeSeed": 995912551,
+        "player": {
+          "x": 7.13864757583868,
+          "y": 2.8232990790908365,
+          "z": 10.060403280509709,
+          "health": 1,
+          "stamina": 100
+        },
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 38.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 23,
+          "trust": 0
+        },
+        "indicators": {
+          "habitability": 0,
+          "ecology": 8.000000000000039,
+          "morale": 24,
+          "governance": 5,
+          "economy": 12,
+          "defense": 5,
+          "resilience": 4.50000000000001
+        },
+        "buildings": [],
+        "phase": 1,
+        "civilizationScore": 4.432500000000006,
+        "worldProgress": {
+          "harvestedTreeIds": [
+            "tree-43",
+            "tree-128",
+            "tree-287",
+            "tree-5",
+            "tree-259",
+            "tree-193",
+            "tree-266",
+            "tree-87",
+            "tree-65",
+            "tree-242",
+            "tree-326",
+            "tree-103",
+            "tree-265",
+            "tree-229",
+            "tree-264"
+          ],
+          "treeHarvestedAt": {
+            "tree-43": 1792647380113,
+            "tree-128": 1792647382043,
+            "tree-287": 1792647383959,
+            "tree-5": 1792647395480,
+            "tree-259": 1792647425887,
+            "tree-193": 1792647428512,
+            "tree-266": 1792647429812,
+            "tree-87": 1792647432444,
+            "tree-65": 1792647467827,
+            "tree-242": 1792647470428,
+            "tree-326": 1792647794066,
+            "tree-103": 1792647795382,
+            "tree-265": 1792647904358,
+            "tree-229": 1792647906358,
+            "tree-264": 1792648470549
+          },
+          "collectedPowerUpIds": [],
+          "minedRockIds": [
+            "stone-10",
+            "supplemental-ore-7",
+            "orebelt-9",
+            "orebelt-11",
+            "orebelt-23"
+          ]
+        },
+        "missionStats": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 56,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 41,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 7,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792649151383
+          }
+        },
+        "combat": {
+          "specialGauge": 100
+        },
+        "diplomacy": {
+          "outcome": "negotiate",
+          "tension": 100,
+          "safeZoneCenter": {
+            "x": -9.273969737712168,
+            "z": 3.958927613148545
+          }
+        },
+        "updatedAt": "2026-10-22T06:06:06+00:00",
+        "zge": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:06:06.741Z",
+          "player": {
+            "xp": 1559,
+            "officerClass": "ensign",
+            "rankXp": 0
+          }
+        },
+        "persistence": {
+          "revision": 210,
+          "baseRevision": 210,
+          "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-19-mvj511n9",
+          "sharedRevision": 210
+        }
+      }
+    },
+    "world": {
+      "position": [
+        7.13864757583868,
+        2.8232990790908365,
+        10.060403280509709
+      ],
+      "health": 1,
+      "xp": 1559,
+      "rank": "ensign",
+      "mode": "explore",
+      "paused": false,
+      "records": [],
+      "resources": {
+        "energy": 0,
+        "water": 0,
+        "minerals": 224.25,
+        "iron": 29,
+        "biomass": 38.49462664000622,
+        "timber": 266.25,
+        "data": 18,
+        "credits": 23,
+        "trust": 0
+      },
+      "mission": {
+        "resourcesCollected": 1,
+        "enemiesDefeated": 56,
+        "treesChopped": 15,
+        "rockMinedAt": {
+          "stone-10": 1792647384925,
+          "supplemental-ore-7": 1792647404315,
+          "orebelt-9": 1792647790133,
+          "orebelt-11": 1792647800182,
+          "orebelt-23": 1792647908887
+        },
+        "biomeStats": {
+          "highlands": {
+            "enemiesDefeated": 41,
+            "treesChopped": 11,
+            "rocksMined": 5
+          },
+          "desert": {
+            "treesChopped": 4,
+            "enemiesDefeated": 8
+          },
+          "arctic": {
+            "enemiesDefeated": 7,
+            "rocksMined": 1
+          }
+        },
+        "commissioningEncounters": [],
+        "personalObjectiveIds": [
+          "defeat-enemy",
+          "chop-tree",
+          "mine-rock",
+          "resource-minerals"
+        ],
+        "biomeVisited": [
+          "highlands",
+          "desert"
+        ],
+        "bossDefeats": [],
+        "claimedBossRewards": [],
+        "worldJuggernauts": {
+          "world-juggernaut-forest-1": {
+            "id": "world-juggernaut-forest-1",
+            "biome": "forest",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-forest-2": {
+            "id": "world-juggernaut-forest-2",
+            "biome": "forest",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-1": {
+            "id": "world-juggernaut-desert-1",
+            "biome": "desert",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-2": {
+            "id": "world-juggernaut-desert-2",
+            "biome": "desert",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-1": {
+            "id": "world-juggernaut-highlands-1",
+            "biome": "highlands",
+            "index": 0,
+            "defeatedAt": 1792647946344,
+            "respawnAt": 1792658746344
+          },
+          "world-juggernaut-highlands-2": {
+            "id": "world-juggernaut-highlands-2",
+            "biome": "highlands",
+            "index": 1,
+            "defeatedAt": 1792647644924,
+            "respawnAt": 1792658444924
+          },
+          "world-juggernaut-arctic-1": {
+            "id": "world-juggernaut-arctic-1",
+            "biome": "arctic",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-2": {
+            "id": "world-juggernaut-arctic-2",
+            "biome": "arctic",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-1": {
+            "id": "world-juggernaut-wetlands-1",
+            "biome": "wetlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-2": {
+            "id": "world-juggernaut-wetlands-2",
+            "biome": "wetlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          }
+        },
+        "bossEncounterFlow": {
+          "state": "WAITING_FOR_PREREQUISITES",
+          "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+          "missionId": "grid",
+          "updatedAt": 1792649151383
+        }
+      },
+      "backend": "WebGPU",
+      "assets": {
+        "cache": {
+          "requests": 83,
+          "matched": 21,
+          "hits": 0,
+          "joined": 0,
+          "misses": 21,
+          "bytesDownloaded": 12328189,
+          "bytesServedFromCache": 0,
+          "evictions": 0,
+          "bypassed": 62,
+          "errors": 0,
+          "entries": 21,
+          "bytes": 12328189,
+          "budgetBytes": 67108864,
+          "inFlight": 0,
+          "top": [
+            {
+              "url": "models/zeknovan-spitter-walk.medium.glb",
+              "hits": 0,
+              "kb": 485
+            },
+            {
+              "url": "basis/basis_transcoder.wasm",
+              "hits": 0,
+              "kb": 515
+            },
+            {
+              "url": "models/zeknovan-stalker-walk.medium.glb",
+              "hits": 0,
+              "kb": 459
+            },
+            {
+              "url": "models/zeknovan-juggernaut-walk.medium.glb",
+              "hits": 0,
+              "kb": 472
+            },
+            {
+              "url": "models/zeknovan-spitter-run.glb",
+              "hits": 0,
+              "kb": 455
+            }
+          ]
+        },
+        "parsed": {
+          "loads": 20,
+          "hits": 14,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 3,
+          "cancelled": 0,
+          "entries": 17,
+          "pending": 0,
+          "bytes": 66459264,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "loader": {
+          "patched": true,
+          "pending": [],
+          "completed": 20,
+          "failures": 0,
+          "stalls": 0,
+          "loadMs": {
+            "p50": 26.1,
+            "p95": 130.4,
+            "max": 164.1
+          },
+          "stallMs": 15000
+        },
+        "workers": {
+          "live": 5,
+          "created": 5,
+          "terminated": 0,
+          "errors": 0,
+          "byScript": {
+            "blob:": 4,
+            "workers/adaptive-runtime-worker.js": 1
+          }
+        }
+      },
+      "persistence": {
+        "state": "saved",
+        "revision": 210,
+        "lastAck": {
+          "seq": 19,
+          "revision": 210,
+          "at": 1792649166748,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 4,
+          "coalesced": 2,
+          "posted": 4,
+          "acked": 3,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 4,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:05:50.501Z",
+          "player": {
+            "xp": 1547,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1547
+      }
+    }
+  },
+  "initial": {
+    "settle": {
+      "ok": true,
+      "durationMs": 1003,
+      "states": [
+        {
+          "elapsedMs": 1,
+          "state": "saved",
+          "revision": 203,
+          "lastAck": {
+            "seq": 3,
+            "revision": 203,
+            "at": 1792649085623,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:59:27.791Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        },
+        {
+          "elapsedMs": 1003,
+          "state": "saved",
+          "revision": 204,
+          "lastAck": {
+            "seq": 4,
+            "revision": 204,
+            "at": 1792649087957,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 1,
+            "posted": 3,
+            "acked": 3,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:59:27.791Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1511
+        }
+      ]
+    },
+    "server": {
+      "status": 200,
+      "save": {
+        "version": 4,
+        "user": {
+          "id": "demo-ae303c2e220023fe",
+          "displayName": "BENCH01 timed natural",
+          "email": "timed-bench01@example.invalid",
+          "teamName": "BENCH01 timed 1792647337721",
+          "teamCode": "BENC-9672",
+          "officerClass": "ensign",
+          "biome": "highlands",
+          "rankXp": 0
+        },
+        "biomeSeed": 995912551,
+        "player": {
+          "x": 7.13864757583868,
+          "y": 2.8232990790908365,
+          "z": 10.060403280509709,
+          "health": 1,
+          "stamina": 100
+        },
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 38.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 19,
+          "trust": 0
+        },
+        "indicators": {
+          "habitability": 0,
+          "ecology": 8.000000000000039,
+          "morale": 24,
+          "governance": 5,
+          "economy": 12,
+          "defense": 5,
+          "resilience": 4.50000000000001
+        },
+        "buildings": [],
+        "phase": 1,
+        "civilizationScore": 4.432500000000006,
+        "worldProgress": {
+          "harvestedTreeIds": [
+            "tree-43",
+            "tree-128",
+            "tree-287",
+            "tree-5",
+            "tree-259",
+            "tree-193",
+            "tree-266",
+            "tree-87",
+            "tree-65",
+            "tree-242",
+            "tree-326",
+            "tree-103",
+            "tree-265",
+            "tree-229",
+            "tree-264"
+          ],
+          "treeHarvestedAt": {
+            "tree-43": 1792647380113,
+            "tree-128": 1792647382043,
+            "tree-287": 1792647383959,
+            "tree-5": 1792647395480,
+            "tree-259": 1792647425887,
+            "tree-193": 1792647428512,
+            "tree-266": 1792647429812,
+            "tree-87": 1792647432444,
+            "tree-65": 1792647467827,
+            "tree-242": 1792647470428,
+            "tree-326": 1792647794066,
+            "tree-103": 1792647795382,
+            "tree-265": 1792647904358,
+            "tree-229": 1792647906358,
+            "tree-264": 1792648470549
+          },
+          "collectedPowerUpIds": [],
+          "minedRockIds": [
+            "stone-10",
+            "supplemental-ore-7",
+            "orebelt-9",
+            "orebelt-11",
+            "orebelt-23"
+          ]
+        },
+        "missionStats": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 52,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 39,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 5,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792649070372
+          }
+        },
+        "combat": {
+          "specialGauge": 100
+        },
+        "diplomacy": {
+          "outcome": "negotiate",
+          "tension": 100,
+          "safeZoneCenter": {
+            "x": -9.273969737712168,
+            "z": 3.958927613148545
+          }
+        },
+        "updatedAt": "2026-10-22T06:04:47+00:00",
+        "zge": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:04:47.953Z",
+          "player": {
+            "xp": 1511,
+            "officerClass": "ensign",
+            "rankXp": 0
+          }
+        },
+        "persistence": {
+          "revision": 204,
+          "baseRevision": 204,
+          "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-4-mvj4zcuq",
+          "sharedRevision": 204
+        }
+      }
+    },
+    "world": {
+      "position": [
+        7.13864757583868,
+        2.8232990790908365,
+        10.060403280509709
+      ],
+      "health": 1,
+      "xp": 1511,
+      "rank": "ensign",
+      "mode": "explore",
+      "paused": false,
+      "records": [],
+      "resources": {
+        "energy": 0,
+        "water": 0,
+        "minerals": 224.25,
+        "iron": 29,
+        "biomass": 38.49462664000622,
+        "timber": 266.25,
+        "data": 18,
+        "credits": 19,
+        "trust": 0
+      },
+      "mission": {
+        "resourcesCollected": 1,
+        "enemiesDefeated": 52,
+        "treesChopped": 15,
+        "rockMinedAt": {
+          "stone-10": 1792647384925,
+          "supplemental-ore-7": 1792647404315,
+          "orebelt-9": 1792647790133,
+          "orebelt-11": 1792647800182,
+          "orebelt-23": 1792647908887
+        },
+        "biomeStats": {
+          "highlands": {
+            "enemiesDefeated": 39,
+            "treesChopped": 11,
+            "rocksMined": 5
+          },
+          "desert": {
+            "treesChopped": 4,
+            "enemiesDefeated": 8
+          },
+          "arctic": {
+            "enemiesDefeated": 5,
+            "rocksMined": 1
+          }
+        },
+        "commissioningEncounters": [],
+        "personalObjectiveIds": [
+          "defeat-enemy",
+          "chop-tree",
+          "mine-rock",
+          "resource-minerals"
+        ],
+        "biomeVisited": [
+          "highlands",
+          "desert"
+        ],
+        "bossDefeats": [],
+        "claimedBossRewards": [],
+        "worldJuggernauts": {
+          "world-juggernaut-forest-1": {
+            "id": "world-juggernaut-forest-1",
+            "biome": "forest",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-forest-2": {
+            "id": "world-juggernaut-forest-2",
+            "biome": "forest",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-1": {
+            "id": "world-juggernaut-desert-1",
+            "biome": "desert",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-2": {
+            "id": "world-juggernaut-desert-2",
+            "biome": "desert",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-1": {
+            "id": "world-juggernaut-highlands-1",
+            "biome": "highlands",
+            "index": 0,
+            "defeatedAt": 1792647946344,
+            "respawnAt": 1792658746344
+          },
+          "world-juggernaut-highlands-2": {
+            "id": "world-juggernaut-highlands-2",
+            "biome": "highlands",
+            "index": 1,
+            "defeatedAt": 1792647644924,
+            "respawnAt": 1792658444924
+          },
+          "world-juggernaut-arctic-1": {
+            "id": "world-juggernaut-arctic-1",
+            "biome": "arctic",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-2": {
+            "id": "world-juggernaut-arctic-2",
+            "biome": "arctic",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-1": {
+            "id": "world-juggernaut-wetlands-1",
+            "biome": "wetlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-2": {
+            "id": "world-juggernaut-wetlands-2",
+            "biome": "wetlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          }
+        },
+        "bossEncounterFlow": {
+          "state": "WAITING_FOR_PREREQUISITES",
+          "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+          "missionId": "grid",
+          "updatedAt": 1792649070372
+        }
+      },
+      "backend": "WebGPU",
+      "assets": {
+        "cache": {
+          "requests": 83,
+          "matched": 21,
+          "hits": 0,
+          "joined": 0,
+          "misses": 21,
+          "bytesDownloaded": 12328189,
+          "bytesServedFromCache": 0,
+          "evictions": 0,
+          "bypassed": 62,
+          "errors": 0,
+          "entries": 21,
+          "bytes": 12328189,
+          "budgetBytes": 67108864,
+          "inFlight": 0,
+          "top": [
+            {
+              "url": "models/zeknovan-spitter-walk.medium.glb",
+              "hits": 0,
+              "kb": 485
+            },
+            {
+              "url": "basis/basis_transcoder.wasm",
+              "hits": 0,
+              "kb": 515
+            },
+            {
+              "url": "models/zeknovan-juggernaut-walk.medium.glb",
+              "hits": 0,
+              "kb": 472
+            },
+            {
+              "url": "models/zeknovan-stalker-walk.medium.glb",
+              "hits": 0,
+              "kb": 459
+            },
+            {
+              "url": "models/zeknovan-spitter-run.glb",
+              "hits": 0,
+              "kb": 455
+            }
+          ]
+        },
+        "parsed": {
+          "loads": 20,
+          "hits": 14,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 3,
+          "cancelled": 0,
+          "entries": 17,
+          "pending": 0,
+          "bytes": 66459264,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "loader": {
+          "patched": true,
+          "pending": [],
+          "completed": 20,
+          "failures": 0,
+          "stalls": 0,
+          "loadMs": {
+            "p50": 26.7,
+            "p95": 218,
+            "max": 297
+          },
+          "stallMs": 15000
+        },
+        "workers": {
+          "live": 5,
+          "created": 5,
+          "terminated": 0,
+          "errors": 0,
+          "byScript": {
+            "blob:": 4,
+            "workers/adaptive-runtime-worker.js": 1
+          }
+        }
+      },
+      "persistence": {
+        "state": "saved",
+        "revision": 204,
+        "lastAck": {
+          "seq": 4,
+          "revision": 204,
+          "at": 1792649087957,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 4,
+          "coalesced": 1,
+          "posted": 3,
+          "acked": 3,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 4,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:59:27.791Z",
+          "player": {
+            "xp": 1511,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1511
+      }
+    }
+  }
+}

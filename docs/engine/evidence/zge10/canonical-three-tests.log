@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: canonical parsed cache coalesces, leases pin resources, clones isolate and budget evicts
+ok 1 - canonical parsed cache coalesces, leases pin resources, clones isolate and budget evicts
+  ---
+  duration_ms: 6.387375
+  type: 'test'
+  ...
+# Subtest: failed loads invalidate and retry; cancellation is per consumer; late success is disposed
+ok 2 - failed loads invalidate and retry; cancellation is per consumer; late success is disposed
+  ---
+  duration_ms: 43.33375
+  type: 'test'
+  ...
+# Subtest: dependencies pin parsed resources until dependents are invalidated
+ok 3 - dependencies pin parsed resources until dependents are invalidated
+  ---
+  duration_ms: 0.751125
+  type: 'test'
+  ...
+# Subtest: real Three skinned clones have independent bones, materials, geometry, clips and transforms
+ok 4 - real Three skinned clones have independent bones, materials, geometry, clips and transforms
+  ---
+  duration_ms: 2.236583
+  type: 'test'
+  ...
+# Subtest: worker limits 1/2/4/8 settle concurrent work, reset on death, restart and release timers
+ok 5 - worker limits 1/2/4/8 settle concurrent work, reset on death, restart and release timers
+  ---
+  duration_ms: 53.601083
+  type: 'test'
+  ...
+# Subtest: timeouts, worker errors, unsupported payload and initialization exceptions are bounded
+ok 6 - timeouts, worker errors, unsupported payload and initialization exceptions are bounded
+  ---
+  duration_ms: 6.534875
+  type: 'test'
+  ...
+# Subtest: loader types cannot collide; aborting a joined consumer preserves other leases
+ok 7 - loader types cannot collide; aborting a joined consumer preserves other leases
+  ---
+  duration_ms: 6.605125
+  type: 'test'
+  ...
+# Subtest: disposing pending assets promptly rejects even when the loader ignores cancellation
+ok 8 - disposing pending assets promptly rejects even when the loader ignores cancellation
+  ---
+  duration_ms: 0.247416
+  type: 'test'
+  ...
+# Subtest: new engine rendering dependencies use only the canonical vendored Three instance
+ok 9 - new engine rendering dependencies use only the canonical vendored Three instance
+  ---
+  duration_ms: 34.320042
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 229.689375

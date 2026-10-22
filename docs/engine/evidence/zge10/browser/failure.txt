@@ -1,0 +1,5 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok((await page.locator('#events').innerText()).includes('selection'))
+
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge10-browser.mjs:20:130

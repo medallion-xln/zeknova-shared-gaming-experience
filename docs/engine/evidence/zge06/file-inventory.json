@@ -1,0 +1,980 @@
+{
+  "head": "138220f4909b3fd6a3e0dd2e62ebab63785336d7",
+  "created": [
+    "docs/engine/AID_CALLBACK_CERTIFICATION.md",
+    "docs/engine/DURABLE_SERVER_AUTHORITY.md",
+    "docs/engine/LIVE_CONSTRUCTION_MIGRATION.md",
+    "docs/engine/PHP_MULTIPLAYER_CERTIFICATION.md",
+    "docs/engine/SECURITY_OWNER_GATES_ZGE_06.md",
+    "docs/engine/SOURCE_WRITER_COVERAGE.md",
+    "docs/engine/V4_SAVE_MIGRATION.md",
+    "docs/engine/WORLD_HISTORY_SCALING.md",
+    "docs/engine/ZGE_06_IMPLEMENTATION_REPORT.md",
+    "docs/engine/ZGE_06_VERIFICATION_MANIFEST.json",
+    "docs/engine/ZGE_07_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/evidence/zge06/aid-contract.log",
+    "docs/engine/evidence/zge06/animations.log",
+    "docs/engine/evidence/zge06/before-hashes.json",
+    "docs/engine/evidence/zge06/browser-certification-recheck.log",
+    "docs/engine/evidence/zge06/browser-demo.json",
+    "docs/engine/evidence/zge06/browser-durable-certified.log",
+    "docs/engine/evidence/zge06/browser-durable-final.log",
+    "docs/engine/evidence/zge06/browser-durable-initial.json",
+    "docs/engine/evidence/zge06/browser-durable-world.json",
+    "docs/engine/evidence/zge06/browser-durable.log",
+    "docs/engine/evidence/zge06/browser-failure.txt",
+    "docs/engine/evidence/zge06/browser-final-assessment.json",
+    "docs/engine/evidence/zge06/browser-followup.json",
+    "docs/engine/evidence/zge06/browser-gameplay.json",
+    "docs/engine/evidence/zge06/browser-live-flow.json",
+    "docs/engine/evidence/zge06/browser-local-certified.log",
+    "docs/engine/evidence/zge06/browser-parity.json",
+    "docs/engine/evidence/zge06/browser-runs.json",
+    "docs/engine/evidence/zge06/browser-source-world.json",
+    "docs/engine/evidence/zge06/check.log",
+    "docs/engine/evidence/zge06/construction-performance-contended.json",
+    "docs/engine/evidence/zge06/construction-performance.json",
+    "docs/engine/evidence/zge06/durable-world.png",
+    "docs/engine/evidence/zge06/engine-after.log",
+    "docs/engine/evidence/zge06/engine-before.log",
+    "docs/engine/evidence/zge06/engine-mid.log",
+    "docs/engine/evidence/zge06/file-inventory.json",
+    "docs/engine/evidence/zge06/history-scaling-final.log",
+    "docs/engine/evidence/zge06/history-scaling.json",
+    "docs/engine/evidence/zge06/history-scaling.log",
+    "docs/engine/evidence/zge06/legacy-after.json",
+    "docs/engine/evidence/zge06/legacy-after.log",
+    "docs/engine/evidence/zge06/legacy-before.json",
+    "docs/engine/evidence/zge06/legacy-before.log",
+    "docs/engine/evidence/zge06/live-performance-final.json",
+    "docs/engine/evidence/zge06/movement-last.json",
+    "docs/engine/evidence/zge06/new-unit-initial.log",
+    "docs/engine/evidence/zge06/node-demo.log",
+    "docs/engine/evidence/zge06/node-parity.json",
+    "docs/engine/evidence/zge06/php-certification.json",
+    "docs/engine/evidence/zge06/php-tests-certified.log",
+    "docs/engine/evidence/zge06/php-tests-final.log",
+    "docs/engine/evidence/zge06/php-tests-initial.log",
+    "docs/engine/evidence/zge06/runtime-performance-contended.json",
+    "docs/engine/evidence/zge06/runtime-performance.json",
+    "docs/engine/evidence/zge06/server.log",
+    "docs/engine/evidence/zge06/standalone-3d.png",
+    "docs/engine/evidence/zge06/standalone-v2.png",
+    "docs/engine/evidence/zge06/status-before.txt",
+    "docs/engine/evidence/zge06/stress-browser-restart.json",
+    "docs/engine/evidence/zge06/stress-webgl.json",
+    "docs/engine/evidence/zge06/stress-webgpu.json",
+    "docs/engine/evidence/zge06/writers.json",
+    "docs/engine/evidence/zge06/zge03-browser-followup.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-demo.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-live-flow.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-parity.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-performance.mjs.log",
+    "docs/engine/evidence/zge06/zge05-browser-certification.mjs.log",
+    "docs/engine/evidence/zge06/zge05-browser-demo.mjs.log",
+    "docs/engine/evidence/zge06/zge06-browser-server.mjs.log",
+    "examples/construction-world/server-session.js",
+    "packages/gameplay-construction/test/aid-contract.test.mjs",
+    "packages/persistence/src/StagingWorldClient.d.ts",
+    "packages/persistence/src/StagingWorldClient.js",
+    "packages/persistence/src/V4Migration.d.ts",
+    "packages/persistence/src/V4Migration.js",
+    "packages/persistence/src/WorldHistory.js",
+    "packages/persistence/test/staging-client.test.mjs",
+    "packages/persistence/test/zge06.test.mjs",
+    "packages/server-php/package.json",
+    "packages/server-php/src/bootstrap.php",
+    "packages/server-php/src/history-benchmark.php",
+    "packages/server-php/src/inspect.php",
+    "packages/server-php/src/router.php",
+    "packages/server-php/src/schema.sql",
+    "packages/server-php/src/setup.php",
+    "packages/server-php/src/worker.mjs",
+    "packages/server-php/src/world.php",
+    "packages/server-php/test/durable.test.mjs",
+    "scripts/zge06-browser-certification.mjs",
+    "scripts/zge06-browser-server.mjs",
+    "scripts/zge06-history.mjs",
+    "scripts/zge06-server.mjs",
+    "scripts/zge06-verify.mjs"
+  ],
+  "modified": [
+    "docs/engine/ENGINE_MIGRATION_ROADMAP.md",
+    "examples/construction-world/gameplay-ui.js",
+    "examples/construction-world/index.html",
+    "examples/construction-world/scene.js",
+    "package.json",
+    "packages/core/src/GameplayEventJournal.js",
+    "packages/core/src/index.d.ts",
+    "packages/gameplay-construction/src/ConstructionRuntime.js",
+    "packages/gameplay-construction/src/index.d.ts",
+    "packages/persistence/src/index.js"
+  ],
+  "deleted": [],
+  "counts": {
+    "created": 96,
+    "modified": 10,
+    "deleted": 0
+  },
+  "changedFileHashes": {
+    "docs/engine/AID_CALLBACK_CERTIFICATION.md": {
+      "before": null,
+      "after": "e034a38ff6b6ede881d6d4412491614af543e9955ecf0b363b1a3439d896b30a"
+    },
+    "docs/engine/DURABLE_SERVER_AUTHORITY.md": {
+      "before": null,
+      "after": "838cf3a34e0348fa225100d672bc2fb37eb38964e0e54ef4be62b1d2916a18f6"
+    },
+    "docs/engine/ENGINE_MIGRATION_ROADMAP.md": {
+      "before": "aa0a51e993918a790a3668f33ffa8cc0206a2b9e93b3c9ff2adcd2bbc264f0ab",
+      "after": "5bfcdb1e7a965ac3c17da1c150344bf7881bed6ede06dde4af39e072e488ca85"
+    },
+    "docs/engine/LIVE_CONSTRUCTION_MIGRATION.md": {
+      "before": null,
+      "after": "0a832ed31298fa4afcc779e90e62e3afce6a3dc0aaca1536a769dba7aea300ad"
+    },
+    "docs/engine/PHP_MULTIPLAYER_CERTIFICATION.md": {
+      "before": null,
+      "after": "bad73982b1816735f38c4aeba14b9ec83133cd02c81b59068441f7f8a8b8303b"
+    },
+    "docs/engine/SECURITY_OWNER_GATES_ZGE_06.md": {
+      "before": null,
+      "after": "aff1285fc3a05816889cff08dd6505c891b6a7f3bdbed991da06a8335accdc12"
+    },
+    "docs/engine/SOURCE_WRITER_COVERAGE.md": {
+      "before": null,
+      "after": "c63050f03d4db65e03bd3be37064de83f967aeb9a69e331890f53c0b158f5e1b"
+    },
+    "docs/engine/V4_SAVE_MIGRATION.md": {
+      "before": null,
+      "after": "040f48d03c0e3d95313997ed5942a57de9c6e9b3efbeed9cf760eb2068dd4e74"
+    },
+    "docs/engine/WORLD_HISTORY_SCALING.md": {
+      "before": null,
+      "after": "80876371fc086a3f0e68a20310e7461e2177e575d6604f6112090bb1342ec63d"
+    },
+    "docs/engine/ZGE_06_IMPLEMENTATION_REPORT.md": {
+      "before": null,
+      "after": "fe8406db42a6cc3078654d8fe9f1c4dfe89cb2cf6125bbba96a577ed3cc85799"
+    },
+    "docs/engine/ZGE_07_IMPLEMENTATION_PROMPT.md": {
+      "before": null,
+      "after": "4b0913dde9253fffbc807f3e35a8fe2ce96b0a319bcbb751d5e239bca3a44ada"
+    },
+    "docs/engine/evidence/zge06/aid-contract.log": {
+      "before": null,
+      "after": "641ca424bde85a092b6e5f8e5befbfdb15d235b20f7c0729a5de420acdf04d78"
+    },
+    "docs/engine/evidence/zge06/animations.log": {
+      "before": null,
+      "after": "ef2a7be42f5d722ae563c532870336b869ec76795df35b9ac4ef8aa7090c31d3"
+    },
+    "docs/engine/evidence/zge06/before-hashes.json": {
+      "before": null,
+      "after": "59268fe62ef2b2a9e0d51c3d22482cba8faa75f0ef13a351875b92bb385aa762"
+    },
+    "docs/engine/evidence/zge06/browser-certification-recheck.log": {
+      "before": null,
+      "after": "5ad90cc5fce6da8c1520b8a5b6f508e145d89f2f1653cbc9671dfa58d3a32639"
+    },
+    "docs/engine/evidence/zge06/browser-demo.json": {
+      "before": null,
+      "after": "1415754990cc9b8249c9ddba94c6f66a3e28b6425499a68ce9db9a4addaa9def"
+    },
+    "docs/engine/evidence/zge06/browser-durable-certified.log": {
+      "before": null,
+      "after": "68391bdb32eb85078f7eee22efddfbb026e39b1c9f56e5adf4c00339dea8a2ee"
+    },
+    "docs/engine/evidence/zge06/browser-durable-final.log": {
+      "before": null,
+      "after": "68391bdb32eb85078f7eee22efddfbb026e39b1c9f56e5adf4c00339dea8a2ee"
+    },
+    "docs/engine/evidence/zge06/browser-durable-initial.json": {
+      "before": null,
+      "after": "db92b6715e3c139883dede9fa18ce3860576e24d3277eb6ba938d24e1be72920"
+    },
+    "docs/engine/evidence/zge06/browser-durable-world.json": {
+      "before": null,
+      "after": "ed1bf9590e7eacd13dc31ae9a8805f4cbe21b41c449c887c6f680de00ac5d6dc"
+    },
+    "docs/engine/evidence/zge06/browser-durable.log": {
+      "before": null,
+      "after": "e7c5390672a3ec8d432d40d0dcaf8bb6ca5cab41d2e73ea2e27890d57bf19e4d"
+    },
+    "docs/engine/evidence/zge06/browser-failure.txt": {
+      "before": null,
+      "after": "f26c472f778db39374ced88b42ece402b94d6537adfcd77b24c03402333601c8"
+    },
+    "docs/engine/evidence/zge06/browser-final-assessment.json": {
+      "before": null,
+      "after": "5ae49787b60386bcd0e614b2baf78b098e9f8723c65fa242109f256142a2ddb9"
+    },
+    "docs/engine/evidence/zge06/browser-followup.json": {
+      "before": null,
+      "after": "2fabf799cf9ffd064eac6d91052970320ae373b4d707d350fe640ec0be299d59"
+    },
+    "docs/engine/evidence/zge06/browser-gameplay.json": {
+      "before": null,
+      "after": "8a817ce2a0b0d470b6ec721e46d439226916ef323488ef3d924f58ba871d7d84"
+    },
+    "docs/engine/evidence/zge06/browser-live-flow.json": {
+      "before": null,
+      "after": "a9076c373e417834673895c3b3e5c23b925df65d601e038b1cc2d940a462fddc"
+    },
+    "docs/engine/evidence/zge06/browser-local-certified.log": {
+      "before": null,
+      "after": "367d94f25a60a836f35b4411c99d0bbb39e08ea2c7d3b879382c8fb5b4bc6190"
+    },
+    "docs/engine/evidence/zge06/browser-parity.json": {
+      "before": null,
+      "after": "0a1019510c8640fd4f01a07fff8fbce324c68d7cb0bccecb08748e200bcb39f8"
+    },
+    "docs/engine/evidence/zge06/browser-runs.json": {
+      "before": null,
+      "after": "42ee03a7b5c697440f8a22a1ca4e6897ef34eb462de4c22856e39f2f59e87577"
+    },
+    "docs/engine/evidence/zge06/browser-source-world.json": {
+      "before": null,
+      "after": "630f6f17bd636123dc0ecf3614358f79cf7b9f8552b065df6478f2ddbea576c6"
+    },
+    "docs/engine/evidence/zge06/check.log": {
+      "before": null,
+      "after": "aa135f1713ff9d22685f23993452d889a2bc1717b1da1022ba643ab73cf90bd5"
+    },
+    "docs/engine/evidence/zge06/construction-performance-contended.json": {
+      "before": null,
+      "after": "6d5b9e81329df2e557169fd966351fb57df4a27a4475c4d5fc12d55a4e35e197"
+    },
+    "docs/engine/evidence/zge06/construction-performance.json": {
+      "before": null,
+      "after": "e74300d1eab13ada2b9932155446bdc4c4318e187efabd58f0ecded6a15b2051"
+    },
+    "docs/engine/evidence/zge06/durable-world.png": {
+      "before": null,
+      "after": "a7b02dd1af7e89794067c5eeaf06216dbcee53a78354ac2aab6a943da58d2a3d"
+    },
+    "docs/engine/evidence/zge06/engine-after.log": {
+      "before": null,
+      "after": "03c097ccb37dc239e46d04ded372ae3d105a6485d17b900a6000f0ccaf7e0d70"
+    },
+    "docs/engine/evidence/zge06/engine-before.log": {
+      "before": null,
+      "after": "9dc12fc9e40fae53cd9d519247c40b8acc57898e08d7661fae43174c2312ea47"
+    },
+    "docs/engine/evidence/zge06/engine-mid.log": {
+      "before": null,
+      "after": "545afdd772c636c4e0e349e289673b01eaf6fb13eb61e26e89e1cd3c31a8ee92"
+    },
+    "docs/engine/evidence/zge06/history-scaling-final.log": {
+      "before": null,
+      "after": "0239a6f094025c1c76a1b5a336ac91122989b57af3e8595af80121e59985e6d9"
+    },
+    "docs/engine/evidence/zge06/history-scaling.json": {
+      "before": null,
+      "after": "0e451e06b3c93c0f04f749c1cd6695d853fa742f561e9a8fe7ac1a875aa5d85c"
+    },
+    "docs/engine/evidence/zge06/history-scaling.log": {
+      "before": null,
+      "after": "442c847b055bd0bd8068496828459cfe7fe9a7d834b216fa50857bcbc18569fd"
+    },
+    "docs/engine/evidence/zge06/legacy-after.json": {
+      "before": null,
+      "after": "ccfa12ffa31598c0f2151379a77262368f0f2bfb7503d98373c1721fdd6f472d"
+    },
+    "docs/engine/evidence/zge06/legacy-after.log": {
+      "before": null,
+      "after": "7d889a7e4840966b8ebf76f4a0a24607deb77b44bfe903b5939b5d0e1d49e9f4"
+    },
+    "docs/engine/evidence/zge06/legacy-before.json": {
+      "before": null,
+      "after": "ba884b5e2cc9be9daee5c0efc43bb39695822364850b22def218e554fa188784"
+    },
+    "docs/engine/evidence/zge06/legacy-before.log": {
+      "before": null,
+      "after": "12c7d4959e9fce9601f85766dd247bfb2b2c670e15e57ca2882394ab398326d8"
+    },
+    "docs/engine/evidence/zge06/live-performance-final.json": {
+      "before": null,
+      "after": "359f8e3c57d04079e7010711960f499f496bb7689dc82c1a996df52072de9afd"
+    },
+    "docs/engine/evidence/zge06/movement-last.json": {
+      "before": null,
+      "after": "82b4a68fb4f652b7a28098003b3eca20cfa7c66b62d4f346f1a83b814b92affa"
+    },
+    "docs/engine/evidence/zge06/new-unit-initial.log": {
+      "before": null,
+      "after": "6069eed8cdae47d84e4230e16a5cfb64c656ada51dbf61e44d40faa9b866114e"
+    },
+    "docs/engine/evidence/zge06/node-demo.log": {
+      "before": null,
+      "after": "c4a6ee64f91e1189ea4c87f03d8117e21e5bf20346e4d2020583e52e0488722f"
+    },
+    "docs/engine/evidence/zge06/node-parity.json": {
+      "before": null,
+      "after": "105c0f3aa75ca1d23e0395d695c1387497c8570f4c9ee46f74abafd8d2e3a3dd"
+    },
+    "docs/engine/evidence/zge06/php-certification.json": {
+      "before": null,
+      "after": "82e5aa28a5dbb0fb0d0ba0ffdc250fa7e72ba17490ec4d1bed1cc17a8886b383"
+    },
+    "docs/engine/evidence/zge06/php-tests-certified.log": {
+      "before": null,
+      "after": "5b171fa413b38102d3303fe45d0b431adfb718596e987a4e955465c26a9d16aa"
+    },
+    "docs/engine/evidence/zge06/php-tests-final.log": {
+      "before": null,
+      "after": "b254d53ba1ad3ab314923886bc19ea57c7e1acb14bbfeddf7c7b0bcc809cd456"
+    },
+    "docs/engine/evidence/zge06/php-tests-initial.log": {
+      "before": null,
+      "after": "04d7e6b228007bb16dbe5afbbc5bba406ecfa89a278956883799a5670f772b97"
+    },
+    "docs/engine/evidence/zge06/runtime-performance-contended.json": {
+      "before": null,
+      "after": "66e97f5abc799cc59d11f92d6c8b99e320caf7478116849de0c15aa10793f329"
+    },
+    "docs/engine/evidence/zge06/runtime-performance.json": {
+      "before": null,
+      "after": "5e5b3fd9339f44b8bacbe5655c37057ae8e4bb7aa91da37ccdf2e3720cc50af7"
+    },
+    "docs/engine/evidence/zge06/server.log": {
+      "before": null,
+      "after": "11d936257f749ffea7e7f179edb916bc233857fe6b35af468e7b4cb36d4935bd"
+    },
+    "docs/engine/evidence/zge06/standalone-3d.png": {
+      "before": null,
+      "after": "83a62740b7587907d088026ef9430aa3256e4572d231cd4efec4eadc972465d3"
+    },
+    "docs/engine/evidence/zge06/standalone-v2.png": {
+      "before": null,
+      "after": "cc4b70d738dd60916155cf8fedc2845d3135781f4d308a9c1d3f76ebfa2057b2"
+    },
+    "docs/engine/evidence/zge06/status-before.txt": {
+      "before": null,
+      "after": "8d9b3b7735fb01870067d89f3f9ec663096771c44c7173c6fe2e62abd288516d"
+    },
+    "docs/engine/evidence/zge06/stress-browser-restart.json": {
+      "before": null,
+      "after": "ec14f31f90ce492b4d1cb82de21e82757df030f5b16a9850c3dcc87e2c7d8c22"
+    },
+    "docs/engine/evidence/zge06/stress-webgl.json": {
+      "before": null,
+      "after": "c9f9acb93a399129b5db16bae16875d40d5a180e1bc6c70e72ebc6bad8448f3e"
+    },
+    "docs/engine/evidence/zge06/stress-webgpu.json": {
+      "before": null,
+      "after": "633492a985bb2619531250fd55fd18221261c0a8d17b71cee3a92fc0342c35b6"
+    },
+    "docs/engine/evidence/zge06/writers.json": {
+      "before": null,
+      "after": "9575fc5711b1d2e16dc9d78c39e37c1067091f778934c505aad8edeef1cb8044"
+    },
+    "docs/engine/evidence/zge06/zge03-browser-followup.mjs.log": {
+      "before": null,
+      "after": "2920752ed4670111526af6f448d57a8f58c15fc9dfee19d31322a95d3bc9b120"
+    },
+    "docs/engine/evidence/zge06/zge04-browser-demo.mjs.log": {
+      "before": null,
+      "after": "538d1c0214bbf76d80e4becdbb425d9a9d4e843333dc55eadbca16d8d110a104"
+    },
+    "docs/engine/evidence/zge06/zge04-browser-live-flow.mjs.log": {
+      "before": null,
+      "after": "8171e4ca3727aae958b3fe01f1ded998febfced71e525daa6de7d60498044d83"
+    },
+    "docs/engine/evidence/zge06/zge04-browser-parity.mjs.log": {
+      "before": null,
+      "after": "f8bd433a0c7d8ac154de74ccd492cf7677a03bcd9cff1ef18d641abf1171d2bb"
+    },
+    "docs/engine/evidence/zge06/zge04-browser-performance.mjs.log": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/engine/evidence/zge06/zge05-browser-certification.mjs.log": {
+      "before": null,
+      "after": "7625d09e3a31384fc7e1ff755cfb7c4a5685d38dedec6ba79a26c0a4f6454b5e"
+    },
+    "docs/engine/evidence/zge06/zge05-browser-demo.mjs.log": {
+      "before": null,
+      "after": "367d94f25a60a836f35b4411c99d0bbb39e08ea2c7d3b879382c8fb5b4bc6190"
+    },
+    "docs/engine/evidence/zge06/zge06-browser-server.mjs.log": {
+      "before": null,
+      "after": "68391bdb32eb85078f7eee22efddfbb026e39b1c9f56e5adf4c00339dea8a2ee"
+    },
+    "examples/construction-world/gameplay-ui.js": {
+      "before": "2d7e00d47b77c3a1c9a62587a6e793a9e8523f4dcf99cf5cf19aaf382d5ba5a4",
+      "after": "29334bb3e03473b8771e7cb7100e22c586c32900d0cd617e38d0d3ae799cd9d8"
+    },
+    "examples/construction-world/index.html": {
+      "before": "a48a8cc9c9f46c657d6e3df019a309711af27c4bf21ab4780eb775c29db9e721",
+      "after": "13d3194d74b650ffd52dbffc14fd8c8d6f77014202b8d9be63217574004ef57d"
+    },
+    "examples/construction-world/scene.js": {
+      "before": "2647e4d8e847006e2ec643996aa76f1fb6df5dc54416d3aacfea261d1a5fd609",
+      "after": "a9732f945d66b821d4459b9372590cd5b9010760bb11ebae88fab2015980b3bb"
+    },
+    "examples/construction-world/server-session.js": {
+      "before": null,
+      "after": "d44c8c1d97f94b872efcbfa2dc35f19594ae5e65ff9026ab0bf4db9ff6ce9a2d"
+    },
+    "package.json": {
+      "before": "25f2b448ec2d0d36a36ca26e028dc3412c69154baeabd99e33a86e2d62389918",
+      "after": "19472a8d73aaea687dfa6d5508c328231632774c5a0f663f40ece9832e8a9439"
+    },
+    "packages/core/src/GameplayEventJournal.js": {
+      "before": "4411d4b525558dc1556ece9a590ad99e94c84d8a65d45472d137f96e1a505153",
+      "after": "ba4e0fc3bf355a394220cd8841eaded0421db13ef166592628087aa6599a74c0"
+    },
+    "packages/core/src/index.d.ts": {
+      "before": "e7d97afe056b8eb6a0ae1e472007bcacfb9b02b9d1a61617842a8c85c9ee0f9b",
+      "after": "89efe92ae29a17bd9f1ac5442d0725d4be3614a86f0dace7e747f3bc49976fcf"
+    },
+    "packages/gameplay-construction/src/ConstructionRuntime.js": {
+      "before": "b0c39401823a14d1f3b426d43b5a8e551f444a729351a93c4fc75d08eaad5dfa",
+      "after": "4403ece0535ead134c0cc2200a88efc5b1c5b4c2e8407fad77630971c791a9a4"
+    },
+    "packages/gameplay-construction/src/index.d.ts": {
+      "before": "8cdb0e74cf7ce73bc3a060c7dd5ae15a84d16c6f26fb03e3b9ce9b4da331e9b8",
+      "after": "c7c05b4d3bb8f7f2ba0d0b835edfefed6c695df6efcc412bdf70a5bd4c4eda12"
+    },
+    "packages/gameplay-construction/test/aid-contract.test.mjs": {
+      "before": null,
+      "after": "acf2124099ad9a7b5c73a01509df6c34891a5375b2852a6237cb069923a273ec"
+    },
+    "packages/persistence/src/StagingWorldClient.d.ts": {
+      "before": null,
+      "after": "7ba98a9a595c76542db0f34dfc6497d66c29d39331c99c2530582112ac13dfe5"
+    },
+    "packages/persistence/src/StagingWorldClient.js": {
+      "before": null,
+      "after": "5b07df30778ead48bafa3f743e5b667f9298054d91c665747531ddccc2dc0ca4"
+    },
+    "packages/persistence/src/V4Migration.d.ts": {
+      "before": null,
+      "after": "e0fdfd06a097bdb1af3b0de138517ff0c6eafb513e8ae8ee3429364fe42999c3"
+    },
+    "packages/persistence/src/V4Migration.js": {
+      "before": null,
+      "after": "8d7b6ea7aebfaf1e0bfd5a795da77049ddb71b6e659c192ab860ec8e732e8213"
+    },
+    "packages/persistence/src/WorldHistory.js": {
+      "before": null,
+      "after": "00402d8714fe8b2f7e0e70a3776577b49a3cb107482bc7aeb1528d3d0f7ce44d"
+    },
+    "packages/persistence/src/index.js": {
+      "before": "ae4e93f1c65d10622df8c174d120f50fe8787364d358b18d90f35133e3c4d5fe",
+      "after": "b231cd2b7d3e1f5581798b708bb66b71d4fbbe64a844a88ba85ee5aa3ab51898"
+    },
+    "packages/persistence/test/staging-client.test.mjs": {
+      "before": null,
+      "after": "9d147e0b4280240a4fe8904865c62ddaf839752111e38df65a6aeefc37b25f2e"
+    },
+    "packages/persistence/test/zge06.test.mjs": {
+      "before": null,
+      "after": "971c029e9dc0c3e5d47548ce72ba94a04caa52e3b6acaceb05f2e4be610b4b06"
+    },
+    "packages/server-php/package.json": {
+      "before": null,
+      "after": "ca54d2dd9c01e1ef47c8ccf1569676aa8039ef3dc3c950238f68dd0bc189adbe"
+    },
+    "packages/server-php/src/bootstrap.php": {
+      "before": null,
+      "after": "320a2e2d58d852678d13867e5c51e96440e6713b3d95a687de8f85a7334a5d11"
+    },
+    "packages/server-php/src/history-benchmark.php": {
+      "before": null,
+      "after": "02340bf2880574a30d3b03e276221d3bc48a538d90231396cf076c53d948fe5a"
+    },
+    "packages/server-php/src/inspect.php": {
+      "before": null,
+      "after": "58e03cc3cb4a94bbf534dcad43a59f83f45af944eed1dbdac54e3d9dfbf5011a"
+    },
+    "packages/server-php/src/router.php": {
+      "before": null,
+      "after": "e7e9a049e3bf7974c127022645a79d17be0705da080c62088f26ddda925a54a7"
+    },
+    "packages/server-php/src/schema.sql": {
+      "before": null,
+      "after": "97582a299cd684bb8284936a804c3f4d73f337158ec54b59bdfbe8bdffd5a7e3"
+    },
+    "packages/server-php/src/setup.php": {
+      "before": null,
+      "after": "8be9d81b354dc6d674647d835a8725c00ba64e360b28c9cccc4f50df44a6a361"
+    },
+    "packages/server-php/src/worker.mjs": {
+      "before": null,
+      "after": "aee44ba84ea4e26ed224e74136d7d54c3619bffa6d55c27037784974f8441656"
+    },
+    "packages/server-php/src/world.php": {
+      "before": null,
+      "after": "8ea38b8438b27d394c9981f76b1ad7de7ef12fe53b3f4396f0d4a9f66ceeb926"
+    },
+    "packages/server-php/test/durable.test.mjs": {
+      "before": null,
+      "after": "078fb1437058b4221b053af84e5deb9480a54dc3b7e13093fd7c00b183f8d18a"
+    },
+    "scripts/zge06-browser-certification.mjs": {
+      "before": null,
+      "after": "7f5f3f160a02b77e6da9bd89d4ca6d490cb95c19cff8caa1442b26c4852cb8cb"
+    },
+    "scripts/zge06-browser-server.mjs": {
+      "before": null,
+      "after": "7792bcd2895b5aa28fab53fd3501e32df805cb9b2f9f24c9bcea4f86af384132"
+    },
+    "scripts/zge06-history.mjs": {
+      "before": null,
+      "after": "3dac5793ae1ab4370508128d6a34b2dc3c1fff242f5fcc958229d562ab9f2e6a"
+    },
+    "scripts/zge06-server.mjs": {
+      "before": null,
+      "after": "b4195b521b94ed9e899ea8c2f93e0ac9c56ba900403ace3a0171a9d7dadbbb49"
+    },
+    "scripts/zge06-verify.mjs": {
+      "before": null,
+      "after": "89be08a164b9c490ab36e39112429e2ef276ed8d6895615588868f61eaef88ac"
+    }
+  },
+  "selfHashExclusions": [
+    "docs/engine/ZGE_06_VERIFICATION_MANIFEST.json",
+    "docs/engine/evidence/zge06/file-inventory.json"
+  ],
+  "preservedArtifacts": {
+    "assets/index-02987539.js": {
+      "before": "25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115",
+      "after": "25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115",
+      "unchanged": true
+    },
+    "assets/model-runtime-c96327ba.js": {
+      "before": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+      "after": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+      "unchanged": true
+    },
+    "assets/model-runtime.js": {
+      "before": "1d7d16eee0ed3d59ea0b7482f0df252d69324690823061f8dc22abb196fc551c",
+      "after": "1d7d16eee0ed3d59ea0b7482f0df252d69324690823061f8dc22abb196fc551c",
+      "unchanged": true
+    },
+    "assets/environment-runtime.js": {
+      "before": "44d1c34aca6f6940b463facee706e55d93e5b11f3785f5dfe636b5fa00d8bbc5",
+      "after": "44d1c34aca6f6940b463facee706e55d93e5b11f3785f5dfe636b5fa00d8bbc5",
+      "unchanged": true
+    },
+    "index.html": {
+      "before": "07642a88a625694cf3655cb6053b9427d6895c9db08524d26c5a533ebc5b8839",
+      "after": "07642a88a625694cf3655cb6053b9427d6895c9db08524d26c5a533ebc5b8839",
+      "unchanged": true
+    },
+    "src/main.js": {
+      "before": "0c021a5bae06d4e6bebcdbc1622a44e72ed33cf14e766b65ea1ba04764e10933",
+      "after": "0c021a5bae06d4e6bebcdbc1622a44e72ed33cf14e766b65ea1ba04764e10933",
+      "unchanged": true
+    },
+    "api/bootstrap.php": {
+      "before": "0bcdb33ec79a60adf4612c232e5c62f722a876fda5267020dadd8d8b0b4d6dbf",
+      "after": "0bcdb33ec79a60adf4612c232e5c62f722a876fda5267020dadd8d8b0b4d6dbf",
+      "unchanged": true
+    },
+    "api/save.php": {
+      "before": "4f5bab75980efcbd2fa01c9d3cf56b1a54dac33753c2334c7524ff4c352baa98",
+      "after": "4f5bab75980efcbd2fa01c9d3cf56b1a54dac33753c2334c7524ff4c352baa98",
+      "unchanged": true
+    },
+    "api/multiplayer.php": {
+      "before": "f2c923f9ff61e06ab821828e98fcf8ad74bc7a0f99ebd5b51ccde545197a4813",
+      "after": "f2c923f9ff61e06ab821828e98fcf8ad74bc7a0f99ebd5b51ccde545197a4813",
+      "unchanged": true
+    },
+    "tests/runtime-reconstruction.test.mjs": {
+      "before": "aa818570d8657d8156b7ca4240f7941bafa50bff8d420df2c2376d1f51a1f5d6",
+      "after": "aa818570d8657d8156b7ca4240f7941bafa50bff8d420df2c2376d1f51a1f5d6",
+      "unchanged": true
+    },
+    "tests/renderer-ownership-certification.test.mjs": {
+      "before": "0b4f28c0774dfa0b183db00995ff3ddc1ce7dec80a46fec7124cb98220cdc471",
+      "after": "0b4f28c0774dfa0b183db00995ff3ddc1ce7dec80a46fec7124cb98220cdc471",
+      "unchanged": true
+    },
+    "tests/runtime-graphics-context.test.mjs": {
+      "before": "e083dcc04e9ab583208b3fde4416587ff3d02de2702170e69b9eb03a0544dc9e",
+      "after": "e083dcc04e9ab583208b3fde4416587ff3d02de2702170e69b9eb03a0544dc9e",
+      "unchanged": true
+    }
+  },
+  "uncommittedPaths": [
+    ".DS_Store",
+    ".cursor/skills/brainstorm/SKILL.md",
+    ".lingcode/.gitignore",
+    ".lingcode/product-journey.json",
+    "PLAY_README.md",
+    "assets/environment-runtime.js",
+    "assets/index-02987539.js",
+    "assets/model-runtime-c96327ba.js",
+    "assets/model-runtime.js",
+    "docs/engine/AID_CALLBACK_CERTIFICATION.md",
+    "docs/engine/AI_NATIVE_ENGINE.md",
+    "docs/engine/ASSET_PIPELINE_CERTIFICATION.md",
+    "docs/engine/AUTHORITATIVE_EVENT_PIPELINE.md",
+    "docs/engine/AUTHORITY_TRANSFER_READINESS.md",
+    "docs/engine/CERTIFICATION_RESULTS.md",
+    "docs/engine/CONSTRUCTION_EXTRACTION.md",
+    "docs/engine/CONSTRUCTION_PARITY_CERTIFICATION.md",
+    "docs/engine/CONSTRUCTION_SIDE_EFFECTS.md",
+    "docs/engine/CONSTRUCTION_TRANSACTION_CONTRACT.md",
+    "docs/engine/CURRENT_STATE_AUDIT.md",
+    "docs/engine/DURABLE_SERVER_AUTHORITY.md",
+    "docs/engine/EDITOR_SPECIFICATION.md",
+    "docs/engine/ENGINE_1_ARCHITECTURE.md",
+    "docs/engine/ENGINE_AUTHORITY_MODEL.md",
+    "docs/engine/ENGINE_KERNEL_API.md",
+    "docs/engine/ENGINE_LIFECYCLE_CERTIFICATION.md",
+    "docs/engine/ENGINE_MIGRATION_ROADMAP.md",
+    "docs/engine/KTX2_STRESS_RESULTS.md",
+    "docs/engine/LIVE_AUTHORITY_MIGRATION_GATE.md",
+    "docs/engine/LIVE_CONSTRUCTION_MIGRATION.md",
+    "docs/engine/MATRIX_GAME_4_INTEGRATION.md",
+    "docs/engine/MISSION_COMBAT_PARITY.md",
+    "docs/engine/MULTIPLAYER_CONSTRUCTION_CERTIFICATION.md",
+    "docs/engine/NEURAL_MODEL_READINESS.md",
+    "docs/engine/NEURAL_RENDERING_PROTOCOL.md",
+    "docs/engine/PERSISTENCE_INTEGRITY.md",
+    "docs/engine/PHP_MULTIPLAYER_CERTIFICATION.md",
+    "docs/engine/RUNTIME_ARCHITECTURE.md",
+    "docs/engine/SECURITY_OWNER_GATES_ZGE_06.md",
+    "docs/engine/SECURITY_REMEDIATION_ZGE_04.md",
+    "docs/engine/SECURITY_REMEDIATION_ZGE_05.md",
+    "docs/engine/SOURCE_OWNED_GAMEPLAY_DEMO.md",
+    "docs/engine/SOURCE_RUNTIME_RECONSTRUCTION.md",
+    "docs/engine/SOURCE_WRITER_COVERAGE.md",
+    "docs/engine/STANDALONE_ENGINE_CERTIFICATION.md",
+    "docs/engine/STANDALONE_ENGINE_V2.md",
+    "docs/engine/SYSTEM_EXTRACTION_MATRIX.md",
+    "docs/engine/TECHNICAL_RISK_REGISTER.md",
+    "docs/engine/V4_SAVE_MIGRATION.md",
+    "docs/engine/WORLD_HISTORY_SCALING.md",
+    "docs/engine/WORLD_STATE_SCHEMA.md",
+    "docs/engine/ZEKNOVA_COMPATIBILITY_RESULTS.md",
+    "docs/engine/ZGE_01_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/ZGE_01_IMPLEMENTATION_REPORT.md",
+    "docs/engine/ZGE_02_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/ZGE_02_IMPLEMENTATION_REPORT.md",
+    "docs/engine/ZGE_03_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/ZGE_03_IMPLEMENTATION_REPORT.md",
+    "docs/engine/ZGE_04_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/ZGE_04_IMPLEMENTATION_REPORT.md",
+    "docs/engine/ZGE_05_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/ZGE_05_IMPLEMENTATION_REPORT.md",
+    "docs/engine/ZGE_05_PERFORMANCE.md",
+    "docs/engine/ZGE_05_VERIFICATION_MANIFEST.json",
+    "docs/engine/ZGE_06_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/ZGE_06_IMPLEMENTATION_REPORT.md",
+    "docs/engine/ZGE_06_VERIFICATION_MANIFEST.json",
+    "docs/engine/ZGE_07_IMPLEMENTATION_PROMPT.md",
+    "docs/engine/evidence/zge03/animations-final.log",
+    "docs/engine/evidence/zge03/browser-followup.json",
+    "docs/engine/evidence/zge03/browser-gameplay.json",
+    "docs/engine/evidence/zge03/check-final.log",
+    "docs/engine/evidence/zge03/combat-final.log",
+    "docs/engine/evidence/zge03/engine-after.log",
+    "docs/engine/evidence/zge03/engine-before.log",
+    "docs/engine/evidence/zge03/engine-timing-contention.log",
+    "docs/engine/evidence/zge03/file-inventory.json",
+    "docs/engine/evidence/zge03/legacy-after.json",
+    "docs/engine/evidence/zge03/legacy-after.log",
+    "docs/engine/evidence/zge03/legacy-before.json",
+    "docs/engine/evidence/zge03/standalone-result.json",
+    "docs/engine/evidence/zge03/stress-browser-restart.json",
+    "docs/engine/evidence/zge03/stress-webgl.json",
+    "docs/engine/evidence/zge03/stress-webgpu.json",
+    "docs/engine/evidence/zge04/animation.log",
+    "docs/engine/evidence/zge04/browser-after-final.json",
+    "docs/engine/evidence/zge04/browser-after-unoptimized.json",
+    "docs/engine/evidence/zge04/browser-before.json",
+    "docs/engine/evidence/zge04/browser-demo.json",
+    "docs/engine/evidence/zge04/browser-live-flow.json",
+    "docs/engine/evidence/zge04/browser-parity-initial-site-gaps.json",
+    "docs/engine/evidence/zge04/browser-parity-stale-index-diagnostic.json",
+    "docs/engine/evidence/zge04/browser-parity.json",
+    "docs/engine/evidence/zge04/check.log",
+    "docs/engine/evidence/zge04/diagnosis-recheck.log",
+    "docs/engine/evidence/zge04/engine-after.log",
+    "docs/engine/evidence/zge04/engine-before.log",
+    "docs/engine/evidence/zge04/file-inventory.json",
+    "docs/engine/evidence/zge04/legacy-after.json",
+    "docs/engine/evidence/zge04/legacy-before.json",
+    "docs/engine/evidence/zge04/legacy-final-assessment.json",
+    "docs/engine/evidence/zge04/node-parity.json",
+    "docs/engine/evidence/zge04/performance-after.json",
+    "docs/engine/evidence/zge04/performance-before.json",
+    "docs/engine/evidence/zge04/picasso-report.log",
+    "docs/engine/evidence/zge04/regression-browser-followup.json",
+    "docs/engine/evidence/zge04/regression-browser-gameplay.json",
+    "docs/engine/evidence/zge04/regression-stress-browser-restart.json",
+    "docs/engine/evidence/zge04/regression-stress-webgl.json",
+    "docs/engine/evidence/zge04/regression-stress-webgpu.json",
+    "docs/engine/evidence/zge04/standalone-v2.png",
+    "docs/engine/evidence/zge05/animations.log",
+    "docs/engine/evidence/zge05/before-hashes.json",
+    "docs/engine/evidence/zge05/browser-demo.json",
+    "docs/engine/evidence/zge05/browser-failure.txt",
+    "docs/engine/evidence/zge05/browser-followup.json",
+    "docs/engine/evidence/zge05/browser-gameplay-movement-diagnostic.json",
+    "docs/engine/evidence/zge05/browser-gameplay-rerun.log",
+    "docs/engine/evidence/zge05/browser-gameplay.json",
+    "docs/engine/evidence/zge05/browser-gameplay.log",
+    "docs/engine/evidence/zge05/browser-live-flow.json",
+    "docs/engine/evidence/zge05/browser-parity.json",
+    "docs/engine/evidence/zge05/browser-runs.json",
+    "docs/engine/evidence/zge05/browser-source-world-final.log",
+    "docs/engine/evidence/zge05/browser-source-world.json",
+    "docs/engine/evidence/zge05/browser-source-world.log",
+    "docs/engine/evidence/zge05/check.log",
+    "docs/engine/evidence/zge05/engine-after.log",
+    "docs/engine/evidence/zge05/engine-before.log",
+    "docs/engine/evidence/zge05/engine-mid.log",
+    "docs/engine/evidence/zge05/file-inventory.json",
+    "docs/engine/evidence/zge05/legacy-after.json",
+    "docs/engine/evidence/zge05/legacy-after.log",
+    "docs/engine/evidence/zge05/legacy-before.json",
+    "docs/engine/evidence/zge05/legacy-before.log",
+    "docs/engine/evidence/zge05/legacy-effects-final.log",
+    "docs/engine/evidence/zge05/legacy-effects-initial.log",
+    "docs/engine/evidence/zge05/live-performance-final.json",
+    "docs/engine/evidence/zge05/live-performance.json",
+    "docs/engine/evidence/zge05/live-performance.log",
+    "docs/engine/evidence/zge05/movement-last.json",
+    "docs/engine/evidence/zge05/node-demo.log",
+    "docs/engine/evidence/zge05/node-parity.json",
+    "docs/engine/evidence/zge05/performance-after.json",
+    "docs/engine/evidence/zge05/performance-before.json",
+    "docs/engine/evidence/zge05/source-facts.json",
+    "docs/engine/evidence/zge05/source-performance.json",
+    "docs/engine/evidence/zge05/source-tests-final.log",
+    "docs/engine/evidence/zge05/source-tests-initial.log",
+    "docs/engine/evidence/zge05/standalone-3d.png",
+    "docs/engine/evidence/zge05/standalone-v2.png",
+    "docs/engine/evidence/zge05/status-before.txt",
+    "docs/engine/evidence/zge05/stress-browser-restart.json",
+    "docs/engine/evidence/zge05/stress-webgl.json",
+    "docs/engine/evidence/zge05/stress-webgpu.json",
+    "docs/engine/evidence/zge05/submodule-status.txt",
+    "docs/engine/evidence/zge05/writers.json",
+    "docs/engine/evidence/zge05/zge03-browser-followup.mjs.log",
+    "docs/engine/evidence/zge05/zge04-browser-demo.mjs.log",
+    "docs/engine/evidence/zge05/zge04-browser-live-flow.mjs.log",
+    "docs/engine/evidence/zge05/zge04-browser-parity.mjs.log",
+    "docs/engine/evidence/zge05/zge04-browser-performance.mjs.log",
+    "docs/engine/evidence/zge05/zge05-browser-certification.mjs.log",
+    "docs/engine/evidence/zge05/zge05-browser-demo.mjs.log",
+    "docs/engine/evidence/zge06/aid-contract.log",
+    "docs/engine/evidence/zge06/animations.log",
+    "docs/engine/evidence/zge06/before-hashes.json",
+    "docs/engine/evidence/zge06/browser-certification-recheck.log",
+    "docs/engine/evidence/zge06/browser-demo.json",
+    "docs/engine/evidence/zge06/browser-durable-certified.log",
+    "docs/engine/evidence/zge06/browser-durable-final.log",
+    "docs/engine/evidence/zge06/browser-durable-initial.json",
+    "docs/engine/evidence/zge06/browser-durable-world.json",
+    "docs/engine/evidence/zge06/browser-durable.log",
+    "docs/engine/evidence/zge06/browser-failure.txt",
+    "docs/engine/evidence/zge06/browser-final-assessment.json",
+    "docs/engine/evidence/zge06/browser-followup.json",
+    "docs/engine/evidence/zge06/browser-gameplay.json",
+    "docs/engine/evidence/zge06/browser-live-flow.json",
+    "docs/engine/evidence/zge06/browser-local-certified.log",
+    "docs/engine/evidence/zge06/browser-parity.json",
+    "docs/engine/evidence/zge06/browser-runs.json",
+    "docs/engine/evidence/zge06/browser-source-world.json",
+    "docs/engine/evidence/zge06/check.log",
+    "docs/engine/evidence/zge06/construction-performance-contended.json",
+    "docs/engine/evidence/zge06/construction-performance.json",
+    "docs/engine/evidence/zge06/durable-world.png",
+    "docs/engine/evidence/zge06/engine-after.log",
+    "docs/engine/evidence/zge06/engine-before.log",
+    "docs/engine/evidence/zge06/engine-mid.log",
+    "docs/engine/evidence/zge06/file-inventory.json",
+    "docs/engine/evidence/zge06/history-scaling-final.log",
+    "docs/engine/evidence/zge06/history-scaling.json",
+    "docs/engine/evidence/zge06/history-scaling.log",
+    "docs/engine/evidence/zge06/legacy-after.json",
+    "docs/engine/evidence/zge06/legacy-after.log",
+    "docs/engine/evidence/zge06/legacy-before.json",
+    "docs/engine/evidence/zge06/legacy-before.log",
+    "docs/engine/evidence/zge06/live-performance-final.json",
+    "docs/engine/evidence/zge06/movement-last.json",
+    "docs/engine/evidence/zge06/new-unit-initial.log",
+    "docs/engine/evidence/zge06/node-demo.log",
+    "docs/engine/evidence/zge06/node-parity.json",
+    "docs/engine/evidence/zge06/php-certification.json",
+    "docs/engine/evidence/zge06/php-tests-certified.log",
+    "docs/engine/evidence/zge06/php-tests-final.log",
+    "docs/engine/evidence/zge06/php-tests-initial.log",
+    "docs/engine/evidence/zge06/runtime-performance-contended.json",
+    "docs/engine/evidence/zge06/runtime-performance.json",
+    "docs/engine/evidence/zge06/server.log",
+    "docs/engine/evidence/zge06/standalone-3d.png",
+    "docs/engine/evidence/zge06/standalone-v2.png",
+    "docs/engine/evidence/zge06/status-before.txt",
+    "docs/engine/evidence/zge06/stress-browser-restart.json",
+    "docs/engine/evidence/zge06/stress-webgl.json",
+    "docs/engine/evidence/zge06/stress-webgpu.json",
+    "docs/engine/evidence/zge06/writers.json",
+    "docs/engine/evidence/zge06/zge03-browser-followup.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-demo.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-live-flow.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-parity.mjs.log",
+    "docs/engine/evidence/zge06/zge04-browser-performance.mjs.log",
+    "docs/engine/evidence/zge06/zge05-browser-certification.mjs.log",
+    "docs/engine/evidence/zge06/zge05-browser-demo.mjs.log",
+    "docs/engine/evidence/zge06/zge06-browser-server.mjs.log",
+    "examples/asset-stress/index.html",
+    "examples/asset-stress/stress.js",
+    "examples/construction-world/gameplay-session.js",
+    "examples/construction-world/gameplay-ui.js",
+    "examples/construction-world/index.html",
+    "examples/construction-world/main.mjs",
+    "examples/construction-world/scene.js",
+    "examples/construction-world/server-session.js",
+    "examples/construction-world/session.js",
+    "examples/construction-world/ui.js",
+    "examples/construction-world/v2.html",
+    "examples/construction-world/world.js",
+    "index.html",
+    "package.json",
+    "packages/assets/package.json",
+    "packages/assets/src/AssetRequestCache.js",
+    "packages/assets/src/AssetService.js",
+    "packages/assets/src/BoundedWorkerPool.js",
+    "packages/assets/src/LoaderWatchdog.js",
+    "packages/assets/src/WorkerObserver.js",
+    "packages/assets/src/importMap.js",
+    "packages/assets/src/index.js",
+    "packages/assets/src/threeAssetService.js",
+    "packages/assets/test/assets.test.mjs",
+    "packages/assets/test/service.test.mjs",
+    "packages/core/package.json",
+    "packages/core/src/Authority.js",
+    "packages/core/src/AuthorityDomain.js",
+    "packages/core/src/CommandQueue.js",
+    "packages/core/src/EngineClock.js",
+    "packages/core/src/EngineEvents.js",
+    "packages/core/src/EngineKernel.js",
+    "packages/core/src/EngineMetrics.js",
+    "packages/core/src/GameplayEventJournal.js",
+    "packages/core/src/LifecycleManager.js",
+    "packages/core/src/PluginManager.js",
+    "packages/core/src/World.js",
+    "packages/core/src/WorldState.js",
+    "packages/core/src/index.d.ts",
+    "packages/core/src/index.js",
+    "packages/core/test/kernel.test.mjs",
+    "packages/core/test/simulation.test.mjs",
+    "packages/devtools/package.json",
+    "packages/devtools/src/DevPanel.js",
+    "packages/gameplay-combat/package.json",
+    "packages/gameplay-combat/src/index.d.ts",
+    "packages/gameplay-combat/src/index.js",
+    "packages/gameplay-combat/test/pipeline.test.mjs",
+    "packages/gameplay-construction/package.json",
+    "packages/gameplay-construction/src/ConstructionRuntime.js",
+    "packages/gameplay-construction/src/ConstructionServerFixture.js",
+    "packages/gameplay-construction/src/Parity.js",
+    "packages/gameplay-construction/src/UtilityGraph.js",
+    "packages/gameplay-construction/src/index.d.ts",
+    "packages/gameplay-construction/src/index.js",
+    "packages/gameplay-construction/test/aid-contract.test.mjs",
+    "packages/gameplay-construction/test/construction.test.mjs",
+    "packages/gameplay-construction/test/demo-v2.test.mjs",
+    "packages/gameplay-construction/test/legacy-effects.test.mjs",
+    "packages/gameplay-construction/test/live-policy.test.mjs",
+    "packages/gameplay-construction/test/persistence-adversarial.test.mjs",
+    "packages/gameplay-construction/test/source-runtime.test.mjs",
+    "packages/gameplay-construction/test/transactions-v2.test.mjs",
+    "packages/gameplay-missions/package.json",
+    "packages/gameplay-missions/src/index.d.ts",
+    "packages/gameplay-missions/src/index.js",
+    "packages/gameplay-missions/test/pipeline.test.mjs",
+    "packages/neural-rendering/package.json",
+    "packages/neural-rendering/src/BoundedQueue.js",
+    "packages/neural-rendering/src/CanvasPresenter.js",
+    "packages/neural-rendering/src/FrameSequencer.js",
+    "packages/neural-rendering/src/MatrixGame4Adapter.js",
+    "packages/neural-rendering/src/MockNeuralBackend.js",
+    "packages/neural-rendering/src/NeuralRenderer.js",
+    "packages/neural-rendering/src/PresentationController.js",
+    "packages/neural-rendering/src/RenderSession.js",
+    "packages/neural-rendering/src/capabilities.js",
+    "packages/neural-rendering/src/index.js",
+    "packages/neural-rendering/src/plugin.js",
+    "packages/neural-rendering/test/fakeInferenceService.mjs",
+    "packages/neural-rendering/test/neural.test.mjs",
+    "packages/persistence/package.json",
+    "packages/persistence/src/SaveTransport.js",
+    "packages/persistence/src/StagingWorldClient.d.ts",
+    "packages/persistence/src/StagingWorldClient.js",
+    "packages/persistence/src/V4Migration.d.ts",
+    "packages/persistence/src/V4Migration.js",
+    "packages/persistence/src/WorldCheckpoint.d.ts",
+    "packages/persistence/src/WorldCheckpoint.js",
+    "packages/persistence/src/WorldHistory.js",
+    "packages/persistence/src/index.js",
+    "packages/persistence/src/legacyInterceptor.js",
+    "packages/persistence/src/schema.js",
+    "packages/persistence/test/fakeSaveServer.mjs",
+    "packages/persistence/test/persistence.test.mjs",
+    "packages/persistence/test/staging-client.test.mjs",
+    "packages/persistence/test/zge06.test.mjs",
+    "packages/rendering/package.json",
+    "packages/rendering/src/CaptureFilter.js",
+    "packages/rendering/src/FramePreprocessor.js",
+    "packages/rendering/src/NativeRenderer.js",
+    "packages/rendering/src/ReferenceRenderer.js",
+    "packages/rendering/src/contracts.js",
+    "packages/rendering/src/index.d.ts",
+    "packages/rendering/src/index.js",
+    "packages/rendering/test/preprocessor.test.mjs",
+    "packages/server-php/package.json",
+    "packages/server-php/src/bootstrap.php",
+    "packages/server-php/src/history-benchmark.php",
+    "packages/server-php/src/inspect.php",
+    "packages/server-php/src/router.php",
+    "packages/server-php/src/schema.sql",
+    "packages/server-php/src/setup.php",
+    "packages/server-php/src/worker.mjs",
+    "packages/server-php/src/world.php",
+    "packages/server-php/test/durable.test.mjs",
+    "packages/zeknova-compat/package.json",
+    "packages/zeknova-compat/src/constructionShadow.js",
+    "packages/zeknova-compat/src/directors.js",
+    "packages/zeknova-compat/src/index.js",
+    "packages/zeknova-compat/src/leakProbe.js",
+    "packages/zeknova-compat/src/legacyRuntime.js",
+    "packages/zeknova-compat/src/plugin.js",
+    "packages/zeknova-compat/test/compat.test.mjs",
+    "packages/zeknova-compat/test/shadow-v2.test.mjs",
+    "scripts/check-source.mjs",
+    "scripts/zge03-browser-certification.mjs",
+    "scripts/zge03-browser-followup.mjs",
+    "scripts/zge04-benchmark.mjs",
+    "scripts/zge04-browser-demo.mjs",
+    "scripts/zge04-browser-live-flow.mjs",
+    "scripts/zge04-browser-parity.mjs",
+    "scripts/zge04-browser-performance.mjs",
+    "scripts/zge05-benchmark.mjs",
+    "scripts/zge05-browser-certification.mjs",
+    "scripts/zge05-browser-demo.mjs",
+    "scripts/zge05-verify.mjs",
+    "scripts/zge06-browser-certification.mjs",
+    "scripts/zge06-browser-server.mjs",
+    "scripts/zge06-history.mjs",
+    "scripts/zge06-server.mjs",
+    "scripts/zge06-verify.mjs",
+    "src/game/CombatAudioDirector.js",
+    "src/game/FirstFifteenDirector.js",
+    "src/game/GameModeDirector.js",
+    "src/game/RuntimeGraphicsContext.js",
+    "src/game/construction/policy.js",
+    "src/main.js",
+    "start-local.mjs",
+    "tests/sentinel-prime-r1-readiness.test.mjs"
+  ]
+}

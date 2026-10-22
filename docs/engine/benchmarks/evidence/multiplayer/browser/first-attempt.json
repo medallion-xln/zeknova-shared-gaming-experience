@@ -1,0 +1,12 @@
+{
+  "schema": "zge.bench01.multiplayer-browser.v1",
+  "results": [
+    {
+      "clients": 2,
+      "errors": [],
+      "scope": "independent authenticated browser contexts; physical keyboard and construction button; source-owned world only; short bounded functional run",
+      "status": "FAIL",
+      "failure": "page.waitForFunction: Timeout 30000ms exceeded.\n    at /Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge-bench01-multiplayer-browser.mjs:35:135"
+    }
+  ]
+}

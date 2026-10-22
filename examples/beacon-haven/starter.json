@@ -1,0 +1,950 @@
+{
+  "schema": "zge.sdk.project.v2",
+  "sdkCompatibility": {
+    "major": 0,
+    "minimumPreview": 13
+  },
+  "id": "beacon-haven",
+  "name": "Beacon Haven · restore the island relay",
+  "entryWorld": "main",
+  "worlds": {
+    "main": {
+      "schema": "zge.sdk.scene.v1",
+      "id": "main",
+      "revision": 18,
+      "nextId": 1,
+      "entities": [
+        {
+          "id": "island",
+          "name": "island",
+          "components": {
+            "transform": {
+              "position": [
+                0,
+                -0.3,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                20,
+                0.5,
+                14
+              ]
+            },
+            "mesh": {
+              "primitive": "box",
+              "color": "#315b51"
+            },
+            "state": {}
+          }
+        },
+        {
+          "id": "path",
+          "name": "path",
+          "components": {
+            "transform": {
+              "position": [
+                0,
+                0.01,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                16,
+                0.02,
+                2
+              ]
+            },
+            "mesh": {
+              "primitive": "box",
+              "color": "#c5b98c"
+            },
+            "state": {}
+          }
+        },
+        {
+          "id": "player",
+          "name": "player",
+          "components": {
+            "transform": {
+              "position": [
+                -5,
+                0.5,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "mesh": {
+              "primitive": "sphere",
+              "color": "#f5c16a"
+            },
+            "state": {
+              "cells": 0,
+              "built": false
+            }
+          }
+        },
+        {
+          "id": "cell-0",
+          "name": "cell 0",
+          "components": {
+            "transform": {
+              "position": [
+                -3,
+                0.5,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "mesh": {
+              "primitive": "cylinder",
+              "color": "#67e5d0"
+            },
+            "state": {
+              "energy": true
+            }
+          }
+        },
+        {
+          "id": "cell-1",
+          "name": "cell 1",
+          "components": {
+            "transform": {
+              "position": [
+                -1,
+                0.5,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "mesh": {
+              "primitive": "cylinder",
+              "color": "#67e5d0"
+            },
+            "state": {
+              "energy": true
+            }
+          }
+        },
+        {
+          "id": "cell-2",
+          "name": "cell 2",
+          "components": {
+            "transform": {
+              "position": [
+                1,
+                0.5,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "mesh": {
+              "primitive": "cylinder",
+              "color": "#67e5d0"
+            },
+            "state": {
+              "energy": true
+            }
+          }
+        },
+        {
+          "id": "site",
+          "name": "site",
+          "components": {
+            "transform": {
+              "position": [
+                3,
+                0,
+                3
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                2,
+                0.1,
+                2
+              ]
+            },
+            "mesh": {
+              "primitive": "box",
+              "color": "#4b8cb4"
+            },
+            "state": {
+              "marked": true
+            }
+          }
+        },
+        {
+          "id": "console",
+          "name": "console",
+          "components": {
+            "transform": {
+              "position": [
+                6,
+                0.5,
+                1
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "mesh": {
+              "primitive": "cylinder",
+              "color": "#7e9ad4"
+            },
+            "state": {
+              "online": false
+            }
+          }
+        },
+        {
+          "id": "objective",
+          "name": "objective",
+          "components": {
+            "transform": {
+              "position": [
+                0,
+                0,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "state": {
+              "complete": false
+            }
+          }
+        },
+        {
+          "id": "shelter-0",
+          "name": "shelter 0",
+          "components": {
+            "transform": {
+              "position": [
+                -5,
+                0,
+                -4
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "state": {},
+            "asset": {
+              "id": "haven-house"
+            },
+            "collider": {
+              "halfSize": [
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "id": "shelter-1",
+          "name": "shelter 1",
+          "components": {
+            "transform": {
+              "position": [
+                0,
+                0,
+                -4
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "state": {},
+            "asset": {
+              "id": "haven-house"
+            },
+            "collider": {
+              "halfSize": [
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        },
+        {
+          "id": "shelter-2",
+          "name": "shelter 2",
+          "components": {
+            "transform": {
+              "position": [
+                5,
+                0,
+                -4
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "state": {},
+            "asset": {
+              "id": "haven-house"
+            },
+            "collider": {
+              "halfSize": [
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        }
+      ],
+      "rules": [
+        {
+          "id": "walk",
+          "kind": "move",
+          "entity": "player",
+          "speed": 3,
+          "bounds": [
+            -9,
+            9,
+            -6,
+            6
+          ]
+        },
+        {
+          "id": "collect-0",
+          "kind": "collect",
+          "entity": "player",
+          "target": "cell-0",
+          "component": "state",
+          "counter": "cells",
+          "radius": 0.7
+        },
+        {
+          "id": "collect-1",
+          "kind": "collect",
+          "entity": "player",
+          "target": "cell-1",
+          "component": "state",
+          "counter": "cells",
+          "radius": 0.7
+        },
+        {
+          "id": "collect-2",
+          "kind": "collect",
+          "entity": "player",
+          "target": "cell-2",
+          "component": "state",
+          "counter": "cells",
+          "radius": 0.7
+        },
+        {
+          "id": "build-relay",
+          "kind": "build",
+          "entity": "player",
+          "sourceEntity": "player",
+          "sourceComponent": "state",
+          "component": "state",
+          "counter": "cells",
+          "property": "built",
+          "key": "b",
+          "cost": 3,
+          "radius": 2.5,
+          "target": "site",
+          "prefab": "relay-house"
+        },
+        {
+          "id": "activate",
+          "kind": "interact",
+          "entity": "console",
+          "sourceEntity": "player",
+          "sourceComponent": "state",
+          "component": "state",
+          "counter": "built",
+          "property": "online",
+          "key": "e",
+          "cost": 1,
+          "radius": 2.5,
+          "target": "console"
+        }
+      ]
+    }
+  },
+  "components": {},
+  "assets": [
+    {
+      "id": "haven-house",
+      "name": "haven-house",
+      "path": "imports/haven-house.model.json",
+      "type": "static-model",
+      "data": {
+        "schema": "zge.static-model.v1",
+        "sourceFormat": "glb2",
+        "sourceBytes": 1352,
+        "hierarchy": true,
+        "vertices": 108,
+        "triangles": 36,
+        "dependencies": [],
+        "parts": [
+          {
+            "positions": [
+              -1,
+              0,
+              -1,
+              1,
+              0,
+              -1,
+              1,
+              1.5,
+              -1,
+              -1,
+              0,
+              -1,
+              1,
+              1.5,
+              -1,
+              -1,
+              1.5,
+              -1,
+              1,
+              0,
+              1,
+              -1,
+              0,
+              1,
+              -1,
+              1.5,
+              1,
+              1,
+              0,
+              1,
+              -1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              -1,
+              0,
+              1,
+              -1,
+              0,
+              -1,
+              -1,
+              1.5,
+              -1,
+              -1,
+              0,
+              1,
+              -1,
+              1.5,
+              -1,
+              -1,
+              1.5,
+              1,
+              1,
+              0,
+              -1,
+              1,
+              0,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              0,
+              -1,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              -1,
+              -1,
+              1.5,
+              -1,
+              1,
+              1.5,
+              -1,
+              1,
+              1.5,
+              1,
+              -1,
+              1.5,
+              -1,
+              1,
+              1.5,
+              1,
+              -1,
+              1.5,
+              1,
+              -1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              -1,
+              -1,
+              0,
+              1,
+              1,
+              0,
+              -1,
+              -1,
+              0,
+              -1
+            ],
+            "normals": null,
+            "indices": null,
+            "color": [
+              0.32,
+              0.58,
+              0.52
+            ],
+            "doubleSided": true
+          },
+          {
+            "positions": [
+              -1.2,
+              1.5,
+              -1.2,
+              1.2,
+              1.5,
+              -1.2,
+              1.2,
+              1.8,
+              -1.2,
+              -1.2,
+              1.5,
+              -1.2,
+              1.2,
+              1.8,
+              -1.2,
+              -1.2,
+              1.8,
+              -1.2,
+              1.2,
+              1.5,
+              1.2,
+              -1.2,
+              1.5,
+              1.2,
+              -1.2,
+              1.8,
+              1.2,
+              1.2,
+              1.5,
+              1.2,
+              -1.2,
+              1.8,
+              1.2,
+              1.2,
+              1.8,
+              1.2,
+              -1.2,
+              1.5,
+              1.2,
+              -1.2,
+              1.5,
+              -1.2,
+              -1.2,
+              1.8,
+              -1.2,
+              -1.2,
+              1.5,
+              1.2,
+              -1.2,
+              1.8,
+              -1.2,
+              -1.2,
+              1.8,
+              1.2,
+              1.2,
+              1.5,
+              -1.2,
+              1.2,
+              1.5,
+              1.2,
+              1.2,
+              1.8,
+              1.2,
+              1.2,
+              1.5,
+              -1.2,
+              1.2,
+              1.8,
+              1.2,
+              1.2,
+              1.8,
+              -1.2,
+              -1.2,
+              1.8,
+              -1.2,
+              1.2,
+              1.8,
+              -1.2,
+              1.2,
+              1.8,
+              1.2,
+              -1.2,
+              1.8,
+              -1.2,
+              1.2,
+              1.8,
+              1.2,
+              -1.2,
+              1.8,
+              1.2,
+              -1.2,
+              1.5,
+              1.2,
+              1.2,
+              1.5,
+              1.2,
+              1.2,
+              1.5,
+              -1.2,
+              -1.2,
+              1.5,
+              1.2,
+              1.2,
+              1.5,
+              -1.2,
+              -1.2,
+              1.5,
+              -1.2
+            ],
+            "normals": null,
+            "indices": null,
+            "color": [
+              0.16,
+              0.28,
+              0.36
+            ],
+            "doubleSided": true
+          },
+          {
+            "positions": [
+              -0.25,
+              0,
+              0.9750000000000001,
+              0.25,
+              0,
+              0.9750000000000001,
+              0.25,
+              1,
+              0.9750000000000001,
+              -0.25,
+              0,
+              0.9750000000000001,
+              0.25,
+              1,
+              0.9750000000000001,
+              -0.25,
+              1,
+              0.9750000000000001,
+              0.25,
+              0,
+              1.125,
+              -0.25,
+              0,
+              1.125,
+              -0.25,
+              1,
+              1.125,
+              0.25,
+              0,
+              1.125,
+              -0.25,
+              1,
+              1.125,
+              0.25,
+              1,
+              1.125,
+              -0.25,
+              0,
+              1.125,
+              -0.25,
+              0,
+              0.9750000000000001,
+              -0.25,
+              1,
+              0.9750000000000001,
+              -0.25,
+              0,
+              1.125,
+              -0.25,
+              1,
+              0.9750000000000001,
+              -0.25,
+              1,
+              1.125,
+              0.25,
+              0,
+              0.9750000000000001,
+              0.25,
+              0,
+              1.125,
+              0.25,
+              1,
+              1.125,
+              0.25,
+              0,
+              0.9750000000000001,
+              0.25,
+              1,
+              1.125,
+              0.25,
+              1,
+              0.9750000000000001,
+              -0.25,
+              1,
+              0.9750000000000001,
+              0.25,
+              1,
+              0.9750000000000001,
+              0.25,
+              1,
+              1.125,
+              -0.25,
+              1,
+              0.9750000000000001,
+              0.25,
+              1,
+              1.125,
+              -0.25,
+              1,
+              1.125,
+              -0.25,
+              0,
+              1.125,
+              0.25,
+              0,
+              1.125,
+              0.25,
+              0,
+              0.9750000000000001,
+              -0.25,
+              0,
+              1.125,
+              0.25,
+              0,
+              0.9750000000000001,
+              -0.25,
+              0,
+              0.9750000000000001
+            ],
+            "normals": null,
+            "indices": null,
+            "color": [
+              0.95,
+              0.63,
+              0.24
+            ],
+            "doubleSided": true
+          }
+        ],
+        "sourceSha256": "98e39623ef0a14d60b1d1d9ab37ba87478a84f28daf9e056057dd70139cb31ed"
+      },
+      "sha256": "43bebe65d0250a5652a0f2af206b1e2a66f85310354fa601c9504aac8cc6f360",
+      "license": {
+        "source": "Self-authored ZGE13 geometry generator",
+        "spdx": "CC0-1.0",
+        "redistribution": "permitted"
+      }
+    }
+  ],
+  "prefabs": {
+    "relay-house": {
+      "name": "relay template",
+      "components": {
+        "transform": {
+          "position": [
+            15,
+            0,
+            15
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "state": {},
+        "asset": {
+          "id": "haven-house"
+        },
+        "collider": {
+          "halfSize": [
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    }
+  },
+  "plugins": [],
+  "metadata": {},
+  "provenance": [],
+  "rules": [
+    {
+      "id": "walk",
+      "kind": "move",
+      "entity": "player",
+      "speed": 3,
+      "bounds": [
+        -9,
+        9,
+        -6,
+        6
+      ]
+    },
+    {
+      "id": "collect-0",
+      "kind": "collect",
+      "entity": "player",
+      "target": "cell-0",
+      "component": "state",
+      "counter": "cells",
+      "radius": 0.7
+    },
+    {
+      "id": "collect-1",
+      "kind": "collect",
+      "entity": "player",
+      "target": "cell-1",
+      "component": "state",
+      "counter": "cells",
+      "radius": 0.7
+    },
+    {
+      "id": "collect-2",
+      "kind": "collect",
+      "entity": "player",
+      "target": "cell-2",
+      "component": "state",
+      "counter": "cells",
+      "radius": 0.7
+    },
+    {
+      "id": "build-relay",
+      "kind": "build",
+      "entity": "player",
+      "sourceEntity": "player",
+      "sourceComponent": "state",
+      "component": "state",
+      "counter": "cells",
+      "property": "built",
+      "key": "b",
+      "cost": 3,
+      "radius": 2.5,
+      "target": "site",
+      "prefab": "relay-house"
+    },
+    {
+      "id": "activate",
+      "kind": "interact",
+      "entity": "console",
+      "sourceEntity": "player",
+      "sourceComponent": "state",
+      "component": "state",
+      "counter": "built",
+      "property": "online",
+      "key": "e",
+      "cost": 1,
+      "radius": 2.5,
+      "target": "console"
+    }
+  ]
+}

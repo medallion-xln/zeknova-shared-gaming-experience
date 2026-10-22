@@ -1,0 +1,11 @@
+file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge-bench01-multiplayer-run.mjs:7
+const execute=(label,args,extra)=>new Promise((resolve,reject)=>{const log=openSync(root+'/'+label+'.log','w');const child=spawn(process.execPath,args,{env:{...process.env,ZGE_EVIDENCE_DIR:root,ZGE_MANAGED_SERVICE:'1',...extra},stdio:['ignore',log,log]});child.once('error',reject);child.once('exit',(code,signal)=>{closeSync(log);operations.push({label,code,signal,completedAt:new Date().toISOString()});writeFileSync(root+'/run-results.json',JSON.stringify({schema:'zge.bench01.multiplayer-run.v1',operations},null,2));if(code!==0)reject(Error(label+' failed; see owned evidence log'));else{console.log(label+' PASS');resolve();}});});
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^
+
+Error: bursts failed; see owned evidence log
+    at ChildProcess.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge-bench01-multiplayer-run.mjs:7:541)
+    at Object.onceWrapper (node:events:634:26)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+
+Node.js v22.22.2

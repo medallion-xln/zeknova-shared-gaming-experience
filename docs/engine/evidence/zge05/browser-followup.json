@@ -1,0 +1,432 @@
+{
+  "mock": {
+    "presentation": {
+      "mode": "NEURAL",
+      "label": "NEURAL (MOCK — not model inference)",
+      "fallbackReason": null,
+      "mock": true,
+      "allowMock": true,
+      "history": [
+        {
+          "from": "NATIVE",
+          "to": "NEURAL",
+          "reason": "requested",
+          "at": 1792557708503
+        }
+      ]
+    },
+    "native": {
+      "id": "native-three",
+      "initialized": true,
+      "backend": "webgpu",
+      "available": true,
+      "presented": 0,
+      "drawCalls": 180,
+      "triangles": 431141,
+      "geometries": 678,
+      "textures": 17,
+      "canvas": {
+        "width": 1280,
+        "height": 720
+      },
+      "sharedInstance": true,
+      "ownsContext": false
+    },
+    "capture": {
+      "id": "reference-capture",
+      "available": true,
+      "width": 1280,
+      "height": 720,
+      "captures": 28,
+      "nextFrameIndex": 22,
+      "lastCaptureMs": 6.800000011920929,
+      "overlaysHiddenLast": 0,
+      "sessionId": "session-mvhmks0n:g1",
+      "sceneId": "zeknova",
+      "profile": "native",
+      "rerender": "always",
+      "readback": "eager",
+      "stages": {
+        "stages": {
+          "render": {
+            "count": 28,
+            "p50": 1.4,
+            "p95": 2.4,
+            "max": 4.1
+          },
+          "bitmap": {
+            "count": 28,
+            "p50": 0.1,
+            "p95": 0.5,
+            "max": 1.3
+          },
+          "readback": {
+            "count": 28,
+            "p50": 5.8,
+            "p95": 19.3,
+            "max": 26.1
+          },
+          "total": {
+            "count": 28,
+            "p50": 7.6,
+            "p95": 22.1,
+            "max": 35.2
+          }
+        },
+        "rerenders": 28,
+        "skippedRerenders": 0,
+        "blankFrames": 0,
+        "profile": "native",
+        "rerenderPolicy": "always",
+        "readbackPolicy": "eager"
+      }
+    },
+    "neural": {
+      "mode": "neural",
+      "session": {
+        "id": "session-mvhmks0n",
+        "state": "streaming",
+        "reason": "first generated frame",
+        "generation": 1,
+        "framesUsed": 23,
+        "frameBudget": 32768,
+        "exhausted": false,
+        "startedAt": 1411.5,
+        "history": [
+          {
+            "from": "idle",
+            "to": "starting",
+            "reason": "start",
+            "at": 1411.5
+          },
+          {
+            "from": "starting",
+            "to": "ready",
+            "reason": "backend initialised",
+            "at": 1411.5
+          },
+          {
+            "from": "ready",
+            "to": "streaming",
+            "reason": "first generated frame",
+            "at": 1556.7999999523163
+          },
+          {
+            "from": "streaming",
+            "to": "resetting",
+            "reason": "discontinuity: teleport",
+            "at": 2025.5
+          },
+          {
+            "from": "resetting",
+            "to": "ready",
+            "reason": "reset complete",
+            "at": 2025.5999999642372
+          },
+          {
+            "from": "ready",
+            "to": "streaming",
+            "reason": "first generated frame",
+            "at": 2101.099999964237
+          }
+        ]
+      },
+      "sequencer": {
+        "sessionId": "session-mvhmks0n:g1",
+        "nextIndex": 23,
+        "lastPresentedIndex": 21,
+        "associated": 22,
+        "stale": 0,
+        "gaps": 0,
+        "unknown": 1,
+        "discontinuities": 0,
+        "latencyMs": {
+          "p50": 83.5,
+          "p95": 97.89999997615814,
+          "max": 156.80000001192093
+        }
+      },
+      "display": {
+        "name": "display",
+        "capacity": 4,
+        "policy": "drop-oldest",
+        "depth": 0,
+        "pushed": 26,
+        "dropped": 0,
+        "rejected": 0,
+        "maxDepth": 1
+      },
+      "inFlight": 1,
+      "fallbackReason": null,
+      "counters": {
+        "captured": 28,
+        "submitted": 28,
+        "generated": 27,
+        "presented": 26,
+        "staleDropped": 1,
+        "backpressureSkips": 0,
+        "errors": 0,
+        "fallbacks": 0,
+        "recoveries": 0,
+        "resets": 1
+      },
+      "captureFps": 9.5,
+      "presentedFps": 9,
+      "lastLatencyMs": 85,
+      "backend": {
+        "id": "mock-neural",
+        "mock": true
+      },
+      "config": {
+        "captureFps": 10,
+        "captureWidth": 1280,
+        "captureHeight": 720,
+        "modelWidth": 864,
+        "modelHeight": 480,
+        "displayQueue": 4,
+        "maxInFlight": 2,
+        "stallTimeoutMs": 2000,
+        "recoverAfterFrames": 2,
+        "sessionFrameBudget": 32768,
+        "mockLatencyMs": 60,
+        "captureProfile": "native",
+        "rerender": "always"
+      }
+    },
+    "capabilities": {
+      "webgpu": true,
+      "adapter": {
+        "vendor": "apple",
+        "architecture": "metal-3",
+        "device": "",
+        "description": ""
+      },
+      "platform": "MacIntel",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "browserCanHostModel": false,
+      "upstreamInferenceHost": {
+        "os": "Linux",
+        "gpu": "NVIDIA",
+        "localPossible": false,
+        "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+      },
+      "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+      "checkedAt": 1792557708405
+    }
+  },
+  "boss": {
+    "missionId": "grid",
+    "before": 806,
+    "active": false,
+    "defeat": {
+      "missionId": "grid",
+      "bossId": "desert_sunscar_colossus",
+      "bossName": "The Sunscar Colossus",
+      "rewardId": "grid:3825080775",
+      "grade": "S+",
+      "multiplier": 2,
+      "rewards": {
+        "credits": 200,
+        "timber": 50,
+        "iron": 30,
+        "tensionReduction": 50
+      },
+      "defeatedAt": 1792557711527,
+      "telemetry": {
+        "seed": 3825080775,
+        "playerCount": 1,
+        "durationMs": 2550,
+        "playerDeaths": 0,
+        "peakProjectiles": 0,
+        "averageFrameMs": 0.08571428230830601,
+        "lastDamageAttribution": null
+      }
+    }
+  },
+  "reference": {
+    "width": 1280,
+    "height": 720,
+    "kind": "capture",
+    "stats": {
+      "id": "reference-capture",
+      "available": true,
+      "width": 1280,
+      "height": 720,
+      "captures": 35,
+      "nextFrameIndex": 29,
+      "lastCaptureMs": 10.400000035762787,
+      "overlaysHiddenLast": 0,
+      "sessionId": "session-mvhmks0n:g1",
+      "sceneId": "zeknova",
+      "profile": "native",
+      "rerender": "always",
+      "readback": "eager",
+      "stages": {
+        "stages": {
+          "render": {
+            "count": 35,
+            "p50": 1.5,
+            "p95": 2.8,
+            "max": 4.1
+          },
+          "bitmap": {
+            "count": 35,
+            "p50": 0.1,
+            "p95": 0.5,
+            "max": 1.3
+          },
+          "readback": {
+            "count": 35,
+            "p50": 5.9,
+            "p95": 19.3,
+            "max": 26.1
+          },
+          "total": {
+            "count": 35,
+            "p50": 8.1,
+            "p95": 22.1,
+            "max": 35.2
+          }
+        },
+        "rerenders": 35,
+        "skippedRerenders": 0,
+        "blankFrames": 0,
+        "profile": "native",
+        "rerenderPolicy": "always",
+        "readbackPolicy": "eager"
+      }
+    }
+  },
+  "restart": {
+    "cycles": [
+      true,
+      true,
+      true
+    ],
+    "diff": {
+      "listeners": {},
+      "listenerTotal": 0,
+      "detachedTotal": 33,
+      "intervals": 0,
+      "rafPending": 0
+    },
+    "assets": {
+      "loads": 22,
+      "hits": 23,
+      "joined": 0,
+      "failures": 0,
+      "retries": 0,
+      "evictions": 7,
+      "cancelled": 0,
+      "entries": 15,
+      "pending": 0,
+      "bytes": 46006320,
+      "references": 0,
+      "budgetBytes": 67108864,
+      "workers": {
+        "completed": 21,
+        "failures": 0,
+        "resets": 0,
+        "created": 4,
+        "live": 4,
+        "pending": 0,
+        "limit": 4
+      }
+    }
+  },
+  "save": {
+    "status": {
+      "state": "saved",
+      "revision": 4,
+      "lastAck": {
+        "seq": 4,
+        "revision": 4,
+        "at": 1792557717713,
+        "duplicate": false
+      },
+      "lastError": null,
+      "pendingSeq": null,
+      "inFlightSeq": null,
+      "failures": 0,
+      "counters": {
+        "submitted": 4,
+        "coalesced": 1,
+        "posted": 3,
+        "acked": 3,
+        "retried": 0,
+        "rejected": 0,
+        "conflicts": 0,
+        "authExpired": 0,
+        "beacons": 0,
+        "recoveredFromStore": 0
+      },
+      "unloading": false,
+      "interceptedPosts": 4,
+      "interceptedGets": 2,
+      "loadedExtension": {
+        "schema": "zge.save-extension.v1",
+        "savedAt": "2026-10-21T04:41:57.702Z",
+        "player": {
+          "xp": 777,
+          "officerClass": "ensign",
+          "rankXp": 0
+        },
+        "extra": null
+      },
+      "restoredXp": null
+    },
+    "xp": 777,
+    "version": 4,
+    "keys": [
+      "version",
+      "user",
+      "biomeSeed",
+      "player",
+      "resources",
+      "indicators",
+      "buildings",
+      "phase",
+      "civilizationScore",
+      "worldProgress",
+      "missionStats",
+      "combat",
+      "diplomacy",
+      "updatedAt",
+      "zge",
+      "persistence"
+    ]
+  },
+  "restore": {
+    "xp": 777,
+    "extension": {
+      "schema": "zge.save-extension.v1",
+      "savedAt": "2026-10-21T04:41:57.922Z",
+      "player": {
+        "xp": 777,
+        "officerClass": "ensign",
+        "rankXp": 0
+      },
+      "extra": null
+    },
+    "construction": {
+      "mode": "SHADOW",
+      "compared": 0,
+      "mismatches": 0,
+      "errors": 0,
+      "differences": [],
+      "parity": {
+        "schema": "zge.construction-parity.v1",
+        "total": 0,
+        "matched": 0,
+        "mismatched": 0,
+        "unobservable": 0,
+        "classes": {},
+        "rows": []
+      }
+    },
+    "moduleResources": [
+      "http://127.0.0.1:8790/assets/model-runtime-c96327ba.js"
+    ]
+  },
+  "errors": []
+}

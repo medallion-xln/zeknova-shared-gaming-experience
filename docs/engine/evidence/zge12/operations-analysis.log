@@ -1,0 +1,99 @@
+{
+  "schema": "zge12.operations-analysis.v1",
+  "durationMs": 1500002.516125,
+  "requests": {
+    "total": 9900,
+    "httpAccepted": 9900,
+    "acceptedCommands": 7661,
+    "duplicateReceipts": 0,
+    "throttled": 0,
+    "rejectedCommands": 303,
+    "transportFailures": 0,
+    "classes": {
+      "read": 1800,
+      "construction": 900,
+      "movement": 7064,
+      "reconnect": 136
+    },
+    "reasons": {
+      "occupied": 300,
+      "stale-world-revision": 3
+    }
+  },
+  "latencyMs": {
+    "count": 9900,
+    "p50": 23.024124999996275,
+    "p95": 68.4657920000027,
+    "p99": 116.0289590000175,
+    "max": 399.55658300000505
+  },
+  "acceptedCommandsPerSecond": 5.107324766221648,
+  "ownedCPUPercentOneCore": 16.369972540735226,
+  "ownedRSSMiB": {
+    "first": 685.875,
+    "last": 496.1875,
+    "min": 420.25,
+    "max": 744.875,
+    "delta": -189.6875
+  },
+  "workerHeapMiB": {
+    "first": 6.832000732421875,
+    "last": 19.107139587402344,
+    "min": 6.295387268066406,
+    "max": 28.45233154296875,
+    "delta": 12.275138854980469
+  },
+  "workerCapacityMiB": {
+    "first": 10.640625,
+    "last": 42.890625,
+    "min": 10.640625,
+    "max": 46.703125,
+    "delta": 32.25
+  },
+  "workerHeapTailMiBPerMinute": 0.09295661970708749,
+  "workerGC": {
+    "count": 2531,
+    "durationMs": 1872.5102808475494
+  },
+  "descriptors": {
+    "first": 224,
+    "last": 224,
+    "min": 224,
+    "max": 231,
+    "delta": 0
+  },
+  "nodeProcessCount": {
+    "first": 10,
+    "last": 10,
+    "min": 10,
+    "max": 10,
+    "delta": 0
+  },
+  "dbBytes": {
+    "first": 204800,
+    "last": 22425600,
+    "min": 204800,
+    "max": 22425600,
+    "delta": 22220800
+  },
+  "lifecycle": {
+    "accepted": 9781,
+    "rejected": 0,
+    "completed": 9781,
+    "failed": 0,
+    "restarts": 0,
+    "timeouts": 0,
+    "staleReplies": 0,
+    "authenticationFailures": 0,
+    "leaseFailures": 0,
+    "queuePeak": 1,
+    "workerStarts": 1,
+    "totalEvaluationMs": 81367.28604400391
+  },
+  "classification": {
+    "isolatedRuntime": "COMPILED_CODE_AND_GC_OR_HEAP_CAPACITY_WITH_STABLE_OWNERS",
+    "completeService": "INCONCLUSIVE_POSITIVE_SLOPE_IS_NOT_A_LEAK_PROOF",
+    "storageTails": "UNRESOLVED_EXACT_HOST_STORAGE_SCHEDULING_CAUSE"
+  },
+  "limits": "Loopback, eight identities, real HTTP. Initial tests/build/browser/plot contention and later large-scene foreground capture disclosed. No kernel fsync trace. Coarse GC window is correlation, not exact pause causation. No forced GC in worker."
+}

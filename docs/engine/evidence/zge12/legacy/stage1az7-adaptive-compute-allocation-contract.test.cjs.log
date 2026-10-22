@@ -1,0 +1,38 @@
+  PASS identity
+  PASS authority none
+  PASS candidate budgets
+  PASS perimeter-breach deterministic
+  PASS perimeter-breach legal
+  PASS perimeter-breach bounded budget
+  PASS perimeter-breach measures complete
+  PASS damaged-core deterministic
+  PASS damaged-core legal
+  PASS damaged-core bounded budget
+  PASS damaged-core measures complete
+  PASS route-infrastructure-cascade deterministic
+  PASS route-infrastructure-cascade legal
+  PASS route-infrastructure-cascade bounded budget
+  PASS route-infrastructure-cascade measures complete
+  PASS resource-corridor deterministic
+  PASS resource-corridor legal
+  PASS resource-corridor bounded budget
+  PASS resource-corridor measures complete
+  PASS exposed-patrol deterministic
+  PASS exposed-patrol legal
+  PASS exposed-patrol bounded budget
+  PASS exposed-patrol measures complete
+  PASS multi-crisis-priority deterministic
+  PASS multi-crisis-priority legal
+  PASS multi-crisis-priority bounded budget
+  PASS multi-crisis-priority measures complete
+  PASS deescalation-window deterministic
+  PASS deescalation-window legal
+  PASS deescalation-window bounded budget
+  PASS deescalation-window measures complete
+  PASS report id
+  PASS compute reduced
+  PASS no objective losses
+  PASS all gates
+  PASS deterministic report
+  PASS no executor
+STAGE 1A-Z.7 ADAPTIVE COMPUTE ALLOCATION TESTS PASS (37/37)

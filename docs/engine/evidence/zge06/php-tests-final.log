@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: actual PHP/SQLite: concurrent arrivals, overlap, funds, durable receipts and reward uniqueness
+ok 1 - actual PHP/SQLite: concurrent arrivals, overlap, funds, durable receipts and reward uniqueness
+  ---
+  duration_ms: 1099.2095
+  type: 'test'
+  ...
+# Subtest: actual PHP authorization rejects cross-world, forged identity, viewer mutations and forged balances
+ok 2 - actual PHP authorization rejects cross-world, forged identity, viewer mutations and forged balances
+  ---
+  duration_ms: 455.968709
+  type: 'test'
+  ...
+# Subtest: actual PHP lost acknowledgment and post-compaction old command replay preserve effectively-once effects
+ok 3 - actual PHP lost acknowledgment and post-compaction old command replay preserve effectively-once effects
+  ---
+  duration_ms: 535.160792
+  type: 'test'
+  ...
+# Subtest: actual PHP process restart crash-before-commit
+ok 4 - actual PHP process restart crash-before-commit
+  ---
+  duration_ms: 538.44925
+  type: 'test'
+  ...
+# Subtest: actual PHP process restart crash-after-commit
+ok 5 - actual PHP process restart crash-after-commit
+  ---
+  duration_ms: 485.621167
+  type: 'test'
+  ...
+# Subtest: actual PHP rollback erases command, events, resources and building; reconnect same intent succeeds
+ok 6 - actual PHP rollback erases command, events, resources and building; reconnect same intent succeeds
+  ---
+  duration_ms: 473.288167
+  type: 'test'
+  ...
+# Subtest: actual PHP paged cursor sync and out-of-order commands converge exactly
+ok 7 - actual PHP paged cursor sync and out-of-order commands converge exactly
+  ---
+  duration_ms: 688.244041
+  type: 'test'
+  ...
+# Subtest: staging route is disabled without explicit environment gates
+ok 8 - staging route is disabled without explicit environment gates
+  ---
+  duration_ms: 59.144125
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4389.726375

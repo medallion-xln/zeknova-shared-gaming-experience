@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+ok 1 - private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+  ---
+  duration_ms: 342.337167
+  type: 'test'
+  ...
+# Subtest: worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+ok 2 - worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+  ---
+  duration_ms: 2526.808875
+  type: 'test'
+  ...
+# Subtest: competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+ok 3 - competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+  ---
+  duration_ms: 1987.861792
+  type: 'test'
+  ...
+# Subtest: graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+ok 4 - graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+  ---
+  duration_ms: 550.4645
+  type: 'test'
+  ...
+# Subtest: whole supervisor SIGKILL leaves a refused socket that safely recovers under a new fenced owner
+ok 5 - whole supervisor SIGKILL leaves a refused socket that safely recovers under a new fenced owner
+  ---
+  duration_ms: 2166.633417
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7624.556333

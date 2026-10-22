@@ -1,0 +1,47 @@
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter exposes development action space
+  PASS adapter exposes six actions
+  PASS adapter is read-only
+  PASS empty legality addresses local faction
+  PASS empty legality uses live quantum
+  PASS empty observation retains only stabilize
+  PASS empty target view has no targets
+  PASS empty observation and target view are linked
+  PASS hidden enemy receives stable identity
+  PASS FX-OBS-MASK-HIDDEN hidden spawn leaves legality ID unchanged
+  PASS FX-OBS-MASK-HIDDEN hidden spawn leaves final mask unchanged
+  PASS out-of-range perception creates no event
+  PASS out-of-range perception leaves intercept masked
+  PASS grounded sighting enables intercept
+  PASS grounded direct sighting enables sharing
+  PASS sighting target references observed enemy
+  PASS legality record contains no event ID
+  PASS target view contains no feature vector
+  PASS adapter selects canonical intercept target
+  PASS adapter rejects invented target
+  PASS FX-OBS-MASK-RESURRECT upstream-masked intercept remains masked
+  PASS upstream reason is preserved
+  PASS live nonterminal mask without fallback rejected
+  PASS grounded route enables scouting
+  PASS grounded route enables fortification
+  PASS route actions receive distinct target IDs
+  PASS damaged known structure enables repair
+  PASS repair target references structure identity
+  PASS FX-OBS-MASK-LEAK settlement cannot use unshared human target
+  PASS explicitly shared hostile contact enables recipient intercept
+  PASS shared-only recipient contact cannot enable resharing
+  PASS recipient target preserves shared acquisition mode
+  PASS FX-OBS-MASK-NONDET repeated live legality is byte-identical
+  PASS FX-OBS-MASK-NONDET repeated live target view is byte-identical
+  PASS FX-OBS-MASK-STALE contact expires at exact boundary
+  PASS route remains fresh before its expiry
+  PASS shared contact expires at original boundary
+  PASS terminal live projection masks everything
+  PASS replan live projection masks everything
+  PASS adapter target view equals integration target view
+  PASS adapter intersection equals integration intersection
+  PASS adapter exposes no action execution method
+  PASS dispose clears global legality integration
+  PASS previous legality result remains detached after disposal
+W0-O.5 OBSERVATION LEGALITY INTEGRATION TESTS PASS (46/46)

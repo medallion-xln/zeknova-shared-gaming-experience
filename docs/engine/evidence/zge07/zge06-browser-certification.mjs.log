@@ -1,0 +1,19 @@
+{"query":"","backend":"WebGPU","movement":{"distance":6.871190147812911,"end":[-71.75834398389412,6.527941496700289,18.75982233419427],"setup":{"healthBefore":94,"pendingExtraction":false},"healthAfter":100},"placed":{"id":"54fb823d-eb61-424a-bbf9-9689d18b7750","type":"power","x":-75,"z":-70},"shadow":{"mode":"SHADOW","compared":1,"mismatches":0,"errors":0,"differences":[],"parity":{"schema":"zge.construction-parity.v1","total":1,"matched":1,"mismatched":0,"unobservable":1,"classes":{"EXPECTED_NORMALIZATION":1},"rows":[{"fixtureId":"live-1","request":{"id":"shadow-proposal","type":"power","x":-75,"z":-70},"canonical":{"before":{"inventory":{"energy":42,"water":38,"minerals":1000,"iron":1000,"biomass":1000,"timber":0,"data":18,"credits":1000,"trust":52},"records":[]},"after":{"inventory":{"energy":42,"water":38,"minerals":976,"iron":992,"biomass":992,"timber":0,"data":18,"credits":988,"trust":52},"records":[{"id":"54fb823d-eb61-424a-bbf9-9689d18b7750","type":"power","x":-75,"y":8.230282642223218,"z":-70,"rotation":2.404416963528134,"level":1,"health":1000}]},"actual":{"id":"54fb823d-eb61-424a-bbf9-9689d18b7750","type":"power","x":-75,"y":8.230282642223218,"z":-70,"rotation":2.404416963528134,"level":1},"predicted":{"ok":true,"cost":{"minerals":24,"iron":8,"biomass":8,"credits":12},"building":{"id":"shadow-proposal","type":"power","x":-75,"y":8.230282642223218,"z":-70,"rotation":0,"level":1,"radius":0,"state":"complete"}},"events":null},"matched":true,"differences":[{"classification":"EXPECTED_NORMALIZATION","detail":{"field":"id","rule":"opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"}}],"unobservable":["pointer-prechecks","mission-progression-side-effects","network-authority","random-rotation-draw","raw-collision-query","server-save-restore","engine-save-projection","inner-events"],"fullyObservable":false,"reproduce":"Local construction=shadow; replay captured fixture at the recorded coordinates"}]}},"restart":{"listeners":{},"listenerTotal":0,"detachedTotal":1,"intervals":0,"rafPending":0},"frames":{"fps":59.668837949027264,"p99":16.80000000000291},"errors":[]}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge06-browser-certification.mjs:44:417 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

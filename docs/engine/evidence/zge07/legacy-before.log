@@ -1,0 +1,2745 @@
+
+tests/adaptive-simulation-director.test.mjs
+Adaptive simulation director tests passed.
+
+tests/azl-engine.test.cjs
+AZL MoE + PUCT engine checks passed.
+
+tests/azl-zeknova-adapter.test.cjs
+adapter id=zeknova version=2 actions=13 features=74 safeIdx=2
+  PASS has 13 actions with {key,label}
+  PASS baseFeatureSpec well-formed
+  PASS safeActionIndex in range
+  PASS oracleGroups reference valid indices
+  PASS 200 random steps do not throw
+  PASS clone isolation (original unchanged after mutating clone)
+  PASS clone diverged from original
+  PASS clone deep-copies nested objects
+  PASS illegal actions are rejected without fallback mutation
+  PASS determinism (same seed + sequence -> identical hash)
+  PASS legalMask never all-zeros
+  PASS safeActionIndex always legal
+  PASS health() stays in [-1,1]
+  PASS heuristicValue() stays in [-1,1]
+  PASS toBaseFeatures writes finite values
+  PASS terminalValue stays in [-1,1]
+  PASS entities() returns valid entity records
+  PASS entities() includes a critical colony core
+  PASS 400-sim MCTS runs end-to-end without throwing
+  PASS 400-sim MCTS returns a valid action
+  MCTS -> action 4 (stabilize_relations), rootVisits=400, children=5
+  PASS captureSearchState maps live resources
+  PASS captureSearchState maps live building counts
+  PASS captureSearchState counts only live hostile enemies (2 of 4)
+  PASS captureSearchState maps diplomacy + tension
+  PASS captureSearchState maps AO + completed
+  PASS captureSearchState applies captain officer bonus
+  PASS captureSearchState marks versioned live telemetry valid
+  PASS captured live state is steppable
+  PASS captureSearchState rejects missing live telemetry
+
+ALL ZEKNOVA ADAPTER TESTS PASSED
+
+tests/boss-encounter-director.test.mjs
+boss encounter director: 12/12 mission routes verified
+
+tests/campaign-feasibility.test.mjs
+┌─────────┬──────────────┬─────────────┬───────────────┬─────────────────┬─────────────────┬──────────────┬─────────────────┐
+│ (index) │ missionIndex │ missionId   │ defenseBefore │ defenseProduced │ defenseConsumed │ defenseAfter │ sourceOfChange  │
+├─────────┼──────────────┼─────────────┼───────────────┼─────────────────┼─────────────────┼──────────────┼─────────────────┤
+│ 0       │ 1            │ 'grid'      │ 0             │ 0               │ 0               │ 0            │ 'carry-forward' │
+│ 1       │ 2            │ 'water'     │ 0             │ 0               │ 0               │ 0            │ 'carry-forward' │
+│ 2       │ 3            │ 'tower-one' │ 0             │ 0               │ 0               │ 0            │ 'carry-forward' │
+└─────────┴──────────────┴─────────────┴───────────────┴─────────────────┴─────────────────┴──────────────┴─────────────────┘
+Campaign feasibility and Tower One defense progression tests passed.
+
+tests/campaign-finale.test.mjs
+Campaign finale tests passed (22 checks).
+
+tests/campaign-lifecycle-certification.test.mjs
+{
+  "status": "PASS",
+  "missionsCertified": 12,
+  "bossesCertified": 12,
+  "sequentialTransitions": 12,
+  "wrongBiomeCases": 12,
+  "duplicateBossCases": 12,
+  "duplicateRewardCases": 12,
+  "advancementCases": 12,
+  "restoreCheckpoints": 20,
+  "resetCases": 7,
+  "staleReplayProtection": true,
+  "assertions": 470
+}
+
+tests/campaign-plan.test.mjs
+
+=== CAMPAIGN SHAPE ===
+  PASS  exactly 12 missions
+  PASS  exactly 5 biomes
+  PASS  10 items per mission by definition
+  PASS  mission ids are unique
+  PASS  each mission delivers a DIFFERENT project
+
+=== EVERY PROJECT TYPE IS REAL (checked against Buildings.js) ===
+  PASS  no invented building types
+  PASS  project labels match the catalogue
+
+=== REQUESTED UTILITY ORDER: solar → water → comms → defense ===
+  PASS  mission 1 delivers Solar Grid
+  PASS  mission 2 delivers Water Works
+  PASS  mission 3 delivers Quantum Communications Hub
+  PASS  mission 4 delivers Defense Tower
+  PASS  utilities precede civic/economic projects
+
+=== EVERY MISSION SPANS EVERY BIOME ===
+  PASS  every mission has exactly 10 items
+  PASS  every mission builds in all 5 biomes
+  PASS  every mission splits 5 preparation + 5 construction
+  PASS  each biome contributes exactly 2 items per mission
+
+=== WHICH BIOME RECEIVES WHICH PROJECT IS EXPLICIT ===
+  PASS  assignments name all five biomes
+  PASS  each assignment names its project
+  PASS  each assignment names its biome
+  PASS  labels state the biome in words
+  PASS  construction labels name the project and the AO
+
+=== BY MISSION 12 EVERY BIOME HAS EVERY PROJECT ===
+  PASS  the finished planet holds 12 projects × 5 biomes
+  PASS  every biome ends with all 12 projects
+
+=== RANK IS EARNED FROM INFRASTRUCTURE ===
+  PASS  an empty planet is Ensign
+  PASS  a reset world reports 0 completed projects
+  PASS  4 planetary projects earns Lieutenant
+  PASS  8 planetary projects earns Captain
+  PASS  the full planet is Captain
+
+=== A PARTIAL PROJECT DOES NOT COUNT ===
+  PASS  4 projects with one biome missing is NOT 4 complete
+  PASS  and the player is demoted back to Ensign
+  PASS  rank is TAKEN AWAY when infrastructure is lost
+
+=== GUARDIAN DIFFICULTY SCALES ===
+  PASS  mission 1 is the unscaled baseline
+  PASS  attack windup shortens across the campaign
+  PASS  recovery shortens too (higher attack frequency)
+  PASS  cooldown stays windup+recovery
+  PASS  scaling never mutates the base profile
+  PASS  mission 12 is meaningfully faster (~45%)
+
+=== ATTACKS STAY REACTABLE ===
+  PASS  windup never drops below the reaction floor
+  PASS  even an already-fast boss stays telegraphed at mission 12
+
+=== PROJECTILES GET FASTER AND DENSER ===
+  PASS  mission 1 projectile speed is the baseline
+  PASS  projectile speed rises across the campaign
+  PASS  projectile speed rise is bounded (~1.65×)
+  PASS  projectile count rises
+  PASS  telegraph is NOT shortened here (cadence owns timing)
+  PASS  scaling never mutates the base pattern
+  PASS  multi-phase counts scale together
+
+=== DIFFICULTY IS MONOTONIC ACROSS ALL 12 ===
+  PASS  every mission is harder than the one before it
+  PASS  an unknown mission fails SAFE (easiest, not hardest)
+
+=== MISSION COMPARISON TABLE ===
+  PASS  the comparison covers all 12 missions
+  PASS  every row reports 10 items
+  PASS  every row reports 5 biomes
+   #  mission            project                          items  prep/build  cadence  projSpeed
+   1  grid               Solar Grid                       10     5/5       1.00     1.00
+   2  water              Water Works                      10     5/5       0.96     1.06
+   3  tower-one          Quantum Communications Hub       10     5/5       0.92     1.12
+   4  habitat            Defense Tower                    10     5/5       0.88     1.18
+   5  governance         Habitat                          10     5/5       0.84     1.24
+   6  population         Regional Capitol                 10     5/5       0.80     1.30
+   7  research           Planetary Hospital               10     5/5       0.75     1.35
+   8  culture            University Campus                10     5/5       0.71     1.41
+   9  supply-route       Planetary Transit Hub            10     5/5       0.67     1.47
+  10  stronghold         Trade and Civic Center           10     5/5       0.63     1.53
+  11  advanced-research  Fortune 500 Headquarters         10     5/5       0.59     1.59
+  12  tower-ring         ZekNova Stock Exchange           10     5/5       0.55     1.65
+
+----------------------------------------------------------
+  RESULT: 51 passed, 0 failed
+
+tests/combat-choreography.test.mjs
+ZEK-22 animation/audio choreography: PASS
+
+tests/combat-feedback-director.test.mjs
+combat feedback director certification passed
+
+tests/combat-result-semantics.test.mjs
+ZEK-21 authoritative combat result semantics: PASS
+
+tests/fixture-render-residency.test.mjs
+ZEK-18C render residency: PASS (requirements, lifecycle, positive barrier, missing/failed rejection, LOD and canonical digest)
+
+tests/game-mode.test.mjs
+Civilian/Battle mode policy checks passed.
+
+tests/game-reset.test.mjs
+
+=== BEFORE RESET: the world is genuinely dirty ===
+  STRUCTURES_BEFORE_RESET=8
+  BRIDGES_BEFORE_RESET=2
+  BOATS_BEFORE_RESET=1
+  MISSION_INFRA_BEFORE_RESET=5
+  BOSSES_DEFEATED_BEFORE=3
+  PASS  MISSIONS_COMPLETED > 0
+  PASS  BOSSES_DEFEATED > 0
+  PASS  PLAYER_STRUCTURES > 0
+  PASS  MISSION_INFRASTRUCTURE > 0
+  PASS  WORLD_MUTATIONS > 0
+  PASS  ACTIVE_BOSS_ENCOUNTER is true before reset
+  PASS  CURRENT_PHASE > 1 before reset
+
+=== PRE-SEED: progress AND preferences in storage ===
+  PASS  progress keys are classified as progress
+  PASS  preference keys are NOT classified as progress
+
+=== INVOKE THE REAL RESET ===
+  PASS  reset reports success
+  PASS  the server reset endpoint was called
+  PASS  it was a POST
+  PASS  the world reloads without the player refreshing
+
+=== AFTER RESET: world object counts ===
+  STRUCTURES_AFTER_RESET=0
+  BRIDGES_AFTER_RESET=0
+  BOATS_AFTER_RESET=0
+  MISSION_INFRA_AFTER_RESET=0
+  PASS  PLAYER_STRUCTURES=0
+  PASS  BRIDGES=0
+  PASS  BOATS=0
+  PASS  MISSION_INFRASTRUCTURE=0
+  PASS  the building scene group was cleared too (no orphan meshes)
+
+=== AFTER RESET: mission + boss progression ===
+  PASS  MISSIONS_COMPLETED=0
+  PASS  OBJECTIVES_COMPLETED=0
+  PASS  BOSSES_DEFEATED=0
+  PASS  ACTIVE_BOSS_ENCOUNTER=false
+  PASS  claimed boss rewards cleared
+  PASS  biome visit ledger cleared
+  PASS  AO resource ledger cleared
+  PASS  CURRENT_PHASE = canonical initial
+  PASS  civilization score reset
+
+=== AFTER RESET: OFFICER RANK RETURNS TO ENSIGN ===
+  PASS  officer rank is Ensign after reset
+  PASS  rank label reads Ensign
+  PASS  the user record is demoted too
+
+=== AFTER RESET: world mutation ledgers ===
+  PASS  trees chopped counter reset
+  PASS  harvested tree ids cleared
+  PASS  mined rock ids cleared
+  PASS  collected power-up ids cleared
+  PASS  tree harvest timestamps cleared
+  PASS  personal objective ids cleared
+
+=== AFTER RESET: no stale runtime objects ===
+  PASS  no stale enemy projectiles
+  PASS  no stale enemies
+  PASS  HUD objective list cleared
+  PASS  mission ladder cleared
+  PASS  HUD was refreshed
+
+=== PERSISTED RESET (survives reload) ===
+  PASS  boss run state cleared from sessionStorage
+  PASS  QA boss ledger cleared
+  PASS  local save blob cleared
+  PASS  reconciliation/relations progress cleared
+
+=== USER PREFERENCES PRESERVED ===
+  PASS  visual theme preserved
+  PASS  signed-in user preserved
+  PASS  game mode preserved
+
+=== MISSION-SPECIFIC REGRESSIONS ===
+  PASS  Mission 2 — filtration compounds recovered = 0
+  PASS  Mission 2 — Mire Siren gate not completed
+  PASS  Highlands — mission confrontation not defeated
+  PASS  Boss run order starts from the first boss
+  PASS  Mission 9 — wetland bridges/boats removed
+  PASS  Mission 9 — aid/survey construction removed
+
+=== CANCEL IS SAFE ===
+  PASS  cancelling returns false
+  PASS  cancelling leaves the world untouched
+
+=== NO BACKEND (local/demo) STILL RESETS ===
+  PASS  reset still succeeds without a backend
+  PASS  it reports the server reset did NOT happen
+  PASS  the runtime world is still fully reset
+  PASS  progress storage still cleared
+  PASS  preferences still preserved offline
+
+=== IDEMPOTENCE ===
+  PASS  resetting an already-fresh world is safe
+  PASS  counts stay at zero
+
+----------------------------------------------------------
+  RESULT: 63 passed, 0 failed
+
+tests/mission-clarity.test.mjs
+Mission clarity classification and map projection checks passed.
+
+tests/music-director.test.mjs
+Music director tests passed (44 checks).
+
+tests/network-recovery-certification.test.mjs
+ZEK-15 network recovery certification: PASS
+
+tests/officer-rank-parity.test.mjs
+Officer rank PHP/JS parity tests passed (12 worlds, 153 biome samples).
+
+tests/officer-rank.test.mjs
+Officer rank / infrastructure tests passed (39 checks).
+
+tests/performance-fixture-materializer.test.mjs
+ZEK-18B fixture materializer: PASS (recipe mapping, exact populations, transforms, save isolation, cleanup, QA gate)
+
+tests/performance-fixtures-certification.test.mjs
+ZEK-18 deterministic performance fixtures: PASS (6 production-state recipes, canonical hashes, observable settling)
+
+tests/persistence-session-certification.test.mjs
+ZEK-15 persistence/session certification: PASS (auth, checkpoints 1/4/8/12, restart, exactly-once, stale rejection, isolation, multiplayer identity, reset)
+
+tests/physics-world.test.mjs
+physics world: fixed-step determinism, sweep, beam, and cone checks passed
+
+tests/picasso-combat-readability.test.mjs
+Picasso combat readability and encounter identity tests passed.
+
+tests/picasso-visual-expert.test.mjs
+Picasso R0 visual expert tests passed.
+
+tests/render-performance-certification.test.mjs
+ZEK-16 render performance certification: PASS (critical fidelity, hysteresis, distance render LOD, restoration, 500 projectiles / 100 actors structural scale)
+
+tests/renderer-ownership-certification.test.mjs
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115'
+- '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab'
+
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/tests/renderer-ownership-certification.test.mjs:10:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115',
+  expected: '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2
+
+tests/resource-residency-closure.test.mjs
+ZEK-18D resource residency closure: PASS (environment ordering, red-trumpet manifest, texture/triangle attribution)
+
+tests/runtime-graphics-context.test.mjs
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115'
+- '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab'
+
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/tests/runtime-graphics-context.test.mjs:2:128 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115',
+  expected: '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2
+
+tests/runtime-reconstruction.test.mjs
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115'
+- '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab'
+
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/tests/runtime-reconstruction.test.mjs:15:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115',
+  expected: '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2
+
+tests/sentinel-expert-ablation.test.mjs
+Sentinel expert isolation and team ablation tests passed.
+
+tests/sentinel-goban-intelligence.test.mjs
+Sentinel 19x19 goban intelligence verification tests passed.
+
+tests/sentinel-goban-shadow-adapters.test.mjs
+Sentinel Goban R0 shadow adapter tests passed.
+
+tests/sentinel-prime-compatibility.test.mjs
+Sentinel Prime compatibility scoring tests passed.
+
+tests/sentinel-prime-r1-authority.test.mjs
+Sentinel Prime R1 authority tests passed.
+
+tests/sentinel-prime-r1-canary.test.mjs
+Sentinel Prime one-session canary gate tests passed.
+
+tests/sentinel-prime-r1-readiness.test.mjs
+Sentinel Prime R1 readiness package checks passed.
+
+tests/stage1az-forest-objective-scenario-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS objective profile identity
+  PASS certification identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS seven scenarios declared
+  PASS nine objective priorities
+  PASS objective comparison lexicographic
+  PASS settlement survival first
+  PASS deescalation last
+  PASS objective ranks canonical
+  PASS scenario ids unique
+  PASS all horizons positive
+  PASS all success plans declared
+  PASS all failure plans declared
+  PASS all critical actions declared
+  PASS all required actions exist
+  PASS perimeter-breach representable
+  PASS perimeter-breach no missing mechanics
+  PASS damaged-core representable
+  PASS damaged-core no missing mechanics
+  PASS route-infrastructure-cascade representable
+  PASS route-infrastructure-cascade no missing mechanics
+  PASS resource-corridor representable
+  PASS resource-corridor no missing mechanics
+  PASS exposed-patrol representable
+  PASS exposed-patrol no missing mechanics
+  PASS multi-crisis-priority representable
+  PASS multi-crisis-priority no missing mechanics
+  PASS deescalation-window representable
+  PASS deescalation-window no missing mechanics
+  PASS state deterministic bytes
+  PASS state deterministic id
+  PASS state validates
+  PASS repair legal in damaged core
+  PASS secure resource lacks target in damaged core
+  PASS hold always legal in live scenario
+  PASS repair completes
+  PASS repair consumes three quanta
+  PASS repair clears damage flag
+  PASS repair restores critical health
+  PASS repair materials exact once
+  PASS repair cooldown exact
+  PASS withdraw legal for exposed patrol
+  PASS withdraw clears exposure
+  PASS withdraw preserves patrol
+  PASS withdraw duration one
+  PASS perimeter-breach success witness completes
+  PASS perimeter-breach failure witness fails
+  PASS perimeter-breach success vector beats failure
+  PASS perimeter-breach run deterministic
+  PASS damaged-core success witness completes
+  PASS damaged-core failure witness fails
+  PASS damaged-core success vector beats failure
+  PASS damaged-core run deterministic
+  PASS route-infrastructure-cascade success witness completes
+  PASS route-infrastructure-cascade failure witness fails
+  PASS route-infrastructure-cascade success vector beats failure
+  PASS route-infrastructure-cascade run deterministic
+  PASS resource-corridor success witness completes
+  PASS resource-corridor failure witness fails
+  PASS resource-corridor success vector beats failure
+  PASS resource-corridor run deterministic
+  PASS exposed-patrol success witness completes
+  PASS exposed-patrol failure witness fails
+  PASS exposed-patrol success vector beats failure
+  PASS exposed-patrol run deterministic
+  PASS multi-crisis-priority success witness completes
+  PASS multi-crisis-priority failure witness fails
+  PASS multi-crisis-priority success vector beats failure
+  PASS multi-crisis-priority run deterministic
+  PASS deescalation-window success witness completes
+  PASS deescalation-window failure witness fails
+  PASS deescalation-window success vector beats failure
+  PASS deescalation-window run deterministic
+  PASS multi-crisis success preserves core
+  PASS multi-crisis may sacrifice resource
+  PASS deescalation success lowers tension
+  PASS deescalation success raises trust
+  PASS resource success secures resource
+  PASS cascade success restores route
+  PASS cascade success restores infrastructure
+  PASS certification report canonical
+  PASS all scenarios certified
+  PASS certification scenario count
+  PASS certification seed count
+  PASS every success witness rate one
+  PASS every failure witness rate one
+  PASS every ablation failure rate one
+  PASS every objective vector win rate one
+  PASS every scenario deterministic
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS certification authority none
+  PASS repeated certification deterministic
+  PASS unknown scenario rejected
+  PASS zero seed rejected
+  PASS unknown action rejected
+  PASS illegal target action rejected
+  PASS tampered state rejected
+  PASS invalid objective vector rejected
+  PASS empty plan rejected
+  PASS too many seeds rejected
+  PASS tampered certification rejected
+  PASS contract exposes no execute method
+  PASS contract exposes no dispatch method
+  PASS contract exposes no apply method
+  PASS contract exposes no Prime executor
+  PASS certification contains no wall clock
+STAGE 1A-Z FOREST OBJECTIVE SCENARIO CONTRACT TESTS PASS (110/110)
+
+tests/stage1az-forest-objective-scenario-integration.test.cjs
+  PASS integration starts uninstalled
+  PASS install returns integration
+  PASS integration installed
+  PASS integration global installed
+  PASS document marker installed
+  PASS adapter installed
+  PASS adapter read only identity
+  PASS adapter contract identity
+  PASS adapter scenario count
+  PASS adapter authority none
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no apply
+  PASS adapter exposes no issue
+  PASS declaration contract exact
+  PASS declaration registry exact
+  PASS declaration scenario count seven
+  PASS declaration lists seven scenarios
+  PASS declaration objective has nine priorities
+  PASS declaration strategic competence false
+  PASS declaration production authority false
+  PASS declaration mode evaluation only
+  PASS declaration detached
+  PASS certification completes
+  PASS certification has seven results
+  PASS certification success rates one
+  PASS certification failure rates one
+  PASS certification ablation rates one
+  PASS certification deterministic
+  PASS adapter certification equals integration
+  PASS scenario run completes
+  PASS scenario run preserves settlement
+  PASS scenario run preserves core
+  PASS scenario run does not need resource win
+  PASS adapter scenario equals integration
+  PASS certification creates no command globals
+  PASS certification exposes no live game mutation surface
+  PASS dispose uninstalls integration
+  PASS dispose clears global
+  PASS prior declaration remains detached
+  PASS uninstalled capture rejected
+  PASS adapter rejects missing integration
+STAGE 1A-Z FOREST OBJECTIVE SCENARIO INTEGRATION TESTS PASS (42/42)
+
+tests/stage1az1-sentinel-prime-policy-evaluation-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS eighteen policies
+  PASS five primary policies
+  PASS thirteen spam controls
+  PASS Prime policy first
+  PASS Prime simulations 96
+  PASS policy ids unique
+  PASS every policy denies live authority
+  PASS every policy denies authored witness plans
+  PASS incumbent is explicit proxy
+  PASS objective scalar preserves settlement survival
+  PASS objective scalar preserves critical priority
+  PASS legal action list nonempty
+  PASS repair legal in damaged core
+  PASS Prime decision legal
+  PASS Prime decision simulations exact
+  PASS Prime root visits sum to simulations
+  PASS Prime decision deterministic
+  PASS sentinel-prime-puct-v1-development run canonical
+  PASS sentinel-prime-puct-v1-development run validates
+  PASS sentinel-prime-puct-v1-development authority none
+  PASS incumbent-scripted-proxy-v1-development run canonical
+  PASS incumbent-scripted-proxy-v1-development run validates
+  PASS incumbent-scripted-proxy-v1-development authority none
+  PASS deterministic-defensive-rules-v1 run canonical
+  PASS deterministic-defensive-rules-v1 run validates
+  PASS deterministic-defensive-rules-v1 authority none
+  PASS random-legal-v1 run canonical
+  PASS random-legal-v1 run validates
+  PASS random-legal-v1 authority none
+  PASS always-hold-v1 run canonical
+  PASS always-hold-v1 run validates
+  PASS always-hold-v1 authority none
+  PASS Prime preserves settlement in exposed patrol
+  PASS Prime proposals legal
+  PASS Prime run deterministic
+  PASS report canonical prefix
+  PASS report validates
+  PASS seed count sixteen
+  PASS total runs 2016
+  PASS policy result count eighteen
+  PASS Prime success rate measured
+  PASS Prime settlement survival perfect
+  PASS incumbent proxy success measured
+  PASS rules baseline succeeds all
+  PASS random legal success measured
+  PASS always hold succeeds none
+  PASS Prime has zero illegal proposal rate
+  PASS Prime pairwise count four
+  PASS Prime development gates fail
+  PASS legality gate passes
+  PASS scenario survival coverage passes
+  PASS random objective gate fails
+  PASS rules nonloss gate passes
+  PASS strategic competence remains false
+  PASS actual incumbent outperformance claim false
+  PASS production authority false
+  PASS incumbent comparison explicitly proxy only
+  PASS report contains no wall clock
+  PASS Prime selector does not read success plans
+  PASS unknown policy rejected
+  PASS unknown scenario rejected
+  PASS zero seed rejected
+  PASS too few simulations rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.1 SENTINEL PRIME POLICY EVALUATION CONTRACT TESTS PASS (75/75)
+
+tests/stage1az1-sentinel-prime-policy-evaluation-integration.test.cjs
+  PASS integration starts uninstalled
+  PASS integration installed
+  PASS integration global installed
+  PASS document marker installed
+  PASS adapter installed
+  PASS adapter read only identity
+  PASS adapter contract identity
+  PASS adapter authority none
+  PASS adapter policy count eighteen
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no issue
+  PASS adapter exposes no apply
+  PASS declaration evaluation id exact
+  PASS declaration policy count
+  PASS declaration spam count
+  PASS declaration Prime simulations
+  PASS declaration strategic competence false
+  PASS declaration incumbent claim false
+  PASS declaration detached
+  PASS integration policy run canonical
+  PASS integration policy run no authority
+  PASS integration evaluation canonical
+  PASS integration evaluation has 252 runs
+  PASS adapter evaluation equals integration
+  PASS evaluation creates no command runtime
+  PASS evaluation exposes no live mutation surface
+  PASS dispose clears global
+  PASS prior report detached
+  PASS uninstalled capture rejected
+STAGE 1A-Z.1 SENTINEL PRIME POLICY EVALUATION INTEGRATION TESTS PASS (30/30)
+
+tests/stage1az10-expert-evaluation-contract.test.cjs
+  PASS identity
+  PASS authority none
+  PASS four experts
+  PASS deterministic
+  PASS coverage
+  PASS legality
+  PASS diversity measured
+  PASS no fusion
+  PASS no authority
+  PASS no executor
+STAGE 1A-Z.10 EXPERT EVALUATION TESTS PASS (10/10)
+
+tests/stage1az11-live-shadow-contract.test.cjs
+  PASS identity
+  PASS authority none
+  PASS deterministic
+  PASS coverage
+  PASS legality
+  PASS zero execution
+  PASS telemetry complete
+  PASS implementation gates
+  PASS live evidence absent
+  PASS deployment uncertified
+  PASS no executor
+STAGE 1A-Z.11 LIVE SHADOW TESTS PASS (11/11)
+
+tests/stage1az12-authority-readiness-contract.test.cjs
+  PASS identity
+  PASS authority denied by default
+  PASS deterministic
+  PASS current level R0
+  PASS decision denied
+  PASS incumbent remains executor
+  PASS Prime cannot execute
+  PASS no command interface
+  PASS no world mutation
+  PASS known blockers retained
+  PASS no authority issuance
+  PASS complete evidence only marks eligibility
+  PASS even complete evidence does not self-approve
+STAGE 1A-Z.12 AUTHORITY READINESS TESTS PASS (13/13)
+
+tests/stage1az2-prime-search-diagnosis-improvement-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS six diagnosis variants
+  PASS candidate id exact
+  PASS candidate retains 96 simulations
+  PASS candidate retains depth eight
+  PASS diagnosis seeds sixteen
+  PASS holdout seeds thirty two
+  PASS variant ids unique
+  PASS every variant denies live authority
+  PASS every variant denies witness plans
+  PASS candidate requires root coverage
+  PASS candidate uses normalized values
+  PASS candidate uses no rollout
+  PASS normalized value finite
+  PASS normalized value bounded
+  PASS normalization preserves better objective
+  PASS candidate decision legal
+  PASS candidate simulations exact
+  PASS candidate root visits sum
+  PASS candidate covers every legal root action
+  PASS candidate root coverage fraction one
+  PASS candidate decision deterministic
+  PASS frozen reproduction has no root coverage
+  PASS frozen reproduction retains raw values
+  PASS candidate run canonical
+  PASS candidate run validates
+  PASS candidate run completes cascade
+  PASS candidate run has zero illegal proposals
+  PASS candidate run has full root coverage
+  PASS candidate run authority none
+  PASS report canonical prefix
+  PASS report id exact
+  PASS diagnosis result count six
+  PASS holdout policy result count six
+  PASS total runs 2016
+  PASS frozen v1 reproduced
+  PASS more simulations only reaches 71.43 percent
+  PASS deeper tree only unchanged
+  PASS normalization only reaches 57.14 percent
+  PASS root coverage only succeeds all diagnosis cases
+  PASS candidate succeeds all diagnosis cases
+  PASS primary diagnosis root exploration starvation
+  PASS root coverage gain exact
+  PASS rollout helper status declared
+  PASS rollout not required for current suite
+  PASS candidate holdout success one
+  PASS candidate holdout survival one
+  PASS frozen v1 holdout measured
+  PASS incumbent proxy holdout measured
+  PASS rules holdout succeeds all
+  PASS random holdout measured
+  PASS always hold holdout succeeds none
+  PASS candidate beats or ties frozen v1 every case
+  PASS candidate frozen v1 wins 130
+  PASS candidate incumbent proxy nonloss gate
+  PASS candidate rules nonloss gate
+  PASS candidate random nonloss gate
+  PASS candidate always hold wins all
+  PASS all search improvement gates pass
+  PASS legal proposal gate passes
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS actual incumbent claim remains false
+  PASS incumbent comparison remains proxy only
+  PASS report contains no wall clock
+  PASS frozen Prime declares no rollout invocation
+  PASS candidate reads no authored witness plans
+  PASS candidate adds no live execution surface
+  PASS small report validates
+  PASS unknown variant rejected
+  PASS unknown scenario rejected
+  PASS zero seed rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.2 PRIME SEARCH DIAGNOSIS AND IMPROVEMENT CONTRACT TESTS PASS (83/83)
+
+tests/stage1az2-prime-search-diagnosis-improvement-integration.test.cjs
+  PASS integration starts uninstalled
+  PASS integration installed
+  PASS integration global installed
+  PASS document marker installed
+  PASS adapter installed
+  PASS adapter read only identity
+  PASS adapter contract identity
+  PASS adapter authority none
+  PASS adapter variant count six
+  PASS adapter candidate exact
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no issue
+  PASS adapter exposes no apply
+  PASS declaration evaluation exact
+  PASS declaration candidate exact
+  PASS declaration simulations 96
+  PASS declaration search improvement evaluated
+  PASS declaration strategic competence false
+  PASS declaration live authority false
+  PASS declaration detached
+  PASS integration candidate run canonical
+  PASS integration candidate completes
+  PASS integration candidate no authority
+  PASS integration evaluation canonical
+  PASS integration evaluation has 84 runs
+  PASS adapter evaluation equals integration
+  PASS evaluation creates no command runtime
+  PASS evaluation exposes no live mutation surface
+  PASS dispose clears global
+  PASS prior report detached
+  PASS uninstalled capture rejected
+STAGE 1A-Z.2 PRIME SEARCH DIAGNOSIS AND IMPROVEMENT INTEGRATION TESTS PASS (32/32)
+
+tests/stage1az2-prime-search-observability-contract.test.cjs
+  PASS identity
+  PASS mode
+  PASS authority none
+  PASS perimeter-breach selected action unchanged
+  PASS perimeter-breach ranking unchanged
+  PASS perimeter-breach trace deterministic
+  PASS perimeter-breach trace id
+  PASS damaged-core selected action unchanged
+  PASS damaged-core ranking unchanged
+  PASS damaged-core trace deterministic
+  PASS damaged-core trace id
+  PASS route-infrastructure-cascade selected action unchanged
+  PASS route-infrastructure-cascade ranking unchanged
+  PASS route-infrastructure-cascade trace deterministic
+  PASS route-infrastructure-cascade trace id
+  PASS resource-corridor selected action unchanged
+  PASS resource-corridor ranking unchanged
+  PASS resource-corridor trace deterministic
+  PASS resource-corridor trace id
+  PASS exposed-patrol selected action unchanged
+  PASS exposed-patrol ranking unchanged
+  PASS exposed-patrol trace deterministic
+  PASS exposed-patrol trace id
+  PASS multi-crisis-priority selected action unchanged
+  PASS multi-crisis-priority ranking unchanged
+  PASS multi-crisis-priority trace deterministic
+  PASS multi-crisis-priority trace id
+  PASS deescalation-window selected action unchanged
+  PASS deescalation-window ranking unchanged
+  PASS deescalation-window trace deterministic
+  PASS deescalation-window trace id
+  PASS run has decisions
+  PASS classification evidence caveat
+  PASS report id
+  PASS 112 runs
+  PASS frozen success reproduced
+  PASS frozen survival reproduced
+  PASS policy unchanged verified
+  PASS report deterministic
+  PASS no live executor
+STAGE 1A-Z.2 PRIME SEARCH OBSERVABILITY CONTRACT TESTS PASS (40/40)
+
+tests/stage1az21-prime-adversarial-generalization-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS fourteen variants
+  PASS six policies
+  PASS candidate id inherited
+  PASS frozen v1 id declared
+  PASS seed count twenty four
+  PASS variant ids unique
+  PASS every variant denies live authority
+  PASS every variant denies authored witnesses
+  PASS three adversary classes
+  PASS all seven base scenarios represented
+  PASS perimeter-diplomatic-decoy state validates
+  PASS perimeter-diplomatic-decoy deterministic state
+  PASS perimeter-intercept-cooldown state validates
+  PASS perimeter-intercept-cooldown deterministic state
+  PASS core-resource-decoy state validates
+  PASS core-resource-decoy deterministic state
+  PASS core-repair-delay state validates
+  PASS core-repair-delay deterministic state
+  PASS cascade-route-first-collapse state validates
+  PASS cascade-route-first-collapse deterministic state
+  PASS cascade-fortify-delay state validates
+  PASS cascade-fortify-delay deterministic state
+  PASS resource-diplomacy-decoy state validates
+  PASS resource-diplomacy-decoy deterministic state
+  PASS resource-alert-decoy state validates
+  PASS resource-alert-decoy deterministic state
+  PASS patrol-contact-lure state validates
+  PASS patrol-contact-lure deterministic state
+  PASS patrol-diplomacy-lure state validates
+  PASS patrol-diplomacy-lure deterministic state
+  PASS multi-route-decoy state validates
+  PASS multi-route-decoy deterministic state
+  PASS multi-deescalation-decoy state validates
+  PASS multi-deescalation-decoy deterministic state
+  PASS deescalation-contact-lure state validates
+  PASS deescalation-contact-lure deterministic state
+  PASS deescalation-resource-lure state validates
+  PASS deescalation-resource-lure deterministic state
+  PASS sample run canonical
+  PASS sample run validates
+  PASS sample has no authority
+  PASS sample proposals legal
+  PASS sample binds variant
+  PASS sample deterministic
+  PASS report canonical prefix
+  PASS report id exact
+  PASS total runs 2016
+  PASS policy results six
+  PASS pairwise results five
+  PASS candidate objective success measured
+  PASS candidate settlement survival measured
+  PASS candidate illegal rate zero
+  PASS frozen v1 objective measured
+  PASS rules baseline measured
+  PASS random baseline measured
+  PASS always hold objective zero
+  PASS temporary denial class perfect
+  PASS lower priority class measured
+  PASS deadline class exposes weakness
+  PASS resource alert decoy fails
+  PASS deescalation contact lure fails
+  PASS cascade order trap passes
+  PASS candidate never loses to frozen v1
+  PASS candidate wins 260 over frozen v1
+  PASS candidate incumbent proxy nonloss
+  PASS candidate rules nonloss
+  PASS candidate random nonloss
+  PASS candidate loses twelve to hold
+  PASS primary finding exact
+  PASS candidate settlement losses sixteen
+  PASS next target declared
+  PASS objective gate fails
+  PASS always hold gate fails
+  PASS generalization gates fail
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS actual incumbent claim remains false
+  PASS report contains no wall clock
+  PASS evaluation reads no authored witness plans
+  PASS evaluation adds no execution surface
+  PASS small report validates
+  PASS unknown variant rejected
+  PASS unknown policy rejected
+  PASS zero seed rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.2.1 PRIME ADVERSARIAL GENERALIZATION CONTRACT TESTS PASS (96/96)
+
+tests/stage1az21-prime-adversarial-generalization-integration.test.cjs
+  PASS integration starts uninstalled
+  PASS install returns integration
+  PASS integration installed
+  PASS global installed
+  PASS document marker installed
+  PASS adapter installed
+  PASS adapter read only identity
+  PASS adapter authority none
+  PASS adapter variant count
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no issue
+  PASS adapter exposes no apply
+  PASS declaration contract exact
+  PASS declaration seed count
+  PASS declaration authority none
+  PASS declaration strategic competence false
+  PASS declaration detached
+  PASS integration run canonical
+  PASS integration run authority none
+  PASS integration evaluation surface exists
+  PASS adapter evaluation surface exists
+  PASS evaluation surfaces remain read only
+  PASS evaluation creates no command runtime
+  PASS evaluation exposes no live mutation surface
+  PASS dispose clears installed
+  PASS dispose clears global
+  PASS prior declaration detached after dispose
+  PASS uninstalled capture rejected
+STAGE 1A-Z.2.1 PRIME ADVERSARIAL GENERALIZATION INTEGRATION TESTS PASS (29/29)
+
+tests/stage1az22-prime-deadline-risk-rollout-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS candidate policy exact
+  PASS v2 inherited
+  PASS rollout depth three
+  PASS fourteen holdouts
+  PASS six policies
+  PASS default seeds eight
+  PASS variant ids unique
+  PASS all seven base scenarios represented
+  PASS no holdout live authority
+  PASS no authored witness reads declared
+  PASS holdout-perimeter-resource-lure state validates
+  PASS holdout-perimeter-resource-lure deterministic state
+  PASS holdout-perimeter-screen-delay state validates
+  PASS holdout-perimeter-screen-delay deterministic state
+  PASS holdout-core-contact-lure state validates
+  PASS holdout-core-contact-lure deterministic state
+  PASS holdout-core-exact-materials state validates
+  PASS holdout-core-exact-materials deterministic state
+  PASS holdout-cascade-contact-lure state validates
+  PASS holdout-cascade-contact-lure deterministic state
+  PASS holdout-cascade-stabilize-delay state validates
+  PASS holdout-cascade-stabilize-delay deterministic state
+  PASS holdout-resource-route-lure state validates
+  PASS holdout-resource-route-lure deterministic state
+  PASS holdout-resource-channel-lure state validates
+  PASS holdout-resource-channel-lure deterministic state
+  PASS holdout-patrol-alert-lure state validates
+  PASS holdout-patrol-alert-lure deterministic state
+  PASS holdout-patrol-resource-lure state validates
+  PASS holdout-patrol-resource-lure deterministic state
+  PASS holdout-multi-contact-lure state validates
+  PASS holdout-multi-contact-lure deterministic state
+  PASS holdout-multi-repair-delay state validates
+  PASS holdout-multi-repair-delay deterministic state
+  PASS holdout-deescalation-alert-lure state validates
+  PASS holdout-deescalation-alert-lure deterministic state
+  PASS holdout-deescalation-route-lure state validates
+  PASS holdout-deescalation-route-lure deterministic state
+  PASS v3 decision legal
+  PASS v3 covers all legal roots
+  PASS v3 deadline aware
+  PASS v3 rollout depth exact
+  PASS v3 risk tail exact
+  PASS v3 decision deterministic
+  PASS sample run canonical
+  PASS sample validates
+  PASS sample authority none
+  PASS sample objective complete
+  PASS sample settlement survives
+  PASS sample no illegal proposals
+  PASS sample deterministic
+  PASS report canonical prefix
+  PASS report id exact
+  PASS total runs 672
+  PASS holdout audited cases 112
+  PASS holdout all cases solvable
+  PASS candidate all-case objective perfect
+  PASS candidate solvable objective perfect
+  PASS candidate settlement survival perfect
+  PASS candidate survival optimality perfect
+  PASS candidate avoidable objective failures zero
+  PASS candidate avoidable settlement losses zero
+  PASS candidate illegal rate zero
+  PASS v2 holdout objective measured
+  PASS rules holdout objective measured
+  PASS random holdout objective measured
+  PASS always hold objective zero
+  PASS candidate v2 nonloss
+  PASS candidate wins 65 over v2
+  PASS candidate never loses to hold
+  PASS candidate wins all over hold
+  PASS prior audit case count 112
+  PASS prior solvable count 73
+  PASS prior unavoidable objective failures 39
+  PASS prior unavoidable settlement losses 7
+  PASS prior v3 solves every solvable case
+  PASS prior v3 survival optimal
+  PASS prior avoidable objective failures zero
+  PASS prior avoidable settlement losses zero
+  PASS all development gates pass
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS rollout reads no authored witnesses
+  PASS report contains no wall clock
+  PASS source reads no authored answer lists
+  PASS source adds no execution surface
+  PASS small report validates
+  PASS unknown variant rejected
+  PASS unknown policy rejected
+  PASS zero seed rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.2.2 PRIME DEADLINE RISK ROLLOUT CONTRACT TESTS PASS (102/102)
+
+tests/stage1az22-prime-deadline-risk-rollout-integration.test.cjs
+  PASS integration starts uninstalled
+  PASS install returns integration
+  PASS integration installed
+  PASS global installed
+  PASS document marker installed
+  PASS adapter installed
+  PASS adapter id
+  PASS adapter authority none
+  PASS adapter holdout count
+  PASS adapter candidate exact
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no issue
+  PASS adapter exposes no apply
+  PASS declaration contract exact
+  PASS declaration seed count
+  PASS declaration rollout depth
+  PASS declaration authority none
+  PASS declaration strategic competence false
+  PASS declaration detached
+  PASS integration run canonical
+  PASS integration run authority none
+  PASS integration run completes
+  PASS evaluation surface exists
+  PASS adapter evaluation surface exists
+  PASS evaluation creates no command runtime
+  PASS evaluation exposes no live mutation surface
+  PASS dispose clears installed
+  PASS dispose clears global
+  PASS prior declaration detached
+  PASS uninstalled capture rejected
+STAGE 1A-Z.2.2 PRIME DEADLINE RISK ROLLOUT INTEGRATION TESTS PASS (31/31)
+
+tests/stage1az3-prime-root-exploration-correction-contract.test.cjs
+  PASS contract identity
+  PASS observability dependency
+  PASS authority none
+  PASS five isolated variants
+  PASS perimeter-breach frozen deterministic
+  PASS perimeter-breach candidate deterministic
+  PASS perimeter-breach candidate covers all roots
+  PASS perimeter-breach candidate budget unchanged
+  PASS damaged-core frozen deterministic
+  PASS damaged-core candidate deterministic
+  PASS damaged-core candidate covers all roots
+  PASS damaged-core candidate budget unchanged
+  PASS route-infrastructure-cascade frozen deterministic
+  PASS route-infrastructure-cascade candidate deterministic
+  PASS route-infrastructure-cascade candidate covers all roots
+  PASS route-infrastructure-cascade candidate budget unchanged
+  PASS resource-corridor frozen deterministic
+  PASS resource-corridor candidate deterministic
+  PASS resource-corridor candidate covers all roots
+  PASS resource-corridor candidate budget unchanged
+  PASS exposed-patrol frozen deterministic
+  PASS exposed-patrol candidate deterministic
+  PASS exposed-patrol candidate covers all roots
+  PASS exposed-patrol candidate budget unchanged
+  PASS multi-crisis-priority frozen deterministic
+  PASS multi-crisis-priority candidate deterministic
+  PASS multi-crisis-priority candidate covers all roots
+  PASS multi-crisis-priority candidate budget unchanged
+  PASS deescalation-window frozen deterministic
+  PASS deescalation-window candidate deterministic
+  PASS deescalation-window candidate covers all roots
+  PASS deescalation-window candidate budget unchanged
+  PASS canonical report id
+  PASS candidate selected
+  PASS small report deterministic
+  PASS value unchanged
+  PASS horizon unchanged
+  PASS budget unchanged
+  PASS rollout unchanged
+  PASS no executor
+STAGE 1A-Z.3 PRIME ROOT EXPLORATION CORRECTION TESTS PASS (40/40)
+
+tests/stage1az4-prime-value-objective-calibration-contract.test.cjs
+  PASS contract identity
+  PASS root coverage dependency
+  PASS authority none
+  PASS five isolated variants
+  PASS perimeter-breach frozen deterministic
+  PASS perimeter-breach candidate deterministic
+  PASS perimeter-breach candidate covers all roots
+  PASS perimeter-breach candidate budget unchanged
+  PASS damaged-core frozen deterministic
+  PASS damaged-core candidate deterministic
+  PASS damaged-core candidate covers all roots
+  PASS damaged-core candidate budget unchanged
+  PASS route-infrastructure-cascade frozen deterministic
+  PASS route-infrastructure-cascade candidate deterministic
+  PASS route-infrastructure-cascade candidate covers all roots
+  PASS route-infrastructure-cascade candidate budget unchanged
+  PASS resource-corridor frozen deterministic
+  PASS resource-corridor candidate deterministic
+  PASS resource-corridor candidate covers all roots
+  PASS resource-corridor candidate budget unchanged
+  PASS exposed-patrol frozen deterministic
+  PASS exposed-patrol candidate deterministic
+  PASS exposed-patrol candidate covers all roots
+  PASS exposed-patrol candidate budget unchanged
+  PASS multi-crisis-priority frozen deterministic
+  PASS multi-crisis-priority candidate deterministic
+  PASS multi-crisis-priority candidate covers all roots
+  PASS multi-crisis-priority candidate budget unchanged
+  PASS deescalation-window frozen deterministic
+  PASS deescalation-window candidate deterministic
+  PASS deescalation-window candidate covers all roots
+  PASS deescalation-window candidate budget unchanged
+  PASS canonical report id
+  PASS candidate selected
+  PASS small report deterministic
+  PASS root exploration unchanged
+  PASS horizon unchanged
+  PASS budget unchanged
+  PASS rollout unchanged
+  PASS all calibration gates pass
+  PASS no executor
+STAGE 1A-Z.4 PRIME VALUE AND OBJECTIVE CALIBRATION TESTS PASS (41/41)
+
+tests/stage1az5-prime-horizon-delayed-consequences-contract.test.cjs
+  PASS contract identity
+  PASS authority none
+  PASS five isolated variants
+  PASS candidate is selective horizon
+  PASS perimeter-breach frozen deterministic
+  PASS perimeter-breach candidate deterministic
+  PASS perimeter-breach root coverage preserved
+  PASS perimeter-breach budget unchanged
+  PASS perimeter-breach candidate max depth bounded
+  PASS damaged-core frozen deterministic
+  PASS damaged-core candidate deterministic
+  PASS damaged-core root coverage preserved
+  PASS damaged-core budget unchanged
+  PASS damaged-core candidate max depth bounded
+  PASS route-infrastructure-cascade frozen deterministic
+  PASS route-infrastructure-cascade candidate deterministic
+  PASS route-infrastructure-cascade root coverage preserved
+  PASS route-infrastructure-cascade budget unchanged
+  PASS route-infrastructure-cascade candidate max depth bounded
+  PASS resource-corridor frozen deterministic
+  PASS resource-corridor candidate deterministic
+  PASS resource-corridor root coverage preserved
+  PASS resource-corridor budget unchanged
+  PASS resource-corridor candidate max depth bounded
+  PASS exposed-patrol frozen deterministic
+  PASS exposed-patrol candidate deterministic
+  PASS exposed-patrol root coverage preserved
+  PASS exposed-patrol budget unchanged
+  PASS exposed-patrol candidate max depth bounded
+  PASS multi-crisis-priority frozen deterministic
+  PASS multi-crisis-priority candidate deterministic
+  PASS multi-crisis-priority root coverage preserved
+  PASS multi-crisis-priority budget unchanged
+  PASS multi-crisis-priority candidate max depth bounded
+  PASS deescalation-window frozen deterministic
+  PASS deescalation-window candidate deterministic
+  PASS deescalation-window root coverage preserved
+  PASS deescalation-window budget unchanged
+  PASS deescalation-window candidate max depth bounded
+  PASS canonical report id
+  PASS candidate selected
+  PASS small report deterministic
+  PASS root exploration unchanged
+  PASS value calibration unchanged
+  PASS budget unchanged
+  PASS dynamics unchanged
+  PASS no witness plans
+  PASS all horizon gates pass
+  PASS no executor
+STAGE 1A-Z.5 PRIME HORIZON AND DELAYED CONSEQUENCES TESTS PASS (49/49)
+
+tests/stage1az6-prime-search-efficiency-contract.test.cjs
+  PASS identity
+  PASS authority none
+  PASS five variants
+  PASS perimeter-breach action preserved
+  PASS perimeter-breach ranking preserved
+  PASS perimeter-breach candidate deterministic
+  PASS perimeter-breach cache active
+  PASS damaged-core action preserved
+  PASS damaged-core ranking preserved
+  PASS damaged-core candidate deterministic
+  PASS damaged-core cache active
+  PASS route-infrastructure-cascade action preserved
+  PASS route-infrastructure-cascade ranking preserved
+  PASS route-infrastructure-cascade candidate deterministic
+  PASS route-infrastructure-cascade cache active
+  PASS resource-corridor action preserved
+  PASS resource-corridor ranking preserved
+  PASS resource-corridor candidate deterministic
+  PASS resource-corridor cache active
+  PASS exposed-patrol action preserved
+  PASS exposed-patrol ranking preserved
+  PASS exposed-patrol candidate deterministic
+  PASS exposed-patrol cache active
+  PASS multi-crisis-priority action preserved
+  PASS multi-crisis-priority ranking preserved
+  PASS multi-crisis-priority candidate deterministic
+  PASS multi-crisis-priority cache active
+  PASS deescalation-window action preserved
+  PASS deescalation-window ranking preserved
+  PASS deescalation-window candidate deterministic
+  PASS deescalation-window cache active
+  PASS report id
+  PASS preservation
+  PASS non-regression
+  PASS gates
+  PASS deterministic report
+  PASS no executor
+STAGE 1A-Z.6 PRIME SEARCH EFFICIENCY TESTS PASS (37/37)
+
+tests/stage1az7-adaptive-compute-allocation-contract.test.cjs
+  PASS identity
+  PASS authority none
+  PASS candidate budgets
+  PASS perimeter-breach deterministic
+  PASS perimeter-breach legal
+  PASS perimeter-breach bounded budget
+  PASS perimeter-breach measures complete
+  PASS damaged-core deterministic
+  PASS damaged-core legal
+  PASS damaged-core bounded budget
+  PASS damaged-core measures complete
+  PASS route-infrastructure-cascade deterministic
+  PASS route-infrastructure-cascade legal
+  PASS route-infrastructure-cascade bounded budget
+  PASS route-infrastructure-cascade measures complete
+  PASS resource-corridor deterministic
+  PASS resource-corridor legal
+  PASS resource-corridor bounded budget
+  PASS resource-corridor measures complete
+  PASS exposed-patrol deterministic
+  PASS exposed-patrol legal
+  PASS exposed-patrol bounded budget
+  PASS exposed-patrol measures complete
+  PASS multi-crisis-priority deterministic
+  PASS multi-crisis-priority legal
+  PASS multi-crisis-priority bounded budget
+  PASS multi-crisis-priority measures complete
+  PASS deescalation-window deterministic
+  PASS deescalation-window legal
+  PASS deescalation-window bounded budget
+  PASS deescalation-window measures complete
+  PASS report id
+  PASS compute reduced
+  PASS no objective losses
+  PASS all gates
+  PASS deterministic report
+  PASS no executor
+STAGE 1A-Z.7 ADAPTIVE COMPUTE ALLOCATION TESTS PASS (37/37)
+
+tests/stage1az8-baseline-incumbent-certification-contract.test.cjs
+  PASS identity
+  PASS authority none
+  PASS deterministic report
+  PASS baseline gates
+  PASS incumbent unavailable
+  PASS no live authority
+  PASS five baseline policies
+  PASS no executor
+STAGE 1A-Z.8 BASELINE AND INCUMBENT CERTIFICATION TESTS PASS (8/8)
+
+tests/stage1az9-expanded-scenario-coverage-contract.test.cjs
+  PASS identity
+  PASS authority none
+  PASS four profiles
+  PASS deterministic
+  PASS 28 expanded cases
+  PASS coverage
+  PASS legality
+  PASS no authority
+  PASS no executor
+STAGE 1A-Z.9 EXPANDED SCENARIO COVERAGE TESTS PASS (9/9)
+
+tests/static-world-submission-metric.test.mjs
+ZEK-19 representative submission metric: PASS (canonical renderer hooks, family attribution, hook cleanup)
+
+tests/stormback-recovery-readability.test.mjs
+Stormback thunder_punch recovery readability passed at 2s.
+
+tests/supply-route-objective.test.mjs
+Supply-route planetary transit objective tests passed.
+
+tests/w0af-forest-defensive-action-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS action space identity
+  PASS root stance is defensive
+  PASS authority is read-only
+  PASS thirteen actions declared
+  PASS indexes canonical
+  PASS keys unique
+  PASS safe fallback exact
+  PASS declared interrupts exact
+  PASS no offensive registry keys
+  PASS all timings are integer
+  PASS state ID canonical
+  PASS state validates
+  PASS state addresses observation
+  PASS state capacity source explicit
+  PASS derived metrics bounded
+  PASS candidate set ID canonical
+  PASS candidate set validates
+  PASS candidate set has every action
+  PASS all actions legal with complete fresh observation
+  PASS hold targetless
+  PASS patrol route target
+  PASS recon route target
+  PASS intercept hostile target
+  PASS combat screen target
+  PASS reinforce structure target
+  PASS repair structure target
+  PASS fortify damaged route target
+  PASS secure resource target
+  PASS stabilize infrastructure target
+  PASS share sees six direct records
+  PASS diplomatic channel targetless
+  PASS withdraw accepts hostile contact and attacker alert
+  PASS target IDs action-bound
+  PASS hidden other-faction event does not change observation
+  PASS FX-HIDDEN candidate set unchanged
+  PASS expired observation retains targetless actions
+  PASS expired contact masks intercept
+  PASS expired alert masks screen
+  PASS persistent structure remains available
+  PASS safe fallback survives zero capacity
+  PASS open channel requires readiness
+  PASS patrol capacity gate
+  PASS cooldown masks intercept
+  PASS commitment retains active action
+  PASS commitment masks unrelated action
+  PASS commitment retains hold interrupt
+  PASS commitment retains withdraw interrupt
+  PASS terminal masks all actions
+  PASS replan masks all actions
+  PASS outcome ID canonical
+  PASS outcome validates
+  PASS outcome binds candidate set
+  PASS outcome deducts readiness
+  PASS outcome reserves patrol slot
+  PASS intercept reduces hostile pressure
+  PASS intercept raises tension by two
+  PASS projection does not mutate state
+  PASS hold restores readiness bounded
+  PASS channel reduces tension
+  PASS channel increases trust
+  PASS wrong defensive stance rejected
+  PASS invented target rejected
+  PASS targetless action rejects target
+  PASS illegal action projection rejected
+  PASS candidate tamper rejected
+  PASS clone mutation detached
+  PASS contract exposes no execute method
+  PASS contract exposes no dispatch method
+  PASS contract exposes no apply method
+W0-AF FOREST DEFENSIVE ACTION CONTRACT TESTS PASS (71/71)
+
+tests/w0af-forest-defensive-action-integration.test.cjs
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter action count thirteen
+  PASS adapter root stance defensive
+  PASS adapter authority read-only
+  PASS adapter exposes no execute
+  PASS adapter exposes no apply
+  PASS empty set addresses local faction
+  PASS default capacity source is explicit development label
+  PASS empty set retains hold
+  PASS empty set retains defensive channel
+  PASS empty set masks intercept
+  PASS hidden spawn gets identity
+  PASS hidden spawn leaves candidate set unchanged
+  PASS out-of-range creates no event
+  PASS out-of-range leaves intercept masked
+  PASS grounded sighting enables intercept
+  PASS grounded sighting enables direct share
+  PASS intercept target references observed subject
+  PASS candidate set contains no event IDs
+  PASS projection binds local observation
+  PASS projection is detached from world enemy
+  PASS projection does not move enemy
+  PASS route enables patrol
+  PASS route enables recon
+  PASS damaged route enables fortify
+  PASS damaged structure enables reinforce
+  PASS damaged structure enables repair
+  PASS low capacity retains hold
+  PASS low capacity masks repair
+  PASS low capacity source preserved
+  PASS other faction cannot use unshared human sighting
+  PASS shared contact enables recipient intercept
+  PASS shared-only recipient cannot reshare
+  PASS repeated candidate set deterministic
+  PASS adapter equals integration
+  PASS contact expires at exact boundary
+  PASS route remains fresh before route expiry
+  PASS terminal masks all
+  PASS replan masks all
+  PASS hostile stance cannot be injected
+  PASS dispose clears global integration
+  PASS prior bundle detached after disposal
+W0-AF FOREST DEFENSIVE ACTION INTEGRATION TESTS PASS (43/43)
+
+tests/w0o-identity-contract.test.cjs
+  PASS contract identity
+  PASS team codes are canonical and case-insensitive
+  PASS world identity includes biome seed
+  PASS human faction is stable
+  PASS settlement factions are distinct
+  PASS identities validate
+  PASS empty team is rejected
+  PASS fractional seed is rejected
+  PASS malformed encoded identity is rejected
+  PASS persistent entity IDs are stable
+  PASS human player identity prefers user ID
+  PASS remote client identities are distinct
+  PASS canonical JSON ignores object key order
+  PASS canonical metadata rejects non-finite values
+  PASS canonical metadata rejects cycles
+  PASS registry registers factions before entities
+  PASS registry snapshot is canonical and deterministic
+  PASS snapshot round-trip is byte-identical
+  PASS FX-ID-REUSE retired spawn ID cannot return
+  PASS spawn sequence survives snapshot restore
+  PASS FX-ID-COLLISION conflicting source mapping is rejected
+  PASS FX-CLONE-ALIAS snapshot mutations cannot alter registry
+W0-O.0 IDENTITY CONTRACT TESTS PASS (22/22)
+
+tests/w0o-identity-integration.test.cjs
+  PASS world identity installed
+  PASS human faction registered
+  PASS two settlement factions registered
+  PASS settlement identities are stable and distinct
+  PASS local player receives an identity
+  PASS local player ownership is human faction
+  PASS persistent structures registered
+  PASS resource identities attached to runtime objects
+  PASS area and route identities exist
+  PASS spawn wrapper assigns enemy identity
+  PASS enemy is owned by nearest settlement
+  PASS defeated enemy identity is retired
+  PASS retired identity recorded
+  PASS FX-ID-REUSE next spawn receives a new identity
+  PASS spawn sequence is monotonic
+  PASS remote player receives stable client identity
+  PASS remote player identity survives repeated sync
+  PASS capture is deterministic without world changes
+  PASS snapshot hash is deterministic
+  PASS identity adapter captures the same registry
+  PASS wrapped building registration creates identity
+  PASS dispose restores spawn function
+  PASS persistent player identity survives restore
+  PASS restored spawn sequence does not reuse old IDs
+  PASS unbound transient enemy from prior session was retired
+  PASS array reordering does not change attached entity IDs
+W0-O.0 IDENTITY INTEGRATION TESTS PASS (26/26)
+
+tests/w0o1-perception-event-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS ten event types declared
+  PASS identity view accepts W0-O.0 snapshot
+  PASS first sequence starts at one
+  PASS event ID is canonical
+  PASS event ID is bound to canonical body
+  PASS event payload position is preserved
+  PASS source entity belongs to source faction
+  PASS canonical key order produces identical event ID
+  PASS changed payload changes event ID
+  PASS FX-OMNISCIENT aggregate field rejected
+  PASS FX-HIDDEN-STATE hidden health rejected
+  PASS unregistered observer rejected
+  PASS unregistered source entity rejected
+  PASS source ownership mismatch rejected
+  PASS non-share observer/source faction mismatch rejected
+  PASS wrong subject kind rejected
+  PASS wrong source type rejected
+  PASS fractional quantum rejected
+  PASS wall-clock field rejected
+  PASS non-integer position rejected
+  PASS enemy_lost accepted
+  PASS combat alert accepts structure subject
+  PASS structure observation validates visible owner
+  PASS resource discovery accepted
+  PASS route observation accepted
+  PASS explicit share targets recipient faction
+  PASS share preserves original event bytes
+  PASS share preserves original observation quantum
+  PASS FX-LEAK non-observer cannot share event
+  PASS share cannot predate observation
+  PASS nested share rejected
+  PASS private stream query excludes recipient-only share from sender
+  PASS recipient stream includes explicit share
+  PASS snapshot is deterministic
+  PASS snapshot round-trip is byte-identical
+  PASS snapshot hash round-trip
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter stream
+  PASS FX-SEQUENCE-REUSE duplicate sequence snapshot rejected
+  PASS FX-EVENT-ID-TAMPER rejected
+  PASS retired subject remains valid historical subject
+  PASS fixed replay is deterministic
+W0-O.1 PERCEPTION EVENT CONTRACT TESTS PASS (44/44)
+
+tests/w0o1-perception-event-integration.test.cjs
+  PASS integration installed globally
+  PASS stream starts empty
+  PASS adapter installed
+  PASS enemy has identity before perception
+  PASS out-of-range enemy produces no event
+  PASS out-of-range check does not enumerate hidden enemy into stream
+  PASS in-range enemy produces grounded sighting
+  PASS position is quantized to integer cells
+  PASS observer is local human faction
+  PASS source is local player entity
+  PASS enemy lost event appended
+  PASS resource discovery uses registered resource identity
+  PASS explicit intelligence sharing creates recipient event
+  PASS shared event preserves original sighting
+  PASS adapter snapshot equals integration snapshot
+  PASS adapter hash equals stream hash
+  PASS repeated capture is deterministic
+  PASS faction query contains only addressed events
+  PASS event stream survives restore
+  PASS next event sequence survives restore
+  PASS restored hash is byte-identical
+  PASS new identity can be observed after integration refresh
+  PASS new event ID is not reused
+  PASS dispose clears global integration
+W0-O.1 PERCEPTION EVENT INTEGRATION TESTS PASS (24/24)
+
+tests/w0o2-knowledge-ledger-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS six knowledge topics declared
+  PASS nine source event policies declared
+  PASS mobile sighting TTL is four quanta
+  PASS structure identity is persistent
+  PASS ledger starts empty
+  PASS ledger starts at event sequence one
+  PASS stream synchronization consumes every event
+  PASS ledger time advances to latest delivery quantum
+  PASS applied event IDs preserve stream order
+  PASS sender has five subject-topic records
+  PASS recipient receives only explicitly shared record
+  PASS human faction receives no leaked knowledge
+  PASS enemy lost supersedes earlier sighting
+  PASS enemy lost is stale at its exact observation quantum
+  PASS unit contact preserves both evidence entries
+  PASS unit contact records one contradiction
+  PASS record identity is canonical
+  PASS record identity validates
+  PASS shared knowledge carries shared acquisition mode
+  PASS shared knowledge preserves original observation quantum
+  PASS shared knowledge preserves delivery quantum separately
+  PASS sharing does not refresh stale information
+  PASS sharing provenance identifies sender
+  PASS destroyed structure supersedes earlier status
+  PASS destroyed structure knowledge is persistent
+  PASS persistent structure remains fresh far in future
+  PASS structure evidence preserves two contradictions
+  PASS structure evidence history has three entries
+  PASS route is fresh before exclusive expiry
+  PASS route is stale at exclusive expiry
+  PASS resource is fresh before twenty-quantum expiry
+  PASS resource is stale at twenty-quantum expiry
+  PASS same subject can hold separate knowledge topics
+  PASS combat alert is stale after two quanta
+  PASS fresh-only query excludes stale records
+  PASS ledger advances monotonically
+  PASS time advance changes snapshot hash
+  PASS FX-TIME ledger cannot move backward
+  PASS snapshot round-trip is byte-identical
+  PASS snapshot hash round-trip is identical
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter ledger
+  PASS FX-RECORD-ID tamper rejected
+  PASS FX-CONTRADICTION-COUNT tamper rejected
+  PASS FX-EVIDENCE-ALIAS duplicate event sequence rejected
+  PASS FX-EVENT-GAP noncontiguous ingestion rejected
+  PASS FX-EVENT-REUSE duplicate event ingestion rejected
+  PASS direct evidence outranks shared evidence at equal observation time
+  PASS equal-time direct evidence keeps direct facts
+  PASS older late-delivered evidence cannot override newer observation
+  PASS late older evidence remains in evidence history
+  PASS ledger snapshot contains no wall-clock fields
+  PASS fixed replay produces deterministic bytes
+  PASS fixed replay produces deterministic hash
+W0-O.2 KNOWLEDGE LEDGER CONTRACT TESTS PASS (56/56)
+
+tests/w0o2-knowledge-ledger-integration.test.cjs
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS ledger starts empty
+  PASS ledger starts at live quantum
+  PASS enemy receives stable identity before knowledge
+  PASS FX-OMNISCIENT unobserved enemy creates no ledger record
+  PASS out-of-range perception produces no event
+  PASS out-of-range enemy remains absent from ledger
+  PASS grounded sighting creates one private record
+  PASS record subject matches sighted enemy
+  PASS record is fresh at observation quantum
+  PASS record facts contain only perception payload derivation
+  PASS settlement has no leaked record before sharing
+  PASS enemy lost event is ingested
+  PASS enemy lost supersedes sighting
+  PASS enemy lost becomes explicitly stale
+  PASS evidence history preserves sighting and lost event
+  PASS resource discovery creates resource knowledge
+  PASS resource knowledge is fresh
+  PASS explicit sharing creates recipient knowledge
+  PASS shared record preserves sender provenance
+  PASS shared record preserves original observation quantum
+  PASS sharing at expiry does not refresh knowledge
+  PASS sender ledger excludes recipient share envelope
+  PASS adapter snapshot equals integration snapshot
+  PASS adapter hash equals ledger hash
+  PASS adapter faction query is private
+  PASS repeated capture is deterministic
+  PASS repeated sync does not duplicate evidence
+  PASS live time advance marks resource stale at exact expiry
+  PASS fresh-only query excludes expired resource
+  PASS ledger snapshot survives restore
+  PASS restored ledger hash is byte-identical
+  PASS restored applied sequence reaches event stream
+  PASS new identity can enter restored ledger after identity refresh
+  PASS new event advances ledger sequence without reuse
+  PASS dispose clears global knowledge integration
+W0-O.2 KNOWLEDGE LEDGER INTEGRATION TESTS PASS (37/37)
+
+tests/w0o3-faction-observation-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS feature layout identity
+  PASS topic order matches knowledge contract
+  PASS six fixed topic sections
+  PASS thirty-six total slots
+  PASS fixed feature count is 592
+  PASS feature spec matches feature count
+  PASS feature vector matches feature count
+  PASS all features are finite and bounded
+  PASS packet identity is canonical
+  PASS packet validates byte-identically
+  PASS packet carries explicit faction
+  PASS packet carries explicit quantum
+  PASS packet has six fresh records
+  PASS packet selected all fresh records
+  PASS packet omitted no records
+  PASS FX-STALE-OBSERVATION lost unit is excluded
+  PASS fresh unit contact is included
+  PASS fresh combat alert is included separately
+  PASS persistent destroyed structure is included
+  PASS fresh route is included
+  PASS fresh infrastructure status is included
+  PASS FX-LEAK other faction private player sighting excluded
+  PASS no event sequence fields enter packet
+  PASS no event IDs enter packet
+  PASS no wall clock fields enter packet
+  PASS no authoritative aggregate fields enter packet
+  PASS FX-OBS-NONDET repeated packet bytes are identical
+  PASS FX-OBS-NONDET repeated observation IDs are identical
+  PASS FX-OBS-NONDET repeated features are identical
+  PASS FX-HIDDEN-STATE other-faction event does not change packet bytes
+  PASS FX-HIDDEN-STATE other-faction event does not change observation ID
+  PASS FX-HIDDEN-STATE other-faction event does not change feature vector
+  PASS FX-OMNISCIENT hidden identity registry additions do not change packet
+  PASS recipient packet includes explicitly shared fresh sighting
+  PASS recipient packet also includes its direct private sighting
+  PASS FX-CLONE-DROP clone retains observation ID
+  PASS FX-CLONE-DROP clone retains all 592 features
+  PASS FX-CLONE-DROP clone hash equals parent hash
+  PASS FX-CLONE-ALIAS clone snapshot mutation cannot alter parent
+  PASS FX-CLONE-ALIAS sibling snapshots are detached
+  PASS tampered observation ID rejected
+  PASS tampered feature vector rejected
+  PASS stale slot rejected at expiry
+  PASS section reordering rejected
+  PASS slot record ID tamper rejected
+  PASS unknown faction rejected by builder
+  PASS fractional quantum rejected
+  PASS overflow total fresh count records all known fresh contacts
+  PASS overflow selects fixed eight unit slots
+  PASS overflow reports two omitted fresh contacts
+  PASS overflow packet reports global omitted count
+  PASS overflow selection keeps most recent observation
+  PASS overflow selection drops the two oldest observations first
+  PASS ledger record array order does not affect observation
+  PASS changed visible fact changes observation ID
+  PASS changed visible fact changes feature vector
+W0-O.3 FACTION OBSERVATION CONTRACT TESTS PASS (59/59)
+
+tests/w0o3-faction-observation-integration.test.cjs
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter exposes fixed layout
+  PASS adapter exposes 592 features
+  PASS empty observation addresses local faction
+  PASS empty observation uses live quantum
+  PASS empty observation contains no fresh records
+  PASS empty observation still has fixed features
+  PASS empty observation validates
+  PASS hidden enemy receives stable identity
+  PASS FX-OMNISCIENT hidden spawn does not change observation bytes
+  PASS FX-OMNISCIENT hidden spawn does not change observation ID
+  PASS out-of-range perception creates no event
+  PASS out-of-range check leaves observation unchanged
+  PASS grounded sighting changes observation ID
+  PASS grounded sighting creates one fresh record
+  PASS grounded sighting appears in unit section
+  PASS visible packet contains no hidden health
+  PASS visible packet contains no perception event IDs
+  PASS feature vector changes with visible knowledge
+  PASS adapter packet equals integration packet
+  PASS adapter hash equals observation object hash
+  PASS adapter feature vector is detached
+  PASS Prime input carries only fixed read-only fields
+  PASS Prime input feature vector matches packet
+  PASS Prime input omits structured evidence sections
+  PASS FX-LEAK settlement packet excludes unshared human sighting
+  PASS explicit share creates recipient observation record
+  PASS shared slot preserves sender provenance
+  PASS shared slot preserves original observation quantum
+  PASS sharing does not expose sender private ledger wholesale
+  PASS FX-OBS-NONDET repeated live captures are byte-identical
+  PASS FX-OBS-NONDET repeated live IDs are identical
+  PASS FX-STALE-OBSERVATION sighting expires at exact exclusive boundary
+  PASS expiry changes observation ID
+  PASS shared sighting expires from recipient at original boundary
+  PASS live observation cannot move behind ledger quantum
+  PASS fractional live quantum rejected
+  PASS new grounded resource knowledge enters observation
+  PASS new grounded resource changes observation ID
+  PASS repeated resource capture stays deterministic
+  PASS dispose clears global observation integration
+  PASS previous packet remains detached after disposal
+W0-O.3 FACTION OBSERVATION INTEGRATION TESTS PASS (43/43)
+
+tests/w0o5-observation-legality-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS action space identity
+  PASS six actions declared
+  PASS action indexes are canonical
+  PASS action keys are canonical
+  PASS safe fallback is stabilize
+  PASS safe fallback is declared interrupt
+  PASS target view is canonical
+  PASS target view validates byte-identically
+  PASS target view addresses observation
+  PASS target view addresses faction
+  PASS target view has every action
+  PASS stabilize is targetless
+  PASS scout has route target
+  PASS intercept has hostile contact target
+  PASS fortify has route target
+  PASS repair has damaged structure target
+  PASS share has every direct record as target
+  PASS target IDs are canonical
+  PASS target IDs are action-bound
+  PASS all observation requirements pass
+  PASS all-upstream produces all-final mask
+  PASS all mask bitsets are 3f
+  PASS safe fallback remains legal
+  PASS legality ID is canonical
+  PASS legality validates byte-identically
+  PASS mask hashes are deterministic
+  PASS empty observation retains only stabilize
+  PASS empty final mask retains only stabilize
+  PASS empty reasons identify missing route
+  PASS empty reasons identify missing contact
+  PASS empty reasons identify missing repair target
+  PASS empty reasons identify missing share target
+  PASS wrong-hostility contact cannot enable intercept
+  PASS friendly direct contact can still be shared
+  PASS operational structure cannot enable repair
+  PASS FX-OBS-MASK-RESURRECT intercept stays upstream-masked
+  PASS FX-OBS-MASK-RESURRECT repair stays upstream-masked
+  PASS upstream reason has precedence
+  PASS upstream bits are preserved
+  PASS nonterminal upstream without safe fallback rejected
+  PASS terminal masks every action
+  PASS terminal reason has highest precedence
+  PASS replan boundary masks every action
+  PASS replan reason has highest precedence
+  PASS FX-OBS-MASK-HIDDEN hidden other-faction event leaves observation unchanged
+  PASS FX-OBS-MASK-HIDDEN hidden other-faction event leaves mask unchanged
+  PASS FX-OBS-MASK-LEAK other-faction subject is absent from targets
+  PASS FX-OBS-MASK-STALE expired contact masks intercept
+  PASS FX-OBS-MASK-ROOT recomputation changes mask at deeper quantum
+  PASS shared hostile contact enables intercept
+  PASS shared-only contact cannot be reshared
+  PASS shared target preserves acquisition mode
+  PASS canonical target selection succeeds
+  PASS target cannot be selected for targetless action
+  PASS target from another action cannot be selected
+  PASS invented target cannot be selected
+  PASS FX-OVERFLOW observation reports two omitted contacts
+  PASS FX-OVERFLOW target view exposes only eight intercept targets
+  PASS FX-OVERFLOW target view reports omitted source records
+  PASS FX-OVERFLOW omitted target cannot be invented or selected
+  PASS FX-CLONE-DROP clone retains observation
+  PASS FX-CLONE-DROP clone retains upstream mask
+  PASS FX-CLONE-DROP clone produces same legality
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter parent observation
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter parent mask
+  PASS withObservation creates a distinct state
+  PASS withObservation preserves upstream mask
+  PASS FX-OBS-MASK-NONDET repeated target views are byte-identical
+  PASS FX-OBS-MASK-NONDET repeated legality records are byte-identical
+  PASS FX-OBS-MASK-NONDET repeated final hashes are identical
+  PASS tampered target view ID rejected
+  PASS tampered target record ID rejected
+  PASS tampered target slot index rejected
+  PASS tampered legality ID rejected
+  PASS tampered final mask rejected
+  PASS mask width mismatch rejected
+  PASS non-binary mask rejected
+  PASS state snapshot unexpected field rejected
+  PASS legality record contains no event IDs
+  PASS legality record contains no authoritative aggregates
+  PASS target view contains no float feature reconstruction
+  PASS action execution is absent from contract surface
+W0-O.5 OBSERVATION LEGALITY CONTRACT TESTS PASS (85/85)
+
+tests/w0o5-observation-legality-integration.test.cjs
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter exposes development action space
+  PASS adapter exposes six actions
+  PASS adapter is read-only
+  PASS empty legality addresses local faction
+  PASS empty legality uses live quantum
+  PASS empty observation retains only stabilize
+  PASS empty target view has no targets
+  PASS empty observation and target view are linked
+  PASS hidden enemy receives stable identity
+  PASS FX-OBS-MASK-HIDDEN hidden spawn leaves legality ID unchanged
+  PASS FX-OBS-MASK-HIDDEN hidden spawn leaves final mask unchanged
+  PASS out-of-range perception creates no event
+  PASS out-of-range perception leaves intercept masked
+  PASS grounded sighting enables intercept
+  PASS grounded direct sighting enables sharing
+  PASS sighting target references observed enemy
+  PASS legality record contains no event ID
+  PASS target view contains no feature vector
+  PASS adapter selects canonical intercept target
+  PASS adapter rejects invented target
+  PASS FX-OBS-MASK-RESURRECT upstream-masked intercept remains masked
+  PASS upstream reason is preserved
+  PASS live nonterminal mask without fallback rejected
+  PASS grounded route enables scouting
+  PASS grounded route enables fortification
+  PASS route actions receive distinct target IDs
+  PASS damaged known structure enables repair
+  PASS repair target references structure identity
+  PASS FX-OBS-MASK-LEAK settlement cannot use unshared human target
+  PASS explicitly shared hostile contact enables recipient intercept
+  PASS shared-only recipient contact cannot enable resharing
+  PASS recipient target preserves shared acquisition mode
+  PASS FX-OBS-MASK-NONDET repeated live legality is byte-identical
+  PASS FX-OBS-MASK-NONDET repeated live target view is byte-identical
+  PASS FX-OBS-MASK-STALE contact expires at exact boundary
+  PASS route remains fresh before its expiry
+  PASS shared contact expires at original boundary
+  PASS terminal live projection masks everything
+  PASS replan live projection masks everything
+  PASS adapter target view equals integration target view
+  PASS adapter intersection equals integration intersection
+  PASS adapter exposes no action execution method
+  PASS dispose clears global legality integration
+  PASS previous legality result remains detached after disposal
+W0-O.5 OBSERVATION LEGALITY INTEGRATION TESTS PASS (46/46)
+
+tests/w0o6-prime-shadow-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS engine identity
+  PASS mode is shadow-only
+  PASS authority is none
+  PASS feature count is 592
+  PASS action count is six
+  PASS context is deterministic
+  PASS context carries explicit simulations
+  PASS context carries explicit upstream source
+  PASS simulation budget below minimum rejected
+  PASS fractional seed rejected
+  PASS recommendation ID is canonical
+  PASS recommendation validates byte-identically
+  PASS recommendation addresses observation
+  PASS recommendation addresses legality
+  PASS recommendation addresses target view
+  PASS recommendation carries 592-feature hash
+  PASS rank contains exactly six actions
+  PASS rank contains every canonical action index
+  PASS visits sum to simulation budget
+  PASS legal priors sum to one million
+  PASS masked actions receive zero visits
+  PASS selected action is legal
+  PASS selected target is canonical when required
+  PASS confidence equals selected visit share
+  PASS recommendation has no wall clock
+  PASS recommendation has no perception event IDs
+  PASS recommendation has no execution field
+  PASS repeated recommendation bytes are identical
+  PASS repeated recommendation IDs are identical
+  PASS same seed and inputs preserve ranking
+  PASS FX-SHADOW-HIDDEN hidden other-faction state leaves observation identical
+  PASS FX-SHADOW-HIDDEN hidden other-faction state leaves recommendation identical
+  PASS FX-SHADOW-HIDDEN hidden other-faction state leaves ranking identical
+  PASS FX-SHADOW-MASK blocked intercept receives zero visits
+  PASS FX-SHADOW-MASK blocked intercept cannot be selected
+  PASS FX-SHADOW-MASK recommendation binds changed final mask
+  PASS FX-SHADOW-STALE expired contact is illegal
+  PASS FX-SHADOW-STALE expired contact receives zero visits
+  PASS FX-SHADOW-STALE expired contact cannot be selected
+  PASS terminal shadow recommendation selects no action
+  PASS terminal shadow recommendation selects no target
+  PASS terminal shadow recommendation has zero confidence
+  PASS terminal shadow recommendation records zero visits
+  PASS incumbent unavailable comparison is canonical
+  PASS incumbent unavailable comparison says unavailable
+  PASS incumbent unavailable comparison validates
+  PASS matching incumbent agrees
+  PASS different incumbent disagrees
+  PASS unknown incumbent action rejected
+  PASS shadow ledger starts sequence at one
+  PASS shadow ledger entry ID is canonical
+  PASS shadow ledger sequence is monotonic
+  PASS shadow ledger snapshot round-trips byte-identically
+  PASS shadow ledger hash round-trips
+  PASS FX-SHADOW-ALIAS snapshot mutation cannot alter ledger
+  PASS shadow ledger sequence tamper rejected
+  PASS shadow ledger entry ID tamper rejected
+  PASS recommendation ID tamper rejected
+  PASS ranked visits tamper rejected
+  PASS wrong target view rejected
+W0-O.6 PRIME SHADOW CONTRACT TESTS PASS (62/62)
+
+tests/w0o6-prime-shadow-integration.test.cjs
+  PASS Prime shadow integration installed globally
+  PASS Prime shadow adapter installed globally
+  PASS adapter consumes 592 features
+  PASS adapter consumes six actions
+  PASS adapter mode is shadow-only
+  PASS adapter has no authority
+  PASS adapter exposes no execute method
+  PASS adapter exposes no commit method
+  PASS adapter exposes no dispatch method
+  PASS empty shadow run addresses local faction
+  PASS empty shadow run consumes observation
+  PASS empty shadow run consumes legality
+  PASS empty shadow run selects safe fallback
+  PASS empty shadow run has no target
+  PASS empty shadow run records incumbent unavailable
+  PASS empty shadow run appends telemetry sequence one
+  PASS hidden spawn receives identity
+  PASS FX-SHADOW-HIDDEN hidden spawn leaves observation unchanged
+  PASS FX-SHADOW-HIDDEN hidden spawn leaves recommendation unchanged
+  PASS shadow run does not move hidden enemy
+  PASS shadow run does not damage hidden enemy
+  PASS shadow run does not construct buildings
+  PASS out-of-range perception creates no event
+  PASS out-of-range enemy leaves intercept illegal
+  PASS grounded sighting enables intercept
+  PASS grounded sighting enables share
+  PASS Prime ranks intercept with positive visits
+  PASS Prime intercept target references grounded subject
+  PASS recommendation contains no perception event ID
+  PASS recommendation does not carry full feature vector
+  PASS FX-SHADOW-MASK blocked intercept remains illegal
+  PASS FX-SHADOW-MASK blocked intercept gets zero visits
+  PASS FX-SHADOW-MASK blocked intercept cannot be selected
+  PASS nonterminal projection without fallback rejected
+  PASS mapped incumbent comparison can agree
+  PASS incumbent comparison remains observational
+  PASS FX-SHADOW-LEAK settlement cannot use unshared target
+  PASS explicitly shared contact enables settlement intercept
+  PASS shared contact appears in Prime ranked target
+  PASS FX-SHADOW-NONDET repeated recommendations are byte-identical
+  PASS FX-SHADOW-NONDET repeated comparisons are byte-identical
+  PASS FX-SHADOW-STALE contact expires at exact boundary
+  PASS FX-SHADOW-STALE expired contact gets zero visits
+  PASS terminal shadow run selects no action
+  PASS terminal shadow run selects no target
+  PASS replan shadow run selects no action
+  PASS adapter executes canonical shadow run
+  PASS adapter telemetry equals integration telemetry
+  PASS adapter telemetry hash equals integration hash
+  PASS adapter entries are detached
+  PASS dispose clears global Prime shadow integration
+  PASS persisted telemetry restores
+  PASS restored telemetry hash is byte-identical
+  PASS restored telemetry sequence continues monotonically
+  PASS prior recommendation remains detached after disposal
+W0-O.6 PRIME SHADOW INTEGRATION TESTS PASS (55/55)
+
+tests/w0p-live-parity-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS parity space identity
+  PASS mode measurement only
+  PASS authority none
+  PASS thirteen bindings
+  PASS binding indexes canonical
+  PASS binding keys match W0-AF
+  PASS binding ids canonical
+  PASS five partial declarations
+  PASS eight unbound declarations
+  PASS zero exact declarations
+  PASS unbound entries claim no handler
+  PASS runtime surface validates
+  PASS report id canonical
+  PASS report validates
+  PASS report includes every action
+  PASS exact observed count zero
+  PASS partial observed count five
+  PASS unbound count eight
+  PASS source missing count zero
+  PASS production ready false
+  PASS mutating probe count zero
+  PASS hold partial observed
+  PASS patrol unbound
+  PASS intercept partial observed
+  PASS share partial observed
+  PASS channel partial observed
+  PASS withdraw partial observed
+  PASS share target parity exact
+  PASS share eligibility parity exact
+  PASS no report execution field
+  PASS hidden faction observation unchanged
+  PASS hidden faction report unchanged
+  PASS missing share surface detected
+  PASS missing count increments
+  PASS partial count decrements
+  PASS report deterministic bytes
+  PASS report deterministic id
+  PASS tampered report rejected
+  PASS fractional quantum rejected
+  PASS malformed candidate id rejected
+  PASS registry matches contract
+  PASS registry verdict exact zero
+  PASS registry verdict partial five
+  PASS registry verdict unbound eight
+  PASS registry bindings equal contract
+  PASS frozen source evidence hash assets/index-02987539.js
+  PASS current source anchor processEnemySpawning(
+  PASS current source anchor spawnEnemy(
+  PASS current source anchor updateEnemies(
+  PASS current source anchor fireEnemyProjectile(
+  PASS frozen source evidence hash src/game/PerceptionEventIntegration.js
+  PASS current source anchor shareEvent({
+  PASS current source anchor this.stream.share({
+  PASS current source anchor originalEventId
+  PASS frozen source evidence hash src/game/RelationsPanel.js
+  PASS current source anchor perform(action)
+  PASS current source anchor recordDelta({ tension, trust, reason })
+  PASS current source anchor beginCeasefire()
+  PASS current source anchor updateCeasefire()
+  PASS frozen source evidence hash src/game/ForestDefensiveActionIntegration.js
+  PASS current source anchor captureForFaction(
+  PASS current source anchor projectForFaction(
+  PASS integration never calls spawnEnemy
+  PASS integration never calls resolveDiplomacy
+  PASS integration never calls relations perform
+  PASS contract exposes no execute
+  PASS contract exposes no dispatch
+  PASS contract exposes no apply
+W0-P LIVE PARITY CONTRACT TESTS PASS (70/70)
+
+tests/w0p-live-parity-integration.test.cjs
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS adapter mode measurement only
+  PASS adapter authority none
+  PASS adapter has thirteen bindings
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no apply
+  PASS enemy array observed
+  PASS spawn surface observed
+  PASS enemy loop observed
+  PASS spawn scheduler observed
+  PASS diplomacy surface observed
+  PASS share surface observed
+  PASS relations perform observed
+  PASS relations ceasefire observed
+  PASS runtime probe calls no methods
+  PASS report addresses local faction
+  PASS report binds observation
+  PASS report binds planning state
+  PASS report binds candidate set
+  PASS partial observed count five
+  PASS unbound count eight
+  PASS exact observed zero
+  PASS production ready false
+  PASS mutating probe count zero
+  PASS capture still calls no live methods
+  PASS test fixture explicitly spawned once
+  PASS hidden enemy does not change report id
+  PASS grounded sighting changes candidate set
+  PASS parity report binds changed candidate set
+  PASS binding verdict remains measurement result
+  PASS parity capture does not update enemies
+  PASS parity capture does not resolve diplomacy
+  PASS parity capture does not perform relations action
+  PASS missing source is recorded
+  PASS missing source count one
+  PASS repeated report deterministic
+  PASS adapter equals integration
+  PASS adapter surface equals integration
+  PASS dispose clears global integration
+  PASS prior report detached after disposal
+W0-P LIVE PARITY INTEGRATION TESTS PASS (42/42)
+
+tests/w0p1-forest-defensive-command-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS command space identity
+  PASS mode live incumbent command runtime
+  PASS required authority exact
+  PASS supported actions exact
+  PASS three definitions
+  PASS definitions match W0-AF keys
+  PASS patrol duration matches W0-AF
+  PASS intercept cooldown matches W0-AF
+  PASS withdraw reuses assignment
+  PASS prohibited authorities declared
+  PASS request ID canonical
+  PASS request validates byte-identically
+  PASS request binds observation
+  PASS request binds planning state
+  PASS request binds candidate set
+  PASS request binds target
+  PASS request status candidate
+  PASS repeated request deterministic
+  PASS authority sentinel-prime rejected
+  PASS authority sentinel-router rejected
+  PASS authority shadow-replay rejected
+  PASS authority test-projection rejected
+  PASS unsupported action rejected
+  PASS wrong target format rejected
+  PASS fractional sequence rejected
+  PASS request target tamper rejected
+  PASS accepted record validates
+  PASS accepted status
+  PASS patrol readiness deducted once
+  PASS patrol slot reserved once
+  PASS patrol execution duration loaded
+  PASS cost applied at acceptance
+  PASS intercept readiness deduction exact
+  PASS intercept patrol reservation exact
+  PASS withdraw readiness unchanged
+  PASS withdraw does not reserve additional slot
+  PASS insufficient readiness rejected
+  PASS no patrol slot rejected
+  PASS tampered candidate rejected before command acceptance
+  PASS cross-action target rejected
+  PASS start produces active status
+  PASS start quantum exact
+  PASS start does not reapply costs
+  PASS accepted command cannot start before acceptance
+  PASS patrol remains active after first quantum
+  PASS patrol has one quantum remaining
+  PASS patrol completes at second quantum
+  PASS patrol completion signal exact
+  PASS patrol cooldown starts on completion
+  PASS intercept completes after one quantum
+  PASS intercept cooldown exact
+  PASS retired contact is declared completion
+  PASS withdraw completes at return zone
+  PASS withdraw has no cooldown delay
+  PASS failure status canonical
+  PASS failure reason canonical
+  PASS interrupt status canonical
+  PASS interrupt binds new command
+  PASS unknown completion signal rejected
+  PASS completion and failure conflict rejected
+  PASS cost tamper rejected
+  PASS immutable target tamper rejected
+  PASS ledger starts sequence one
+  PASS ledger sequence monotonic
+  PASS event ID canonical
+  PASS event validates
+  PASS ledger snapshot roundtrip
+  PASS ledger snapshot detached
+  PASS ledger sequence tamper rejected
+  PASS contract exposes no Prime recommendation executor
+  PASS contract exposes no router dispatch
+  PASS no wall clock fields
+W0-P.1 FOREST DEFENSIVE COMMAND CONTRACT TESTS PASS (74/74)
+
+tests/w0p1-forest-defensive-command-integration.test.cjs
+  PASS command integration installed globally
+  PASS incumbent controller installed globally
+  PASS public adapter installed
+  PASS public adapter is read only
+  PASS public adapter exposes no execute
+  PASS public adapter exposes no dispatch
+  PASS patrol registration canonical
+  PASS patrol starts available
+  PASS route target available to command runtime
+  PASS intercept target available to command runtime
+  PASS withdraw target available to command runtime
+  PASS runtime rejects sentinel-prime
+  PASS runtime rejects sentinel-router
+  PASS runtime rejects shadow-replay
+  PASS runtime rejects test-projection
+  PASS spoofed incumbent source without capability rejected
+  PASS incumbent patrol command active
+  PASS patrol command target exact
+  PASS readiness deducted once at acceptance
+  PASS live readiness updated
+  PASS patrol slot reserved
+  PASS patrol assigned command
+  PASS patrol remains active after first quantum
+  PASS patrol moved to observed route endpoint
+  PASS readiness not deducted twice
+  PASS patrol completes after declared duration
+  PASS patrol completion signal exact
+  PASS patrol returns to home
+  PASS patrol slot released
+  PASS patrol masked during cooldown
+  PASS patrol legal at exact cooldown expiry
+  PASS intercept command active
+  PASS intercept uses same canonical enemy subject
+  PASS intercept completes at range
+  PASS patrol moved to live enemy position
+  PASS intercept does not damage enemy
+  PASS intercept does not remove enemy
+  PASS expired contact masks new intercept
+  PASS hidden enemy does not create command target
+  PASS hidden enemy does not mutate command ledger
+  PASS withdraw remains legal during patrol commitment
+  PASS withdraw command becomes active
+  PASS previous patrol command interrupted
+  PASS interrupted command binds withdrawal
+  PASS withdraw does not deduct readiness
+  PASS withdraw reuses reserved patrol
+  PASS withdraw completes at defensive return zone
+  PASS withdraw returns patrol home
+  PASS withdraw releases patrol
+  PASS retired target completes command explicitly
+  PASS retired completion records observed effect
+  PASS runtime snapshot deterministic
+  PASS runtime command sequence monotonic
+  PASS ledger event sequence monotonic
+  PASS adapter snapshot equals integration
+  PASS dispose clears integration global
+  PASS dispose clears incumbent controller
+  PASS prior snapshot remains detached
+W0-P.1 FOREST DEFENSIVE COMMAND INTEGRATION TESTS PASS (58/58)
+
+tests/w0p2-forest-defensive-command-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS command space identity
+  PASS mode live incumbent
+  PASS authority incumbent exact
+  PASS all thirteen actions supported
+  PASS thirteen definitions
+  PASS definition keys match W0-AF
+  PASS hold assignment none
+  PASS fortify uses patrol and repair
+  PASS withdraw reuses patrol
+  PASS prohibited authorities exact
+  PASS every request canonical
+  PASS every request validates
+  PASS request identities unique
+  PASS targetless requests keep null target
+  PASS share requires recipient
+  PASS non-share recipient null
+  PASS sentinel-prime rejected
+  PASS targeted action rejects null target
+  PASS targetless action rejects target
+  PASS share without recipient rejected
+  PASS non-share recipient rejected
+  PASS repair without crew rejected
+  PASS patrol without patrol rejected
+  PASS every accepted record validates
+  PASS costs applied at acceptance
+  PASS readiness exact for repair
+  PASS materials exact for fortify
+  PASS patrol slot exact for recon
+  PASS repair slot exact for stabilize
+  PASS withdraw does not deduct patrol slot
+  PASS all commands complete canonically
+  PASS cooldowns exact
+  PASS completion signals action-bound
+  PASS interrupt status canonical
+  PASS interrupt binds new command
+  PASS interrupt reason exact
+  PASS insufficient materials rejected
+  PASS insufficient readiness rejected
+  PASS no repair crew rejected
+  PASS wrong target rejected
+  PASS ledger sequence monotonic
+  PASS ledger snapshot roundtrip
+  PASS ledger snapshot detached
+  PASS cost tamper rejected
+  PASS contract has no execute method
+  PASS contract has no dispatch method
+  PASS contract has no Prime executor
+  PASS records contain no wall clock
+W0-P.2 FOREST DEFENSIVE COMMAND CONTRACT TESTS PASS (50/50)
+
+tests/w0p2-forest-defensive-command-integration.test.cjs
+  PASS v2 integration global
+  PASS unified incumbent controller v2
+  PASS all thirteen actions exposed
+  PASS public adapter v2 read only
+  PASS adapter exposes no execute
+  PASS runtime rejects sentinel-prime
+  PASS runtime rejects sentinel-router
+  PASS runtime rejects shadow-replay
+  PASS runtime rejects test-projection
+  PASS spoofed incumbent string rejected
+  PASS hold completes
+  PASS hold recovers readiness
+  PASS recon completes
+  PASS recon moves patrol home
+  PASS recon records route quantum
+  PASS screen completes
+  PASS screen patrol reaches alert
+  PASS reinforce completes
+  PASS reinforcement live flag set
+  PASS repair completes
+  PASS repair status operational
+  PASS repair health restored
+  PASS repair materials deducted once
+  PASS fortify completes
+  PASS route fortified live flag
+  PASS fortify uses both assignments
+  PASS secure resource completes
+  PASS resource secured by faction
+  PASS infrastructure completes
+  PASS infrastructure status operational
+  PASS intelligence share completes
+  PASS recipient receives shared event
+  PASS defensive channel completes
+  PASS defensive channel lowers tension
+  PASS defensive channel raises trust
+  PASS relations runtime called once
+  PASS patrol v2 parity completion
+  PASS intercept v2 parity completion
+  PASS intercept remains non-damaging
+  PASS withdraw interrupts recon
+  PASS withdraw completes from v2 commitment
+  PASS withdraw releases patrol
+  PASS runtime snapshot deterministic
+  PASS adapter snapshot equals runtime
+  PASS dispose clears v2 global
+  PASS prior snapshot detached
+W0-P.2 FOREST DEFENSIVE COMMAND INTEGRATION TESTS PASS (46/46)
+
+tests/w0p3-live-parity-closure-contract.test.cjs
+  PASS contract identity
+  PASS registry identity
+  PASS parity space identity
+  PASS mode measurement only closure
+  PASS authority none
+  PASS historical W0-P preserved
+  PASS thirteen bindings
+  PASS binding indexes canonical
+  PASS binding keys match W0-AF
+  PASS binding ids canonical
+  PASS binding ids unique
+  PASS handlers unique
+  PASS assignments match command v2
+  PASS completion signals match command v2
+  PASS execution durations match command v2
+  PASS cooldowns match command v2
+  PASS required authority incumbent
+  PASS target requirement matches W0-AF
+  PASS target topics match W0-AF
+  PASS cost hashes match W0-AF
+  PASS all parity dimensions exact
+  PASS runtime surface canonical
+  PASS runtime surface exact key count
+  PASS report id canonical
+  PASS report validates byte-identically
+  PASS report contains thirteen entries
+  PASS exact observed count thirteen
+  PASS missing count zero
+  PASS command parity complete true
+  PASS production ready remains false
+  PASS Sentinel authority remains false
+  PASS strategic competence claim false
+  PASS mutating probe count zero
+  PASS all entries exact observed
+  PASS report addresses observation
+  PASS report addresses planning state
+  PASS report addresses candidate set
+  PASS historical disposition recorded
+  PASS report deterministic bytes
+  PASS report deterministic id
+  PASS missing controller closes no binding
+  PASS missing controller marks thirteen missing
+  PASS missing controller parity incomplete
+  PASS missing report still production false
+  PASS tampered count rejected
+  PASS tampered binding rejected
+  PASS fractional quantum rejected
+  PASS malformed candidate rejected
+  PASS nonboolean surface rejected
+  PASS contract exposes no execute
+  PASS contract exposes no dispatch
+  PASS contract exposes no apply
+  PASS contract exposes no Prime executor
+  PASS report has no wall clock
+W0-P.3 LIVE PARITY CLOSURE CONTRACT TESTS PASS (54/54)
+
+tests/w0p3-live-parity-closure-integration.test.cjs
+  PASS closure integration global
+  PASS closure adapter installed
+  PASS closure adapter read only
+  PASS adapter exposes no execute
+  PASS adapter exposes no dispatch
+  PASS adapter exposes no apply
+  PASS command contract observed
+  PASS command integration observed
+  PASS forest action integration observed
+  PASS incumbent controller observed
+  PASS public adapter observed
+  PASS registry binding count thirteen
+  PASS supported action count thirteen
+  PASS capture returns closure report
+  PASS closure exact count thirteen
+  PASS closure missing count zero
+  PASS command parity complete
+  PASS production ready false
+  PASS Sentinel authority false
+  PASS strategic competence false
+  PASS capture does not mutate command runtime
+  PASS capture issues no command
+  PASS capture appends no ledger event
+  PASS all entries exact observed
+  PASS report binds local faction
+  PASS report binds observation
+  PASS report binds planning state
+  PASS report binds candidate set
+  PASS adapter equals integration
+  PASS repeated report deterministic
+  PASS hidden enemy leaves observation unchanged
+  PASS hidden enemy leaves closure report unchanged
+  PASS missing adapter closes parity
+  PASS missing adapter exact count zero
+  PASS missing adapter missing count thirteen
+  PASS dispose clears closure global
+  PASS prior bundle remains detached
+W0-P.3 LIVE PARITY CLOSURE INTEGRATION TESTS PASS (37/37)
+
+tests/worldclaw.test.mjs
+
+Asset registry
+  PASS every registered asset path exists on disk
+  PASS asset ids are unique
+  PASS semantic query filters by biome and role
+  PASS query order is stable across calls
+  PASS resolution prefers authored assets over placeholders
+  PASS resolution falls back to a placeholder only as a last resort
+  PASS every canonical biome can serve a communal and a dwelling role
+
+ZekNova World Bible
+  PASS every canonical biome has a bible entry
+  PASS desert water strategy is collection, not surface water
+  PASS adjacency rejects an illegal border and bridges it
+  PASS transition search is deterministic
+  PASS an already-legal border needs no transition
+  PASS a one-hop border returns a single bridge
+  PASS settlement form scales with structure count
+  PASS identity forbids Earth and generic sci-fi motifs
+
+World planning
+  PASS same seed and intent produce the same specification
+  PASS a different seed produces a different specification
+  PASS the plan always contains all five campaign biomes
+  PASS canonical biomes keep their canonical band order
+  PASS intent parsing is deterministic and extracts a structure count
+  PASS elevation relaxation keeps neighbouring bases within one step
+  PASS a planned spec validates
+
+World specification
+  PASS canonicalisation is key-order independent
+  PASS digest is insensitive to float noise below the quantisation step
+  PASS digest changes when the world changes
+  PASS derived seeds are independent per label
+  PASS validation rejects an out-of-world region
+  PASS a spec is deeply frozen
+
+Terrain generation
+  PASS height sampling is deterministic
+  PASS the height field contains no invalid geometry
+  PASS regions are not monotone plates
+  PASS borders blend rather than step
+  PASS landform classification covers the whole world
+
+Generation
+  PASS the demonstration region generates and is playable
+  PASS generation is deterministic — same seed, same digest
+  PASS a different seed yields a different world
+  PASS no placement has non-finite coordinates
+  PASS no structure stands on illegal ground
+  PASS no two placed objects intersect
+  PASS nothing floats or is buried
+  PASS the requested settlement size is actually delivered
+  PASS every settlement has a communal heart
+  PASS every placement carries a justification
+  PASS no placeholder assets shipped
+
+Mission accessibility
+  PASS the campaign validates against the generated world
+  PASS every campaign biome hosts every mission
+  PASS every mission hook names a real campaign mission
+  PASS every mission hook is on buildable ground
+  PASS no mission hook is left provisional
+  PASS every campaign region offers a utility-connected cluster for all twelve projects
+  PASS every campaign region exposes the required gameplay zones
+  PASS generation does not alter the campaign definition
+
+Boss encounters
+  PASS all twelve Guardians have an arena
+  PASS every arena is in its Guardian's own biome
+  PASS every arena is large enough for its Guardian's scale
+  PASS every arena is reachable and navigable
+  PASS every arena declares an arrival bearing and a cinematic camera
+
+Navigation
+  PASS every settlement is served by a road
+  PASS no road crosses open water without a bridge
+  PASS every road stays inside the playable world
+  PASS fast-travel nodes exist for every territory region
+  PASS spawn zones are clear of patrol routes
+
+Critic and repair
+  PASS the critic reports no errors on the demonstration region
+  PASS world quality clears the shipping bar
+  PASS the critic detects a deliberately broken world
+  PASS repair fixes floating props without regenerating the world
+  PASS repair refuses to move a mission hook
+
+Performance budgets
+  PASS the demonstration world is within its hard budgets
+  PASS draw calls account for instancing
+  PASS lower hardware tiers reduce density but not structures
+  PASS the per-region object ceiling is enforced regardless of tier
+  PASS an unknown tier degrades to balanced rather than throwing
+
+Streaming
+  PASS every placement is assigned to exactly one cell
+  PASS partitioning is deterministic
+  PASS cells load near the viewer and unload far from it
+  PASS hysteresis prevents boundary thrash
+  PASS mission and boss anchors force residency
+  PASS change batches respect the per-frame budget
+
+Persistence
+  PASS a saved world round-trips exactly
+  PASS compression preserves every placement and position
+  PASS a save stores the spec, not just the prompt
+  PASS tampering with a save is detected
+  PASS player deltas are kept separate from generated content
+  PASS a save survives a generator version change without regenerating
+
+Security
+  PASS path traversal is rejected in every encoding
+  PASS URL schemes are rejected
+  PASS executable extensions are rejected
+  PASS a legitimate asset path is accepted
+  PASS giant-memory assets are rejected
+  PASS shader injection is rejected
+  PASS malformed geometry is rejected
+  PASS prototype pollution is rejected
+  PASS deeply nested JSON is rejected before it is read
+  PASS an LLM proposal cannot set authoritative fields
+  PASS a hostile proposal cannot change the generated world
+  PASS ids are pattern checked
+
+Failure modes
+  PASS generation works with every external provider disabled
+  PASS the default provider is the null provider
+  PASS a provider that throws cannot break generation
+  PASS a repeatedly failing provider is treated as absent
+  PASS a provider returning an invalid asset is rejected, not trusted
+  PASS a cached-file provider drops manifest entries that fail validation
+  PASS an async provider that hangs times out instead of blocking forever
+
+Blender interoperability
+  PASS export carries semantic ids, collision metadata and region ids
+  PASS the axis conversion round-trips
+  PASS an unmodified manifest re-imports without moving anything
+  PASS a malicious manifest is rejected object by object
+  PASS a manifest for another world is refused
+
+WORLDCLAW TESTS PASS (108/108)
+  world quality 95.1 · 602 objects · generator worldclaw-1.0.0
+
+tests/zeknovan-aid-objective.test.mjs
+ZekNovan aid objective tests passed (63 checks, 6 aid projects across the campaign).
+
+tests/picasso-performance-report.mjs
+{
+  "sceneMaterials": 250,
+  "switches": 300,
+  "elapsedMs": 215.62,
+  "averageSwitchMs": 0.719,
+  "heapDeltaBytes": 3199688,
+  "cachedProfiles": 3,
+  "diffusionPerFrame": false,
+  "particleCaps": {
+    "zeknova": 120,
+    "anime": 90,
+    "cinematic": 160
+  }
+}

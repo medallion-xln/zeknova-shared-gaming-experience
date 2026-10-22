@@ -1,0 +1,12 @@
+import {createConstructionSession} from './session.js';
+const session=await createConstructionSession(),key='zge.independent-world.v2',canvas=document.querySelector('#world'),ctx=canvas.getContext('2d');
+const message=value=>{document.querySelector('#status').textContent=typeof value==='string'?value:JSON.stringify(value);};
+function render(){const data=session.inspect();window.demoResult={...data,deterministic:session.replay().deterministic};document.querySelector('#inventory').textContent=data.world.inventory.stone+' stone';document.querySelector('#result').textContent=JSON.stringify(data,null,2);document.querySelector('#building').innerHTML=data.world.buildings.map(b=>`<option value="${b.id}">${b.id}</option>`).join('');
+ ctx.fillStyle='#122429';ctx.fillRect(0,0,540,400);ctx.fillStyle='#1b3a35';ctx.fillRect(45,34,450,332);ctx.strokeStyle='#416d5d';for(let i=-10;i<=10;i+=2){const x=270+i*22.5,z=200+i*16.6;ctx.beginPath();ctx.moveTo(x,34);ctx.lineTo(x,366);ctx.stroke();ctx.beginPath();ctx.moveTo(45,z);ctx.lineTo(495,z);ctx.stroke();}
+ for(const b of data.world.buildings){ctx.fillStyle='#b5e8bb';ctx.fillRect(270+b.x*22.5-14,200+b.z*16.6-10,28,20);}ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(270,200,4,0,Math.PI*2);ctx.fill();}
+function action(fn){try{const result=fn();message(result);render();return result;}catch(error){message(error.message);}}
+document.querySelector('#place').onclick=()=>action(()=>session.place(Number(document.querySelector('#x').value),Number(document.querySelector('#z').value)));
+canvas.onclick=event=>{const rect=canvas.getBoundingClientRect(),x=Math.round(((event.clientX-rect.left)*540/rect.width-270)/22.5),z=Math.round(((event.clientY-rect.top)*400/rect.height-200)/16.6);action(()=>session.place(x,z));};
+document.querySelector('#invalid').onclick=()=>action(()=>session.place(20,20));document.querySelector('#rollback').onclick=()=>action(()=>session.rollback());document.querySelector('#remove').onclick=()=>action(()=>session.remove(document.querySelector('#building').value));document.querySelector('#save').onclick=()=>action(()=>{localStorage.setItem(key,session.save());return 'Saved in this browser';});document.querySelector('#restore').onclick=()=>action(()=>{const saved=localStorage.getItem(key);if(!saved)throw Error('No lab save yet');session.restore(saved);return 'Restored';});document.querySelector('#replay').onclick=()=>action(()=>session.replay());
+window.constructionLab=session;
+if(localStorage.getItem(key))action(()=>session.restore(localStorage.getItem(key)));render();

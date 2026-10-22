@@ -1,0 +1,214 @@
+{
+  "findings": [
+    {
+      "label": "mixed-4clients-20s",
+      "databaseOpenMs": 305.937625,
+      "trace": {
+        "elapsedMs": 7834.652249999999,
+        "actor": "load-3",
+        "kind": "movement",
+        "commandId": "load-3-11",
+        "status": 200,
+        "accepted": true,
+        "duplicate": false,
+        "reason": null,
+        "httpAcknowledgmentMs": 348.9137499999997,
+        "reconciliationMs": 0.0018330000020796433,
+        "totalMs": 348.9157500000001,
+        "revision": 48,
+        "generation": 1,
+        "server": {
+          "schema": "zge.command-metrics.v1",
+          "worldId": "valley",
+          "commandId": "load-3-11",
+          "commandClass": "movement",
+          "transactionId": "6e1db4560aae892eefc5167db64712c72bd3165580817a1bc2822e701e58b76f",
+          "generation": 1,
+          "stagesMs": {
+            "payload": 0.017917,
+            "databaseOpen": 305.937625,
+            "quota": 0.324542,
+            "authentication": 0.351457,
+            "authorization": 0.020583,
+            "runtimeEnsure": 0.377375,
+            "admission": 21.379875,
+            "lockWait": 0.0125,
+            "validation": 1.292375,
+            "ipc": 9.742875,
+            "candidateValidation": 0.078958,
+            "transactionWrites": 0.5705,
+            "commitValidation": 0.011333,
+            "commit": 4.300166,
+            "eventRead": 0.557709,
+            "receiptConstruction": 0.404875,
+            "responseSerialization": 0.244292
+          },
+          "runtime": {
+            "queueWaitMs": 0.006041999999069958,
+            "evaluationMs": 5.602957999999489
+          },
+          "transactionMs": 16.117542,
+          "totalMs": 346.139959,
+          "upstreamQueueMs": null
+        }
+      },
+      "nearestSampleCompletionElapsedMs": 10320.968709,
+      "nearestSampleDurationMs": 317.0265419999996,
+      "nearestHeap": {
+        "pid": 46856,
+        "memory": {
+          "rss": 67764224,
+          "heapTotal": 25837568,
+          "heapUsed": 9643408,
+          "external": 2278137,
+          "arrayBuffers": 191965
+        },
+        "gc": {
+          "count": 52,
+          "durationMs": 18.036338090896606
+        }
+      },
+      "faults": []
+    },
+    {
+      "label": "history-2clients-20s",
+      "databaseOpenMs": 232.403541,
+      "trace": {
+        "elapsedMs": 9499.618083000008,
+        "actor": "load-1",
+        "kind": "history",
+        "commandId": null,
+        "status": 200,
+        "accepted": null,
+        "duplicate": false,
+        "reason": null,
+        "httpAcknowledgmentMs": 238.3739169999899,
+        "reconciliationMs": 0.0008750000124564394,
+        "totalMs": 238.374834000002,
+        "revision": null,
+        "generation": null,
+        "server": {
+          "schema": "zge.command-metrics.v1",
+          "worldId": "valley",
+          "commandId": null,
+          "commandClass": "history",
+          "transactionId": null,
+          "generation": null,
+          "stagesMs": {
+            "payload": 0.023,
+            "databaseOpen": 232.403541,
+            "quota": 1.991625,
+            "authentication": 0.162083,
+            "authorization": 0.00825,
+            "runtimeEnsure": 0,
+            "admission": 0,
+            "lockWait": 0.004208,
+            "validation": 0.228666,
+            "ipc": 0,
+            "candidateValidation": 0,
+            "transactionWrites": 0,
+            "commitValidation": 0,
+            "commit": 0.003792,
+            "eventRead": 0.12225,
+            "receiptConstruction": 0,
+            "responseSerialization": 0.010583
+          },
+          "runtime": {
+            "queueWaitMs": 0,
+            "evaluationMs": 0
+          },
+          "transactionMs": 0.480166,
+          "totalMs": 234.990083,
+          "upstreamQueueMs": null
+        }
+      },
+      "nearestSampleCompletionElapsedMs": 10243.529958999992,
+      "nearestSampleDurationMs": 239.94375000000582,
+      "nearestHeap": {
+        "pid": 36997,
+        "memory": {
+          "rss": 58048512,
+          "heapTotal": 10633216,
+          "heapUsed": 7220040,
+          "external": 2007419,
+          "arrayBuffers": 33327
+        },
+        "gc": {
+          "count": 2,
+          "durationMs": 0.6091669797897339
+        }
+      },
+      "faults": []
+    },
+    {
+      "label": "mixed-4clients-20s",
+      "databaseOpenMs": 139.874375,
+      "trace": {
+        "elapsedMs": 8000.868124999994,
+        "actor": "load-0",
+        "kind": "movement",
+        "commandId": "load-0-9",
+        "status": 200,
+        "accepted": true,
+        "duplicate": false,
+        "reason": null,
+        "httpAcknowledgmentMs": 162.42808300000615,
+        "reconciliationMs": 0.001291000000492204,
+        "totalMs": 162.42958300000464,
+        "revision": 47,
+        "generation": 1,
+        "server": {
+          "schema": "zge.command-metrics.v1",
+          "worldId": "valley",
+          "commandId": "load-0-9",
+          "commandClass": "movement",
+          "transactionId": "ee05d58efd3d117fa6fe71f6620323dcaa40a0798c5bebb86f6e01fe0b83ef83",
+          "generation": 1,
+          "stagesMs": {
+            "payload": 0.018334,
+            "databaseOpen": 139.874375,
+            "quota": 0.431833,
+            "authentication": 0.502666,
+            "authorization": 0.020417,
+            "runtimeEnsure": 0.496375,
+            "admission": 1.402458,
+            "lockWait": 0.011041,
+            "validation": 1.367083,
+            "ipc": 11.463251,
+            "candidateValidation": 0.052417,
+            "transactionWrites": 0.855167,
+            "commitValidation": 0.018958,
+            "commit": 1.517208,
+            "eventRead": 0.582542,
+            "receiptConstruction": 0.433041,
+            "responseSerialization": 0.244334
+          },
+          "runtime": {
+            "queueWaitMs": 0.0036670000008598436,
+            "evaluationMs": 7.136124999999083
+          },
+          "transactionMs": 15.623917,
+          "totalMs": 159.880167,
+          "upstreamQueueMs": null
+        }
+      },
+      "nearestSampleCompletionElapsedMs": 10320.968709,
+      "nearestSampleDurationMs": 317.0265419999996,
+      "nearestHeap": {
+        "pid": 46856,
+        "memory": {
+          "rss": 67764224,
+          "heapTotal": 25837568,
+          "heapUsed": 9643408,
+          "external": 2278137,
+          "arrayBuffers": 191965
+        },
+        "gc": {
+          "count": 52,
+          "durationMs": 18.036338090896606
+        }
+      },
+      "faults": []
+    }
+  ]
+}

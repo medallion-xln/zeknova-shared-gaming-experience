@@ -1,0 +1,56 @@
+{
+  "scope": "same scalar terrain, inventory, power definition and accepted site; excludes live capture/UI",
+  "legacyDecision": {
+    "unit": "ms",
+    "count": 1000,
+    "p50": 0.0017500000000012506,
+    "p95": 0.0029589999999970473,
+    "p99": 0.013916999999999291
+  },
+  "engineDecision": {
+    "unit": "ms",
+    "count": 1000,
+    "p50": 0.006000000000000227,
+    "p95": 0.010249999999999204,
+    "p99": 0.08645800000000037
+  },
+  "transactionWithMissionAndEvents": {
+    "unit": "ms",
+    "count": 40,
+    "p50": 9.860792000000032,
+    "p95": 42.178,
+    "p99": 131.818417
+  },
+  "serialize": {
+    "unit": "ms",
+    "count": 20,
+    "p50": 0.7104170000000067,
+    "p95": 1.7192079999999805,
+    "p99": 1.7192079999999805
+  },
+  "restore": {
+    "unit": "ms",
+    "count": 20,
+    "p50": 11.648041999999919,
+    "p95": 25.117250000000013,
+    "p99": 25.117250000000013
+  },
+  "eventDispatch10Subscribers": {
+    "unit": "ms",
+    "count": 200,
+    "p50": 0.47050000000001546,
+    "p95": 0.9452080000000933,
+    "p99": 1.2271670000000086
+  },
+  "eventDeliveries": 2000,
+  "serverAck": {
+    "unit": "ms",
+    "count": 20,
+    "p50": 9.849790999999868,
+    "p95": 30.76645799999983,
+    "p99": 30.76645799999983
+  },
+  "heapDelta": 2865952,
+  "heapMeasurement": "post-explicit-GC; retained fixtures, not leak proof",
+  "snapshotBytes": 348769
+}

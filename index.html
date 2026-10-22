@@ -10,6 +10,18 @@
     <meta name="zeknova-build" content="2026-08-27-score1" />
     <meta name="description" content="ZekNova: Prepare the Planet — a cooperative WebGPU colony-building game for AI × Crypto Expo 2026." />
     <title>ZekNova: Prepare the Planet</title>
+    <!-- ZGE-02: collapse the bundle's ?v= cache-busted runtime imports onto one module instance each (see packages/assets/src/importMap.js). -->
+    <script type="importmap">{
+      "imports": {
+        "./assets/environment-runtime.js?v=wetlands-village2": "./assets/environment-runtime.js",
+        "./assets/model-runtime-c96327ba.js?v=animation-audit1": "./assets/model-runtime-c96327ba.js",
+        "./assets/model-runtime-c96327ba.js?v=enemy-roster10": "./assets/model-runtime-c96327ba.js",
+        "./assets/model-runtime-c96327ba.js?v=enemy-roster9": "./assets/model-runtime-c96327ba.js",
+        "./assets/model-runtime-c96327ba.js?v=quat-fix1": "./assets/model-runtime-c96327ba.js",
+        "./assets/model-runtime-c96327ba.js?v=resident-population8": "./assets/model-runtime-c96327ba.js",
+        "./assets/model-runtime-c96327ba.js?v=rifle-brace1": "./assets/model-runtime-c96327ba.js"
+      }
+    }</script>
     <script type="module" src="./src/main.js?v=score1"></script>
     <link rel="stylesheet" href="./assets/login-page.css?v=azl1">
   </head>

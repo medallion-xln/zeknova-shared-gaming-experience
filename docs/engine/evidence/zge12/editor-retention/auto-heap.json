@@ -1,0 +1,4259 @@
+{
+  "scope": "class/self size and shortest strong GC-root paths, weak edges excluded; not dominator retained sizes",
+  "totals": {
+    "synthetic": {
+      "count": 32,
+      "selfBytes": 0
+    },
+    "native": {
+      "count": 33891,
+      "selfBytes": 9800378
+    },
+    "string": {
+      "count": 38994,
+      "selfBytes": 1050620
+    },
+    "object shape": {
+      "count": 13667,
+      "selfBytes": 807388
+    },
+    "code": {
+      "count": 49573,
+      "selfBytes": 4420624
+    },
+    "array": {
+      "count": 2104,
+      "selfBytes": 522608
+    },
+    "number": {
+      "count": 20055,
+      "selfBytes": 40812
+    },
+    "symbol": {
+      "count": 79,
+      "selfBytes": 384
+    },
+    "object": {
+      "count": 11508,
+      "selfBytes": 388072
+    },
+    "closure": {
+      "count": 13993,
+      "selfBytes": 405200
+    },
+    "concatenated string": {
+      "count": 340,
+      "selfBytes": 6800
+    },
+    "regexp": {
+      "count": 11,
+      "selfBytes": 264
+    }
+  },
+  "classes": {
+    "Boolean": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "Number": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "Object": {
+      "count": 2819,
+      "selfBytes": 67988
+    },
+    "system / CppHeapExternal": {
+      "count": 1,
+      "selfBytes": 8
+    },
+    "HTMLInputElement": {
+      "count": 23,
+      "selfBytes": 368
+    },
+    "InjectedScript": {
+      "count": 2,
+      "selfBytes": 272
+    },
+    "UtilityScript": {
+      "count": 2,
+      "selfBytes": 120
+    },
+    "JSON": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Array": {
+      "count": 1670,
+      "selfBytes": 26720
+    },
+    "String": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "Object (prototype) / http://127.0.0.1:8812": {
+      "count": 8,
+      "selfBytes": 224
+    },
+    "HTMLOptionElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "system / Context / scope @57339": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @57445": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @57477": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "system / Context / scope @57495": {
+      "count": 1,
+      "selfBytes": 1436
+    },
+    "Set": {
+      "count": 40,
+      "selfBytes": 676
+    },
+    "system / Context / scope @59891": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "system / Context / scope @59897": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @59903": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "system / Context / scope @59909": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @59913": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Performance": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "Intl": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Temporal": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "SelectorEvaluatorImpl": {
+      "count": 2,
+      "selfBytes": 176
+    },
+    "Map": {
+      "count": 85,
+      "selfBytes": 1396
+    },
+    "ConsoleAPI": {
+      "count": 2,
+      "selfBytes": 96
+    },
+    "Window [JSGlobalProxy] / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Performance (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "system / Context / scope @60281": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60293": {
+      "count": 2,
+      "selfBytes": 40
+    },
+    "system / Context / scope @60301": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60309": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60317": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60325": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60333": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "system / Context / scope @60341": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60349": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60365": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60373": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60393": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @60403": {
+      "count": 8,
+      "selfBytes": 256
+    },
+    "system / Context / scope @60441": {
+      "count": 5,
+      "selfBytes": 100
+    },
+    "HTMLInputElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Object [JSGlobalProxy]": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Object [JSGlobalObject]": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Array Iterator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Generator": {
+      "count": 23,
+      "selfBytes": 1016
+    },
+    "AsyncGenerator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Iterator Helper": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Map Iterator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Set Iterator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "String Iterator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Promise": {
+      "count": 8,
+      "selfBytes": 184
+    },
+    "WebAssembly": {
+      "count": 3,
+      "selfBytes": 36
+    },
+    "Tag": {
+      "count": 3,
+      "selfBytes": 72
+    },
+    "Atomics": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "console": {
+      "count": 3,
+      "selfBytes": 36
+    },
+    "Reflect": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Math": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "TypedArray": {
+      "count": 36,
+      "selfBytes": 1008
+    },
+    "Error": {
+      "count": 48,
+      "selfBytes": 1152
+    },
+    "WeakMap": {
+      "count": 80,
+      "selfBytes": 1316
+    },
+    "WeakRef": {
+      "count": 27,
+      "selfBytes": 468
+    },
+    "FinalizationRegistry": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WeakSet": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "AsyncDisposableStack": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.NumberFormat": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.Collator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.PluralRules": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.RelativeTimeFormat": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.ListFormat": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.Locale": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.DisplayNames": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.Segmenter": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.DurationFormat": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Intl.DateTimeFormat": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "DataView": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "BigInt": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Symbol": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "DisposableStack": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "ArrayBuffer": {
+      "count": 271,
+      "selfBytes": 14020
+    },
+    "Async-from-Sync Iterator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "AsyncFunction": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "AsyncGeneratorFunction": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Module": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Instance": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Table": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Memory": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Global": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Tag": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Exception": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "GeneratorFunction": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Segmenter String Iterator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "RegExp String Iterator": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "system / Context / scope @455": {
+      "count": 3,
+      "selfBytes": 60
+    },
+    "SharedArrayBuffer": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "WebAssembly.Suspending": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "Window [JSGlobalObject] / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "EventTarget": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "WindowProperties": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "Window (prototype) / http://127.0.0.1:8812": {
+      "count": 4,
+      "selfBytes": 88
+    },
+    "system / Context / scope @68883": {
+      "count": 1,
+      "selfBytes": 3776
+    },
+    "system / Context / scope @68893": {
+      "count": 152,
+      "selfBytes": 6080
+    },
+    "system / Context / scope @68903": {
+      "count": 152,
+      "selfBytes": 4864
+    },
+    "system / Context / scope @68937": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "Node": {
+      "count": 54,
+      "selfBytes": 680
+    },
+    "EventDispatcher": {
+      "count": 14,
+      "selfBytes": 168
+    },
+    "system / Context / scope @68975": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @68995": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69035": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69093": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "TextureNode": {
+      "count": 8,
+      "selfBytes": 288
+    },
+    "UniformNode": {
+      "count": 34,
+      "selfBytes": 3012
+    },
+    "system / Context / scope @69231": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "ViewportTextureNode": {
+      "count": 5,
+      "selfBytes": 696
+    },
+    "system / Context / scope @69299": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @69319": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Material": {
+      "count": 15,
+      "selfBytes": 180
+    },
+    "system / Context / scope @69503": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69665": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "LightingModel": {
+      "count": 5,
+      "selfBytes": 60
+    },
+    "system / Context / scope @69705": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69725": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69779": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69843": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69877": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @69899": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "NodeMaterial": {
+      "count": 14,
+      "selfBytes": 504
+    },
+    "MeshStandardNodeMaterial": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @70141": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @70371": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @70377": {
+      "count": 145,
+      "selfBytes": 2900
+    },
+    "system / Context / scope @70407": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @70445": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @70499": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @70555": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @70723": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @70755": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "BufferGeometry": {
+      "count": 31,
+      "selfBytes": 1256
+    },
+    "system / Context / scope @70841": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @70907": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "TempNode": {
+      "count": 23,
+      "selfBytes": 276
+    },
+    "system / Context / scope @71075": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @71089": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @71113": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @71131": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @71199": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @71223": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @71277": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @71359": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Mesh": {
+      "count": 69,
+      "selfBytes": 10152
+    },
+    "Object3D": {
+      "count": 29,
+      "selfBytes": 1588
+    },
+    "system / Context / scope @71697": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "BufferAttribute": {
+      "count": 15,
+      "selfBytes": 356
+    },
+    "Binding": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "Buffer": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "UniformBuffer": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @72077": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Sampler": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "SampledTexture": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @72809": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "GPUTexelCopyTextureInfo": {
+      "count": 4,
+      "selfBytes": 192
+    },
+    "system / Context / scope @73313": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Navigator (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @73903": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @74265": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Element": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLCanvasElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "URLSearchParams (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Location": {
+      "count": 2,
+      "selfBytes": 44
+    },
+    "GPU (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @76175": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "Backend": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "Controls": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @76727": {
+      "count": 1,
+      "selfBytes": 108
+    },
+    "system / Context / scope @78395": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @78711": {
+      "count": 190,
+      "selfBytes": 3800
+    },
+    "FnNode": {
+      "count": 190,
+      "selfBytes": 15200
+    },
+    "system / Context / scope @79203": {
+      "count": 101,
+      "selfBytes": 2424
+    },
+    "Plane": {
+      "count": 15,
+      "selfBytes": 360
+    },
+    "system / Context / scope @79637": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Vector3": {
+      "count": 565,
+      "selfBytes": 13560
+    },
+    "Euler": {
+      "count": 134,
+      "selfBytes": 4824
+    },
+    "Quaternion": {
+      "count": 121,
+      "selfBytes": 4356
+    },
+    "system / Context / scope @79967": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @79975": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @79983": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "ShaderNodeInternal": {
+      "count": 221,
+      "selfBytes": 18564
+    },
+    "system / Context / scope @80261": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @80283": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @80847": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @80875": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @80903": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @80957": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @80969": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "HTMLAnchorElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLButtonElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Matrix3": {
+      "count": 120,
+      "selfBytes": 1920
+    },
+    "Matrix4": {
+      "count": 376,
+      "selfBytes": 6016
+    },
+    "Layers": {
+      "count": 103,
+      "selfBytes": 1648
+    },
+    "TorusGeometry": {
+      "count": 9,
+      "selfBytes": 756
+    },
+    "MeshBasicMaterial": {
+      "count": 18,
+      "selfBytes": 5192
+    },
+    "CylinderGeometry": {
+      "count": 26,
+      "selfBytes": 2112
+    },
+    "Uint16BufferAttribute": {
+      "count": 58,
+      "selfBytes": 3248
+    },
+    "OctahedronGeometry": {
+      "count": 4,
+      "selfBytes": 336
+    },
+    "PolyhedronGeometry": {
+      "count": 4,
+      "selfBytes": 48
+    },
+    "BoxGeometry": {
+      "count": 21,
+      "selfBytes": 1764
+    },
+    "Uint16Array": {
+      "count": 58,
+      "selfBytes": 3480
+    },
+    "Float32BufferAttribute": {
+      "count": 198,
+      "selfBytes": 11088
+    },
+    "TransformControlsGizmo": {
+      "count": 1,
+      "selfBytes": 172
+    },
+    "Temporal.ZonedDateTime": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Temporal.Duration": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Temporal.Instant": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Temporal.PlainYearMonth": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Temporal.PlainMonthDay": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "MutationObserver (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "NodeList (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "system / Context / scope @167857": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @167895": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Document": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLDocument (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "AbortSignal": {
+      "count": 2,
+      "selfBytes": 44
+    },
+    "Temporal.PlainDate": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Temporal.PlainTime": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Temporal.PlainDateTime": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Object (internal cache) / http://127.0.0.1:8812": {
+      "count": 7,
+      "selfBytes": 112
+    },
+    "system / Context / scope @170821": {
+      "count": 1,
+      "selfBytes": 100
+    },
+    "system / Context / scope @83111": {
+      "count": 1,
+      "selfBytes": 140
+    },
+    "system / Context / scope @136527": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @170997": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "system / Context / scope @136673": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @84511": {
+      "count": 1,
+      "selfBytes": 136
+    },
+    "system / Context / scope @84559": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @84579": {
+      "count": 1,
+      "selfBytes": 68
+    },
+    "Light": {
+      "count": 7,
+      "selfBytes": 84
+    },
+    "system / Context / scope @143769": {
+      "count": 1,
+      "selfBytes": 1396
+    },
+    "Loader": {
+      "count": 13,
+      "selfBytes": 156
+    },
+    "EllipseCurve": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "PerspectiveCamera": {
+      "count": 5,
+      "selfBytes": 892
+    },
+    "system / Context / scope @144675": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144785": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144795": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "LineSegments": {
+      "count": 7,
+      "selfBytes": 84
+    },
+    "system / Context / scope @145473": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Interpolant": {
+      "count": 5,
+      "selfBytes": 60
+    },
+    "KeyframeTrack": {
+      "count": 6,
+      "selfBytes": 72
+    },
+    "system / Context / scope @144695": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145383": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @144705": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145593": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @144905": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Texture": {
+      "count": 17,
+      "selfBytes": 744
+    },
+    "system / Context / scope @145373": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Curve": {
+      "count": 10,
+      "selfBytes": 120
+    },
+    "system / Context / scope @145293": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145363": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "CompressedTexture": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145343": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "DepthTexture": {
+      "count": 5,
+      "selfBytes": 844
+    },
+    "system / Context / scope @145283": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145273": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145213": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145353": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "LoadingManager": {
+      "count": 1,
+      "selfBytes": 100
+    },
+    "system / Context / scope @145403": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144845": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145323": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145313": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145303": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145651": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145393": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145173": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @145623": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145633": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145483": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145413": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144915": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145163": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145503": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144805": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "InterleavedBuffer": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @144745": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145493": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145583": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145553": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145153": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @144925": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144825": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145453": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145463": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145263": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145253": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "LineBasicMaterial": {
+      "count": 6,
+      "selfBytes": 1272
+    },
+    "system / Context / scope @144935": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Line": {
+      "count": 11,
+      "selfBytes": 1284
+    },
+    "system / Context / scope @144815": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @144725": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145711": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145661": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145533": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145543": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144965": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144955": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144975": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144945": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144985": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145005": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "MeshStandardMaterial": {
+      "count": 2,
+      "selfBytes": 392
+    },
+    "system / Context / scope @145023": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144995": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145143": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "Camera": {
+      "count": 3,
+      "selfBytes": 200
+    },
+    "system / Context / scope @144855": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "CurvePath": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @145203": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144895": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145133": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @144685": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144865": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145433": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145443": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145333": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Audio": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @144775": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144765": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145243": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145233": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "ShaderMaterial": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @144835": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "RenderTarget": {
+      "count": 6,
+      "selfBytes": 288
+    },
+    "system / Context / scope @145123": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @145613": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145033": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145043": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Path": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @145193": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145113": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @145183": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145513": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @144715": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145523": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145103": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @145223": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @144875": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145563": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145573": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145093": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145701": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145083": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @145073": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @145603": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145063": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @144755": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145751": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @145681": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "VideoTexture": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @145423": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "WebGLRenderTarget": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @145053": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87487": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87417": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "InputNode": {
+      "count": 3,
+      "selfBytes": 36
+    },
+    "system / Context / scope @87569": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87427": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @87539": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "ReferenceNode": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87467": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Object3DNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @87357": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87579": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @87367": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @87477": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @87517": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "ReferenceBaseNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @87377": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @87549": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87559": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87407": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "BufferNode": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87387": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87507": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87497": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87457": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87447": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Color": {
+      "count": 97,
+      "selfBytes": 2700
+    },
+    "Vector4": {
+      "count": 24,
+      "selfBytes": 672
+    },
+    "Box3": {
+      "count": 7,
+      "selfBytes": 168
+    },
+    "Float32Array": {
+      "count": 202,
+      "selfBytes": 12120
+    },
+    "Uint32Array": {
+      "count": 9,
+      "selfBytes": 540
+    },
+    "Vector2": {
+      "count": 72,
+      "selfBytes": 1440
+    },
+    "Ray": {
+      "count": 7,
+      "selfBytes": 140
+    },
+    "Sphere": {
+      "count": 13,
+      "selfBytes": 312
+    },
+    "Frustum": {
+      "count": 2,
+      "selfBytes": 96
+    },
+    "FrustumArray": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "MultiDrawRenderList": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "system / Context / scope @185545": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Triangle": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "LightShadow": {
+      "count": 3,
+      "selfBytes": 36
+    },
+    "system / Context / scope @144885": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @91319": {
+      "count": 20,
+      "selfBytes": 480
+    },
+    "PropertyNode": {
+      "count": 45,
+      "selfBytes": 3708
+    },
+    "ConstNode": {
+      "count": 87,
+      "selfBytes": 7656
+    },
+    "UniformGroupNode": {
+      "count": 4,
+      "selfBytes": 544
+    },
+    "ArrayElementNode": {
+      "count": 25,
+      "selfBytes": 1740
+    },
+    "system / Context / scope @87437": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "RendererReferenceNode": {
+      "count": 1,
+      "selfBytes": 156
+    },
+    "IndexNode": {
+      "count": 6,
+      "selfBytes": 744
+    },
+    "Source": {
+      "count": 11,
+      "selfBytes": 396
+    },
+    "system / Context / scope @87397": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "ScreenNode": {
+      "count": 5,
+      "selfBytes": 640
+    },
+    "VarNode": {
+      "count": 136,
+      "selfBytes": 11968
+    },
+    "SplitNode": {
+      "count": 15,
+      "selfBytes": 1260
+    },
+    "VaryingNode": {
+      "count": 5,
+      "selfBytes": 440
+    },
+    "SubBuildNode": {
+      "count": 5,
+      "selfBytes": 400
+    },
+    "ShaderCallNodeInternal": {
+      "count": 35,
+      "selfBytes": 2940
+    },
+    "ModelNode": {
+      "count": 6,
+      "selfBytes": 840
+    },
+    "QuadMesh": {
+      "count": 2,
+      "selfBytes": 368
+    },
+    "OperatorNode": {
+      "count": 18,
+      "selfBytes": 1728
+    },
+    "AttributeNode": {
+      "count": 7,
+      "selfBytes": 756
+    },
+    "CubeTexture": {
+      "count": 1,
+      "selfBytes": 200
+    },
+    "system / Context / scope @87347": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Module": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @146199": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "HTMLHtmlElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLHeadElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLMetaElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLTitleElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLScriptElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLLinkElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLBodyElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLLabelElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLSelectElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "MathNode": {
+      "count": 31,
+      "selfBytes": 3012
+    },
+    "ConditionalNode": {
+      "count": 1,
+      "selfBytes": 128
+    },
+    "system / Context / scope @92049": {
+      "count": 17,
+      "selfBytes": 408
+    },
+    "JoinNode": {
+      "count": 5,
+      "selfBytes": 400
+    },
+    "system / Context / scope @192055": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "ConvertNode": {
+      "count": 4,
+      "selfBytes": 496
+    },
+    "system / Context / scope @87527": {
+      "count": 32,
+      "selfBytes": 640
+    },
+    "NamedNodeMap (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Attr (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "DOMRectReadOnly": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "NodeBuilderState": {
+      "count": 4,
+      "selfBytes": 240
+    },
+    "NodeMaterialObserver": {
+      "count": 4,
+      "selfBytes": 128
+    },
+    "DOMRect (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "BindGroup": {
+      "count": 11,
+      "selfBytes": 264
+    },
+    "HTMLDivElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "URL": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @199225": {
+      "count": 2,
+      "selfBytes": 176
+    },
+    "system / Context / scope @199435": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199439": {
+      "count": 1,
+      "selfBytes": 1436
+    },
+    "system / Context / scope @199465": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199473": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199481": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @199497": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199505": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199591": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199611": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199643": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199673": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199703": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199733": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199749": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "CSSParserToken": {
+      "count": 42,
+      "selfBytes": 504
+    },
+    "system / Context / scope @199775": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199797": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @199819": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "StringValuedToken": {
+      "count": 12,
+      "selfBytes": 144
+    },
+    "system / Context / scope @199841": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199859": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199881": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199901": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @199921": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GroupingToken": {
+      "count": 12,
+      "selfBytes": 144
+    },
+    "system / Context / scope @199951": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "NodeAttribute": {
+      "count": 5,
+      "selfBytes": 140
+    },
+    "Scene": {
+      "count": 3,
+      "selfBytes": 436
+    },
+    "FileList (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Blob": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "File (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "RenderContext": {
+      "count": 2,
+      "selfBytes": 304
+    },
+    "GridHelper": {
+      "count": 1,
+      "selfBytes": 184
+    },
+    "ClippingContext": {
+      "count": 2,
+      "selfBytes": 200
+    },
+    "QuadGeometry": {
+      "count": 1,
+      "selfBytes": 124
+    },
+    "LightsNode": {
+      "count": 2,
+      "selfBytes": 272
+    },
+    "RenderObject": {
+      "count": 5,
+      "selfBytes": 700
+    },
+    "system / Context / scope @200225": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @200233": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @200255": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @200273": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @200289": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPURenderPassEncoder (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "VideoFrame": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @106579": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Textures": {
+      "count": 1,
+      "selfBytes": 64
+    },
+    "system / Context / scope @201007": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @201081": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201093": {
+      "count": 2,
+      "selfBytes": 40
+    },
+    "system / Context / scope @201101": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201109": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201117": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201125": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201133": {
+      "count": 3,
+      "selfBytes": 84
+    },
+    "system / Context / scope @201141": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201149": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201165": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201173": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201193": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @201201": {
+      "count": 8,
+      "selfBytes": 256
+    },
+    "system / Context / scope @201243": {
+      "count": 5,
+      "selfBytes": 100
+    },
+    "system / Context / scope @201367": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @201385": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "SubtleCrypto": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "SubtleCrypto (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Crypto": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Crypto (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "AbortSignal (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "NodeUniformsGroup": {
+      "count": 11,
+      "selfBytes": 792
+    },
+    "NodeSampler": {
+      "count": 2,
+      "selfBytes": 160
+    },
+    "NodeSampledTexture": {
+      "count": 4,
+      "selfBytes": 224
+    },
+    "system / Context / scope @202271": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @121033": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "WebGPURenderer": {
+      "count": 1,
+      "selfBytes": 324
+    },
+    "UniformsGroup": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "SphereGeometry": {
+      "count": 2,
+      "selfBytes": 248
+    },
+    "system / Context / scope @202585": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @104591": {
+      "count": 5,
+      "selfBytes": 100
+    },
+    "system / Context / scope @105105": {
+      "count": 5,
+      "selfBytes": 140
+    },
+    "RenderObjects": {
+      "count": 1,
+      "selfBytes": 72
+    },
+    "ChainMap": {
+      "count": 6,
+      "selfBytes": 288
+    },
+    "system / Context / scope @105353": {
+      "count": 5,
+      "selfBytes": 160
+    },
+    "ProgrammableStage": {
+      "count": 8,
+      "selfBytes": 320
+    },
+    "system / Context / scope @120983": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "CanvasTarget": {
+      "count": 1,
+      "selfBytes": 88
+    },
+    "RenderList": {
+      "count": 2,
+      "selfBytes": 192
+    },
+    "OrthographicCamera": {
+      "count": 3,
+      "selfBytes": 648
+    },
+    "Lighting": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "ColorNodeUniform": {
+      "count": 3,
+      "selfBytes": 132
+    },
+    "NumberNodeUniform": {
+      "count": 3,
+      "selfBytes": 132
+    },
+    "Matrix4NodeUniform": {
+      "count": 8,
+      "selfBytes": 352
+    },
+    "GPUSampler (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUBindGroupLayout (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "MaterialReferenceNode": {
+      "count": 2,
+      "selfBytes": 328
+    },
+    "Geometries": {
+      "count": 1,
+      "selfBytes": 68
+    },
+    "system / Context / scope @87169": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "RenderOutputNode": {
+      "count": 1,
+      "selfBytes": 136
+    },
+    "NodeManager": {
+      "count": 1,
+      "selfBytes": 84
+    },
+    "RenderObjectPipeline": {
+      "count": 4,
+      "selfBytes": 112
+    },
+    "Event (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "ToggleEvent (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUTextureDescriptor": {
+      "count": 5,
+      "selfBytes": 400
+    },
+    "GPURenderPassDescriptor": {
+      "count": 3,
+      "selfBytes": 108
+    },
+    "GPUCanvasContext (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUBuffer (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUTexture (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPURenderPassDepthStencilAttachment": {
+      "count": 2,
+      "selfBytes": 96
+    },
+    "GPUBindGroup (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPURenderPipeline (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUShaderModule (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUTextureView (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPURenderPassColorAttachment": {
+      "count": 3,
+      "selfBytes": 108
+    },
+    "MutationObserver (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "ToggleEvent (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "FileList (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Event (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "File (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLDocument (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "Performance (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "NodeList (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLInputElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLHtmlElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLHeadElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLMetaElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLTitleElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "NamedNodeMap (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLSelectElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLParagraphElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLParagraphElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLLinkElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLOptionElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLButtonElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLFieldSetElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLFieldSetElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLDialogElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLDialogElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLScriptElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLLabelElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLHeadingElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLHeadingElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLBodyElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLOListElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLOListElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "CustomEvent (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "CustomEvent (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLLegendElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLLegendElement (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLFormElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLFormElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLSpanElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLSpanElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLDetailsElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLDetailsElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLPreElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLPreElement (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "HTMLAnchorElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Attr (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "DOMRect (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLDivElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLCanvasElement (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "DOMStringMap (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLMediaElement": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLVideoElement": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @206769": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206797": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206825": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206853": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206867": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206889": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206909": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @206929": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206949": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206965": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @206985": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207003": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207021": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207047": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207055": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207075": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207091": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207105": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207119": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207133": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207147": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207161": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207175": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207191": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207205": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207219": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207233": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207247": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207265": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207273": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207287": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207301": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207315": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207331": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207347": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207365": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207379": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207403": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207411": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207425": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @207441": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "Group": {
+      "count": 3,
+      "selfBytes": 164
+    },
+    "BoxHelper": {
+      "count": 2,
+      "selfBytes": 384
+    },
+    "TransformControlsRoot": {
+      "count": 1,
+      "selfBytes": 160
+    },
+    "MemoryInfo (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "MemoryInfo (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Pipeline": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "GPUShaderStage": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUTextureUsage": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUBufferUsage": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Window (internal cache) / http://127.0.0.1:8812": {
+      "count": 4,
+      "selfBytes": 64
+    },
+    "GPUShaderStage (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Navigator (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "URLSearchParams (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPU (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUAdapter (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUSupportedFeatures (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUDevice (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "CSSStyleDeclaration (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "DOMTokenList (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "DOMStringMap (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Option (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Storage (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUTextureUsage (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUTexture (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUTextureView (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUCommandEncoder (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPURenderPassEncoder (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUBufferUsage (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUBuffer (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUBindGroupLayout (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUBindGroup (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUQueue (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUShaderModule (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUPipelineLayout (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPURenderPipeline (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUCommandBuffer (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUCanvasContext (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUSampler (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "URL (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "SubtleCrypto (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "TextEncoder (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "AbortController (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "PointerEvent (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "MouseEvent (internal cache) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "Crypto (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "AbortSignal (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "CSSStyleDeclaration": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "CSSStyleDeclaration (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "TransformControls": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "OrbitControls": {
+      "count": 1,
+      "selfBytes": 364
+    },
+    "MouseEvent (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "UIEvent": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "PointerEvent (prototype) / http://127.0.0.1:8812": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "TouchEvent": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLCollection": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "HTMLOptionsCollection (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "CharacterData": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Text (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "NodeUniform": {
+      "count": 15,
+      "selfBytes": 420
+    },
+    "ColorUniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "Matrix4Uniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "NumberUniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "DOMTokenList (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Storage (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUCommandEncoder (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUQueue (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUPipelineLayout (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUCommandBuffer (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "PointerEvent": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "MouseEvent": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "Text": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLOptionsCollection": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLButtonElement": {
+      "count": 36,
+      "selfBytes": 576
+    },
+    "HTMLSelectElement": {
+      "count": 9,
+      "selfBytes": 144
+    },
+    "system / Context / scope @112887": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @113113": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "LightingNode": {
+      "count": 6,
+      "selfBytes": 72
+    },
+    "Uniform": {
+      "count": 8,
+      "selfBytes": 96
+    },
+    "system / Context / scope @118143": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @118211": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @118311": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "AnalyticLightNode": {
+      "count": 7,
+      "selfBytes": 84
+    },
+    "system / Context / scope @118379": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @118461": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @118851": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "DataMap": {
+      "count": 8,
+      "selfBytes": 96
+    },
+    "SpotLightNode": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @220459": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "TimestampQueryPool": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "GPUMultisampleState": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "CodeNode": {
+      "count": 24,
+      "selfBytes": 2036
+    },
+    "NodeParser": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "NodeFunction": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "StorageBuffer": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "WebGPUBackend": {
+      "count": 1,
+      "selfBytes": 116
+    },
+    "Matrix3Uniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "Matrix2Uniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "Vector4Uniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "Vector3Uniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "Vector2Uniform": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @108109": {
+      "count": 16,
+      "selfBytes": 320
+    },
+    "NodeBuilder": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "MaterialNode": {
+      "count": 37,
+      "selfBytes": 2812
+    },
+    "ComputeBuiltinNode": {
+      "count": 5,
+      "selfBytes": 600
+    },
+    "ViewportDepthNode": {
+      "count": 2,
+      "selfBytes": 256
+    },
+    "VelocityNode": {
+      "count": 1,
+      "selfBytes": 144
+    },
+    "FrontFacingNode": {
+      "count": 1,
+      "selfBytes": 120
+    },
+    "PointUVNode": {
+      "count": 1,
+      "selfBytes": 120
+    },
+    "SpotLight": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "RenderPipeline": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "ShadowNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "ShadowBaseNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "NodeVar": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "ObjectLoader": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "MaterialLoader": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "StorageBufferAttribute": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "NodeLibrary": {
+      "count": 2,
+      "selfBytes": 24
+    },
+    "system / Context / scope @222471": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "system / Context / scope @222549": {
+      "count": 1,
+      "selfBytes": 120
+    },
+    "system / Context / scope @222551": {
+      "count": 3,
+      "selfBytes": 60
+    },
+    "system / Context / scope @230123": {
+      "count": 2,
+      "selfBytes": 64
+    },
+    "system / Context / scope @222541": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "system / Context / scope @222543": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @230665": {
+      "count": 28,
+      "selfBytes": 560
+    },
+    "system / Context / scope @225669": {
+      "count": 36,
+      "selfBytes": 1008
+    },
+    "system / Context / scope @231101": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Spherical": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "PlaneGeometry": {
+      "count": 1,
+      "selfBytes": 124
+    },
+    "system / Context / scope @160275": {
+      "count": 1,
+      "selfBytes": 40
+    },
+    "system / Context / scope @87785": {
+      "count": 340,
+      "selfBytes": 6800
+    },
+    "AbortController (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "TextEncoder (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @146411": {
+      "count": 3,
+      "selfBytes": 108
+    },
+    "system / Context / scope @145731": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "XRWebGLBinding": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Renderer": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "GPUAdapter (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUSupportedFeatures (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "GPUDevice (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "system / Context / scope @131119": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "ContextNode": {
+      "count": 3,
+      "selfBytes": 108
+    },
+    "OutputStructNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "MeshPhysicalNodeMaterial": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "BasicLightingModel": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @87241": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "SpriteNodeMaterial": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "InstancedBufferAttribute": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "StorageTextureNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "PassNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "FramebufferTexture": {
+      "count": 3,
+      "selfBytes": 636
+    },
+    "LineDashedMaterial": {
+      "count": 2,
+      "selfBytes": 592
+    },
+    "MeshNormalMaterial": {
+      "count": 1,
+      "selfBytes": 296
+    },
+    "MeshLambertMaterial": {
+      "count": 1,
+      "selfBytes": 376
+    },
+    "MeshPhongMaterial": {
+      "count": 1,
+      "selfBytes": 384
+    },
+    "MeshPhysicalMaterial": {
+      "count": 1,
+      "selfBytes": 516
+    },
+    "PhysicalLightingModel": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @87207": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "MeshToonMaterial": {
+      "count": 1,
+      "selfBytes": 352
+    },
+    "MeshMatcapMaterial": {
+      "count": 1,
+      "selfBytes": 320
+    },
+    "SpriteMaterial": {
+      "count": 1,
+      "selfBytes": 280
+    },
+    "PointsMaterial": {
+      "count": 1,
+      "selfBytes": 276
+    },
+    "ShadowMaterial": {
+      "count": 1,
+      "selfBytes": 264
+    },
+    "system / Context / scope @87189": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87179": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87159": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @87149": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "BlendMode": {
+      "count": 2,
+      "selfBytes": 152
+    },
+    "FlipNode": {
+      "count": 1,
+      "selfBytes": 128
+    },
+    "PassTextureNode": {
+      "count": 1,
+      "selfBytes": 12
+    },
+    "system / Context / scope @111631": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @83189": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "TransformControlsPlane": {
+      "count": 1,
+      "selfBytes": 184
+    },
+    "system / Context / scope @83209": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @225235": {
+      "count": 1,
+      "selfBytes": 184
+    },
+    "Raycaster": {
+      "count": 2,
+      "selfBytes": 136
+    },
+    "system / Context / scope @261955": {
+      "count": 1,
+      "selfBytes": 40
+    },
+    "Info": {
+      "count": 1,
+      "selfBytes": 72
+    },
+    "StandardNodeLibrary": {
+      "count": 1,
+      "selfBytes": 64
+    },
+    "InspectorBase": {
+      "count": 1,
+      "selfBytes": 60
+    },
+    "Attributes": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Animation": {
+      "count": 1,
+      "selfBytes": 68
+    },
+    "Bindings": {
+      "count": 1,
+      "selfBytes": 72
+    },
+    "Pipelines": {
+      "count": 1,
+      "selfBytes": 72
+    },
+    "RenderBundles": {
+      "count": 1,
+      "selfBytes": 48
+    },
+    "RenderLists": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "RenderContexts": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "Background": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Color4": {
+      "count": 2,
+      "selfBytes": 128
+    },
+    "XRManager": {
+      "count": 1,
+      "selfBytes": 220
+    },
+    "Navigator": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLCanvasElement": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "GPU": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUAdapter": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUSupportedFeatures": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUDevice": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @104419": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "FunctionNode": {
+      "count": 3,
+      "selfBytes": 432
+    },
+    "system / Context / scope @266469": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @266607": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "BindGroupLayout": {
+      "count": 2,
+      "selfBytes": 104
+    },
+    "system / Context / scope @267813": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @268147": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @268281": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @268961": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269071": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269127": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269167": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @106595": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "system / Context / scope @269417": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269469": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269517": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269667": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269679": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269717": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @269735": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @270551": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @270725": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @270811": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @271347": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @273843": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @274027": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "DOMTokenList": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLPreElement": {
+      "count": 5,
+      "selfBytes": 80
+    },
+    "HTMLParagraphElement": {
+      "count": 8,
+      "selfBytes": 128
+    },
+    "HTMLSpanElement": {
+      "count": 13,
+      "selfBytes": 208
+    },
+    "HTMLDivElement": {
+      "count": 21,
+      "selfBytes": 336
+    },
+    "HTMLLabelElement": {
+      "count": 8,
+      "selfBytes": 128
+    },
+    "HTMLFormElement": {
+      "count": 4,
+      "selfBytes": 64
+    },
+    "NodeList": {
+      "count": 4,
+      "selfBytes": 64
+    },
+    "Storage": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "DOMRect": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "GPUTexture": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUTextureView": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUCommandEncoder": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPURenderPassEncoder": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUBuffer": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUBindGroupLayout": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUBindGroup": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUQueue": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUShaderModule": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUPipelineLayout": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPURenderPipeline": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUCommandBuffer": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUCanvasContext": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUSampler": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLElement": {
+      "count": 19,
+      "selfBytes": 304
+    },
+    "HTMLDetailsElement": {
+      "count": 8,
+      "selfBytes": 128
+    },
+    "DOMStringMap": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "HTMLBodyElement": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "URL (prototype) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 28
+    },
+    "Temporal.Now": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "ViewportDepthTextureNode": {
+      "count": 1,
+      "selfBytes": 232
+    },
+    "HTMLOptionsCollection (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "Text (internal cache) / http://127.0.0.1:8812": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "GPUExtent3D": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "GPUQuerySetDescriptor": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "GPURenderPassTimestampWrites": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "GPUBindGroupDescriptor": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "GPUBufferDescriptor": {
+      "count": 6,
+      "selfBytes": 360
+    },
+    "GPUComputePipelineDescriptor": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "GPUSamplerDescriptor": {
+      "count": 1,
+      "selfBytes": 88
+    },
+    "GPUTexelCopyBufferLayout": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "GPUShaderModuleDescriptor": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "GPURenderPipelineDescriptor": {
+      "count": 2,
+      "selfBytes": 144
+    },
+    "GPURenderBundleEncoderDescriptor": {
+      "count": 2,
+      "selfBytes": 136
+    },
+    "GPUCommandEncoderDescriptor": {
+      "count": 5,
+      "selfBytes": 240
+    },
+    "GPUTextureViewDescriptor": {
+      "count": 3,
+      "selfBytes": 252
+    },
+    "GPUCopyExternalImageSourceInfo": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "GPUComputePassDescriptor": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "GPUCopyExternalImageDestInfo": {
+      "count": 1,
+      "selfBytes": 68
+    },
+    "GPUPipelineLayoutDescriptor": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "GPUTexelCopyBufferInfo": {
+      "count": 1,
+      "selfBytes": 60
+    },
+    "Vector2NodeUniform": {
+      "count": 1,
+      "selfBytes": 84
+    },
+    "HTMLHtmlElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLHeadElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLMetaElement": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "HTMLTitleElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLScriptElement": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "HTMLLinkElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLOptionElement": {
+      "count": 16,
+      "selfBytes": 256
+    },
+    "HTMLAnchorElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLHeadingElement": {
+      "count": 6,
+      "selfBytes": 96
+    },
+    "HTMLFieldSetElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLLegendElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLOListElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "HTMLDialogElement": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "NamedNodeMap": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "Attr": {
+      "count": 3,
+      "selfBytes": 48
+    },
+    "HTMLDocument": {
+      "count": 2,
+      "selfBytes": 32
+    },
+    "Event": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "FileList": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "File": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "ToggleEvent": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @314377": {
+      "count": 3,
+      "selfBytes": 60
+    },
+    "system / Context / scope @459": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @83199": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "WebGPUUtils": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "WebGPUAttributeUtils": {
+      "count": 1,
+      "selfBytes": 48
+    },
+    "WebGPUBindingUtils": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "WebGPUCapabilities": {
+      "count": 1,
+      "selfBytes": 48
+    },
+    "WebGPUPipelineUtils": {
+      "count": 1,
+      "selfBytes": 48
+    },
+    "WebGPUTextureUtils": {
+      "count": 1,
+      "selfBytes": 68
+    },
+    "NodeFrame": {
+      "count": 1,
+      "selfBytes": 92
+    },
+    "ArrayCamera": {
+      "count": 1,
+      "selfBytes": 232
+    },
+    "system / Context / scope @120609": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @84851": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "EngineEvents": {
+      "count": 1,
+      "selfBytes": 36
+    },
+    "system / Context / scope @225375": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "system / Context / scope @321633": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "system / Context / scope @85873": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "EngineKernel": {
+      "count": 1,
+      "selfBytes": 92
+    },
+    "Authority": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "CommandQueue": {
+      "count": 1,
+      "selfBytes": 36
+    },
+    "system / Context / scope @223381": {
+      "count": 1,
+      "selfBytes": 64
+    },
+    "AssetService": {
+      "count": 1,
+      "selfBytes": 48
+    },
+    "system / Context / scope @84697": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "EngineClock": {
+      "count": 1,
+      "selfBytes": 68
+    },
+    "MemoryInfo": {
+      "count": 1,
+      "selfBytes": 16
+    },
+    "system / Context / scope @85857": {
+      "count": 1,
+      "selfBytes": 20
+    },
+    "LifecycleManager": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "PluginManager": {
+      "count": 1,
+      "selfBytes": 36
+    },
+    "World": {
+      "count": 1,
+      "selfBytes": 40
+    },
+    "EngineMetrics": {
+      "count": 1,
+      "selfBytes": 52
+    },
+    "system / Context / scope @222601": {
+      "count": 1,
+      "selfBytes": 40
+    }
+  },
+  "paths": [
+    {
+      "class": "Scene",
+      "selfBytes": 192,
+      "strongRootPath": [
+        {
+          "edgeType": "element",
+          "edge": "1",
+          "node": {
+            "type": "synthetic",
+            "name": "(GC roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "element",
+          "edge": "10",
+          "node": {
+            "type": "synthetic",
+            "name": "(Global handles)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "26 / DevTools console",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 24
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "viewport",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 80
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "sync",
+          "node": {
+            "type": "closure",
+            "name": "sync",
+            "selfBytes": 32
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "context",
+          "node": {
+            "type": "object",
+            "name": "system / Context / scope @225235",
+            "selfBytes": 184
+          }
+        },
+        {
+          "edgeType": "context",
+          "edge": "scene",
+          "node": {
+            "type": "object",
+            "name": "Scene",
+            "selfBytes": 192
+          }
+        }
+      ]
+    },
+    {
+      "class": "Scene",
+      "selfBytes": 192,
+      "strongRootPath": [
+        {
+          "edgeType": "element",
+          "edge": "1",
+          "node": {
+            "type": "synthetic",
+            "name": "(GC roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "element",
+          "edge": "10",
+          "node": {
+            "type": "synthetic",
+            "name": "(Global handles)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "26 / DevTools console",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 24
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "viewport",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 80
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "sync",
+          "node": {
+            "type": "closure",
+            "name": "sync",
+            "selfBytes": 32
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "context",
+          "node": {
+            "type": "object",
+            "name": "system / Context / scope @225235",
+            "selfBytes": 184
+          }
+        },
+        {
+          "edgeType": "context",
+          "edge": "gpu",
+          "node": {
+            "type": "object",
+            "name": "WebGPURenderer",
+            "selfBytes": 324
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "_nodes",
+          "node": {
+            "type": "object",
+            "name": "NodeManager",
+            "selfBytes": 84
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "nodeFrame",
+          "node": {
+            "type": "object",
+            "name": "NodeFrame",
+            "selfBytes": 92
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "scene",
+          "node": {
+            "type": "object",
+            "name": "Scene",
+            "selfBytes": 192
+          }
+        }
+      ]
+    },
+    {
+      "class": "AssetService",
+      "selfBytes": 48,
+      "strongRootPath": [
+        {
+          "edgeType": "element",
+          "edge": "1",
+          "node": {
+            "type": "synthetic",
+            "name": "(GC roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "element",
+          "edge": "10",
+          "node": {
+            "type": "synthetic",
+            "name": "(Global handles)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "26 / DevTools console",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 24
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "state",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 56
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "engine",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 12
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "assets",
+          "node": {
+            "type": "object",
+            "name": "AssetService",
+            "selfBytes": 48
+          }
+        }
+      ]
+    },
+    {
+      "class": "Scene",
+      "selfBytes": 52,
+      "strongRootPath": [
+        {
+          "edgeType": "element",
+          "edge": "1",
+          "node": {
+            "type": "synthetic",
+            "name": "(GC roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "element",
+          "edge": "10",
+          "node": {
+            "type": "synthetic",
+            "name": "(Global handles)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "26 / DevTools console",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 24
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "state",
+          "node": {
+            "type": "object",
+            "name": "Object",
+            "selfBytes": 56
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "scene",
+          "node": {
+            "type": "object",
+            "name": "Scene",
+            "selfBytes": 52
+          }
+        }
+      ]
+    }
+  ],
+  "nodeCount": 184247,
+  "strongReachable": 184168
+}

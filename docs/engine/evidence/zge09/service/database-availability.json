@@ -1,0 +1,152 @@
+{
+  "restarts": 2,
+  "revision": 2,
+  "personalXP": 14,
+  "duplicate": true,
+  "missingFileNotRecreated": true,
+  "emptyReplacementNotInitialized": true,
+  "originalInodeRestored": true,
+  "databaseIdentity": {
+    "dev": "16777232",
+    "ino": "490303131"
+  },
+  "audit": [
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611711611,
+      "elapsedMs": 0,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "service-start",
+      "pid": 1243,
+      "port": 64927,
+      "gatewayCount": 1,
+      "knownDatabase": false,
+      "databaseIdentity": null
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611711618,
+      "elapsedMs": 7,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "launcher-start",
+      "launcherPid": 3107,
+      "launch": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611712141,
+      "elapsedMs": 530,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "launcher-ready",
+      "launcherPid": 3107,
+      "gatewayPids": [
+        3401
+      ],
+      "world": {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-5f5d6837-a584-4a60-9743-da6f0910b2b1",
+        "generation": 1,
+        "expires": 1792611721997,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": null
+      },
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "490303131"
+      }
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611717148,
+      "elapsedMs": 5537,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "health-failed",
+      "reason": "database-unavailable",
+      "failures": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611717154,
+      "elapsedMs": 5543,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "launcher-stop-requested",
+      "reason": "database-unavailable",
+      "launcherPid": 3107
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611717322,
+      "elapsedMs": 5711,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "launcher-exit",
+      "launcherPid": 3107,
+      "code": 0,
+      "signal": null
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611717327,
+      "elapsedMs": 5716,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "restart-scheduled",
+      "reason": "database-unavailable",
+      "backoffMs": 250,
+      "restarts": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611717586,
+      "elapsedMs": 5975,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "database-unavailable"
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611717591,
+      "elapsedMs": 5980,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "restart-scheduled",
+      "reason": "database-unavailable",
+      "backoffMs": 500,
+      "restarts": 2
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611718102,
+      "elapsedMs": 6491,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "launcher-start",
+      "launcherPid": 4199,
+      "launch": 2
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792611722170,
+      "elapsedMs": 10559,
+      "serviceId": "service-0f45cdd4-b4a4-4843-99ca-b1a4e66fdbc2",
+      "event": "launcher-ready",
+      "launcherPid": 4199,
+      "gatewayPids": [
+        4821
+      ],
+      "world": {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-4f883ee9-f1a1-41f1-b58a-164dadad17a9",
+        "generation": 2,
+        "expires": 1792611732013,
+        "queue": 0,
+        "active": false,
+        "lastFailure": "lease-held-or-unavailable",
+        "evaluation": null
+      },
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "490303131"
+      }
+    }
+  ]
+}

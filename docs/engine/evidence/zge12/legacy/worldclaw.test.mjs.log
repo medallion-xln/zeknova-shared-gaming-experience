@@ -1,0 +1,143 @@
+
+Asset registry
+  PASS every registered asset path exists on disk
+  PASS asset ids are unique
+  PASS semantic query filters by biome and role
+  PASS query order is stable across calls
+  PASS resolution prefers authored assets over placeholders
+  PASS resolution falls back to a placeholder only as a last resort
+  PASS every canonical biome can serve a communal and a dwelling role
+
+ZekNova World Bible
+  PASS every canonical biome has a bible entry
+  PASS desert water strategy is collection, not surface water
+  PASS adjacency rejects an illegal border and bridges it
+  PASS transition search is deterministic
+  PASS an already-legal border needs no transition
+  PASS a one-hop border returns a single bridge
+  PASS settlement form scales with structure count
+  PASS identity forbids Earth and generic sci-fi motifs
+
+World planning
+  PASS same seed and intent produce the same specification
+  PASS a different seed produces a different specification
+  PASS the plan always contains all five campaign biomes
+  PASS canonical biomes keep their canonical band order
+  PASS intent parsing is deterministic and extracts a structure count
+  PASS elevation relaxation keeps neighbouring bases within one step
+  PASS a planned spec validates
+
+World specification
+  PASS canonicalisation is key-order independent
+  PASS digest is insensitive to float noise below the quantisation step
+  PASS digest changes when the world changes
+  PASS derived seeds are independent per label
+  PASS validation rejects an out-of-world region
+  PASS a spec is deeply frozen
+
+Terrain generation
+  PASS height sampling is deterministic
+  PASS the height field contains no invalid geometry
+  PASS regions are not monotone plates
+  PASS borders blend rather than step
+  PASS landform classification covers the whole world
+
+Generation
+  PASS the demonstration region generates and is playable
+  PASS generation is deterministic — same seed, same digest
+  PASS a different seed yields a different world
+  PASS no placement has non-finite coordinates
+  PASS no structure stands on illegal ground
+  PASS no two placed objects intersect
+  PASS nothing floats or is buried
+  PASS the requested settlement size is actually delivered
+  PASS every settlement has a communal heart
+  PASS every placement carries a justification
+  PASS no placeholder assets shipped
+
+Mission accessibility
+  PASS the campaign validates against the generated world
+  PASS every campaign biome hosts every mission
+  PASS every mission hook names a real campaign mission
+  PASS every mission hook is on buildable ground
+  PASS no mission hook is left provisional
+  PASS every campaign region offers a utility-connected cluster for all twelve projects
+  PASS every campaign region exposes the required gameplay zones
+  PASS generation does not alter the campaign definition
+
+Boss encounters
+  PASS all twelve Guardians have an arena
+  PASS every arena is in its Guardian's own biome
+  PASS every arena is large enough for its Guardian's scale
+  PASS every arena is reachable and navigable
+  PASS every arena declares an arrival bearing and a cinematic camera
+
+Navigation
+  PASS every settlement is served by a road
+  PASS no road crosses open water without a bridge
+  PASS every road stays inside the playable world
+  PASS fast-travel nodes exist for every territory region
+  PASS spawn zones are clear of patrol routes
+
+Critic and repair
+  PASS the critic reports no errors on the demonstration region
+  PASS world quality clears the shipping bar
+  PASS the critic detects a deliberately broken world
+  PASS repair fixes floating props without regenerating the world
+  PASS repair refuses to move a mission hook
+
+Performance budgets
+  PASS the demonstration world is within its hard budgets
+  PASS draw calls account for instancing
+  PASS lower hardware tiers reduce density but not structures
+  PASS the per-region object ceiling is enforced regardless of tier
+  PASS an unknown tier degrades to balanced rather than throwing
+
+Streaming
+  PASS every placement is assigned to exactly one cell
+  PASS partitioning is deterministic
+  PASS cells load near the viewer and unload far from it
+  PASS hysteresis prevents boundary thrash
+  PASS mission and boss anchors force residency
+  PASS change batches respect the per-frame budget
+
+Persistence
+  PASS a saved world round-trips exactly
+  PASS compression preserves every placement and position
+  PASS a save stores the spec, not just the prompt
+  PASS tampering with a save is detected
+  PASS player deltas are kept separate from generated content
+  PASS a save survives a generator version change without regenerating
+
+Security
+  PASS path traversal is rejected in every encoding
+  PASS URL schemes are rejected
+  PASS executable extensions are rejected
+  PASS a legitimate asset path is accepted
+  PASS giant-memory assets are rejected
+  PASS shader injection is rejected
+  PASS malformed geometry is rejected
+  PASS prototype pollution is rejected
+  PASS deeply nested JSON is rejected before it is read
+  PASS an LLM proposal cannot set authoritative fields
+  PASS a hostile proposal cannot change the generated world
+  PASS ids are pattern checked
+
+Failure modes
+  PASS generation works with every external provider disabled
+  PASS the default provider is the null provider
+  PASS a provider that throws cannot break generation
+  PASS a repeatedly failing provider is treated as absent
+  PASS a provider returning an invalid asset is rejected, not trusted
+  PASS a cached-file provider drops manifest entries that fail validation
+  PASS an async provider that hangs times out instead of blocking forever
+
+Blender interoperability
+  PASS export carries semantic ids, collision metadata and region ids
+  PASS the axis conversion round-trips
+  PASS an unmodified manifest re-imports without moving anything
+  PASS a malicious manifest is rejected object by object
+  PASS a manifest for another world is refused
+
+WORLDCLAW TESTS PASS (108/108)
+  world quality 95.1 · 602 objects · generator worldclaw-1.0.0

@@ -1,0 +1,1275 @@
+{
+  "placed": {
+    "world": {
+      "schema": "zge.world-state.v1",
+      "id": "world",
+      "revision": 1,
+      "authority": {
+        "domain": "construction",
+        "owner": "engine-local-fixture",
+        "epoch": 0
+      },
+      "entities": [
+        {
+          "id": "building-request-1",
+          "components": {
+            "transform": {
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        }
+      ],
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "inventory": {
+        "stone": 16
+      },
+      "inventoryRevision": 1,
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ],
+      "occupancy": [
+        {
+          "entityId": "building-request-1",
+          "x": 2,
+          "z": 2,
+          "radius": 1
+        }
+      ]
+    },
+    "construction": {
+      "version": 2,
+      "revision": 1,
+      "inventoryRevision": 1,
+      "pending": [],
+      "inventory": {
+        "stone": 16
+      },
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "ledger": [
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-1\",\"id\":\"building-request-1\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+          "commandId": "request-1",
+          "command": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          },
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "building-request-1",
+              "type": "shelter",
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          },
+          "before": {
+            "revision": 0,
+            "inventoryRevision": 0,
+            "inventory": {
+              "stone": 20
+            },
+            "buildings": [],
+            "events": []
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ]
+    },
+    "step": 1,
+    "lastResult": {
+      "ok": true,
+      "cost": {
+        "stone": 4
+      },
+      "building": {
+        "id": "building-request-1",
+        "type": "shelter",
+        "x": 2,
+        "y": 0,
+        "z": 2,
+        "rotation": 0,
+        "level": 1,
+        "radius": 1,
+        "state": "complete"
+      }
+    },
+    "actions": [
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-1",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          }
+        }
+      }
+    ]
+  },
+  "restored": {
+    "world": {
+      "schema": "zge.world-state.v1",
+      "id": "world",
+      "revision": 1,
+      "authority": {
+        "domain": "construction",
+        "owner": "engine-local-fixture",
+        "epoch": 0
+      },
+      "entities": [
+        {
+          "id": "building-request-1",
+          "components": {
+            "transform": {
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        }
+      ],
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "inventory": {
+        "stone": 16
+      },
+      "inventoryRevision": 1,
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ],
+      "occupancy": [
+        {
+          "entityId": "building-request-1",
+          "x": 2,
+          "z": 2,
+          "radius": 1
+        }
+      ]
+    },
+    "construction": {
+      "version": 2,
+      "revision": 1,
+      "inventoryRevision": 1,
+      "pending": [],
+      "inventory": {
+        "stone": 16
+      },
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "ledger": [
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-1\",\"id\":\"building-request-1\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+          "commandId": "request-1",
+          "command": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          },
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "building-request-1",
+              "type": "shelter",
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          },
+          "before": {
+            "revision": 0,
+            "inventoryRevision": 0,
+            "inventory": {
+              "stone": 20
+            },
+            "buildings": [],
+            "events": []
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-2\",\"id\":\"building-request-2\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+          "commandId": "request-2",
+          "command": {
+            "action": "place",
+            "commandId": "request-2",
+            "id": "building-request-2",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          },
+          "result": {
+            "ok": false,
+            "reason": "occupied"
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 16
+            },
+            "buildings": [
+              {
+                "id": "building-request-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "request-1",
+                "building": {
+                  "id": "building-request-1",
+                  "type": "shelter",
+                  "x": 2,
+                  "y": 0,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-3\",\"id\":\"building-request-3\",\"type\":\"shelter\",\"x\":20,\"z\":20}",
+          "commandId": "request-3",
+          "command": {
+            "action": "place",
+            "commandId": "request-3",
+            "id": "building-request-3",
+            "type": "shelter",
+            "x": 20,
+            "z": 20
+          },
+          "result": {
+            "ok": false,
+            "reason": "terrain"
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 16
+            },
+            "buildings": [
+              {
+                "id": "building-request-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "request-1",
+                "building": {
+                  "id": "building-request-1",
+                  "type": "shelter",
+                  "x": 2,
+                  "y": 0,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ]
+    },
+    "step": 3,
+    "lastResult": {
+      "ok": false,
+      "reason": "terrain"
+    },
+    "actions": [
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-1",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          }
+        }
+      },
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-2",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-2",
+            "id": "building-request-2",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          }
+        }
+      },
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-3",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-3",
+            "id": "building-request-3",
+            "type": "shelter",
+            "x": 20,
+            "z": 20
+          }
+        }
+      }
+    ]
+  },
+  "interrupted": {
+    "world": {
+      "schema": "zge.world-state.v1",
+      "id": "world",
+      "revision": 1,
+      "authority": {
+        "domain": "construction",
+        "owner": "engine-local-fixture",
+        "epoch": 0
+      },
+      "entities": [
+        {
+          "id": "building-request-1",
+          "components": {
+            "transform": {
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        }
+      ],
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "inventory": {
+        "stone": 16
+      },
+      "inventoryRevision": 1,
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ],
+      "occupancy": [
+        {
+          "entityId": "building-request-1",
+          "x": 2,
+          "z": 2,
+          "radius": 1
+        }
+      ]
+    },
+    "construction": {
+      "version": 2,
+      "revision": 1,
+      "inventoryRevision": 1,
+      "pending": [],
+      "inventory": {
+        "stone": 16
+      },
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "ledger": [
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-1\",\"id\":\"building-request-1\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+          "commandId": "request-1",
+          "command": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          },
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "building-request-1",
+              "type": "shelter",
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          },
+          "before": {
+            "revision": 0,
+            "inventoryRevision": 0,
+            "inventory": {
+              "stone": 20
+            },
+            "buildings": [],
+            "events": []
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-2\",\"id\":\"building-request-2\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+          "commandId": "request-2",
+          "command": {
+            "action": "place",
+            "commandId": "request-2",
+            "id": "building-request-2",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          },
+          "result": {
+            "ok": false,
+            "reason": "occupied"
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 16
+            },
+            "buildings": [
+              {
+                "id": "building-request-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "request-1",
+                "building": {
+                  "id": "building-request-1",
+                  "type": "shelter",
+                  "x": 2,
+                  "y": 0,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-3\",\"id\":\"building-request-3\",\"type\":\"shelter\",\"x\":20,\"z\":20}",
+          "commandId": "request-3",
+          "command": {
+            "action": "place",
+            "commandId": "request-3",
+            "id": "building-request-3",
+            "type": "shelter",
+            "x": 20,
+            "z": 20
+          },
+          "result": {
+            "ok": false,
+            "reason": "terrain"
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 16
+            },
+            "buildings": [
+              {
+                "id": "building-request-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "request-1",
+                "building": {
+                  "id": "building-request-1",
+                  "type": "shelter",
+                  "x": 2,
+                  "y": 0,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ]
+    },
+    "step": 3,
+    "lastResult": {
+      "ok": false,
+      "reason": "terrain"
+    },
+    "actions": [
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-1",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          }
+        }
+      },
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-2",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-2",
+            "id": "building-request-2",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          }
+        }
+      },
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-3",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-3",
+            "id": "building-request-3",
+            "type": "shelter",
+            "x": 20,
+            "z": 20
+          }
+        }
+      }
+    ]
+  },
+  "pointer": {
+    "world": {
+      "schema": "zge.world-state.v1",
+      "id": "world",
+      "revision": 2,
+      "authority": {
+        "domain": "construction",
+        "owner": "engine-local-fixture",
+        "epoch": 0
+      },
+      "entities": [
+        {
+          "id": "building-request-1",
+          "components": {
+            "transform": {
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "building-request-5",
+          "components": {
+            "transform": {
+              "x": 6,
+              "y": 0,
+              "z": 5,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        }
+      ],
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "building-request-5",
+          "type": "shelter",
+          "x": 6,
+          "y": 0,
+          "z": 5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "inventory": {
+        "stone": 12
+      },
+      "inventoryRevision": 2,
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        },
+        {
+          "type": "construction:placed",
+          "commandId": "request-5",
+          "building": {
+            "id": "building-request-5",
+            "type": "shelter",
+            "x": 6,
+            "y": 0,
+            "z": 5,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ],
+      "occupancy": [
+        {
+          "entityId": "building-request-1",
+          "x": 2,
+          "z": 2,
+          "radius": 1
+        },
+        {
+          "entityId": "building-request-5",
+          "x": 6,
+          "z": 5,
+          "radius": 1
+        }
+      ]
+    },
+    "construction": {
+      "version": 2,
+      "revision": 2,
+      "inventoryRevision": 2,
+      "pending": [],
+      "inventory": {
+        "stone": 12
+      },
+      "buildings": [
+        {
+          "id": "building-request-1",
+          "type": "shelter",
+          "x": 2,
+          "y": 0,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "building-request-5",
+          "type": "shelter",
+          "x": 6,
+          "y": 0,
+          "z": 5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "ledger": [
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-1\",\"id\":\"building-request-1\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+          "commandId": "request-1",
+          "command": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          },
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "building-request-1",
+              "type": "shelter",
+              "x": 2,
+              "y": 0,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          },
+          "before": {
+            "revision": 0,
+            "inventoryRevision": 0,
+            "inventory": {
+              "stone": 20
+            },
+            "buildings": [],
+            "events": []
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-2\",\"id\":\"building-request-2\",\"type\":\"shelter\",\"x\":2,\"z\":2}",
+          "commandId": "request-2",
+          "command": {
+            "action": "place",
+            "commandId": "request-2",
+            "id": "building-request-2",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          },
+          "result": {
+            "ok": false,
+            "reason": "occupied"
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 16
+            },
+            "buildings": [
+              {
+                "id": "building-request-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "request-1",
+                "building": {
+                  "id": "building-request-1",
+                  "type": "shelter",
+                  "x": 2,
+                  "y": 0,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-3\",\"id\":\"building-request-3\",\"type\":\"shelter\",\"x\":20,\"z\":20}",
+          "commandId": "request-3",
+          "command": {
+            "action": "place",
+            "commandId": "request-3",
+            "id": "building-request-3",
+            "type": "shelter",
+            "x": 20,
+            "z": 20
+          },
+          "result": {
+            "ok": false,
+            "reason": "terrain"
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 16
+            },
+            "buildings": [
+              {
+                "id": "building-request-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "request-1",
+                "building": {
+                  "id": "building-request-1",
+                  "type": "shelter",
+                  "x": 2,
+                  "y": 0,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"request-5\",\"id\":\"building-request-5\",\"type\":\"shelter\",\"x\":6,\"z\":5}",
+          "commandId": "request-5",
+          "command": {
+            "action": "place",
+            "commandId": "request-5",
+            "id": "building-request-5",
+            "type": "shelter",
+            "x": 6,
+            "z": 5
+          },
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "building-request-5",
+              "type": "shelter",
+              "x": 6,
+              "y": 0,
+              "z": 5,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 16
+            },
+            "buildings": [
+              {
+                "id": "building-request-1",
+                "type": "shelter",
+                "x": 2,
+                "y": 0,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "request-1",
+                "building": {
+                  "id": "building-request-1",
+                  "type": "shelter",
+                  "x": 2,
+                  "y": 0,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "request-1",
+          "building": {
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "y": 0,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        },
+        {
+          "type": "construction:placed",
+          "commandId": "request-5",
+          "building": {
+            "id": "building-request-5",
+            "type": "shelter",
+            "x": 6,
+            "y": 0,
+            "z": 5,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ]
+    },
+    "step": 4,
+    "lastResult": {
+      "ok": true,
+      "cost": {
+        "stone": 4
+      },
+      "building": {
+        "id": "building-request-5",
+        "type": "shelter",
+        "x": 6,
+        "y": 0,
+        "z": 5,
+        "rotation": 0,
+        "level": 1,
+        "radius": 1,
+        "state": "complete"
+      }
+    },
+    "actions": [
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-1",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-1",
+            "id": "building-request-1",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          }
+        }
+      },
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-2",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-2",
+            "id": "building-request-2",
+            "type": "shelter",
+            "x": 2,
+            "z": 2
+          }
+        }
+      },
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-3",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-3",
+            "id": "building-request-3",
+            "type": "shelter",
+            "x": 20,
+            "z": 20
+          }
+        }
+      },
+      {
+        "kind": "command",
+        "command": {
+          "id": "request-5",
+          "type": "construction",
+          "payload": {
+            "action": "place",
+            "commandId": "request-5",
+            "id": "building-request-5",
+            "type": "shelter",
+            "x": 6,
+            "z": 5
+          }
+        }
+      }
+    ]
+  },
+  "replay": "{\"deterministic\":true,\"steps\":4}",
+  "errors": []
+}

@@ -1,0 +1,5065 @@
+{
+  "negativeConstruction": [
+    {
+      "name": "overlapping-existing-building",
+      "target": {
+        "x": 890.4922469878808,
+        "y": 386.320694752174,
+        "world": [
+          1.001739995141346,
+          -10.994701597269085
+        ]
+      },
+      "before": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 522,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 1000,
+          "iron": 1000,
+          "biomass": 1000,
+          "timber": 65,
+          "data": 999,
+          "credits": 1000,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 81,
+            "matched": 21,
+            "hits": 0,
+            "joined": 0,
+            "misses": 21,
+            "bytesDownloaded": 12328189,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 60,
+            "errors": 0,
+            "entries": 21,
+            "bytes": 12328189,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 20,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 3,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66459264,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 20,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 17,
+          "lastAck": {
+            "seq": 3,
+            "revision": 17,
+            "at": 1792648933987,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "after": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 522,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 1000,
+          "iron": 1000,
+          "biomass": 999,
+          "timber": 65,
+          "data": 999,
+          "credits": 1000,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 81,
+            "matched": 21,
+            "hits": 0,
+            "joined": 0,
+            "misses": 21,
+            "bytesDownloaded": 12328189,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 60,
+            "errors": 0,
+            "entries": 21,
+            "bytes": 12328189,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 20,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 3,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66459264,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 20,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 17,
+          "lastAck": {
+            "seq": 3,
+            "revision": 17,
+            "at": 1792648933987,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "placements": [
+        {
+          "before": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 1000,
+            "iron": 1000,
+            "biomass": 1000,
+            "timber": 65,
+            "data": 999,
+            "credits": 1000,
+            "trust": 52
+          },
+          "after": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 1000,
+            "iron": 1000,
+            "biomass": 1000,
+            "timber": 65,
+            "data": 999,
+            "credits": 1000,
+            "trust": 52
+          },
+          "countBefore": 5,
+          "countAfter": 5,
+          "result": null
+        }
+      ]
+    },
+    {
+      "name": "invalid-water-placement",
+      "target": {
+        "x": 641.7878489132896,
+        "y": 0.4306579408496418,
+        "world": [
+          -15,
+          -1
+        ]
+      },
+      "before": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 522,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 1000,
+          "iron": 1000,
+          "biomass": 999,
+          "timber": 65,
+          "data": 999,
+          "credits": 1000,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 81,
+            "matched": 21,
+            "hits": 0,
+            "joined": 0,
+            "misses": 21,
+            "bytesDownloaded": 12328189,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 60,
+            "errors": 0,
+            "entries": 21,
+            "bytes": 12328189,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 20,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 3,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66459264,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 20,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 17,
+          "lastAck": {
+            "seq": 3,
+            "revision": 17,
+            "at": 1792648933987,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "after": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 522,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 1000,
+          "iron": 1000,
+          "biomass": 999,
+          "timber": 65,
+          "data": 999,
+          "credits": 1000,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 82,
+            "matched": 21,
+            "hits": 0,
+            "joined": 0,
+            "misses": 21,
+            "bytesDownloaded": 12328189,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 61,
+            "errors": 0,
+            "entries": 21,
+            "bytes": 12328189,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 20,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 3,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66459264,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 20,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 17,
+          "lastAck": {
+            "seq": 3,
+            "revision": 17,
+            "at": 1792648933987,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "placements": []
+    },
+    {
+      "name": "rapid-three-click-one-legal-site",
+      "target": {
+        "x": 477.9094478267631,
+        "y": 1.2336588658959045,
+        "world": [
+          -20,
+          10
+        ]
+      },
+      "before": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 522,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 1000,
+          "iron": 1000,
+          "biomass": 999,
+          "timber": 65,
+          "data": 999,
+          "credits": 1000,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 82,
+            "matched": 21,
+            "hits": 0,
+            "joined": 0,
+            "misses": 21,
+            "bytesDownloaded": 12328189,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 61,
+            "errors": 0,
+            "entries": 21,
+            "bytes": 12328189,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 20,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 3,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66459264,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 20,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 17,
+          "lastAck": {
+            "seq": 3,
+            "revision": 17,
+            "at": 1792648933987,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "after": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 536,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          },
+          {
+            "id": "900047f8-ca32-4d39-8b63-7bf344dee50c",
+            "type": "power",
+            "x": -19.96178468549634,
+            "y": 0.8135293349303861,
+            "z": 10.018652048727425,
+            "rotation": 2.5341014422990193,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 1000,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648936342
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 976,
+          "iron": 992,
+          "biomass": 991.0455436799984,
+          "timber": 65,
+          "data": 999,
+          "credits": 988,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 82,
+            "matched": 21,
+            "hits": 0,
+            "joined": 0,
+            "misses": 21,
+            "bytesDownloaded": 12328189,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 61,
+            "errors": 0,
+            "entries": 21,
+            "bytes": 12328189,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 20,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 3,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66459264,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 20,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 17,
+          "lastAck": {
+            "seq": 3,
+            "revision": 17,
+            "at": 1792648933987,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "placements": [
+        {
+          "before": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 1000,
+            "iron": 1000,
+            "biomass": 999,
+            "timber": 65,
+            "data": 999,
+            "credits": 1000,
+            "trust": 52
+          },
+          "after": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 976,
+            "iron": 992,
+            "biomass": 991,
+            "timber": 65,
+            "data": 999,
+            "credits": 988,
+            "trust": 52
+          },
+          "countBefore": 5,
+          "countAfter": 6,
+          "result": {
+            "id": "900047f8-ca32-4d39-8b63-7bf344dee50c",
+            "type": "power",
+            "x": -19.96178468549634,
+            "z": 10.018652048727425
+          }
+        },
+        {
+          "before": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 976,
+            "iron": 992,
+            "biomass": 991,
+            "timber": 65,
+            "data": 999,
+            "credits": 988,
+            "trust": 52
+          },
+          "after": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 976,
+            "iron": 992,
+            "biomass": 991,
+            "timber": 65,
+            "data": 999,
+            "credits": 988,
+            "trust": 52
+          },
+          "countBefore": 6,
+          "countAfter": 6,
+          "result": null
+        },
+        {
+          "before": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 976,
+            "iron": 992,
+            "biomass": 991,
+            "timber": 65,
+            "data": 999,
+            "credits": 988,
+            "trust": 52
+          },
+          "after": {
+            "energy": 999,
+            "water": 989,
+            "minerals": 976,
+            "iron": 992,
+            "biomass": 991,
+            "timber": 65,
+            "data": 999,
+            "credits": 988,
+            "trust": 52
+          },
+          "countBefore": 6,
+          "countAfter": 6,
+          "result": null
+        }
+      ]
+    },
+    {
+      "name": "insufficient-resources",
+      "target": {
+        "x": 424.30137730266847,
+        "y": 37.45134455119842,
+        "world": [
+          -19,
+          15
+        ]
+      },
+      "before": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 536,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          },
+          {
+            "id": "900047f8-ca32-4d39-8b63-7bf344dee50c",
+            "type": "power",
+            "x": -19.96178468549634,
+            "y": 0.8135293349303861,
+            "z": 10.018652048727425,
+            "rotation": 2.5341014422990193,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 1000,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648936342
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 976,
+          "iron": 0,
+          "biomass": 991.0455436799984,
+          "timber": 65,
+          "data": 999,
+          "credits": 0,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 87,
+            "matched": 22,
+            "hits": 0,
+            "joined": 0,
+            "misses": 22,
+            "bytesDownloaded": 12487125,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 65,
+            "errors": 0,
+            "entries": 22,
+            "bytes": 12487125,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 21,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 5,
+            "cancelled": 0,
+            "entries": 16,
+            "pending": 0,
+            "bytes": 65517744,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 21,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 17,
+          "lastAck": {
+            "seq": 3,
+            "revision": 17,
+            "at": 1792648933987,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 3,
+            "coalesced": 1,
+            "posted": 2,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 3,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "after": {
+        "position": [
+          0.07614711101054704,
+          0.2338746798597019,
+          5.465521532127672
+        ],
+        "health": 100,
+        "xp": 536,
+        "rank": "ensign",
+        "mode": "command",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          },
+          {
+            "id": "900047f8-ca32-4d39-8b63-7bf344dee50c",
+            "type": "power",
+            "x": -19.96178468549634,
+            "y": 0.8135293349303861,
+            "z": 10.018652048727425,
+            "rotation": 2.5341014422990193,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 1000,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648936342
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 976,
+          "iron": 0,
+          "biomass": 991.0455436799984,
+          "timber": 65,
+          "data": 999,
+          "credits": 0,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 88,
+            "matched": 22,
+            "hits": 0,
+            "joined": 0,
+            "misses": 22,
+            "bytesDownloaded": 12487125,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 66,
+            "errors": 0,
+            "entries": 22,
+            "bytes": 12487125,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 21,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 5,
+            "cancelled": 0,
+            "entries": 16,
+            "pending": 0,
+            "bytes": 65517744,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 21,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.9,
+              "p95": 153.9,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 18,
+          "lastAck": {
+            "seq": 4,
+            "revision": 18,
+            "at": 1792648937148,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 1,
+            "posted": 3,
+            "acked": 3,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      },
+      "placements": []
+    },
+    {
+      "name": "protected-watershed-under-shared-water-policy",
+      "status": "BLOCKED_NO_VISIBLE_TARGET"
+    }
+  ],
+  "physics": [
+    {
+      "name": "building-collision-and-grounding",
+      "fixture": {
+        "building": {
+          "id": "bench-prerequisite-forest",
+          "x": -82,
+          "z": 25
+        },
+        "start": [
+          -92,
+          5.757183816697864,
+          25
+        ],
+        "direction": [
+          -1,
+          0
+        ]
+      },
+      "points": [
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": -6.0000000000000036,
+          "right": 7.999999999999998
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 7.9999999999999885,
+          "right": 6.000000000000015
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.85072880060925,
+          "right": 1.7213779645526515
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.620050429426536,
+          "right": -2.7303167829558372
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": -1.9121095433768198,
+          "right": 9.815489651266885
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.815489651266882,
+          "right": 1.9121095433768303
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.780664664624876,
+          "right": -2.0829303200439413
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.55043948248181,
+          "right": 2.9646425908450706
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.861633584968905,
+          "right": -1.6577644693421774
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.5076707914072,
+          "right": 3.0990637492995137
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.66644790355055,
+          "right": -2.5612077088637646
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.71276368405515,
+          "right": 2.3795423126516244
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.665385211541045,
+          "right": -2.565215139617671
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.725779051995826,
+          "right": 2.3257733835778445
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.664313447144226,
+          "right": -2.5692500063923878
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.503050792003336,
+          "right": 3.113201831652544
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.832145764902783,
+          "right": -1.8245299826816321
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.492793978647814,
+          "right": 3.1443381623082156
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.64096742114424,
+          "right": -2.655512602951715
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.498344559970178,
+          "right": 3.127531074199732
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.845580508692972,
+          "right": -1.7505840302153588
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.471803795684306,
+          "right": 3.2070130738836093
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.656471211845691,
+          "right": -2.598569555504608
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.715649993390517,
+          "right": 2.3677299689641225
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.647092611164862,
+          "right": -2.6331737792269463
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.71869759177454,
+          "right": 2.35518940207275
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.81869711166275,
+          "right": -1.8955703704757503
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.527839569449363,
+          "right": 3.0364902665470472
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.613786972440424,
+          "right": -2.7522899644722694
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.741001082778775,
+          "right": 2.261171799156963
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.627778975642986,
+          "right": -2.7029376604292765
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.511536933050596,
+          "right": 3.0871775412526006
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.81583477207052,
+          "right": -1.9103370716738062
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.515663353175112,
+          "right": 3.074435061769913
+        },
+        {
+          "p": [
+            -92,
+            5.757183816697864,
+            25
+          ],
+          "ground": 5.757183816697864,
+          "obstacle": false,
+          "forward": 9.61725385660872,
+          "right": -2.7401511377193595
+        }
+      ],
+      "end": {
+        "position": [
+          -92,
+          5.757183816697864,
+          25
+        ],
+        "health": 100,
+        "xp": 536,
+        "rank": "ensign",
+        "mode": "explore",
+        "paused": false,
+        "records": [
+          {
+            "id": "bench-prerequisite-forest",
+            "type": "power",
+            "x": -82,
+            "y": 6.624940470707266,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847063
+          },
+          {
+            "id": "bench-prerequisite-desert",
+            "type": "power",
+            "x": -52,
+            "y": 2.9266562508948066,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847065
+          },
+          {
+            "id": "bench-prerequisite-arctic",
+            "type": "power",
+            "x": 20,
+            "y": 5.288174199469299,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847066
+          },
+          {
+            "id": "bench-prerequisite-wetlands",
+            "type": "power",
+            "x": 56,
+            "y": 3.4641713218924464,
+            "z": 25,
+            "rotation": 0,
+            "level": 1,
+            "health": 1000,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648847067
+          },
+          {
+            "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+            "type": "power",
+            "x": 1.001739995141346,
+            "y": 0.5320330653495817,
+            "z": -10.994701597269085,
+            "rotation": 3.897303529359879,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 410,
+            "integrity": 41,
+            "healthUpdatedAt": 1792648897003
+          },
+          {
+            "id": "900047f8-ca32-4d39-8b63-7bf344dee50c",
+            "type": "power",
+            "x": -19.96178468549634,
+            "y": 0.8135293349303861,
+            "z": 10.018652048727425,
+            "rotation": 2.5341014422990193,
+            "level": 1,
+            "maxHealth": 1000,
+            "healthSchemaVersion": 1,
+            "health": 1000,
+            "integrity": 100,
+            "healthUpdatedAt": 1792648936342
+          }
+        ],
+        "resources": {
+          "energy": 999,
+          "water": 989,
+          "minerals": 976,
+          "iron": 1000,
+          "biomass": 991.2966163035104,
+          "timber": 65,
+          "data": 999,
+          "credits": 1000,
+          "trust": 52
+        },
+        "mission": {
+          "resourcesCollected": 0,
+          "enemiesDefeated": 0,
+          "treesChopped": 2,
+          "rockMinedAt": {},
+          "biomeStats": {
+            "highlands": {
+              "treesChopped": 2
+            }
+          },
+          "commissioningEncounters": {
+            "water": {
+              "generation": 0,
+              "attackerIds": [
+                "commissioning-water-juggernaut-g0",
+                "commissioning-water-spitter-1-g0",
+                "commissioning-water-spitter-2-g0"
+              ],
+              "defeatedIds": [],
+              "status": "active",
+              "completedAt": null,
+              "nextRegenAt": null,
+              "teamCode": "BENC-2248"
+            }
+          },
+          "personalObjectiveIds": [
+            "build-power",
+            "chop-tree"
+          ],
+          "biomeVisited": [
+            "forest",
+            "desert",
+            "highlands",
+            "arctic",
+            "wetlands"
+          ],
+          "bossDefeats": {
+            "grid": {
+              "missionId": "grid",
+              "bossId": "desert_sunscar_colossus",
+              "bossName": "The Sunscar Colossus",
+              "rewardId": "grid:174692304",
+              "grade": "C",
+              "multiplier": 1,
+              "rewards": {
+                "credits": 100,
+                "timber": 25,
+                "iron": 15,
+                "tensionReduction": 50
+              },
+              "defeatedAt": 1792648894054,
+              "telemetry": {
+                "seed": 174692304,
+                "playerCount": 1,
+                "durationMs": 44935,
+                "playerDeaths": 3,
+                "peakProjectiles": 15,
+                "averageFrameMs": 0.0951915859370013,
+                "lastDamageAttribution": {
+                  "bossId": "desert_sunscar_colossus",
+                  "patternId": "sunscar_focused_overcharge",
+                  "projectileId": "bp-48199.60-0",
+                  "damage": 100
+                }
+              }
+            }
+          },
+          "claimedBossRewards": [
+            "grid:174692304"
+          ],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+            "missionId": "water",
+            "updatedAt": 1792648918701
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 102,
+            "matched": 24,
+            "hits": 0,
+            "joined": 0,
+            "misses": 24,
+            "bytesDownloaded": 12863177,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 78,
+            "errors": 0,
+            "entries": 24,
+            "bytes": 12863177,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 23,
+            "hits": 18,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 8,
+            "cancelled": 0,
+            "entries": 15,
+            "pending": 0,
+            "bytes": 64517950,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 23,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 22.4,
+              "p95": 137.8,
+              "max": 178.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 18,
+          "lastAck": {
+            "seq": 4,
+            "revision": 18,
+            "at": 1792648937148,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 1,
+            "posted": 3,
+            "acked": 3,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T06:01:56.023Z",
+            "player": {
+              "xp": 522,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 522
+        }
+      }
+    }
+  ],
+  "capabilities": {
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "webgpuAvailable": true,
+    "adapter": {
+      "info": {},
+      "features": [
+        "depth32float-stencil8",
+        "chromium-experimental-subgroup-matrix",
+        "rg11b10ufloat-renderable",
+        "bgra8unorm-storage",
+        "texture-formats-tier1",
+        "texture-compression-bc",
+        "dual-source-blending",
+        "core-features-and-limits",
+        "float32-filterable",
+        "indirect-first-instance",
+        "texture-compression-astc-sliced-3d",
+        "float32-blendable",
+        "subgroup-size-control",
+        "texture-compression-unaligned",
+        "texture-compression-astc",
+        "texture-compression-etc2",
+        "depth-clip-control",
+        "texture-compression-bc-sliced-3d",
+        "clip-distances",
+        "timestamp-query",
+        "shader-f16",
+        "texture-formats-tier2",
+        "primitive-index",
+        "texture-component-swizzle",
+        "subgroups"
+      ]
+    },
+    "activeBackend": "WebGPU",
+    "backendTimestamp": 0,
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 1,
+      "screenWidth": 1440,
+      "screenHeight": 1000
+    },
+    "modelModules": [
+      "http://127.0.0.1:8790/assets/model-runtime-c96327ba.js"
+    ],
+    "playerHq": true,
+    "enemyHq": [
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "juggernaut",
+        "loaded": true,
+        "loading": false
+      },
+      {
+        "type": "spitter",
+        "loaded": true,
+        "loading": false
+      }
+    ],
+    "assets": {
+      "cache": {
+        "requests": 104,
+        "matched": 24,
+        "hits": 0,
+        "joined": 0,
+        "misses": 24,
+        "bytesDownloaded": 12863177,
+        "bytesServedFromCache": 0,
+        "evictions": 0,
+        "bypassed": 80,
+        "errors": 0,
+        "entries": 24,
+        "bytes": 12863177,
+        "budgetBytes": 67108864,
+        "inFlight": 0,
+        "top": [
+          {
+            "url": "models/zeknovan-spitter-walk.medium.glb",
+            "hits": 0,
+            "kb": 485
+          },
+          {
+            "url": "basis/basis_transcoder.wasm",
+            "hits": 0,
+            "kb": 515
+          },
+          {
+            "url": "models/zeknovan-stalker-walk.medium.glb",
+            "hits": 0,
+            "kb": 459
+          },
+          {
+            "url": "models/zeknovan-juggernaut-walk.medium.glb",
+            "hits": 0,
+            "kb": 472
+          },
+          {
+            "url": "models/zeknovan-spitter-run.glb",
+            "hits": 0,
+            "kb": 455
+          }
+        ]
+      },
+      "parsed": {
+        "loads": 23,
+        "hits": 18,
+        "joined": 0,
+        "failures": 0,
+        "retries": 0,
+        "evictions": 8,
+        "cancelled": 0,
+        "entries": 15,
+        "pending": 0,
+        "bytes": 64517950,
+        "references": 0,
+        "budgetBytes": 67108864,
+        "workers": {
+          "completed": 32,
+          "failures": 0,
+          "resets": 0,
+          "created": 4,
+          "live": 4,
+          "pending": 0,
+          "limit": 4
+        }
+      },
+      "loader": {
+        "patched": true,
+        "pending": [],
+        "completed": 23,
+        "failures": 0,
+        "stalls": 0,
+        "loadMs": {
+          "p50": 22.4,
+          "p95": 137.8,
+          "max": 178.2
+        },
+        "stallMs": 15000
+      },
+      "workers": {
+        "live": 5,
+        "created": 5,
+        "terminated": 0,
+        "errors": 0,
+        "byScript": {
+          "blob:": 4,
+          "workers/adaptive-runtime-worker.js": 1
+        }
+      }
+    },
+    "audio": [
+      {
+        "key": "ZekNovaMusic",
+        "state": null
+      }
+    ]
+  },
+  "cancellation": {
+    "mode": "explore",
+    "selected": null
+  },
+  "pauseOverlay": {
+    "before": {
+      "position": [
+        0.07614711101054704,
+        0.2338746798597019,
+        5.465521532127672
+      ],
+      "health": 100,
+      "xp": 536,
+      "rank": "ensign",
+      "mode": "explore",
+      "paused": true,
+      "records": [
+        {
+          "id": "bench-prerequisite-forest",
+          "type": "power",
+          "x": -82,
+          "y": 6.624940470707266,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847063
+        },
+        {
+          "id": "bench-prerequisite-desert",
+          "type": "power",
+          "x": -52,
+          "y": 2.9266562508948066,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847065
+        },
+        {
+          "id": "bench-prerequisite-arctic",
+          "type": "power",
+          "x": 20,
+          "y": 5.288174199469299,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847066
+        },
+        {
+          "id": "bench-prerequisite-wetlands",
+          "type": "power",
+          "x": 56,
+          "y": 3.4641713218924464,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847067
+        },
+        {
+          "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+          "type": "power",
+          "x": 1.001739995141346,
+          "y": 0.5320330653495817,
+          "z": -10.994701597269085,
+          "rotation": 3.897303529359879,
+          "level": 1,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "health": 410,
+          "integrity": 41,
+          "healthUpdatedAt": 1792648897003
+        },
+        {
+          "id": "900047f8-ca32-4d39-8b63-7bf344dee50c",
+          "type": "power",
+          "x": -19.96178468549634,
+          "y": 0.8135293349303861,
+          "z": 10.018652048727425,
+          "rotation": 2.5341014422990193,
+          "level": 1,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "health": 1000,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648936342
+        }
+      ],
+      "resources": {
+        "energy": 999,
+        "water": 989,
+        "minerals": 976,
+        "iron": 1000,
+        "biomass": 991.0479970799988,
+        "timber": 65,
+        "data": 999,
+        "credits": 1000,
+        "trust": 52
+      },
+      "mission": {
+        "resourcesCollected": 0,
+        "enemiesDefeated": 0,
+        "treesChopped": 2,
+        "rockMinedAt": {},
+        "biomeStats": {
+          "highlands": {
+            "treesChopped": 2
+          }
+        },
+        "commissioningEncounters": {
+          "water": {
+            "generation": 0,
+            "attackerIds": [
+              "commissioning-water-juggernaut-g0",
+              "commissioning-water-spitter-1-g0",
+              "commissioning-water-spitter-2-g0"
+            ],
+            "defeatedIds": [],
+            "status": "active",
+            "completedAt": null,
+            "nextRegenAt": null,
+            "teamCode": "BENC-2248"
+          }
+        },
+        "personalObjectiveIds": [
+          "build-power",
+          "chop-tree"
+        ],
+        "biomeVisited": [
+          "forest",
+          "desert",
+          "highlands",
+          "arctic",
+          "wetlands"
+        ],
+        "bossDefeats": {
+          "grid": {
+            "missionId": "grid",
+            "bossId": "desert_sunscar_colossus",
+            "bossName": "The Sunscar Colossus",
+            "rewardId": "grid:174692304",
+            "grade": "C",
+            "multiplier": 1,
+            "rewards": {
+              "credits": 100,
+              "timber": 25,
+              "iron": 15,
+              "tensionReduction": 50
+            },
+            "defeatedAt": 1792648894054,
+            "telemetry": {
+              "seed": 174692304,
+              "playerCount": 1,
+              "durationMs": 44935,
+              "playerDeaths": 3,
+              "peakProjectiles": 15,
+              "averageFrameMs": 0.0951915859370013,
+              "lastDamageAttribution": {
+                "bossId": "desert_sunscar_colossus",
+                "patternId": "sunscar_focused_overcharge",
+                "projectileId": "bp-48199.60-0",
+                "damage": 100
+              }
+            }
+          }
+        },
+        "claimedBossRewards": [
+          "grid:174692304"
+        ],
+        "worldJuggernauts": {
+          "world-juggernaut-forest-1": {
+            "id": "world-juggernaut-forest-1",
+            "biome": "forest",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-forest-2": {
+            "id": "world-juggernaut-forest-2",
+            "biome": "forest",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-1": {
+            "id": "world-juggernaut-desert-1",
+            "biome": "desert",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-2": {
+            "id": "world-juggernaut-desert-2",
+            "biome": "desert",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-1": {
+            "id": "world-juggernaut-highlands-1",
+            "biome": "highlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-2": {
+            "id": "world-juggernaut-highlands-2",
+            "biome": "highlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-1": {
+            "id": "world-juggernaut-arctic-1",
+            "biome": "arctic",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-2": {
+            "id": "world-juggernaut-arctic-2",
+            "biome": "arctic",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-1": {
+            "id": "world-juggernaut-wetlands-1",
+            "biome": "wetlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-2": {
+            "id": "world-juggernaut-wetlands-2",
+            "biome": "wetlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          }
+        },
+        "bossEncounterFlow": {
+          "state": "WAITING_FOR_PREREQUISITES",
+          "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+          "missionId": "water",
+          "updatedAt": 1792648918701
+        }
+      },
+      "backend": "WebGPU",
+      "assets": {
+        "cache": {
+          "requests": 89,
+          "matched": 22,
+          "hits": 0,
+          "joined": 0,
+          "misses": 22,
+          "bytesDownloaded": 12487125,
+          "bytesServedFromCache": 0,
+          "evictions": 0,
+          "bypassed": 67,
+          "errors": 0,
+          "entries": 22,
+          "bytes": 12487125,
+          "budgetBytes": 67108864,
+          "inFlight": 0,
+          "top": [
+            {
+              "url": "models/zeknovan-spitter-walk.medium.glb",
+              "hits": 0,
+              "kb": 485
+            },
+            {
+              "url": "basis/basis_transcoder.wasm",
+              "hits": 0,
+              "kb": 515
+            },
+            {
+              "url": "models/zeknovan-stalker-walk.medium.glb",
+              "hits": 0,
+              "kb": 459
+            },
+            {
+              "url": "models/zeknovan-juggernaut-walk.medium.glb",
+              "hits": 0,
+              "kb": 472
+            },
+            {
+              "url": "models/zeknovan-spitter-run.glb",
+              "hits": 0,
+              "kb": 455
+            }
+          ]
+        },
+        "parsed": {
+          "loads": 21,
+          "hits": 18,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 5,
+          "cancelled": 0,
+          "entries": 16,
+          "pending": 0,
+          "bytes": 65517744,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "loader": {
+          "patched": true,
+          "pending": [],
+          "completed": 21,
+          "failures": 0,
+          "stalls": 0,
+          "loadMs": {
+            "p50": 22.9,
+            "p95": 153.9,
+            "max": 178.2
+          },
+          "stallMs": 15000
+        },
+        "workers": {
+          "live": 5,
+          "created": 5,
+          "terminated": 0,
+          "errors": 0,
+          "byScript": {
+            "blob:": 4,
+            "workers/adaptive-runtime-worker.js": 1
+          }
+        }
+      },
+      "persistence": {
+        "state": "saved",
+        "revision": 18,
+        "lastAck": {
+          "seq": 4,
+          "revision": 18,
+          "at": 1792648937148,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 4,
+          "coalesced": 1,
+          "posted": 3,
+          "acked": 3,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 4,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:01:56.023Z",
+          "player": {
+            "xp": 522,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 522
+      }
+    },
+    "after": {
+      "position": [
+        0.07614711101054704,
+        0.2338746798597019,
+        5.465521532127672
+      ],
+      "health": 100,
+      "xp": 536,
+      "rank": "ensign",
+      "mode": "explore",
+      "paused": true,
+      "records": [
+        {
+          "id": "bench-prerequisite-forest",
+          "type": "power",
+          "x": -82,
+          "y": 6.624940470707266,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847063
+        },
+        {
+          "id": "bench-prerequisite-desert",
+          "type": "power",
+          "x": -52,
+          "y": 2.9266562508948066,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847065
+        },
+        {
+          "id": "bench-prerequisite-arctic",
+          "type": "power",
+          "x": 20,
+          "y": 5.288174199469299,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847066
+        },
+        {
+          "id": "bench-prerequisite-wetlands",
+          "type": "power",
+          "x": 56,
+          "y": 3.4641713218924464,
+          "z": 25,
+          "rotation": 0,
+          "level": 1,
+          "health": 1000,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648847067
+        },
+        {
+          "id": "b7a3804f-3ca0-4bec-846b-4211c04e85d2",
+          "type": "power",
+          "x": 1.001739995141346,
+          "y": 0.5320330653495817,
+          "z": -10.994701597269085,
+          "rotation": 3.897303529359879,
+          "level": 1,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "health": 410,
+          "integrity": 41,
+          "healthUpdatedAt": 1792648897003
+        },
+        {
+          "id": "900047f8-ca32-4d39-8b63-7bf344dee50c",
+          "type": "power",
+          "x": -19.96178468549634,
+          "y": 0.8135293349303861,
+          "z": 10.018652048727425,
+          "rotation": 2.5341014422990193,
+          "level": 1,
+          "maxHealth": 1000,
+          "healthSchemaVersion": 1,
+          "health": 1000,
+          "integrity": 100,
+          "healthUpdatedAt": 1792648936342
+        }
+      ],
+      "resources": {
+        "energy": 999,
+        "water": 989,
+        "minerals": 976,
+        "iron": 1000,
+        "biomass": 991.0479970799988,
+        "timber": 65,
+        "data": 999,
+        "credits": 1000,
+        "trust": 52
+      },
+      "mission": {
+        "resourcesCollected": 0,
+        "enemiesDefeated": 0,
+        "treesChopped": 2,
+        "rockMinedAt": {},
+        "biomeStats": {
+          "highlands": {
+            "treesChopped": 2
+          }
+        },
+        "commissioningEncounters": {
+          "water": {
+            "generation": 0,
+            "attackerIds": [
+              "commissioning-water-juggernaut-g0",
+              "commissioning-water-spitter-1-g0",
+              "commissioning-water-spitter-2-g0"
+            ],
+            "defeatedIds": [],
+            "status": "active",
+            "completedAt": null,
+            "nextRegenAt": null,
+            "teamCode": "BENC-2248"
+          }
+        },
+        "personalObjectiveIds": [
+          "build-power",
+          "chop-tree"
+        ],
+        "biomeVisited": [
+          "forest",
+          "desert",
+          "highlands",
+          "arctic",
+          "wetlands"
+        ],
+        "bossDefeats": {
+          "grid": {
+            "missionId": "grid",
+            "bossId": "desert_sunscar_colossus",
+            "bossName": "The Sunscar Colossus",
+            "rewardId": "grid:174692304",
+            "grade": "C",
+            "multiplier": 1,
+            "rewards": {
+              "credits": 100,
+              "timber": 25,
+              "iron": 15,
+              "tensionReduction": 50
+            },
+            "defeatedAt": 1792648894054,
+            "telemetry": {
+              "seed": 174692304,
+              "playerCount": 1,
+              "durationMs": 44935,
+              "playerDeaths": 3,
+              "peakProjectiles": 15,
+              "averageFrameMs": 0.0951915859370013,
+              "lastDamageAttribution": {
+                "bossId": "desert_sunscar_colossus",
+                "patternId": "sunscar_focused_overcharge",
+                "projectileId": "bp-48199.60-0",
+                "damage": 100
+              }
+            }
+          }
+        },
+        "claimedBossRewards": [
+          "grid:174692304"
+        ],
+        "worldJuggernauts": {
+          "world-juggernaut-forest-1": {
+            "id": "world-juggernaut-forest-1",
+            "biome": "forest",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-forest-2": {
+            "id": "world-juggernaut-forest-2",
+            "biome": "forest",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-1": {
+            "id": "world-juggernaut-desert-1",
+            "biome": "desert",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-2": {
+            "id": "world-juggernaut-desert-2",
+            "biome": "desert",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-1": {
+            "id": "world-juggernaut-highlands-1",
+            "biome": "highlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-2": {
+            "id": "world-juggernaut-highlands-2",
+            "biome": "highlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-1": {
+            "id": "world-juggernaut-arctic-1",
+            "biome": "arctic",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-2": {
+            "id": "world-juggernaut-arctic-2",
+            "biome": "arctic",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-1": {
+            "id": "world-juggernaut-wetlands-1",
+            "biome": "wetlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-2": {
+            "id": "world-juggernaut-wetlands-2",
+            "biome": "wetlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          }
+        },
+        "bossEncounterFlow": {
+          "state": "WAITING_FOR_PREREQUISITES",
+          "reason": "Recover filtration compounds · Forest AO (0/2); Recover filtration compounds · Desert AO (0/2); Recover filtration compounds · Highlands AO (0/2); Recover filtration compounds · Arctic AO (0/2); Recover filtration compounds · Wetlands AO (0/2); Install 1 Water Works in the Forest AO (0/1); Install 1 Water Works in the Desert AO (0/1); Install 1 Water Works in the Highlands AO (0/1); Install 1 Water Works in the Arctic AO (0/1); Install 1 Water Works in the Wetlands AO (0/1)",
+          "missionId": "water",
+          "updatedAt": 1792648918701
+        }
+      },
+      "backend": "WebGPU",
+      "assets": {
+        "cache": {
+          "requests": 89,
+          "matched": 22,
+          "hits": 0,
+          "joined": 0,
+          "misses": 22,
+          "bytesDownloaded": 12487125,
+          "bytesServedFromCache": 0,
+          "evictions": 0,
+          "bypassed": 67,
+          "errors": 0,
+          "entries": 22,
+          "bytes": 12487125,
+          "budgetBytes": 67108864,
+          "inFlight": 0,
+          "top": [
+            {
+              "url": "models/zeknovan-spitter-walk.medium.glb",
+              "hits": 0,
+              "kb": 485
+            },
+            {
+              "url": "basis/basis_transcoder.wasm",
+              "hits": 0,
+              "kb": 515
+            },
+            {
+              "url": "models/zeknovan-stalker-walk.medium.glb",
+              "hits": 0,
+              "kb": 459
+            },
+            {
+              "url": "models/zeknovan-juggernaut-walk.medium.glb",
+              "hits": 0,
+              "kb": 472
+            },
+            {
+              "url": "models/zeknovan-spitter-run.glb",
+              "hits": 0,
+              "kb": 455
+            }
+          ]
+        },
+        "parsed": {
+          "loads": 21,
+          "hits": 18,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 5,
+          "cancelled": 0,
+          "entries": 16,
+          "pending": 0,
+          "bytes": 65517744,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "loader": {
+          "patched": true,
+          "pending": [],
+          "completed": 21,
+          "failures": 0,
+          "stalls": 0,
+          "loadMs": {
+            "p50": 22.9,
+            "p95": 153.9,
+            "max": 178.2
+          },
+          "stallMs": 15000
+        },
+        "workers": {
+          "live": 5,
+          "created": 5,
+          "terminated": 0,
+          "errors": 0,
+          "byScript": {
+            "blob:": 4,
+            "workers/adaptive-runtime-worker.js": 1
+          }
+        }
+      },
+      "persistence": {
+        "state": "saved",
+        "revision": 18,
+        "lastAck": {
+          "seq": 4,
+          "revision": 18,
+          "at": 1792648937148,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 4,
+          "coalesced": 1,
+          "posted": 3,
+          "acked": 3,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 4,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T06:01:56.023Z",
+          "player": {
+            "xp": 522,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 522
+      }
+    }
+  },
+  "browserGPU": {
+    "devices": [
+      {
+        "vendorId": 4203,
+        "deviceId": 0,
+        "vendorString": "Google Inc. (Apple)",
+        "deviceString": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Pro, Version 26.5.2 (Build 25F84))",
+        "driverVendor": "Apple",
+        "driverVersion": "26.5.2"
+      }
+    ],
+    "featureStatus": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "enabled_on",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "enabled",
+      "webgl": "enabled",
+      "webgpu": "enabled",
+      "webnn": "disabled_off"
+    },
+    "auxAttributes": {
+      "amdSwitchable": false,
+      "canSupportThreadedTextureMailbox": false,
+      "directRenderingVersion": "",
+      "displayType": "ANGLE_METAL",
+      "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_compressed_texture_etc GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_rgbx_internal_format GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_multisampled_render_to_texture GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_pvrtc_sRGB GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_EXT_texture_shadow_lod GL_EXT_texture_storage GL_IMG_texture_compression_pvrtc GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_KHR_texture_compression_astc_hdr GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_sliced_3d GL_MESA_framebuffer_flip_y GL_NV_fence GL_NV_framebuffer_blit GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_sync GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth24 GL_OES_depth32 GL_OES_depth_texture GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_3D GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_vertex_array_object GL_QCOM_render_shared_exponent ",
+      "glImplementationParts": "(gl=egl-angle,angle=metal)",
+      "glRenderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Pro, Version 26.5.2 (Build 25F84))",
+      "glResetNotificationStrategy": 33362,
+      "glVendor": "Google Inc. (Apple)",
+      "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28854 git hash: cccf60cde32c)",
+      "glWsExtensions": "",
+      "glWsVendor": "",
+      "glWsVersion": "",
+      "inProcessGpu": false,
+      "initializationTime": 0.067547,
+      "isAsan": false,
+      "isClangCoverage": false,
+      "jpegDecodeAcceleratorSupported": false,
+      "maxMsaaSamples": "4",
+      "optimus": false,
+      "passthroughCmdDecoder": true,
+      "pixelShaderVersion": "3.00",
+      "processCrashCount": 0,
+      "sandboxed": false,
+      "skiaBackendType": "GraphiteDawnMetal",
+      "subpixelFontRendering": true,
+      "targetCpuBits": 64,
+      "vertexShaderVersion": "3.00",
+      "visibilityCallbackCallCount": 0
+    }
+  }
+}

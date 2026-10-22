@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: actual patched LR catalog, costs, utilities, terrain and callbacks match detached policy across 702 cases
+ok 1 - actual patched LR catalog, costs, utilities, terrain and callbacks match detached policy across 702 cases
+  ---
+  duration_ms: 112.059
+  type: 'test'
+  ...
+# Subtest: cooperating migration port uses actual legacy placement then engine transaction and rolls back with shared idempotency
+ok 2 - cooperating migration port uses actual legacy placement then engine transaction and rolls back with shared idempotency
+  ---
+  duration_ms: 10.185334
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 256.240333

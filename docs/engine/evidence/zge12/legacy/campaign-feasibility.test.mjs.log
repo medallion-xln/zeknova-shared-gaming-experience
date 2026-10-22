@@ -1,0 +1,8 @@
+┌─────────┬──────────────┬─────────────┬───────────────┬─────────────────┬─────────────────┬──────────────┬─────────────────┐
+│ (index) │ missionIndex │ missionId   │ defenseBefore │ defenseProduced │ defenseConsumed │ defenseAfter │ sourceOfChange  │
+├─────────┼──────────────┼─────────────┼───────────────┼─────────────────┼─────────────────┼──────────────┼─────────────────┤
+│ 0       │ 1            │ 'grid'      │ 0             │ 0               │ 0               │ 0            │ 'carry-forward' │
+│ 1       │ 2            │ 'water'     │ 0             │ 0               │ 0               │ 0            │ 'carry-forward' │
+│ 2       │ 3            │ 'tower-one' │ 0             │ 0               │ 0               │ 0            │ 'carry-forward' │
+└─────────┴──────────────┴─────────────┴───────────────┴─────────────────┴─────────────────┴──────────────┴─────────────────┘
+Campaign feasibility and Tower One defense progression tests passed.

@@ -1,0 +1,1415 @@
+{
+  "legacy": {
+    "placementP50": 0,
+    "placementP95": 0,
+    "frameP50": 16.69999999999891,
+    "frameP95": 16.80000000000109,
+    "frameP99": 150,
+    "heap": 147053468,
+    "shadow": {
+      "mode": "LEGACY",
+      "compared": 0,
+      "mismatches": 0,
+      "errors": 0,
+      "differences": [],
+      "parity": {
+        "schema": "zge.construction-parity.v1",
+        "total": 0,
+        "matched": 0,
+        "mismatched": 0,
+        "unobservable": 0,
+        "classes": {},
+        "rows": []
+      }
+    },
+    "assets": {
+      "cache": {
+        "requests": 65,
+        "matched": 20,
+        "hits": 0,
+        "joined": 0,
+        "misses": 20,
+        "bytesDownloaded": 11162597,
+        "bytesServedFromCache": 0,
+        "evictions": 0,
+        "bypassed": 45,
+        "errors": 0,
+        "entries": 20,
+        "bytes": 11162597,
+        "budgetBytes": 67108864,
+        "inFlight": 0,
+        "top": [
+          {
+            "url": "models/zeknovan-saboteur-walk.medium.glb",
+            "hits": 0,
+            "kb": 483
+          },
+          {
+            "url": "basis/basis_transcoder.wasm",
+            "hits": 0,
+            "kb": 515
+          },
+          {
+            "url": "models/zeknovan-stalker-walk.medium.glb",
+            "hits": 0,
+            "kb": 459
+          },
+          {
+            "url": "models/zeknovan-spitter-walk.medium.glb",
+            "hits": 0,
+            "kb": 485
+          },
+          {
+            "url": "models/zeknovan-juggernaut-walk.medium.glb",
+            "hits": 0,
+            "kb": 472
+          }
+        ]
+      },
+      "parsed": {
+        "loads": 19,
+        "hits": 17,
+        "joined": 0,
+        "failures": 0,
+        "retries": 0,
+        "evictions": 2,
+        "cancelled": 0,
+        "entries": 17,
+        "pending": 0,
+        "bytes": 66063916,
+        "references": 0,
+        "budgetBytes": 67108864,
+        "workers": {
+          "completed": 25,
+          "failures": 0,
+          "resets": 0,
+          "created": 4,
+          "live": 4,
+          "pending": 0,
+          "limit": 4
+        }
+      },
+      "loader": {
+        "patched": true,
+        "pending": [],
+        "completed": 19,
+        "failures": 0,
+        "stalls": 0,
+        "loadMs": {
+          "p50": 42.6,
+          "p95": 219.9,
+          "max": 3466
+        },
+        "stallMs": 15000
+      },
+      "workers": {
+        "live": 5,
+        "created": 5,
+        "terminated": 0,
+        "errors": 0,
+        "byScript": {
+          "blob:": 4,
+          "workers/adaptive-runtime-worker.js": 1
+        }
+      }
+    },
+    "restartable": 29
+  },
+  "shadow": {
+    "placementP50": 0.10000002384185791,
+    "placementP95": 0.30000001192092896,
+    "frameP50": 16.699999999999818,
+    "frameP95": 16.800000000000182,
+    "frameP99": 16.800000000000182,
+    "heap": 120521591,
+    "shadow": {
+      "mode": "SHADOW",
+      "compared": 30,
+      "mismatches": 0,
+      "errors": 0,
+      "differences": [],
+      "parity": {
+        "schema": "zge.construction-parity.v1",
+        "total": 30,
+        "matched": 30,
+        "mismatched": 0,
+        "unobservable": 30,
+        "classes": {},
+        "rows": [
+          {
+            "fixtureId": "live-11",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-12",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-13",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-14",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-15",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-16",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-17",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-18",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-19",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-20",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-21",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-22",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-23",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-24",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-25",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-26",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-27",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-28",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-29",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          },
+          {
+            "fixtureId": "live-30",
+            "request": {
+              "id": "shadow-proposal",
+              "type": "power",
+              "x": 999,
+              "z": 999
+            },
+            "canonical": {
+              "before": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "after": {
+                "inventory": {
+                  "energy": 42,
+                  "water": 38,
+                  "minerals": 95,
+                  "iron": 0,
+                  "biomass": 72.3760920000037,
+                  "timber": 0,
+                  "data": 18,
+                  "credits": 0,
+                  "trust": 52
+                },
+                "records": []
+              },
+              "actual": null,
+              "predicted": {
+                "ok": false,
+                "reason": "outside-world"
+              },
+              "events": null
+            },
+            "matched": true,
+            "differences": [],
+            "unobservable": [
+              "pointer-prechecks",
+              "mission-progression-side-effects",
+              "network-authority",
+              "raw-collision-query",
+              "server-save-restore",
+              "engine-save-projection",
+              "inner-events",
+              "legacy-error-classification"
+            ],
+            "fullyObservable": false,
+            "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+          }
+        ]
+      }
+    },
+    "assets": {
+      "cache": {
+        "requests": 54,
+        "matched": 18,
+        "hits": 0,
+        "joined": 0,
+        "misses": 18,
+        "bytesDownloaded": 9998913,
+        "bytesServedFromCache": 0,
+        "evictions": 0,
+        "bypassed": 36,
+        "errors": 0,
+        "entries": 18,
+        "bytes": 9998913,
+        "budgetBytes": 67108864,
+        "inFlight": 0,
+        "top": [
+          {
+            "url": "models/zeknovan-stalker-walk.medium.glb",
+            "hits": 0,
+            "kb": 459
+          },
+          {
+            "url": "basis/basis_transcoder.wasm",
+            "hits": 0,
+            "kb": 515
+          },
+          {
+            "url": "models/zeknovan-spitter-walk.medium.glb",
+            "hits": 0,
+            "kb": 485
+          },
+          {
+            "url": "models/zeknovan-saboteur-walk.medium.glb",
+            "hits": 0,
+            "kb": 483
+          },
+          {
+            "url": "models/zeknovan-juggernaut-walk.medium.glb",
+            "hits": 0,
+            "kb": 472
+          }
+        ]
+      },
+      "parsed": {
+        "loads": 17,
+        "hits": 18,
+        "joined": 0,
+        "failures": 0,
+        "retries": 0,
+        "evictions": 0,
+        "cancelled": 0,
+        "entries": 17,
+        "pending": 0,
+        "bytes": 64886634,
+        "references": 0,
+        "budgetBytes": 67108864,
+        "workers": {
+          "completed": 20,
+          "failures": 0,
+          "resets": 0,
+          "created": 4,
+          "live": 4,
+          "pending": 0,
+          "limit": 4
+        }
+      },
+      "loader": {
+        "patched": true,
+        "pending": [],
+        "completed": 17,
+        "failures": 0,
+        "stalls": 0,
+        "loadMs": {
+          "p50": 70.5,
+          "p95": 286,
+          "max": 308.2
+        },
+        "stallMs": 15000
+      },
+      "workers": {
+        "live": 5,
+        "created": 5,
+        "terminated": 0,
+        "errors": 0,
+        "byScript": {
+          "blob:": 4,
+          "workers/adaptive-runtime-worker.js": 1
+        }
+      }
+    },
+    "restartable": 29
+  }
+}

@@ -1,0 +1,2862 @@
+{
+  "scenarios": [
+    {
+      "name": "acknowledged-physical-save",
+      "ackBefore": 2,
+      "state": {
+        "state": "saved",
+        "revision": 188,
+        "lastAck": {
+          "seq": 4,
+          "revision": 188,
+          "at": 1792648658398,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 4,
+          "coalesced": 1,
+          "posted": 3,
+          "acked": 3,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 4,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:57:06.172Z",
+          "player": {
+            "xp": 1451,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1451
+      },
+      "world": {
+        "position": [
+          7.13864757583868,
+          2.8232990790908365,
+          10.060403280509709
+        ],
+        "health": 1,
+        "xp": 1463,
+        "rank": "ensign",
+        "mode": "explore",
+        "paused": false,
+        "records": [],
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 52.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 15,
+          "trust": 0
+        },
+        "mission": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 48,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 37,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 3,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792648640189
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 89,
+            "matched": 22,
+            "hits": 0,
+            "joined": 0,
+            "misses": 22,
+            "bytesDownloaded": 12487125,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 67,
+            "errors": 0,
+            "entries": 22,
+            "bytes": 12487125,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 21,
+            "hits": 14,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 5,
+            "cancelled": 0,
+            "entries": 16,
+            "pending": 0,
+            "bytes": 65517744,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 21,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 24.9,
+              "p95": 236.8,
+              "max": 265.9
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 188,
+          "lastAck": {
+            "seq": 4,
+            "revision": 188,
+            "at": 1792648658398,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 1,
+            "posted": 3,
+            "acked": 3,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:57:06.172Z",
+            "player": {
+              "xp": 1451,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1451
+        }
+      },
+      "server": {
+        "http": 200,
+        "save": {
+          "version": 4,
+          "user": {
+            "id": "demo-ae303c2e220023fe",
+            "displayName": "BENCH01 timed natural",
+            "email": "timed-bench01@example.invalid",
+            "teamName": "BENCH01 timed 1792647337721",
+            "teamCode": "BENC-9672",
+            "officerClass": "ensign",
+            "biome": "highlands",
+            "rankXp": 0
+          },
+          "biomeSeed": 995912551,
+          "player": {
+            "x": 7.13864757583868,
+            "y": 2.8232990790908365,
+            "z": 10.060403280509709,
+            "health": 1,
+            "stamina": 100
+          },
+          "resources": {
+            "energy": 0,
+            "water": 0,
+            "minerals": 224.25,
+            "iron": 29,
+            "biomass": 52.49462664000622,
+            "timber": 266.25,
+            "data": 18,
+            "credits": 15,
+            "trust": 0
+          },
+          "indicators": {
+            "habitability": 0,
+            "ecology": 15.000000000000039,
+            "morale": 24,
+            "governance": 5,
+            "economy": 12,
+            "defense": 5,
+            "resilience": 6.25000000000001
+          },
+          "buildings": [],
+          "phase": 1,
+          "civilizationScore": 5.526250000000007,
+          "worldProgress": {
+            "harvestedTreeIds": [
+              "tree-43",
+              "tree-128",
+              "tree-287",
+              "tree-5",
+              "tree-259",
+              "tree-193",
+              "tree-266",
+              "tree-87",
+              "tree-65",
+              "tree-242",
+              "tree-326",
+              "tree-103",
+              "tree-265",
+              "tree-229",
+              "tree-264"
+            ],
+            "treeHarvestedAt": {
+              "tree-43": 1792647380113,
+              "tree-128": 1792647382043,
+              "tree-287": 1792647383959,
+              "tree-5": 1792647395480,
+              "tree-259": 1792647425887,
+              "tree-193": 1792647428512,
+              "tree-266": 1792647429812,
+              "tree-87": 1792647432444,
+              "tree-65": 1792647467827,
+              "tree-242": 1792647470428,
+              "tree-326": 1792647794066,
+              "tree-103": 1792647795382,
+              "tree-265": 1792647904358,
+              "tree-229": 1792647906358,
+              "tree-264": 1792648470549
+            },
+            "collectedPowerUpIds": [],
+            "minedRockIds": [
+              "stone-10",
+              "supplemental-ore-7",
+              "orebelt-9",
+              "orebelt-11",
+              "orebelt-23"
+            ]
+          },
+          "missionStats": {
+            "resourcesCollected": 1,
+            "enemiesDefeated": 48,
+            "treesChopped": 15,
+            "rockMinedAt": {
+              "stone-10": 1792647384925,
+              "supplemental-ore-7": 1792647404315,
+              "orebelt-9": 1792647790133,
+              "orebelt-11": 1792647800182,
+              "orebelt-23": 1792647908887
+            },
+            "biomeStats": {
+              "highlands": {
+                "enemiesDefeated": 37,
+                "treesChopped": 11,
+                "rocksMined": 5
+              },
+              "desert": {
+                "treesChopped": 4,
+                "enemiesDefeated": 8
+              },
+              "arctic": {
+                "enemiesDefeated": 3,
+                "rocksMined": 1
+              }
+            },
+            "commissioningEncounters": [],
+            "personalObjectiveIds": [
+              "defeat-enemy",
+              "chop-tree",
+              "mine-rock",
+              "resource-minerals"
+            ],
+            "biomeVisited": [
+              "highlands",
+              "desert"
+            ],
+            "bossDefeats": [],
+            "claimedBossRewards": [],
+            "worldJuggernauts": {
+              "world-juggernaut-forest-1": {
+                "id": "world-juggernaut-forest-1",
+                "biome": "forest",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-forest-2": {
+                "id": "world-juggernaut-forest-2",
+                "biome": "forest",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-1": {
+                "id": "world-juggernaut-desert-1",
+                "biome": "desert",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-2": {
+                "id": "world-juggernaut-desert-2",
+                "biome": "desert",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-highlands-1": {
+                "id": "world-juggernaut-highlands-1",
+                "biome": "highlands",
+                "index": 0,
+                "defeatedAt": 1792647946344,
+                "respawnAt": 1792658746344
+              },
+              "world-juggernaut-highlands-2": {
+                "id": "world-juggernaut-highlands-2",
+                "biome": "highlands",
+                "index": 1,
+                "defeatedAt": 1792647644924,
+                "respawnAt": 1792658444924
+              },
+              "world-juggernaut-arctic-1": {
+                "id": "world-juggernaut-arctic-1",
+                "biome": "arctic",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-arctic-2": {
+                "id": "world-juggernaut-arctic-2",
+                "biome": "arctic",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-1": {
+                "id": "world-juggernaut-wetlands-1",
+                "biome": "wetlands",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-2": {
+                "id": "world-juggernaut-wetlands-2",
+                "biome": "wetlands",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              }
+            },
+            "bossEncounterFlow": {
+              "state": "WAITING_FOR_PREREQUISITES",
+              "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+              "missionId": "grid",
+              "updatedAt": 1792648640189
+            }
+          },
+          "combat": {
+            "specialGauge": 100
+          },
+          "diplomacy": {
+            "outcome": "negotiate",
+            "tension": 100,
+            "safeZoneCenter": {
+              "x": -9.273969737712168,
+              "z": 3.958927613148545
+            }
+          },
+          "updatedAt": "2026-10-22T05:57:38+00:00",
+          "zge": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:57:38.391Z",
+            "player": {
+              "xp": 1463,
+              "officerClass": "ensign",
+              "rankXp": 0
+            }
+          },
+          "persistence": {
+            "revision": 188,
+            "baseRevision": 188,
+            "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-4-mvj4q5eg",
+            "sharedRevision": 188
+          }
+        },
+        "verification": "APIRequestContext bypasses browser pending-save overlay"
+      }
+    },
+    {
+      "name": "interrupted-network-and-retry",
+      "ackBefore": 3,
+      "offline": {
+        "state": "retrying",
+        "revision": 188,
+        "lastAck": {
+          "seq": 4,
+          "revision": 188,
+          "at": 1792648658398,
+          "duplicate": false
+        },
+        "lastError": {
+          "kind": "transient",
+          "status": 0,
+          "message": "Failed to fetch"
+        },
+        "pendingSeq": 5,
+        "inFlightSeq": null,
+        "failures": 3,
+        "counters": {
+          "submitted": 5,
+          "coalesced": 1,
+          "posted": 6,
+          "acked": 3,
+          "retried": 3,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 5,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:57:06.172Z",
+          "player": {
+            "xp": 1451,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1451
+      },
+      "uiExcerpt": "AI × CRYPTO EXPO\nZEKNOVA\nTIER I\nPlanetary Infrastructure · Ensign\n6\nREADINESS\nE\nENSIGN\nBENCH01 timed natural\nBENCH01 timed 1792647337721 · BENC-9672\nHealth\n1\nStamina\n100\nOfficer XP\n1463\nCURRENT OBJECTIVE\nBring the lights online\nNEXT RANK · LIEUTENANT\n0/4 missions\nMISSION 1 / 12\nZEKNOVAN TENSION\n100 · HOSTILE\nRECONCILIATION ACTIONS\nNEXT ACTIONSALL OBJECTIVES\n1\nGuardian Encounter\nBreak the Sunscar Colossus power siphon — Travel to Desert AO to start the boss fight — Travel to Desert AO to start the boss fight\n0 / 1\nInstructions\nGUIDE ME\n2\nExploration\nSurvey solar exposure · Forest AO\n0 / 1\nInstructions\nGUIDE ME\nSAVE\n⚡\n0\n◉\n0\n⬢\n29\n▥\n266\n◎\n15\nTEAM ROOM\n1 UNIQUE PLAYER ONLINE\nRockfall and electrical storms\n\nHighland rockfall struck the suit.\n\n◎ 15 COLONY CREDITS AVAILABLE\nHIGHLANDS AO\n○ Recover 2 Highland resources\n○ Deploy 2 Defense Beacons\nDominant defensive terrain and long-range surveillance.\nROCKET-MINIGUN OVERDRIVE\nREADY · PRESS Q\nDUAL-MODE HEAVY CANNON · 15m AOE · hits and eliminations add charge\n01\nVOIDSTING\n02\nSINGULARITY\n03\nTHUNDERCLAW\n0 LOADED · 0 RESERVE · CRYSTAL SLUGS\nOUT OF AMMO · CRAFT\nC · RELOAD\nCRAFT SLUGS\nE\nHARVEST\nSPACE\nFIRE\nQ\nSPECIAL\nV\nROLL & SHOOT\nP\nPAUSE\n◎\nENTER COMMAND MODE\nTab\nBOT\nPress E to have the robot mine iron seam · 1 cycle · 19 minerals · +6 iron ore\n+\n?\nLOG\n9+\nLOCAL MAPM\nHIGHLANDS AO\nDESERTIron · Minerals\nHIGHLANDSIron · Data\nARCTICWater · Data\nWETLANDSWater · Biomass\n▲⚠⚠⚠⚠⚠⚠⚠⚠⬡⬡⬡⬡⬡\nHIGHLANDS AO\nBATTLE MODE · TACTICAL\nSETTLEMENT OPERATIONSSTABLE\nPOPULATION0CALM\nUTILITY COVERAGE0%NO NETWORK\nCURRENT BUILDNONEPRESS TAB\nRESEARCH0FACILITIES\nTRADE0ROUTES\nDIPLOMACYPENDING50 TENSION\nLOCAL ACTIVITY · OBSERVINGOPEN MAP\nACTIVE RECONCILIATION\nZekNovan Relations\nTENSION 100TRUST 0\n\nRepair the relationship through field work. Costs are paid from colony stores and every completed action is synchronized with the team world.\n\nRESTORE A SACRED GROVEConvert h",
+      "recovered": {
+        "state": "saved",
+        "revision": 189,
+        "lastAck": {
+          "seq": 5,
+          "revision": 189,
+          "at": 1792648665089,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 5,
+          "coalesced": 1,
+          "posted": 7,
+          "acked": 4,
+          "retried": 3,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 5,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:57:06.172Z",
+          "player": {
+            "xp": 1451,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1451
+      },
+      "server": {
+        "http": 200,
+        "save": {
+          "version": 4,
+          "user": {
+            "id": "demo-ae303c2e220023fe",
+            "displayName": "BENCH01 timed natural",
+            "email": "timed-bench01@example.invalid",
+            "teamName": "BENCH01 timed 1792647337721",
+            "teamCode": "BENC-9672",
+            "officerClass": "ensign",
+            "biome": "highlands",
+            "rankXp": 0
+          },
+          "biomeSeed": 995912551,
+          "player": {
+            "x": 7.13864757583868,
+            "y": 2.8232990790908365,
+            "z": 10.060403280509709,
+            "health": 1,
+            "stamina": 100
+          },
+          "resources": {
+            "energy": 0,
+            "water": 0,
+            "minerals": 224.25,
+            "iron": 29,
+            "biomass": 52.49462664000622,
+            "timber": 266.25,
+            "data": 18,
+            "credits": 15,
+            "trust": 0
+          },
+          "indicators": {
+            "habitability": 0,
+            "ecology": 15.000000000000039,
+            "morale": 24,
+            "governance": 5,
+            "economy": 12,
+            "defense": 5,
+            "resilience": 6.25000000000001
+          },
+          "buildings": [],
+          "phase": 1,
+          "civilizationScore": 5.526250000000007,
+          "worldProgress": {
+            "harvestedTreeIds": [
+              "tree-43",
+              "tree-128",
+              "tree-287",
+              "tree-5",
+              "tree-259",
+              "tree-193",
+              "tree-266",
+              "tree-87",
+              "tree-65",
+              "tree-242",
+              "tree-326",
+              "tree-103",
+              "tree-265",
+              "tree-229",
+              "tree-264"
+            ],
+            "treeHarvestedAt": {
+              "tree-43": 1792647380113,
+              "tree-128": 1792647382043,
+              "tree-287": 1792647383959,
+              "tree-5": 1792647395480,
+              "tree-259": 1792647425887,
+              "tree-193": 1792647428512,
+              "tree-266": 1792647429812,
+              "tree-87": 1792647432444,
+              "tree-65": 1792647467827,
+              "tree-242": 1792647470428,
+              "tree-326": 1792647794066,
+              "tree-103": 1792647795382,
+              "tree-265": 1792647904358,
+              "tree-229": 1792647906358,
+              "tree-264": 1792648470549
+            },
+            "collectedPowerUpIds": [],
+            "minedRockIds": [
+              "stone-10",
+              "supplemental-ore-7",
+              "orebelt-9",
+              "orebelt-11",
+              "orebelt-23"
+            ]
+          },
+          "missionStats": {
+            "resourcesCollected": 1,
+            "enemiesDefeated": 48,
+            "treesChopped": 15,
+            "rockMinedAt": {
+              "stone-10": 1792647384925,
+              "supplemental-ore-7": 1792647404315,
+              "orebelt-9": 1792647790133,
+              "orebelt-11": 1792647800182,
+              "orebelt-23": 1792647908887
+            },
+            "biomeStats": {
+              "highlands": {
+                "enemiesDefeated": 37,
+                "treesChopped": 11,
+                "rocksMined": 5
+              },
+              "desert": {
+                "treesChopped": 4,
+                "enemiesDefeated": 8
+              },
+              "arctic": {
+                "enemiesDefeated": 3,
+                "rocksMined": 1
+              }
+            },
+            "commissioningEncounters": [],
+            "personalObjectiveIds": [
+              "defeat-enemy",
+              "chop-tree",
+              "mine-rock",
+              "resource-minerals"
+            ],
+            "biomeVisited": [
+              "highlands",
+              "desert"
+            ],
+            "bossDefeats": [],
+            "claimedBossRewards": [],
+            "worldJuggernauts": {
+              "world-juggernaut-forest-1": {
+                "id": "world-juggernaut-forest-1",
+                "biome": "forest",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-forest-2": {
+                "id": "world-juggernaut-forest-2",
+                "biome": "forest",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-1": {
+                "id": "world-juggernaut-desert-1",
+                "biome": "desert",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-2": {
+                "id": "world-juggernaut-desert-2",
+                "biome": "desert",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-highlands-1": {
+                "id": "world-juggernaut-highlands-1",
+                "biome": "highlands",
+                "index": 0,
+                "defeatedAt": 1792647946344,
+                "respawnAt": 1792658746344
+              },
+              "world-juggernaut-highlands-2": {
+                "id": "world-juggernaut-highlands-2",
+                "biome": "highlands",
+                "index": 1,
+                "defeatedAt": 1792647644924,
+                "respawnAt": 1792658444924
+              },
+              "world-juggernaut-arctic-1": {
+                "id": "world-juggernaut-arctic-1",
+                "biome": "arctic",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-arctic-2": {
+                "id": "world-juggernaut-arctic-2",
+                "biome": "arctic",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-1": {
+                "id": "world-juggernaut-wetlands-1",
+                "biome": "wetlands",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-2": {
+                "id": "world-juggernaut-wetlands-2",
+                "biome": "wetlands",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              }
+            },
+            "bossEncounterFlow": {
+              "state": "WAITING_FOR_PREREQUISITES",
+              "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+              "missionId": "grid",
+              "updatedAt": 1792648640189
+            }
+          },
+          "combat": {
+            "specialGauge": 100
+          },
+          "diplomacy": {
+            "outcome": "negotiate",
+            "tension": 100,
+            "safeZoneCenter": {
+              "x": -9.273969737712168,
+              "z": 3.958927613148545
+            }
+          },
+          "updatedAt": "2026-10-22T05:57:45+00:00",
+          "zge": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:57:39.284Z",
+            "player": {
+              "xp": 1463,
+              "officerClass": "ensign",
+              "rankXp": 0
+            }
+          },
+          "persistence": {
+            "revision": 189,
+            "baseRevision": 189,
+            "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-5-mvj4qake",
+            "sharedRevision": 189
+          }
+        },
+        "verification": "APIRequestContext bypasses browser pending-save overlay"
+      }
+    },
+    {
+      "name": "lost-acknowledgment",
+      "ackBefore": 4,
+      "beforeRevision": 189,
+      "committed": {
+        "http": 200,
+        "body": {
+          "ok": true,
+          "duplicate": false,
+          "updatedAt": "2026-10-22T05:57:45+00:00",
+          "revision": 190
+        },
+        "operation": {
+          "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-6-mvj4qb8e",
+          "baseRevision": 189
+        }
+      },
+      "recovered": {
+        "state": "saved",
+        "revision": 191,
+        "lastAck": {
+          "seq": 6,
+          "revision": 191,
+          "at": 1792648668403,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 6,
+          "coalesced": 1,
+          "posted": 10,
+          "acked": 5,
+          "retried": 5,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 6,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:57:06.172Z",
+          "player": {
+            "xp": 1451,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1451
+      },
+      "server": {
+        "http": 200,
+        "save": {
+          "version": 4,
+          "user": {
+            "id": "demo-ae303c2e220023fe",
+            "displayName": "BENCH01 timed natural",
+            "email": "timed-bench01@example.invalid",
+            "teamName": "BENCH01 timed 1792647337721",
+            "teamCode": "BENC-9672",
+            "officerClass": "ensign",
+            "biome": "highlands",
+            "rankXp": 0
+          },
+          "biomeSeed": 995912551,
+          "player": {
+            "x": 7.13864757583868,
+            "y": 2.8232990790908365,
+            "z": 10.060403280509709,
+            "health": 1,
+            "stamina": 100
+          },
+          "resources": {
+            "energy": 0,
+            "water": 0,
+            "minerals": 224.25,
+            "iron": 29,
+            "biomass": 52.49462664000622,
+            "timber": 266.25,
+            "data": 18,
+            "credits": 15,
+            "trust": 0
+          },
+          "indicators": {
+            "habitability": 0,
+            "ecology": 15.000000000000039,
+            "morale": 24,
+            "governance": 5,
+            "economy": 12,
+            "defense": 5,
+            "resilience": 6.25000000000001
+          },
+          "buildings": [],
+          "phase": 1,
+          "civilizationScore": 5.526250000000007,
+          "worldProgress": {
+            "harvestedTreeIds": [
+              "tree-43",
+              "tree-128",
+              "tree-287",
+              "tree-5",
+              "tree-259",
+              "tree-193",
+              "tree-266",
+              "tree-87",
+              "tree-65",
+              "tree-242",
+              "tree-326",
+              "tree-103",
+              "tree-265",
+              "tree-229",
+              "tree-264"
+            ],
+            "treeHarvestedAt": {
+              "tree-43": 1792647380113,
+              "tree-128": 1792647382043,
+              "tree-287": 1792647383959,
+              "tree-5": 1792647395480,
+              "tree-259": 1792647425887,
+              "tree-193": 1792647428512,
+              "tree-266": 1792647429812,
+              "tree-87": 1792647432444,
+              "tree-65": 1792647467827,
+              "tree-242": 1792647470428,
+              "tree-326": 1792647794066,
+              "tree-103": 1792647795382,
+              "tree-265": 1792647904358,
+              "tree-229": 1792647906358,
+              "tree-264": 1792648470549
+            },
+            "collectedPowerUpIds": [],
+            "minedRockIds": [
+              "stone-10",
+              "supplemental-ore-7",
+              "orebelt-9",
+              "orebelt-11",
+              "orebelt-23"
+            ]
+          },
+          "missionStats": {
+            "resourcesCollected": 1,
+            "enemiesDefeated": 48,
+            "treesChopped": 15,
+            "rockMinedAt": {
+              "stone-10": 1792647384925,
+              "supplemental-ore-7": 1792647404315,
+              "orebelt-9": 1792647790133,
+              "orebelt-11": 1792647800182,
+              "orebelt-23": 1792647908887
+            },
+            "biomeStats": {
+              "highlands": {
+                "enemiesDefeated": 37,
+                "treesChopped": 11,
+                "rocksMined": 5
+              },
+              "desert": {
+                "treesChopped": 4,
+                "enemiesDefeated": 8
+              },
+              "arctic": {
+                "enemiesDefeated": 3,
+                "rocksMined": 1
+              }
+            },
+            "commissioningEncounters": [],
+            "personalObjectiveIds": [
+              "defeat-enemy",
+              "chop-tree",
+              "mine-rock",
+              "resource-minerals"
+            ],
+            "biomeVisited": [
+              "highlands",
+              "desert"
+            ],
+            "bossDefeats": [],
+            "claimedBossRewards": [],
+            "worldJuggernauts": {
+              "world-juggernaut-forest-1": {
+                "id": "world-juggernaut-forest-1",
+                "biome": "forest",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-forest-2": {
+                "id": "world-juggernaut-forest-2",
+                "biome": "forest",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-1": {
+                "id": "world-juggernaut-desert-1",
+                "biome": "desert",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-2": {
+                "id": "world-juggernaut-desert-2",
+                "biome": "desert",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-highlands-1": {
+                "id": "world-juggernaut-highlands-1",
+                "biome": "highlands",
+                "index": 0,
+                "defeatedAt": 1792647946344,
+                "respawnAt": 1792658746344
+              },
+              "world-juggernaut-highlands-2": {
+                "id": "world-juggernaut-highlands-2",
+                "biome": "highlands",
+                "index": 1,
+                "defeatedAt": 1792647644924,
+                "respawnAt": 1792658444924
+              },
+              "world-juggernaut-arctic-1": {
+                "id": "world-juggernaut-arctic-1",
+                "biome": "arctic",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-arctic-2": {
+                "id": "world-juggernaut-arctic-2",
+                "biome": "arctic",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-1": {
+                "id": "world-juggernaut-wetlands-1",
+                "biome": "wetlands",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-2": {
+                "id": "world-juggernaut-wetlands-2",
+                "biome": "wetlands",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              }
+            },
+            "bossEncounterFlow": {
+              "state": "WAITING_FOR_PREREQUISITES",
+              "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+              "missionId": "grid",
+              "updatedAt": 1792648640189
+            }
+          },
+          "combat": {
+            "specialGauge": 100
+          },
+          "diplomacy": {
+            "outcome": "negotiate",
+            "tension": 100,
+            "safeZoneCenter": {
+              "x": -9.273969737712168,
+              "z": 3.958927613148545
+            }
+          },
+          "updatedAt": "2026-10-22T05:57:48+00:00",
+          "zge": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:57:45.949Z",
+            "player": {
+              "xp": 1463,
+              "officerClass": "ensign",
+              "rankXp": 0
+            }
+          },
+          "persistence": {
+            "revision": 191,
+            "baseRevision": 191,
+            "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-6-mvj4qd4d",
+            "sharedRevision": 191
+          }
+        },
+        "verification": "APIRequestContext bypasses browser pending-save overlay"
+      }
+    },
+    {
+      "name": "real-stale-revision-conflict",
+      "ackBefore": 5,
+      "received": {
+        "status": 409,
+        "body": {
+          "error": "Save snapshot is stale at revision 191."
+        }
+      },
+      "recovered": {
+        "state": "saved",
+        "revision": 192,
+        "lastAck": {
+          "seq": 7,
+          "revision": 192,
+          "at": 1792648671059,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 7,
+          "coalesced": 1,
+          "posted": 12,
+          "acked": 6,
+          "retried": 6,
+          "rejected": 0,
+          "conflicts": 2,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 7,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:57:06.172Z",
+          "player": {
+            "xp": 1451,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1451
+      },
+      "server": {
+        "http": 200,
+        "save": {
+          "version": 4,
+          "user": {
+            "id": "demo-ae303c2e220023fe",
+            "displayName": "BENCH01 timed natural",
+            "email": "timed-bench01@example.invalid",
+            "teamName": "BENCH01 timed 1792647337721",
+            "teamCode": "BENC-9672",
+            "officerClass": "ensign",
+            "biome": "highlands",
+            "rankXp": 0
+          },
+          "biomeSeed": 995912551,
+          "player": {
+            "x": 7.13864757583868,
+            "y": 2.8232990790908365,
+            "z": 10.060403280509709,
+            "health": 1,
+            "stamina": 100
+          },
+          "resources": {
+            "energy": 0,
+            "water": 0,
+            "minerals": 224.25,
+            "iron": 29,
+            "biomass": 52.49462664000622,
+            "timber": 266.25,
+            "data": 18,
+            "credits": 15,
+            "trust": 0
+          },
+          "indicators": {
+            "habitability": 0,
+            "ecology": 15.000000000000039,
+            "morale": 24,
+            "governance": 5,
+            "economy": 12,
+            "defense": 5,
+            "resilience": 6.25000000000001
+          },
+          "buildings": [],
+          "phase": 1,
+          "civilizationScore": 5.526250000000007,
+          "worldProgress": {
+            "harvestedTreeIds": [
+              "tree-43",
+              "tree-128",
+              "tree-287",
+              "tree-5",
+              "tree-259",
+              "tree-193",
+              "tree-266",
+              "tree-87",
+              "tree-65",
+              "tree-242",
+              "tree-326",
+              "tree-103",
+              "tree-265",
+              "tree-229",
+              "tree-264"
+            ],
+            "treeHarvestedAt": {
+              "tree-43": 1792647380113,
+              "tree-128": 1792647382043,
+              "tree-287": 1792647383959,
+              "tree-5": 1792647395480,
+              "tree-259": 1792647425887,
+              "tree-193": 1792647428512,
+              "tree-266": 1792647429812,
+              "tree-87": 1792647432444,
+              "tree-65": 1792647467827,
+              "tree-242": 1792647470428,
+              "tree-326": 1792647794066,
+              "tree-103": 1792647795382,
+              "tree-265": 1792647904358,
+              "tree-229": 1792647906358,
+              "tree-264": 1792648470549
+            },
+            "collectedPowerUpIds": [],
+            "minedRockIds": [
+              "stone-10",
+              "supplemental-ore-7",
+              "orebelt-9",
+              "orebelt-11",
+              "orebelt-23"
+            ]
+          },
+          "missionStats": {
+            "resourcesCollected": 1,
+            "enemiesDefeated": 48,
+            "treesChopped": 15,
+            "rockMinedAt": {
+              "stone-10": 1792647384925,
+              "supplemental-ore-7": 1792647404315,
+              "orebelt-9": 1792647790133,
+              "orebelt-11": 1792647800182,
+              "orebelt-23": 1792647908887
+            },
+            "biomeStats": {
+              "highlands": {
+                "enemiesDefeated": 37,
+                "treesChopped": 11,
+                "rocksMined": 5
+              },
+              "desert": {
+                "treesChopped": 4,
+                "enemiesDefeated": 8
+              },
+              "arctic": {
+                "enemiesDefeated": 3,
+                "rocksMined": 1
+              }
+            },
+            "commissioningEncounters": [],
+            "personalObjectiveIds": [
+              "defeat-enemy",
+              "chop-tree",
+              "mine-rock",
+              "resource-minerals"
+            ],
+            "biomeVisited": [
+              "highlands",
+              "desert"
+            ],
+            "bossDefeats": [],
+            "claimedBossRewards": [],
+            "worldJuggernauts": {
+              "world-juggernaut-forest-1": {
+                "id": "world-juggernaut-forest-1",
+                "biome": "forest",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-forest-2": {
+                "id": "world-juggernaut-forest-2",
+                "biome": "forest",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-1": {
+                "id": "world-juggernaut-desert-1",
+                "biome": "desert",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-2": {
+                "id": "world-juggernaut-desert-2",
+                "biome": "desert",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-highlands-1": {
+                "id": "world-juggernaut-highlands-1",
+                "biome": "highlands",
+                "index": 0,
+                "defeatedAt": 1792647946344,
+                "respawnAt": 1792658746344
+              },
+              "world-juggernaut-highlands-2": {
+                "id": "world-juggernaut-highlands-2",
+                "biome": "highlands",
+                "index": 1,
+                "defeatedAt": 1792647644924,
+                "respawnAt": 1792658444924
+              },
+              "world-juggernaut-arctic-1": {
+                "id": "world-juggernaut-arctic-1",
+                "biome": "arctic",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-arctic-2": {
+                "id": "world-juggernaut-arctic-2",
+                "biome": "arctic",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-1": {
+                "id": "world-juggernaut-wetlands-1",
+                "biome": "wetlands",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-2": {
+                "id": "world-juggernaut-wetlands-2",
+                "biome": "wetlands",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              }
+            },
+            "bossEncounterFlow": {
+              "state": "WAITING_FOR_PREREQUISITES",
+              "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+              "missionId": "grid",
+              "updatedAt": 1792648640189
+            }
+          },
+          "combat": {
+            "specialGauge": 100
+          },
+          "diplomacy": {
+            "outcome": "negotiate",
+            "tension": 100,
+            "safeZoneCenter": {
+              "x": -9.273969737712168,
+              "z": 3.958927613148545
+            }
+          },
+          "updatedAt": "2026-10-22T05:57:51+00:00",
+          "zge": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:57:50.347Z",
+            "player": {
+              "xp": 1463,
+              "officerClass": "ensign",
+              "rankXp": 0
+            }
+          },
+          "persistence": {
+            "revision": 192,
+            "baseRevision": 192,
+            "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-7-mvj4qf66",
+            "sharedRevision": 192
+          }
+        },
+        "verification": "APIRequestContext bypasses browser pending-save overlay"
+      }
+    },
+    {
+      "name": "outbox-after-full-page-reload",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.\n    at saved (<anonymous>:7:297)\n    at eval (<anonymous>:12:399)\n    at async record (<anonymous>:7:721)\n    at async eval (<anonymous>:12:1)\n    at async file:///private/tmp/zge-bench01/driver-timed.mjs:8:148"
+    },
+    {
+      "name": "missing-authentication-cookie",
+      "ackBefore": 0,
+      "ackBeforeCredentialRetry": 0,
+      "scope": "Real PHP session cookie removed and restored; not elapsed production TTL",
+      "denied": {
+        "state": "retrying",
+        "revision": 193,
+        "lastAck": null,
+        "lastError": {
+          "kind": "conflict",
+          "status": 409,
+          "message": "Save snapshot is stale at revision 193."
+        },
+        "pendingSeq": 17,
+        "inFlightSeq": null,
+        "failures": 6,
+        "counters": {
+          "submitted": 8,
+          "coalesced": 8,
+          "posted": 6,
+          "acked": 0,
+          "retried": 6,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 8,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:57:54.067Z",
+          "player": {
+            "xp": 1463,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1463
+      },
+      "uiExcerpt": "AI × CRYPTO EXPO\nZEKNOVA\nTIER I\nPlanetary Infrastructure · Ensign\n4\nREADINESS\nE\nENSIGN\nBENCH01 timed natural\nBENCH01 timed 1792647337721 · BENC-9672\nHealth\n1\nStamina\n100\nOfficer XP\n1487\nCURRENT OBJECTIVE\nBring the lights online\nNEXT RANK · LIEUTENANT\n0/4 missions\nMISSION 1 / 12\nZEKNOVAN TENSION\n100 · HOSTILE\nRECONCILIATION ACTIONS\nNEXT ACTIONSALL OBJECTIVES\n1\nGuardian Encounter\nBreak the Sunscar Colossus power siphon — Travel to Desert AO to start the boss fight — Travel to Desert AO to start the boss fight\n0 / 1\nInstructions\nGUIDE ME\n2\nExploration\nSurvey solar exposure · Forest AO\n0 / 1\nInstructions\nGUIDE ME\nSAVE\n⚡\n0\n◉\n0\n⬢\n29\n▥\n266\n◎\n17\nTEAM ROOM\nRECONNECTING…\nZekNovan tension increased\n\n1 ZekNovan was killed · +3 tension · 100 total.\n\n◎ 17 COLONY CREDITS AVAILABLE\nHIGHLANDS AO\n○ Recover 2 Highland resources\n○ Deploy 2 Defense Beacons\nDominant defensive terrain and long-range surveillance.\nROCKET-MINIGUN OVERDRIVE\nREADY · PRESS Q\nDUAL-MODE HEAVY CANNON · 15m AOE · hits and eliminations add charge\n01\nVOIDSTING\n02\nSINGULARITY\n03\nTHUNDERCLAW\n0 LOADED · 0 RESERVE · CRYSTAL SLUGS\nOUT OF AMMO · CRAFT\nC · RELOAD\nCRAFT SLUGS\nE\nHARVEST\nSPACE\nFIRE\nQ\nSPECIAL\nV\nROLL & SHOOT\nP\nPAUSE\n◎\nENTER COMMAND MODE\nTab\nBOT\nPress E to have the robot mine iron seam · 1 cycle · 19 minerals · +6 iron ore\n+\n?\nLOG\n9+\nLOCAL MAPM\nHIGHLANDS AO\nDESERTIron · Minerals\nHIGHLANDSIron · Data\nARCTICWater · Data\nWETLANDSWater · Biomass\n▲⚠⚠⚠⚠⚠⚠⚠⚠⬡⬡⬡⬡⬡\nHIGHLANDS AO\nBATTLE MODE · TACTICAL\nSETTLEMENT OPERATIONSSTABLE\nPOPULATION0CALM\nUTILITY COVERAGE0%NO NETWORK\nCURRENT BUILDNONEPRESS TAB\nRESEARCH0FACILITIES\nTRADE0ROUTES\nDIPLOMACYPENDING50 TENSION\nLOCAL ACTIVITY · OBSERVINGOPEN MAP\nACTIVE RECONCILIATION\nZekNovan Relations\nTENSION 100TRUST 0\n\nRepair the relationship through field work. Costs are paid from colony stores and every completed action is synchronized with the team world.\n\nRESTORE A SACRED GROVEConvert h",
+      "samePageAfterCredentialRestore": {
+        "state": "saved",
+        "revision": 194,
+        "lastAck": {
+          "seq": 19,
+          "revision": 194,
+          "at": 1792648727390,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 10,
+          "coalesced": 10,
+          "posted": 7,
+          "acked": 1,
+          "retried": 6,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 10,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:57:54.067Z",
+          "player": {
+            "xp": 1463,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1463
+      },
+      "afterPhysicalReload": {
+        "state": "saved",
+        "revision": 197,
+        "lastAck": {
+          "seq": 23,
+          "revision": 197,
+          "at": 1792648744338,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 3,
+          "coalesced": 2,
+          "posted": 3,
+          "acked": 2,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 3,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-22T05:58:48.056Z",
+          "player": {
+            "xp": 1499,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 1499
+      },
+      "server": {
+        "http": 200,
+        "save": {
+          "version": 4,
+          "user": {
+            "id": "demo-ae303c2e220023fe",
+            "displayName": "BENCH01 timed natural",
+            "email": "timed-bench01@example.invalid",
+            "teamName": "BENCH01 timed 1792647337721",
+            "teamCode": "BENC-9672",
+            "officerClass": "ensign",
+            "biome": "highlands",
+            "rankXp": 0
+          },
+          "biomeSeed": 995912551,
+          "player": {
+            "x": 7.13864757583868,
+            "y": 2.8232990790908365,
+            "z": 10.060403280509709,
+            "health": 1,
+            "stamina": 100
+          },
+          "resources": {
+            "energy": 0,
+            "water": 0,
+            "minerals": 224.25,
+            "iron": 29,
+            "biomass": 38.49462664000622,
+            "timber": 266.25,
+            "data": 18,
+            "credits": 18,
+            "trust": 0
+          },
+          "indicators": {
+            "habitability": 0,
+            "ecology": 8.000000000000039,
+            "morale": 24,
+            "governance": 5,
+            "economy": 12,
+            "defense": 5,
+            "resilience": 4.50000000000001
+          },
+          "buildings": [],
+          "phase": 1,
+          "civilizationScore": 4.432500000000006,
+          "worldProgress": {
+            "harvestedTreeIds": [
+              "tree-43",
+              "tree-128",
+              "tree-287",
+              "tree-5",
+              "tree-259",
+              "tree-193",
+              "tree-266",
+              "tree-87",
+              "tree-65",
+              "tree-242",
+              "tree-326",
+              "tree-103",
+              "tree-265",
+              "tree-229",
+              "tree-264"
+            ],
+            "treeHarvestedAt": {
+              "tree-43": 1792647380113,
+              "tree-128": 1792647382043,
+              "tree-287": 1792647383959,
+              "tree-5": 1792647395480,
+              "tree-259": 1792647425887,
+              "tree-193": 1792647428512,
+              "tree-266": 1792647429812,
+              "tree-87": 1792647432444,
+              "tree-65": 1792647467827,
+              "tree-242": 1792647470428,
+              "tree-326": 1792647794066,
+              "tree-103": 1792647795382,
+              "tree-265": 1792647904358,
+              "tree-229": 1792647906358,
+              "tree-264": 1792648470549
+            },
+            "collectedPowerUpIds": [],
+            "minedRockIds": [
+              "stone-10",
+              "supplemental-ore-7",
+              "orebelt-9",
+              "orebelt-11",
+              "orebelt-23"
+            ]
+          },
+          "missionStats": {
+            "resourcesCollected": 1,
+            "enemiesDefeated": 51,
+            "treesChopped": 15,
+            "rockMinedAt": {
+              "stone-10": 1792647384925,
+              "supplemental-ore-7": 1792647404315,
+              "orebelt-9": 1792647790133,
+              "orebelt-11": 1792647800182,
+              "orebelt-23": 1792647908887
+            },
+            "biomeStats": {
+              "highlands": {
+                "enemiesDefeated": 38,
+                "treesChopped": 11,
+                "rocksMined": 5
+              },
+              "desert": {
+                "treesChopped": 4,
+                "enemiesDefeated": 8
+              },
+              "arctic": {
+                "enemiesDefeated": 5,
+                "rocksMined": 1
+              }
+            },
+            "commissioningEncounters": [],
+            "personalObjectiveIds": [
+              "defeat-enemy",
+              "chop-tree",
+              "mine-rock",
+              "resource-minerals"
+            ],
+            "biomeVisited": [
+              "highlands",
+              "desert"
+            ],
+            "bossDefeats": [],
+            "claimedBossRewards": [],
+            "worldJuggernauts": {
+              "world-juggernaut-forest-1": {
+                "id": "world-juggernaut-forest-1",
+                "biome": "forest",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-forest-2": {
+                "id": "world-juggernaut-forest-2",
+                "biome": "forest",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-1": {
+                "id": "world-juggernaut-desert-1",
+                "biome": "desert",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-2": {
+                "id": "world-juggernaut-desert-2",
+                "biome": "desert",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-highlands-1": {
+                "id": "world-juggernaut-highlands-1",
+                "biome": "highlands",
+                "index": 0,
+                "defeatedAt": 1792647946344,
+                "respawnAt": 1792658746344
+              },
+              "world-juggernaut-highlands-2": {
+                "id": "world-juggernaut-highlands-2",
+                "biome": "highlands",
+                "index": 1,
+                "defeatedAt": 1792647644924,
+                "respawnAt": 1792658444924
+              },
+              "world-juggernaut-arctic-1": {
+                "id": "world-juggernaut-arctic-1",
+                "biome": "arctic",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-arctic-2": {
+                "id": "world-juggernaut-arctic-2",
+                "biome": "arctic",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-1": {
+                "id": "world-juggernaut-wetlands-1",
+                "biome": "wetlands",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-2": {
+                "id": "world-juggernaut-wetlands-2",
+                "biome": "wetlands",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              }
+            },
+            "bossEncounterFlow": {
+              "state": "WAITING_FOR_PREREQUISITES",
+              "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+              "missionId": "grid",
+              "updatedAt": 1792648729102
+            }
+          },
+          "combat": {
+            "specialGauge": 100
+          },
+          "diplomacy": {
+            "outcome": "negotiate",
+            "tension": 100,
+            "safeZoneCenter": {
+              "x": -9.273969737712168,
+              "z": 3.958927613148545
+            }
+          },
+          "updatedAt": "2026-10-22T05:59:04+00:00",
+          "zge": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:59:04.334Z",
+            "player": {
+              "xp": 1499,
+              "officerClass": "ensign",
+              "rankXp": 0
+            }
+          },
+          "persistence": {
+            "revision": 197,
+            "baseRevision": 197,
+            "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-23-mvj4rzpq",
+            "sharedRevision": 197
+          }
+        },
+        "verification": "APIRequestContext bypasses browser pending-save overlay"
+      }
+    },
+    {
+      "name": "actual-browser-process-restart",
+      "ackBefore": 2,
+      "browserProcessRecreated": true,
+      "version": "155.0.8059.85",
+      "before": {
+        "position": [
+          7.13864757583868,
+          2.8232990790908365,
+          10.060403280509709
+        ],
+        "health": 1,
+        "xp": 1499,
+        "rank": "ensign",
+        "mode": "explore",
+        "paused": false,
+        "records": [],
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 38.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 18,
+          "trust": 0
+        },
+        "mission": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 51,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 38,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 5,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792648729102
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 87,
+            "matched": 23,
+            "hits": 0,
+            "joined": 0,
+            "misses": 23,
+            "bytesDownloaded": 13148909,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 64,
+            "errors": 0,
+            "entries": 23,
+            "bytes": 13148909,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "models/zeknovan-juggernaut-run.glb",
+                "hits": 0,
+                "kb": 456
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 22,
+            "hits": 14,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 5,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66477330,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 33,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 22,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 30.5,
+              "p95": 76.9,
+              "max": 186.4
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saved",
+          "revision": 198,
+          "lastAck": {
+            "seq": 24,
+            "revision": 198,
+            "at": 1792648746602,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": null,
+          "failures": 0,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 2,
+            "posted": 4,
+            "acked": 3,
+            "retried": 1,
+            "rejected": 0,
+            "conflicts": 1,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 1
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:58:48.056Z",
+            "player": {
+              "xp": 1499,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1499
+        }
+      },
+      "serverBefore": {
+        "http": 200,
+        "save": {
+          "version": 4,
+          "user": {
+            "id": "demo-ae303c2e220023fe",
+            "displayName": "BENCH01 timed natural",
+            "email": "timed-bench01@example.invalid",
+            "teamName": "BENCH01 timed 1792647337721",
+            "teamCode": "BENC-9672",
+            "officerClass": "ensign",
+            "biome": "highlands",
+            "rankXp": 0
+          },
+          "biomeSeed": 995912551,
+          "player": {
+            "x": 7.13864757583868,
+            "y": 2.8232990790908365,
+            "z": 10.060403280509709,
+            "health": 1,
+            "stamina": 100
+          },
+          "resources": {
+            "energy": 0,
+            "water": 0,
+            "minerals": 224.25,
+            "iron": 29,
+            "biomass": 38.49462664000622,
+            "timber": 266.25,
+            "data": 18,
+            "credits": 18,
+            "trust": 0
+          },
+          "indicators": {
+            "habitability": 0,
+            "ecology": 8.000000000000039,
+            "morale": 24,
+            "governance": 5,
+            "economy": 12,
+            "defense": 5,
+            "resilience": 4.50000000000001
+          },
+          "buildings": [],
+          "phase": 1,
+          "civilizationScore": 4.432500000000006,
+          "worldProgress": {
+            "harvestedTreeIds": [
+              "tree-43",
+              "tree-128",
+              "tree-287",
+              "tree-5",
+              "tree-259",
+              "tree-193",
+              "tree-266",
+              "tree-87",
+              "tree-65",
+              "tree-242",
+              "tree-326",
+              "tree-103",
+              "tree-265",
+              "tree-229",
+              "tree-264"
+            ],
+            "treeHarvestedAt": {
+              "tree-43": 1792647380113,
+              "tree-128": 1792647382043,
+              "tree-287": 1792647383959,
+              "tree-5": 1792647395480,
+              "tree-259": 1792647425887,
+              "tree-193": 1792647428512,
+              "tree-266": 1792647429812,
+              "tree-87": 1792647432444,
+              "tree-65": 1792647467827,
+              "tree-242": 1792647470428,
+              "tree-326": 1792647794066,
+              "tree-103": 1792647795382,
+              "tree-265": 1792647904358,
+              "tree-229": 1792647906358,
+              "tree-264": 1792648470549
+            },
+            "collectedPowerUpIds": [],
+            "minedRockIds": [
+              "stone-10",
+              "supplemental-ore-7",
+              "orebelt-9",
+              "orebelt-11",
+              "orebelt-23"
+            ]
+          },
+          "missionStats": {
+            "resourcesCollected": 1,
+            "enemiesDefeated": 51,
+            "treesChopped": 15,
+            "rockMinedAt": {
+              "stone-10": 1792647384925,
+              "supplemental-ore-7": 1792647404315,
+              "orebelt-9": 1792647790133,
+              "orebelt-11": 1792647800182,
+              "orebelt-23": 1792647908887
+            },
+            "biomeStats": {
+              "highlands": {
+                "enemiesDefeated": 38,
+                "treesChopped": 11,
+                "rocksMined": 5
+              },
+              "desert": {
+                "treesChopped": 4,
+                "enemiesDefeated": 8
+              },
+              "arctic": {
+                "enemiesDefeated": 5,
+                "rocksMined": 1
+              }
+            },
+            "commissioningEncounters": [],
+            "personalObjectiveIds": [
+              "defeat-enemy",
+              "chop-tree",
+              "mine-rock",
+              "resource-minerals"
+            ],
+            "biomeVisited": [
+              "highlands",
+              "desert"
+            ],
+            "bossDefeats": [],
+            "claimedBossRewards": [],
+            "worldJuggernauts": {
+              "world-juggernaut-forest-1": {
+                "id": "world-juggernaut-forest-1",
+                "biome": "forest",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-forest-2": {
+                "id": "world-juggernaut-forest-2",
+                "biome": "forest",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-1": {
+                "id": "world-juggernaut-desert-1",
+                "biome": "desert",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-2": {
+                "id": "world-juggernaut-desert-2",
+                "biome": "desert",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-highlands-1": {
+                "id": "world-juggernaut-highlands-1",
+                "biome": "highlands",
+                "index": 0,
+                "defeatedAt": 1792647946344,
+                "respawnAt": 1792658746344
+              },
+              "world-juggernaut-highlands-2": {
+                "id": "world-juggernaut-highlands-2",
+                "biome": "highlands",
+                "index": 1,
+                "defeatedAt": 1792647644924,
+                "respawnAt": 1792658444924
+              },
+              "world-juggernaut-arctic-1": {
+                "id": "world-juggernaut-arctic-1",
+                "biome": "arctic",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-arctic-2": {
+                "id": "world-juggernaut-arctic-2",
+                "biome": "arctic",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-1": {
+                "id": "world-juggernaut-wetlands-1",
+                "biome": "wetlands",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-2": {
+                "id": "world-juggernaut-wetlands-2",
+                "biome": "wetlands",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              }
+            },
+            "bossEncounterFlow": {
+              "state": "WAITING_FOR_PREREQUISITES",
+              "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+              "missionId": "grid",
+              "updatedAt": 1792648729102
+            }
+          },
+          "combat": {
+            "specialGauge": 100
+          },
+          "diplomacy": {
+            "outcome": "negotiate",
+            "tension": 100,
+            "safeZoneCenter": {
+              "x": -9.273969737712168,
+              "z": 3.958927613148545
+            }
+          },
+          "updatedAt": "2026-10-22T05:59:06+00:00",
+          "zge": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:59:06.599Z",
+            "player": {
+              "xp": 1499,
+              "officerClass": "ensign",
+              "rankXp": 0
+            }
+          },
+          "persistence": {
+            "revision": 198,
+            "baseRevision": 198,
+            "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-24-mvj4s1gn",
+            "sharedRevision": 198
+          }
+        },
+        "verification": "APIRequestContext bypasses browser pending-save overlay"
+      },
+      "after": {
+        "position": [
+          7.13864757583868,
+          2.8232990790908365,
+          10.060403280509709
+        ],
+        "health": 1,
+        "xp": 1511,
+        "rank": "ensign",
+        "mode": "explore",
+        "paused": false,
+        "records": [],
+        "resources": {
+          "energy": 0,
+          "water": 0,
+          "minerals": 224.25,
+          "iron": 29,
+          "biomass": 38.49462664000622,
+          "timber": 266.25,
+          "data": 18,
+          "credits": 19,
+          "trust": 0
+        },
+        "mission": {
+          "resourcesCollected": 1,
+          "enemiesDefeated": 52,
+          "treesChopped": 15,
+          "rockMinedAt": {
+            "stone-10": 1792647384925,
+            "supplemental-ore-7": 1792647404315,
+            "orebelt-9": 1792647790133,
+            "orebelt-11": 1792647800182,
+            "orebelt-23": 1792647908887
+          },
+          "biomeStats": {
+            "highlands": {
+              "enemiesDefeated": 39,
+              "treesChopped": 11,
+              "rocksMined": 5
+            },
+            "desert": {
+              "treesChopped": 4,
+              "enemiesDefeated": 8
+            },
+            "arctic": {
+              "enemiesDefeated": 5,
+              "rocksMined": 1
+            }
+          },
+          "commissioningEncounters": [],
+          "personalObjectiveIds": [
+            "defeat-enemy",
+            "chop-tree",
+            "mine-rock",
+            "resource-minerals"
+          ],
+          "biomeVisited": [
+            "highlands",
+            "desert"
+          ],
+          "bossDefeats": [],
+          "claimedBossRewards": [],
+          "worldJuggernauts": {
+            "world-juggernaut-forest-1": {
+              "id": "world-juggernaut-forest-1",
+              "biome": "forest",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-forest-2": {
+              "id": "world-juggernaut-forest-2",
+              "biome": "forest",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-1": {
+              "id": "world-juggernaut-desert-1",
+              "biome": "desert",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-desert-2": {
+              "id": "world-juggernaut-desert-2",
+              "biome": "desert",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-highlands-1": {
+              "id": "world-juggernaut-highlands-1",
+              "biome": "highlands",
+              "index": 0,
+              "defeatedAt": 1792647946344,
+              "respawnAt": 1792658746344
+            },
+            "world-juggernaut-highlands-2": {
+              "id": "world-juggernaut-highlands-2",
+              "biome": "highlands",
+              "index": 1,
+              "defeatedAt": 1792647644924,
+              "respawnAt": 1792658444924
+            },
+            "world-juggernaut-arctic-1": {
+              "id": "world-juggernaut-arctic-1",
+              "biome": "arctic",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-arctic-2": {
+              "id": "world-juggernaut-arctic-2",
+              "biome": "arctic",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-1": {
+              "id": "world-juggernaut-wetlands-1",
+              "biome": "wetlands",
+              "index": 0,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            },
+            "world-juggernaut-wetlands-2": {
+              "id": "world-juggernaut-wetlands-2",
+              "biome": "wetlands",
+              "index": 1,
+              "defeatedAt": 0,
+              "respawnAt": 0
+            }
+          },
+          "bossEncounterFlow": {
+            "state": "WAITING_FOR_PREREQUISITES",
+            "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+            "missionId": "grid",
+            "updatedAt": 1792648751056
+          }
+        },
+        "backend": "WebGPU",
+        "assets": {
+          "cache": {
+            "requests": 83,
+            "matched": 21,
+            "hits": 0,
+            "joined": 0,
+            "misses": 21,
+            "bytesDownloaded": 12328189,
+            "bytesServedFromCache": 0,
+            "evictions": 0,
+            "bypassed": 62,
+            "errors": 0,
+            "entries": 21,
+            "bytes": 12328189,
+            "budgetBytes": 67108864,
+            "inFlight": 0,
+            "top": [
+              {
+                "url": "models/zeknovan-spitter-walk.medium.glb",
+                "hits": 0,
+                "kb": 485
+              },
+              {
+                "url": "basis/basis_transcoder.wasm",
+                "hits": 0,
+                "kb": 515
+              },
+              {
+                "url": "models/zeknovan-stalker-walk.medium.glb",
+                "hits": 0,
+                "kb": 459
+              },
+              {
+                "url": "models/zeknovan-juggernaut-walk.medium.glb",
+                "hits": 0,
+                "kb": 472
+              },
+              {
+                "url": "models/zeknovan-spitter-run.glb",
+                "hits": 0,
+                "kb": 455
+              }
+            ]
+          },
+          "parsed": {
+            "loads": 20,
+            "hits": 14,
+            "joined": 0,
+            "failures": 0,
+            "retries": 0,
+            "evictions": 3,
+            "cancelled": 0,
+            "entries": 17,
+            "pending": 0,
+            "bytes": 66459264,
+            "references": 0,
+            "budgetBytes": 67108864,
+            "workers": {
+              "completed": 32,
+              "failures": 0,
+              "resets": 0,
+              "created": 4,
+              "live": 4,
+              "pending": 0,
+              "limit": 4
+            }
+          },
+          "loader": {
+            "patched": true,
+            "pending": [],
+            "completed": 20,
+            "failures": 0,
+            "stalls": 0,
+            "loadMs": {
+              "p50": 29,
+              "p95": 181.2,
+              "max": 228.2
+            },
+            "stallMs": 15000
+          },
+          "workers": {
+            "live": 5,
+            "created": 5,
+            "terminated": 0,
+            "errors": 0,
+            "byScript": {
+              "blob:": 4,
+              "workers/adaptive-runtime-worker.js": 1
+            }
+          }
+        },
+        "persistence": {
+          "state": "saving",
+          "revision": 200,
+          "lastAck": {
+            "seq": 3,
+            "revision": 200,
+            "at": 1792648766175,
+            "duplicate": false
+          },
+          "lastError": null,
+          "pendingSeq": null,
+          "inFlightSeq": 4,
+          "failures": 0,
+          "counters": {
+            "submitted": 4,
+            "coalesced": 1,
+            "posted": 3,
+            "acked": 2,
+            "retried": 0,
+            "rejected": 0,
+            "conflicts": 0,
+            "authExpired": 0,
+            "beacons": 0,
+            "recoveredFromStore": 0
+          },
+          "unloading": false,
+          "interceptedPosts": 4,
+          "interceptedGets": 1,
+          "loadedExtension": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:59:06.599Z",
+            "player": {
+              "xp": 1499,
+              "officerClass": "ensign",
+              "rankXp": 0
+            },
+            "extra": null
+          },
+          "restoredXp": 1499
+        }
+      },
+      "serverAfter": {
+        "http": 200,
+        "save": {
+          "version": 4,
+          "user": {
+            "id": "demo-ae303c2e220023fe",
+            "displayName": "BENCH01 timed natural",
+            "email": "timed-bench01@example.invalid",
+            "teamName": "BENCH01 timed 1792647337721",
+            "teamCode": "BENC-9672",
+            "officerClass": "ensign",
+            "biome": "highlands",
+            "rankXp": 0
+          },
+          "biomeSeed": 995912551,
+          "player": {
+            "x": 7.13864757583868,
+            "y": 2.8232990790908365,
+            "z": 10.060403280509709,
+            "health": 1,
+            "stamina": 100
+          },
+          "resources": {
+            "energy": 0,
+            "water": 0,
+            "minerals": 224.25,
+            "iron": 29,
+            "biomass": 38.49462664000622,
+            "timber": 266.25,
+            "data": 18,
+            "credits": 19,
+            "trust": 0
+          },
+          "indicators": {
+            "habitability": 0,
+            "ecology": 8.000000000000039,
+            "morale": 24,
+            "governance": 5,
+            "economy": 12,
+            "defense": 5,
+            "resilience": 4.50000000000001
+          },
+          "buildings": [],
+          "phase": 1,
+          "civilizationScore": 4.432500000000006,
+          "worldProgress": {
+            "harvestedTreeIds": [
+              "tree-43",
+              "tree-128",
+              "tree-287",
+              "tree-5",
+              "tree-259",
+              "tree-193",
+              "tree-266",
+              "tree-87",
+              "tree-65",
+              "tree-242",
+              "tree-326",
+              "tree-103",
+              "tree-265",
+              "tree-229",
+              "tree-264"
+            ],
+            "treeHarvestedAt": {
+              "tree-43": 1792647380113,
+              "tree-128": 1792647382043,
+              "tree-287": 1792647383959,
+              "tree-5": 1792647395480,
+              "tree-259": 1792647425887,
+              "tree-193": 1792647428512,
+              "tree-266": 1792647429812,
+              "tree-87": 1792647432444,
+              "tree-65": 1792647467827,
+              "tree-242": 1792647470428,
+              "tree-326": 1792647794066,
+              "tree-103": 1792647795382,
+              "tree-265": 1792647904358,
+              "tree-229": 1792647906358,
+              "tree-264": 1792648470549
+            },
+            "collectedPowerUpIds": [],
+            "minedRockIds": [
+              "stone-10",
+              "supplemental-ore-7",
+              "orebelt-9",
+              "orebelt-11",
+              "orebelt-23"
+            ]
+          },
+          "missionStats": {
+            "resourcesCollected": 1,
+            "enemiesDefeated": 52,
+            "treesChopped": 15,
+            "rockMinedAt": {
+              "stone-10": 1792647384925,
+              "supplemental-ore-7": 1792647404315,
+              "orebelt-9": 1792647790133,
+              "orebelt-11": 1792647800182,
+              "orebelt-23": 1792647908887
+            },
+            "biomeStats": {
+              "highlands": {
+                "enemiesDefeated": 39,
+                "treesChopped": 11,
+                "rocksMined": 5
+              },
+              "desert": {
+                "treesChopped": 4,
+                "enemiesDefeated": 8
+              },
+              "arctic": {
+                "enemiesDefeated": 5,
+                "rocksMined": 1
+              }
+            },
+            "commissioningEncounters": [],
+            "personalObjectiveIds": [
+              "defeat-enemy",
+              "chop-tree",
+              "mine-rock",
+              "resource-minerals"
+            ],
+            "biomeVisited": [
+              "highlands",
+              "desert"
+            ],
+            "bossDefeats": [],
+            "claimedBossRewards": [],
+            "worldJuggernauts": {
+              "world-juggernaut-forest-1": {
+                "id": "world-juggernaut-forest-1",
+                "biome": "forest",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-forest-2": {
+                "id": "world-juggernaut-forest-2",
+                "biome": "forest",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-1": {
+                "id": "world-juggernaut-desert-1",
+                "biome": "desert",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-desert-2": {
+                "id": "world-juggernaut-desert-2",
+                "biome": "desert",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-highlands-1": {
+                "id": "world-juggernaut-highlands-1",
+                "biome": "highlands",
+                "index": 0,
+                "defeatedAt": 1792647946344,
+                "respawnAt": 1792658746344
+              },
+              "world-juggernaut-highlands-2": {
+                "id": "world-juggernaut-highlands-2",
+                "biome": "highlands",
+                "index": 1,
+                "defeatedAt": 1792647644924,
+                "respawnAt": 1792658444924
+              },
+              "world-juggernaut-arctic-1": {
+                "id": "world-juggernaut-arctic-1",
+                "biome": "arctic",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-arctic-2": {
+                "id": "world-juggernaut-arctic-2",
+                "biome": "arctic",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-1": {
+                "id": "world-juggernaut-wetlands-1",
+                "biome": "wetlands",
+                "index": 0,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              },
+              "world-juggernaut-wetlands-2": {
+                "id": "world-juggernaut-wetlands-2",
+                "biome": "wetlands",
+                "index": 1,
+                "defeatedAt": 0,
+                "respawnAt": 0
+              }
+            },
+            "bossEncounterFlow": {
+              "state": "WAITING_FOR_PREREQUISITES",
+              "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+              "missionId": "grid",
+              "updatedAt": 1792648751056
+            }
+          },
+          "combat": {
+            "specialGauge": 100
+          },
+          "diplomacy": {
+            "outcome": "negotiate",
+            "tension": 100,
+            "safeZoneCenter": {
+              "x": -9.273969737712168,
+              "z": 3.958927613148545
+            }
+          },
+          "updatedAt": "2026-10-22T05:59:27+00:00",
+          "zge": {
+            "schema": "zge.save-extension.v1",
+            "savedAt": "2026-10-22T05:59:27.791Z",
+            "player": {
+              "xp": 1511,
+              "officerClass": "ensign",
+              "rankXp": 0
+            }
+          },
+          "persistence": {
+            "revision": 201,
+            "baseRevision": 201,
+            "operationId": "zge-BENC-9672-demo-ae303c2e220023fe-4-mvj4shtb",
+            "sharedRevision": 201
+          }
+        },
+        "verification": "APIRequestContext bypasses browser pending-save overlay"
+      }
+    }
+  ]
+}

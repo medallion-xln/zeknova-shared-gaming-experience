@@ -1,0 +1,20 @@
+PRAGMA journal_mode=WAL;
+PRAGMA synchronous=FULL;
+CREATE TABLE IF NOT EXISTS worlds(id TEXT PRIMARY KEY, revision INTEGER NOT NULL CHECK(revision>=0), cursor INTEGER NOT NULL DEFAULT 0, snapshot TEXT NOT NULL, checkpoint_cursor INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS sessions(token_hash TEXT PRIMARY KEY, player_id TEXT NOT NULL, world_id TEXT NOT NULL REFERENCES worlds(id), role TEXT NOT NULL CHECK(role IN ('builder','viewer')), expires INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS commands(world_id TEXT NOT NULL, player_id TEXT NOT NULL, command_id TEXT NOT NULL, fingerprint TEXT NOT NULL, revision INTEGER NOT NULL, accepted INTEGER NOT NULL, result TEXT NOT NULL, command TEXT NOT NULL, PRIMARY KEY(world_id,player_id,command_id));
+CREATE TABLE IF NOT EXISTS events(world_id TEXT NOT NULL, sequence INTEGER NOT NULL, event_id TEXT NOT NULL, transaction_id TEXT NOT NULL, revision INTEGER NOT NULL, payload TEXT NOT NULL, PRIMARY KEY(world_id,sequence), UNIQUE(world_id,event_id));
+CREATE TABLE IF NOT EXISTS checkpoints(world_id TEXT NOT NULL, cursor INTEGER NOT NULL, revision INTEGER NOT NULL, snapshot TEXT NOT NULL, checksum TEXT NOT NULL, PRIMARY KEY(world_id,cursor));
+CREATE TABLE IF NOT EXISTS rewards(world_id TEXT NOT NULL, reward_id TEXT NOT NULL, transaction_id TEXT NOT NULL, PRIMARY KEY(world_id,reward_id));
+-- Additive staging schema; no production configuration or legacy tables touched.
+CREATE TABLE IF NOT EXISTS memberships(player_id TEXT NOT NULL, world_id TEXT NOT NULL REFERENCES worlds(id), role TEXT NOT NULL CHECK(role IN ('builder','viewer')), revoked INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(player_id,world_id));
+CREATE TABLE IF NOT EXISTS session_meta(token_hash TEXT PRIMARY KEY REFERENCES sessions(token_hash), session_id TEXT NOT NULL, created INTEGER NOT NULL, revoked INTEGER NOT NULL DEFAULT 0, version INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS credentials(secret_hash TEXT PRIMARY KEY, player_id TEXT NOT NULL, world_id TEXT NOT NULL, session_id TEXT NOT NULL, expires INTEGER NOT NULL, revoked INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS connections(id TEXT PRIMARY KEY, session_id TEXT NOT NULL, token_hash TEXT NOT NULL, last_seen INTEGER NOT NULL, disconnected INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS rate_limits(scope TEXT NOT NULL, bucket INTEGER NOT NULL, requests INTEGER NOT NULL, PRIMARY KEY(scope,bucket));
+CREATE TABLE IF NOT EXISTS world_integrity(world_id TEXT PRIMARY KEY REFERENCES worlds(id), snapshot_hash TEXT NOT NULL, cursor INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS event_integrity(world_id TEXT NOT NULL, sequence INTEGER NOT NULL, checksum TEXT NOT NULL, PRIMARY KEY(world_id,sequence));
+CREATE TABLE IF NOT EXISTS recovery_audit(id INTEGER PRIMARY KEY, world_id TEXT NOT NULL, recovered_at INTEGER NOT NULL, previous_snapshot TEXT NOT NULL, previous_checkpoints TEXT NOT NULL, recovered_hash TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS world_leases(world_id TEXT PRIMARY KEY, owner TEXT NOT NULL, generation INTEGER NOT NULL, expires INTEGER NOT NULL, worker_id TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS player_claims(world_id TEXT NOT NULL, player_id TEXT NOT NULL, claim_id TEXT NOT NULL, transaction_id TEXT NOT NULL, PRIMARY KEY(world_id,player_id,claim_id));
+CREATE TABLE IF NOT EXISTS world_policies(world_id TEXT PRIMARY KEY REFERENCES worlds(id), model TEXT NOT NULL);

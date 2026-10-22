@@ -1,0 +1,75 @@
+{
+  "scenarios": [
+    {
+      "scenario": "expiry-membership",
+      "expired": 401,
+      "revoked": 401,
+      "downgraded": 403,
+      "partialEffects": 0
+    },
+    {
+      "scenario": "multi-tab-renewal",
+      "sameSession": true,
+      "distinctConnections": true,
+      "disconnectIsolated": true,
+      "revocationIncludesRefresh": true
+    },
+    {
+      "scenario": "mid-transaction-expiry",
+      "status": 401,
+      "partialEffects": 0,
+      "retryRewardCount": 1
+    },
+    {
+      "scenario": "request-boundary",
+      "invalidCursor": true,
+      "forgedRevision": true,
+      "sqlIdentity": true,
+      "csrf": true,
+      "sizeLimit": true,
+      "cookiesCannotAuthenticate": true
+    },
+    {
+      "scenario": "rate-and-permissions",
+      "limited": 429,
+      "privateDb": true,
+      "publicDbDenied": 503
+    },
+    {
+      "scenario": "integrity-recovery",
+      "snapshotDenied": true,
+      "checkpointDenied": true,
+      "archiveDenied": true,
+      "recoveryMs": 59.546625,
+      "commandsReplayed": 2,
+      "cursor": 15,
+      "duplicateRewards": 0
+    },
+    {
+      "scenario": "revoked-during-lock-wait",
+      "status": 401,
+      "committedEffects": 0
+    },
+    {
+      "scenario": "mission-crash-before-commit",
+      "recovered": true,
+      "rewards": 1,
+      "xp": 25,
+      "stone": 4,
+      "buildings": 2
+    },
+    {
+      "scenario": "mission-crash-after-commit",
+      "recovered": true,
+      "rewards": 1,
+      "xp": 25,
+      "stone": 4,
+      "buildings": 2
+    },
+    {
+      "scenario": "sqlite-write-rejection",
+      "partialEffects": 0,
+      "retryRewards": 1
+    }
+  ]
+}

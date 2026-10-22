@@ -1,0 +1,133 @@
+{
+  "launches": 3,
+  "restarts": 2,
+  "state": "failed",
+  "audit": [
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646740591,
+      "elapsedMs": 2,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "service-start",
+      "pid": 50929,
+      "port": 53909,
+      "gatewayCount": 1,
+      "knownDatabase": false,
+      "databaseIdentity": null
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646740597,
+      "elapsedMs": 8,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "launcher-start",
+      "launcherPid": 55181,
+      "launch": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741533,
+      "elapsedMs": 944,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "launcher-ready",
+      "launcherPid": 55181,
+      "gatewayPids": [
+        55229
+      ],
+      "world": {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-5e2cd403-bab1-4145-ab5e-3c9581f0dc30",
+        "generation": 1,
+        "expires": 1792646751309,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": null,
+        "telemetry": null
+      },
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "493010813"
+      }
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741554,
+      "elapsedMs": 965,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "launcher-exit",
+      "launcherPid": 55181,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741558,
+      "elapsedMs": 969,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "restart-scheduled",
+      "reason": "launcher-exited",
+      "backoffMs": 40,
+      "restarts": 1
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741605,
+      "elapsedMs": 1017,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "launcher-start",
+      "launcherPid": 55268,
+      "launch": 2
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741613,
+      "elapsedMs": 1024,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "launcher-exit",
+      "launcherPid": 55268,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741618,
+      "elapsedMs": 1029,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "restart-scheduled",
+      "reason": "launcher-exited",
+      "backoffMs": 80,
+      "restarts": 2
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741707,
+      "elapsedMs": 1118,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "launcher-start",
+      "launcherPid": 55290,
+      "launch": 3
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741717,
+      "elapsedMs": 1129,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "launcher-exit",
+      "launcherPid": 55290,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "protocol": "zge.service-audit.v1",
+      "at": 1792646741721,
+      "elapsedMs": 1132,
+      "serviceId": "service-2f8fb79f-2cff-48e1-9136-ded5f3418731",
+      "event": "restart-ceiling",
+      "reason": "launcher-exited",
+      "restarts": 2,
+      "restartLimit": 2
+    }
+  ]
+}

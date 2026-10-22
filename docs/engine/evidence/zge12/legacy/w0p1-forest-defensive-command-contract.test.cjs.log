@@ -1,0 +1,75 @@
+  PASS contract identity
+  PASS registry identity
+  PASS command space identity
+  PASS mode live incumbent command runtime
+  PASS required authority exact
+  PASS supported actions exact
+  PASS three definitions
+  PASS definitions match W0-AF keys
+  PASS patrol duration matches W0-AF
+  PASS intercept cooldown matches W0-AF
+  PASS withdraw reuses assignment
+  PASS prohibited authorities declared
+  PASS request ID canonical
+  PASS request validates byte-identically
+  PASS request binds observation
+  PASS request binds planning state
+  PASS request binds candidate set
+  PASS request binds target
+  PASS request status candidate
+  PASS repeated request deterministic
+  PASS authority sentinel-prime rejected
+  PASS authority sentinel-router rejected
+  PASS authority shadow-replay rejected
+  PASS authority test-projection rejected
+  PASS unsupported action rejected
+  PASS wrong target format rejected
+  PASS fractional sequence rejected
+  PASS request target tamper rejected
+  PASS accepted record validates
+  PASS accepted status
+  PASS patrol readiness deducted once
+  PASS patrol slot reserved once
+  PASS patrol execution duration loaded
+  PASS cost applied at acceptance
+  PASS intercept readiness deduction exact
+  PASS intercept patrol reservation exact
+  PASS withdraw readiness unchanged
+  PASS withdraw does not reserve additional slot
+  PASS insufficient readiness rejected
+  PASS no patrol slot rejected
+  PASS tampered candidate rejected before command acceptance
+  PASS cross-action target rejected
+  PASS start produces active status
+  PASS start quantum exact
+  PASS start does not reapply costs
+  PASS accepted command cannot start before acceptance
+  PASS patrol remains active after first quantum
+  PASS patrol has one quantum remaining
+  PASS patrol completes at second quantum
+  PASS patrol completion signal exact
+  PASS patrol cooldown starts on completion
+  PASS intercept completes after one quantum
+  PASS intercept cooldown exact
+  PASS retired contact is declared completion
+  PASS withdraw completes at return zone
+  PASS withdraw has no cooldown delay
+  PASS failure status canonical
+  PASS failure reason canonical
+  PASS interrupt status canonical
+  PASS interrupt binds new command
+  PASS unknown completion signal rejected
+  PASS completion and failure conflict rejected
+  PASS cost tamper rejected
+  PASS immutable target tamper rejected
+  PASS ledger starts sequence one
+  PASS ledger sequence monotonic
+  PASS event ID canonical
+  PASS event validates
+  PASS ledger snapshot roundtrip
+  PASS ledger snapshot detached
+  PASS ledger sequence tamper rejected
+  PASS contract exposes no Prime recommendation executor
+  PASS contract exposes no router dispatch
+  PASS no wall clock fields
+W0-P.1 FOREST DEFENSIVE COMMAND CONTRACT TESTS PASS (74/74)

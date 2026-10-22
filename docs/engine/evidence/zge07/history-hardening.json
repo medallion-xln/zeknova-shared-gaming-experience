@@ -1,0 +1,204 @@
+{
+  "units": "ms; bytes",
+  "retention": "all durable events; last 2 derived checkpoints; client window 256",
+  "results": [
+    {
+      "http": {
+        "totalMs": 32.59133400000002,
+        "pageMs": {
+          "count": 4,
+          "p50": 9.497291000000018,
+          "p95": null,
+          "p99": null
+        },
+        "events": 1000,
+        "window": 256,
+        "authenticated": true,
+        "negativeAuth": 401,
+        "exactMatch": true
+      },
+      "checkpointIntegrityVerified": true,
+      "archivePageHashesVerified": true,
+      "corruptCheckpointDenied": true,
+      "eventGapDenied": true,
+      "events": 1000,
+      "payload": "resources/player/reward/build-create/remove/revision; 128 resident buildings; full authoritative events retained",
+      "appendMs": {
+        "count": 1000,
+        "p50": 0.011917000000011058,
+        "p95": 0.019624999999997783,
+        "p99": 0.04029100000000341
+      },
+      "uncompactedReplayMs": 2.06329199999999,
+      "checkpointReplayMs": 0.6875410000000102,
+      "checkpointBytes": 15336,
+      "archiveInputBytes": 364459,
+      "retainedHeapDelta": 4524488,
+      "databaseBytes": 729088,
+      "databaseAppendBatch1000Ms": {
+        "count": 1,
+        "p50": 12.5425,
+        "p95": null,
+        "p99": null
+      },
+      "compactionMs": {
+        "count": 1,
+        "p50": 0.12575,
+        "p95": null,
+        "p99": null
+      },
+      "databaseCheckpointLoadMs": 0.057458,
+      "clientPage256Ms": {
+        "count": 4,
+        "p50": 0.717167,
+        "p95": null,
+        "p99": null
+      },
+      "clientDecodeReplayTotalMs": 3.0072919999999925,
+      "clientDecodePage256Ms": {
+        "count": 4,
+        "p50": 0.68720900000001,
+        "p95": null,
+        "p99": null
+      },
+      "clientWindow": 256,
+      "clientCursor": 1000,
+      "retainedCheckpoints": 1,
+      "tailEvents": 0,
+      "checksum": "ba7cdb0707d5e3f9b7cfa7ae1afce244ba56198cd3789046cef533bda35417ef",
+      "exactMatch": true
+    },
+    {
+      "http": {
+        "totalMs": 257.16162499999996,
+        "pageMs": {
+          "count": 40,
+          "p50": 5.771624999999972,
+          "p95": 9.184499999999957,
+          "p99": null
+        },
+        "events": 10000,
+        "window": 256,
+        "authenticated": true,
+        "negativeAuth": 401,
+        "exactMatch": true
+      },
+      "checkpointIntegrityVerified": true,
+      "archivePageHashesVerified": true,
+      "corruptCheckpointDenied": true,
+      "eventGapDenied": true,
+      "events": 10000,
+      "payload": "resources/player/reward/build-create/remove/revision; 128 resident buildings; full authoritative events retained",
+      "appendMs": {
+        "count": 10000,
+        "p50": 0.01074999999997317,
+        "p95": 0.016333999999972093,
+        "p99": 0.02966700000001765
+      },
+      "uncompactedReplayMs": 8.923332999999957,
+      "checkpointReplayMs": 1.4517909999999574,
+      "checkpointBytes": 15342,
+      "archiveInputBytes": 3713491,
+      "retainedHeapDelta": 8059416,
+      "databaseBytes": 6705152,
+      "databaseAppendBatch1000Ms": {
+        "count": 10,
+        "p50": 12.609833,
+        "p95": null,
+        "p99": null
+      },
+      "compactionMs": {
+        "count": 10,
+        "p50": 0.106583,
+        "p95": null,
+        "p99": null
+      },
+      "databaseCheckpointLoadMs": 0.083584,
+      "clientPage256Ms": {
+        "count": 40,
+        "p50": 0.709958,
+        "p95": 0.866417,
+        "p99": null
+      },
+      "clientDecodeReplayTotalMs": 25.714541999999994,
+      "clientDecodePage256Ms": {
+        "count": 40,
+        "p50": 0.59537499999999,
+        "p95": 0.9061250000000314,
+        "p99": null
+      },
+      "clientWindow": 256,
+      "clientCursor": 10000,
+      "retainedCheckpoints": 2,
+      "tailEvents": 1000,
+      "checksum": "7f559305ecb5c9fe2d5dc5c17ae041c958dcd8396bb2266da8aa2564f90d0835",
+      "exactMatch": true
+    },
+    {
+      "http": {
+        "totalMs": 5180.518334,
+        "pageMs": {
+          "count": 391,
+          "p50": 10.22741700000006,
+          "p95": 20.127208000000792,
+          "p99": 55.21299999999974
+        },
+        "events": 100000,
+        "window": 256,
+        "authenticated": true,
+        "negativeAuth": 401,
+        "exactMatch": true
+      },
+      "checkpointIntegrityVerified": true,
+      "archivePageHashesVerified": true,
+      "corruptCheckpointDenied": true,
+      "eventGapDenied": true,
+      "events": 100000,
+      "payload": "resources/player/reward/build-create/remove/revision; 128 resident buildings; full authoritative events retained",
+      "appendMs": {
+        "count": 100000,
+        "p50": 0.009667000000035841,
+        "p95": 0.014791999999943073,
+        "p99": 0.05666700000006131
+      },
+      "uncompactedReplayMs": 66.38216699999975,
+      "checkpointReplayMs": 17.234083000000282,
+      "checkpointBytes": 15348,
+      "archiveInputBytes": 37834180,
+      "retainedHeapDelta": 56440408,
+      "databaseBytes": 67117056,
+      "databaseAppendBatch1000Ms": {
+        "count": 100,
+        "p50": 12.518334,
+        "p95": 27.847875,
+        "p99": 34.356666
+      },
+      "compactionMs": {
+        "count": 100,
+        "p50": 0.123084,
+        "p95": 0.182167,
+        "p99": 1.138625
+      },
+      "databaseCheckpointLoadMs": 0.070208,
+      "clientPage256Ms": {
+        "count": 391,
+        "p50": 0.729625,
+        "p95": 0.942625,
+        "p99": 1.4315
+      },
+      "clientDecodeReplayTotalMs": 244.6308329999997,
+      "clientDecodePage256Ms": {
+        "count": 391,
+        "p50": 0.5743749999996908,
+        "p95": 0.7733749999997599,
+        "p99": 1.3787499999998545
+      },
+      "clientWindow": 256,
+      "clientCursor": 100000,
+      "retainedCheckpoints": 2,
+      "tailEvents": 1000,
+      "checksum": "0a4ec3a970a56ed16dbf6ae1e5777e05c4077669e340de38c809506fed95fd8c",
+      "exactMatch": true
+    }
+  ]
+}

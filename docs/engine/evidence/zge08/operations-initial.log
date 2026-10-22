@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+ok 1 - consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+  ---
+  duration_ms: 2452.598834
+  type: 'test'
+  ...
+# Subtest: operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+ok 2 - operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+  ---
+  duration_ms: 1796.765375
+  type: 'test'
+  ...
+# Subtest: killed backup and restore never publish a valid partial bundle or change the live world
+ok 3 - killed backup and restore never publish a valid partial bundle or change the live world
+  ---
+  duration_ms: 2382.850125
+  type: 'test'
+  ...
+# Subtest: logical archive corruption is denied even after a file digest is recomputed
+ok 4 - logical archive corruption is denied even after a file digest is recomputed
+  ---
+  duration_ms: 1229.374833
+  type: 'test'
+  ...
+# Subtest: actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+ok 5 - actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+  ---
+  duration_ms: 1746.082917
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9672.199125

@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: V4 migration losslessly round trips early
+ok 1 - V4 migration losslessly round trips early
+  ---
+  duration_ms: 11.772875
+  type: 'test'
+  ...
+# Subtest: V4 migration losslessly round trips late
+ok 2 - V4 migration losslessly round trips late
+  ---
+  duration_ms: 1.61175
+  type: 'test'
+  ...
+# Subtest: V4 migration losslessly round trips optional
+ok 3 - V4 migration losslessly round trips optional
+  ---
+  duration_ms: 0.516667
+  type: 'test'
+  ...
+# Subtest: V4 migration losslessly round trips unknown-extension
+ok 4 - V4 migration losslessly round trips unknown-extension
+  ---
+  duration_ms: 0.534542
+  type: 'test'
+  ...
+# Subtest: migration failure cannot call write or overwrite source; unsupported versions are not invented
+ok 5 - migration failure cannot call write or overwrite source; unsupported versions are not invented
+  ---
+  duration_ms: 0.736084
+  type: 'test'
+  ...
+# Subtest: known V4 extension preserves exact XP/rank/boss claims and unknown top-level fields
+ok 6 - known V4 extension preserves exact XP/rank/boss claims and unknown top-level fields
+  ---
+  duration_ms: 0.394834
+  type: 'test'
+  ...
+# Subtest: checkpoint replay reconstructs exact gameplay projection and requires durable receipt archive
+ok 7 - checkpoint replay reconstructs exact gameplay projection and requires durable receipt archive
+  ---
+  duration_ms: 9.097375
+  type: 'test'
+  ...
+# Subtest: history cursor, authority and duplicate reward corruption reject
+ok 8 - history cursor, authority and duplicate reward corruption reject
+  ---
+  duration_ms: 0.770333
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 125.170375

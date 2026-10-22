@@ -1,0 +1,75 @@
+
+> zeknova-shared-gaming-experience@0.1.0 audit:animations
+> node scripts/audit-model-animations.mjs
+
+┌─────────┬────────────────────────────────────────────────────────┬────────────────────────────────────────────────────┬──────────┬────────┬─────────────────────┐
+│ (index) │ path                                                   │ clip                                               │ duration │ tracks │ purpose             │
+├─────────┼────────────────────────────────────────────────────────┼────────────────────────────────────────────────────┼──────────┼────────┼─────────────────────┤
+│ 0       │ 'assets/models/ensign-engineer.glb'                    │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 1       │ 'assets/models/ensign-engineer-run-v2.anim.glb'        │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 2       │ 'assets/models/ensign-engineer-roll-fire.anim.glb'     │ 'Armature|Forward_Roll_and_Fire|baselayer'         │ 3.4      │ 72     │ 'roll fire'         │
+│ 3       │ 'assets/models/ensign-engineer-death.anim.glb'         │ 'Armature|Shot_and_Blown_Back|baselayer'           │ 2.7      │ 72     │ 'death'             │
+│ 4       │ 'assets/models/ensign-engineer-heavy-minigun.anim.glb' │ 'Armature|Carry_Heavy_Cannon_Forward|baselayer'    │ 0.967    │ 72     │ 'heavy weapon pose' │
+│ 5       │ 'assets/models/lieutenant-astronaut.glb'               │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 6       │ 'assets/models/lieutenant-astronaut-run.anim.glb'      │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 7       │ 'assets/models/lieutenant-mech-walk.glb'               │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 8       │ 'assets/models/lieutenant-mech-run.anim.glb'           │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 9       │ 'assets/models/captain-engineer-walk.glb'              │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 10      │ 'assets/models/captain-engineer-run.glb'               │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 11      │ 'assets/models/captain-mech-walk.glb'                  │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 12      │ 'assets/models/captain-mech-run.glb'                   │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 13      │ 'assets/models/zeknovan-juggernaut-walk.glb'           │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 14      │ 'assets/models/zeknovan-juggernaut-run.glb'            │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 15      │ 'assets/models/zeknovan-stalker-walk.glb'              │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 16      │ 'assets/models/zeknovan-stalker-run.glb'               │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 17      │ 'assets/models/zeknovan-saboteur-walk.glb'             │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 18      │ 'assets/models/zeknovan-saboteur-run.glb'              │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 19      │ 'assets/models/zeknovan-spitter-walk.glb'              │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 20      │ 'assets/models/zeknovan-spitter-run.glb'               │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 21      │ 'assets/models/zeknovan-skyray-walk.glb'               │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'locomotion base'   │
+│ 22      │ 'assets/models/zeknovan-skyray-run.glb'                │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 23      │ 'assets/models/boss-white-screecher.glb'               │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 24      │ 'assets/models/boss-white-screecher-run.anim.glb'      │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 25      │ 'assets/models/boss-white-screecher-judgment.anim.glb' │ 'Armature|Sword_Judgment|baselayer'                │ 4.4      │ 72     │ 'boss judgment'     │
+│ 26      │ 'assets/models/boss-white-screecher-combo.anim.glb'    │ 'Armature|Triple_Combo_Attack|baselayer'           │ 4.367    │ 72     │ 'boss combo'        │
+│ 27      │ 'assets/models/boss-white-screecher-dive.anim.glb'     │ 'Armature|Wall_Support_Jump_to_Ground|baselayer'   │ 1.7      │ 72     │ 'boss dive'         │
+│ 28      │ 'assets/models/boss-archive-shade.glb'                 │ 'Armature|Axe_Stance|baselayer'                    │ 6.133    │ 72     │ 'static/base model' │
+│ 29      │ 'assets/models/boss-archive-shade-run.anim.glb'        │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 30      │ 'assets/models/boss-archive-shade-judgment.anim.glb'   │ 'Armature|Skill_03|baselayer'                      │ 1.667    │ 72     │ 'boss judgment'     │
+│ 31      │ 'assets/models/boss-archive-shade-combo.anim.glb'      │ 'Armature|Double_Combo_Attack|baselayer'           │ 2.867    │ 72     │ 'boss combo'        │
+│ 32      │ 'assets/models/boss-archive-shade-spin.anim.glb'       │ 'Armature|Double_Blade_Spin|baselayer'             │ 5.7      │ 72     │ 'boss spin'         │
+│ 33      │ 'assets/models/boss-archive-shade-slash.anim.glb'      │ 'Armature|Right_Hand_Sword_Slash|baselayer'        │ 1.533    │ 72     │ 'boss slash'        │
+│ 34      │ 'assets/models/boss-obsidian-knight.glb'               │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 35      │ 'assets/models/boss-obsidian-knight-run.anim.glb'      │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 36      │ 'assets/models/boss-obsidian-knight-judgment.anim.glb' │ 'Armature|Sword_Judgment|baselayer'                │ 4.4      │ 72     │ 'boss judgment'     │
+│ 37      │ 'assets/models/boss-obsidian-knight-combo.anim.glb'    │ 'Armature|Triple_Combo_Attack|baselayer'           │ 4.367    │ 72     │ 'boss combo'        │
+│ 38      │ 'assets/models/boss-obsidian-knight-slash.anim.glb'    │ 'Armature|Weapon_Combo|baselayer'                  │ 3.7      │ 72     │ 'boss slash'        │
+│ 39      │ 'assets/models/boss-insect-king.glb'                   │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 40      │ 'assets/models/boss-insect-king-run.anim.glb'          │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 41      │ 'assets/models/boss-insect-king-judgment.anim.glb'     │ 'Armature|Charged_Upward_Slash|baselayer'          │ 3.233    │ 72     │ 'boss judgment'     │
+│ 42      │ 'assets/models/boss-insect-king-spin.anim.glb'         │ 'Armature|360_Power_Spin_Jump|baselayer'           │ 3.1      │ 72     │ 'boss spin'         │
+│ 43      │ 'assets/models/boss-insect-king-dive.anim.glb'         │ 'Armature|Dive_Down_and_Land_2|baselayer'          │ 3.133    │ 72     │ 'boss dive'         │
+│ 44      │ 'assets/models/boss-sunscar-colossus.glb'              │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 45      │ 'assets/models/boss-sunscar-colossus-idle.anim.glb'    │ 'Armature|Axe_Breathe_and_Look_Around|baselayer'   │ 11.3     │ 72     │ 'idle'              │
+│ 46      │ 'assets/models/boss-sunscar-colossus-run.anim.glb'     │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 47      │ 'assets/models/boss-sunscar-colossus-slam.anim.glb'    │ 'Armature|Angry_Ground_Stomp_2|baselayer'          │ 1.833    │ 72     │ 'boss slam'         │
+│ 48      │ 'assets/models/boss-sunscar-colossus-throw.anim.glb'   │ 'Armature|baseball_pitching|baselayer'             │ 4        │ 72     │ 'boss throw'        │
+│ 49      │ 'assets/models/boss-mire-siren.glb'                    │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 50      │ 'assets/models/boss-mire-siren-run.anim.glb'           │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 51      │ 'assets/models/boss-mire-siren-slash.anim.glb'         │ 'Armature|Charged_Upward_Slash|baselayer'          │ 3.233    │ 72     │ 'boss slash'        │
+│ 52      │ 'assets/models/boss-mire-siren-ritual.anim.glb'        │ 'Armature|Cheer_with_Both_Hands_Up|baselayer'      │ 1.933    │ 72     │ 'boss ritual'       │
+│ 53      │ 'assets/models/boss-drowned-tremor.glb'                │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 54      │ 'assets/models/boss-drowned-tremor-run.anim.glb'       │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 55      │ 'assets/models/boss-drowned-tremor-volley.anim.glb'    │ 'Armature|Archery_Shot_1|baselayer'                │ 1.067    │ 72     │ 'boss volley'       │
+│ 56      │ 'assets/models/boss-stormback.glb'                     │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 57      │ 'assets/models/boss-stormback-idle.anim.glb'           │ 'Armature|Idle_03|baselayer'                       │ 5.367    │ 72     │ 'idle'              │
+│ 58      │ 'assets/models/boss-stormback-run.anim.glb'            │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 59      │ 'assets/models/boss-stormback-hook.anim.glb'           │ 'Armature|Left_Hook_from_Guard|baselayer'          │ 1.033    │ 72     │ 'boss hook'         │
+│ 60      │ 'assets/models/boss-stormback-slam.anim.glb'           │ 'Armature|Punch_Forward_with_Both_Fists|baselayer' │ 3.5      │ 72     │ 'boss slam'         │
+│ 61      │ 'assets/models/boss-stormback-roar.anim.glb'           │ 'Armature|Agree_Gesture|baselayer'                 │ 13.033   │ 72     │ 'boss roar'         │
+│ 62      │ 'assets/models/boss-ancient-thornwarden.glb'           │ 'Armature|walking_man|baselayer'                   │ 1.067    │ 72     │ 'static/base model' │
+│ 63      │ 'assets/models/boss-ancient-thornwarden-idle.anim.glb' │ 'Armature|Idle_03|baselayer'                       │ 5.367    │ 72     │ 'idle'              │
+│ 64      │ 'assets/models/boss-ancient-thornwarden-run.anim.glb'  │ 'Armature|running|baselayer'                       │ 0.667    │ 72     │ 'run'               │
+│ 65      │ 'assets/models/boss-ancient-thornwarden-slam.anim.glb' │ 'Armature|Charged_Ground_Slam|baselayer'           │ 3.033    │ 72     │ 'boss slam'         │
+└─────────┴────────────────────────────────────────────────────────┴────────────────────────────────────────────────────┴──────────┴────────┴─────────────────────┘
+Animation audit passed: 70 runtime model assets, 66 clips, 6 corrupt exports quarantined.

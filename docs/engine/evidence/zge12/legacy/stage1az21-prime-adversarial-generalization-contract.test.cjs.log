@@ -1,0 +1,97 @@
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS fourteen variants
+  PASS six policies
+  PASS candidate id inherited
+  PASS frozen v1 id declared
+  PASS seed count twenty four
+  PASS variant ids unique
+  PASS every variant denies live authority
+  PASS every variant denies authored witnesses
+  PASS three adversary classes
+  PASS all seven base scenarios represented
+  PASS perimeter-diplomatic-decoy state validates
+  PASS perimeter-diplomatic-decoy deterministic state
+  PASS perimeter-intercept-cooldown state validates
+  PASS perimeter-intercept-cooldown deterministic state
+  PASS core-resource-decoy state validates
+  PASS core-resource-decoy deterministic state
+  PASS core-repair-delay state validates
+  PASS core-repair-delay deterministic state
+  PASS cascade-route-first-collapse state validates
+  PASS cascade-route-first-collapse deterministic state
+  PASS cascade-fortify-delay state validates
+  PASS cascade-fortify-delay deterministic state
+  PASS resource-diplomacy-decoy state validates
+  PASS resource-diplomacy-decoy deterministic state
+  PASS resource-alert-decoy state validates
+  PASS resource-alert-decoy deterministic state
+  PASS patrol-contact-lure state validates
+  PASS patrol-contact-lure deterministic state
+  PASS patrol-diplomacy-lure state validates
+  PASS patrol-diplomacy-lure deterministic state
+  PASS multi-route-decoy state validates
+  PASS multi-route-decoy deterministic state
+  PASS multi-deescalation-decoy state validates
+  PASS multi-deescalation-decoy deterministic state
+  PASS deescalation-contact-lure state validates
+  PASS deescalation-contact-lure deterministic state
+  PASS deescalation-resource-lure state validates
+  PASS deescalation-resource-lure deterministic state
+  PASS sample run canonical
+  PASS sample run validates
+  PASS sample has no authority
+  PASS sample proposals legal
+  PASS sample binds variant
+  PASS sample deterministic
+  PASS report canonical prefix
+  PASS report id exact
+  PASS total runs 2016
+  PASS policy results six
+  PASS pairwise results five
+  PASS candidate objective success measured
+  PASS candidate settlement survival measured
+  PASS candidate illegal rate zero
+  PASS frozen v1 objective measured
+  PASS rules baseline measured
+  PASS random baseline measured
+  PASS always hold objective zero
+  PASS temporary denial class perfect
+  PASS lower priority class measured
+  PASS deadline class exposes weakness
+  PASS resource alert decoy fails
+  PASS deescalation contact lure fails
+  PASS cascade order trap passes
+  PASS candidate never loses to frozen v1
+  PASS candidate wins 260 over frozen v1
+  PASS candidate incumbent proxy nonloss
+  PASS candidate rules nonloss
+  PASS candidate random nonloss
+  PASS candidate loses twelve to hold
+  PASS primary finding exact
+  PASS candidate settlement losses sixteen
+  PASS next target declared
+  PASS objective gate fails
+  PASS always hold gate fails
+  PASS generalization gates fail
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS actual incumbent claim remains false
+  PASS report contains no wall clock
+  PASS evaluation reads no authored witness plans
+  PASS evaluation adds no execution surface
+  PASS small report validates
+  PASS unknown variant rejected
+  PASS unknown policy rejected
+  PASS zero seed rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.2.1 PRIME ADVERSARIAL GENERALIZATION CONTRACT TESTS PASS (96/96)

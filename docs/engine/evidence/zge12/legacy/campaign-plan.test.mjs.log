@@ -1,0 +1,93 @@
+
+=== CAMPAIGN SHAPE ===
+  PASS  exactly 12 missions
+  PASS  exactly 5 biomes
+  PASS  10 items per mission by definition
+  PASS  mission ids are unique
+  PASS  each mission delivers a DIFFERENT project
+
+=== EVERY PROJECT TYPE IS REAL (checked against Buildings.js) ===
+  PASS  no invented building types
+  PASS  project labels match the catalogue
+
+=== REQUESTED UTILITY ORDER: solar → water → comms → defense ===
+  PASS  mission 1 delivers Solar Grid
+  PASS  mission 2 delivers Water Works
+  PASS  mission 3 delivers Quantum Communications Hub
+  PASS  mission 4 delivers Defense Tower
+  PASS  utilities precede civic/economic projects
+
+=== EVERY MISSION SPANS EVERY BIOME ===
+  PASS  every mission has exactly 10 items
+  PASS  every mission builds in all 5 biomes
+  PASS  every mission splits 5 preparation + 5 construction
+  PASS  each biome contributes exactly 2 items per mission
+
+=== WHICH BIOME RECEIVES WHICH PROJECT IS EXPLICIT ===
+  PASS  assignments name all five biomes
+  PASS  each assignment names its project
+  PASS  each assignment names its biome
+  PASS  labels state the biome in words
+  PASS  construction labels name the project and the AO
+
+=== BY MISSION 12 EVERY BIOME HAS EVERY PROJECT ===
+  PASS  the finished planet holds 12 projects × 5 biomes
+  PASS  every biome ends with all 12 projects
+
+=== RANK IS EARNED FROM INFRASTRUCTURE ===
+  PASS  an empty planet is Ensign
+  PASS  a reset world reports 0 completed projects
+  PASS  4 planetary projects earns Lieutenant
+  PASS  8 planetary projects earns Captain
+  PASS  the full planet is Captain
+
+=== A PARTIAL PROJECT DOES NOT COUNT ===
+  PASS  4 projects with one biome missing is NOT 4 complete
+  PASS  and the player is demoted back to Ensign
+  PASS  rank is TAKEN AWAY when infrastructure is lost
+
+=== GUARDIAN DIFFICULTY SCALES ===
+  PASS  mission 1 is the unscaled baseline
+  PASS  attack windup shortens across the campaign
+  PASS  recovery shortens too (higher attack frequency)
+  PASS  cooldown stays windup+recovery
+  PASS  scaling never mutates the base profile
+  PASS  mission 12 is meaningfully faster (~45%)
+
+=== ATTACKS STAY REACTABLE ===
+  PASS  windup never drops below the reaction floor
+  PASS  even an already-fast boss stays telegraphed at mission 12
+
+=== PROJECTILES GET FASTER AND DENSER ===
+  PASS  mission 1 projectile speed is the baseline
+  PASS  projectile speed rises across the campaign
+  PASS  projectile speed rise is bounded (~1.65×)
+  PASS  projectile count rises
+  PASS  telegraph is NOT shortened here (cadence owns timing)
+  PASS  scaling never mutates the base pattern
+  PASS  multi-phase counts scale together
+
+=== DIFFICULTY IS MONOTONIC ACROSS ALL 12 ===
+  PASS  every mission is harder than the one before it
+  PASS  an unknown mission fails SAFE (easiest, not hardest)
+
+=== MISSION COMPARISON TABLE ===
+  PASS  the comparison covers all 12 missions
+  PASS  every row reports 10 items
+  PASS  every row reports 5 biomes
+   #  mission            project                          items  prep/build  cadence  projSpeed
+   1  grid               Solar Grid                       10     5/5       1.00     1.00
+   2  water              Water Works                      10     5/5       0.96     1.06
+   3  tower-one          Quantum Communications Hub       10     5/5       0.92     1.12
+   4  habitat            Defense Tower                    10     5/5       0.88     1.18
+   5  governance         Habitat                          10     5/5       0.84     1.24
+   6  population         Regional Capitol                 10     5/5       0.80     1.30
+   7  research           Planetary Hospital               10     5/5       0.75     1.35
+   8  culture            University Campus                10     5/5       0.71     1.41
+   9  supply-route       Planetary Transit Hub            10     5/5       0.67     1.47
+  10  stronghold         Trade and Civic Center           10     5/5       0.63     1.53
+  11  advanced-research  Fortune 500 Headquarters         10     5/5       0.59     1.59
+  12  tower-ring         ZekNova Stock Exchange           10     5/5       0.55     1.65
+
+----------------------------------------------------------
+  RESULT: 51 passed, 0 failed

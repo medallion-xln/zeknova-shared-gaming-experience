@@ -1,0 +1,14 @@
+# ZGE13 — practical authoring and operational bottlenecks
+
+Reconcile ZGE12 verification/custody and preserve the entire dirty checkout. Repeat279 engine cases,27 public SDK contracts,83/86 legacy with the same three golden mismatches, strict clean public installations and current source hashes before changes. Do not reset bundles/goldens, deploy, rotate credentials or migrate legacy authority.
+
+1. Fix the measured continuous-input quota stall without increasing quotas or weakening server single-writer/fencing/idempotency. Specify client intent pacing/coalescing, durable original-ID recovery and bounded player-visible status; retest sustained2/4/8 real contexts beyond a minute and exact archives.
+2. Certify original construction viewport clipping, modal keyboard isolation, stable persisted save IDs and visible same-page auth recovery as separate legacy/source changes with explicit parity. Finish natural campaign/rank/boss coverage before professional game certification.
+3. Add an atomic versioned public rule-editing contract and useful Studio rule debugging. Preserve three independent projects, Signal Garden and Outpost; run genuinely unfamiliar consenting human authoring sessions if available, labeling automated work separately.
+4. Address surrounding editor reflow/zoom/focus/target-size/screen-reader gaps against explicit WCAG2.2criteria. Keep numeric/keyboard alternatives and stable virtual-list focus.
+5. Expand model import only through explicit contracts, ownership/resource budgets, corrupt/hostile corpus tests and licensed provenance. Do not imply animation/texture/skinning/glTF JSON support from static GLB triangles.
+6. Profile selection/parse/snapshot history costs with richer hierarchical/assets scenes beyond5000 if feasible. Add instancing/culling/spatial indexing only after renderer evidence, retain all failed sizes. Define reversible shared-pivot multi-gizmo/nested prefab contracts before implementation.
+7. Extend worker retention analysis to actual construction/mission/history service retaining paths and fixed-state controls; correlate allocations/code/GC, OS scheduling, checkpoints and filesystem timing. Do not label a positive slope a leak or a falling RSS leak freedom.
+8. Investigate remaining rare open/COMMIT tails with safer low-perturbation kernel/device evidence where authorized. Preserve WAL/FULL, fair admission, DB identity, auth, backups, archives and quotas. Outermost OS supervision/remote failover are separate scope.
+
+Maintain live LEGACY and production NO-GO. Full writer disablement/aid/economy/health/utility/repair/campaign/V4 parity, original source/build/assets/licensing, production identity/TLS/operations, mandatory owner credential rotation/post-rotation checks and release approval remain unresolved. Deliver separate SDK/editor/original/staging verdicts with actual raw measurements, charts, failures, source fingerprints and honest limits.

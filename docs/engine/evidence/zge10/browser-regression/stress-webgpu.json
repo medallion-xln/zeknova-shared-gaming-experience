@@ -1,0 +1,172 @@
+{
+  "mode": "WebGPU",
+  "results": [
+    {
+      "case": "concurrent-transcodes",
+      "limit": 1,
+      "ok": true,
+      "ms": 139.80000001192093,
+      "workers": {
+        "completed": 16,
+        "failures": 0,
+        "resets": 0,
+        "created": 1,
+        "live": 1,
+        "pending": 0,
+        "limit": 1
+      }
+    },
+    {
+      "case": "concurrent-transcodes",
+      "limit": 2,
+      "ok": true,
+      "ms": 88.10000002384186,
+      "workers": {
+        "completed": 16,
+        "failures": 0,
+        "resets": 0,
+        "created": 2,
+        "live": 2,
+        "pending": 0,
+        "limit": 2
+      }
+    },
+    {
+      "case": "concurrent-transcodes",
+      "limit": 4,
+      "ok": true,
+      "ms": 63.59999996423721,
+      "workers": {
+        "completed": 16,
+        "failures": 0,
+        "resets": 0,
+        "created": 4,
+        "live": 4,
+        "pending": 0,
+        "limit": 4
+      }
+    },
+    {
+      "case": "concurrent-transcodes",
+      "limit": 8,
+      "ok": true,
+      "ms": 65.30000001192093,
+      "workers": {
+        "completed": 16,
+        "failures": 0,
+        "resets": 0,
+        "created": 8,
+        "live": 8,
+        "pending": 0,
+        "limit": 8
+      }
+    },
+    {
+      "case": "death",
+      "ok": false,
+      "ms": 0.3999999761581421,
+      "error": "transcode worker failed: terminated",
+      "retry": {
+        "ok": true,
+        "ms": 51.10000002384186
+      },
+      "workers": {
+        "completed": 1,
+        "failures": 1,
+        "resets": 1,
+        "created": 2,
+        "live": 1,
+        "pending": 0,
+        "limit": 2
+      }
+    },
+    {
+      "case": "timeout",
+      "ok": false,
+      "ms": 2001.5,
+      "error": "transcode timeout",
+      "retry": {
+        "ok": true,
+        "ms": 35.80000001192093
+      },
+      "workers": {
+        "completed": 1,
+        "failures": 1,
+        "resets": 1,
+        "created": 2,
+        "live": 1,
+        "pending": 0,
+        "limit": 2
+      }
+    },
+    {
+      "case": "original-worker-death-oracle",
+      "ok": false,
+      "ms": 250.60000002384186,
+      "error": "FIXTURE_DEADLINE"
+    },
+    {
+      "case": "malformed",
+      "ok": false,
+      "ms": 0.10000002384185791,
+      "error": "Missing KTX 2.0 identifier."
+    },
+    {
+      "case": "unsupported",
+      "ok": false,
+      "ms": 0,
+      "error": "THREE.KTX2Loader: Unsupported vkFormat: 4294967295"
+    },
+    {
+      "case": "init-failure",
+      "ok": false,
+      "ms": 13.899999976158142,
+      "error": "transcode worker failed: Uncaught SyntaxError: Unexpected identifier 'html'"
+    },
+    {
+      "case": "concurrent-gltf-dispose",
+      "cycle": 0,
+      "ok": true,
+      "ms": 68.19999998807907,
+      "workers": {
+        "completed": 4,
+        "failures": 0,
+        "resets": 0,
+        "created": 2,
+        "live": 2,
+        "pending": 0,
+        "limit": 2
+      }
+    },
+    {
+      "case": "concurrent-gltf-dispose",
+      "cycle": 1,
+      "ok": true,
+      "ms": 68.29999995231628,
+      "workers": {
+        "completed": 4,
+        "failures": 0,
+        "resets": 0,
+        "created": 2,
+        "live": 2,
+        "pending": 0,
+        "limit": 2
+      }
+    },
+    {
+      "case": "concurrent-gltf-dispose",
+      "cycle": 2,
+      "ok": true,
+      "ms": 71.89999997615814,
+      "workers": {
+        "completed": 4,
+        "failures": 0,
+        "resets": 0,
+        "created": 2,
+        "live": 2,
+        "pending": 0,
+        "limit": 2
+      }
+    }
+  ]
+}

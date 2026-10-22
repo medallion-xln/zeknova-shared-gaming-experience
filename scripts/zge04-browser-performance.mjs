@@ -1,0 +1,9 @@
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
+import fs from 'node:fs';
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-webgpu']});const page=await browser.newPage({viewport:{width:1280,height:900}});
+const report={};
+for(const mode of ['legacy','shadow']){
+ await page.goto('http://127.0.0.1:8790/?construction='+mode+'&zge=probe');await page.waitForFunction(()=>document.querySelector('#launch-game')||document.querySelector('[name=displayName]'));
+ if(!await page.locator('#launch-game').count()){await page.locator('[name=displayName]').fill('ZGE04 baseline');await page.locator('[name=email]').fill('zge04-baseline@example.invalid');await page.locator('#login-new-team').fill('ZGE04 baseline '+Date.now());await page.getByRole('button',{name:'COMPLETE ENLISTMENT'}).click();}await page.locator('#launch-game').click();await page.waitForFunction(()=>window.ZGE?.engine?.lifecycle.state==='running',null,{timeout:90000});await page.waitForTimeout(4000);
+ report[mode]=await page.evaluate(async()=>{const g=ZekNovaGame;g.paused=true;const latencies=[];g.buildings.select('power');for(let i=0;i<30;i++){const t=performance.now();g.buildings.place({x:999,z:999},g.simulation.resources,g.terrain);latencies.push(performance.now()-t);}const frames=[];let prev=performance.now();for(let i=0;i<120;i++)await new Promise(r=>requestAnimationFrame(t=>{frames.push(t-prev);prev=t;r();}));latencies.sort((a,b)=>a-b);frames.sort((a,b)=>a-b);return {placementP50:latencies[15],placementP95:latencies[28],frameP50:frames[60],frameP95:frames[114],frameP99:frames[118],heap:performance.memory?.usedJSHeapSize,shadow:ZGE.construction(),assets:ZGE.assets(),restartable:ZGE.compat.inPageRestartable().length};});
+}fs.writeFileSync(process.env.RESULT_PATH||'/tmp/zge04-browser-performance.json',JSON.stringify(report,null,2));await browser.close();

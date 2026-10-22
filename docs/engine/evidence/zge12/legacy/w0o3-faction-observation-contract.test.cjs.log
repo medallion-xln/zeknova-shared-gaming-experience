@@ -1,0 +1,60 @@
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS feature layout identity
+  PASS topic order matches knowledge contract
+  PASS six fixed topic sections
+  PASS thirty-six total slots
+  PASS fixed feature count is 592
+  PASS feature spec matches feature count
+  PASS feature vector matches feature count
+  PASS all features are finite and bounded
+  PASS packet identity is canonical
+  PASS packet validates byte-identically
+  PASS packet carries explicit faction
+  PASS packet carries explicit quantum
+  PASS packet has six fresh records
+  PASS packet selected all fresh records
+  PASS packet omitted no records
+  PASS FX-STALE-OBSERVATION lost unit is excluded
+  PASS fresh unit contact is included
+  PASS fresh combat alert is included separately
+  PASS persistent destroyed structure is included
+  PASS fresh route is included
+  PASS fresh infrastructure status is included
+  PASS FX-LEAK other faction private player sighting excluded
+  PASS no event sequence fields enter packet
+  PASS no event IDs enter packet
+  PASS no wall clock fields enter packet
+  PASS no authoritative aggregate fields enter packet
+  PASS FX-OBS-NONDET repeated packet bytes are identical
+  PASS FX-OBS-NONDET repeated observation IDs are identical
+  PASS FX-OBS-NONDET repeated features are identical
+  PASS FX-HIDDEN-STATE other-faction event does not change packet bytes
+  PASS FX-HIDDEN-STATE other-faction event does not change observation ID
+  PASS FX-HIDDEN-STATE other-faction event does not change feature vector
+  PASS FX-OMNISCIENT hidden identity registry additions do not change packet
+  PASS recipient packet includes explicitly shared fresh sighting
+  PASS recipient packet also includes its direct private sighting
+  PASS FX-CLONE-DROP clone retains observation ID
+  PASS FX-CLONE-DROP clone retains all 592 features
+  PASS FX-CLONE-DROP clone hash equals parent hash
+  PASS FX-CLONE-ALIAS clone snapshot mutation cannot alter parent
+  PASS FX-CLONE-ALIAS sibling snapshots are detached
+  PASS tampered observation ID rejected
+  PASS tampered feature vector rejected
+  PASS stale slot rejected at expiry
+  PASS section reordering rejected
+  PASS slot record ID tamper rejected
+  PASS unknown faction rejected by builder
+  PASS fractional quantum rejected
+  PASS overflow total fresh count records all known fresh contacts
+  PASS overflow selects fixed eight unit slots
+  PASS overflow reports two omitted fresh contacts
+  PASS overflow packet reports global omitted count
+  PASS overflow selection keeps most recent observation
+  PASS overflow selection drops the two oldest observations first
+  PASS ledger record array order does not affect observation
+  PASS changed visible fact changes observation ID
+  PASS changed visible fact changes feature vector
+W0-O.3 FACTION OBSERVATION CONTRACT TESTS PASS (59/59)

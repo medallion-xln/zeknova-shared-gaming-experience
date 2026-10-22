@@ -1,0 +1,654 @@
+{
+  "schema": "zge.file-inventory.v1",
+  "date": "2026-10-21",
+  "head": "138220f4909b3fd6a3e0dd2e62ebab63785336d7",
+  "branch": "main",
+  "baselineFiles": 7038,
+  "unchangedBaselineFiles": 7020,
+  "modifiedExisting": [
+    {
+      "path": "docs/engine/ENGINE_AUTHORITY_MODEL.md",
+      "beforeSha256": "99288dfb5672ab808cc6d2cb2d3a8a766515c077ce67aa0070970b3f4a709589",
+      "afterSha256": "e0f0cc9aa4e067ba0087784ba170133654f6151f6f1efd1e9e6cb88d2a138075"
+    },
+    {
+      "path": "docs/engine/ENGINE_MIGRATION_ROADMAP.md",
+      "beforeSha256": "f59af8ae3ec42b248f61ab3740be15485694c0aed95ab1e0589ff03de7c4b39e",
+      "afterSha256": "caf3c6bd7c0ff19a7d4a92ae237fe9ec1cc7d88982c929ecd3c5921f2e0f1e17"
+    },
+    {
+      "path": "docs/engine/PHP_MULTIPLAYER_CERTIFICATION.md",
+      "beforeSha256": "551ef0c444004280a769ef3f596a3bd7c29b0da2e70a42db0a89ca266346ccf5",
+      "afterSha256": "b3c2b5128efd244b790eb48709715f2d8b3bba68da4420cde5669e8f3555daad"
+    },
+    {
+      "path": "docs/engine/SOURCE_WRITER_COVERAGE.md",
+      "beforeSha256": "6c9f39ecf0f0bd5b0db994c6902c84e9ef3cdd4c89c323b2a0ee8bdd0aee36c5",
+      "afterSha256": "2d7e18e486290075c587eb3c0227faf8225ccdd64aa9e6b1f33dc25a4c90e97f"
+    },
+    {
+      "path": "docs/engine/WORLD_HISTORY_SCALING.md",
+      "beforeSha256": "ebe0d83f98a0937f44c627cfb6b1ef1f914cde6c6adefbba130c48c35621031e",
+      "afterSha256": "9139dddfafd87e5c9e85a4cd06d1aaf078c1dd4b1e8c72de3fae920ca8e62be2"
+    },
+    {
+      "path": "examples/construction-world/gameplay-ui.js",
+      "beforeSha256": "d70d15a919a1621f90e7cc834e5b909be88c5d637abc4abd56414d822cc6bb20",
+      "afterSha256": "a4ecba59675e9fc75fb63b7f2799bf7755d39001a4c48de28944c3ab99e2ad0d"
+    },
+    {
+      "path": "examples/construction-world/scene.js",
+      "beforeSha256": "a9732f945d66b821d4459b9372590cd5b9010760bb11ebae88fab2015980b3bb",
+      "afterSha256": "15ec56332a03c2b59d0b10f574f78b1e63fae68239262651e5c616018f16f35f"
+    },
+    {
+      "path": "examples/construction-world/server-session.js",
+      "beforeSha256": "4725a3287f5e7976f41b4359ff77b164c47f4543ae7a8e671355d1a03974ec5a",
+      "afterSha256": "3db424af50b37dbc4d168e4018576251a0ba8de5cccc81c9879f553ab1f3a9d3"
+    },
+    {
+      "path": "package.json",
+      "beforeSha256": "9a8007d09f73180c2adaa9c588ac8d9d22bccadf9861733edef2b0e6cbc5257d",
+      "afterSha256": "42068537cc96c726745fce296bf68ff7da00dc1fc122d4b4689805fa63d72c19"
+    },
+    {
+      "path": "packages/persistence/src/StagingWorldClient.js",
+      "beforeSha256": "86842c95ad2962c5e1b4c0ac6febedeeaa86ae4c4a92e1acefd0ad5c8265ffd0",
+      "afterSha256": "a9962dc90eba0910ce980ae10ec3266960a088337ea60d70bf194c6bb4c5e74f"
+    },
+    {
+      "path": "packages/server-php/src/bootstrap.php",
+      "beforeSha256": "4ebf7776cfb733bc34b9c8b5170216a8ffad69c0e06db19252c8a90365d85964",
+      "afterSha256": "4f2557b0993452c44e4e815d38e9717610f4891e55dff2072eef95cbe3c4c47b"
+    },
+    {
+      "path": "packages/server-php/src/events.php",
+      "beforeSha256": "b6fe9ffa48152b84b542f9704ba6db7d52bc47148ead14d3c622511c16d16f75",
+      "afterSha256": "53292831844d89ad5d782c086ea65edaceb01b1d48c853711f33359528f2b6b8"
+    },
+    {
+      "path": "packages/server-php/src/recover.php",
+      "beforeSha256": "cd2b01ea40b92f4a29dba5dc507f8560d538bf3c27a5c55b37c691c4cf411803",
+      "afterSha256": "ecbf9d062d5944dba0056fc14314c8ef9ae27127df56030aafeb234d9b6a7695"
+    },
+    {
+      "path": "packages/server-php/src/router.php",
+      "beforeSha256": "0b52192499a822bef1b6555cecabc05b62360ef118cc4a40956d8bdd42297ff4",
+      "afterSha256": "a8fdaa0172c8c3443884076fd070065260fa801b3cb7eec1dfc665799a1d94c2"
+    },
+    {
+      "path": "packages/server-php/src/schema.sql",
+      "beforeSha256": "80959c1b749eb26cbf707ed7f501a96f58f1ca7d447905a38bccff6785e57d1f",
+      "afterSha256": "46c46ae86f00d94714a1d198696629bf3f60f30f69d9dfb0349d9fcaf91ff590"
+    },
+    {
+      "path": "packages/server-php/src/security.php",
+      "beforeSha256": "a7355147ac8200472e55ad7ffe7e45fb8102bd814abf217ec8539669c9d70220",
+      "afterSha256": "7e42682314254e54131fd12e5c2f9dfc5c68284502e84173fefaa6bd07163fda"
+    },
+    {
+      "path": "packages/server-php/src/worker.mjs",
+      "beforeSha256": "6fb89d55b5be031a55f378ccf403ad26ce1034c80fff884c1f98f00d1444ae76",
+      "afterSha256": "66e21c7768643930950c22ff4c267e3287cd34f257b8b5ebabb1212ebc7f9b0b"
+    },
+    {
+      "path": "packages/server-php/src/world.php",
+      "beforeSha256": "fce52f147f86172f110ff510849982208d31ebf675480f47f813455cb1faf93d",
+      "afterSha256": "c31c9e3fd5e32d84fc834410f7c0a92887f1022124d13479a9a8c04675d2cc4b"
+    }
+  ],
+  "created": [
+    {
+      "path": "docs/engine/OPERATIONAL_DURABILITY_ZGE_08.md",
+      "sha256": "67c6b4e4b259f20f7bdcba7870fdb1e7af567bfea1d91cf2e1c211c252b99c80"
+    },
+    {
+      "path": "docs/engine/PLAYER_OWNERSHIP_ZGE_08.md",
+      "sha256": "be3eff6cf15f29e6794a39bac30b150f6590887655f4f3cec5a0f08de41e2b46"
+    },
+    {
+      "path": "docs/engine/SUPERVISED_WORLD_RUNTIME.md",
+      "sha256": "6ebae993b8fc6587cbd9429a5f80d1e35c070d30d3097b4583c247977246fd44"
+    },
+    {
+      "path": "docs/engine/ZGE_08_IMPLEMENTATION_REPORT.md",
+      "sha256": "f59fb32274832580f834c03c5736990a854e6da136cc9ff5817de46ee39eb392"
+    },
+    {
+      "path": "docs/engine/ZGE_09_IMPLEMENTATION_PROMPT.md",
+      "sha256": "545fbc05d91ecd4904a014926a4f27f6b306c1c15047999887b4bc520828a275"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/animation-audit.log",
+      "sha256": "ef2a7be42f5d722ae563c532870336b869ec76795df35b9ac4ef8aa7090c31d3"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/before-hashes.json",
+      "sha256": "b3a939c10a3ecad4f8da774c1850950594324e92f2cd7a90fc124296a727b969"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified-world.log",
+      "sha256": "3b70e894bbbb5a7539b1dcc1a9b86b49b6ff88ed8adbcfaac79e7b562f2b9306"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/browser-demo.json",
+      "sha256": "1415754990cc9b8249c9ddba94c6f66a3e28b6425499a68ce9db9a4addaa9def"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/browser-followup.json",
+      "sha256": "92b20e418b19b6ed098d780a9dac10743d3fa775b90630dc381104410e1eb29a"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/browser-gameplay.json",
+      "sha256": "2dd215951f4648d6cb104a831fe55a7bba1bd43dfa82c73c457bd9cea43f38db"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/browser-live-flow.json",
+      "sha256": "3eac1e67d403ff07cd0c7b00a80cdba325f421c4b81a678524dc3522886b109f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/browser-parity.json",
+      "sha256": "de39191467ce52de4c752476e7233ebcd7febaa0256080e9ed287100b16bd52a"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/browser-runs.json",
+      "sha256": "89550178f93e31ea0b74b1c558bfbdaee44f9cb6eb2cfcd1b161d4928a2b64be"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/browser-source-world.json",
+      "sha256": "1a85bbcaa91bcf141fab28bba45a455454724f8f88070782f54017cb18714a32"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/live-performance-final.json",
+      "sha256": "d9c0d59ae2f1a9dc8d700329afb29ff8cb1005411fa4eae3f0e20bffc47de187"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/movement-last.json",
+      "sha256": "7d7cb24030db2594d29ddbb401cbf2d5471ce2988912ac115767a3f1a99fbd4d"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/restart-diagnostic-0.json",
+      "sha256": "6bf221380a14b1a2e3a3835e348173e08d8d0398d9b7ae0e6ad06da733283a96"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/restart-diagnostic-1.json",
+      "sha256": "56b05fdc60910bfdcef2eea2ae8d902ceba7b112041a4b72c359aef6338c9215"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/restart-diagnostic-2.json",
+      "sha256": "da2311f07304b4516a5fd54c7a2aaf53431679576e15539dea4d4609c608b5b6"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/restart-diagnostic-3.json",
+      "sha256": "c5e141751d0ba304c431ebec6932d4e8be1b0081e6f9419c2b9a423529b6a4f7"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/standalone-3d.png",
+      "sha256": "e6981323110cd6582b6ab8e69f554ff04f563408d2fd73d4ab22a3a6d239d863"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/standalone-v2.png",
+      "sha256": "cc4b70d738dd60916155cf8fedc2845d3135781f4d308a9c1d3f76ebfa2057b2"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/stress-browser-restart.json",
+      "sha256": "0f127243214848da0baf69925288a6ff84017e6dc03028e34e6b120543a0fbc6"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/stress-webgl.json",
+      "sha256": "ab1cd30e08cadd04dd2e06328ef501cf6b960159fc037e915ad29d677102121e"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/stress-webgpu.json",
+      "sha256": "2b38f045829f94cc208ffc48655fd041abe11114925efa0c8034fd358c438f6f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/zge03-browser-followup.mjs.log",
+      "sha256": "9503b16cc3fff641830ef4e4fdd38cee4ccc33bb4f827a80388ae13c82a8ab31"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/zge04-browser-demo.mjs.log",
+      "sha256": "538d1c0214bbf76d80e4becdbb425d9a9d4e843333dc55eadbca16d8d110a104"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/zge04-browser-live-flow.mjs.log",
+      "sha256": "1388e97f13b87e895e0c6548e755d150fa99d48aca6ec6b24b59f3eb76106865"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/zge04-browser-parity.mjs.log",
+      "sha256": "f8bd433a0c7d8ac154de74ccd492cf7677a03bcd9cff1ef18d641abf1171d2bb"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/zge04-browser-performance.mjs.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/zge05-browser-demo.mjs.log",
+      "sha256": "367d94f25a60a836f35b4411c99d0bbb39e08ea2c7d3b879382c8fb5b4bc6190"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-certified/zge07-browser-certification.mjs.log",
+      "sha256": "8fdb5dbfe5e4b1d400969b4943b5297993d33a4c75d1acc78099fa8f56840a77"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-compatibility.log",
+      "sha256": "b27107c43c142b25ba7cb94dc0f46917c7bff285d5853125366772e2a6b19c6f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-final-compatibility.log",
+      "sha256": "b27107c43c142b25ba7cb94dc0f46917c7bff285d5853125366772e2a6b19c6f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-final-world.log",
+      "sha256": "3b70e894bbbb5a7539b1dcc1a9b86b49b6ff88ed8adbcfaac79e7b562f2b9306"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-initial.log",
+      "sha256": "3b70e894bbbb5a7539b1dcc1a9b86b49b6ff88ed8adbcfaac79e7b562f2b9306"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-multiplayer.json",
+      "sha256": "c9418920c37b81cab9991bf0da6e4f1effabc57f817ffbdf37231ce7bd3e67d7"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-pointer-certified.log",
+      "sha256": "8171e4ca3727aae958b3fe01f1ded998febfced71e525daa6de7d60498044d83"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-pointer-certified/browser-live-flow.json",
+      "sha256": "cbb21c764769db6042ffe1e206d67deb606db5408d8079bf1ef39f90d1518484"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/browser-demo.json",
+      "sha256": "886369f53f797021347be49db89521f39321aad3bd1ea675fa1e852981abef36"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/browser-failure.txt",
+      "sha256": "f0aa4f05c60730a6aca8758a9437abe145332bc4857c6e7b42b86a01396d67db"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/browser-followup.json",
+      "sha256": "6aef9096bb4deb1c12bf732b477410fb21f2af62ae6bae17a8a06ce8803504ab"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/browser-live-flow.json",
+      "sha256": "db94f4cc4088243de44c40ac9631b4c7ccedcdf241dd438e1364f71eb915893d"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/browser-parity-error.txt",
+      "sha256": "a8dd7484f2ca874e3f653e1207189ca651bfbfc3dea2a946c79adcadbe7ce667"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/browser-runs.json",
+      "sha256": "a7dd424b7fdfe9cc222c9d317242df608da47ed37c9f61b93a8ea3a41b64039d"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/browser-source-world.json",
+      "sha256": "567b9c94b15624b658ce5397b3f22c3a4ef8df9ac1a7d43ef867476781252500"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/zge03-browser-followup.mjs.log",
+      "sha256": "bffee53990c9c47bd319efd3611e0a0e9ea90b4b0a5b33e98473054184852f5f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/zge04-browser-demo.mjs.log",
+      "sha256": "4a89bd3182eaa4ab37682ae26c53835cd010fd494466f68d325ea67262599a7f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/zge04-browser-live-flow.mjs.log",
+      "sha256": "0c4c704d08331f5729ce91e86516c553b3b7ce5321977d3c55fea31e9b177b1d"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/zge04-browser-parity.mjs.log",
+      "sha256": "e02120fb92e37b782a56b679cd2de649b62886d88b226510a42163e823341631"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/zge04-browser-performance.mjs.log",
+      "sha256": "8a58e46d52ce087123cac4117893a657b7b527354fe33e859777d1b18a2c10ff"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/zge05-browser-demo.mjs.log",
+      "sha256": "2ac28528cd6fe3f644daf636e66927208f83c8b780e9339ddfa13df1e1b67dd6"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/browser-regression/zge07-browser-certification.mjs.log",
+      "sha256": "fb57df28e473d2beb453a6cd54210d6755997d70baea49fc515e89be7547f464"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/capacity-certified.log",
+      "sha256": "d235479c2c3e400e6ec35bdeb45d1f2de46810184d404ad8b01baddffd75e4e0"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/capacity-certified/multiplayer-capacity.json",
+      "sha256": "24906107c703f271b0dc9547dbcdf8f0ad87180f8fb1a301cc9031d6d711389b"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/capacity-initial.log",
+      "sha256": "d235479c2c3e400e6ec35bdeb45d1f2de46810184d404ad8b01baddffd75e4e0"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/capacity-isolated.log",
+      "sha256": "d235479c2c3e400e6ec35bdeb45d1f2de46810184d404ad8b01baddffd75e4e0"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/capacity-isolated/multiplayer-capacity.json",
+      "sha256": "2c5e9801f49915aea78d1478be3b0fe43e6f860d9f976c57b7e74708e5eacacd"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/compatibility-final/browser-hardened-world.json",
+      "sha256": "2a1274c70c5edda5da8c9c902f921335d2a25fa6bf984989ba2dddee00cf85c6"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/compatibility-final/hardened-world.png",
+      "sha256": "1fa32ecbb628ff471d6b9307b747af4b30233eaf9c4452c3986bb43b0da53794"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/compatibility/browser-hardened-world.json",
+      "sha256": "2bdec7cbd9b43818094f44ff6d74cb6ebd70aef1224f39132275f371b69ef218"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/compatibility/hardened-world.png",
+      "sha256": "f9d7095668b8768bd6333976f3fbb95faa4c0867e027bf8fceb085ed1f5a6b50"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/dev-server.log",
+      "sha256": "91fe26efad654c466bc2b3c975ca42df9e6e184cad5b192b00adeab6bbd2f9cd"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/engine-before.log",
+      "sha256": "88572cdded5018727d51c46fb54a6b58c8c5c5e0d59b994926d9c4aca8a2b481"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/engine-certified.log",
+      "sha256": "f6a1716bc1cd4ffd4fe64300c7b05158df432c952432b44a0458e99a9efda109"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/engine-complete.log",
+      "sha256": "ace8c004534206628f696a1ed7d316c42e3fdc9bcdb7107bf9f89d3262899305"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/engine-final-certified.log",
+      "sha256": "3331bf3197b564a3c548ca36913233319658fcef116d8e75937782bee893eee9"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/engine-final.log",
+      "sha256": "6657cf38f6d04034d08912fb2699bf54f2cc9039456554034361524d1082751f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/engine-integrated.log",
+      "sha256": "849fda87065307ffc935dbd7ed6b56eb3d0c1ba0023092a84c9eabc7c8819662"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/environment.json",
+      "sha256": "31a10d7c32b946841f20576c8d9312acf8599471ae2863680118374a7c70d885"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/evidence-custody.json",
+      "sha256": "d76d6be217ce0f791650252a975f4e3349fb1ee44b25bc74a94080f91f1153cf"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/failure-certified.log",
+      "sha256": "6f88a5d9c51f1077cb8de775547c04ec286c08c1800745efc90bbbdfda49abf3"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/final-assessment.json",
+      "sha256": "ed0f41303153f46808e1e93a5030cf8e3e94026e85048a19cef2177fd3628b72"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/gateway-certification.json",
+      "sha256": "fe85df080d1aadf9241b7cd7d0d5e0cb73bbb77279193d9bebb83e32907ab215"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/gateway-initial.log",
+      "sha256": "a250486454c417f91711e7ebede0bea42460c039fc4249564ec978f5fd218ce5"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/gateway-recovery.log",
+      "sha256": "9b661c3adbb4a82950ce9cf887d0c19a7ba88e55c57f191ddd9078f913e820a7"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/history-certified.log",
+      "sha256": "0239a6f094025c1c76a1b5a336ac91122989b57af3e8595af80121e59985e6d9"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/history-certified/history-hardening.json",
+      "sha256": "20f0ab9ec0265f8c1bfb49fe50c24aec38734bf896ef173010594a510b4dfe64"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/javascript-syntax.json",
+      "sha256": "16b1112275917400706636bdde8bd16c5e9dd406944743c2581be7d42a5ce772"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/launcher-initial.log",
+      "sha256": "969a5eab61ddcc5e65b47fd2bf5adeb98585cfa334e57d77cfe32e5ff23454d1"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/launcher-recovery.json",
+      "sha256": "5969e0241dcda3485fba9b39a2b50b25953c731d13a23ef8fc166356c0f86009"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/legacy-after.json",
+      "sha256": "4454d28eec6b0b99178cb43d014ea9287014bfd85a08ee8c6d989913e704679a"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/legacy-after.log",
+      "sha256": "ebb7b96cbfef53a83513bc472b0d583fe9355391a335bdbfd2fc18e8b42f74d2"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/legacy-before.json",
+      "sha256": "53e8a85ea374fa823eb621d22e99e13add9df8347a2d7bdd0e78fe5fed5fc26f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/legacy-before.log",
+      "sha256": "033e8c64cd2c80da1ff24bdd86195ecfe62a9f07b3f28aea5637ad346ad39557"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/multiplayer-capacity.json",
+      "sha256": "1e64e41d0863f4996cfed84be20a54053ac930418bb75a818314d85f48ec6f0f"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/multiplayer-world.png",
+      "sha256": "063ace95a4159075ad298f3daefe918ba82eba191263f5079438926c28398852"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/operations-initial.log",
+      "sha256": "985cede802e870978f0de49aca17227773149690a96b604c5a8e8844b5d1df3b"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/operations.json",
+      "sha256": "7eb3b601d16f429f9f164e5c692150e0f4e778e3c6260d1b1730859ff4a51142"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/php-certification.json",
+      "sha256": "65bbe48226cfe437c251baaca7b2794208c6549ff645bb73b95a47fd12f84260"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/php-syntax.json",
+      "sha256": "db546786c2cca814e3a53d70c6261d1f697373a41872c61b5a47e56f1f5b391d"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/players-fixed.log",
+      "sha256": "4f6b70cf32dbd53b9926e0173e7149934caefb3b1b1bfb18ad9c882a468fb6f7"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/players-initial.log",
+      "sha256": "4804296e1aecd6b6d4178006e0632ff777fb2f0c66d9190358413c3144cf73c5"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/replica-final.log",
+      "sha256": "dd687eac77b790f49ba440da3f3aaf6fd7dc6d17c779fd94e1acbd00c2571063"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/run-browser-certified.py",
+      "sha256": "5064895a6b40f8623e4296b22a522fc923ee0deeb12e110c1cde3823f33f6f6a"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/run-browser.py",
+      "sha256": "ecb5574a81c9657a8c1cd3abeaf5e2379d58e626e7170dfbedde46262b0c66de"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/run-legacy.py",
+      "sha256": "f79e6c3051568f866c933006ebfa6ec31f75b115abea08fc120a07cfe89f6525"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/session-security.json",
+      "sha256": "a1a6276172983140cc8d1853e9209cf6a5c24c642409c7f053e034216d75da03"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/source-check.log",
+      "sha256": "aa135f1713ff9d22685f23993452d889a2bc1717b1da1022ba643ab73cf90bd5"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/source-final-certified.log",
+      "sha256": "aa135f1713ff9d22685f23993452d889a2bc1717b1da1022ba643ab73cf90bd5"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/source-final.log",
+      "sha256": "aa135f1713ff9d22685f23993452d889a2bc1717b1da1022ba643ab73cf90bd5"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/staging-server.log",
+      "sha256": "6e4b1f2a79b4fa77b75100866f968ef819e1dff428f391d4e10c4c5a742d94a1"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/status-after.txt",
+      "sha256": "8afa60ec5adc201371c6daf0783348e2841d927d3db5dfc1d6092b6265347f2a"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/status-before.txt",
+      "sha256": "c88adc9c686671419997b54d1ae5047d2ee2a2c54fc4b22595d1e65d15e8e9ea"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/submodule-after.txt",
+      "sha256": "08811eebdc8ddbe57d5f9af6a4ceac3eeadbf986bd6538ac0d220931d308fe73"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/submodule-identity.json",
+      "sha256": "713ea3dd3eeca483166345da1af614eb0606498b7ffba8576343d0a74b1139f8"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/supervised-integrated.log",
+      "sha256": "5ba03f39ebc87b78b83d1a34a83b46cf8adbaa52e1f611b8a1e91beef9940fdc"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/supervisor-lifecycle.log",
+      "sha256": "4ba48714124ca7b86fd2d623f647e8ab93ed9ff29aa3ea820a76f1eba0fba838"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/writers-after.json",
+      "sha256": "a78390f050e08d2288b4cec1babd5c5d9a4c41d2e9e325c75dbb857f6b043835"
+    },
+    {
+      "path": "docs/engine/evidence/zge08/writers-before.json",
+      "sha256": "b95c12c9b6b017b6dc35b9a9baf6788a0a930a5f17dbf8d9a91c68978255153d"
+    },
+    {
+      "path": "packages/gameplay-construction/src/MultiplayerConstructionRuntime.js",
+      "sha256": "e17603805f93b144035814d9bd0f9386d35eb7cb422c3851da44a3b344925738"
+    },
+    {
+      "path": "packages/gameplay-construction/test/zge08-players.test.mjs",
+      "sha256": "756c5c5c6e35a485249c62d636b1b046df2d10fee68ff7650bc92b78939da04d"
+    },
+    {
+      "path": "packages/persistence/test/zge08-client.test.mjs",
+      "sha256": "475fcccea9dc611ba49042e05cad5f88698a5c15dfaf2d22c54ef3d54de319b4"
+    },
+    {
+      "path": "packages/server-php/runtime/client.mjs",
+      "sha256": "c1935400d07fe32eb24e1a4ee93b6132863d96e528457290820ec3633bb31421"
+    },
+    {
+      "path": "packages/server-php/runtime/evaluator.mjs",
+      "sha256": "2fa079dd405b60d43a8829ba9bd96a5a5a298fa7cbdbc04408d0dc207f3561d5"
+    },
+    {
+      "path": "packages/server-php/runtime/gateway-process.mjs",
+      "sha256": "9216f4105d83b5799dc290d47cd9098f7550b38ed7b32851605fc115e5acafbb"
+    },
+    {
+      "path": "packages/server-php/runtime/supervisor.mjs",
+      "sha256": "9a0b3360d7a54d355cdf23899ec714cf25db3d3e804de558baa0077ea296a267"
+    },
+    {
+      "path": "packages/server-php/runtime/world-worker.mjs",
+      "sha256": "ecd522dce986cc226a54a3a265f11b666742dae4fcc7446d8ce9efe3050b2844"
+    },
+    {
+      "path": "packages/server-php/src/operations.php",
+      "sha256": "42b4e543203cdea313912a9cb7efa7e8380092092f16ba095615bb153d3d4177"
+    },
+    {
+      "path": "packages/server-php/src/recover-multiplayer.php",
+      "sha256": "e2096dc542e71340e436a5bb3b19f7e77cf8d34ae65357aa98374416078a0b0a"
+    },
+    {
+      "path": "packages/server-php/src/runtime-health.php",
+      "sha256": "0d2c15ad0f6fa343b9fe72b5de0c6e7ce142462da48d66f9657966ddb52dbf60"
+    },
+    {
+      "path": "packages/server-php/src/runtime-ipc.php",
+      "sha256": "c629fb8e09163ee4e7cbc63691c647b310a35f19a33f60764c767d270798ace1"
+    },
+    {
+      "path": "packages/server-php/src/runtime-lease.php",
+      "sha256": "6508f0c3e23d3465054356685eee8273364c6336bc1837fabac6730199b490cb"
+    },
+    {
+      "path": "packages/server-php/src/supervised-world.php",
+      "sha256": "f7afcd55e9e2ad1eb46460304fcab7364975cafc540eab4090ce73264b80cd06"
+    },
+    {
+      "path": "packages/server-php/test/helpers/crash-supervisor.mjs",
+      "sha256": "340e87ec7ed6d4ea5f65042df32316d8a3eb45cf6b20eaf66255ad47037e144d"
+    },
+    {
+      "path": "packages/server-php/test/helpers/supervised-fixture.mjs",
+      "sha256": "a77507ab28f57fd96e8c18f88f60c570a7906c2cdb649a1fdf71f9f7b300ebb9"
+    },
+    {
+      "path": "packages/server-php/test/supervised-runtime.test.mjs",
+      "sha256": "a2ada78812bb544ac34a17513fd0d21762de40fceac17be17bcbd1d23651d725"
+    },
+    {
+      "path": "packages/server-php/test/zge08-gateway.test.mjs",
+      "sha256": "b5c8698b6a218396f31f05b982c35d62b2886cc3697541811adf9f7c8d4cf4d7"
+    },
+    {
+      "path": "packages/server-php/test/zge08-launcher.test.mjs",
+      "sha256": "a111f7c5665a7fc1576c728e210b57b8d601a8dacaa235a27bbfca6111331da1"
+    },
+    {
+      "path": "packages/server-php/test/zge08-operations.test.mjs",
+      "sha256": "6e41512f7d7bcedfe4bd5c0fa98005602121de0219e556822beaa4765a9effcc"
+    },
+    {
+      "path": "scripts/zge08-browser-live-flow.mjs",
+      "sha256": "362beafdbd769d79b983c4cc250e01877c02ec20c7788c250de5ba3106736bd7"
+    },
+    {
+      "path": "scripts/zge08-browser-world.mjs",
+      "sha256": "82be2f4028d445d979eda95f109465c4224d6704ce3a57483db29a70b4bc0f1e"
+    },
+    {
+      "path": "scripts/zge08-capacity.mjs",
+      "sha256": "9a458f517aaf8545f21e3076fbba5669851cef82c41d0d9846b5798793873f94"
+    },
+    {
+      "path": "scripts/zge08-server.mjs",
+      "sha256": "cd26ff9aaec371c6b140c1aae9ff7b75d58bcaaaf43136de254997fbb512f82e"
+    },
+    {
+      "path": "scripts/zge08-verify.mjs",
+      "sha256": "aa45e84486f1e1913f59441e9597387d3f8b6510810a9f05d41dbd90e09ce0b0"
+    }
+  ],
+  "missing": [],
+  "protectedBaselineFilesChecked": 6131,
+  "protectedChanged": [],
+  "selfReferencesExcluded": [
+    "docs/engine/ZGE_08_VERIFICATION_MANIFEST.json",
+    "docs/engine/evidence/zge08/file-inventory.json"
+  ],
+  "scope": "Git-visible baseline hashes preserved; ignored/private files excluded; nested dirty stable-fast-3d observed but excluded from traversal. No commit or working-tree cleanup."
+}

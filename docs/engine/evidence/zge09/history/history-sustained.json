@@ -1,0 +1,31 @@
+{
+  "profile": "D-long-history-sync",
+  "durationMs": 180370.65908299998,
+  "requests": 1081,
+  "distinctIdentities": 8,
+  "phpGateways": 1,
+  "worldWorkers": 0,
+  "archiveEvents": 100000,
+  "quotaPerIpMinute": 600,
+  "targetRequestsPerSecond": 6,
+  "throttled": 0,
+  "latencyMs": {
+    "count": 1081,
+    "p50": 14.282416000001831,
+    "p95": 75.9436670000141,
+    "p99": 192.09679199999664
+  },
+  "cursors": [
+    34816,
+    34560,
+    34560,
+    34560,
+    34560,
+    34560,
+    34560,
+    34560
+  ],
+  "exactPrefixes": true,
+  "warmupWaitMs": 32100,
+  "scope": "read-only historical synthetic event fixture, separate from executable gameplay world; initial complete100k HTTP replay plus eight continuously paged exactprefix replicas; no authority writes"
+}

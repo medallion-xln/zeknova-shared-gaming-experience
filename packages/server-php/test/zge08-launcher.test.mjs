@@ -1,0 +1,14 @@
+import test from'node:test';import assert from'node:assert/strict';import{spawn}from'node:child_process';import{mkdtempSync,readFileSync,writeFileSync,mkdirSync}from'node:fs';import net from'node:net';
+test('whole staging launcher SIGKILL cleans owned gateways, recovers its socket/lease and preserves committed outbox effects',async()=>{
+ const directory=mkdtempSync('/tmp/zge08-launcher-'),port=await new Promise(resolve=>{const s=net.createServer().listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(()=>resolve(p));});});let child;
+ const env={...process.env,ZGE_STAGING_DIR:directory,ZGE_STAGING_PORT:String(port),ZGE_STAGING_FAULTS:'1',ZGE_RUNTIME_FAULTS:'1'};
+ const start=async()=>{child=spawn(process.execPath,['scripts/zge08-server.mjs'],{env,stdio:'ignore'});for(let i=0;i<400;i++){try{await fetch('http://127.0.0.1:'+port+'/not-found');return;}catch{if(child.exitCode!==null)throw Error('launcher failed');await new Promise(r=>setTimeout(r,50));}}throw Error('readiness timeout');};
+ try{
+  await start();const identity=JSON.parse(readFileSync(directory+'/identities.json')).alice;
+  const send=async(body={},fault=null)=>{const response=await fetch('http://127.0.0.1:'+port+'/staging/world',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+identity.token,...(fault?{'X-ZGE-Fault':fault}:{})},body:JSON.stringify({worldId:'valley',...body})});return{status:response.status,...await response.json()};};
+  const joined=await send({command:{commandId:'join',action:'join',expectedRevision:0}});assert.equal(joined.result.ok,true);const command={commandId:'lost-before-host-death',action:'place',id:'persistent-building',type:'shelter',x:2,z:2,expectedRevision:joined.revision};assert.equal((await send({command},'lose-ack')).status,503);
+  const started=performance.now();child.kill('SIGKILL');await new Promise(resolve=>child.once('exit',resolve));let closed=false;for(let i=0;i<60;i++){try{await fetch('http://127.0.0.1:'+port+'/not-found');}catch{closed=true;break;}await new Promise(r=>setTimeout(r,25));}assert.equal(closed,true,'owned gateway must terminate when its launcher IPC disconnects');
+  await start();const retry=await send({command});assert.equal(retry.duplicate,true);assert.equal(retry.world.inventory.stone,8);assert.equal(retry.snapshot.player.xp,14);assert.equal(retry.world.buildings.length,1);assert.ok(retry.runtime.generation>joined.runtime.generation);
+  const out=process.env.ZGE_EVIDENCE_DIR||'/tmp/zge08-evidence';mkdirSync(out,{recursive:true});writeFileSync(out+'/launcher-recovery.json',JSON.stringify({recoveryMs:performance.now()-started,ownedGatewayStopped:true,newGeneration:retry.runtime.generation,oldGeneration:joined.runtime.generation,duplicateSuppressed:true,inventory:8,personalXP:14,buildings:1},null,2));
+ }finally{if(child&&child.exitCode===null&&!child.signalCode)await new Promise(resolve=>{child.once('exit',resolve);child.kill('SIGTERM');});}
+});

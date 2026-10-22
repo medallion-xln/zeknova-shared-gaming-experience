@@ -1,0 +1,3258 @@
+{
+  "schema": "zge.bench01.source-reconciliation-frames.v1",
+  "trial": 1,
+  "foregroundActor": 1,
+  "clients": 8,
+  "status": "PASS",
+  "physicalPlacementAccepted": true,
+  "actualMovement": true,
+  "reconciliationErrors": [],
+  "renderer": "native WebGL2",
+  "conditions": "warm source-owned construction world; one foreground observed viewport plus7 independent browser contexts; physical alternating keyboard input; one physical placement; real authenticated reconciliation/polling; synthetic starting shared stone100000; no GPU timing",
+  "durationMs": 15006.899999988076,
+  "presentedFrames": 901,
+  "presentedFPS": 60.03904870431041,
+  "frames": 901,
+  "averageFPS": 60.002400096003846,
+  "medianFPS": 59.880239520968516,
+  "onePercentLowFPS": 59.523809523799216,
+  "onePercentLowMethod": "1000 / arithmetic mean of slowest ceil(N*0.01) frame intervals",
+  "frameMs": {
+    "p50": 16.69999999999709,
+    "p95": 16.799999999995634,
+    "p99": 16.80000000000291,
+    "max": 16.80000000000291
+  },
+  "over16_67": 547,
+  "over33_33": 0,
+  "worldRevisionBefore": 167,
+  "worldRevisionAfter": 306,
+  "buildingsBefore": 3,
+  "buildingsAfter": 4,
+  "displacementRangeX": 4.3999999999999995,
+  "convergence": true,
+  "httpResponsesObserved": 220,
+  "httpStatusCounts": {
+    "200": 220
+  },
+  "networkResponses": [
+    {
+      "elapsedMs": 45.34370800000033,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 45.570082999998704,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 69.97604200000205,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 116.09479200000351,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 170.04516700000386,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 286.4070419999989,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 387.26145800000086,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 487.2792079999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 497.2507079999996,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 525.0944170000002,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 595.1195420000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 688.9392500000031,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 788.9103749999995,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 890.7713330000042,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 928.4147500000036,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 972.3414170000033,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 991.9135830000014,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1005.0053750000006,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1090.1555000000008,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1191.6101249999992,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1311.0840420000022,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1408.4148330000025,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1507.233917000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1537.5312080000003,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1550.674917000004,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1608.923625000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1622.7033750000046,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1741.3835000000036,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 1831.9255000000048,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2103.7268750000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2123.3693330000024,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2147.3365420000046,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2180.6387079999986,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2249.219833000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2341.5952920000054,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2422.5301670000044,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2433.7259580000027,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2464.2060830000046,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2494.082875,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2531.3523330000025,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2631.181875000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2735.862958000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2858.147042000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 2950.920750000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3030.553958000004,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3043.291541999999,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3055.641875000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3125.9945000000007,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3156.608583000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3251.8869170000035,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3352.977500000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3472.3409580000007,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3491.1938750000045,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3532.9142920000013,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3570.006625000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3682.775708000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3780.010875,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3876.994958000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3942.0814170000012,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 3992.3233330000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4019.446667000004,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4035.1068330000053,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4092.567167000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4191.828042000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4385.116000000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4433.820667,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4507.596833000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4535.565875,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4547.9912079999995,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4638.034167000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4643.227875000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4731.857625000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4827.470916999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4955.614625000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 4988.104625,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5029.244833000004,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5057.190125000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5164.402000000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5272.0220000000045,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5376.362542000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5439.204083000004,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5468.562042000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5496.668458,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5509.128000000004,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5561.636792000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5657.212707999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5913.773792,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 5933.090208000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6030.447583000001,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6042.256542000003,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6055.535416999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6113.859499999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6155.6990829999995,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6253.769583000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6384.580291999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6479.427625000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6504.887500000004,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6526.6317500000005,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6569.465042000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6669.240666999998,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6777.726291999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6873.263417000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6934.843542000002,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6968.1388330000045,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 6998.931583000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7018.595500000003,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7041.309667000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7093.9545419999995,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7214.381417000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7305.491500000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7411.794833,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7507.628583000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7543.296667000002,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7558.877458000003,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7606.678958000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7619.622875000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7706.637999999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7808.379916999998,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7925.016208000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 7991.588457999998,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8026.5737080000035,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8043.5823329999985,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8209.661375000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8244.689167000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8354.633500000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8438.733208000005,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8465.278708000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8481.518000000004,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8503.436875,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8543.757333000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8646.582667000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8743.199207999998,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8851.636250000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 8958.155208000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9029.649792000004,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9047.206917000003,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9056.449542000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9111.114542000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9147.953500000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9247.2955,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9364.467083000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9465.799749999998,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9483.088333,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9524.66175,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9565.473375000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9687.586667000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9783.718458000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9885.411124999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9924.924875000004,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9966.004375000004,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 9995.412375,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10009.458083000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10121.105792000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10241.54625,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10336.097375000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10435.990292000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10538.516375,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10548.662541999998,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10560.471417,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10614.886917000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10654.577042000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10759.390625,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10853.689458,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10974.403875000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 10983.892375000003,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11035.388792000005,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11071.386292000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11222.843375000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11380.336667000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11461.575333,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11492.183083000004,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11518.589791999999,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11534.640833000005,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11571.127874999998,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11619.386458,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11711.217499999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11811.236541999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 11918.089791999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12010.588875000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12035.886750000005,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12051.239417000004,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12108.286375000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12125.201417000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12209.511542,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12331.006125,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12438.972500000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12492.387374999998,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12518.277875,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12542.788042,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12631.072958000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12747.570375000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12852.131125,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12924.038625000001,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12954.352958000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12963.698000000004,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 12995.379417000004,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13051.579417,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13188.992125000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13273.736958000001,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13369.378583000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13493.743042000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13555.961167000001,
+      "actor": 7,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13577.942208,
+      "actor": 4,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13613.783750000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13705.868125,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 13821.863582999998,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14111.250917000005,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14185.541750000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14256.331833000004,
+      "actor": 5,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14331.416667000005,
+      "actor": 2,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14477.613125000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14506.183333,
+      "actor": 3,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14535.496082999998,
+      "actor": 6,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14556.247708000003,
+      "actor": 0,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14581.581666999999,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14625.696167000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14742.867125000004,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14829.981500000002,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 14927.875,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    },
+    {
+      "elapsedMs": 15016.936542000003,
+      "actor": 1,
+      "pathname": "/staging/world",
+      "status": 200
+    }
+  ],
+  "raw": {
+    "start": 28660.80000001192,
+    "durationMs": 15000,
+    "timestamps": [
+      28668.3,
+      28684.9,
+      28701.6,
+      28718.2,
+      28735,
+      28751.6,
+      28768.3,
+      28785,
+      28801.6,
+      28818.3,
+      28835,
+      28851.6,
+      28868.2,
+      28884.9,
+      28901.6,
+      28918.3,
+      28935,
+      28951.6,
+      28968.2,
+      28984.9,
+      29001.6,
+      29018.2,
+      29034.9,
+      29051.5,
+      29068.3,
+      29084.9,
+      29101.5,
+      29118.2,
+      29134.9,
+      29151.5,
+      29168.3,
+      29184.9,
+      29201.6,
+      29218.2,
+      29234.9,
+      29251.5,
+      29268.2,
+      29284.9,
+      29301.5,
+      29318.2,
+      29334.9,
+      29351.6,
+      29368.2,
+      29384.9,
+      29401.5,
+      29418.2,
+      29434.9,
+      29451.6,
+      29468.3,
+      29484.9,
+      29501.5,
+      29518.2,
+      29534.9,
+      29551.6,
+      29568.2,
+      29584.9,
+      29601.6,
+      29618.2,
+      29634.8,
+      29651.6,
+      29668.2,
+      29684.9,
+      29701.5,
+      29718.2,
+      29734.9,
+      29751.5,
+      29768.2,
+      29784.9,
+      29801.5,
+      29818.2,
+      29834.9,
+      29851.6,
+      29868.2,
+      29884.8,
+      29901.6,
+      29918.2,
+      29934.9,
+      29951.6,
+      29968.2,
+      29984.9,
+      30001.6,
+      30018.2,
+      30034.9,
+      30051.5,
+      30068.2,
+      30084.9,
+      30101.6,
+      30118.2,
+      30134.9,
+      30151.6,
+      30168.2,
+      30184.8,
+      30201.6,
+      30218.2,
+      30234.8,
+      30251.5,
+      30268.2,
+      30284.9,
+      30301.6,
+      30318.2,
+      30334.8,
+      30351.5,
+      30368.2,
+      30384.8,
+      30401.5,
+      30418.2,
+      30434.8,
+      30451.6,
+      30468.2,
+      30484.9,
+      30501.5,
+      30518.2,
+      30534.9,
+      30551.5,
+      30568.1,
+      30584.9,
+      30601.5,
+      30618.2,
+      30634.9,
+      30651.5,
+      30668.2,
+      30684.9,
+      30701.5,
+      30718.2,
+      30734.8,
+      30751.5,
+      30768.2,
+      30784.8,
+      30801.5,
+      30818.1,
+      30834.8,
+      30851.5,
+      30868.1,
+      30884.9,
+      30901.5,
+      30918.2,
+      30934.8,
+      30951.5,
+      30968.1,
+      30984.8,
+      31001.5,
+      31018.1,
+      31034.8,
+      31051.5,
+      31068.2,
+      31084.8,
+      31101.5,
+      31118.2,
+      31134.8,
+      31151.5,
+      31168.1,
+      31184.8,
+      31201.5,
+      31218.1,
+      31234.8,
+      31251.5,
+      31268.2,
+      31284.8,
+      31301.5,
+      31318.2,
+      31334.9,
+      31351.5,
+      31368.2,
+      31384.8,
+      31401.4,
+      31418.2,
+      31434.8,
+      31451.5,
+      31468.2,
+      31484.8,
+      31501.5,
+      31518.1,
+      31534.8,
+      31551.5,
+      31568.1,
+      31584.8,
+      31601.5,
+      31618.2,
+      31634.8,
+      31651.5,
+      31668.2,
+      31684.8,
+      31701.5,
+      31718.1,
+      31734.8,
+      31751.5,
+      31768.1,
+      31784.8,
+      31801.4,
+      31818.2,
+      31834.8,
+      31851.5,
+      31868.2,
+      31884.8,
+      31901.4,
+      31918.2,
+      31934.8,
+      31951.5,
+      31968.2,
+      31984.8,
+      32001.5,
+      32018.1,
+      32034.8,
+      32051.4,
+      32068.1,
+      32084.8,
+      32101.5,
+      32118.1,
+      32134.7,
+      32151.5,
+      32168.1,
+      32184.8,
+      32201.4,
+      32218.1,
+      32234.8,
+      32251.4,
+      32268.1,
+      32284.8,
+      32301.4,
+      32318.1,
+      32334.8,
+      32351.5,
+      32368.1,
+      32384.8,
+      32401.4,
+      32418.1,
+      32434.8,
+      32451.5,
+      32468.1,
+      32484.8,
+      32501.4,
+      32518.1,
+      32534.8,
+      32551.4,
+      32568.2,
+      32584.8,
+      32601.4,
+      32618.1,
+      32634.8,
+      32651.4,
+      32668.1,
+      32684.8,
+      32701.4,
+      32718.1,
+      32734.7,
+      32751.4,
+      32768.1,
+      32784.8,
+      32801.4,
+      32818.1,
+      32834.8,
+      32851.4,
+      32868.1,
+      32884.8,
+      32901.5,
+      32918.1,
+      32934.7,
+      32951.4,
+      32968,
+      32984.8,
+      33001.4,
+      33018.1,
+      33034.7,
+      33051.4,
+      33068.1,
+      33084.7,
+      33101.5,
+      33118.1,
+      33134.8,
+      33151.4,
+      33168.1,
+      33184.7,
+      33201.4,
+      33218.1,
+      33234.7,
+      33251.5,
+      33268.1,
+      33284.7,
+      33301.4,
+      33318.1,
+      33334.7,
+      33351.4,
+      33368.1,
+      33384.7,
+      33401.4,
+      33418.1,
+      33434.7,
+      33451.4,
+      33468,
+      33484.8,
+      33501.4,
+      33518,
+      33534.8,
+      33551.4,
+      33568.1,
+      33584.7,
+      33601.4,
+      33618.1,
+      33634.7,
+      33651.4,
+      33668.1,
+      33684.7,
+      33701.4,
+      33718.1,
+      33734.7,
+      33751.4,
+      33768,
+      33784.7,
+      33801.4,
+      33818,
+      33834.7,
+      33851.4,
+      33868,
+      33884.7,
+      33901.4,
+      33918,
+      33934.8,
+      33951.4,
+      33968,
+      33984.7,
+      34001.4,
+      34018,
+      34034.7,
+      34051.4,
+      34068,
+      34084.7,
+      34101.4,
+      34118.1,
+      34134.7,
+      34151.4,
+      34168.1,
+      34184.7,
+      34201.3,
+      34218,
+      34234.7,
+      34251.4,
+      34268.1,
+      34284.7,
+      34301.4,
+      34318,
+      34334.7,
+      34351.3,
+      34368,
+      34384.7,
+      34401.4,
+      34418,
+      34434.7,
+      34451.3,
+      34468,
+      34484.7,
+      34501.3,
+      34518,
+      34534.7,
+      34551.3,
+      34568,
+      34584.7,
+      34601.3,
+      34618,
+      34634.6,
+      34651.3,
+      34668,
+      34684.7,
+      34701.3,
+      34718,
+      34734.7,
+      34751.4,
+      34768,
+      34784.7,
+      34801.4,
+      34818.1,
+      34834.6,
+      34851.4,
+      34868,
+      34884.7,
+      34901.4,
+      34918,
+      34934.7,
+      34951.3,
+      34968,
+      34984.6,
+      35001.4,
+      35018,
+      35034.6,
+      35051.3,
+      35068,
+      35084.7,
+      35101.3,
+      35118,
+      35134.7,
+      35151.4,
+      35168,
+      35184.7,
+      35201.3,
+      35217.9,
+      35234.6,
+      35251.4,
+      35268,
+      35284.6,
+      35301.3,
+      35318,
+      35334.7,
+      35351.3,
+      35368,
+      35384.7,
+      35401.3,
+      35418,
+      35434.7,
+      35451.4,
+      35468,
+      35484.6,
+      35501.3,
+      35518,
+      35534.7,
+      35551.3,
+      35567.9,
+      35584.7,
+      35601.3,
+      35618,
+      35634.7,
+      35651.3,
+      35668,
+      35684.7,
+      35701.3,
+      35718,
+      35734.6,
+      35751.3,
+      35767.9,
+      35784.7,
+      35801.3,
+      35818,
+      35834.6,
+      35851.3,
+      35867.9,
+      35884.6,
+      35901.3,
+      35918,
+      35934.6,
+      35951.3,
+      35968,
+      35984.6,
+      36001.3,
+      36018,
+      36034.6,
+      36051.3,
+      36068,
+      36084.7,
+      36101.3,
+      36118,
+      36134.7,
+      36151.3,
+      36167.9,
+      36184.7,
+      36201.3,
+      36218,
+      36234.6,
+      36251.3,
+      36268,
+      36284.6,
+      36301.3,
+      36318,
+      36334.6,
+      36351.3,
+      36368,
+      36384.6,
+      36401.3,
+      36418,
+      36434.6,
+      36451.3,
+      36467.9,
+      36484.6,
+      36501.3,
+      36517.9,
+      36534.6,
+      36551.2,
+      36567.9,
+      36584.6,
+      36601.3,
+      36618,
+      36634.6,
+      36651.3,
+      36668,
+      36684.6,
+      36701.3,
+      36718,
+      36734.6,
+      36751.3,
+      36767.9,
+      36784.6,
+      36801.2,
+      36817.9,
+      36834.6,
+      36851.3,
+      36867.9,
+      36884.6,
+      36901.2,
+      36918,
+      36934.6,
+      36951.3,
+      36967.9,
+      36984.6,
+      37001.3,
+      37017.9,
+      37034.6,
+      37051.3,
+      37067.9,
+      37084.6,
+      37101.3,
+      37117.9,
+      37134.6,
+      37151.3,
+      37167.9,
+      37184.6,
+      37201.2,
+      37217.9,
+      37234.6,
+      37251.2,
+      37268,
+      37284.6,
+      37301.2,
+      37317.9,
+      37334.6,
+      37351.3,
+      37368,
+      37384.6,
+      37401.2,
+      37417.9,
+      37434.6,
+      37451.2,
+      37467.9,
+      37484.6,
+      37501.2,
+      37517.9,
+      37534.5,
+      37551.2,
+      37567.9,
+      37584.6,
+      37601.2,
+      37617.9,
+      37634.6,
+      37651.2,
+      37667.9,
+      37684.6,
+      37701.3,
+      37717.9,
+      37734.5,
+      37751.2,
+      37767.9,
+      37784.5,
+      37801.2,
+      37817.8,
+      37834.5,
+      37851.3,
+      37867.9,
+      37884.6,
+      37901.2,
+      37917.9,
+      37934.6,
+      37951.2,
+      37967.9,
+      37984.6,
+      38001.2,
+      38017.9,
+      38034.6,
+      38051.3,
+      38067.9,
+      38084.6,
+      38101.2,
+      38117.9,
+      38134.5,
+      38151.2,
+      38167.9,
+      38184.5,
+      38201.2,
+      38217.9,
+      38234.5,
+      38251.2,
+      38267.8,
+      38284.6,
+      38301.3,
+      38317.8,
+      38334.6,
+      38351.2,
+      38367.8,
+      38384.6,
+      38401.2,
+      38417.8,
+      38434.6,
+      38451.2,
+      38467.9,
+      38484.6,
+      38501.2,
+      38517.8,
+      38534.6,
+      38551.2,
+      38567.9,
+      38584.5,
+      38601.2,
+      38617.8,
+      38634.6,
+      38651.2,
+      38667.9,
+      38684.5,
+      38701.1,
+      38717.9,
+      38734.5,
+      38751.2,
+      38767.8,
+      38784.5,
+      38801.2,
+      38817.8,
+      38834.5,
+      38851.2,
+      38867.8,
+      38884.5,
+      38901.2,
+      38917.9,
+      38934.5,
+      38951.1,
+      38967.8,
+      38984.5,
+      39001.2,
+      39017.8,
+      39034.5,
+      39051.1,
+      39067.9,
+      39084.5,
+      39101.2,
+      39117.8,
+      39134.6,
+      39151.2,
+      39167.8,
+      39184.5,
+      39201.2,
+      39217.9,
+      39234.5,
+      39251.1,
+      39267.8,
+      39284.5,
+      39301.1,
+      39317.8,
+      39334.5,
+      39351.1,
+      39367.9,
+      39384.5,
+      39401.1,
+      39417.9,
+      39434.5,
+      39451.2,
+      39467.8,
+      39484.5,
+      39501.2,
+      39517.8,
+      39534.5,
+      39551.1,
+      39567.8,
+      39584.5,
+      39601.1,
+      39617.8,
+      39634.5,
+      39651.2,
+      39667.9,
+      39684.5,
+      39701.1,
+      39717.8,
+      39734.5,
+      39751.1,
+      39767.8,
+      39784.5,
+      39801.2,
+      39817.8,
+      39834.5,
+      39851.1,
+      39867.8,
+      39884.5,
+      39901.2,
+      39917.8,
+      39934.5,
+      39951.1,
+      39967.8,
+      39984.4,
+      40001.1,
+      40017.8,
+      40034.5,
+      40051.2,
+      40067.8,
+      40084.5,
+      40101.1,
+      40117.8,
+      40134.4,
+      40151.1,
+      40167.8,
+      40184.5,
+      40201.1,
+      40217.8,
+      40234.4,
+      40251.1,
+      40267.8,
+      40284.5,
+      40301.1,
+      40317.8,
+      40334.5,
+      40351.1,
+      40367.8,
+      40384.5,
+      40401.1,
+      40417.8,
+      40434.4,
+      40451.1,
+      40467.7,
+      40484.4,
+      40501.1,
+      40517.8,
+      40534.5,
+      40551.1,
+      40567.8,
+      40584.4,
+      40601.1,
+      40617.8,
+      40634.4,
+      40651.1,
+      40667.8,
+      40684.4,
+      40701.1,
+      40717.7,
+      40734.5,
+      40751.1,
+      40767.8,
+      40784.4,
+      40801.1,
+      40817.8,
+      40834.4,
+      40851.1,
+      40867.7,
+      40884.4,
+      40901.2,
+      40917.8,
+      40934.4,
+      40951.1,
+      40967.8,
+      40984.4,
+      41001.1,
+      41017.8,
+      41034.4,
+      41051.1,
+      41067.8,
+      41084.4,
+      41101.1,
+      41117.8,
+      41134.4,
+      41151,
+      41167.8,
+      41184.5,
+      41201.1,
+      41217.7,
+      41234.5,
+      41251.1,
+      41267.7,
+      41284.4,
+      41301.1,
+      41317.7,
+      41334.4,
+      41351.1,
+      41367.7,
+      41384.5,
+      41401.1,
+      41417.7,
+      41434.4,
+      41451.1,
+      41467.7,
+      41484.4,
+      41501.1,
+      41517.7,
+      41534.4,
+      41551.1,
+      41567.8,
+      41584.5,
+      41601,
+      41617.8,
+      41634.4,
+      41651.1,
+      41667.7,
+      41684.4,
+      41701.1,
+      41717.7,
+      41734.4,
+      41751,
+      41767.7,
+      41784.4,
+      41801,
+      41817.7,
+      41834.4,
+      41851.1,
+      41867.7,
+      41884.4,
+      41901,
+      41917.7,
+      41934.4,
+      41951,
+      41967.8,
+      41984.4,
+      42001.1,
+      42017.7,
+      42034.4,
+      42051,
+      42067.7,
+      42084.4,
+      42101.1,
+      42117.8,
+      42134.4,
+      42151,
+      42167.7,
+      42184.4,
+      42201.1,
+      42217.8,
+      42234.4,
+      42251.1,
+      42267.7,
+      42284.3,
+      42301,
+      42317.7,
+      42334.4,
+      42351,
+      42367.7,
+      42384.3,
+      42401,
+      42417.7,
+      42434.4,
+      42451.1,
+      42467.7,
+      42484.3,
+      42501,
+      42517.7,
+      42534.3,
+      42551.1,
+      42567.7,
+      42584.4,
+      42601,
+      42617.7,
+      42634.3,
+      42651,
+      42667.7,
+      42684.4,
+      42701,
+      42717.7,
+      42734.4,
+      42751,
+      42767.7,
+      42784.3,
+      42801,
+      42817.7,
+      42834.4,
+      42851.1,
+      42867.7,
+      42884.3,
+      42901,
+      42917.7,
+      42934.4,
+      42951,
+      42967.7,
+      42984.3,
+      43001,
+      43017.7,
+      43034.3,
+      43051,
+      43067.6,
+      43084.4,
+      43101,
+      43117.7,
+      43134.3,
+      43151,
+      43167.6,
+      43184.3,
+      43201,
+      43217.6,
+      43234.3,
+      43251,
+      43267.7,
+      43284.3,
+      43301,
+      43317.7,
+      43334.3,
+      43351,
+      43367.7,
+      43384.3,
+      43401,
+      43417.6,
+      43434.4,
+      43451,
+      43467.6,
+      43484.3,
+      43501,
+      43517.6,
+      43534.3,
+      43551,
+      43567.6,
+      43584.3,
+      43601,
+      43617.6,
+      43634.3,
+      43651,
+      43667.7
+    ],
+    "stateSamples": [
+      {
+        "now": 28668.3,
+        "revision": 167,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 0.8,
+          "y": -0.013652237055953717,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 14,
+          "revision": 3,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 1,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 3,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 1706,
+          "drawCalls": 20,
+          "triangles": 6254,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 7915160,
+          "totalJSHeapSize": 19180060
+        }
+      },
+      {
+        "now": 29684.9,
+        "revision": 177,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 1.6,
+          "y": -0.026414636768322133,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 14,
+          "revision": 13,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 1,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 3,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 1767,
+          "drawCalls": 20,
+          "triangles": 6254,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 12583774,
+          "totalJSHeapSize": 20341066
+        }
+      },
+      {
+        "now": 30684.9,
+        "revision": 185,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 1.6,
+          "y": -0.026414636768322133,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 14,
+          "revision": 21,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 1,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 3,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 1827,
+          "drawCalls": 20,
+          "triangles": 6254,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 8212805,
+          "totalJSHeapSize": 22448621
+        }
+      },
+      {
+        "now": 31701.5,
+        "revision": 196,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 2.8,
+          "y": -0.04209948154936149,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 14,
+          "revision": 32,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 1,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 3,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 1888,
+          "drawCalls": 20,
+          "triangles": 6254,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 8373872,
+          "totalJSHeapSize": 22720780
+        }
+      },
+      {
+        "now": 32718.1,
+        "revision": 206,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 3.5999999999999996,
+          "y": -0.04925655859153039,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 14,
+          "revision": 42,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 1,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 3,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 1949,
+          "drawCalls": 20,
+          "triangles": 6254,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 9975549,
+          "totalJSHeapSize": 22607441
+        }
+      },
+      {
+        "now": 33718.1,
+        "revision": 215,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 3.9999999999999996,
+          "y": -0.05165241293117749,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 14,
+          "revision": 51,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 1,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 3,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2009,
+          "drawCalls": 20,
+          "triangles": 6254,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 13158603,
+          "totalJSHeapSize": 22744683
+        }
+      },
+      {
+        "now": 34734.7,
+        "revision": 224,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 2.8,
+          "y": -0.04209948154936149,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 14,
+          "revision": 60,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 1,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 3,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2070,
+          "drawCalls": 20,
+          "triangles": 6254,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 13582662,
+          "totalJSHeapSize": 22625530
+        }
+      },
+      {
+        "now": 35751.3,
+        "revision": 235,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 2,
+          "y": -0.03219840799770735,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 71,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2131,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 8416633,
+          "totalJSHeapSize": 22915893
+        }
+      },
+      {
+        "now": 36751.3,
+        "revision": 244,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 1.6,
+          "y": -0.026414636768322133,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 80,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2191,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 13394705,
+          "totalJSHeapSize": 23511133
+        }
+      },
+      {
+        "now": 37767.9,
+        "revision": 255,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 0.40000000000000013,
+          "y": -0.006882422395679117,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 91,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2252,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 8945517,
+          "totalJSHeapSize": 24636893
+        }
+      },
+      {
+        "now": 38784.5,
+        "revision": 264,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 1.1102230246251565e-16,
+          "y": -1.915482212457794e-18,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 100,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2313,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 12687320,
+          "totalJSHeapSize": 23993816
+        }
+      },
+      {
+        "now": 39784.5,
+        "revision": 273,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 0.40000000000000013,
+          "y": -0.006882422395679117,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 109,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2373,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 12715047,
+          "totalJSHeapSize": 24013859
+        }
+      },
+      {
+        "now": 40801.1,
+        "revision": 283,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 0.40000000000000013,
+          "y": -0.006882422395679117,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 119,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2434,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 8641641,
+          "totalJSHeapSize": 24439685
+        }
+      },
+      {
+        "now": 41817.7,
+        "revision": 293,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": 0.40000000000000013,
+          "y": -0.006882422395679117,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 129,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2495,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 11969994,
+          "totalJSHeapSize": 24817974
+        }
+      },
+      {
+        "now": 42817.7,
+        "revision": 299,
+        "player": {
+          "id": "[\"player\",\"bench-1\"]",
+          "playerId": "bench-1",
+          "x": -0.3999999999999999,
+          "y": 0.006882422395679113,
+          "z": -6.25,
+          "radius": 0.4,
+          "rotation": 0,
+          "rank": "ensign",
+          "xp": 28,
+          "revision": 135,
+          "inventory": {
+            "schema": "zge.private-inventory.v1",
+            "items": {},
+            "equipment": {},
+            "metadata": {}
+          },
+          "personalMission": {
+            "id": "construction-types",
+            "successfulPlacements": 2,
+            "completedTypes": [
+              "shelter"
+            ]
+          },
+          "achievementIds": [
+            "build-shelter"
+          ],
+          "rewardIds": []
+        },
+        "buildings": 4,
+        "renderer": {
+          "id": "source-world-webgl",
+          "initialized": true,
+          "backend": "webgl2",
+          "available": true,
+          "presented": 2555,
+          "drawCalls": 22,
+          "triangles": 6274,
+          "geometries": 16,
+          "textures": 1,
+          "canvas": {
+            "width": 982,
+            "height": 520
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "heap": {
+          "usedJSHeapSize": 7759895,
+          "totalJSHeapSize": 24669719
+        }
+      }
+    ],
+    "renderer": {
+      "native": {
+        "id": "source-world-webgl",
+        "initialized": true,
+        "backend": "webgl2",
+        "available": true,
+        "presented": 1705,
+        "drawCalls": 20,
+        "triangles": 6254,
+        "geometries": 16,
+        "textures": 1,
+        "canvas": {
+          "width": 982,
+          "height": 520
+        },
+        "sharedInstance": true,
+        "ownsContext": false
+      },
+      "reference": {
+        "id": "reference-capture",
+        "available": true,
+        "width": 640,
+        "height": 360,
+        "captures": 0,
+        "nextFrameIndex": 0,
+        "lastCaptureMs": 0,
+        "overlaysHiddenLast": 0,
+        "sessionId": "capture-4a2ce6b6-be69-4853-bf3c-39731b6b4f4a",
+        "sceneId": "valley",
+        "profile": "native",
+        "rerender": "always",
+        "readback": "eager",
+        "stages": {
+          "stages": {
+            "render": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "bitmap": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "readback": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "total": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "rerenders": 0,
+          "skippedRerenders": 0,
+          "blankFrames": 0,
+          "profile": "native",
+          "rerenderPolicy": "always",
+          "readbackPolicy": "eager"
+        }
+      },
+      "presentation": {
+        "mode": "NATIVE",
+        "label": "NATIVE",
+        "fallbackReason": null,
+        "mock": null,
+        "allowMock": false,
+        "history": []
+      },
+      "structures": 3,
+      "avatars": 8
+    },
+    "viewport": {
+      "width": 1380,
+      "height": 1050,
+      "dpr": 1
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "completed": true,
+    "ended": 43667.7,
+    "rendererEnd": {
+      "native": {
+        "id": "source-world-webgl",
+        "initialized": true,
+        "backend": "webgl2",
+        "available": true,
+        "presented": 2606,
+        "drawCalls": 22,
+        "triangles": 6274,
+        "geometries": 16,
+        "textures": 1,
+        "canvas": {
+          "width": 982,
+          "height": 520
+        },
+        "sharedInstance": true,
+        "ownsContext": false
+      },
+      "reference": {
+        "id": "reference-capture",
+        "available": true,
+        "width": 640,
+        "height": 360,
+        "captures": 0,
+        "nextFrameIndex": 0,
+        "lastCaptureMs": 0,
+        "overlaysHiddenLast": 0,
+        "sessionId": "capture-4a2ce6b6-be69-4853-bf3c-39731b6b4f4a",
+        "sceneId": "valley",
+        "profile": "native",
+        "rerender": "always",
+        "readback": "eager",
+        "stages": {
+          "stages": {
+            "render": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "bitmap": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "readback": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "total": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "rerenders": 0,
+          "skippedRerenders": 0,
+          "blankFrames": 0,
+          "profile": "native",
+          "rerenderPolicy": "always",
+          "readbackPolicy": "eager"
+        }
+      },
+      "presentation": {
+        "mode": "NATIVE",
+        "label": "NATIVE",
+        "fallbackReason": null,
+        "mock": null,
+        "allowMock": false,
+        "history": []
+      },
+      "structures": 4,
+      "avatars": 8
+    }
+  }
+}

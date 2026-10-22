@@ -1,0 +1,63 @@
+  PASS contract identity
+  PASS registry identity
+  PASS engine identity
+  PASS mode is shadow-only
+  PASS authority is none
+  PASS feature count is 592
+  PASS action count is six
+  PASS context is deterministic
+  PASS context carries explicit simulations
+  PASS context carries explicit upstream source
+  PASS simulation budget below minimum rejected
+  PASS fractional seed rejected
+  PASS recommendation ID is canonical
+  PASS recommendation validates byte-identically
+  PASS recommendation addresses observation
+  PASS recommendation addresses legality
+  PASS recommendation addresses target view
+  PASS recommendation carries 592-feature hash
+  PASS rank contains exactly six actions
+  PASS rank contains every canonical action index
+  PASS visits sum to simulation budget
+  PASS legal priors sum to one million
+  PASS masked actions receive zero visits
+  PASS selected action is legal
+  PASS selected target is canonical when required
+  PASS confidence equals selected visit share
+  PASS recommendation has no wall clock
+  PASS recommendation has no perception event IDs
+  PASS recommendation has no execution field
+  PASS repeated recommendation bytes are identical
+  PASS repeated recommendation IDs are identical
+  PASS same seed and inputs preserve ranking
+  PASS FX-SHADOW-HIDDEN hidden other-faction state leaves observation identical
+  PASS FX-SHADOW-HIDDEN hidden other-faction state leaves recommendation identical
+  PASS FX-SHADOW-HIDDEN hidden other-faction state leaves ranking identical
+  PASS FX-SHADOW-MASK blocked intercept receives zero visits
+  PASS FX-SHADOW-MASK blocked intercept cannot be selected
+  PASS FX-SHADOW-MASK recommendation binds changed final mask
+  PASS FX-SHADOW-STALE expired contact is illegal
+  PASS FX-SHADOW-STALE expired contact receives zero visits
+  PASS FX-SHADOW-STALE expired contact cannot be selected
+  PASS terminal shadow recommendation selects no action
+  PASS terminal shadow recommendation selects no target
+  PASS terminal shadow recommendation has zero confidence
+  PASS terminal shadow recommendation records zero visits
+  PASS incumbent unavailable comparison is canonical
+  PASS incumbent unavailable comparison says unavailable
+  PASS incumbent unavailable comparison validates
+  PASS matching incumbent agrees
+  PASS different incumbent disagrees
+  PASS unknown incumbent action rejected
+  PASS shadow ledger starts sequence at one
+  PASS shadow ledger entry ID is canonical
+  PASS shadow ledger sequence is monotonic
+  PASS shadow ledger snapshot round-trips byte-identically
+  PASS shadow ledger hash round-trips
+  PASS FX-SHADOW-ALIAS snapshot mutation cannot alter ledger
+  PASS shadow ledger sequence tamper rejected
+  PASS shadow ledger entry ID tamper rejected
+  PASS recommendation ID tamper rejected
+  PASS ranked visits tamper rejected
+  PASS wrong target view rejected
+W0-O.6 PRIME SHADOW CONTRACT TESTS PASS (62/62)

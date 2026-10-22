@@ -1,0 +1,25 @@
+  PASS integration installed globally
+  PASS stream starts empty
+  PASS adapter installed
+  PASS enemy has identity before perception
+  PASS out-of-range enemy produces no event
+  PASS out-of-range check does not enumerate hidden enemy into stream
+  PASS in-range enemy produces grounded sighting
+  PASS position is quantized to integer cells
+  PASS observer is local human faction
+  PASS source is local player entity
+  PASS enemy lost event appended
+  PASS resource discovery uses registered resource identity
+  PASS explicit intelligence sharing creates recipient event
+  PASS shared event preserves original sighting
+  PASS adapter snapshot equals integration snapshot
+  PASS adapter hash equals stream hash
+  PASS repeated capture is deterministic
+  PASS faction query contains only addressed events
+  PASS event stream survives restore
+  PASS next event sequence survives restore
+  PASS restored hash is byte-identical
+  PASS new identity can be observed after integration refresh
+  PASS new event ID is not reused
+  PASS dispose clears global integration
+W0-O.1 PERCEPTION EVENT INTEGRATION TESTS PASS (24/24)

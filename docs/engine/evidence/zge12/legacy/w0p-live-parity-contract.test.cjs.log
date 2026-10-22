@@ -1,0 +1,71 @@
+  PASS contract identity
+  PASS registry identity
+  PASS parity space identity
+  PASS mode measurement only
+  PASS authority none
+  PASS thirteen bindings
+  PASS binding indexes canonical
+  PASS binding keys match W0-AF
+  PASS binding ids canonical
+  PASS five partial declarations
+  PASS eight unbound declarations
+  PASS zero exact declarations
+  PASS unbound entries claim no handler
+  PASS runtime surface validates
+  PASS report id canonical
+  PASS report validates
+  PASS report includes every action
+  PASS exact observed count zero
+  PASS partial observed count five
+  PASS unbound count eight
+  PASS source missing count zero
+  PASS production ready false
+  PASS mutating probe count zero
+  PASS hold partial observed
+  PASS patrol unbound
+  PASS intercept partial observed
+  PASS share partial observed
+  PASS channel partial observed
+  PASS withdraw partial observed
+  PASS share target parity exact
+  PASS share eligibility parity exact
+  PASS no report execution field
+  PASS hidden faction observation unchanged
+  PASS hidden faction report unchanged
+  PASS missing share surface detected
+  PASS missing count increments
+  PASS partial count decrements
+  PASS report deterministic bytes
+  PASS report deterministic id
+  PASS tampered report rejected
+  PASS fractional quantum rejected
+  PASS malformed candidate id rejected
+  PASS registry matches contract
+  PASS registry verdict exact zero
+  PASS registry verdict partial five
+  PASS registry verdict unbound eight
+  PASS registry bindings equal contract
+  PASS frozen source evidence hash assets/index-02987539.js
+  PASS current source anchor processEnemySpawning(
+  PASS current source anchor spawnEnemy(
+  PASS current source anchor updateEnemies(
+  PASS current source anchor fireEnemyProjectile(
+  PASS frozen source evidence hash src/game/PerceptionEventIntegration.js
+  PASS current source anchor shareEvent({
+  PASS current source anchor this.stream.share({
+  PASS current source anchor originalEventId
+  PASS frozen source evidence hash src/game/RelationsPanel.js
+  PASS current source anchor perform(action)
+  PASS current source anchor recordDelta({ tension, trust, reason })
+  PASS current source anchor beginCeasefire()
+  PASS current source anchor updateCeasefire()
+  PASS frozen source evidence hash src/game/ForestDefensiveActionIntegration.js
+  PASS current source anchor captureForFaction(
+  PASS current source anchor projectForFaction(
+  PASS integration never calls spawnEnemy
+  PASS integration never calls resolveDiplomacy
+  PASS integration never calls relations perform
+  PASS contract exposes no execute
+  PASS contract exposes no dispatch
+  PASS contract exposes no apply
+W0-P LIVE PARITY CONTRACT TESTS PASS (70/70)

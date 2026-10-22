@@ -1,0 +1,3478 @@
+{
+  "movement": {
+    "id": "player",
+    "x": 1.2000000000000002,
+    "y": 0.0047700773990181945,
+    "z": -5,
+    "radius": 0.4,
+    "xp": 0
+  },
+  "before": {
+    "world": {
+      "schema": "zge.world-state.v1",
+      "id": "valley",
+      "revision": 6,
+      "authority": {
+        "domain": "construction-world",
+        "owner": "php-staging-server",
+        "epoch": 0
+      },
+      "entities": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "components": {
+            "transform": {
+              "x": 2,
+              "y": 0.08871960002725558,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "components": {
+            "transform": {
+              "x": 6,
+              "y": 0.13959411746781122,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "components": {
+            "transform": {
+              "x": -5,
+              "y": -0.012727267117210684,
+              "z": -5,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "player",
+          "components": {
+            "transform": {
+              "x": 1.2000000000000002,
+              "y": 0.0047700773990181945,
+              "z": -5,
+              "rotation": 0
+            },
+            "player": {
+              "id": "player",
+              "x": 1.2000000000000002,
+              "y": 0.0047700773990181945,
+              "z": -5,
+              "radius": 0.4,
+              "xp": 25
+            },
+            "mission": {
+              "status": "complete",
+              "commands": [
+                {
+                  "id": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+                  "fingerprint": "{\"id\":\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",\"facts\":{\"values\":{\"built\":2}}}"
+                },
+                {
+                  "id": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+                  "fingerprint": "{\"id\":\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",\"facts\":{\"values\":{\"built\":3}}}"
+                }
+              ],
+              "progress": [
+                {
+                  "id": "shelters",
+                  "value": 2,
+                  "target": 2,
+                  "complete": true
+                }
+              ]
+            },
+            "rewardIds": [
+              "first-colony"
+            ],
+            "selection": {
+              "type": "shelter"
+            }
+          }
+        }
+      ],
+      "buildings": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "inventory": {
+        "stone": 0
+      },
+      "inventoryRevision": 3,
+      "events": [
+        {
+          "type": "ConstructionRequested",
+          "action": "place",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",0]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 15,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 0
+        },
+        {
+          "type": "ConstructionCommitted",
+          "action": "place",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",1]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 16,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 1
+        },
+        {
+          "type": "ResourcesChanged",
+          "inventory": {
+            "stone": 4
+          },
+          "inventoryRevision": 2,
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",2]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 17,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 2
+        },
+        {
+          "type": "BuildingCreated",
+          "building": {
+            "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+            "type": "shelter",
+            "x": 6,
+            "y": 0.13959411746781122,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          },
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",3]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 18,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 3
+        },
+        {
+          "type": "MissionProgressChanged",
+          "detail": {
+            "type": "objective:progress",
+            "missionId": "first-colony",
+            "id": "shelters",
+            "value": 2,
+            "target": 2,
+            "complete": true
+          },
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",4]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 19,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 4
+        },
+        {
+          "type": "MissionProgressChanged",
+          "detail": {
+            "type": "mission:complete",
+            "missionId": "first-colony"
+          },
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",5]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 20,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 5
+        },
+        {
+          "type": "MissionProgressChanged",
+          "detail": {
+            "type": "mission:reward-eligible",
+            "missionId": "first-colony"
+          },
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",6]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 21,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 6
+        },
+        {
+          "type": "MissionRewardApplied",
+          "rewardId": "first-colony",
+          "xp": 25,
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",7]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 22,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 7
+        },
+        {
+          "type": "WorldRevisionCommitted",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",8]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "revision": 5,
+          "sequence": 23,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 8
+        },
+        {
+          "type": "ConstructionRequested",
+          "action": "place",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",0]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "revision": 6,
+          "sequence": 24,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 0
+        },
+        {
+          "type": "ConstructionCommitted",
+          "action": "place",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",1]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "revision": 6,
+          "sequence": 25,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 1
+        },
+        {
+          "type": "ResourcesChanged",
+          "inventory": {
+            "stone": 0
+          },
+          "inventoryRevision": 3,
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",2]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "revision": 6,
+          "sequence": 26,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 2
+        },
+        {
+          "type": "BuildingCreated",
+          "building": {
+            "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+            "type": "shelter",
+            "x": -5,
+            "y": -0.012727267117210684,
+            "z": -5,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          },
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",3]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "revision": 6,
+          "sequence": 27,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 3
+        },
+        {
+          "type": "WorldRevisionCommitted",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",4]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "revision": 6,
+          "sequence": 28,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 4
+        },
+        {
+          "type": "ConstructionRequested",
+          "action": "place",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",0]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+          "revision": 6,
+          "sequence": 29,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 0
+        },
+        {
+          "type": "ConstructionRejected",
+          "reason": "stale-world-revision",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",1]",
+          "worldId": "valley",
+          "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+          "revision": 6,
+          "sequence": 30,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 1
+        }
+      ],
+      "occupancy": [
+        {
+          "entityId": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "x": 2,
+          "z": 2,
+          "radius": 1
+        },
+        {
+          "entityId": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "x": 6,
+          "z": 2,
+          "radius": 1
+        },
+        {
+          "entityId": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "x": -5,
+          "z": -5,
+          "radius": 1
+        }
+      ]
+    },
+    "construction": {
+      "version": 2,
+      "revision": 3,
+      "inventoryRevision": 3,
+      "pending": [],
+      "inventory": {
+        "stone": 0
+      },
+      "buildings": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "ledger": [
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",\"id\":\"b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513\",\"rotation\":0,\"type\":\"shelter\",\"x\":6,\"z\":2}",
+          "commandId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "command": {
+            "action": "place",
+            "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+            "type": "shelter",
+            "x": 6,
+            "z": 2,
+            "rotation": 0,
+            "commandId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]"
+          },
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+              "type": "shelter",
+              "x": 6,
+              "y": 0.13959411746781122,
+              "z": 2,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          },
+          "before": {
+            "revision": 1,
+            "inventoryRevision": 1,
+            "inventory": {
+              "stone": 8
+            },
+            "buildings": [
+              {
+                "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+                "type": "shelter",
+                "x": 2,
+                "y": 0.08871960002725558,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "fingerprint": "{\"action\":\"place\",\"commandId\":\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",\"id\":\"b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a\",\"rotation\":0,\"type\":\"shelter\",\"x\":-5,\"z\":-5}",
+          "commandId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "command": {
+            "action": "place",
+            "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+            "type": "shelter",
+            "x": -5,
+            "z": -5,
+            "rotation": 0,
+            "commandId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]"
+          },
+          "result": {
+            "ok": true,
+            "cost": {
+              "stone": 4
+            },
+            "building": {
+              "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+              "type": "shelter",
+              "x": -5,
+              "y": -0.012727267117210684,
+              "z": -5,
+              "rotation": 0,
+              "level": 1,
+              "radius": 1,
+              "state": "complete"
+            }
+          },
+          "before": {
+            "revision": 2,
+            "inventoryRevision": 2,
+            "inventory": {
+              "stone": 4
+            },
+            "buildings": [
+              {
+                "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+                "type": "shelter",
+                "x": 2,
+                "y": 0.08871960002725558,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              },
+              {
+                "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+                "type": "shelter",
+                "x": 6,
+                "y": 0.13959411746781122,
+                "z": 2,
+                "rotation": 0,
+                "level": 1,
+                "radius": 1,
+                "state": "complete"
+              }
+            ],
+            "events": [
+              {
+                "type": "construction:placed",
+                "commandId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+                "building": {
+                  "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+                  "type": "shelter",
+                  "x": 6,
+                  "y": 0.13959411746781122,
+                  "z": 2,
+                  "rotation": 0,
+                  "level": 1,
+                  "radius": 1,
+                  "state": "complete"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "construction:placed",
+          "commandId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "building": {
+            "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+            "type": "shelter",
+            "x": 6,
+            "y": 0.13959411746781122,
+            "z": 2,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        },
+        {
+          "type": "construction:placed",
+          "commandId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "building": {
+            "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+            "type": "shelter",
+            "x": -5,
+            "y": -0.012727267117210684,
+            "z": -5,
+            "rotation": 0,
+            "level": 1,
+            "radius": 1,
+            "state": "complete"
+          }
+        }
+      ]
+    },
+    "player": {
+      "id": "player",
+      "x": 1.2000000000000002,
+      "y": 0.0047700773990181945,
+      "z": -5,
+      "radius": 0.4,
+      "xp": 25
+    },
+    "mission": {
+      "status": "complete",
+      "commands": [
+        {
+          "id": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+          "fingerprint": "{\"id\":\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",\"facts\":{\"values\":{\"built\":2}}}"
+        },
+        {
+          "id": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+          "fingerprint": "{\"id\":\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",\"facts\":{\"values\":{\"built\":3}}}"
+        }
+      ],
+      "progress": [
+        {
+          "id": "shelters",
+          "value": 2,
+          "target": 2,
+          "complete": true
+        }
+      ]
+    },
+    "rewardIds": [
+      "first-colony"
+    ],
+    "selectedType": "shelter",
+    "built": 3,
+    "events": [
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 0,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 0.4,
+          "y": 0.0016253383708510604,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 1,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 2,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 3,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 0.8,
+          "y": 0.003224083536187373,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 4,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 5,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 6,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 1.2000000000000002,
+          "y": 0.0047700773990181945,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 7,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 8,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 9,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 10,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 8
+        },
+        "inventoryRevision": 1,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 11,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 12,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "objective:progress",
+          "missionId": "first-colony",
+          "id": "shelters",
+          "value": 1,
+          "target": 2,
+          "complete": false
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 13,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",5]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 14,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 5
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 15,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 16,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 4
+        },
+        "inventoryRevision": 2,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 17,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 18,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "objective:progress",
+          "missionId": "first-colony",
+          "id": "shelters",
+          "value": 2,
+          "target": 2,
+          "complete": true
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 19,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "mission:complete",
+          "missionId": "first-colony"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",5]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 20,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 5
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "mission:reward-eligible",
+          "missionId": "first-colony"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",6]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 21,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 6
+      },
+      {
+        "type": "MissionRewardApplied",
+        "rewardId": "first-colony",
+        "xp": 25,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",7]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 22,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 7
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",8]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 23,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 8
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 24,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 25,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 0
+        },
+        "inventoryRevision": 3,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 26,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 27,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 28,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+        "revision": 6,
+        "sequence": 29,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionRejected",
+        "reason": "stale-world-revision",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+        "revision": 6,
+        "sequence": 30,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      }
+    ],
+    "failures": [],
+    "lastResult": {
+      "ok": true,
+      "cost": {
+        "stone": 4
+      },
+      "building": {
+        "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+        "type": "shelter",
+        "x": -5,
+        "y": -0.012727267117210684,
+        "z": -5,
+        "rotation": 0,
+        "level": 1,
+        "radius": 1,
+        "state": "complete"
+      },
+      "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+      "revision": 6,
+      "eventIds": [
+        "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",0]",
+        "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",1]",
+        "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",2]",
+        "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",3]",
+        "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",4]"
+      ]
+    },
+    "step": 9,
+    "connection": {
+      "connected": true,
+      "revision": 6,
+      "cursor": 31,
+      "downloadedCursor": 31,
+      "pending": 0
+    }
+  },
+  "lostAck": {
+    "error": "test-lost-ack",
+    "pending": 1
+  },
+  "after": {
+    "world": {
+      "schema": "zge.world-state.v1",
+      "id": "valley",
+      "revision": 7,
+      "authority": {
+        "domain": "construction-world",
+        "owner": "php-staging-server",
+        "epoch": 0
+      },
+      "entities": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "components": {
+            "transform": {
+              "x": 2,
+              "y": 0.08871960002725558,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "components": {
+            "transform": {
+              "x": 6,
+              "y": 0.13959411746781122,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "components": {
+            "transform": {
+              "x": -5,
+              "y": -0.012727267117210684,
+              "z": -5,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "player",
+          "components": {
+            "transform": {
+              "x": 1.3000000000000003,
+              "y": 0.005145344264292496,
+              "z": -5,
+              "rotation": 0
+            },
+            "player": {
+              "id": "player",
+              "x": 1.3000000000000003,
+              "y": 0.005145344264292496,
+              "z": -5,
+              "radius": 0.4,
+              "xp": 25
+            },
+            "mission": {
+              "status": "complete",
+              "commands": [],
+              "progress": [
+                {
+                  "id": "shelters",
+                  "value": 2,
+                  "target": 2,
+                  "complete": true
+                }
+              ]
+            },
+            "rewardIds": [
+              "first-colony"
+            ],
+            "selection": {
+              "type": "shelter"
+            }
+          }
+        }
+      ],
+      "buildings": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "inventory": {
+        "stone": 0
+      },
+      "inventoryRevision": 3,
+      "events": [
+        {
+          "type": "ConstructionRequested",
+          "action": "move",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",0]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+          "revision": 7,
+          "sequence": 33,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 0
+        },
+        {
+          "type": "PlayerMoved",
+          "player": {
+            "id": "player",
+            "x": 1.3000000000000003,
+            "y": 0.005145344264292496,
+            "z": -5,
+            "radius": 0.4,
+            "xp": 25
+          },
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",1]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+          "revision": 7,
+          "sequence": 34,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 1
+        },
+        {
+          "type": "WorldRevisionCommitted",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",2]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+          "revision": 7,
+          "sequence": 35,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 2
+        }
+      ],
+      "occupancy": [
+        {
+          "entityId": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "x": 2,
+          "z": 2,
+          "radius": 1
+        },
+        {
+          "entityId": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "x": 6,
+          "z": 2,
+          "radius": 1
+        },
+        {
+          "entityId": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "x": -5,
+          "z": -5,
+          "radius": 1
+        }
+      ]
+    },
+    "construction": {
+      "version": 2,
+      "revision": 3,
+      "inventoryRevision": 3,
+      "pending": [],
+      "inventory": {
+        "stone": 0
+      },
+      "buildings": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "ledger": [],
+      "events": []
+    },
+    "player": {
+      "id": "player",
+      "x": 1.3000000000000003,
+      "y": 0.005145344264292496,
+      "z": -5,
+      "radius": 0.4,
+      "xp": 25
+    },
+    "mission": {
+      "status": "complete",
+      "commands": [],
+      "progress": [
+        {
+          "id": "shelters",
+          "value": 2,
+          "target": 2,
+          "complete": true
+        }
+      ]
+    },
+    "rewardIds": [
+      "first-colony"
+    ],
+    "selectedType": "shelter",
+    "built": 3,
+    "events": [
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 0,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 0.4,
+          "y": 0.0016253383708510604,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 1,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 2,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 3,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 0.8,
+          "y": 0.003224083536187373,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 4,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 5,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 6,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 1.2000000000000002,
+          "y": 0.0047700773990181945,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 7,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 8,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 9,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 10,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 8
+        },
+        "inventoryRevision": 1,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 11,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 12,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "objective:progress",
+          "missionId": "first-colony",
+          "id": "shelters",
+          "value": 1,
+          "target": 2,
+          "complete": false
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 13,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",5]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 14,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 5
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 15,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 16,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 4
+        },
+        "inventoryRevision": 2,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 17,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 18,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "objective:progress",
+          "missionId": "first-colony",
+          "id": "shelters",
+          "value": 2,
+          "target": 2,
+          "complete": true
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 19,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "mission:complete",
+          "missionId": "first-colony"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",5]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 20,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 5
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "mission:reward-eligible",
+          "missionId": "first-colony"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",6]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 21,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 6
+      },
+      {
+        "type": "MissionRewardApplied",
+        "rewardId": "first-colony",
+        "xp": 25,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",7]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 22,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 7
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",8]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 23,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 8
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 24,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 25,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 0
+        },
+        "inventoryRevision": 3,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 26,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 27,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 28,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+        "revision": 6,
+        "sequence": 29,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionRejected",
+        "reason": "stale-world-revision",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+        "revision": 6,
+        "sequence": 30,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\"]",
+        "revision": 6,
+        "sequence": 31,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionRejected",
+        "reason": "terrain",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\"]",
+        "revision": 6,
+        "sequence": 32,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+        "revision": 7,
+        "sequence": 33,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 1.3000000000000003,
+          "y": 0.005145344264292496,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 25
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+        "revision": 7,
+        "sequence": 34,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+        "revision": 7,
+        "sequence": 35,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      }
+    ],
+    "failures": [],
+    "lastResult": null,
+    "step": 1,
+    "connection": {
+      "connected": true,
+      "revision": 7,
+      "cursor": 36,
+      "downloadedCursor": 36,
+      "pending": 0
+    }
+  },
+  "bob": {
+    "world": {
+      "schema": "zge.world-state.v1",
+      "id": "valley",
+      "revision": 7,
+      "authority": {
+        "domain": "construction-world",
+        "owner": "php-staging-server",
+        "epoch": 0
+      },
+      "entities": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "components": {
+            "transform": {
+              "x": 2,
+              "y": 0.08871960002725558,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "components": {
+            "transform": {
+              "x": 6,
+              "y": 0.13959411746781122,
+              "z": 2,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "components": {
+            "transform": {
+              "x": -5,
+              "y": -0.012727267117210684,
+              "z": -5,
+              "rotation": 0
+            },
+            "building": {
+              "type": "shelter"
+            }
+          }
+        },
+        {
+          "id": "player",
+          "components": {
+            "transform": {
+              "x": 1.3000000000000003,
+              "y": 0.005145344264292496,
+              "z": -5,
+              "rotation": 0
+            },
+            "player": {
+              "id": "player",
+              "x": 1.3000000000000003,
+              "y": 0.005145344264292496,
+              "z": -5,
+              "radius": 0.4,
+              "xp": 25
+            },
+            "mission": {
+              "status": "complete",
+              "commands": [],
+              "progress": [
+                {
+                  "id": "shelters",
+                  "value": 2,
+                  "target": 2,
+                  "complete": true
+                }
+              ]
+            },
+            "rewardIds": [
+              "first-colony"
+            ],
+            "selection": {
+              "type": "shelter"
+            }
+          }
+        }
+      ],
+      "buildings": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "inventory": {
+        "stone": 0
+      },
+      "inventoryRevision": 3,
+      "events": [
+        {
+          "type": "ConstructionRequested",
+          "action": "move",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",0]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+          "revision": 7,
+          "sequence": 33,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 0
+        },
+        {
+          "type": "PlayerMoved",
+          "player": {
+            "id": "player",
+            "x": 1.3000000000000003,
+            "y": 0.005145344264292496,
+            "z": -5,
+            "radius": 0.4,
+            "xp": 25
+          },
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",1]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+          "revision": 7,
+          "sequence": 34,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 1
+        },
+        {
+          "type": "WorldRevisionCommitted",
+          "schema": "zge.gameplay-event.v1",
+          "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",2]",
+          "worldId": "valley",
+          "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+          "revision": 7,
+          "sequence": 35,
+          "authority": {
+            "mode": "ENGINE",
+            "domain": "construction-world",
+            "owner": "php-staging-server",
+            "epoch": 0
+          },
+          "order": 2
+        }
+      ],
+      "occupancy": [
+        {
+          "entityId": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "x": 2,
+          "z": 2,
+          "radius": 1
+        },
+        {
+          "entityId": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "x": 6,
+          "z": 2,
+          "radius": 1
+        },
+        {
+          "entityId": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "x": -5,
+          "z": -5,
+          "radius": 1
+        }
+      ]
+    },
+    "construction": {
+      "version": 2,
+      "revision": 3,
+      "inventoryRevision": 3,
+      "pending": [],
+      "inventory": {
+        "stone": 0
+      },
+      "buildings": [
+        {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        }
+      ],
+      "ledger": [],
+      "events": []
+    },
+    "player": {
+      "id": "player",
+      "x": 1.3000000000000003,
+      "y": 0.005145344264292496,
+      "z": -5,
+      "radius": 0.4,
+      "xp": 25
+    },
+    "mission": {
+      "status": "complete",
+      "commands": [],
+      "progress": [
+        {
+          "id": "shelters",
+          "value": 2,
+          "target": 2,
+          "complete": true
+        }
+      ]
+    },
+    "rewardIds": [
+      "first-colony"
+    ],
+    "selectedType": "shelter",
+    "built": 3,
+    "events": [
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 0,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 0.4,
+          "y": 0.0016253383708510604,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 1,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"9d8eb4d1-0449-47fd-8792-8bb4e1de8c14\"]",
+        "revision": 1,
+        "sequence": 2,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 3,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 0.8,
+          "y": 0.003224083536187373,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 4,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"4f70d8ca-0815-41fa-888e-3f91275e86e5\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"4f70d8ca-0815-41fa-888e-3f91275e86e5\"]",
+        "revision": 2,
+        "sequence": 5,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 6,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 1.2000000000000002,
+          "y": 0.0047700773990181945,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 0
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 7,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"e917404a-f4a0-42ce-bc3d-f30f95be1a4c\"]",
+        "revision": 3,
+        "sequence": 8,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 9,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 10,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 8
+        },
+        "inventoryRevision": 1,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 11,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-30d27afb-d477-4be2-9233-884add0d95f3",
+          "type": "shelter",
+          "x": 2,
+          "y": 0.08871960002725558,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 12,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "objective:progress",
+          "missionId": "first-colony",
+          "id": "shelters",
+          "value": 1,
+          "target": 2,
+          "complete": false
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 13,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\\\"]\",5]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"0c754833-afab-4f1e-9fab-e52b1ad70bc4\"]",
+        "revision": 4,
+        "sequence": 14,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 5
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 15,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 16,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 4
+        },
+        "inventoryRevision": 2,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 17,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-b7d6589f-85c9-4aac-ad1c-a9a6f0a99513",
+          "type": "shelter",
+          "x": 6,
+          "y": 0.13959411746781122,
+          "z": 2,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 18,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "objective:progress",
+          "missionId": "first-colony",
+          "id": "shelters",
+          "value": 2,
+          "target": 2,
+          "complete": true
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 19,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "mission:complete",
+          "missionId": "first-colony"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",5]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 20,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 5
+      },
+      {
+        "type": "MissionProgressChanged",
+        "detail": {
+          "type": "mission:reward-eligible",
+          "missionId": "first-colony"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",6]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 21,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 6
+      },
+      {
+        "type": "MissionRewardApplied",
+        "rewardId": "first-colony",
+        "xp": 25,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",7]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 22,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 7
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\\\"]\",8]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"bc2f0d8a-d73b-45e6-a6ce-e4f4bfaef25f\"]",
+        "revision": 5,
+        "sequence": 23,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 8
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 24,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionCommitted",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 25,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ResourcesChanged",
+        "inventory": {
+          "stone": 0
+        },
+        "inventoryRevision": 3,
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 26,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      },
+      {
+        "type": "BuildingCreated",
+        "building": {
+          "id": "b-0fbbfd6b-3ac5-47e2-9b0c-c52e1f9d487a",
+          "type": "shelter",
+          "x": -5,
+          "y": -0.012727267117210684,
+          "z": -5,
+          "rotation": 0,
+          "level": 1,
+          "radius": 1,
+          "state": "complete"
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",3]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 27,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 3
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"70379325-c81e-4c96-bff2-7a2065dbc6f2\\\"]\",4]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"70379325-c81e-4c96-bff2-7a2065dbc6f2\"]",
+        "revision": 6,
+        "sequence": 28,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 4
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+        "revision": 6,
+        "sequence": 29,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionRejected",
+        "reason": "stale-world-revision",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+        "revision": 6,
+        "sequence": 30,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "place",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\"]",
+        "revision": 6,
+        "sequence": 31,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "ConstructionRejected",
+        "reason": "terrain",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"5ba9fd9a-9e3a-498b-99d7-8d5c83df2c1b\"]",
+        "revision": 6,
+        "sequence": 32,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "ConstructionRequested",
+        "action": "move",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",0]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+        "revision": 7,
+        "sequence": 33,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 0
+      },
+      {
+        "type": "PlayerMoved",
+        "player": {
+          "id": "player",
+          "x": 1.3000000000000003,
+          "y": 0.005145344264292496,
+          "z": -5,
+          "radius": 0.4,
+          "xp": 25
+        },
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",1]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+        "revision": 7,
+        "sequence": 34,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 1
+      },
+      {
+        "type": "WorldRevisionCommitted",
+        "schema": "zge.gameplay-event.v1",
+        "id": "[\"valley\",\"[\\\"alice\\\",\\\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\\\"]\",2]",
+        "worldId": "valley",
+        "transactionId": "[\"alice\",\"a688bcbe-adf4-4dfe-9c87-1c57bfbae127\"]",
+        "revision": 7,
+        "sequence": 35,
+        "authority": {
+          "mode": "ENGINE",
+          "domain": "construction-world",
+          "owner": "php-staging-server",
+          "epoch": 0
+        },
+        "order": 2
+      }
+    ],
+    "failures": [],
+    "lastResult": {
+      "ok": false,
+      "reason": "stale-world-revision",
+      "transactionId": "[\"bob\",\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\"]",
+      "revision": 6,
+      "eventIds": [
+        "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",0]",
+        "[\"valley\",\"[\\\"bob\\\",\\\"5ed86e1e-09c5-46a8-a8ac-3e613fbd9507\\\"]\",1]"
+      ]
+    },
+    "step": 8,
+    "connection": {
+      "connected": true,
+      "revision": 7,
+      "cursor": 36,
+      "downloadedCursor": 36,
+      "pending": 0
+    }
+  },
+  "capture": {
+    "metadata": {
+      "schema": "zge.capture-metadata.v1",
+      "sessionId": "local",
+      "sceneId": "valley",
+      "frameIndex": 0,
+      "simulationTime": 0.016666666666666666,
+      "width": 640,
+      "height": 360,
+      "sourceWidth": 982,
+      "sourceHeight": 520,
+      "camera": {
+        "id": "a063a395-7433-4089-8b76-480494cab9b7",
+        "position": [
+          20,
+          24,
+          28
+        ],
+        "quaternion": [
+          -0.2855302639257772,
+          0.2911366726239048,
+          0.09150247127872453,
+          0.9084818126885335
+        ],
+        "fov": 43,
+        "aspect": 1.8884615384615384,
+        "near": 0.1,
+        "far": 150
+      },
+      "sceneRevision": 7,
+      "discontinuity": {
+        "reset": false,
+        "reasons": []
+      },
+      "inputProvenance": null,
+      "capturedAt": 2315.399999976158
+    },
+    "lit": true
+  },
+  "presentation": {
+    "native": {
+      "id": "source-world-webgl",
+      "initialized": true,
+      "backend": "webgl2",
+      "available": true,
+      "presented": 12,
+      "drawCalls": 13,
+      "triangles": 5246,
+      "geometries": 9,
+      "textures": 1,
+      "canvas": {
+        "width": 982,
+        "height": 520
+      },
+      "sharedInstance": true,
+      "ownsContext": false
+    },
+    "reference": {
+      "id": "reference-capture",
+      "available": true,
+      "width": 640,
+      "height": 360,
+      "captures": 1,
+      "nextFrameIndex": 1,
+      "lastCaptureMs": 11.900000035762787,
+      "overlaysHiddenLast": 0,
+      "sessionId": "local",
+      "sceneId": "valley",
+      "profile": "native",
+      "rerender": "always",
+      "readback": "eager",
+      "stages": {
+        "stages": {
+          "render": {
+            "count": 1,
+            "p50": 0.2,
+            "p95": 0.2,
+            "max": 0.2
+          },
+          "bitmap": {
+            "count": 1,
+            "p50": 4.8,
+            "p95": 4.8,
+            "max": 4.8
+          },
+          "readback": {
+            "count": 1,
+            "p50": 6.7,
+            "p95": 6.7,
+            "max": 6.7
+          },
+          "total": {
+            "count": 1,
+            "p50": 11.9,
+            "p95": 11.9,
+            "max": 11.9
+          }
+        },
+        "rerenders": 1,
+        "skippedRerenders": 0,
+        "blankFrames": 0,
+        "profile": "native",
+        "rerenderPolicy": "always",
+        "readbackPolicy": "eager"
+      }
+    },
+    "presentation": {
+      "mode": "NATIVE",
+      "label": "NATIVE",
+      "fallbackReason": "fallback: no inference backend configured",
+      "mock": null,
+      "allowMock": false,
+      "history": [
+        {
+          "from": "NATIVE",
+          "to": "NATIVE",
+          "reason": "fallback: no inference backend configured",
+          "at": 1792564032685
+        }
+      ]
+    },
+    "structures": 3
+  },
+  "replay": {
+    "deterministic": true,
+    "transactions": 1
+  },
+  "errors": []
+}

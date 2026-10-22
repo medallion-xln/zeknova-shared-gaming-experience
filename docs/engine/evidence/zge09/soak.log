@@ -1,0 +1,21 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: fixture SQL failed
+
+null !== 0
+
+    at Object.sql (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/server-php/test/helpers/fixture.mjs:9:358)
+    at run (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge09-workloads.mjs:36:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge09-workloads.mjs:41:36 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

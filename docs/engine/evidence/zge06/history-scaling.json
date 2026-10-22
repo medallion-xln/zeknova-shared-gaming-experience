@@ -1,0 +1,162 @@
+{
+  "units": "ms; bytes",
+  "retention": "all durable events; last 2 derived checkpoints; client window 256",
+  "results": [
+    {
+      "events": 1000,
+      "payload": "resources/player/reward/build-create/remove/revision; 128 resident buildings; full authoritative events retained",
+      "appendMs": {
+        "count": 1000,
+        "p50": 0.012917000000001622,
+        "p95": 0.028416000000007102,
+        "p99": 0.12041700000000333
+      },
+      "uncompactedReplayMs": 2.5159579999999977,
+      "checkpointReplayMs": 0.8757919999999899,
+      "checkpointBytes": 15336,
+      "archiveInputBytes": 364459,
+      "retainedHeapDelta": 1287792,
+      "databaseBytes": 557056,
+      "databaseAppendBatch1000Ms": {
+        "count": 1,
+        "p50": 7.617459,
+        "p95": null,
+        "p99": null
+      },
+      "compactionMs": {
+        "count": 1,
+        "p50": 0.138791,
+        "p95": null,
+        "p99": null
+      },
+      "databaseCheckpointLoadMs": 0.064375,
+      "clientPage256Ms": {
+        "count": 4,
+        "p50": 0.283291,
+        "p95": null,
+        "p99": null
+      },
+      "clientDecodeReplayTotalMs": 3.10475000000001,
+      "clientDecodePage256Ms": {
+        "count": 4,
+        "p50": 0.9101249999999936,
+        "p95": null,
+        "p99": null
+      },
+      "clientWindow": 256,
+      "clientCursor": 1000,
+      "retainedCheckpoints": 1,
+      "tailEvents": 0,
+      "checksum": "ba7cdb0707d5e3f9b7cfa7ae1afce244ba56198cd3789046cef533bda35417ef",
+      "exactMatch": true,
+      "databaseArtifact": {
+        "path": "/tmp/zge06-history-1792563837467/1000.sqlite",
+        "sha256": "55c4600afec2fbe98bb68af1791d83e0264032414054a10299ad11e32c2045dd"
+      }
+    },
+    {
+      "events": 10000,
+      "payload": "resources/player/reward/build-create/remove/revision; 128 resident buildings; full authoritative events retained",
+      "appendMs": {
+        "count": 10000,
+        "p50": 0.011124999999992724,
+        "p95": 0.01816699999997695,
+        "p99": 0.05904100000000767
+      },
+      "uncompactedReplayMs": 9.926459000000023,
+      "checkpointReplayMs": 1.567707999999925,
+      "checkpointBytes": 15342,
+      "archiveInputBytes": 3713491,
+      "retainedHeapDelta": 7229656,
+      "databaseBytes": 5459968,
+      "databaseAppendBatch1000Ms": {
+        "count": 10,
+        "p50": 8.209875,
+        "p95": null,
+        "p99": null
+      },
+      "compactionMs": {
+        "count": 10,
+        "p50": 0.129167,
+        "p95": null,
+        "p99": null
+      },
+      "databaseCheckpointLoadMs": 0.090625,
+      "clientPage256Ms": {
+        "count": 40,
+        "p50": 1.627458,
+        "p95": 3.430083,
+        "p99": null
+      },
+      "clientDecodeReplayTotalMs": 27.00354199999998,
+      "clientDecodePage256Ms": {
+        "count": 40,
+        "p50": 0.6172920000000204,
+        "p95": 1.2116249999999695,
+        "p99": null
+      },
+      "clientWindow": 256,
+      "clientCursor": 10000,
+      "retainedCheckpoints": 2,
+      "tailEvents": 1000,
+      "checksum": "7f559305ecb5c9fe2d5dc5c17ae041c958dcd8396bb2266da8aa2564f90d0835",
+      "exactMatch": true,
+      "databaseArtifact": {
+        "path": "/tmp/zge06-history-1792563837467/10000.sqlite",
+        "sha256": "8d4984ea18b4506c25381ecb840a5a1e93f60db6417f7e512af91ba48c0c9ea4"
+      }
+    },
+    {
+      "events": 100000,
+      "payload": "resources/player/reward/build-create/remove/revision; 128 resident buildings; full authoritative events retained",
+      "appendMs": {
+        "count": 100000,
+        "p50": 0.010084000000006199,
+        "p95": 0.016125000000101863,
+        "p99": 0.06375000000002728
+      },
+      "uncompactedReplayMs": 78.96795900000006,
+      "checkpointReplayMs": 2.689083000001119,
+      "checkpointBytes": 15348,
+      "archiveInputBytes": 37834180,
+      "retainedHeapDelta": 55069352,
+      "databaseBytes": 54747136,
+      "databaseAppendBatch1000Ms": {
+        "count": 100,
+        "p50": 8.046375,
+        "p95": 28.083416,
+        "p99": 34.76475
+      },
+      "compactionMs": {
+        "count": 100,
+        "p50": 0.132166,
+        "p95": 0.174375,
+        "p99": 2.849833
+      },
+      "databaseCheckpointLoadMs": 0.096458,
+      "clientPage256Ms": {
+        "count": 391,
+        "p50": 22.013542,
+        "p95": 86.645,
+        "p99": 344.694459
+      },
+      "clientDecodeReplayTotalMs": 246.65412500000002,
+      "clientDecodePage256Ms": {
+        "count": 391,
+        "p50": 0.5838340000000244,
+        "p95": 0.841041000000132,
+        "p99": 1.2958330000001297
+      },
+      "clientWindow": 256,
+      "clientCursor": 100000,
+      "retainedCheckpoints": 2,
+      "tailEvents": 1000,
+      "checksum": "0a4ec3a970a56ed16dbf6ae1e5777e05c4077669e340de38c809506fed95fd8c",
+      "exactMatch": true,
+      "databaseArtifact": {
+        "path": "/tmp/zge06-history-1792563837467/100000.sqlite",
+        "sha256": "714c3b876a8846fac0dddf52d9cb0883f673a5572ddac21aeaa2983994e82fc1"
+      }
+    }
+  ]
+}

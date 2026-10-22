@@ -1,0 +1,111 @@
+  PASS contract identity
+  PASS registry identity
+  PASS objective profile identity
+  PASS certification identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS seven scenarios declared
+  PASS nine objective priorities
+  PASS objective comparison lexicographic
+  PASS settlement survival first
+  PASS deescalation last
+  PASS objective ranks canonical
+  PASS scenario ids unique
+  PASS all horizons positive
+  PASS all success plans declared
+  PASS all failure plans declared
+  PASS all critical actions declared
+  PASS all required actions exist
+  PASS perimeter-breach representable
+  PASS perimeter-breach no missing mechanics
+  PASS damaged-core representable
+  PASS damaged-core no missing mechanics
+  PASS route-infrastructure-cascade representable
+  PASS route-infrastructure-cascade no missing mechanics
+  PASS resource-corridor representable
+  PASS resource-corridor no missing mechanics
+  PASS exposed-patrol representable
+  PASS exposed-patrol no missing mechanics
+  PASS multi-crisis-priority representable
+  PASS multi-crisis-priority no missing mechanics
+  PASS deescalation-window representable
+  PASS deescalation-window no missing mechanics
+  PASS state deterministic bytes
+  PASS state deterministic id
+  PASS state validates
+  PASS repair legal in damaged core
+  PASS secure resource lacks target in damaged core
+  PASS hold always legal in live scenario
+  PASS repair completes
+  PASS repair consumes three quanta
+  PASS repair clears damage flag
+  PASS repair restores critical health
+  PASS repair materials exact once
+  PASS repair cooldown exact
+  PASS withdraw legal for exposed patrol
+  PASS withdraw clears exposure
+  PASS withdraw preserves patrol
+  PASS withdraw duration one
+  PASS perimeter-breach success witness completes
+  PASS perimeter-breach failure witness fails
+  PASS perimeter-breach success vector beats failure
+  PASS perimeter-breach run deterministic
+  PASS damaged-core success witness completes
+  PASS damaged-core failure witness fails
+  PASS damaged-core success vector beats failure
+  PASS damaged-core run deterministic
+  PASS route-infrastructure-cascade success witness completes
+  PASS route-infrastructure-cascade failure witness fails
+  PASS route-infrastructure-cascade success vector beats failure
+  PASS route-infrastructure-cascade run deterministic
+  PASS resource-corridor success witness completes
+  PASS resource-corridor failure witness fails
+  PASS resource-corridor success vector beats failure
+  PASS resource-corridor run deterministic
+  PASS exposed-patrol success witness completes
+  PASS exposed-patrol failure witness fails
+  PASS exposed-patrol success vector beats failure
+  PASS exposed-patrol run deterministic
+  PASS multi-crisis-priority success witness completes
+  PASS multi-crisis-priority failure witness fails
+  PASS multi-crisis-priority success vector beats failure
+  PASS multi-crisis-priority run deterministic
+  PASS deescalation-window success witness completes
+  PASS deescalation-window failure witness fails
+  PASS deescalation-window success vector beats failure
+  PASS deescalation-window run deterministic
+  PASS multi-crisis success preserves core
+  PASS multi-crisis may sacrifice resource
+  PASS deescalation success lowers tension
+  PASS deescalation success raises trust
+  PASS resource success secures resource
+  PASS cascade success restores route
+  PASS cascade success restores infrastructure
+  PASS certification report canonical
+  PASS all scenarios certified
+  PASS certification scenario count
+  PASS certification seed count
+  PASS every success witness rate one
+  PASS every failure witness rate one
+  PASS every ablation failure rate one
+  PASS every objective vector win rate one
+  PASS every scenario deterministic
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS certification authority none
+  PASS repeated certification deterministic
+  PASS unknown scenario rejected
+  PASS zero seed rejected
+  PASS unknown action rejected
+  PASS illegal target action rejected
+  PASS tampered state rejected
+  PASS invalid objective vector rejected
+  PASS empty plan rejected
+  PASS too many seeds rejected
+  PASS tampered certification rejected
+  PASS contract exposes no execute method
+  PASS contract exposes no dispatch method
+  PASS contract exposes no apply method
+  PASS contract exposes no Prime executor
+  PASS certification contains no wall clock
+STAGE 1A-Z FOREST OBJECTIVE SCENARIO CONTRACT TESTS PASS (110/110)

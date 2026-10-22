@@ -1,0 +1,550 @@
+
+> zeknova-shared-gaming-experience@0.1.0 test:engine
+> node --test packages/*/test/*.test.mjs
+
+TAP version 13
+# Subtest: request cache coalesces concurrent requests and serves repeats from cache within the byte budget
+ok 1 - request cache coalesces concurrent requests and serves repeats from cache within the byte budget
+  ---
+  duration_ms: 191.177875
+  type: 'test'
+  ...
+# Subtest: request cache passes real errors through and does not cache them
+ok 2 - request cache passes real errors through and does not cache them
+  ---
+  duration_ms: 2.106584
+  type: 'test'
+  ...
+# Subtest: loader watchdog tracks loads, settles both paths, and reports stalls with loader diagnostics
+ok 3 - loader watchdog tracks loads, settles both paths, and reports stalls with loader diagnostics
+  ---
+  duration_ms: 12.366416
+  type: 'test'
+  ...
+# Subtest: worker observer counts live workers and records error events
+ok 4 - worker observer counts live workers and records error events
+  ---
+  duration_ms: 3.212041
+  type: 'test'
+  ...
+# Subtest: index.html import map covers every ?v= variant the bundle imports and maps it to the canonical module
+ok 5 - index.html import map covers every ?v= variant the bundle imports and maps it to the canonical module
+  ---
+  duration_ms: 400.217375
+  type: 'test'
+  ...
+# Subtest: canonical parsed cache coalesces, leases pin resources, clones isolate and budget evicts
+ok 6 - canonical parsed cache coalesces, leases pin resources, clones isolate and budget evicts
+  ---
+  duration_ms: 120.810625
+  type: 'test'
+  ...
+# Subtest: failed loads invalidate and retry; cancellation is per consumer; late success is disposed
+ok 7 - failed loads invalidate and retry; cancellation is per consumer; late success is disposed
+  ---
+  duration_ms: 49.436916
+  type: 'test'
+  ...
+# Subtest: dependencies pin parsed resources until dependents are invalidated
+ok 8 - dependencies pin parsed resources until dependents are invalidated
+  ---
+  duration_ms: 7.890958
+  type: 'test'
+  ...
+# Subtest: real Three skinned clones have independent bones, materials, geometry, clips and transforms
+ok 9 - real Three skinned clones have independent bones, materials, geometry, clips and transforms
+  ---
+  duration_ms: 43.242416
+  type: 'test'
+  ...
+# Subtest: worker limits 1/2/4/8 settle concurrent work, reset on death, restart and release timers
+not ok 10 - worker limits 1/2/4/8 settle concurrent work, reset on death, restart and release timers
+  ---
+  duration_ms: 298.469083
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/assets/test/service.test.mjs:41:1'
+  failureType: 'testCodeFailure'
+  error: 'transcode timeout'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    Timeout.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/assets/src/BoundedWorkerPool.js:17:49)
+    listOnTimeout (node:internal/timers:585:17)
+    process.processTimers (node:internal/timers:521:7)
+  ...
+# Subtest: timeouts, worker errors, unsupported payload and initialization exceptions are bounded
+ok 11 - timeouts, worker errors, unsupported payload and initialization exceptions are bounded
+  ---
+  duration_ms: 13.014833
+  type: 'test'
+  ...
+# Subtest: loader types cannot collide; aborting a joined consumer preserves other leases
+ok 12 - loader types cannot collide; aborting a joined consumer preserves other leases
+  ---
+  duration_ms: 19.442583
+  type: 'test'
+  ...
+# Subtest: disposing pending assets promptly rejects even when the loader ignores cancellation
+ok 13 - disposing pending assets promptly rejects even when the loader ignores cancellation
+  ---
+  duration_ms: 0.388875
+  type: 'test'
+  ...
+# Subtest: new engine rendering dependencies use only the canonical vendored Three instance
+ok 14 - new engine rendering dependencies use only the canonical vendored Three instance
+  ---
+  duration_ms: 402.870959
+  type: 'test'
+  ...
+# Subtest: engine starts without any game content and initialises an empty world
+ok 15 - engine starts without any game content and initialises an empty world
+  ---
+  duration_ms: 15.582833
+  type: 'test'
+  ...
+# Subtest: fixed-step clock: 60 Hz vs 30 Hz cadence yields identical simulation state (test clock)
+ok 16 - fixed-step clock: 60 Hz vs 30 Hz cadence yields identical simulation state (test clock)
+  ---
+  duration_ms: 0.958708
+  type: 'test'
+  ...
+# Subtest: test clocks produce reproducible results and max catch-up is bounded
+ok 17 - test clocks produce reproducible results and max catch-up is bounded
+  ---
+  duration_ms: 2.70725
+  type: 'test'
+  ...
+# Subtest: delegated clock mode never steps systems (no second simulation authority)
+ok 18 - delegated clock mode never steps systems (no second simulation authority)
+  ---
+  duration_ms: 1.436583
+  type: 'test'
+  ...
+# Subtest: plugins run in dependency order, optional deps order only when present
+ok 19 - plugins run in dependency order, optional deps order only when present
+  ---
+  duration_ms: 1.124042
+  type: 'test'
+  ...
+# Subtest: invalid plugin dependencies are rejected with actionable errors
+ok 20 - invalid plugin dependencies are rejected with actionable errors
+  ---
+  duration_ms: 1.456875
+  type: 'test'
+  ...
+# Subtest: plugin failure is isolated: dependents skipped, others continue, fatal policy rethrows
+ok 21 - plugin failure is isolated: dependents skipped, others continue, fatal policy rethrows
+  ---
+  duration_ms: 0.815417
+  type: 'test'
+  ...
+# Subtest: duplicate initialization and start do not duplicate work
+ok 22 - duplicate initialization and start do not duplicate work
+  ---
+  duration_ms: 3.667959
+  type: 'test'
+  ...
+# Subtest: shutdown disposes owned resources: subscriptions, systems, guards, plugin handles
+ok 23 - shutdown disposes owned resources: subscriptions, systems, guards, plugin handles
+  ---
+  duration_ms: 5.936541
+  type: 'test'
+  ...
+# Subtest: restart works for kernel-owned systems: stop -> start re-runs start hooks, counts stay balanced
+ok 24 - restart works for kernel-owned systems: stop -> start re-runs start hooks, counts stay balanced
+  ---
+  duration_ms: 1.523625
+  type: 'test'
+  ...
+# Subtest: guard: timeout and failure degrade with fallback; required failure throws
+ok 25 - guard: timeout and failure degrade with fallback; required failure throws
+  ---
+  duration_ms: 6.359792
+  type: 'test'
+  ...
+# Subtest: event handler errors are isolated and recorded; subscriptions by owner can be released
+ok 26 - event handler errors are isolated and recorded; subscriptions by owner can be released
+  ---
+  duration_ms: 4.683583
+  type: 'test'
+  ...
+# Subtest: world snapshot/restore round-trips entities, components and resources
+ok 27 - world snapshot/restore round-trips entities, components and resources
+  ---
+  duration_ms: 0.573708
+  type: 'test'
+  ...
+# Subtest: metrics expose per-system timings, frame percentiles and lifecycle transitions
+ok 28 - metrics expose per-system timings, frame percentiles and lifecycle transitions
+  ---
+  duration_ms: 0.6775
+  type: 'test'
+  ...
+# Subtest: system dependencies schedule deterministically and invalid graphs are rejected
+ok 29 - system dependencies schedule deterministically and invalid graphs are rejected
+  ---
+  duration_ms: 7.405833
+  type: 'test'
+  ...
+# Subtest: command IDs, ordering and pending state survive restoration without replaying deductions
+ok 30 - command IDs, ordering and pending state survive restoration without replaying deductions
+  ---
+  duration_ms: 7.40525
+  type: 'test'
+  ...
+# Subtest: registered component validation and snapshot restore do not alias caller state
+ok 31 - registered component validation and snapshot restore do not alias caller state
+  ---
+  duration_ms: 1.146208
+  type: 'test'
+  ...
+# Subtest: restore preserves fixed-step remainder and rejects incompatible clock configurations
+ok 32 - restore preserves fixed-step remainder and rejects incompatible clock configurations
+  ---
+  duration_ms: 1.480292
+  type: 'test'
+  ...
+# Subtest: atomic placement, idempotency, occupancy, terrain and resource rejection
+ok 33 - atomic placement, idempotency, occupancy, terrain and resource rejection
+  ---
+  duration_ms: 1.973917
+  type: 'test'
+  ...
+# Subtest: remove, reverse rollback, serialization and deterministic replay
+ok 34 - remove, reverse rollback, serialization and deterministic replay
+  ---
+  duration_ms: 8.776417
+  type: 'test'
+  ...
+# Subtest: throwing validation cannot deduct inventory or modify collision occupancy
+ok 35 - throwing validation cannot deduct inventory or modify collision occupancy
+  ---
+  duration_ms: 0.767792
+  type: 'test'
+  ...
+# Subtest: authority switching invokes exactly one mutator; shadow is immutable
+ok 36 - authority switching invokes exactly one mutator; shadow is immutable
+  ---
+  duration_ms: 0.286
+  type: 'test'
+  ...
+# Subtest: actual legacy construction methods agree for costs, water sites, discounts and placement outcomes
+ok 37 - actual legacy construction methods agree for costs, water sites, discounts and placement outcomes
+  ---
+  duration_ms: 5.705833
+  type: 'test'
+  ...
+# Subtest: kernel commands execute only at fixed steps; ownership blocks writes and disposal releases handlers
+ok 38 - kernel commands execute only at fixed steps; ownership blocks writes and disposal releases handlers
+  ---
+  duration_ms: 132.774375
+  type: 'test'
+  ...
+# Subtest: standalone demo saves, restores and replays without game or rendering dependencies
+ok 39 - standalone demo saves, restores and replays without game or rendering dependencies
+  ---
+  duration_ms: 28.002166
+  type: 'test'
+  ...
+# Subtest: combat proposal has hit/projectile guards, overkill clamp, effects and one death transition
+ok 40 - combat proposal has hit/projectile guards, overkill clamp, effects and one death transition
+  ---
+  duration_ms: 0.69525
+  type: 'test'
+  ...
+# Subtest: mission progress and rewards are pure and completion is idempotent; twelve legacy missions retained
+ok 41 - mission progress and rewards are pure and completion is idempotent; twelve legacy missions retained
+  ---
+  duration_ms: 27.494209
+  type: 'test'
+  ...
+# Subtest: standalone production module graph imports only independent engine packages
+ok 42 - standalone production module graph imports only independent engine packages
+  ---
+  duration_ms: 191.907833
+  type: 'test'
+  ...
+# Subtest: bounded queue: drop-oldest and reject-newest policies with stats
+ok 43 - bounded queue: drop-oldest and reject-newest policies with stats
+  ---
+  duration_ms: 1.127958
+  type: 'test'
+  ...
+# Subtest: sequencer: consecutive indices, association latency, stale rejection, discontinuity detection
+ok 44 - sequencer: consecutive indices, association latency, stale rejection, discontinuity detection
+  ---
+  duration_ms: 1.008292
+  type: 'test'
+  ...
+# Subtest: render session: legal transitions, finite frame budget, illegal transition names allowed states
+ok 45 - render session: legal transitions, finite frame budget, illegal transition names allowed states
+  ---
+  duration_ms: 0.288625
+  type: 'test'
+  ...
+# Subtest: presentation controller: NEURAL needs a declared backend; mock is labelled; fallback records reason
+ok 46 - presentation controller: NEURAL needs a declared backend; mock is labelled; fallback records reason
+  ---
+  duration_ms: 0.627334
+  type: 'test'
+  ...
+# Subtest: mock backend is functional: ordered output derived from real input with temporal state cleared by reset
+ok 47 - mock backend is functional: ordered output derived from real input with temporal state cleared by reset
+  ---
+  duration_ms: 195.751875
+  type: 'test'
+  ...
+# Subtest: neural renderer: capture→submit→display with ordered presentation, stale drops, HUD-sync event on presented frame
+ok 48 - neural renderer: capture→submit→display with ordered presentation, stale drops, HUD-sync event on presented frame
+  ---
+  duration_ms: 418.328917
+  type: 'test'
+  ...
+# Subtest: backpressure: when the backend cannot keep up, capture stops and presentation falls back to native, then recovers
+not ok 49 - backpressure: when the backend cannot keep up, capture stops and presentation falls back to native, then recovers
+  ---
+  duration_ms: 243.842917
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/neural-rendering/test/neural.test.mjs:85:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'streaming'
+    - 'degraded'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'degraded'
+  actual: 'streaming'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/neural-rendering/test/neural.test.mjs:91:154)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: stall detection and backend failure both trigger native fallback without throwing into the frame loop
+ok 50 - stall detection and backend failure both trigger native fallback without throwing into the frame loop
+  ---
+  duration_ms: 184.102417
+  type: 'test'
+  ...
+# Subtest: camera discontinuity (teleport) resets the model session and restarts the capture sequence
+not ok 51 - camera discontinuity (teleport) resets the model session and restarts the capture sequence
+  ---
+  duration_ms: 31.769333
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/neural-rendering/test/neural.test.mjs:108:1'
+  failureType: 'testCodeFailure'
+  error: 'latency uses one time base'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/neural-rendering/test/neural.test.mjs:119:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Matrix-Game 4 adapter: loopback enforcement, upstream control contract and proposed bridge against the loopback test service (TRANSPORT_READY)
+ok 52 - Matrix-Game 4 adapter: loopback enforcement, upstream control contract and proposed bridge against the loopback test service (TRANSPORT_READY)
+  ---
+  duration_ms: 80.625791
+  type: 'test'
+  ...
+# Subtest: adapter surfaces service failure as an error the renderer turns into native fallback
+ok 53 - adapter surfaces service failure as an error the renderer turns into native fallback
+  ---
+  duration_ms: 104.427375
+  type: 'test'
+  ...
+# Subtest: mock backend skips CPU crop/resize for pre-processed (model-input) captures and produces identical dimensions
+ok 54 - mock backend skips CPU crop/resize for pre-processed (model-input) captures and produces identical dimensions
+  ---
+  duration_ms: 20.652458
+  type: 'test'
+  ...
+# Subtest: a save is reported saved only after server acknowledgement, with the revision
+ok 55 - a save is reported saved only after server acknowledgement, with the revision
+  ---
+  duration_ms: 42.9785
+  type: 'test'
+  ...
+# Subtest: rapid saves coalesce: only the newest snapshot is posted and older requests never overwrite newer state
+ok 56 - rapid saves coalesce: only the newest snapshot is posted and older requests never overwrite newer state
+  ---
+  duration_ms: 72.02825
+  type: 'test'
+  ...
+# Subtest: transient failures retry with bounded backoff and preserve the dirty snapshot; success after recovery
+ok 57 - transient failures retry with bounded backoff and preserve the dirty snapshot; success after recovery
+  ---
+  duration_ms: 85.777542
+  type: 'test'
+  ...
+# Subtest: degraded after maxRetries but keeps trying and keeps the pending snapshot in the store
+ok 58 - degraded after maxRetries but keeps trying and keeps the pending snapshot in the store
+  ---
+  duration_ms: 107.782709
+  type: 'test'
+  ...
+# Subtest: auth expiry is terminal and surfaced; resume() re-sends the preserved snapshot
+ok 59 - auth expiry is terminal and surfaced; resume() re-sends the preserved snapshot
+  ---
+  duration_ms: 68.477792
+  type: 'test'
+  ...
+# Subtest: permanent rejections (422/413) are surfaced, not retried, and do not block later saves
+ok 60 - permanent rejections (422/413) are surfaced, not retried, and do not block later saves
+  ---
+  duration_ms: 30.988042
+  type: 'test'
+  ...
+# Subtest: 409 conflict refreshes the server revision and retries once with the newer base
+ok 61 - 409 conflict refreshes the server revision and retries once with the newer base
+  ---
+  duration_ms: 138.806958
+  type: 'test'
+  ...
+# Subtest: request timeout is a transient failure that retries
+ok 62 - request timeout is a transient failure that retries
+  ---
+  duration_ms: 69.701125
+  type: 'test'
+  ...
+# Subtest: reload recovery: an unacknowledged snapshot survives in the store and a new transport re-sends it
+ok 63 - reload recovery: an unacknowledged snapshot survives in the store and a new transport re-sends it
+  ---
+  duration_ms: 49.504
+  type: 'test'
+  ...
+# Subtest: unload: best-effort beacon carries the pending snapshot and is never reported as saved
+ok 64 - unload: best-effort beacon carries the pending snapshot and is never reported as saved
+  ---
+  duration_ms: 12.252542
+  type: 'test'
+  ...
+# Subtest: schema: v1–v4 migrate to the v4 shape with defaults; unsupported versions are rejected; extension round-trips XP
+ok 65 - schema: v1–v4 migrate to the v4 shape with defaults; unsupported versions are rejected; extension round-trips XP
+  ---
+  duration_ms: 18.8385
+  type: 'test'
+  ...
+# Subtest: legacy interceptor: keepalive POST becomes an acknowledged save with XP attached; GET restores pending-newer state and XP after ready
+ok 66 - legacy interceptor: keepalive POST becomes an acknowledged save with XP attached; GET restores pending-newer state and XP after ready
+  ---
+  duration_ms: 167.814333
+  type: 'test'
+  ...
+# Subtest: geometry matches upstream crop_and_resize for the shooter path (1280x720 -> 480x864)
+ok 67 - geometry matches upstream crop_and_resize for the shooter path (1280x720 -> 480x864)
+  ---
+  duration_ms: 2.6285
+  type: 'test'
+  ...
+# Subtest: rgba→rgb drops alpha, crop/resize yields exact model dimensions, pipeline is deterministic
+ok 68 - rgba→rgb drops alpha, crop/resize yields exact model dimensions, pipeline is deterministic
+  ---
+  duration_ms: 607.209916
+  type: 'test'
+  ...
+# Subtest: tensor normalisation matches x*2/255-1 in CHW layout and round-trips
+ok 69 - tensor normalisation matches x*2/255-1 in CHW layout and round-trips
+  ---
+  duration_ms: 12.625917
+  type: 'test'
+  ...
+# Subtest: pixel-format validation rejects malformed frames with exact messages
+ok 70 - pixel-format validation rejects malformed frames with exact messages
+  ---
+  duration_ms: 0.567875
+  type: 'test'
+  ...
+# Subtest: length-prefixed envelope round-trips and enforces upstream-style bounds
+ok 71 - length-prefixed envelope round-trips and enforces upstream-style bounds
+  ---
+  duration_ms: 3.065334
+  type: 'test'
+  ...
+# Subtest: capture metadata requires identity fields and versions extensions
+ok 72 - capture metadata requires identity fields and versions extensions
+  ---
+  duration_ms: 0.320375
+  type: 'test'
+  ...
+# Subtest: capture filter hides overlays and restores exactly what it hid
+ok 73 - capture filter hides overlays and restores exactly what it hid
+  ---
+  duration_ms: 1.829917
+  type: 'test'
+  ...
+# Subtest: gpuCropRect: cropping the source then resizing equals upstream resize-then-crop geometry
+ok 74 - gpuCropRect: cropping the source then resizing equals upstream resize-then-crop geometry
+  ---
+  duration_ms: 0.176291
+  type: 'test'
+  ...
+# Subtest: registry integrity: unique ids, declared deps exist, every entry classified, 32 post-runtime directors
+ok 75 - registry integrity: unique ids, declared deps exist, every entry classified, 32 post-runtime directors
+  ---
+  duration_ms: 4.081792
+  type: 'test'
+  ...
+# Subtest: ZekNova runs through the kernel boundary: install order == main.js order, legacy runtime owns time, no duplicate installs
+ok 76 - ZekNova runs through the kernel boundary: install order == main.js order, legacy runtime owns time, no duplicate installs
+  ---
+  duration_ms: 175.100542
+  type: 'test'
+  ...
+# Subtest: in-page restart only covers directors with complete teardown and no page-only dependents; the rest is page-only
+ok 77 - in-page restart only covers directors with complete teardown and no page-only dependents; the rest is page-only
+  ---
+  duration_ms: 121.921542
+  type: 'test'
+  ...
+# Subtest: full-page restart path sets a marker and reloads; marker is consumed once
+ok 78 - full-page restart path sets a marker and reloads; marker is consumed once
+  ---
+  duration_ms: 1.532625
+  type: 'test'
+  ...
+# Subtest: a failing director is isolated: the game still reaches ready and dependents are skipped
+ok 79 - a failing director is isolated: the game still reaches ready and dependents are skipped
+  ---
+  duration_ms: 56.699
+  type: 'test'
+  ...
+# Subtest: compat refuses to start without an officer and the runtime host refuses a second in-page start
+ok 80 - compat refuses to start without an officer and the runtime host refuses a second in-page start
+  ---
+  duration_ms: 0.366084
+  type: 'test'
+  ...
+# Subtest: repeated director-layer restart cycles are stable: same restartable set, no failures, balanced install/dispose counts
+ok 81 - repeated director-layer restart cycles are stable: same restartable set, no failures, balanced install/dispose counts
+  ---
+  duration_ms: 158.972958
+  type: 'test'
+  ...
+# Subtest: construction shadow observes one legacy mutation, never persists a prediction, and restores method identity
+ok 82 - construction shadow observes one legacy mutation, never persists a prediction, and restores method identity
+  ---
+  duration_ms: 0.764125
+  type: 'test'
+  ...
+# Subtest: combat audio releases its context once across repeated disposal
+ok 83 - combat audio releases its context once across repeated disposal
+  ---
+  duration_ms: 14.90925
+  type: 'test'
+  ...
+1..83
+# tests 83
+# suites 0
+# pass 80
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1468.57775

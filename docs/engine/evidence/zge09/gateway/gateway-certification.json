@@ -1,0 +1,72 @@
+{
+  "scenarios": [
+    {
+      "scenario": "concurrent-players",
+      "oneWorker": true,
+      "independentXP": true,
+      "privateStateFiltered": true,
+      "conflictRejected": true
+    },
+    {
+      "scenario": "crash-before-execution",
+      "partialEffects": 0,
+      "retryXP": 14,
+      "generationIncreased": true
+    },
+    {
+      "scenario": "crash-during-validation",
+      "partialEffects": 0,
+      "retryXP": 14,
+      "generationIncreased": true
+    },
+    {
+      "scenario": "crash-before-response",
+      "partialEffects": 0,
+      "retryXP": 14,
+      "generationIncreased": true
+    },
+    {
+      "scenario": "delay-response",
+      "partialEffects": 0,
+      "retryXP": 14,
+      "generationIncreased": true
+    },
+    {
+      "scenario": "postcommit-worker-death",
+      "duplicateSuppressed": true,
+      "restartStateExact": true
+    },
+    {
+      "scenario": "database-failure",
+      "partialEffects": 0,
+      "recovered": true
+    },
+    {
+      "scenario": "multiplayer-crash-before-commit",
+      "personalClaims": 2,
+      "teamClaims": 1,
+      "partialEffects": 0
+    },
+    {
+      "scenario": "multiplayer-crash-after-commit",
+      "personalClaims": 2,
+      "teamClaims": 1,
+      "partialEffects": 0
+    },
+    {
+      "scenario": "actor-archive-recovery",
+      "commands": 4,
+      "ms": 70.122917,
+      "personalClaims": 2,
+      "teamClaims": 1,
+      "exact": true
+    },
+    {
+      "scenario": "multiplayer-backup-restore",
+      "bytes": 176128,
+      "ms": 498.55375,
+      "personalClaims": 2,
+      "teamClaims": 1
+    }
+  ]
+}

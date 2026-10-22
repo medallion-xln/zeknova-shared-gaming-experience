@@ -1,0 +1,50 @@
+{
+  "schema": "zge.operations-certification.v1",
+  "scenarios": [
+    {
+      "scenario": "consistent-backup-isolated-restore",
+      "backupMs": 439.448917,
+      "restoreMs": 451.890375,
+      "bytes": 163840,
+      "archiveEvents": 15,
+      "receipts": 2,
+      "rewards": 1,
+      "unknownBlobPreserved": true,
+      "unchangedBackup": true
+    },
+    {
+      "scenario": "bundle-boundaries",
+      "existingTargetDenied": true,
+      "incompleteDenied": true,
+      "corruptionDenied": true,
+      "schemaMismatchDenied": true,
+      "contentMismatchDenied": true,
+      "manifestMismatchDenied": true
+    },
+    {
+      "scenario": "operation-process-death",
+      "faults": 4,
+      "validPartialBundles": 0,
+      "liveWorldUnchanged": true,
+      "privatePendingDirectories": 4
+    },
+    {
+      "scenario": "logical-archive-corruption",
+      "rehashedBadReceiptDenied": true
+    },
+    {
+      "scenario": "sqlite-real-disk-exhaustion",
+      "scope": "PDO max_page_count transaction; actual gateway candidate, explicit SQL commit fixture, not filesystem-volume exhaustion",
+      "sqliteCode": 13,
+      "economicPrepared": true,
+      "pageLimit": 71,
+      "initialPages": 39,
+      "candidateRevision": 2,
+      "candidateXp": 25,
+      "candidateBuildings": 2,
+      "ms": 0.318583,
+      "partialEffects": 0,
+      "retryRewards": 1
+    }
+  ]
+}

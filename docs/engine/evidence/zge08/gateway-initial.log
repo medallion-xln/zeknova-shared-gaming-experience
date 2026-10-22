@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+ok 1 - actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+  ---
+  duration_ms: 870.4955
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+ok 2 - worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 952.292875
+  type: 'test'
+  ...
+# Subtest: worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+ok 3 - worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 902.921708
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+ok 4 - worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 910.088625
+  type: 'test'
+  ...
+# Subtest: worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+ok 5 - worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 2914.909208
+  type: 'test'
+  ...
+# Subtest: worker death after durable commit and before reply cannot duplicate personal or team effects
+not ok 6 - worker death after durable commit and before reply cannot duplicate personal or team effects
+  ---
+  duration_ms: 633.876417
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/server-php/test/zge08-gateway.test.mjs:7:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/server-php/test/zge08-gateway.test.mjs:7:492)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: database unavailable and reward-write failure preserve committed player/world state
+ok 7 - database unavailable and reward-write failure preserve committed player/world state
+  ---
+  duration_ms: 1078.49825
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8318.213375

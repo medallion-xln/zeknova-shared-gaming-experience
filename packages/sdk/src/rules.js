@@ -1,0 +1,23 @@
+/** Bounded data-only rules. Host input and local simulation only; never an HTTP writer. */
+export function validateRules(rules){
+ const id=v=>typeof v==='string'&&/^[a-zA-Z0-9_.:-]{1,100}$/.test(v),num=(v,min,max)=>Number.isFinite(v)&&v>=min&&v<=max;
+ if(!Array.isArray(rules)||rules.length>64)throw Error('At most64 rules required');const ids=new Set();
+ for(const r of rules){if(!r||!id(r.id)||ids.has(r.id)||!id(r.entity)||!['move','collect','goal','build','interact'].includes(r.kind))throw Error('Invalid/unsupported rule');ids.add(r.id);
+ if(r.kind==='move'&&(!num(r.speed,.01,100)||r.bounds!==undefined&&(!Array.isArray(r.bounds)||r.bounds.length!==4||!r.bounds.every(Number.isFinite)||r.bounds[0]>=r.bounds[1]||r.bounds[2]>=r.bounds[3])))throw Error('Invalid movement rule');
+ if(r.kind==='collect'&&(![r.target,r.component,r.counter].every(id)||!num(r.radius,.01,100)))throw Error('Invalid collection rule');
+ if(r.kind==='goal'&&(![r.component,r.property,r.sourceEntity,r.sourceComponent,r.counter].every(id)||!num(r.threshold,0,100000)))throw Error('Invalid objective rule');
+ if(['build','interact'].includes(r.kind)&&(![r.target,r.component,r.counter,r.property].every(id)||!['e','b'].includes(r.key)||!num(r.radius,.01,100)||!num(r.cost,0,10000)||!id(r.sourceEntity)||!id(r.sourceComponent)))throw Error('Invalid interaction rule');
+ if(r.kind==='build'&&!id(r.prefab))throw Error('Prefab required');
+ }return rules;
+}
+export function installProjectRules(engine,input=new Set()){
+ const rules=engine.world?.serialize().rules??engine.exportProject().rules??[];validateRules(rules);if(!rules.length)return()=>{};const held=new Set();
+ return engine.registerSystem({id:'project:data-rules',run(scene,dt,{events}){const edge=new Set([...input].filter(k=>!held.has(k)));held.clear();for(const k of input)held.add(k);
+ for(const r of rules){const entity=scene.findEntity(r.entity);if(!entity)continue;let outcome=null;
+ if(r.kind==='move'){const t=entity.components.transform;if(!t)continue;let x=+(input.has('d')||input.has('ArrowRight'))-+(input.has('a')||input.has('ArrowLeft')),z=+(input.has('s')||input.has('ArrowDown'))-+(input.has('w')||input.has('ArrowUp'));const l=Math.hypot(x,z)||1;x=x/l*dt*r.speed;z=z/l*dt*r.speed;if(x||z){const p=[t.position[0]+x,t.position[1],t.position[2]+z],b=r.bounds;const blocked=b&&(p[0]<b[0]||p[0]>b[1]||p[2]<b[2]||p[2]>b[3])||scene.entities().some(e=>e.id!==entity.id&&e.components.collider&&e.components.transform&&[0,2].every(i=>Math.abs(p[i]-e.components.transform.position[i])<e.components.collider.halfSize[i]*e.components.transform.scale[i]+.25));if(!blocked)scene.updateTransform(entity.id,{position:p});}}
+ else if(r.kind==='collect'){const target=scene.findEntity(r.target),a=entity.components.transform,b=target?.components.transform,c=entity.components[r.component];if(a&&b&&c&&Math.hypot(...a.position.map((v,i)=>v-b.position[i]))<=r.radius){scene.commit(scene.changeset([{type:'DeleteEntity',id:target.id,expectedExists:true},{type:'UpdateComponent',id:entity.id,component:r.component,expectedExists:true,value:{...c,[r.counter]:(c[r.counter]??0)+1}}]));outcome='collected';}}
+ else if(r.kind==='goal'){const source=scene.findEntity(r.sourceEntity)?.components[r.sourceComponent],c=entity.components[r.component];if(c&&!c[r.property]&&source?.[r.counter]>=r.threshold){scene.setComponent(entity.id,r.component,{...c,[r.property]:true});outcome='complete';}}
+ else if(edge.has(r.key)){const source=scene.findEntity(r.sourceEntity),target=scene.findEntity(r.target),a=source?.components.transform,b=target?.components.transform,c=source?.components[r.sourceComponent],state=entity.components[r.component];if(!a||!b||!c||!state||state[r.property])continue;if(Math.hypot(...a.position.map((v,i)=>v-b.position[i]))>r.radius||c[r.counter]<r.cost){outcome='condition-not-met';}else{const operations=[];if(r.kind==='build')operations.push({type:'CreatePrefabInstance',prefab:r.prefab,id:'entity-'+scene.serialize().nextId,expectedExists:false,transform:{position:[...b.position]}});operations.push({type:'UpdateComponent',id:entity.id,component:r.component,expectedExists:true,value:{...state,[r.property]:true}});if(r.kind==='build'&&r.cost&&source.id===entity.id&&r.sourceComponent===r.component){operations[operations.length-1].value={...c,[r.counter]:c[r.counter]-r.cost,[r.property]:true};}else if(r.kind==='build'&&r.cost)operations.push({type:'UpdateComponent',id:source.id,component:r.sourceComponent,expectedExists:true,value:{...c,[r.counter]:c[r.counter]-r.cost}});scene.commit(scene.changeset(operations));outcome=r.kind==='build'?'built':'activated';}}
+ if(outcome)events.emit('game:rule',{entity:entity.id,rule:r.id,kind:r.kind,outcome});
+ }}});
+}

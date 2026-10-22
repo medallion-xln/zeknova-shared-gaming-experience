@@ -1,0 +1,11 @@
+# Portable project format v2
+
+`zge.sdk.project.v2` contains ID/name, `sdkCompatibility:{major:0,minimumPreview:11}`, metadata, entryWorld/worlds, declarative component definitions, asset references with optional embedded JSON/provenance/license data, prefabs, plugin dependencies, supported rule descriptors and import provenance. Scenes retain their v1 envelope, stable entity IDs, revision, nextId and component data. Prefab instances retain source IDs and overrides.
+
+`createProject` constructs a valid empty project. `parseProject` handles JSON, known v1 migration and validation. Unknown future project/SDK requirements fail with typed errors. The original input is detached. Scene restore validates completely before replacing data; project open builds/validates a replacement engine before disposing the old one. Invalid JSON, component references, schema or hierarchy cannot partially replace a good project.
+
+Studio New creates a new isolated project. Open selects bundled examples; Import reads a user-selected JSON file. Save stores a complete project in browser storage, Reload reopens it, and Export downloads a complete `.zge.json`. The revision footer indicates saved versus unsaved content. Export does not pretend browser storage was saved. No unrestricted filesystem write endpoint exists; downloads/file selection are explicit user actions. Browser storage is a fallback; portable exports do not depend on it.
+
+A fresh browser context reimports an exported project and compares the complete project, scene transforms, component definitions, prefab identities and asset data/references. The separate Signal Garden install imports a Studio-edited project, runs its rules/objective and saves/restores state independently. No private source or original game data is required.
+
+Executable plugin/function code cannot be embedded in this data format. Trusted host registration is explicit; Studio blocks unknown plugin execution. The supported move/collect/goal data interpreter contains no eval/URL code loader. Nonembedded assets require an available safe relative resource and correct hash; exporting metadata does not bundle arbitrary media or establish licensing rights. Multiworld files preserve loaded/current scenes, but Studio currently authors the entry scene only.

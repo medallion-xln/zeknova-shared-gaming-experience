@@ -1,0 +1,13 @@
+# Long-run stability
+
+The original game produced902.836s of continuous capture and physical-input attempts,53,714 timed RAF intervals. It was not uninterrupted unobscured play: FirstContact was answered at51.3s; a later diplomatic incident was left open by the first harness. Last successful pointer workflow525.707s; first observed pointer failure follows586.917s.21pointer timeouts are retained, and keyboard gameplay/attacks continue under the blocking modal. Rendering under that overlay is not certified as visible combat performance.
+
+No uncaught browser exception was recorded in the timed page. There were128timed acknowledged saves,5→5workers and31→31intervals. Listener and DOM counts are **not constant**: probe184→199live listeners,11→14detached; CDP239→320listeners and5,796→22,716DOMnodes, with fluctuations up to41,850nodes. The observer's weak/strong references, live HUD updates, retained diagnostics and GC affect interpretation; counts alone cannot distinguish a leak from transient/uncollected objects. Timeouts/RAF ownership are not a complete timer-retention audit.
+
+Memory sampled without forcing GC during gameplay: CDP used JS heap48.92→126.75MiB, range45.20–179.44MiB; final20sample regression slope~0.482MiB/min. `performance.memory` reports137.23→832.10MiB and different accounting; renderer estimates84.72→983.00MiB, texture72.34→752.17MiB. Fetch/parsed caches settle at58.76/53.29MiB. Renderer texture tail is effectively flat; geometry/DOM/heap still require retained-object and GPU-resource analysis. **Leak freedom is not established.**
+
+Repeated full-page launches, renderer switches and an actual browser-process restart exercise clean realms; this does not prove in-place whole-game teardown. Source tests certify owned worker/launcher/gateway process failures independently. Studio12project switches/backend use forcedGC only outside active trials; their bounds cannot certify this complex original world.
+
+Source workload durations in this milestone are shorter than historical ZGE10's900s and ZGE11's1200s. Prior worker-heap tail+0.340MiB/min and unresolved database COMMIT/open spikes remain historical investigations; short new windows cannot clear them. Current source60s continuous physical input additionally tests quota/reconciliation behavior under realistic UI input; its result is reported in the load certificate.
+
+[Memory chart](charts/memory.png), [CPU chart](charts/cpu.png), [raw analysis](evidence/original-analysis.json), [input/incident screenshot](evidence/original/long-end.png). Screenshot capture and JSON checkpoints can affect tails; no causal spike attribution or indefinite stability claim is made.

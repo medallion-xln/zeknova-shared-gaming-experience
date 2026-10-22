@@ -1,0 +1,103 @@
+  PASS contract identity
+  PASS registry identity
+  PASS evaluation identity
+  PASS mode evaluation only
+  PASS authority none
+  PASS candidate policy exact
+  PASS v2 inherited
+  PASS rollout depth three
+  PASS fourteen holdouts
+  PASS six policies
+  PASS default seeds eight
+  PASS variant ids unique
+  PASS all seven base scenarios represented
+  PASS no holdout live authority
+  PASS no authored witness reads declared
+  PASS holdout-perimeter-resource-lure state validates
+  PASS holdout-perimeter-resource-lure deterministic state
+  PASS holdout-perimeter-screen-delay state validates
+  PASS holdout-perimeter-screen-delay deterministic state
+  PASS holdout-core-contact-lure state validates
+  PASS holdout-core-contact-lure deterministic state
+  PASS holdout-core-exact-materials state validates
+  PASS holdout-core-exact-materials deterministic state
+  PASS holdout-cascade-contact-lure state validates
+  PASS holdout-cascade-contact-lure deterministic state
+  PASS holdout-cascade-stabilize-delay state validates
+  PASS holdout-cascade-stabilize-delay deterministic state
+  PASS holdout-resource-route-lure state validates
+  PASS holdout-resource-route-lure deterministic state
+  PASS holdout-resource-channel-lure state validates
+  PASS holdout-resource-channel-lure deterministic state
+  PASS holdout-patrol-alert-lure state validates
+  PASS holdout-patrol-alert-lure deterministic state
+  PASS holdout-patrol-resource-lure state validates
+  PASS holdout-patrol-resource-lure deterministic state
+  PASS holdout-multi-contact-lure state validates
+  PASS holdout-multi-contact-lure deterministic state
+  PASS holdout-multi-repair-delay state validates
+  PASS holdout-multi-repair-delay deterministic state
+  PASS holdout-deescalation-alert-lure state validates
+  PASS holdout-deescalation-alert-lure deterministic state
+  PASS holdout-deescalation-route-lure state validates
+  PASS holdout-deescalation-route-lure deterministic state
+  PASS v3 decision legal
+  PASS v3 covers all legal roots
+  PASS v3 deadline aware
+  PASS v3 rollout depth exact
+  PASS v3 risk tail exact
+  PASS v3 decision deterministic
+  PASS sample run canonical
+  PASS sample validates
+  PASS sample authority none
+  PASS sample objective complete
+  PASS sample settlement survives
+  PASS sample no illegal proposals
+  PASS sample deterministic
+  PASS report canonical prefix
+  PASS report id exact
+  PASS total runs 672
+  PASS holdout audited cases 112
+  PASS holdout all cases solvable
+  PASS candidate all-case objective perfect
+  PASS candidate solvable objective perfect
+  PASS candidate settlement survival perfect
+  PASS candidate survival optimality perfect
+  PASS candidate avoidable objective failures zero
+  PASS candidate avoidable settlement losses zero
+  PASS candidate illegal rate zero
+  PASS v2 holdout objective measured
+  PASS rules holdout objective measured
+  PASS random holdout objective measured
+  PASS always hold objective zero
+  PASS candidate v2 nonloss
+  PASS candidate wins 65 over v2
+  PASS candidate never loses to hold
+  PASS candidate wins all over hold
+  PASS prior audit case count 112
+  PASS prior solvable count 73
+  PASS prior unavoidable objective failures 39
+  PASS prior unavoidable settlement losses 7
+  PASS prior v3 solves every solvable case
+  PASS prior v3 survival optimal
+  PASS prior avoidable objective failures zero
+  PASS prior avoidable settlement losses zero
+  PASS all development gates pass
+  PASS strategic competence remains false
+  PASS production authority remains false
+  PASS rollout reads no authored witnesses
+  PASS report contains no wall clock
+  PASS source reads no authored answer lists
+  PASS source adds no execution surface
+  PASS small report validates
+  PASS unknown variant rejected
+  PASS unknown policy rejected
+  PASS zero seed rejected
+  PASS tampered run rejected
+  PASS tampered report rejected
+  PASS contract has no execute
+  PASS contract has no dispatch
+  PASS contract has no issue
+  PASS contract has no apply
+  PASS contract has no Prime live executor
+STAGE 1A-Z.2.2 PRIME DEADLINE RISK ROLLOUT CONTRACT TESTS PASS (102/102)

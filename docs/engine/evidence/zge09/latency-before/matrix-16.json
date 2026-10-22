@@ -1,0 +1,459 @@
+{
+  "label": "matrix-16",
+  "profile": "movement",
+  "clients": 16,
+  "distinctIdentities": 16,
+  "phpGateways": 8,
+  "policy": {
+    "requestsPerSecond": 6,
+    "principalLimitPerMinute": 240,
+    "ipLimitPerMinute": 600,
+    "mode": "isolated burst under unchanged quota",
+    "syntheticStartingSharedStone": 12
+  },
+  "durationMs": 1216.2075829999994,
+  "requests": {
+    "total": 64,
+    "httpAccepted": 64,
+    "acceptedCommands": 64,
+    "duplicateReceipts": 0,
+    "throttled": 0,
+    "rejectedCommands": 0,
+    "transportFailures": 0,
+    "classes": {
+      "movement": 64
+    },
+    "reasons": {}
+  },
+  "requestsPerSecond": 52.622595759625376,
+  "acceptedCommandsPerSecond": 52.622595759625376,
+  "latencyMs": {
+    "count": 64,
+    "p50": 35.58341699999983,
+    "p95": 574.451500000001,
+    "p99": 638.9395420000001,
+    "max": 776.488374999999
+  },
+  "stagesMs": {
+    "payload": {
+      "count": 64,
+      "p50": 0.0105,
+      "p95": 0.015667,
+      "p99": 0.019375,
+      "max": 0.033416
+    },
+    "databaseOpen": {
+      "count": 64,
+      "p50": 0.299667,
+      "p95": 0.5915,
+      "p99": 0.62975,
+      "max": 0.905166
+    },
+    "quota": {
+      "count": 64,
+      "p50": 0.362124,
+      "p95": 250.120124,
+      "p99": 400.263417,
+      "max": 568.985958
+    },
+    "authentication": {
+      "count": 64,
+      "p50": 0.093375,
+      "p95": 0.130749,
+      "p99": 0.187999,
+      "max": 0.328125
+    },
+    "authorization": {
+      "count": 64,
+      "p50": 0.006375,
+      "p95": 0.009458,
+      "p99": 0.011792,
+      "max": 0.016291
+    },
+    "runtimeEnsure": {
+      "count": 64,
+      "p50": 0.321208,
+      "p95": 0.755667,
+      "p99": 1.154834,
+      "max": 1.185625
+    },
+    "admission": {
+      "count": 64,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "lockWait": {
+      "count": 64,
+      "p50": 0.006333,
+      "p95": 64.809625,
+      "p99": 456.38625,
+      "max": 467.51775
+    },
+    "validation": {
+      "count": 64,
+      "p50": 1.073917,
+      "p95": 1.329792,
+      "p99": 1.382708,
+      "max": 1.423458
+    },
+    "ipc": {
+      "count": 64,
+      "p50": 8.345708,
+      "p95": 12.558708,
+      "p99": 13.156125,
+      "max": 14.169917
+    },
+    "candidateValidation": {
+      "count": 64,
+      "p50": 0.046667,
+      "p95": 0.059833,
+      "p99": 0.062625,
+      "max": 0.066042
+    },
+    "transactionWrites": {
+      "count": 64,
+      "p50": 0.454958,
+      "p95": 0.662041,
+      "p99": 0.7165,
+      "max": 0.754042
+    },
+    "commitValidation": {
+      "count": 64,
+      "p50": 0.047375,
+      "p95": 0.054541,
+      "p99": 0.063792,
+      "max": 0.069625
+    },
+    "commit": {
+      "count": 64,
+      "p50": 0.356125,
+      "p95": 0.422459,
+      "p99": 0.681375,
+      "max": 1.150458
+    },
+    "eventRead": {
+      "count": 64,
+      "p50": 0.391917,
+      "p95": 0.447167,
+      "p99": 0.472292,
+      "max": 0.478125
+    },
+    "receiptConstruction": {
+      "count": 64,
+      "p50": 0.307833,
+      "p95": 0.337,
+      "p99": 0.362084,
+      "max": 0.380792
+    },
+    "responseSerialization": {
+      "count": 64,
+      "p50": 0.206625,
+      "p95": 0.268209,
+      "p99": 0.269,
+      "max": 0.276875
+    }
+  },
+  "transactionMs": {
+    "count": 64,
+    "p50": 10.479416,
+    "p95": 14.9255,
+    "p99": 15.702875,
+    "max": 16.291291
+  },
+  "runtimeEvaluationMs": {
+    "count": 64,
+    "p50": 5.385124999999789,
+    "p95": 8.293416999999863,
+    "p99": 8.543916999999965,
+    "max": 8.735708000000159
+  },
+  "runtimeQueueMs": {
+    "count": 64,
+    "p50": 0.0026669999988371274,
+    "p95": 0.0036249999993742676,
+    "p99": 0.0043329999989509815,
+    "max": 0.004457999999431195
+  },
+  "samples": [
+    {
+      "atMs": 15233.990917,
+      "rssBytes": 401162240,
+      "cpuMs": 2130,
+      "descriptors": 81,
+      "workerCount": 1,
+      "dbBytes": 258048,
+      "processes": [
+        {
+          "pid": 14327,
+          "rssBytes": 116834304,
+          "cpuMs": 1350,
+          "program": "node"
+        },
+        {
+          "pid": 17019,
+          "rssBytes": 27508736,
+          "cpuMs": 80,
+          "program": "php"
+        },
+        {
+          "pid": 17033,
+          "rssBytes": 26525696,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 17047,
+          "rssBytes": 27492352,
+          "cpuMs": 80,
+          "program": "php"
+        },
+        {
+          "pid": 17061,
+          "rssBytes": 28262400,
+          "cpuMs": 80,
+          "program": "php"
+        },
+        {
+          "pid": 17075,
+          "rssBytes": 27869184,
+          "cpuMs": 80,
+          "program": "php"
+        },
+        {
+          "pid": 17089,
+          "rssBytes": 29687808,
+          "cpuMs": 80,
+          "program": "php"
+        },
+        {
+          "pid": 17103,
+          "rssBytes": 29573120,
+          "cpuMs": 80,
+          "program": "php"
+        },
+        {
+          "pid": 17117,
+          "rssBytes": 27918336,
+          "cpuMs": 80,
+          "program": "php"
+        },
+        {
+          "pid": 17192,
+          "rssBytes": 59490304,
+          "cpuMs": 150,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 16461.20275,
+      "rssBytes": 429113344,
+      "cpuMs": 3130,
+      "descriptors": 81,
+      "workerCount": 1,
+      "dbBytes": 475136,
+      "processes": [
+        {
+          "pid": 14327,
+          "rssBytes": 123355136,
+          "cpuMs": 1600,
+          "program": "node"
+        },
+        {
+          "pid": 17019,
+          "rssBytes": 28966912,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 17033,
+          "rssBytes": 27492352,
+          "cpuMs": 110,
+          "program": "php"
+        },
+        {
+          "pid": 17047,
+          "rssBytes": 28459008,
+          "cpuMs": 130,
+          "program": "php"
+        },
+        {
+          "pid": 17061,
+          "rssBytes": 29032448,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 17075,
+          "rssBytes": 28459008,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 17089,
+          "rssBytes": 31703040,
+          "cpuMs": 130,
+          "program": "php"
+        },
+        {
+          "pid": 17103,
+          "rssBytes": 29999104,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 17117,
+          "rssBytes": 29769728,
+          "cpuMs": 130,
+          "program": "php"
+        },
+        {
+          "pid": 17192,
+          "rssBytes": 71876608,
+          "cpuMs": 550,
+          "program": "node"
+        }
+      ]
+    }
+  ],
+  "faults": [],
+  "health": {
+    "version": 1,
+    "owner": "supervisor-b0ce569b-439c-4a80-b0de-945aad850a23",
+    "state": "ready",
+    "limits": {
+      "queueCapacity": 16,
+      "maxWorlds": 16,
+      "maxConnections": 64,
+      "maxFrame": 8388608,
+      "timeoutMs": 2000,
+      "leaseMs": 10000
+    },
+    "metrics": {
+      "accepted": 97,
+      "rejected": 0,
+      "completed": 97,
+      "failed": 0,
+      "restarts": 0,
+      "timeouts": 0,
+      "staleReplies": 0,
+      "authenticationFailures": 0,
+      "leaseFailures": 0,
+      "queuePeak": 1,
+      "workerStarts": 1,
+      "totalEvaluationMs": 532.155496000003
+    },
+    "worlds": [
+      {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-6a0f4831-50dd-46e6-9366-f8b376835d00",
+        "generation": 1,
+        "expires": 1792609209320,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": {
+          "created": 1,
+          "restored": 2,
+          "cacheHits": 95
+        }
+      }
+    ]
+  },
+  "final": {
+    "revision": 80,
+    "cursor": 240,
+    "archiveReceipts": 80,
+    "personalClaims": 0,
+    "teamClaims": 0,
+    "personalXp": [
+      {
+        "id": "load-0",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-1",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-2",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-3",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-4",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-5",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-6",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-7",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-8",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-9",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-10",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-11",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-12",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-13",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-14",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-15",
+        "xp": 0,
+        "rank": "ensign"
+      }
+    ],
+    "stone": 12,
+    "acceptedPlaces": 0,
+    "deterministicReplay": true
+  },
+  "scope": "loopback real authenticated HTTP; private synthetic starting supplies for construction longevity; all commands/events/claims retained; process CPU/RSS includes harness, owned PHP gateways and worker; source edits/tests may contend during run"
+}

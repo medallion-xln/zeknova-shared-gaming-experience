@@ -1,0 +1,199 @@
+{
+  "schema": "zge.bench01.multiplayer-browser.v1",
+  "results": [
+    {
+      "clients": 2,
+      "errors": [],
+      "scope": "independent authenticated browser contexts; physical keyboard and construction button; source-owned world only; short bounded functional run",
+      "physicalDisplacements": [
+        {
+          "id": "[\"player\",\"bench-0\"]",
+          "dx": 0.8,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-1\"]",
+          "dx": 0.8,
+          "dz": 0
+        }
+      ],
+      "xp": [
+        {
+          "id": "[\"player\",\"bench-0\"]",
+          "xp": 14,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-1\"]",
+          "xp": 14,
+          "rank": "ensign"
+        }
+      ],
+      "convergence": true,
+      "buildings": 2,
+      "teamXp": 25,
+      "privateProjection": true,
+      "deterministicReplay": true,
+      "worldGeneration": 1,
+      "workerCount": 1,
+      "screenshot": "multiplayer-2clients.png",
+      "status": "PASS"
+    },
+    {
+      "clients": 4,
+      "errors": [],
+      "scope": "independent authenticated browser contexts; physical keyboard and construction button; source-owned world only; short bounded functional run",
+      "physicalDisplacements": [
+        {
+          "id": "[\"player\",\"bench-0\"]",
+          "dx": 0.8,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-1\"]",
+          "dx": 0.8,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-2\"]",
+          "dx": 0.4,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-3\"]",
+          "dx": 0.7999999999999998,
+          "dz": 0
+        }
+      ],
+      "xp": [
+        {
+          "id": "[\"player\",\"bench-0\"]",
+          "xp": 14,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-1\"]",
+          "xp": 14,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-2\"]",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-3\"]",
+          "xp": 0,
+          "rank": "ensign"
+        }
+      ],
+      "convergence": true,
+      "buildings": 2,
+      "teamXp": 25,
+      "privateProjection": true,
+      "deterministicReplay": true,
+      "worldGeneration": 1,
+      "workerCount": 1,
+      "screenshot": "multiplayer-4clients.png",
+      "status": "PASS"
+    },
+    {
+      "clients": 8,
+      "errors": [],
+      "scope": "independent authenticated browser contexts; physical keyboard and construction button; source-owned world only; short bounded functional run",
+      "physicalDisplacements": [
+        {
+          "id": "[\"player\",\"bench-0\"]",
+          "dx": 0.8,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-1\"]",
+          "dx": 0.8,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-2\"]",
+          "dx": 0.4,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-3\"]",
+          "dx": 0.3999999999999999,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-4\"]",
+          "dx": 0.7999999999999998,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-5\"]",
+          "dx": 0.3999999999999999,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-6\"]",
+          "dx": 0.8000000000000007,
+          "dz": 0
+        },
+        {
+          "id": "[\"player\",\"bench-7\"]",
+          "dx": 0.7999999999999998,
+          "dz": 0
+        }
+      ],
+      "xp": [
+        {
+          "id": "[\"player\",\"bench-0\"]",
+          "xp": 14,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-1\"]",
+          "xp": 14,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-2\"]",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-3\"]",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-4\"]",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-5\"]",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-6\"]",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "[\"player\",\"bench-7\"]",
+          "xp": 0,
+          "rank": "ensign"
+        }
+      ],
+      "convergence": true,
+      "buildings": 2,
+      "teamXp": 25,
+      "privateProjection": true,
+      "deterministicReplay": true,
+      "worldGeneration": 1,
+      "workerCount": 1,
+      "screenshot": "multiplayer-8clients.png",
+      "status": "PASS"
+    }
+  ]
+}

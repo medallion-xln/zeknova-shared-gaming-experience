@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+ok 1 - consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+  ---
+  duration_ms: 2450.52925
+  type: 'test'
+  ...
+# Subtest: operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+ok 2 - operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+  ---
+  duration_ms: 1554.2265
+  type: 'test'
+  ...
+# Subtest: killed backup and restore never publish a valid partial bundle or change the live world
+ok 3 - killed backup and restore never publish a valid partial bundle or change the live world
+  ---
+  duration_ms: 2656.2215
+  type: 'test'
+  ...
+# Subtest: logical archive corruption is denied even after a file digest is recomputed
+ok 4 - logical archive corruption is denied even after a file digest is recomputed
+  ---
+  duration_ms: 1166.796708
+  type: 'test'
+  ...
+# Subtest: actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+ok 5 - actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+  ---
+  duration_ms: 1944.663834
+  type: 'test'
+  ...
+# Subtest: tool sessions are explicitly enabled, default-deny every read, and forbid live-authority debug writes
+ok 6 - tool sessions are explicitly enabled, default-deny every read, and forbid live-authority debug writes
+  ---
+  duration_ms: 3.663166
+  type: 'test'
+  ...
+# Subtest: scene load is validated atomically and inspection snapshots cannot mutate the engine
+ok 7 - scene load is validated atomically and inspection snapshots cannot mutate the engine
+  ---
+  duration_ms: 1.690459
+  type: 'test'
+  ...
+# Subtest: project assets, prefab roundtrip, bounded paused stepping, and plugin ownership use existing engine registries
+ok 8 - project assets, prefab roundtrip, bounded paused stepping, and plugin ownership use existing engine registries
+  ---
+  duration_ms: 0.838292
+  type: 'test'
+  ...
+# Subtest: project and prefab interfaces reject traversal, unknown asset references and non-JSON data
+ok 9 - project and prefab interfaces reject traversal, unknown asset references and non-JSON data
+  ---
+  duration_ms: 0.361833
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9895.930791

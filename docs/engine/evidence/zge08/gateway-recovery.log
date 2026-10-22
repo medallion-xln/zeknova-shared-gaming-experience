@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+ok 1 - actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+  ---
+  duration_ms: 862.419833
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+ok 2 - worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 941.379833
+  type: 'test'
+  ...
+# Subtest: worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+ok 3 - worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 943.216958
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+ok 4 - worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 959.642459
+  type: 'test'
+  ...
+# Subtest: worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+ok 5 - worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 2977.026125
+  type: 'test'
+  ...
+# Subtest: worker death after durable commit and before reply cannot duplicate personal or team effects
+ok 6 - worker death after durable commit and before reply cannot duplicate personal or team effects
+  ---
+  duration_ms: 1138.211083
+  type: 'test'
+  ...
+# Subtest: database unavailable and reward-write failure preserve committed player/world state
+ok 7 - database unavailable and reward-write failure preserve committed player/world state
+  ---
+  duration_ms: 1101.385667
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-before-commit
+ok 8 - actual gateway process death at multiplayer mission COMMIT crash-before-commit
+  ---
+  duration_ms: 849.227
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-after-commit
+ok 9 - actual gateway process death at multiplayer mission COMMIT crash-after-commit
+  ---
+  duration_ms: 847.405333
+  type: 'test'
+  ...
+# Subtest: checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+ok 10 - checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+  ---
+  duration_ms: 951.517708
+  type: 'test'
+  ...
+# Subtest: multiplayer backup and isolated restore retain private actor records and complete archives
+ok 11 - multiplayer backup and isolated restore retain private actor records and complete archives
+  ---
+  duration_ms: 1665.158166
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13292.035958

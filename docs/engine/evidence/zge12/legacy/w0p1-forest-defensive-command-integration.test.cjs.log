@@ -1,0 +1,59 @@
+  PASS command integration installed globally
+  PASS incumbent controller installed globally
+  PASS public adapter installed
+  PASS public adapter is read only
+  PASS public adapter exposes no execute
+  PASS public adapter exposes no dispatch
+  PASS patrol registration canonical
+  PASS patrol starts available
+  PASS route target available to command runtime
+  PASS intercept target available to command runtime
+  PASS withdraw target available to command runtime
+  PASS runtime rejects sentinel-prime
+  PASS runtime rejects sentinel-router
+  PASS runtime rejects shadow-replay
+  PASS runtime rejects test-projection
+  PASS spoofed incumbent source without capability rejected
+  PASS incumbent patrol command active
+  PASS patrol command target exact
+  PASS readiness deducted once at acceptance
+  PASS live readiness updated
+  PASS patrol slot reserved
+  PASS patrol assigned command
+  PASS patrol remains active after first quantum
+  PASS patrol moved to observed route endpoint
+  PASS readiness not deducted twice
+  PASS patrol completes after declared duration
+  PASS patrol completion signal exact
+  PASS patrol returns to home
+  PASS patrol slot released
+  PASS patrol masked during cooldown
+  PASS patrol legal at exact cooldown expiry
+  PASS intercept command active
+  PASS intercept uses same canonical enemy subject
+  PASS intercept completes at range
+  PASS patrol moved to live enemy position
+  PASS intercept does not damage enemy
+  PASS intercept does not remove enemy
+  PASS expired contact masks new intercept
+  PASS hidden enemy does not create command target
+  PASS hidden enemy does not mutate command ledger
+  PASS withdraw remains legal during patrol commitment
+  PASS withdraw command becomes active
+  PASS previous patrol command interrupted
+  PASS interrupted command binds withdrawal
+  PASS withdraw does not deduct readiness
+  PASS withdraw reuses reserved patrol
+  PASS withdraw completes at defensive return zone
+  PASS withdraw returns patrol home
+  PASS withdraw releases patrol
+  PASS retired target completes command explicitly
+  PASS retired completion records observed effect
+  PASS runtime snapshot deterministic
+  PASS runtime command sequence monotonic
+  PASS ledger event sequence monotonic
+  PASS adapter snapshot equals integration
+  PASS dispose clears integration global
+  PASS dispose clears incumbent controller
+  PASS prior snapshot remains detached
+W0-P.1 FOREST DEFENSIVE COMMAND INTEGRATION TESTS PASS (58/58)

@@ -1,0 +1,69 @@
+{
+  "scope": "bounded local certification, not live transfer",
+  "final": {
+    "authenticatedSession": "browser-hardened-world.json",
+    "fullGameFourModes": "browser-diagnostics/browser-gameplay.json",
+    "nativeStress": [
+      "browser-diagnostics/stress-webgpu.json",
+      "browser-diagnostics/stress-webgl.json",
+      "browser-diagnostics/stress-browser-restart.json"
+    ],
+    "retainedBrowserRuns": [
+      {
+        "script": "zge04-browser-parity.mjs",
+        "exit": 0,
+        "ms": 9859
+      },
+      {
+        "script": "zge04-browser-live-flow.mjs",
+        "exit": 0,
+        "ms": 8928
+      },
+      {
+        "script": "zge03-browser-followup.mjs",
+        "exit": 0,
+        "ms": 14217
+      },
+      {
+        "script": "zge04-browser-demo.mjs",
+        "exit": 0,
+        "ms": 2820
+      },
+      {
+        "script": "zge05-browser-demo.mjs",
+        "exit": 0,
+        "ms": 7722
+      },
+      {
+        "script": "zge04-browser-performance.mjs",
+        "exit": 0,
+        "ms": 21268
+      }
+    ]
+  },
+  "initialFailure": {
+    "script": "zge06-browser-certification.mjs",
+    "log": "zge06-browser-certification.mjs.log",
+    "reason": "one interval above baseline during inherited restart probe",
+    "retained": true
+  },
+  "rerun": {
+    "script": "zge07-browser-certification.mjs",
+    "assertionsUnchanged": true,
+    "extraInstrumentation": "interval creation stacks and before/after counts",
+    "fourModesPassed": true,
+    "intervalDeltas": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "causeOfInitialTransient": "unresolved; not asserted fixed"
+  },
+  "limitations": [
+    "director-layer certificate does not certify complete page teardown",
+    "source game shares a colony avatar and XP",
+    "neural-none is native fallback, not trained neural inference"
+  ],
+  "noLiveAuthorityTransfer": true
+}

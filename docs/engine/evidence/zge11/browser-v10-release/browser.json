@@ -1,0 +1,159 @@
+{
+  "runs": [
+    {
+      "mode": "auto",
+      "backend": "webgpu",
+      "viewportPointerSelection": true,
+      "gizmoPointerDrag": true,
+      "temporaryIsolation": true,
+      "numericTransform": true,
+      "invalidAtomic": true,
+      "saveReload": true,
+      "undoRedo": true,
+      "prefab": true,
+      "AIReview": true,
+      "simulationIsolation": true,
+      "eventFiltering": true,
+      "resizableKeyboard": true,
+      "independentMovement": true,
+      "independentCollectBuildObjective": true,
+      "sceneReloadGeometry": [
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 134,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 144,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 154,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 164,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgpu",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 174,
+          "controls": true,
+          "dragging": false
+        }
+      ],
+      "errors": [],
+      "requests": [
+        "/examples/studio/",
+        "/examples/studio/studio.css",
+        "/examples/studio/studio.js",
+        "/examples/studio/studio-tools.js",
+        "/node_modules/three/examples/jsm/controls/OrbitControls.js",
+        "/node_modules/three/examples/jsm/controls/TransformControls.js",
+        "/node_modules/three/build/three.webgpu.js",
+        "/packages/sdk/dist/index.js",
+        "/packages/sdk/dist/three.js",
+        "/examples/orbital-outpost/project.js",
+        "/examples/orbital-outpost/game.js",
+        "/node_modules/three/build/three.core.js",
+        "/examples/orbital-outpost/",
+        "/examples/orbital-outpost/main.js"
+      ]
+    },
+    {
+      "mode": "webgl",
+      "backend": "webgl",
+      "viewportPointerSelection": true,
+      "gizmoPointerDrag": true,
+      "temporaryIsolation": true,
+      "numericTransform": true,
+      "invalidAtomic": true,
+      "saveReload": true,
+      "undoRedo": true,
+      "prefab": true,
+      "AIReview": true,
+      "simulationIsolation": true,
+      "eventFiltering": true,
+      "resizableKeyboard": true,
+      "independentMovement": true,
+      "independentCollectBuildObjective": true,
+      "sceneReloadGeometry": [
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 134,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 144,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 154,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 164,
+          "controls": true,
+          "dragging": false
+        },
+        {
+          "backend": "webgl",
+          "objects": 5,
+          "geometries": 17,
+          "drawCalls": 174,
+          "controls": true,
+          "dragging": false
+        }
+      ],
+      "errors": [],
+      "requests": [
+        "/examples/studio/",
+        "/examples/studio/studio.css",
+        "/examples/studio/studio.js",
+        "/examples/studio/studio-tools.js",
+        "/node_modules/three/examples/jsm/controls/OrbitControls.js",
+        "/node_modules/three/examples/jsm/controls/TransformControls.js",
+        "/node_modules/three/build/three.webgpu.js",
+        "/packages/sdk/dist/index.js",
+        "/packages/sdk/dist/three.js",
+        "/examples/orbital-outpost/project.js",
+        "/examples/orbital-outpost/game.js",
+        "/node_modules/three/build/three.core.js",
+        "/examples/orbital-outpost/",
+        "/examples/orbital-outpost/main.js"
+      ]
+    }
+  ],
+  "autoUnavailableFallback": "webgl"
+}

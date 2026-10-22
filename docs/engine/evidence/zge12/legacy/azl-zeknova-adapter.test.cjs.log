@@ -1,0 +1,33 @@
+adapter id=zeknova version=2 actions=13 features=74 safeIdx=2
+  PASS has 13 actions with {key,label}
+  PASS baseFeatureSpec well-formed
+  PASS safeActionIndex in range
+  PASS oracleGroups reference valid indices
+  PASS 200 random steps do not throw
+  PASS clone isolation (original unchanged after mutating clone)
+  PASS clone diverged from original
+  PASS clone deep-copies nested objects
+  PASS illegal actions are rejected without fallback mutation
+  PASS determinism (same seed + sequence -> identical hash)
+  PASS legalMask never all-zeros
+  PASS safeActionIndex always legal
+  PASS health() stays in [-1,1]
+  PASS heuristicValue() stays in [-1,1]
+  PASS toBaseFeatures writes finite values
+  PASS terminalValue stays in [-1,1]
+  PASS entities() returns valid entity records
+  PASS entities() includes a critical colony core
+  PASS 400-sim MCTS runs end-to-end without throwing
+  PASS 400-sim MCTS returns a valid action
+  MCTS -> action 4 (stabilize_relations), rootVisits=400, children=5
+  PASS captureSearchState maps live resources
+  PASS captureSearchState maps live building counts
+  PASS captureSearchState counts only live hostile enemies (2 of 4)
+  PASS captureSearchState maps diplomacy + tension
+  PASS captureSearchState maps AO + completed
+  PASS captureSearchState applies captain officer bonus
+  PASS captureSearchState marks versioned live telemetry valid
+  PASS captured live state is steppable
+  PASS captureSearchState rejects missing live telemetry
+
+ALL ZEKNOVA ADAPTER TESTS PASSED

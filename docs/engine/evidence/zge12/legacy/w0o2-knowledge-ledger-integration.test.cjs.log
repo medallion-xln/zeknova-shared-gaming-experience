@@ -1,0 +1,38 @@
+  PASS integration installed globally
+  PASS adapter installed globally
+  PASS ledger starts empty
+  PASS ledger starts at live quantum
+  PASS enemy receives stable identity before knowledge
+  PASS FX-OMNISCIENT unobserved enemy creates no ledger record
+  PASS out-of-range perception produces no event
+  PASS out-of-range enemy remains absent from ledger
+  PASS grounded sighting creates one private record
+  PASS record subject matches sighted enemy
+  PASS record is fresh at observation quantum
+  PASS record facts contain only perception payload derivation
+  PASS settlement has no leaked record before sharing
+  PASS enemy lost event is ingested
+  PASS enemy lost supersedes sighting
+  PASS enemy lost becomes explicitly stale
+  PASS evidence history preserves sighting and lost event
+  PASS resource discovery creates resource knowledge
+  PASS resource knowledge is fresh
+  PASS explicit sharing creates recipient knowledge
+  PASS shared record preserves sender provenance
+  PASS shared record preserves original observation quantum
+  PASS sharing at expiry does not refresh knowledge
+  PASS sender ledger excludes recipient share envelope
+  PASS adapter snapshot equals integration snapshot
+  PASS adapter hash equals ledger hash
+  PASS adapter faction query is private
+  PASS repeated capture is deterministic
+  PASS repeated sync does not duplicate evidence
+  PASS live time advance marks resource stale at exact expiry
+  PASS fresh-only query excludes expired resource
+  PASS ledger snapshot survives restore
+  PASS restored ledger hash is byte-identical
+  PASS restored applied sequence reaches event stream
+  PASS new identity can enter restored ledger after identity refresh
+  PASS new event advances ledger sequence without reuse
+  PASS dispose clears global knowledge integration
+W0-O.2 KNOWLEDGE LEDGER INTEGRATION TESTS PASS (37/37)

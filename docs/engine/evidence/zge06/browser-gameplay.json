@@ -1,0 +1,1984 @@
+{
+  "date": "2026-10-21T06:22:53.996Z",
+  "runs": [
+    {
+      "query": "",
+      "initial": {
+        "backend": "WebGPU",
+        "assets": {
+          "loads": 21,
+          "hits": 18,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 5,
+          "cancelled": 0,
+          "entries": 16,
+          "pending": 0,
+          "bytes": 65517744,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "bossActive": false,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": null,
+            "mock": null,
+            "allowMock": true,
+            "history": []
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgpu",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 347,
+            "triangles": 734229,
+            "geometries": 812,
+            "textures": 42,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792563778618
+          }
+        },
+        "player": [
+          -0.7450944982070014,
+          1.8697742000614674,
+          31.462897171256056
+        ],
+        "xp": 0,
+        "paused": false
+      },
+      "movement": {
+        "distance": 10.204224583487203,
+        "end": [
+          -75.17159632174128,
+          1.835056023075714,
+          34.18463037965353
+        ],
+        "setup": {
+          "healthBefore": 64,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -75
+        },
+        "placed": {
+          "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+          "type": "power",
+          "x": -75,
+          "z": -75
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 325,
+          "after": 320
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -75
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 42,
+                      "water": 38,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 10,
+                      "data": 18,
+                      "credits": 1000,
+                      "trust": 52
+                    },
+                    "records": []
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 42,
+                      "water": 38,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 10,
+                      "data": 18,
+                      "credits": 988,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                        "type": "power",
+                        "x": -75,
+                        "y": 4.378257327609592,
+                        "z": -75,
+                        "rotation": 2.1574649602435962,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                    "type": "power",
+                    "x": -75,
+                    "y": 4.378257327609592,
+                    "z": -75,
+                    "rotation": 2.1574649602435962,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 4.378257327609592,
+                      "z": -75,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 20,
+            "HTMLInputElement:input": 1,
+            "HTMLSelectElement:change": 1,
+            "HTMLFormElement:submit": 2
+          },
+          "detachedTotal": 24,
+          "collected": 4,
+          "intervals": 31,
+          "rafPending": 12,
+          "rafTotal": 12089,
+          "at": 1792563797597
+        }
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {
+            "AbortSignal:abort": 1
+          },
+          "listenerTotal": 1,
+          "detachedTotal": 48,
+          "intervals": 0,
+          "rafPending": 0
+        }
+      },
+      "frames": {
+        "fps": 59.37067088788075,
+        "p99": 16.799999999999272
+      },
+      "save": {
+        "state": "retrying",
+        "revision": 4,
+        "lastAck": {
+          "seq": 5,
+          "revision": 4,
+          "at": 1792563799715,
+          "duplicate": false
+        },
+        "lastError": {
+          "kind": "transient",
+          "status": 0,
+          "message": "timeout after 8000 ms"
+        },
+        "pendingSeq": null,
+        "inFlightSeq": 8,
+        "failures": 1,
+        "counters": {
+          "submitted": 8,
+          "coalesced": 2,
+          "posted": 6,
+          "acked": 4,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 8,
+        "interceptedGets": 1,
+        "loadedExtension": null,
+        "restoredXp": null
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/DefenseTowers.js, ./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/StructureDesign.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "query": "&safe=1",
+      "initial": {
+        "backend": "WebGL",
+        "assets": {
+          "loads": 9,
+          "hits": 17,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 0,
+          "cancelled": 0,
+          "entries": 9,
+          "pending": 0,
+          "bytes": 26627008,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 5,
+            "failures": 0,
+            "resets": 0,
+            "created": 1,
+            "live": 1,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "bossActive": false,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "tensionSaveTimer",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": null,
+            "mock": null,
+            "allowMock": true,
+            "history": []
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgl2",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 326,
+            "triangles": 194199,
+            "geometries": 568,
+            "textures": 17,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792563822281
+          }
+        },
+        "player": [
+          0,
+          -0.5536145925521838,
+          6
+        ],
+        "xp": 331,
+        "paused": false
+      },
+      "movement": {
+        "distance": 9.68634326092857,
+        "end": [
+          -61.90303885158604,
+          2.7539821151554267,
+          -51.7950938464476
+        ],
+        "setup": {
+          "healthBefore": 40,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -60
+        },
+        "placed": {
+          "id": "76c814ab-0eb8-4670-a130-33c686540a4a",
+          "type": "power",
+          "x": -75,
+          "z": -60
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 325,
+          "after": 320
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -60
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 84.05871999998095,
+                      "water": 38,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 70,
+                      "data": 18,
+                      "credits": 1000,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                        "type": "power",
+                        "x": -75,
+                        "y": 4.378257327609592,
+                        "z": -75,
+                        "rotation": 2.1574649602435962,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 84.05871999998095,
+                      "water": 38,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 70,
+                      "data": 18,
+                      "credits": 988,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                        "type": "power",
+                        "x": -75,
+                        "y": 4.378257327609592,
+                        "z": -75,
+                        "rotation": 2.1574649602435962,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "76c814ab-0eb8-4670-a130-33c686540a4a",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3092589378356934,
+                        "z": -60,
+                        "rotation": 0.9328327421982998,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "76c814ab-0eb8-4670-a130-33c686540a4a",
+                    "type": "power",
+                    "x": -75,
+                    "y": 3.3092589378356934,
+                    "z": -60,
+                    "rotation": 0.9328327421982998,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 3.3092589378356934,
+                      "z": -60,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:webglcontextlost": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 3,
+            "Worker:messageerror": 1,
+            "Worker:message": 1,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 173,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 8,
+          "collected": 2,
+          "intervals": 31,
+          "rafPending": 10,
+          "rafTotal": 3776,
+          "at": 1792563828888
+        }
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {},
+          "listenerTotal": 0,
+          "detachedTotal": 48,
+          "intervals": 0,
+          "rafPending": -1
+        }
+      },
+      "frames": {
+        "fps": 51.768766177473175,
+        "p99": 16.80000000000109
+      },
+      "save": {
+        "state": "saved",
+        "revision": 9,
+        "lastAck": {
+          "seq": 13,
+          "revision": 9,
+          "at": 1792563834898,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 4,
+          "coalesced": 2,
+          "posted": 4,
+          "acked": 3,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 4,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-21T06:23:38.652Z",
+          "player": {
+            "xp": 321,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 321
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 409 (Conflict)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/StructureDesign.js, ./game/DefenseTowers.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "query": "&boss=1",
+      "initial": {
+        "backend": "WebGPU",
+        "assets": {
+          "loads": 28,
+          "hits": 5,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 12,
+          "cancelled": 0,
+          "entries": 16,
+          "pending": 0,
+          "bytes": 66980636,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "boss": "The Sunscar Colossus",
+        "bossActive": true,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "qaGameplayBaselineBuildings",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "bossDamageInvulnerableUntil",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": null,
+            "mock": null,
+            "allowMock": true,
+            "history": []
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgpu",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 256,
+            "triangles": 466922,
+            "geometries": 597,
+            "textures": 51,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792563836645
+          }
+        },
+        "player": [
+          0,
+          -0.5575562516848249,
+          6
+        ],
+        "xp": 363,
+        "paused": false
+      },
+      "movement": {
+        "distance": 9.639628242546472,
+        "end": [
+          -74.40111914075305,
+          1.6213948765640827,
+          37.131054095011706
+        ],
+        "setup": {
+          "healthBefore": 100,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -55
+        },
+        "placed": {
+          "id": "6fcf4870-3346-4586-a0d7-a7160743bf44",
+          "type": "power",
+          "x": -75,
+          "z": -55
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 760,
+          "after": 755
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -55
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 564.7270400003434,
+                      "water": 500,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 750,
+                      "data": 300,
+                      "credits": 1000,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                        "type": "power",
+                        "x": -75,
+                        "y": 4.378257327609592,
+                        "z": -75,
+                        "rotation": 2.1574649602435962,
+                        "level": 1,
+                        "health": 930
+                      },
+                      {
+                        "id": "76c814ab-0eb8-4670-a130-33c686540a4a",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3092589378356934,
+                        "z": -60,
+                        "rotation": 0.9328327421982998,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 564.7270400003434,
+                      "water": 500,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 750,
+                      "data": 300,
+                      "credits": 988,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                        "type": "power",
+                        "x": -75,
+                        "y": 4.378257327609592,
+                        "z": -75,
+                        "rotation": 2.1574649602435962,
+                        "level": 1,
+                        "health": 930
+                      },
+                      {
+                        "id": "76c814ab-0eb8-4670-a130-33c686540a4a",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3092589378356934,
+                        "z": -60,
+                        "rotation": 0.9328327421982998,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "6fcf4870-3346-4586-a0d7-a7160743bf44",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3914903623086436,
+                        "z": -55,
+                        "rotation": 0.1596313677575416,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "6fcf4870-3346-4586-a0d7-a7160743bf44",
+                    "type": "power",
+                    "x": -75,
+                    "y": 3.3914903623086436,
+                    "z": -55,
+                    "rotation": 0.1596313677575416,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 3.3914903623086436,
+                      "z": -55,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 85,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 183,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 8,
+          "collected": 1,
+          "intervals": 31,
+          "rafPending": 11,
+          "rafTotal": 11853,
+          "at": 1792563856790
+        },
+        "bossHealth": 755
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {
+            "AbortSignal:abort": 1
+          },
+          "listenerTotal": 1,
+          "detachedTotal": 45,
+          "intervals": 0,
+          "rafPending": 0
+        }
+      },
+      "frames": {
+        "fps": 60.325759099858395,
+        "p99": 16.799999999999272
+      },
+      "save": {
+        "state": "saved",
+        "revision": 11,
+        "lastAck": {
+          "seq": 15,
+          "revision": 11,
+          "at": 1792563836207,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 1,
+          "coalesced": 1,
+          "posted": 2,
+          "acked": 1,
+          "retried": 1,
+          "rejected": 0,
+          "conflicts": 1,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 1
+        },
+        "unloading": false,
+        "interceptedPosts": 1,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-21T06:23:55.065Z",
+          "player": {
+            "xp": 321,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": 321
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 409 (Conflict)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/DefenseTowers.js, ./game/StructureDesign.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "query": "&present=neural&neural=none",
+      "initial": {
+        "backend": "WebGPU",
+        "assets": {
+          "loads": 24,
+          "hits": 0,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 5,
+          "cancelled": 0,
+          "entries": 19,
+          "pending": 0,
+          "bytes": 63810334,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 32,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "missionCount": 12,
+        "boss": "The Sunscar Colossus",
+        "bossActive": true,
+        "methods": [
+          "saves",
+          "buildings",
+          "autosaveTimer",
+          "missionStats",
+          "bossManager",
+          "nextCommissioningAutoTriggerAt",
+          "getMissionContext",
+          "save",
+          "flushAdaptiveSave",
+          "damageWeaponTarget",
+          "tensionSaveTimer",
+          "bossDamageInvulnerableUntil",
+          "selectBuild",
+          "findNearestDamagedBuilding",
+          "repairBuilding",
+          "ensureBiomeMissionMines"
+        ],
+        "presentation": {
+          "presentation": {
+            "mode": "NATIVE",
+            "label": "NATIVE",
+            "fallbackReason": "fallback: no neural backend configured",
+            "mock": null,
+            "allowMock": true,
+            "history": [
+              {
+                "from": "NATIVE",
+                "to": "NATIVE",
+                "reason": "fallback: no neural backend configured",
+                "at": 1792563876306
+              }
+            ]
+          },
+          "native": {
+            "id": "native-three",
+            "initialized": true,
+            "backend": "webgpu",
+            "available": true,
+            "presented": 0,
+            "drawCalls": 270,
+            "triangles": 439309,
+            "geometries": 490,
+            "textures": 34,
+            "canvas": {
+              "width": 1280,
+              "height": 900
+            },
+            "sharedInstance": true,
+            "ownsContext": false
+          },
+          "capture": {
+            "id": "reference-capture",
+            "available": true,
+            "width": 1280,
+            "height": 720,
+            "captures": 0,
+            "nextFrameIndex": 0,
+            "lastCaptureMs": 0,
+            "overlaysHiddenLast": 0,
+            "sessionId": "local",
+            "sceneId": "zeknova",
+            "profile": "native",
+            "rerender": "always",
+            "readback": "eager",
+            "stages": {
+              "stages": {
+                "render": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "bitmap": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "readback": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                },
+                "total": {
+                  "count": 0,
+                  "p50": null,
+                  "p95": null,
+                  "max": null
+                }
+              },
+              "rerenders": 0,
+              "skippedRerenders": 0,
+              "blankFrames": 0,
+              "profile": "native",
+              "rerenderPolicy": "always",
+              "readbackPolicy": "eager"
+            }
+          },
+          "neural": null,
+          "capabilities": {
+            "webgpu": true,
+            "adapter": {
+              "vendor": "apple",
+              "architecture": "metal-3",
+              "device": "",
+              "description": ""
+            },
+            "platform": "MacIntel",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+            "browserCanHostModel": false,
+            "upstreamInferenceHost": {
+              "os": "Linux",
+              "gpu": "NVIDIA",
+              "localPossible": false,
+              "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+            },
+            "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+            "checkedAt": 1792563876204
+          }
+        },
+        "player": [
+          0,
+          -0.5575562516848249,
+          6
+        ],
+        "xp": 47,
+        "paused": false
+      },
+      "movement": {
+        "distance": 11.107362089263901,
+        "end": [
+          -75.82206435472428,
+          1.5693828080984555,
+          37.5012828077255
+        ],
+        "setup": {
+          "healthBefore": 100,
+          "pendingExtraction": false
+        },
+        "healthAfter": 100
+      },
+      "gameplay": {
+        "site": {
+          "x": -75,
+          "z": -50
+        },
+        "placed": {
+          "id": "4aca9056-039a-4b94-a123-f195b20d7bdd",
+          "type": "power",
+          "x": -75,
+          "z": -50
+        },
+        "deduction": {
+          "minerals": 24,
+          "iron": 8,
+          "biomass": 8,
+          "credits": 12
+        },
+        "combat": {
+          "before": 709,
+          "after": 704
+        },
+        "collision": true,
+        "shadow": {
+          "mode": "SHADOW",
+          "compared": 1,
+          "mismatches": 0,
+          "errors": 0,
+          "differences": [],
+          "parity": {
+            "schema": "zge.construction-parity.v1",
+            "total": 1,
+            "matched": 1,
+            "mismatched": 0,
+            "unobservable": 1,
+            "classes": {
+              "EXPECTED_NORMALIZATION": 1
+            },
+            "rows": [
+              {
+                "fixtureId": "live-1",
+                "request": {
+                  "id": "shadow-proposal",
+                  "type": "power",
+                  "x": -75,
+                  "z": -50
+                },
+                "canonical": {
+                  "before": {
+                    "inventory": {
+                      "energy": 197.06559999990463,
+                      "water": 38,
+                      "minerals": 1000,
+                      "iron": 1000,
+                      "biomass": 1000,
+                      "timber": 83.75,
+                      "data": 18,
+                      "credits": 1000,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                        "type": "power",
+                        "x": -75,
+                        "y": 4.378257327609592,
+                        "z": -75,
+                        "rotation": 2.1574649602435962,
+                        "level": 1,
+                        "health": 930
+                      },
+                      {
+                        "id": "76c814ab-0eb8-4670-a130-33c686540a4a",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3092589378356934,
+                        "z": -60,
+                        "rotation": 0.9328327421982998,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "6fcf4870-3346-4586-a0d7-a7160743bf44",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3914903623086436,
+                        "z": -55,
+                        "rotation": 0.1596313677575416,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "after": {
+                    "inventory": {
+                      "energy": 197.06559999990463,
+                      "water": 38,
+                      "minerals": 976,
+                      "iron": 992,
+                      "biomass": 992,
+                      "timber": 83.75,
+                      "data": 18,
+                      "credits": 988,
+                      "trust": 52
+                    },
+                    "records": [
+                      {
+                        "id": "602e4c10-e0a6-47f7-8352-663d8d86b2a6",
+                        "type": "power",
+                        "x": -75,
+                        "y": 4.378257327609592,
+                        "z": -75,
+                        "rotation": 2.1574649602435962,
+                        "level": 1,
+                        "health": 930
+                      },
+                      {
+                        "id": "76c814ab-0eb8-4670-a130-33c686540a4a",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3092589378356934,
+                        "z": -60,
+                        "rotation": 0.9328327421982998,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "6fcf4870-3346-4586-a0d7-a7160743bf44",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.3914903623086436,
+                        "z": -55,
+                        "rotation": 0.1596313677575416,
+                        "level": 1,
+                        "health": 1000
+                      },
+                      {
+                        "id": "4aca9056-039a-4b94-a123-f195b20d7bdd",
+                        "type": "power",
+                        "x": -75,
+                        "y": 3.268700793937401,
+                        "z": -50,
+                        "rotation": 0.6481859118056054,
+                        "level": 1,
+                        "health": 1000
+                      }
+                    ]
+                  },
+                  "actual": {
+                    "id": "4aca9056-039a-4b94-a123-f195b20d7bdd",
+                    "type": "power",
+                    "x": -75,
+                    "y": 3.268700793937401,
+                    "z": -50,
+                    "rotation": 0.6481859118056054,
+                    "level": 1
+                  },
+                  "predicted": {
+                    "ok": true,
+                    "cost": {
+                      "minerals": 24,
+                      "iron": 8,
+                      "biomass": 8,
+                      "credits": 12
+                    },
+                    "building": {
+                      "id": "shadow-proposal",
+                      "type": "power",
+                      "x": -75,
+                      "y": 3.268700793937401,
+                      "z": -50,
+                      "rotation": 0,
+                      "level": 1,
+                      "radius": 0,
+                      "state": "complete"
+                    }
+                  },
+                  "events": null
+                },
+                "matched": true,
+                "differences": [
+                  {
+                    "classification": "EXPECTED_NORMALIZATION",
+                    "detail": {
+                      "field": "id",
+                      "rule": "opaque legacy UUID mapped to request id; uniqueness and persistence checked separately"
+                    }
+                  }
+                ],
+                "unobservable": [
+                  "pointer-prechecks",
+                  "mission-progression-side-effects",
+                  "network-authority",
+                  "random-rotation-draw",
+                  "raw-collision-query",
+                  "server-save-restore",
+                  "engine-save-projection",
+                  "inner-events"
+                ],
+                "fullyObservable": false,
+                "reproduce": "Local construction=shadow; replay captured fixture at the recorded coordinates"
+              }
+            ]
+          }
+        },
+        "leakBefore": {
+          "listeners": {
+            "window:__playwright_global_listeners_check__": 1,
+            "window:mousemove": 1,
+            "window:pointerdown": 1,
+            "window:pointerup": 1,
+            "window:touchstart": 1,
+            "window:touchend": 1,
+            "window:touchcancel": 1,
+            "window:mousedown": 1,
+            "window:mouseup": 1,
+            "window:click": 1,
+            "window:auxclick": 1,
+            "window:dblclick": 1,
+            "window:contextmenu": 1,
+            "window:pagehide": 2,
+            "window:beforeunload": 2,
+            "HTMLButtonElement:click": 86,
+            "HTMLFormElement:submit": 2,
+            "HTMLInputElement:keydown": 1,
+            "HTMLInputElement:keyup": 1,
+            "HTMLInputElement:keypress": 1,
+            "window:zeknova:visual-theme-changed": 2,
+            "window:error": 1,
+            "window:unhandledrejection": 1,
+            "HTMLTextAreaElement:keydown": 1,
+            "HTMLCanvasElement:pointerdown": 2,
+            "HTMLCanvasElement:pointercancel": 2,
+            "HTMLCanvasElement:contextmenu": 1,
+            "HTMLCanvasElement:wheel": 1,
+            "document:keydown": 2,
+            "document:keyup": 1,
+            "window:blur": 1,
+            "document:visibilitychange": 1,
+            "HTMLButtonElement:pointerdown": 8,
+            "HTMLButtonElement:pointerup": 4,
+            "HTMLButtonElement:pointercancel": 4,
+            "HTMLButtonElement:pointerleave": 4,
+            "HTMLDivElement:click": 2,
+            "HTMLElement:click": 1,
+            "window:keydown": 5,
+            "HTMLDivElement:pointerdown": 1,
+            "HTMLCanvasElement:pointermove": 1,
+            "HTMLCanvasElement:pointerup": 1,
+            "window:zeknova:scout-open": 1,
+            "window:zeknova:patrol-encounter": 1,
+            "window:zeknova:threat-resolved": 1,
+            "Worker:error": 9,
+            "Worker:messageerror": 4,
+            "Worker:message": 4,
+            "window:visibilitychange": 1,
+            "HTMLInputElement:input": 1,
+            "HTMLDivElement:zk-dispose": 1,
+            "window:zeknova:hud-tab": 1,
+            "window:zeknova:perception-event": 2,
+            "window:zeknova:visual-refresh": 1,
+            "window:zeknova:gameplay-ready": 1,
+            "HTMLSelectElement:change": 1
+          },
+          "listenerTotal": 184,
+          "detached": {
+            "HTMLButtonElement:click": 7,
+            "HTMLFormElement:submit": 1
+          },
+          "detachedTotal": 8,
+          "collected": 2,
+          "intervals": 31,
+          "rafPending": 10,
+          "rafTotal": 11841,
+          "at": 1792563895670
+        },
+        "bossHealth": 704
+      },
+      "restart": {
+        "cycles": [
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          },
+          {
+            "certified": true,
+            "installed": 29
+          }
+        ],
+        "diff": {
+          "listeners": {
+            "AbortSignal:abort": 1
+          },
+          "listenerTotal": 1,
+          "detachedTotal": 48,
+          "intervals": 0,
+          "rafPending": 0
+        }
+      },
+      "frames": {
+        "fps": 60.340926233941005,
+        "p99": 16.80000000000291
+      },
+      "save": {
+        "state": "saved",
+        "revision": 17,
+        "lastAck": {
+          "seq": 7,
+          "revision": 17,
+          "at": 1792563901882,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 7,
+          "coalesced": 1,
+          "posted": 6,
+          "acked": 6,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 7,
+        "interceptedGets": 1,
+        "loadedExtension": {
+          "schema": "zge.save-extension.v1",
+          "savedAt": "2026-10-21T06:23:55.740Z",
+          "player": {
+            "xp": 0,
+            "officerClass": "ensign",
+            "rankXp": 0
+          },
+          "extra": null
+        },
+        "restoredXp": null
+      },
+      "errors": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "[zge] ZekNova gameplay bridges unavailable (./game/HarvestRewards.js, ./game/BossReplaySettings.js, ./game/StructureDesign.js, ./game/DefenseTowers.js); the runtime bundle's built-in fallbacks remain active. ",
+        "THREE.WARNING: Multiple instances of Three.js being imported.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    }
+  ],
+  "restore": {
+    "xp": 321,
+    "expectedXp": 321,
+    "buildingsRetained": true,
+    "autoLaunch": "zge03-certification"
+  },
+  "standalone": {
+    "deterministic": true,
+    "transactions": 0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@zge/sdk": "file:/tmp/zge12-independent-uSRaaz/zge-sdk-0.1.0-preview.12.tgz",
+    "three": "0.185.0"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  },
+  "scripts": {
+    "test": "node --test test.mjs",
+    "typecheck": "tsc --strict --noEmit --target ES2022 --module NodeNext contract.ts",
+    "start": "node server.mjs"
+  }
+}

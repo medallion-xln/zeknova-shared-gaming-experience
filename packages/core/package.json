@@ -1,0 +1,11 @@
+{
+  "name": "@zge/core",
+  "version": "0.1.0",
+  "description": "ZekNova Engine kernel: lifecycle, clock, plugins, events, metrics, minimal world. Game-agnostic.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": { ".": { "types": "./src/index.d.ts", "default": "./src/index.js" } },
+  "license": "UNLICENSED",
+  "private": true
+}

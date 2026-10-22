@@ -1,0 +1,12 @@
+file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge09-source-snapshot.mjs:21
+ const parent=lstatSync(path.dirname(target));if((parent.mode&0o077)!==0||parent.uid!==process.getuid())throw Error('private-parent-required');
+                                                                                                              ^
+
+Error: private-parent-required
+    at captureSourceSnapshot (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge09-source-snapshot.mjs:21:111)
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge09-source-snapshot.mjs:52:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.22.2

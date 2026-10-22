@@ -1,0 +1,31 @@
+{
+  "name": "@zge/sdk",
+  "version": "0.1.0-preview.13",
+  "type": "module",
+  "license": "UNLICENSED",
+  "description": "Local authoring and isolated simulation SDK. No network gameplay authority.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./three": {
+      "types": "./dist/three.d.ts",
+      "default": "./dist/three.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "three": "0.185.0"
+  },
+  "scripts": {
+    "build": "node ../../scripts/zge10-build.mjs"
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=22"
+  }
+}

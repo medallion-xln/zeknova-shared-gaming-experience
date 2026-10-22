@@ -1,0 +1,346 @@
+TAP version 13
+# Subtest: expired/revoked credentials and live membership overrides cannot mutate or retrieve private worlds
+ok 1 - expired/revoked credentials and live membership overrides cannot mutate or retrieve private worlds
+  ---
+  duration_ms: 823.816916
+  type: 'test'
+  ...
+# Subtest: persistent session survives renewal while browser connections stay distinct and revocable
+ok 2 - persistent session survives renewal while browser connections stay distinct and revocable
+  ---
+  duration_ms: 473.422334
+  type: 'test'
+  ...
+# Subtest: expiry between preparation and COMMIT rolls back resources, receipt, event and mission reward
+ok 3 - expiry between preparation and COMMIT rolls back resources, receipt, event and mission reward
+  ---
+  duration_ms: 2038.307834
+  type: 'test'
+  ...
+# Subtest: input identities, integer revisions, cursors, SQL strings, origins and body limits fail closed
+ok 4 - input identities, integer revisions, cursors, SQL strings, origins and body limits fail closed
+  ---
+  duration_ms: 443.798584
+  type: 'test'
+  ...
+# Subtest: persistent per-principal rate limits survive reconnect and DB permissions deny public files
+ok 5 - persistent per-principal rate limits survive reconnect and DB permissions deny public files
+  ---
+  duration_ms: 962.185958
+  type: 'test'
+  ...
+# Subtest: corrupt snapshot/checkpoint/archive are denied; audited command replay repairs snapshot without double effects
+ok 6 - corrupt snapshot/checkpoint/archive are denied; audited command replay repairs snapshot without double effects
+  ---
+  duration_ms: 2342.43325
+  type: 'test'
+  ...
+# Subtest: membership revoked while a request waits for SQLite serialization is rechecked after the lock
+ok 7 - membership revoked while a request waits for SQLite serialization is rechecked after the lock
+  ---
+  duration_ms: 1088.7955
+  type: 'test'
+  ...
+# Subtest: authenticated archive backfill validates cursor bounds, limits, world and permissions
+ok 8 - authenticated archive backfill validates cursor bounds, limits, world and permissions
+  ---
+  duration_ms: 743.191208
+  type: 'test'
+  ...
+# Subtest: mission-completion process failure crash-before-commit preserves one atomic reward across restart
+ok 9 - mission-completion process failure crash-before-commit preserves one atomic reward across restart
+  ---
+  duration_ms: 972.110917
+  type: 'test'
+  ...
+# Subtest: mission-completion process failure crash-after-commit preserves one atomic reward across restart
+ok 10 - mission-completion process failure crash-after-commit preserves one atomic reward across restart
+  ---
+  duration_ms: 900.230333
+  type: 'test'
+  ...
+# Subtest: SQLite write rejection during reward commit rolls back the complete candidate
+ok 11 - SQLite write rejection during reward commit rolls back the complete candidate
+  ---
+  duration_ms: 1365.433375
+  type: 'test'
+  ...
+# Subtest: private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+ok 12 - private supervised runtime reuses one executor, reconciles rolled-back candidate and denies unauthenticated IPC
+  ---
+  duration_ms: 370.11325
+  type: 'test'
+  ...
+# Subtest: worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+ok 13 - worker death rejects its request, restarts with a larger SQL fence and bounded queue reports backpressure
+  ---
+  duration_ms: 2706.227667
+  type: 'test'
+  ...
+# Subtest: competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+ok 14 - competing supervisor cannot claim a live world and a missed heartbeat permanently retires its owner
+  ---
+  duration_ms: 2235.262583
+  type: 'test'
+  ...
+# Subtest: graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+ok 15 - graceful supervisor shutdown drains accepted bounded queue and disposes its worker and private socket
+  ---
+  duration_ms: 580.138
+  type: 'test'
+  ...
+# Subtest: whole supervisor SIGKILL leaves a refused socket that safely recovers under a new fenced owner
+ok 16 - whole supervisor SIGKILL leaves a refused socket that safely recovers under a new fenced owner
+  ---
+  duration_ms: 2237.80775
+  type: 'test'
+  ...
+# Subtest: actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+ok 17 - actual concurrent PHP gateways share one worker while player XP, poses, claims and private projections remain separate
+  ---
+  duration_ms: 1043.29575
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+ok 18 - worker failure crash-before-execution rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 1032.23375
+  type: 'test'
+  ...
+# Subtest: worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+ok 19 - worker failure crash-during-validation rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 1038.88625
+  type: 'test'
+  ...
+# Subtest: worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+ok 20 - worker failure crash-before-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 1036.331583
+  type: 'test'
+  ...
+# Subtest: worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+ok 21 - worker failure delay-response rolls back SQL candidate and retry applies one personal reward
+  ---
+  duration_ms: 3064.018209
+  type: 'test'
+  ...
+# Subtest: worker death after durable commit and before reply cannot duplicate personal or team effects
+ok 22 - worker death after durable commit and before reply cannot duplicate personal or team effects
+  ---
+  duration_ms: 1220.593458
+  type: 'test'
+  ...
+# Subtest: database unavailable and reward-write failure preserve committed player/world state
+ok 23 - database unavailable and reward-write failure preserve committed player/world state
+  ---
+  duration_ms: 1255.266292
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-before-commit
+ok 24 - actual gateway process death at multiplayer mission COMMIT crash-before-commit
+  ---
+  duration_ms: 979.75475
+  type: 'test'
+  ...
+# Subtest: actual gateway process death at multiplayer mission COMMIT crash-after-commit
+ok 25 - actual gateway process death at multiplayer mission COMMIT crash-after-commit
+  ---
+  duration_ms: 1007.221875
+  type: 'test'
+  ...
+# Subtest: checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+ok 26 - checkpoint corruption is repaired from archived actor commands without changing player XP, team claims or receipt identity
+  ---
+  duration_ms: 1062.469709
+  type: 'test'
+  ...
+# Subtest: multiplayer backup and isolated restore retain private actor records and complete archives
+ok 27 - multiplayer backup and isolated restore retain private actor records and complete archives
+  ---
+  duration_ms: 1865.771583
+  type: 'test'
+  ...
+# Subtest: whole staging launcher SIGKILL cleans owned gateways, recovers its socket/lease and preserves committed outbox effects
+ok 28 - whole staging launcher SIGKILL cleans owned gateways, recovers its socket/lease and preserves committed outbox effects
+  ---
+  duration_ms: 11038.8
+  type: 'test'
+  ...
+# Subtest: consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+ok 29 - consistent SQLite backup and isolated restore retain complete archives, unknown fields and authenticated state
+  ---
+  duration_ms: 2537.02525
+  type: 'test'
+  ...
+# Subtest: operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+ok 30 - operations refuse existing, public and symlinked targets and reject incomplete, corrupt and incompatible bundles
+  ---
+  duration_ms: 1623.960834
+  type: 'test'
+  ...
+# Subtest: killed backup and restore never publish a valid partial bundle or change the live world
+ok 31 - killed backup and restore never publish a valid partial bundle or change the live world
+  ---
+  duration_ms: 2687.61975
+  type: 'test'
+  ...
+# Subtest: logical archive corruption is denied even after a file digest is recomputed
+ok 32 - logical archive corruption is denied even after a file digest is recomputed
+  ---
+  duration_ms: 1195.744625
+  type: 'test'
+  ...
+# Subtest: actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+ok 33 - actual SQLite SQLITE_FULL rolls back prepared cost, building, events, receipt and mission reward together
+  ---
+  duration_ms: 1835.244583
+  type: 'test'
+  ...
+# Subtest: consistent multiplayer hot backup and cold backup restore exact source identities into new private directories
+ok 34 - consistent multiplayer hot backup and cold backup restore exact source identities into new private directories
+  ---
+  duration_ms: 5083.748708
+  type: 'test'
+  ...
+# Subtest: archive damage and contradictory claim or receipt data fail closed without rewriting any evidence
+ok 35 - archive damage and contradictory claim or receipt data fail closed without rewriting any evidence
+  ---
+  duration_ms: 17902.706958
+  type: 'test'
+  ...
+# Subtest: corrupt derived checkpoints repair from complete actor archive; killed repair rolls back all audit and checkpoint writes
+ok 36 - corrupt derived checkpoints repair from complete actor archive; killed repair rolls back all audit and checkpoint writes
+  ---
+  duration_ms: 3418.134083
+  type: 'test'
+  ...
+# Subtest: SQLite write lock contention times out explicitly then recovery succeeds after lock ownership ends
+ok 37 - SQLite write lock contention times out explicitly then recovery succeeds after lock ownership ends
+  ---
+  duration_ms: 5051.513708
+  type: 'test'
+  ...
+# Subtest: admission is bounded per actor and serves another waiting player before the active actor repeats
+ok 38 - admission is bounded per actor and serves another waiting player before the active actor repeats
+  ---
+  duration_ms: 276.652125
+  type: 'test'
+  ...
+# Subtest: saturated command class rejects overflow and timeout/dead-owner cleanup retain bounded metadata
+ok 39 - saturated command class rejects overflow and timeout/dead-owner cleanup retain bounded metadata
+  ---
+  duration_ms: 1053.197375
+  type: 'test'
+  ...
+# Subtest: gateway metrics expose monotonic lifecycle stages without secrets and receipt identity survives retry
+ok 40 - gateway metrics expose monotonic lifecycle stages without secrets and receipt identity survives retry
+  ---
+  duration_ms: 967.602208
+  type: 'test'
+  ...
+# Subtest: batched quota accounting retains principal limits and shared-IP limits across gateways
+ok 41 - batched quota accounting retains principal limits and shared-IP limits across gateways
+  ---
+  duration_ms: 1205.450542
+  type: 'test'
+  ...
+# Subtest: read-only verification does not reserve the gameplay writer and rechecks revocation after projection
+ok 42 - read-only verification does not reserve the gameplay writer and rechecks revocation after projection
+  ---
+  duration_ms: 967.2395
+  type: 'test'
+  ...
+# Subtest: disconnect while queued and worker deadline leave original intents safely retryable without coalescing
+ok 43 - disconnect while queued and worker deadline leave original intents safely retryable without coalescing
+  ---
+  duration_ms: 3429.250542
+  type: 'test'
+  ...
+# Subtest: future monotonic admission timestamps from an earlier boot cannot retain a live recycled PID
+ok 44 - future monotonic admission timestamps from an earlier boot cannot retain a live recycled PID
+  ---
+  duration_ms: 142.598208
+  type: 'test'
+  ...
+# Subtest: atomic admission metadata survives actual publisher SIGKILL crash-during-publication
+ok 45 - atomic admission metadata survives actual publisher SIGKILL crash-during-publication
+  ---
+  duration_ms: 282.598959
+  type: 'test'
+  ...
+# Subtest: atomic admission metadata survives actual publisher SIGKILL crash-before-publication
+ok 46 - atomic admission metadata survives actual publisher SIGKILL crash-before-publication
+  ---
+  duration_ms: 293.809417
+  type: 'test'
+  ...
+# Subtest: authenticated early validation failures consume unchanged principal quota exactly once
+ok 47 - authenticated early validation failures consume unchanged principal quota exactly once
+  ---
+  duration_ms: 738.971667
+  type: 'test'
+  ...
+# Subtest: player departure, return, role revocation and worker restart never redistribute personal or historical team rewards
+ok 48 - player departure, return, role revocation and worker restart never redistribute personal or historical team rewards
+  ---
+  duration_ms: 1819.871459
+  type: 'test'
+  ...
+# Subtest: continuous service automatically recovers owned launcher SIGKILL with fenced durable retry, worker restart and competing-owner denial
+ok 49 - continuous service automatically recovers owned launcher SIGKILL with fenced durable retry, worker restart and competing-owner denial
+  ---
+  duration_ms: 11661.5915
+  type: 'test'
+  ...
+# Subtest: service rejects missing and substituted established database across gateway reads and lease heartbeats, then resumes original durable inode
+ok 50 - service rejects missing and substituted established database across gateway reads and lease heartbeats, then resumes original durable inode
+  ---
+  duration_ms: 10947.22575
+  type: 'test'
+  ...
+# Subtest: real repeated launcher crashes stop at restart ceiling and remain operator inspectable
+ok 51 - real repeated launcher crashes stop at restart ceiling and remain operator inspectable
+  ---
+  duration_ms: 1479.014209
+  type: 'test'
+  ...
+# Subtest: operator control stops only owned service, flushes private audit and supports explicit restart
+ok 52 - operator control stops only owned service, flushes private audit and supports explicit restart
+  ---
+  duration_ms: 2223.970833
+  type: 'test'
+  ...
+# Subtest: top service parent death shuts down owned launcher and permits explicit stale-control recovery
+ok 53 - top service parent death shuts down owned launcher and permits explicit stale-control recovery
+  ---
+  duration_ms: 1952.08275
+  type: 'test'
+  ...
+# Subtest: lost heartbeat retires old owner and outer service restores a higher fenced generation automatically
+ok 54 - lost heartbeat retires old owner and outer service restores a higher fenced generation automatically
+  ---
+  duration_ms: 12132.571208
+  type: 'test'
+  ...
+# Subtest: automatic stack restart after real gateway death before and after COMMIT preserves cost, personal and team receipt semantics
+ok 55 - automatic stack restart after real gateway death before and after COMMIT preserves cost, personal and team receipt semantics
+  ---
+  duration_ms: 3609.3395
+  type: 'test'
+  ...
+# Subtest: worker telemetry is process-scoped and observational, with bounded executor count and unchanged durable receipts
+ok 56 - worker telemetry is process-scoped and observational, with bounded executor count and unchanged durable receipts
+  ---
+  duration_ms: 990.403
+  type: 'test'
+  ...
+1..56
+# tests 56
+# suites 0
+# pass 56
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 144032.735

@@ -1,0 +1,2 @@
+import {readFileSync,writeFileSync} from 'node:fs';import {execFileSync} from 'node:child_process';
+const source=readFileSync('packages/sdk/README.md','utf8'),blocks=[...source.matchAll(/```js\n([\s\S]*?)```/g)].map(m=>m[1]);if(!blocks.length)throw Error('No executable quickstart');for(const [i,code] of blocks.entries()){const file='node_modules/@zge/sdk/.doc-check-'+i+'.mjs';writeFileSync(file,code);try{execFileSync(process.execPath,[file],{stdio:'pipe'});}finally{(await import('node:fs')).unlinkSync(file);}}console.log(blocks.length+' public README examples executed');

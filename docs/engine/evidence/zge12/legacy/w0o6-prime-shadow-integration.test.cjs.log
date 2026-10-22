@@ -1,0 +1,56 @@
+  PASS Prime shadow integration installed globally
+  PASS Prime shadow adapter installed globally
+  PASS adapter consumes 592 features
+  PASS adapter consumes six actions
+  PASS adapter mode is shadow-only
+  PASS adapter has no authority
+  PASS adapter exposes no execute method
+  PASS adapter exposes no commit method
+  PASS adapter exposes no dispatch method
+  PASS empty shadow run addresses local faction
+  PASS empty shadow run consumes observation
+  PASS empty shadow run consumes legality
+  PASS empty shadow run selects safe fallback
+  PASS empty shadow run has no target
+  PASS empty shadow run records incumbent unavailable
+  PASS empty shadow run appends telemetry sequence one
+  PASS hidden spawn receives identity
+  PASS FX-SHADOW-HIDDEN hidden spawn leaves observation unchanged
+  PASS FX-SHADOW-HIDDEN hidden spawn leaves recommendation unchanged
+  PASS shadow run does not move hidden enemy
+  PASS shadow run does not damage hidden enemy
+  PASS shadow run does not construct buildings
+  PASS out-of-range perception creates no event
+  PASS out-of-range enemy leaves intercept illegal
+  PASS grounded sighting enables intercept
+  PASS grounded sighting enables share
+  PASS Prime ranks intercept with positive visits
+  PASS Prime intercept target references grounded subject
+  PASS recommendation contains no perception event ID
+  PASS recommendation does not carry full feature vector
+  PASS FX-SHADOW-MASK blocked intercept remains illegal
+  PASS FX-SHADOW-MASK blocked intercept gets zero visits
+  PASS FX-SHADOW-MASK blocked intercept cannot be selected
+  PASS nonterminal projection without fallback rejected
+  PASS mapped incumbent comparison can agree
+  PASS incumbent comparison remains observational
+  PASS FX-SHADOW-LEAK settlement cannot use unshared target
+  PASS explicitly shared contact enables settlement intercept
+  PASS shared contact appears in Prime ranked target
+  PASS FX-SHADOW-NONDET repeated recommendations are byte-identical
+  PASS FX-SHADOW-NONDET repeated comparisons are byte-identical
+  PASS FX-SHADOW-STALE contact expires at exact boundary
+  PASS FX-SHADOW-STALE expired contact gets zero visits
+  PASS terminal shadow run selects no action
+  PASS terminal shadow run selects no target
+  PASS replan shadow run selects no action
+  PASS adapter executes canonical shadow run
+  PASS adapter telemetry equals integration telemetry
+  PASS adapter telemetry hash equals integration hash
+  PASS adapter entries are detached
+  PASS dispose clears global Prime shadow integration
+  PASS persisted telemetry restores
+  PASS restored telemetry hash is byte-identical
+  PASS restored telemetry sequence continues monotonically
+  PASS prior recommendation remains detached after disposal
+W0-O.6 PRIME SHADOW INTEGRATION TESTS PASS (55/55)

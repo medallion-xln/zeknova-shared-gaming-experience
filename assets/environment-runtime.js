@@ -1,3 +1,4 @@
+import { getThreeAssetService } from '../packages/assets/src/threeAssetService.js';
 import {
   Box3,
   ConeGeometry,
@@ -13,26 +14,15 @@ import {
   TetrahedronGeometry,
   Vector3,
 } from './vendor/three.module.min.js';
-import { GLTFLoader } from './vendor/GLTFLoader.js';
-import { KTX2Loader } from './vendor/KTX2Loader.bundle.js';
-import { MeshoptDecoder } from './vendor/meshopt_decoder.module.js';
 import { originalModelPath, resolveModelLodPath } from './model-lod-manifest.js';
 
-const loader = new GLTFLoader();
-loader.setMeshoptDecoder(MeshoptDecoder);
-const ktx2Loader = new KTX2Loader().setTranscoderPath('./assets/vendor/basis/');
-let ktx2Configured = false;
+import { MeshoptDecoder } from './vendor/meshopt_decoder.module.js';
 
-function configureKtx2Loader() {
-  const renderer = globalThis.ZekNovaGame?.renderer;
-  if (!renderer || ktx2Configured) return;
-  ktx2Loader.detectSupport(renderer);
-  loader.setKTX2Loader(ktx2Loader);
-  ktx2Configured = true;
-}
+const loader = getThreeAssetService();
+
+
 
 async function loadEnvironmentGlb(path) {
-  configureKtx2Loader();
   const selectedPath = resolveModelLodPath(path);
   const sourcePath = originalModelPath(path);
   try {

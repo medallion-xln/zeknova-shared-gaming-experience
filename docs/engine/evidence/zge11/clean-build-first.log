@@ -1,0 +1,315 @@
+node:internal/errors:983
+  const err = new Error(message);
+              ^
+
+Error: Command failed: /Users/dwaynecampbell/.nvm/versions/node/v22.22.2/bin/node --test packages/sdk/test/sdk.test.mjs packages/sdk/test/vnext.test.mjs packages/sdk/src/index.d.ts packages/sdk/src/three.d.ts
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:916:11)
+    at execFileSync (node:child_process:952:15)
+    at run (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge11-clean-build.mjs:3:45)
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge11-clean-build.mjs:8:502
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+  status: 1,
+  signal: null,
+  output: [
+    null,
+    'TAP version 13\n' +
+      '# node:internal/modules/run_main:123\n' +
+      '#     triggerUncaughtException(\n' +
+      '#     ^\n' +
+      '# file:///private/tmp/zge11-clean-PGqDKJ/packages/sdk/src/index.d.ts:16\n' +
+      '# export class SDKError extends Error {readonly code:string;readonly path:string|null;constructor(code:string,message:string,path?:string|null)}\n' +
+      '# export const SDK_VERSION:string;\n' +
+      '#              ^^^^^^^^^^^^^^^^^^\n' +
+      '# export function plain<T>(value:T):T;\n' +
+      "# SyntaxError [ERR_INVALID_TYPESCRIPT_SYNTAX]: 'const' declarations must be initialized\n" +
+      '#     at parseTypeScript (node:internal/modules/typescript:67:36)\n' +
+      '#     at processTypeScriptCode (node:internal/modules/typescript:133:42)\n' +
+      '#     at stripTypeScriptModuleTypes (node:internal/modules/typescript:163:10)\n' +
+      '#     at ModuleLoader.<anonymous> (node:internal/modules/esm/translators:605:16)\n' +
+      '#     at \\#translate (node:internal/modules/esm/loader:546:20)\n' +
+      '#     at afterLoad (node:internal/modules/esm/loader:596:29)\n' +
+      '#     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)\n' +
+      '#     at \\#createModuleJob (node:internal/modules/esm/loader:624:36)\n' +
+      '#     at \\#getJobFromResolveResult (node:internal/modules/esm/loader:343:34)\n' +
+      '#     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41) {\n' +
+      "#   code: 'ERR_INVALID_TYPESCRIPT_SYNTAX'\n" +
+      '# }\n' +
+      '# Node.js v22.22.2\n' +
+      '# Subtest: packages/sdk/src/index.d.ts\n' +
+      'not ok 1 - packages/sdk/src/index.d.ts\n' +
+      '  ---\n' +
+      '  duration_ms: 80.33275\n' +
+      "  type: 'test'\n" +
+      "  location: '/private/tmp/zge11-clean-PGqDKJ/packages/sdk/src/index.d.ts:1:1'\n" +
+      "  failureType: 'testCodeFailure'\n" +
+      '  exitCode: 1\n' +
+      '  signal: ~\n' +
+      "  error: 'test failed'\n" +
+      "  code: 'ERR_TEST_FAILURE'\n" +
+      '  ...\n' +
+      '# Subtest: packages/sdk/src/three.d.ts\n' +
+      'ok 2 - packages/sdk/src/three.d.ts\n' +
+      '  ---\n' +
+      '  duration_ms: 73.161417\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: public SDK project, detached entities and versioned roundtrip\n' +
+      'ok 3 - public SDK project, detached entities and versioned roundtrip\n' +
+      '  ---\n' +
+      '  duration_ms: 5.364583\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: transactions are atomic, finite, revision/existence/component checked\n' +
+      'ok 4 - transactions are atomic, finite, revision/existence/component checked\n' +
+      '  ---\n' +
+      '  duration_ms: 8.564\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\n' +
+      'ok 5 - all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\n' +
+      '  ---\n' +
+      '  duration_ms: 5.552292\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: invalid restored scenes never clear current data or history\n' +
+      'ok 6 - invalid restored scenes never clear current data or history\n' +
+      '  ---\n' +
+      '  duration_ms: 0.421541\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: components, systems, plugin lifecycle, permission-aware private inspection\n' +
+      'ok 7 - components, systems, plugin lifecycle, permission-aware private inspection\n' +
+      '  ---\n' +
+      '  duration_ms: 1.383916\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: AI mock is detached preview only, reject/approve/undo and immutable provenance\n' +
+      'ok 8 - AI mock is detached preview only, reject/approve/undo and immutable provenance\n' +
+      '  ---\n' +
+      '  duration_ms: 2.185417\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: independent game collision, collectible, build objective and isolated simulation\n' +
+      'ok 9 - independent game collision, collectible, build objective and isolated simulation\n' +
+      '  ---\n' +
+      '  duration_ms: 3.271917\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: asset lease coalescing, detached mutable instances, bounded eviction/disposal\n' +
+      'ok 10 - asset lease coalescing, detached mutable instances, bounded eviction/disposal\n' +
+      '  ---\n' +
+      '  duration_ms: 1.074333\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\n' +
+      'ok 11 - plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\n' +
+      '  ---\n' +
+      '  duration_ms: 0.392625\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: public asset identities resolve through registered loader and unknown scene references fail atomically\n' +
+      'ok 12 - public asset identities resolve through registered loader and unknown scene references fail atomically\n' +
+      '  ---\n' +
+      '  duration_ms: 1.393583\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: renderer preference and owned backend lifecycle are explicit\n' +
+      'ok 13 - renderer preference and owned backend lifecycle are explicit\n' +
+      '  ---\n' +
+      '  duration_ms: 0.57675\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: v1 project migration is detached and v2 roundtrips, future versions reject with typed codes\n' +
+      'ok 14 - v1 project migration is detached and v2 roundtrips, future versions reject with typed codes\n' +
+      '  ---\n' +
+      '  duration_ms: 4.542333\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: declarative component reflection, typed validation and permission/read-only edits\n' +
+      'ok 15 - declarative component reflection, typed validation and permission/read-only edits\n' +
+      '  ---\n' +
+      '  duration_ms: 11.67375\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded\n' +
+      'ok 16 - hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded\n' +
+      '  ---\n' +
+      '  duration_ms: 13.341125\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: portable JSON assets, exact reflected references, prefab overrides and independent instance transforms\n' +
+      'ok 17 - portable JSON assets, exact reflected references, prefab overrides and independent instance transforms\n' +
+      '  ---\n' +
+      '  duration_ms: 6.859625\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '# Subtest: malicious project rules/assets stay data-only and are rejected before any source execution\n' +
+      'ok 18 - malicious project rules/assets stay data-only and are rejected before any source execution\n' +
+      '  ---\n' +
+      '  duration_ms: 0.840667\n' +
+      "  type: 'test'\n" +
+      '  ...\n' +
+      '1..18\n' +
+      '# tests 18\n' +
+      '# suites 0\n' +
+      '# pass 17\n' +
+      '# fail 1\n' +
+      '# cancelled 0\n' +
+      '# skipped 0\n' +
+      '# todo 0\n' +
+      '# duration_ms 98.6965\n',
+    ''
+  ],
+  pid: 13852,
+  stdout: 'TAP version 13\n' +
+    '# node:internal/modules/run_main:123\n' +
+    '#     triggerUncaughtException(\n' +
+    '#     ^\n' +
+    '# file:///private/tmp/zge11-clean-PGqDKJ/packages/sdk/src/index.d.ts:16\n' +
+    '# export class SDKError extends Error {readonly code:string;readonly path:string|null;constructor(code:string,message:string,path?:string|null)}\n' +
+    '# export const SDK_VERSION:string;\n' +
+    '#              ^^^^^^^^^^^^^^^^^^\n' +
+    '# export function plain<T>(value:T):T;\n' +
+    "# SyntaxError [ERR_INVALID_TYPESCRIPT_SYNTAX]: 'const' declarations must be initialized\n" +
+    '#     at parseTypeScript (node:internal/modules/typescript:67:36)\n' +
+    '#     at processTypeScriptCode (node:internal/modules/typescript:133:42)\n' +
+    '#     at stripTypeScriptModuleTypes (node:internal/modules/typescript:163:10)\n' +
+    '#     at ModuleLoader.<anonymous> (node:internal/modules/esm/translators:605:16)\n' +
+    '#     at \\#translate (node:internal/modules/esm/loader:546:20)\n' +
+    '#     at afterLoad (node:internal/modules/esm/loader:596:29)\n' +
+    '#     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)\n' +
+    '#     at \\#createModuleJob (node:internal/modules/esm/loader:624:36)\n' +
+    '#     at \\#getJobFromResolveResult (node:internal/modules/esm/loader:343:34)\n' +
+    '#     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41) {\n' +
+    "#   code: 'ERR_INVALID_TYPESCRIPT_SYNTAX'\n" +
+    '# }\n' +
+    '# Node.js v22.22.2\n' +
+    '# Subtest: packages/sdk/src/index.d.ts\n' +
+    'not ok 1 - packages/sdk/src/index.d.ts\n' +
+    '  ---\n' +
+    '  duration_ms: 80.33275\n' +
+    "  type: 'test'\n" +
+    "  location: '/private/tmp/zge11-clean-PGqDKJ/packages/sdk/src/index.d.ts:1:1'\n" +
+    "  failureType: 'testCodeFailure'\n" +
+    '  exitCode: 1\n' +
+    '  signal: ~\n' +
+    "  error: 'test failed'\n" +
+    "  code: 'ERR_TEST_FAILURE'\n" +
+    '  ...\n' +
+    '# Subtest: packages/sdk/src/three.d.ts\n' +
+    'ok 2 - packages/sdk/src/three.d.ts\n' +
+    '  ---\n' +
+    '  duration_ms: 73.161417\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: public SDK project, detached entities and versioned roundtrip\n' +
+    'ok 3 - public SDK project, detached entities and versioned roundtrip\n' +
+    '  ---\n' +
+    '  duration_ms: 5.364583\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: transactions are atomic, finite, revision/existence/component checked\n' +
+    'ok 4 - transactions are atomic, finite, revision/existence/component checked\n' +
+    '  ---\n' +
+    '  duration_ms: 8.564\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\n' +
+    'ok 5 - all authoring operations roundtrip, repeated undo/redo, ID allocator never reuses undone IDs\n' +
+    '  ---\n' +
+    '  duration_ms: 5.552292\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: invalid restored scenes never clear current data or history\n' +
+    'ok 6 - invalid restored scenes never clear current data or history\n' +
+    '  ---\n' +
+    '  duration_ms: 0.421541\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: components, systems, plugin lifecycle, permission-aware private inspection\n' +
+    'ok 7 - components, systems, plugin lifecycle, permission-aware private inspection\n' +
+    '  ---\n' +
+    '  duration_ms: 1.383916\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: AI mock is detached preview only, reject/approve/undo and immutable provenance\n' +
+    'ok 8 - AI mock is detached preview only, reject/approve/undo and immutable provenance\n' +
+    '  ---\n' +
+    '  duration_ms: 2.185417\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: independent game collision, collectible, build objective and isolated simulation\n' +
+    'ok 9 - independent game collision, collectible, build objective and isolated simulation\n' +
+    '  ---\n' +
+    '  duration_ms: 3.271917\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: asset lease coalescing, detached mutable instances, bounded eviction/disposal\n' +
+    'ok 10 - asset lease coalescing, detached mutable instances, bounded eviction/disposal\n' +
+    '  ---\n' +
+    '  duration_ms: 1.074333\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\n' +
+    'ok 11 - plain schema rejects unsafe keys, non-JSON, cycles and unsupported renderer\n' +
+    '  ---\n' +
+    '  duration_ms: 0.392625\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: public asset identities resolve through registered loader and unknown scene references fail atomically\n' +
+    'ok 12 - public asset identities resolve through registered loader and unknown scene references fail atomically\n' +
+    '  ---\n' +
+    '  duration_ms: 1.393583\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: renderer preference and owned backend lifecycle are explicit\n' +
+    'ok 13 - renderer preference and owned backend lifecycle are explicit\n' +
+    '  ---\n' +
+    '  duration_ms: 0.57675\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: v1 project migration is detached and v2 roundtrips, future versions reject with typed codes\n' +
+    'ok 14 - v1 project migration is detached and v2 roundtrips, future versions reject with typed codes\n' +
+    '  ---\n' +
+    '  duration_ms: 4.542333\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: declarative component reflection, typed validation and permission/read-only edits\n' +
+    'ok 15 - declarative component reflection, typed validation and permission/read-only edits\n' +
+    '  ---\n' +
+    '  duration_ms: 11.67375\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded\n' +
+    'ok 16 - hierarchy cycles/dangling references fail atomically, rename/duplicate/no-op history remains bounded\n' +
+    '  ---\n' +
+    '  duration_ms: 13.341125\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: portable JSON assets, exact reflected references, prefab overrides and independent instance transforms\n' +
+    'ok 17 - portable JSON assets, exact reflected references, prefab overrides and independent instance transforms\n' +
+    '  ---\n' +
+    '  duration_ms: 6.859625\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '# Subtest: malicious project rules/assets stay data-only and are rejected before any source execution\n' +
+    'ok 18 - malicious project rules/assets stay data-only and are rejected before any source execution\n' +
+    '  ---\n' +
+    '  duration_ms: 0.840667\n' +
+    "  type: 'test'\n" +
+    '  ...\n' +
+    '1..18\n' +
+    '# tests 18\n' +
+    '# suites 0\n' +
+    '# pass 17\n' +
+    '# fail 1\n' +
+    '# cancelled 0\n' +
+    '# skipped 0\n' +
+    '# todo 0\n' +
+    '# duration_ms 98.6965\n',
+  stderr: ''
+}
+
+Node.js v22.22.2

@@ -1,0 +1,5 @@
+
+> zeknova-shared-gaming-experience@0.1.0 world-service:status
+> node scripts/zge09-service.mjs status
+
+{"ok":true,"protocol":"zge.world-service.v1","serviceId":"service-0fc2cdb6-b5e4-4d92-ae05-06c26a929f06","pid":78350,"state":"ready","launcherPid":78351,"gatewayPids":[78397],"launches":1,"restarts":0,"lastFailure":null,"lastHealth":{"at":1792630419660,"ok":true,"probe":0},"world":{"worldId":"valley","generation":1,"workerId":"worker-5617f3f9-aefd-4888-9f71-ab5bde1c444d","state":"ready"},"port":8799,"gatewayCount":1,"startedAt":1792611377663,"nextRestartAt":null,"knownDatabase":true,"databaseIdentity":{"dev":"16777232","ino":"490290051"},"policy":{"healthIntervalMs":2000,"healthTimeoutMs":5000,"healthFailures":3,"restartBaseMs":250,"restartMaxMs":10000,"restartLimit":8,"restartWindowMs":60000}}

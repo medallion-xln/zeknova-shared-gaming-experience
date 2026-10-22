@@ -1,0 +1,222 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+... Skipped lines
+
+  {
+    assets: [
+      {
+        data: {
+          color: '#c2ac79',
+...
+                rotation: [
++                 0,
+-                 -0,
+                  0.3505643494322686,
++                 0
+-                 -0
+                ],
+                scale: [
+                  0.39587415072264875,
+                  1,
+                  0.7
+...
+                rotation: [
++                 0,
+-                 -0,
+                  0.3505643494322686,
++                 0
+-                 -0
+                ],
+                scale: [
+                  0.39587415072264875,
+                  1,
+                  0.7
+
+    at file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/scripts/zge11-browser.mjs:17:299 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: {
+    schema: 'zge.sdk.project.v2',
+    id: 'orbital-outpost',
+    name: 'Orbital Outpost',
+    entryWorld: 'main',
+    assets: [
+      {
+        id: 'asset-mvj1jbw6',
+        name: 'block.json',
+        path: 'imports/asset-mvj1jbw6.json',
+        type: 'json',
+        data: { primitive: 'box', color: '#c2ac79' },
+        sha256: '7abe0aa832d3071ed8dba0526eef0b54a2e170fdc30b3a7bc092dc628a82567a',
+        license: { source: 'user-import:block.json', redistribution: 'unknown' }
+      }
+    ],
+    plugins: [ 'outpost-rules' ],
+    prefabs: {
+      crate: {
+        name: 'Supply crate',
+        components: {
+          transform: { position: [Array], rotation: [Array], scale: [Array] },
+          mesh: { primitive: 'box', color: '#d9ac67' },
+          state: { buildable: true }
+        }
+      },
+      'prefab-3-18': {
+        name: 'asset-mvj1jbw6',
+        components: {
+          transform: { position: [Array], rotation: [Array], scale: [Array] },
+          asset: { id: 'asset-mvj1jbw6' },
+          mesh: { primitive: 'box', color: '#c2ac79' }
+        }
+      }
+    },
+    worlds: {
+      main: {
+        schema: 'zge.sdk.scene.v1',
+        id: 'main',
+        revision: 20,
+        nextId: 4,
+        entities: [
+          {
+            id: 'platform',
+            name: 'Landing platform',
+            components: [Object]
+          },
+          { id: 'pilot', name: 'Explorer', components: [Object] },
+          {
+            id: 'barrier',
+            name: 'Cargo barrier',
+            components: [Object]
+          },
+          { id: 'cell', name: 'Energy cell', components: [Object] },
+          {
+            id: 'antenna',
+            name: 'Antenna foundation',
+            components: [Object]
+          },
+          {
+            id: 'entity-1',
+            name: 'Explorer duplicate',
+            components: [Object]
+          },
+          {
+            id: 'entity-2',
+            name: 'asset-mvj1jbw6',
+            components: [Object]
+          },
+          {
+            name: 'Supply crate',
+            components: [Object],
+            id: 'entity-3',
+            prefabId: 'crate'
+          }
+        ]
+      }
+    },
+    sdkCompatibility: { major: 0, minimumPreview: 11 },
+    components: {},
+    metadata: {},
+    provenance: [
+      {
+        sourceSchema: 'zge.sdk.project.v1',
+        migration: 'project-v1-to-v2'
+      }
+    ]
+  },
+  expected: {
+    schema: 'zge.sdk.project.v2',
+    id: 'orbital-outpost',
+    name: 'Orbital Outpost',
+    entryWorld: 'main',
+    assets: [
+      {
+        id: 'asset-mvj1jbw6',
+        name: 'block.json',
+        path: 'imports/asset-mvj1jbw6.json',
+        type: 'json',
+        data: { primitive: 'box', color: '#c2ac79' },
+        sha256: '7abe0aa832d3071ed8dba0526eef0b54a2e170fdc30b3a7bc092dc628a82567a',
+        license: { source: 'user-import:block.json', redistribution: 'unknown' }
+      }
+    ],
+    plugins: [ 'outpost-rules' ],
+    prefabs: {
+      crate: {
+        name: 'Supply crate',
+        components: {
+          transform: { position: [Array], rotation: [Array], scale: [Array] },
+          mesh: { primitive: 'box', color: '#d9ac67' },
+          state: { buildable: true }
+        }
+      },
+      'prefab-3-18': {
+        name: 'asset-mvj1jbw6',
+        components: {
+          transform: { position: [Array], rotation: [Array], scale: [Array] },
+          asset: { id: 'asset-mvj1jbw6' },
+          mesh: { primitive: 'box', color: '#c2ac79' }
+        }
+      }
+    },
+    worlds: {
+      main: {
+        schema: 'zge.sdk.scene.v1',
+        id: 'main',
+        revision: 20,
+        nextId: 4,
+        entities: [
+          {
+            id: 'platform',
+            name: 'Landing platform',
+            components: [Object]
+          },
+          { id: 'pilot', name: 'Explorer', components: [Object] },
+          {
+            id: 'barrier',
+            name: 'Cargo barrier',
+            components: [Object]
+          },
+          { id: 'cell', name: 'Energy cell', components: [Object] },
+          {
+            id: 'antenna',
+            name: 'Antenna foundation',
+            components: [Object]
+          },
+          {
+            id: 'entity-1',
+            name: 'Explorer duplicate',
+            components: [Object]
+          },
+          {
+            id: 'entity-2',
+            name: 'asset-mvj1jbw6',
+            components: [Object]
+          },
+          {
+            name: 'Supply crate',
+            components: [Object],
+            id: 'entity-3',
+            prefabId: 'crate'
+          }
+        ]
+      }
+    },
+    sdkCompatibility: { major: 0, minimumPreview: 11 },
+    components: {},
+    metadata: {},
+    provenance: [
+      {
+        sourceSchema: 'zge.sdk.project.v1',
+        migration: 'project-v1-to-v2'
+      }
+    ]
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

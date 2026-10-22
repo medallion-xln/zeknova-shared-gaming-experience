@@ -1,0 +1,210 @@
+{
+  "reports": [
+    {
+      "milestone": "ZGE-00",
+      "report": "docs/engine/CERTIFICATION_RESULTS.md",
+      "reportSha256": "84d86f493fee36e5b5c7d643c5870c6a5cae0bb3d6999c756cdd1b4364757b26",
+      "engineTestsPassed": null,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-01",
+      "report": "docs/engine/ZGE_01_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "fe82fb1de58748adf50ae3e275fd01b82d2d2d88eb1c2a59a89b2fdbbe387b6a",
+      "engineTestsPassed": 38,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-02",
+      "report": "docs/engine/ZGE_02_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "6e452ec45f52d21f82068db8446cf901191687d6aec6bc10d25a34cf09b4f6d0",
+      "engineTestsPassed": 58,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-03",
+      "report": "docs/engine/ZGE_03_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "9012fae8bcb1820b67ffccdcce7a31361c3eb08ade94cd6b0627666443e9195c",
+      "engineTestsPassed": 83,
+      "legacyAccounting": "82/85 .test files +1 Picasso report=83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-04",
+      "report": "docs/engine/ZGE_04_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "2d276a2af38117e85402952afae98d4e595ddde0799bdc46016e3807d46aa47f",
+      "engineTestsPassed": 106,
+      "legacyAccounting": "82/85 .test files +1 Picasso report=83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-05",
+      "report": "docs/engine/ZGE_05_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "90a0c5b35c52a33165fa93805252b8af7a682813c16c7a9a5ec674cd6ebc8fbe",
+      "engineTestsPassed": 140,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-06",
+      "report": "docs/engine/ZGE_06_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "fe8406db42a6cc3078654d8fe9f1c4dfe89cb2cf6125bbba96a577ed3cc85799",
+      "engineTestsPassed": 167,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-07",
+      "report": "docs/engine/ZGE_07_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "79109c49f837ddd1d1b137ab6014c3179ce944c46b0314b8afb90428b1f4b65a",
+      "engineTestsPassed": 191,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-08",
+      "report": "docs/engine/ZGE_08_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "f59fb32274832580f834c03c5736990a854e6da136cc9ff5817de46ee39eb392",
+      "engineTestsPassed": 221,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-09",
+      "report": "docs/engine/ZGE_09_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "ce08ae6aef6c499e40ca40822193ea03d058d0b3bc55a8b0b56802ad0a8dfdaf",
+      "engineTestsPassed": 251,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-10",
+      "report": "docs/engine/ZGE_10_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "a758d6882eaa0908b3f32be4b5b3cf3db94a5165c8a6cfd27069c22ea4b22154",
+      "engineTestsPassed": 263,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    },
+    {
+      "milestone": "ZGE-11",
+      "report": "docs/engine/ZGE_11_IMPLEMENTATION_REPORT.md",
+      "reportSha256": "9e170903b62a6e7fc83e88ab3a208ca9f29113b45faf3fa82d502a9cf68f6b6f",
+      "engineTestsPassed": 269,
+      "legacyAccounting": "83/86",
+      "scope": "historical reported result, not current retest"
+    }
+  ],
+  "priorMixedSoaks": [
+    {
+      "milestone": "ZGE-10",
+      "source": "docs/engine/evidence/zge10/async-soak/mixed-900s.json",
+      "sha256": "a8aea66a5bd2d6f351ecec04090d80253712d1947bd846b5f0e01335237d7ddf",
+      "clients": 8,
+      "phpGateways": 8,
+      "policy": {
+        "scheduledIntentsPerSecond": 6,
+        "principalLimitPerMinute": 240,
+        "ipLimitPerMinute": 600,
+        "mode": "quota-compliant paced",
+        "syntheticStartingSharedStone": 100000
+      },
+      "durationMs": 900000.795083,
+      "requests": {
+        "total": 5940,
+        "httpAccepted": 5940,
+        "acceptedCommands": 4599,
+        "duplicateReceipts": 0,
+        "throttled": 0,
+        "rejectedCommands": 180,
+        "transportFailures": 0,
+        "classes": {
+          "read": 1080,
+          "construction": 540,
+          "movement": 4239,
+          "reconnect": 81
+        },
+        "reasons": {
+          "occupied": 178,
+          "stale-world-revision": 2
+        }
+      },
+      "requestsPerSecond": 6.599994169396485,
+      "acceptedCommandsPerSecond": 5.109995485699399,
+      "latencyMs": {
+        "count": 5940,
+        "p50": 17.75029200001154,
+        "p95": 31.837334000039846,
+        "p99": 79.95895900001051,
+        "max": 576.1963749999995
+      },
+      "commitMaxMs": 488.628667,
+      "databaseOpenMaxMs": 402.89125
+    },
+    {
+      "milestone": "ZGE-11",
+      "source": "docs/engine/evidence/zge11/soak/mixed-1200s.json",
+      "sha256": "e5423430706a1b55be58164d369b47a1de8209b12b95a520c34b26d587119b5f",
+      "clients": 8,
+      "phpGateways": 8,
+      "policy": {
+        "scheduledIntentsPerSecond": 6,
+        "principalLimitPerMinute": 240,
+        "ipLimitPerMinute": 600,
+        "mode": "quota-compliant paced",
+        "syntheticStartingSharedStone": 100000
+      },
+      "durationMs": 1200167.4517080002,
+      "requests": {
+        "total": 7921,
+        "httpAccepted": 7920,
+        "acceptedCommands": 6129,
+        "duplicateReceipts": 0,
+        "throttled": 1,
+        "rejectedCommands": 241,
+        "transportFailures": 0,
+        "classes": {
+          "read": 1441,
+          "construction": 720,
+          "movement": 5651,
+          "reconnect": 109
+        },
+        "reasons": {
+          "occupied": 239,
+          "admission-busy": 1,
+          "stale-world-revision": 2
+        }
+      },
+      "requestsPerSecond": 6.599912361168727,
+      "acceptedCommandsPerSecond": 5.106787383108588,
+      "latencyMs": {
+        "count": 7921,
+        "p50": 19.78462499997113,
+        "p95": 38.1488749999553,
+        "p99": 121.42258300003596,
+        "max": 1168.5625829999917
+      },
+      "commitMaxMs": 278.072,
+      "databaseOpenMaxMs": 160.4175
+    }
+  ],
+  "comparisonRules": [
+    "Original ZGE00 boot timing contaminated by tool latency, superseded in ZGE01.",
+    "Interactive120Hz original-game FPS is NONCOMPARABLE to capped/headless60Hz browser runs.",
+    "ZGE09 synchronous process sampler distorts request loop; compare final quota follow-up separately.",
+    "ZGE10/11 same managed complete-service mixed pacing and hardware family permit descriptive comparison, durations/source/workload size and host contention still differ; no causal percentage claim.",
+    "ZGE08/09 short movement bursts are NONCOMPARABLE to sustained mixed gameplay.",
+    "No source-world benchmark certifies original legacy gameplay."
+  ],
+  "startingBaselineCorrection": "User brief expects263 engine; latest ZGE11 expands to269. Current retest in progress.",
+  "persistentOpenIssues": [
+    "Golden mismatch and absent original-game reproducible build",
+    "Historical GLTF initialization hang not attributed despite bounded worker faults mitigated",
+    "Embedded legacy plus vendor Three duplicate",
+    "Full-page lifecycle and original aid callback",
+    "Worker heap retention/service COMMIT/open tails",
+    "Live authority closure and production identity/TLS/credential/release gates"
+  ]
+}

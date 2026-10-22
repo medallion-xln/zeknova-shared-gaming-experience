@@ -1,0 +1,824 @@
+{
+  "scope": "class/self size and shortest strong GC-root paths, weak edges excluded; not dominator retained sizes",
+  "totals": {
+    "synthetic": {
+      "count": 34,
+      "selfBytes": 2640
+    },
+    "hidden": {
+      "count": 10298,
+      "selfBytes": 425600
+    },
+    "string": {
+      "count": 14565,
+      "selfBytes": 779152
+    },
+    "code": {
+      "count": 29525,
+      "selfBytes": 3531160
+    },
+    "array": {
+      "count": 1826,
+      "selfBytes": 856224
+    },
+    "object shape": {
+      "count": 7109,
+      "selfBytes": 658264
+    },
+    "number": {
+      "count": 8495,
+      "selfBytes": 135920
+    },
+    "symbol": {
+      "count": 331,
+      "selfBytes": 7944
+    },
+    "object": {
+      "count": 8113,
+      "selfBytes": 451232
+    },
+    "closure": {
+      "count": 7343,
+      "selfBytes": 435784
+    },
+    "concatenated string": {
+      "count": 817,
+      "selfBytes": 26144
+    },
+    "regexp": {
+      "count": 51,
+      "selfBytes": 2856
+    },
+    "native": {
+      "count": 198,
+      "selfBytes": 39429
+    },
+    "bigint": {
+      "count": 29,
+      "selfBytes": 672
+    },
+    "sliced string": {
+      "count": 5,
+      "selfBytes": 160
+    }
+  },
+  "classes": {
+    "Float64Array": {
+      "count": 14,
+      "selfBytes": 1344
+    },
+    "global": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Object": {
+      "count": 5407,
+      "selfBytes": 267224
+    },
+    "Uint8Array": {
+      "count": 9,
+      "selfBytes": 752
+    },
+    "process": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "Map": {
+      "count": 34,
+      "selfBytes": 1064
+    },
+    "Set": {
+      "count": 28,
+      "selfBytes": 912
+    },
+    "WeakMap": {
+      "count": 10,
+      "selfBytes": 336
+    },
+    "WeakSet": {
+      "count": 3,
+      "selfBytes": 112
+    },
+    "Uint32Array": {
+      "count": 8,
+      "selfBytes": 768
+    },
+    "Array": {
+      "count": 333,
+      "selfBytes": 10752
+    },
+    "Int32Array": {
+      "count": 3,
+      "selfBytes": 288
+    },
+    "Connection": {
+      "count": 2,
+      "selfBytes": 80
+    },
+    "system / Context": {
+      "count": 991,
+      "selfBytes": 94824
+    },
+    "Generator": {
+      "count": 60,
+      "selfBytes": 5464
+    },
+    "Immediate": {
+      "count": 2,
+      "selfBytes": 192
+    },
+    "ImmediateList": {
+      "count": 2,
+      "selfBytes": 80
+    },
+    "ArrayBuffer": {
+      "count": 39,
+      "selfBytes": 3400
+    },
+    "BigInt64Array": {
+      "count": 2,
+      "selfBytes": 192
+    },
+    "ModuleWrap": {
+      "count": 36,
+      "selfBytes": 2880
+    },
+    "Error": {
+      "count": 195,
+      "selfBytes": 5000
+    },
+    "Symbol": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "URL": {
+      "count": 3,
+      "selfBytes": 152
+    },
+    "Number": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "BuiltinModule": {
+      "count": 359,
+      "selfBytes": 28720
+    },
+    "TypedArray": {
+      "count": 11,
+      "selfBytes": 616
+    },
+    "console": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "AggregateError": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "EventTarget": {
+      "count": 3,
+      "selfBytes": 72
+    },
+    "AsyncFunction": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "PerformanceNodeTiming": {
+      "count": 1,
+      "selfBytes": 104
+    },
+    "Int8Array": {
+      "count": 5,
+      "selfBytes": 480
+    },
+    "PriorityQueue": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Stream": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "EventEmitter": {
+      "count": 15,
+      "selfBytes": 616
+    },
+    "ByteLengthQueuingStrategy": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "String": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "Boolean": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "String Iterator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Array Iterator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "FinalizationRegistry": {
+      "count": 7,
+      "selfBytes": 480
+    },
+    "DataView": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WeakRef": {
+      "count": 24,
+      "selfBytes": 784
+    },
+    "Promise": {
+      "count": 89,
+      "selfBytes": 4256
+    },
+    "BigInt": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Math": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Channel": {
+      "count": 21,
+      "selfBytes": 1008
+    },
+    "TypeError": {
+      "count": 97,
+      "selfBytes": 2328
+    },
+    "RangeError": {
+      "count": 31,
+      "selfBytes": 744
+    },
+    "Module": {
+      "count": 1,
+      "selfBytes": 32
+    },
+    "SystemError": {
+      "count": 12,
+      "selfBytes": 288
+    },
+    "SyntaxError": {
+      "count": 4,
+      "selfBytes": 96
+    },
+    "URIError": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "NodeError": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "GeneratorFunction": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "URLSearchParams Iterator": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Writable": {
+      "count": 5,
+      "selfBytes": 248
+    },
+    "ModuleJob": {
+      "count": 35,
+      "selfBytes": 3360
+    },
+    "Buffer": {
+      "count": 3,
+      "selfBytes": 288
+    },
+    "ModuleLoader": {
+      "count": 1,
+      "selfBytes": 136
+    },
+    "ModuleJobBase": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "PerformanceObserver": {
+      "count": 2,
+      "selfBytes": 152
+    },
+    "Session": {
+      "count": 1,
+      "selfBytes": 128
+    },
+    "WorldEvaluator": {
+      "count": 1,
+      "selfBytes": 144
+    },
+    "MultiplayerConstructionRuntime": {
+      "count": 1,
+      "selfBytes": 80
+    },
+    "Tag": {
+      "count": 1,
+      "selfBytes": 48
+    },
+    "Readable": {
+      "count": 4,
+      "selfBytes": 160
+    },
+    "Duplex": {
+      "count": 3,
+      "selfBytes": 136
+    },
+    "Serializer": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Deserializer": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "HandleWrap": {
+      "count": 6,
+      "selfBytes": 336
+    },
+    "Event": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "Worker": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "PerformanceEntry": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "PerformanceObserverEntryList": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "PerformanceResourceTiming": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "PerformanceMark": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "PerformanceMeasure": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Histogram": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "Performance": {
+      "count": 2,
+      "selfBytes": 144
+    },
+    "AsyncWrap": {
+      "count": 36,
+      "selfBytes": 2016
+    },
+    "LibuvStreamWrap": {
+      "count": 3,
+      "selfBytes": 168
+    },
+    "WeakReference": {
+      "count": 21,
+      "selfBytes": 1008
+    },
+    "TracingChannel": {
+      "count": 2,
+      "selfBytes": 208
+    },
+    "InterfaceConstructor": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "AsyncGeneratorFunction": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Scheduler": {
+      "count": 1,
+      "selfBytes": 96
+    },
+    "LazyTransform": {
+      "count": 6,
+      "selfBytes": 336
+    },
+    "Transform": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "X509Certificate": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "CryptoKey": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "AbortController": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "AbortSignal": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "SharedArrayBuffer": {
+      "count": 2,
+      "selfBytes": 144
+    },
+    "AsyncGenerator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Map Iterator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Set Iterator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "JSON": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "BigUint64Array": {
+      "count": 1,
+      "selfBytes": 96
+    },
+    "FixedQueue": {
+      "count": 1,
+      "selfBytes": 40
+    },
+    "InactiveAsyncContextFrame": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "FixedCircularBuffer": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "TextDecoder": {
+      "count": 2,
+      "selfBytes": 176
+    },
+    "SyncWriteStream": {
+      "count": 1,
+      "selfBytes": 192
+    },
+    "Float32Array": {
+      "count": 1,
+      "selfBytes": 96
+    },
+    "WeakRefMap": {
+      "count": 1,
+      "selfBytes": 40
+    },
+    "TextEncoder": {
+      "count": 2,
+      "selfBytes": 56
+    },
+    "Intl": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Atomics": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Reflect": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "RegExp String Iterator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly.Tag": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "StatsBase": {
+      "count": 2,
+      "selfBytes": 112
+    },
+    "Dirent": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "CountQueuingStrategy": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Blob": {
+      "count": 2,
+      "selfBytes": 80
+    },
+    "URLContext": {
+      "count": 2,
+      "selfBytes": 208
+    },
+    "Crypto": {
+      "count": 2,
+      "selfBytes": 128
+    },
+    "KeyObject": {
+      "count": 3,
+      "selfBytes": 72
+    },
+    "AsymmetricKeyObject": {
+      "count": 2,
+      "selfBytes": 48
+    },
+    "ResolveCache": {
+      "count": 1,
+      "selfBytes": 128
+    },
+    "LoadCache": {
+      "count": 1,
+      "selfBytes": 128
+    },
+    "SubtleCrypto": {
+      "count": 2,
+      "selfBytes": 128
+    },
+    "PerformanceNodeEntry": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "GameplayEventJournal": {
+      "count": 1,
+      "selfBytes": 72
+    },
+    "Hash": {
+      "count": 1,
+      "selfBytes": 40
+    },
+    "WritableState": {
+      "count": 1,
+      "selfBytes": 152
+    },
+    "CustomEvent": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "DOMException": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Intl.Collator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.DisplayNames": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.ListFormat": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.PluralRules": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.RelativeTimeFormat": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.DateTimeFormat": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.Locale": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.NumberFormat": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Intl.Segmenter": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "URLSearchParams": {
+      "count": 1,
+      "selfBytes": 24
+    },
+    "Async-from-Sync Iterator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly.Module": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly.Instance": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly.Table": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly.Memory": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly.Global": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "WebAssembly.Exception": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "NodeEventTarget": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Segmenter String Iterator": {
+      "count": 1,
+      "selfBytes": 56
+    },
+    "Iterator Helper": {
+      "count": 1,
+      "selfBytes": 56
+    }
+  },
+  "paths": [
+    {
+      "class": "WorldEvaluator",
+      "selfBytes": 144,
+      "strongRootPath": [
+        {
+          "edgeType": "element",
+          "edge": "1",
+          "node": {
+            "type": "synthetic",
+            "name": "(GC roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "element",
+          "edge": "19",
+          "node": {
+            "type": "synthetic",
+            "name": "(Stack roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "34",
+          "node": {
+            "type": "object",
+            "name": "system / Context",
+            "selfBytes": 120
+          }
+        },
+        {
+          "edgeType": "context",
+          "edge": "evaluator",
+          "node": {
+            "type": "object",
+            "name": "WorldEvaluator",
+            "selfBytes": 144
+          }
+        }
+      ]
+    },
+    {
+      "class": "MultiplayerConstructionRuntime",
+      "selfBytes": 80,
+      "strongRootPath": [
+        {
+          "edgeType": "element",
+          "edge": "1",
+          "node": {
+            "type": "synthetic",
+            "name": "(GC roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "element",
+          "edge": "19",
+          "node": {
+            "type": "synthetic",
+            "name": "(Stack roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "34",
+          "node": {
+            "type": "object",
+            "name": "system / Context",
+            "selfBytes": 120
+          }
+        },
+        {
+          "edgeType": "context",
+          "edge": "evaluator",
+          "node": {
+            "type": "object",
+            "name": "WorldEvaluator",
+            "selfBytes": 144
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "#runtime",
+          "node": {
+            "type": "object",
+            "name": "MultiplayerConstructionRuntime",
+            "selfBytes": 80
+          }
+        }
+      ]
+    },
+    {
+      "class": "GameplayEventJournal",
+      "selfBytes": 72,
+      "strongRootPath": [
+        {
+          "edgeType": "element",
+          "edge": "1",
+          "node": {
+            "type": "synthetic",
+            "name": "(GC roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "element",
+          "edge": "19",
+          "node": {
+            "type": "synthetic",
+            "name": "(Stack roots)",
+            "selfBytes": 0
+          }
+        },
+        {
+          "edgeType": "internal",
+          "edge": "34",
+          "node": {
+            "type": "object",
+            "name": "system / Context",
+            "selfBytes": 120
+          }
+        },
+        {
+          "edgeType": "context",
+          "edge": "evaluator",
+          "node": {
+            "type": "object",
+            "name": "WorldEvaluator",
+            "selfBytes": 144
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "#runtime",
+          "node": {
+            "type": "object",
+            "name": "MultiplayerConstructionRuntime",
+            "selfBytes": 80
+          }
+        },
+        {
+          "edgeType": "property",
+          "edge": "#journal",
+          "node": {
+            "type": "object",
+            "name": "GameplayEventJournal",
+            "selfBytes": 72
+          }
+        }
+      ]
+    }
+  ],
+  "nodeCount": 88739,
+  "strongReachable": 88731
+}

@@ -1,0 +1,27 @@
+  PASS world identity installed
+  PASS human faction registered
+  PASS two settlement factions registered
+  PASS settlement identities are stable and distinct
+  PASS local player receives an identity
+  PASS local player ownership is human faction
+  PASS persistent structures registered
+  PASS resource identities attached to runtime objects
+  PASS area and route identities exist
+  PASS spawn wrapper assigns enemy identity
+  PASS enemy is owned by nearest settlement
+  PASS defeated enemy identity is retired
+  PASS retired identity recorded
+  PASS FX-ID-REUSE next spawn receives a new identity
+  PASS spawn sequence is monotonic
+  PASS remote player receives stable client identity
+  PASS remote player identity survives repeated sync
+  PASS capture is deterministic without world changes
+  PASS snapshot hash is deterministic
+  PASS identity adapter captures the same registry
+  PASS wrapped building registration creates identity
+  PASS dispose restores spawn function
+  PASS persistent player identity survives restore
+  PASS restored spawn sequence does not reuse old IDs
+  PASS unbound transient enemy from prior session was retired
+  PASS array reordering does not change attached entity IDs
+W0-O.0 IDENTITY INTEGRATION TESTS PASS (26/26)

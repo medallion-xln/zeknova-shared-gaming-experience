@@ -1,0 +1,44 @@
+TAP version 13
+# Subtest: consistent multiplayer hot backup and cold backup restore exact source identities into new private directories
+not ok 1 - consistent multiplayer hot backup and cold backup restore exact source identities into new private directories
+  ---
+  duration_ms: 834.475583
+  type: 'test'
+  location: '/Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/server-php/test/zge09-disaster.test.mjs:18:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'ok')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/dwaynecampbell/Desktop/zeknova-shared-gaming-experience/packages/server-php/test/zge09-disaster.test.mjs:21:247)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: archive damage and contradictory claim or receipt data fail closed without rewriting any evidence
+ok 2 - archive damage and contradictory claim or receipt data fail closed without rewriting any evidence
+  ---
+  duration_ms: 10365.562042
+  type: 'test'
+  ...
+# Subtest: corrupt derived checkpoints repair from complete actor archive; killed repair rolls back all audit and checkpoint writes
+ok 3 - corrupt derived checkpoints repair from complete actor archive; killed repair rolls back all audit and checkpoint writes
+  ---
+  duration_ms: 2794.319833
+  type: 'test'
+  ...
+# Subtest: SQLite write lock contention times out explicitly then recovery succeeds after lock ownership ends
+ok 4 - SQLite write lock contention times out explicitly then recovery succeeds after lock ownership ends
+  ---
+  duration_ms: 4561.332083
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 18609.806458

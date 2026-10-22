@@ -1,0 +1,164 @@
+{
+  "query": "&safe=1",
+  "movement": {
+    "distance": 9.526117370571038,
+    "end": [
+      -70.71567042234263,
+      3.4538342361268626,
+      42.37910610354317
+    ],
+    "setup": {
+      "healthBefore": 100,
+      "pendingExtraction": false
+    },
+    "healthAfter": 100
+  },
+  "initial": {
+    "backend": "WebGL",
+    "assets": {
+      "loads": 8,
+      "hits": 18,
+      "joined": 0,
+      "failures": 0,
+      "retries": 0,
+      "evictions": 0,
+      "cancelled": 0,
+      "entries": 8,
+      "pending": 0,
+      "bytes": 25143978,
+      "references": 0,
+      "budgetBytes": 67108864,
+      "workers": {
+        "completed": 4,
+        "failures": 0,
+        "resets": 0,
+        "created": 1,
+        "live": 1,
+        "pending": 0,
+        "limit": 4
+      }
+    },
+    "missionCount": 12,
+    "bossActive": false,
+    "methods": [
+      "saves",
+      "buildings",
+      "autosaveTimer",
+      "missionStats",
+      "bossManager",
+      "nextCommissioningAutoTriggerAt",
+      "getMissionContext",
+      "save",
+      "flushAdaptiveSave",
+      "damageWeaponTarget",
+      "selectBuild",
+      "findNearestDamagedBuilding",
+      "repairBuilding",
+      "ensureBiomeMissionMines"
+    ],
+    "presentation": {
+      "presentation": {
+        "mode": "NATIVE",
+        "label": "NATIVE",
+        "fallbackReason": null,
+        "mock": null,
+        "allowMock": true,
+        "history": []
+      },
+      "native": {
+        "id": "native-three",
+        "initialized": true,
+        "backend": "webgl2",
+        "available": true,
+        "presented": 0,
+        "drawCalls": 217,
+        "triangles": 201088,
+        "geometries": 473,
+        "textures": 14,
+        "canvas": {
+          "width": 1280,
+          "height": 900
+        },
+        "sharedInstance": true,
+        "ownsContext": false
+      },
+      "capture": {
+        "id": "reference-capture",
+        "available": true,
+        "width": 1280,
+        "height": 720,
+        "captures": 0,
+        "nextFrameIndex": 0,
+        "lastCaptureMs": 0,
+        "overlaysHiddenLast": 0,
+        "sessionId": "local",
+        "sceneId": "zeknova",
+        "profile": "native",
+        "rerender": "always",
+        "readback": "eager",
+        "stages": {
+          "stages": {
+            "render": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "bitmap": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "readback": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "total": {
+              "count": 0,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "rerenders": 0,
+          "skippedRerenders": 0,
+          "blankFrames": 0,
+          "profile": "native",
+          "rerenderPolicy": "always",
+          "readbackPolicy": "eager"
+        }
+      },
+      "neural": null,
+      "capabilities": {
+        "webgpu": true,
+        "adapter": {
+          "vendor": "apple",
+          "architecture": "metal-3",
+          "device": "",
+          "description": ""
+        },
+        "platform": "MacIntel",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "browserCanHostModel": false,
+        "upstreamInferenceHost": {
+          "os": "Linux",
+          "gpu": "NVIDIA",
+          "localPossible": false,
+          "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+        },
+        "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+        "checkedAt": 1792566907829
+      }
+    },
+    "player": [
+      -71.75834398389412,
+      6.51730338835116,
+      18.75982233419427
+    ],
+    "xp": 321,
+    "paused": false
+  }
+}

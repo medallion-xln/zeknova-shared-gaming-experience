@@ -1,0 +1,100 @@
+{
+  "schema": "zge.verification-assessment.v1",
+  "date": "2026-10-21",
+  "engine": {
+    "baseline": 191,
+    "final": 221,
+    "passed": 221,
+    "failed": 0,
+    "log": "engine-final-certified.log"
+  },
+  "legacy": {
+    "total": 86,
+    "passed": 83,
+    "unchangedFailures": [
+      "tests/runtime-reconstruction.test.mjs",
+      "tests/renderer-ownership-certification.test.mjs",
+      "tests/runtime-graphics-context.test.mjs"
+    ],
+    "rePinned": false
+  },
+  "browsers": {
+    "newMultiplayer": "PASS after final client changes",
+    "oldSessionCompatibility": "PASS after final client changes",
+    "gameFourModes": "PASS",
+    "boundedBrowserParity": 390,
+    "pointerPhysicalInput": "PASS in zge08 hit-tested fixture; original zge04 failure retained",
+    "referenceAndStress": "PASS with inherited lifecycle limitations"
+  },
+  "diagnostics": [
+    {
+      "files": [
+        "browser-regression/"
+      ],
+      "reason": "normal local development server on 8790 absent; connection refused",
+      "resolution": "owned local development server started; all retained matrix tasks rerun"
+    },
+    {
+      "files": [
+        "browser-certified/zge04-browser-live-flow.mjs.log",
+        "browser-certified/browser-live-flow.json"
+      ],
+      "reason": "original pointer fixture did not produce pending placement; exact hit origin was not captured",
+      "resolution": "new zge08 fixture requires legal non-protected site and actual canvas hit before same physical input assertions; final pass retained"
+    },
+    {
+      "files": [
+        "engine-final.log"
+      ],
+      "reason": "backup content policy changed while source edits were active; incompatible bundle correctly denied instead of expected corrupt-file diagnostic",
+      "resolution": "frozen source engine-final-certified.log passes 221/221; policy check retained"
+    },
+    {
+      "files": [
+        "players-initial.log"
+      ],
+      "reason": "privacy fixture reused a private command ID as a deliberately public building ID",
+      "resolution": "distinct private command/public building identifiers; privacy assertion retained"
+    },
+    {
+      "files": [
+        "gateway-initial.log"
+      ],
+      "reason": "postcommit generation test initially waited for an insufficient lower bound",
+      "resolution": "wait for strictly higher generation than response; full crash/retry suite passes"
+    },
+    {
+      "files": [
+        "supervised-integrated.log"
+      ],
+      "reason": "inspect raw integration log for retained diagnostics; child originally inherited --input-type from ad hoc parent diagnostic",
+      "resolution": "owned worker forks explicitly clear execArgv; all lifecycle suites pass"
+    }
+  ],
+  "capacity": {
+    "selectedRun": "capacity-isolated/multiplayer-capacity.json",
+    "retainedRuns": [
+      "multiplayer-capacity.json",
+      "capacity-certified/multiplayer-capacity.json"
+    ],
+    "realCommands": 2048,
+    "clients": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "sustainedSLA": false,
+    "oneRuntimeInstanceEachRun": true
+  },
+  "scopeLimits": [
+    "local loopback staging only",
+    "live ZekNova LEGACY",
+    "full-volume exhaustion/power loss untested",
+    "whole-launcher restart is explicit operator action",
+    "legacy golden failures preserved",
+    "full live aid/writer/V4/production gates remain",
+    "intermittent inherited extra interval not reproduced or attributed"
+  ],
+  "credentials": "No database, private identities, runtime key, bearer/refresh credentials or process argument list included."
+}

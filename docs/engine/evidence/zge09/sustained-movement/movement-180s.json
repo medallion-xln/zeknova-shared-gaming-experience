@@ -1,0 +1,2869 @@
+{
+  "label": "movement-180s",
+  "profile": "movement",
+  "clients": 8,
+  "distinctIdentities": 8,
+  "phpGateways": 8,
+  "policy": {
+    "requestsPerSecond": 6,
+    "principalLimitPerMinute": 240,
+    "ipLimitPerMinute": 600,
+    "mode": "quota-compliant paced",
+    "syntheticStartingSharedStone": 12
+  },
+  "durationMs": 180125.6905,
+  "requests": {
+    "total": 1079,
+    "httpAccepted": 1079,
+    "acceptedCommands": 1079,
+    "duplicateReceipts": 0,
+    "throttled": 0,
+    "rejectedCommands": 0,
+    "transportFailures": 0,
+    "classes": {
+      "movement": 1079
+    },
+    "reasons": {}
+  },
+  "requestsPerSecond": 5.990261561273516,
+  "acceptedCommandsPerSecond": 5.990261561273516,
+  "latencyMs": {
+    "count": 1079,
+    "p50": 20.82287499999802,
+    "p95": 164.81483400000434,
+    "p99": 521.838917000001,
+    "max": 1014.2368750000023
+  },
+  "stagesMs": {
+    "payload": {
+      "count": 1079,
+      "p50": 0.020709,
+      "p95": 0.075334,
+      "p99": 0.341291,
+      "max": 5.343333
+    },
+    "databaseOpen": {
+      "count": 1079,
+      "p50": 0.62675,
+      "p95": 3.574875,
+      "p99": 28.072042,
+      "max": 644.570792
+    },
+    "quota": {
+      "count": 1079,
+      "p50": 0.35975,
+      "p95": 1.706375,
+      "p99": 4.100292,
+      "max": 10.888292
+    },
+    "authentication": {
+      "count": 1079,
+      "p50": 0.241083,
+      "p95": 0.762125,
+      "p99": 2.442625,
+      "max": 26.045458
+    },
+    "authorization": {
+      "count": 1079,
+      "p50": 0.007083,
+      "p95": 0.01625,
+      "p99": 0.046083,
+      "max": 2.639167
+    },
+    "runtimeEnsure": {
+      "count": 1079,
+      "p50": 0.375375,
+      "p95": 5.08925,
+      "p99": 364.184584,
+      "max": 717.935958
+    },
+    "admission": {
+      "count": 1079,
+      "p50": 0.351333,
+      "p95": 21.617625,
+      "p99": 86.679791,
+      "max": 363.50025
+    },
+    "lockWait": {
+      "count": 1079,
+      "p50": 0.010208,
+      "p95": 0.043083,
+      "p99": 0.084417,
+      "max": 1.155625
+    },
+    "validation": {
+      "count": 1079,
+      "p50": 1.429334,
+      "p95": 4.014458,
+      "p99": 9.535291,
+      "max": 22.159666
+    },
+    "ipc": {
+      "count": 1079,
+      "p50": 10.137916,
+      "p95": 37.58925,
+      "p99": 138.223625,
+      "max": 508.747209
+    },
+    "candidateValidation": {
+      "count": 1079,
+      "p50": 0.045583,
+      "p95": 0.082458,
+      "p99": 0.14,
+      "max": 3.326209
+    },
+    "transactionWrites": {
+      "count": 1079,
+      "p50": 0.526375,
+      "p95": 1.581625,
+      "p99": 3.01875,
+      "max": 23.660083
+    },
+    "commitValidation": {
+      "count": 1079,
+      "p50": 0.010834,
+      "p95": 0.049207,
+      "p99": 0.061084,
+      "max": 0.167834
+    },
+    "commit": {
+      "count": 1079,
+      "p50": 0.402708,
+      "p95": 1.599875,
+      "p99": 4.73075,
+      "max": 692.643208
+    },
+    "eventRead": {
+      "count": 1079,
+      "p50": 0.451667,
+      "p95": 1.195041,
+      "p99": 2.721209,
+      "max": 22.187666
+    },
+    "receiptConstruction": {
+      "count": 1079,
+      "p50": 0.323375,
+      "p95": 0.652667,
+      "p99": 0.994583,
+      "max": 2.4115
+    },
+    "responseSerialization": {
+      "count": 1079,
+      "p50": 0.217708,
+      "p95": 0.467459,
+      "p99": 0.887458,
+      "max": 4.422375
+    }
+  },
+  "transactionMs": {
+    "count": 1079,
+    "p50": 12.894791,
+    "p95": 45.662292,
+    "p99": 166.928209,
+    "max": 738.482
+  },
+  "runtimeEvaluationMs": {
+    "count": 1079,
+    "p50": 6.001208000001498,
+    "p95": 13.657416000001831,
+    "p99": 30.55745900000329,
+    "max": 139.2299170000042
+  },
+  "runtimeQueueMs": {
+    "count": 1079,
+    "p50": 0.003958999994210899,
+    "p95": 0.007291999994777143,
+    "p99": 0.027916999999433756,
+    "max": 0.12979099998483434
+  },
+  "samples": [
+    {
+      "atMs": 3196.842208,
+      "rssBytes": 353992704,
+      "cpuMs": 970,
+      "descriptors": 81,
+      "workerCount": 1,
+      "dbBytes": 204800,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 77430784,
+          "cpuMs": 300,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 27672576,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 26804224,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 27164672,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 28033024,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 27705344,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 28360704,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 27443200,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 28409856,
+          "cpuMs": 70,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 54968320,
+          "cpuMs": 110,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 8458.903292,
+      "rssBytes": 332496896,
+      "cpuMs": 1480,
+      "descriptors": 83,
+      "workerCount": 1,
+      "dbBytes": 356352,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 72646656,
+          "cpuMs": 460,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24248320,
+          "cpuMs": 90,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24313856,
+          "cpuMs": 90,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24199168,
+          "cpuMs": 90,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 25051136,
+          "cpuMs": 90,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 25362432,
+          "cpuMs": 100,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 26263552,
+          "cpuMs": 100,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23265280,
+          "cpuMs": 90,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23232512,
+          "cpuMs": 90,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 63913984,
+          "cpuMs": 280,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 13480.856958,
+      "rssBytes": 343310336,
+      "cpuMs": 2030,
+      "descriptors": 83,
+      "workerCount": 1,
+      "dbBytes": 450560,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 80527360,
+          "cpuMs": 610,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23625728,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23871488,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23920640,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24494080,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24297472,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 25640960,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 25542656,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24100864,
+          "cpuMs": 120,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 67289088,
+          "cpuMs": 460,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 18488.196792,
+      "rssBytes": 346996736,
+      "cpuMs": 2580,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 598096,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 86933504,
+          "cpuMs": 780,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24444928,
+          "cpuMs": 140,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24559616,
+          "cpuMs": 150,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24576000,
+          "cpuMs": 140,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 22921216,
+          "cpuMs": 140,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24035328,
+          "cpuMs": 150,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 25706496,
+          "cpuMs": 150,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 25198592,
+          "cpuMs": 150,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24395776,
+          "cpuMs": 140,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 64225280,
+          "cpuMs": 640,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 23535.168333,
+      "rssBytes": 371900416,
+      "cpuMs": 3190,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 671800,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 94732288,
+          "cpuMs": 960,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 26083328,
+          "cpuMs": 170,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24739840,
+          "cpuMs": 180,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24166400,
+          "cpuMs": 170,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 26263552,
+          "cpuMs": 170,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 25657344,
+          "cpuMs": 180,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24903680,
+          "cpuMs": 190,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 27525120,
+          "cpuMs": 180,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 26378240,
+          "cpuMs": 170,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 71450624,
+          "cpuMs": 820,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 28459.843875,
+      "rssBytes": 382582784,
+      "cpuMs": 3690,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 757816,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 97681408,
+          "cpuMs": 1090,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 26378240,
+          "cpuMs": 190,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24543232,
+          "cpuMs": 200,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24526848,
+          "cpuMs": 200,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24444928,
+          "cpuMs": 200,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24559616,
+          "cpuMs": 210,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 25837568,
+          "cpuMs": 210,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24330240,
+          "cpuMs": 210,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 26312704,
+          "cpuMs": 190,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 83968000,
+          "cpuMs": 990,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 33462.250583,
+      "rssBytes": 379568128,
+      "cpuMs": 4210,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 831544,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 99909632,
+          "cpuMs": 1240,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24477696,
+          "cpuMs": 220,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24510464,
+          "cpuMs": 230,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24461312,
+          "cpuMs": 230,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24559616,
+          "cpuMs": 230,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24543232,
+          "cpuMs": 230,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24444928,
+          "cpuMs": 230,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24215552,
+          "cpuMs": 230,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24494080,
+          "cpuMs": 220,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 83951616,
+          "cpuMs": 1150,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 38454.270625,
+      "rssBytes": 354615296,
+      "cpuMs": 4720,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 897080,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 75464704,
+          "cpuMs": 1390,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24444928,
+          "cpuMs": 250,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24576000,
+          "cpuMs": 260,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24395776,
+          "cpuMs": 250,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24428544,
+          "cpuMs": 250,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24592384,
+          "cpuMs": 250,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24608768,
+          "cpuMs": 260,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24346624,
+          "cpuMs": 260,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24510464,
+          "cpuMs": 250,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 83247104,
+          "cpuMs": 1300,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 43654.77,
+      "rssBytes": 351043584,
+      "cpuMs": 5260,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 974904,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 75350016,
+          "cpuMs": 1560,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24510464,
+          "cpuMs": 270,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24444928,
+          "cpuMs": 280,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24297472,
+          "cpuMs": 270,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24363008,
+          "cpuMs": 280,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24494080,
+          "cpuMs": 280,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24461312,
+          "cpuMs": 290,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24297472,
+          "cpuMs": 290,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24477696,
+          "cpuMs": 280,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 80347136,
+          "cpuMs": 1460,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 48693.668042,
+      "rssBytes": 352190464,
+      "cpuMs": 5920,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1040440,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 77152256,
+          "cpuMs": 1760,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24313856,
+          "cpuMs": 300,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24494080,
+          "cpuMs": 310,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24281088,
+          "cpuMs": 310,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24412160,
+          "cpuMs": 320,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24510464,
+          "cpuMs": 320,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24494080,
+          "cpuMs": 330,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24248320,
+          "cpuMs": 320,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24363008,
+          "cpuMs": 300,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 79921152,
+          "cpuMs": 1650,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 53716.131167,
+      "rssBytes": 353812480,
+      "cpuMs": 6540,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 1110072,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 79642624,
+          "cpuMs": 1940,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24264704,
+          "cpuMs": 330,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24444928,
+          "cpuMs": 350,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24379392,
+          "cpuMs": 340,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24461312,
+          "cpuMs": 350,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24166400,
+          "cpuMs": 350,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 21954560,
+          "cpuMs": 360,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24346624,
+          "cpuMs": 350,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24395776,
+          "cpuMs": 330,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 81756160,
+          "cpuMs": 1840,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 58512.196083,
+      "rssBytes": 369950720,
+      "cpuMs": 7190,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1187896,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 91668480,
+          "cpuMs": 2130,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24526848,
+          "cpuMs": 370,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24576000,
+          "cpuMs": 380,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24543232,
+          "cpuMs": 370,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24608768,
+          "cpuMs": 380,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24674304,
+          "cpuMs": 380,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24707072,
+          "cpuMs": 390,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24576000,
+          "cpuMs": 390,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24494080,
+          "cpuMs": 370,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 81575936,
+          "cpuMs": 2029.9999999999998,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 63582.145458,
+      "rssBytes": 376061952,
+      "cpuMs": 7780,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1265720,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 99041280,
+          "cpuMs": 2310,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24412160,
+          "cpuMs": 390,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24395776,
+          "cpuMs": 410,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24428544,
+          "cpuMs": 400,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24461312,
+          "cpuMs": 410,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24559616,
+          "cpuMs": 410,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24739840,
+          "cpuMs": 430,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24510464,
+          "cpuMs": 420,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24543232,
+          "cpuMs": 400,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 80969728,
+          "cpuMs": 2200,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 68510.458958,
+      "rssBytes": 358744064,
+      "cpuMs": 8440,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 1343544,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 85884928,
+          "cpuMs": 2490,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24150016,
+          "cpuMs": 420,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24035328,
+          "cpuMs": 440,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23642112,
+          "cpuMs": 430,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24494080,
+          "cpuMs": 450,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 24428544,
+          "cpuMs": 450,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24494080,
+          "cpuMs": 460,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23871488,
+          "cpuMs": 450,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23953408,
+          "cpuMs": 430,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 79790080,
+          "cpuMs": 2420,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 73745.132,
+      "rssBytes": 372703232,
+      "cpuMs": 9070,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1437752,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 94945280,
+          "cpuMs": 2670,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 24379392,
+          "cpuMs": 460,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 24494080,
+          "cpuMs": 470,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 24526848,
+          "cpuMs": 470,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 24690688,
+          "cpuMs": 480,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23937024,
+          "cpuMs": 480,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24608768,
+          "cpuMs": 490,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24395776,
+          "cpuMs": 490,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 24576000,
+          "cpuMs": 460,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 82149376,
+          "cpuMs": 2600,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 78858.645417,
+      "rssBytes": 350846976,
+      "cpuMs": 9830,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 1519696,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 87195648,
+          "cpuMs": 2880,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23461888,
+          "cpuMs": 500,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23527424,
+          "cpuMs": 520,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23445504,
+          "cpuMs": 510,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 21299200,
+          "cpuMs": 510,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 21348352,
+          "cpuMs": 520,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23494656,
+          "cpuMs": 540,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23429120,
+          "cpuMs": 530,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 22953984,
+          "cpuMs": 510,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 80691200,
+          "cpuMs": 2810,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 83514.957417,
+      "rssBytes": 326959104,
+      "cpuMs": 10470,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 1601592,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 91324416,
+          "cpuMs": 3060,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23445504,
+          "cpuMs": 530,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23429120,
+          "cpuMs": 540,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 19595264,
+          "cpuMs": 540,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 18382848,
+          "cpuMs": 540,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 18055168,
+          "cpuMs": 560,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 19267584,
+          "cpuMs": 580,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23052288,
+          "cpuMs": 580,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23412736,
+          "cpuMs": 540,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 66994176,
+          "cpuMs": 3000,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 88501.986458,
+      "rssBytes": 365068288,
+      "cpuMs": 11100,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1691704,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 96321536,
+          "cpuMs": 3250,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 22921216,
+          "cpuMs": 560,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 22773760,
+          "cpuMs": 570,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23248896,
+          "cpuMs": 570,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23396352,
+          "cpuMs": 580,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23412736,
+          "cpuMs": 590,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23609344,
+          "cpuMs": 610,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23281664,
+          "cpuMs": 610,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23298048,
+          "cpuMs": 570,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 82804736,
+          "cpuMs": 3190,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 93505.338708,
+      "rssBytes": 356515840,
+      "cpuMs": 11690,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1773624,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 88408064,
+          "cpuMs": 3400,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 22904832,
+          "cpuMs": 590,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 22872064,
+          "cpuMs": 600,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23379968,
+          "cpuMs": 600,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23494656,
+          "cpuMs": 610,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 22872064,
+          "cpuMs": 620,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23674880,
+          "cpuMs": 640,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24756224,
+          "cpuMs": 650,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23216128,
+          "cpuMs": 600,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 80936960,
+          "cpuMs": 3380,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 98564.14025,
+      "rssBytes": 336756736,
+      "cpuMs": 12330,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1855544,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 73809920,
+          "cpuMs": 3580,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 22757376,
+          "cpuMs": 620,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 22626304,
+          "cpuMs": 640,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23150592,
+          "cpuMs": 630,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23019520,
+          "cpuMs": 640,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23298048,
+          "cpuMs": 650,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23281664,
+          "cpuMs": 670,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23527424,
+          "cpuMs": 690,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 22708224,
+          "cpuMs": 630,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 78577664,
+          "cpuMs": 3580,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 103578.235542,
+      "rssBytes": 369278976,
+      "cpuMs": 12990,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 1953848,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 96223232,
+          "cpuMs": 3780,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23478272,
+          "cpuMs": 650,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23412736,
+          "cpuMs": 660,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23199744,
+          "cpuMs": 660,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23396352,
+          "cpuMs": 670,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23445504,
+          "cpuMs": 690,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24952832,
+          "cpuMs": 710,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24772608,
+          "cpuMs": 720,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23527424,
+          "cpuMs": 660,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 82870272,
+          "cpuMs": 3790,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 108515.577708,
+      "rssBytes": 371834880,
+      "cpuMs": 13610,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 2023480,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 100237312,
+          "cpuMs": 3950,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23445504,
+          "cpuMs": 680,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23592960,
+          "cpuMs": 700,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23281664,
+          "cpuMs": 690,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23560192,
+          "cpuMs": 700,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23642112,
+          "cpuMs": 730,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24903680,
+          "cpuMs": 750,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23379968,
+          "cpuMs": 750,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23298048,
+          "cpuMs": 690,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 82493440,
+          "cpuMs": 3970,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 113690.277708,
+      "rssBytes": 348127232,
+      "cpuMs": 14320,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 2089016,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 84312064,
+          "cpuMs": 4150,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23429120,
+          "cpuMs": 730,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23298048,
+          "cpuMs": 740,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23494656,
+          "cpuMs": 730,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 25018368,
+          "cpuMs": 740,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 22970368,
+          "cpuMs": 760,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 19578880,
+          "cpuMs": 770,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23085056,
+          "cpuMs": 790,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23379968,
+          "cpuMs": 730,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 79560704,
+          "cpuMs": 4180,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 118596.779458,
+      "rssBytes": 364544000,
+      "cpuMs": 14970,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 2166840,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 92422144,
+          "cpuMs": 4320,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23478272,
+          "cpuMs": 760,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23592960,
+          "cpuMs": 780,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23478272,
+          "cpuMs": 770,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23494656,
+          "cpuMs": 770,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23494656,
+          "cpuMs": 790,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23560192,
+          "cpuMs": 810,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23347200,
+          "cpuMs": 830,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23478272,
+          "cpuMs": 770,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 84197376,
+          "cpuMs": 4370,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 123575.138,
+      "rssBytes": 355319808,
+      "cpuMs": 15640,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 2228280,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 86933504,
+          "cpuMs": 4540,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23576576,
+          "cpuMs": 780,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23478272,
+          "cpuMs": 800,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23363584,
+          "cpuMs": 800,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23445504,
+          "cpuMs": 810,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23576576,
+          "cpuMs": 830,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23478272,
+          "cpuMs": 850,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23445504,
+          "cpuMs": 860,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23560192,
+          "cpuMs": 810,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 80461824,
+          "cpuMs": 4560,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 128616.622167,
+      "rssBytes": 353665024,
+      "cpuMs": 16320,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 2314296,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 86917120,
+          "cpuMs": 4750,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23314432,
+          "cpuMs": 810,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23379968,
+          "cpuMs": 840,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23412736,
+          "cpuMs": 840,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23429120,
+          "cpuMs": 840,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23560192,
+          "cpuMs": 870,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23511040,
+          "cpuMs": 880,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23248896,
+          "cpuMs": 900,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23298048,
+          "cpuMs": 830,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 79593472,
+          "cpuMs": 4760,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 133526.947208,
+      "rssBytes": 359170048,
+      "cpuMs": 16990,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 2392120,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 86179840,
+          "cpuMs": 4940,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23429120,
+          "cpuMs": 840,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23674880,
+          "cpuMs": 880,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23543808,
+          "cpuMs": 870,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23511040,
+          "cpuMs": 880,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23478272,
+          "cpuMs": 900,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23478272,
+          "cpuMs": 910,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23412736,
+          "cpuMs": 930,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 22691840,
+          "cpuMs": 870,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 85770240,
+          "cpuMs": 4970,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 138937.0555,
+      "rssBytes": 338264064,
+      "cpuMs": 17580,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 2461776,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 84869120,
+          "cpuMs": 5120,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23429120,
+          "cpuMs": 880,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23707648,
+          "cpuMs": 910,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 22609920,
+          "cpuMs": 900,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23314432,
+          "cpuMs": 900,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23429120,
+          "cpuMs": 930,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23576576,
+          "cpuMs": 950,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23298048,
+          "cpuMs": 960,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 21889024,
+          "cpuMs": 900,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 68141056,
+          "cpuMs": 5130,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 143740.016625,
+      "rssBytes": 326729728,
+      "cpuMs": 18270,
+      "descriptors": 89,
+      "workerCount": 1,
+      "dbBytes": 2543696,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 86605824,
+          "cpuMs": 5350,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 21954560,
+          "cpuMs": 910,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23461888,
+          "cpuMs": 930,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 18432000,
+          "cpuMs": 930,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 18055168,
+          "cpuMs": 940,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 22757376,
+          "cpuMs": 960,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 20971520,
+          "cpuMs": 990,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23461888,
+          "cpuMs": 1000,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23511040,
+          "cpuMs": 940,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 67518464,
+          "cpuMs": 5320,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 148496.182708,
+      "rssBytes": 367116288,
+      "cpuMs": 18940,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 2621496,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 98533376,
+          "cpuMs": 5540,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23330816,
+          "cpuMs": 930,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23658496,
+          "cpuMs": 970,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23379968,
+          "cpuMs": 970,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23609344,
+          "cpuMs": 980,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23609344,
+          "cpuMs": 1000,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23625728,
+          "cpuMs": 1020,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 22986752,
+          "cpuMs": 1040,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23003136,
+          "cpuMs": 970,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 81379328,
+          "cpuMs": 5520,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 153595.401083,
+      "rssBytes": 332480512,
+      "cpuMs": 19530,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 2707512,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 79757312,
+          "cpuMs": 5710,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 22544384,
+          "cpuMs": 970,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23166976,
+          "cpuMs": 1000,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23101440,
+          "cpuMs": 1000,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23314432,
+          "cpuMs": 1010,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 22937600,
+          "cpuMs": 1030,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 22888448,
+          "cpuMs": 1050,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 22839296,
+          "cpuMs": 1070,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 22872064,
+          "cpuMs": 1000,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 69058560,
+          "cpuMs": 5690,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 158667.687208,
+      "rssBytes": 321011712,
+      "cpuMs": 20200,
+      "descriptors": 88,
+      "workerCount": 1,
+      "dbBytes": 2793528,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 76300288,
+          "cpuMs": 5920,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23166976,
+          "cpuMs": 1000,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23347200,
+          "cpuMs": 1040,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 22708224,
+          "cpuMs": 1030,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 22675456,
+          "cpuMs": 1040,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 22839296,
+          "cpuMs": 1060,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 22921216,
+          "cpuMs": 1090,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 18694144,
+          "cpuMs": 1110,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 21037056,
+          "cpuMs": 1030,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 67321856,
+          "cpuMs": 5880,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 163684.630458,
+      "rssBytes": 358563840,
+      "cpuMs": 20820,
+      "descriptors": 87,
+      "workerCount": 1,
+      "dbBytes": 2879544,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 97173504,
+          "cpuMs": 6100,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 22347776,
+          "cpuMs": 1030,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 21790720,
+          "cpuMs": 1060,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 22757376,
+          "cpuMs": 1060,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23724032,
+          "cpuMs": 1070,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23658496,
+          "cpuMs": 1100,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23674880,
+          "cpuMs": 1130,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23461888,
+          "cpuMs": 1140,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23445504,
+          "cpuMs": 1070,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 76529664,
+          "cpuMs": 6060,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 168502.234958,
+      "rssBytes": 373719040,
+      "cpuMs": 21510,
+      "descriptors": 82,
+      "workerCount": 1,
+      "dbBytes": 2928640,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 99319808,
+          "cpuMs": 6320,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23511040,
+          "cpuMs": 1060,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23592960,
+          "cpuMs": 1100,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23543808,
+          "cpuMs": 1090,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23773184,
+          "cpuMs": 1110,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23625728,
+          "cpuMs": 1130,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 23855104,
+          "cpuMs": 1170,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 23478272,
+          "cpuMs": 1180,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23756800,
+          "cpuMs": 1090,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 85262336,
+          "cpuMs": 6260,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 173612.84825,
+      "rssBytes": 345554944,
+      "cpuMs": 22150,
+      "descriptors": 82,
+      "workerCount": 1,
+      "dbBytes": 3014656,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 94699520,
+          "cpuMs": 6500,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 22904832,
+          "cpuMs": 1090,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23543808,
+          "cpuMs": 1130,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23592960,
+          "cpuMs": 1130,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23625728,
+          "cpuMs": 1150,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23642112,
+          "cpuMs": 1170,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 18481152,
+          "cpuMs": 1200,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 18595840,
+          "cpuMs": 1200,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 19087360,
+          "cpuMs": 1130,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 77381632,
+          "cpuMs": 6450,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 178546.756667,
+      "rssBytes": 380272640,
+      "cpuMs": 22740,
+      "descriptors": 81,
+      "workerCount": 1,
+      "dbBytes": 3100672,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 105709568,
+          "cpuMs": 6660,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23691264,
+          "cpuMs": 1120,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23773184,
+          "cpuMs": 1170,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23658496,
+          "cpuMs": 1170,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23642112,
+          "cpuMs": 1170,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23724032,
+          "cpuMs": 1190,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24936448,
+          "cpuMs": 1230,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24674304,
+          "cpuMs": 1240,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23625728,
+          "cpuMs": 1160,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 82837504,
+          "cpuMs": 6630,
+          "program": "node"
+        }
+      ]
+    },
+    {
+      "atMs": 183393.272292,
+      "rssBytes": 380272640,
+      "cpuMs": 23330,
+      "descriptors": 82,
+      "workerCount": 1,
+      "dbBytes": 3194880,
+      "processes": [
+        {
+          "pid": 46624,
+          "rssBytes": 106250240,
+          "cpuMs": 6830,
+          "program": "node"
+        },
+        {
+          "pid": 46846,
+          "rssBytes": 23543808,
+          "cpuMs": 1150,
+          "program": "php"
+        },
+        {
+          "pid": 46874,
+          "rssBytes": 23494656,
+          "cpuMs": 1190,
+          "program": "php"
+        },
+        {
+          "pid": 46899,
+          "rssBytes": 23511040,
+          "cpuMs": 1190,
+          "program": "php"
+        },
+        {
+          "pid": 46916,
+          "rssBytes": 23560192,
+          "cpuMs": 1210,
+          "program": "php"
+        },
+        {
+          "pid": 46930,
+          "rssBytes": 23625728,
+          "cpuMs": 1230,
+          "program": "php"
+        },
+        {
+          "pid": 46944,
+          "rssBytes": 24854528,
+          "cpuMs": 1270,
+          "program": "php"
+        },
+        {
+          "pid": 46958,
+          "rssBytes": 24838144,
+          "cpuMs": 1270,
+          "program": "php"
+        },
+        {
+          "pid": 46972,
+          "rssBytes": 23461888,
+          "cpuMs": 1190,
+          "program": "php"
+        },
+        {
+          "pid": 47491,
+          "rssBytes": 83132416,
+          "cpuMs": 6800,
+          "program": "node"
+        }
+      ]
+    }
+  ],
+  "faults": [],
+  "health": {
+    "version": 1,
+    "owner": "supervisor-a2e0544e-a5eb-41d4-a008-1402aa80e579",
+    "state": "ready",
+    "limits": {
+      "queueCapacity": 16,
+      "maxWorlds": 16,
+      "maxConnections": 64,
+      "maxFrame": 8388608,
+      "timeoutMs": 2000,
+      "leaseMs": 10000
+    },
+    "metrics": {
+      "accepted": 1096,
+      "rejected": 0,
+      "completed": 1096,
+      "failed": 0,
+      "restarts": 0,
+      "timeouts": 0,
+      "staleReplies": 0,
+      "authenticationFailures": 0,
+      "leaseFailures": 0,
+      "queuePeak": 1,
+      "workerStarts": 1,
+      "totalEvaluationMs": 11187.570155000161
+    },
+    "worlds": [
+      {
+        "worldId": "valley",
+        "state": "ready",
+        "workerId": "worker-905b8f36-0cd0-4760-8540-4965ded99473",
+        "generation": 1,
+        "expires": 1792609675497,
+        "queue": 0,
+        "active": false,
+        "lastFailure": null,
+        "evaluation": {
+          "created": 1,
+          "restored": 2,
+          "cacheHits": 1094
+        }
+      }
+    ]
+  },
+  "final": {
+    "revision": 1087,
+    "cursor": 3261,
+    "archiveReceipts": 1087,
+    "personalClaims": 0,
+    "teamClaims": 0,
+    "personalXp": [
+      {
+        "id": "load-0",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-1",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-2",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-3",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-4",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-5",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-6",
+        "xp": 0,
+        "rank": "ensign"
+      },
+      {
+        "id": "load-7",
+        "xp": 0,
+        "rank": "ensign"
+      }
+    ],
+    "stone": 12,
+    "acceptedPlaces": 0,
+    "deterministicReplay": true
+  },
+  "scope": "loopback real authenticated HTTP; private synthetic starting supplies for construction longevity; all commands/events/claims retained; process CPU/RSS includes harness, owned PHP gateways and worker; source edits/tests may contend during run"
+}

@@ -1,0 +1,2749 @@
+{
+  "schema": "zge.bench01.source-reconciliation-summary.v1",
+  "trials": [
+    {
+      "schema": "zge.bench01.source-reconciliation-frames.v1",
+      "trial": 0,
+      "foregroundActor": 0,
+      "clients": 8,
+      "status": "PASS",
+      "physicalPlacementAccepted": true,
+      "actualMovement": true,
+      "reconciliationErrors": [],
+      "renderer": "native WebGL2",
+      "conditions": "warm source-owned construction world; one foreground observed viewport plus7 independent browser contexts; physical alternating keyboard input; one physical placement; real authenticated reconciliation/polling; synthetic starting shared stone100000; no GPU timing",
+      "durationMs": 15010.09999998808,
+      "presentedFrames": 901,
+      "presentedFPS": 60.026248992392816,
+      "frames": 901,
+      "averageFPS": 60.00280013067276,
+      "medianFPS": 59.880239520962,
+      "onePercentLowFPS": 59.52380952380351,
+      "onePercentLowMethod": "1000 / arithmetic mean of slowest ceil(N*0.01) frame intervals",
+      "frameMs": {
+        "p50": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "over16_67": 547,
+      "over33_33": 0,
+      "worldRevisionBefore": 23,
+      "worldRevisionAfter": 167,
+      "buildingsBefore": 2,
+      "buildingsAfter": 3,
+      "displacementRangeX": 2.8,
+      "convergence": true,
+      "httpResponsesObserved": 224,
+      "httpStatusCounts": {
+        "200": 224
+      },
+      "networkResponses": [
+        {
+          "elapsedMs": 66.54762499999924,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 163.59316699999908,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 264.2182500000017,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 379.97862499999974,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 394.8443330000009,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 420.8527920000015,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 452.7755419999994,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 482.6219999999994,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 578.1327500000007,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 674.3159579999992,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 766.1685419999994,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 868.4883750000008,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 984.4469170000011,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 993.0898330000018,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1000.4706670000014,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1075.253166999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1087.1883330000019,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1184.8374170000025,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1302.273583000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1407.622292,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1438.3770000000004,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1476.9391250000008,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1521.9724999999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1620.296333000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1719.9520420000008,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1843.109457999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1876.2648750000008,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1917.232500000002,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1936.8772080000017,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1947.208125000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2049.562167,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2140.6516250000022,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2240.840167000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2356.551958,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2474.423999999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2485.3096670000014,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2511.2976249999992,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2580.875082999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2594.3087080000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2675.847750000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2790.2086249999993,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2875.6458330000023,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2939.430375,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2977.8484580000004,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2996.087292,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3078.728292,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3176.825667000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3279.4745000000003,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3378.442833000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3392.9143750000003,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3422.033374999999,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3450.1401250000017,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3493.8258750000023,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3594.347167,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3728.626791999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3828.572791999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3926.4434580000016,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3979.354707999999,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3992.5840830000016,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4032.1242920000004,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4068.315375000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4136.0693329999995,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4233.157083000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4335.914166999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4432.469333000001,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4453.904291999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4476.019583000001,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4557.456125000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4709.306542000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4771.5087920000005,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4870.586500000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4895.031125000001,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4921.642667,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4953.495042000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4975.521667000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5071.3628750000025,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5173.619458000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5271.156666999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5372.066458000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5476.299500000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5490.484208000002,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5499.948417,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5567.563249999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5590.428667,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5688.788457999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5807.030375000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5909.391542000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5941.824542000002,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5980.147875000002,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6008.4648750000015,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6111.216417,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6208.198292000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6310.8347920000015,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6379.948167000002,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6426.889542000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6441.099208,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6453.311874999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6526.481374999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6628.504083,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6733.491667000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6826.763125000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6942.824958000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6992.5014580000025,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7007.344333000001,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7029.3685000000005,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7055.0533749999995,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7073.397917000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7143.725833,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7232.018416999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7335.460458000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7431.1676670000015,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7456.954458,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7474.303749999999,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7567.7509580000005,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7666.511624999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7776.714082999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7924.554917000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7944.1990000000005,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7951.958750000002,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7962.8584169999995,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7979.4575,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8085.773832999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8360.366000000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8410.906958,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8483.086125000002,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8496.056375,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8511.449208000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8567.364625000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8617.046708000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8711.622792000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8817.497374999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8915.903708000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8937.284375,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8982.0605,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9007.898541999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9115.858917000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9225.882625000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9327.083999999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9379.596042000001,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9421.737167,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9441.723000000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9454.077375,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9557.501500000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9659.723875,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9758.031833000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9877.039917000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9981.306833000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10005.277208,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10018.696083000003,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10077.915583000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10093.965458000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10177.004250000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10278.127042,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10381.875708,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10438.293833,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10481.839667,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10508.481749999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10606.653708000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10715.4955,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10832.589792000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10873.524792,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10943.971083,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10962.159500000002,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10968.614042000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11025.281500000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11118.763875,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11234.308125,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11352.098000000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11452.18375,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11481.933042,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11494.597083,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11551.657708000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11565.280292,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11653.968625000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11770.923167,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11871.192667,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11934.066000000003,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11970.972417,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11980.909750000003,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12088.283208,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12188.472333000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12318.274542,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12380.756917000002,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12412.134708000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12426.374167000002,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12447.469958000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12525.981958,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12645.446792000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12723.714792000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12823.962625,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12930.568417000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12986.430792,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12998.242167,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13032.76625,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13072.729958,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13128.021042,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13225.005958000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13345.509625000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13441.806333,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13465.545958000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13482.396792,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13564.952667000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13661.56425,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13761.214583,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13879.306,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13895.499917000001,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13926.080582999999,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13952.566833,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13977.024542,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14067.372417000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14168.368708000002,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14284.031167000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14387.436083,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14485.439542,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14501.481375,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14512.130458,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14565.568667,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14585.326458,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14686.046583,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14785.691542,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14886.336500000001,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14933.0595,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14976.195292,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14992.206999999999,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "schema": "zge.bench01.source-reconciliation-frames.v1",
+      "trial": 1,
+      "foregroundActor": 1,
+      "clients": 8,
+      "status": "PASS",
+      "physicalPlacementAccepted": true,
+      "actualMovement": true,
+      "reconciliationErrors": [],
+      "renderer": "native WebGL2",
+      "conditions": "warm source-owned construction world; one foreground observed viewport plus7 independent browser contexts; physical alternating keyboard input; one physical placement; real authenticated reconciliation/polling; synthetic starting shared stone100000; no GPU timing",
+      "durationMs": 15006.899999988076,
+      "presentedFrames": 901,
+      "presentedFPS": 60.03904870431041,
+      "frames": 901,
+      "averageFPS": 60.002400096003846,
+      "medianFPS": 59.880239520968516,
+      "onePercentLowFPS": 59.523809523799216,
+      "onePercentLowMethod": "1000 / arithmetic mean of slowest ceil(N*0.01) frame intervals",
+      "frameMs": {
+        "p50": 16.69999999999709,
+        "p95": 16.799999999995634,
+        "p99": 16.80000000000291,
+        "max": 16.80000000000291
+      },
+      "over16_67": 547,
+      "over33_33": 0,
+      "worldRevisionBefore": 167,
+      "worldRevisionAfter": 306,
+      "buildingsBefore": 3,
+      "buildingsAfter": 4,
+      "displacementRangeX": 4.3999999999999995,
+      "convergence": true,
+      "httpResponsesObserved": 220,
+      "httpStatusCounts": {
+        "200": 220
+      },
+      "networkResponses": [
+        {
+          "elapsedMs": 45.34370800000033,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 45.570082999998704,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 69.97604200000205,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 116.09479200000351,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 170.04516700000386,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 286.4070419999989,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 387.26145800000086,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 487.2792079999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 497.2507079999996,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 525.0944170000002,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 595.1195420000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 688.9392500000031,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 788.9103749999995,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 890.7713330000042,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 928.4147500000036,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 972.3414170000033,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 991.9135830000014,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1005.0053750000006,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1090.1555000000008,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1191.6101249999992,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1311.0840420000022,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1408.4148330000025,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1507.233917000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1537.5312080000003,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1550.674917000004,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1608.923625000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1622.7033750000046,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1741.3835000000036,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 1831.9255000000048,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2103.7268750000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2123.3693330000024,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2147.3365420000046,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2180.6387079999986,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2249.219833000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2341.5952920000054,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2422.5301670000044,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2433.7259580000027,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2464.2060830000046,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2494.082875,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2531.3523330000025,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2631.181875000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2735.862958000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2858.147042000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 2950.920750000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3030.553958000004,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3043.291541999999,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3055.641875000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3125.9945000000007,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3156.608583000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3251.8869170000035,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3352.977500000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3472.3409580000007,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3491.1938750000045,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3532.9142920000013,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3570.006625000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3682.775708000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3780.010875,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3876.994958000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3942.0814170000012,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 3992.3233330000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4019.446667000004,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4035.1068330000053,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4092.567167000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4191.828042000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4385.116000000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4433.820667,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4507.596833000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4535.565875,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4547.9912079999995,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4638.034167000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4643.227875000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4731.857625000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4827.470916999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4955.614625000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 4988.104625,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5029.244833000004,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5057.190125000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5164.402000000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5272.0220000000045,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5376.362542000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5439.204083000004,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5468.562042000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5496.668458,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5509.128000000004,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5561.636792000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5657.212707999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5913.773792,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 5933.090208000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6030.447583000001,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6042.256542000003,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6055.535416999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6113.859499999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6155.6990829999995,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6253.769583000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6384.580291999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6479.427625000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6504.887500000004,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6526.6317500000005,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6569.465042000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6669.240666999998,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6777.726291999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6873.263417000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6934.843542000002,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6968.1388330000045,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 6998.931583000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7018.595500000003,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7041.309667000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7093.9545419999995,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7214.381417000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7305.491500000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7411.794833,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7507.628583000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7543.296667000002,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7558.877458000003,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7606.678958000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7619.622875000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7706.637999999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7808.379916999998,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7925.016208000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 7991.588457999998,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8026.5737080000035,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8043.5823329999985,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8209.661375000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8244.689167000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8354.633500000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8438.733208000005,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8465.278708000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8481.518000000004,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8503.436875,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8543.757333000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8646.582667000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8743.199207999998,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8851.636250000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 8958.155208000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9029.649792000004,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9047.206917000003,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9056.449542000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9111.114542000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9147.953500000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9247.2955,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9364.467083000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9465.799749999998,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9483.088333,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9524.66175,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9565.473375000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9687.586667000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9783.718458000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9885.411124999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9924.924875000004,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9966.004375000004,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 9995.412375,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10009.458083000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10121.105792000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10241.54625,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10336.097375000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10435.990292000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10538.516375,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10548.662541999998,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10560.471417,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10614.886917000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10654.577042000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10759.390625,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10853.689458,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10974.403875000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 10983.892375000003,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11035.388792000005,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11071.386292000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11222.843375000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11380.336667000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11461.575333,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11492.183083000004,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11518.589791999999,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11534.640833000005,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11571.127874999998,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11619.386458,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11711.217499999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11811.236541999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 11918.089791999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12010.588875000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12035.886750000005,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12051.239417000004,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12108.286375000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12125.201417000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12209.511542,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12331.006125,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12438.972500000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12492.387374999998,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12518.277875,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12542.788042,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12631.072958000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12747.570375000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12852.131125,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12924.038625000001,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12954.352958000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12963.698000000004,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 12995.379417000004,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13051.579417,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13188.992125000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13273.736958000001,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13369.378583000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13493.743042000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13555.961167000001,
+          "actor": 7,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13577.942208,
+          "actor": 4,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13613.783750000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13705.868125,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 13821.863582999998,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14111.250917000005,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14185.541750000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14256.331833000004,
+          "actor": 5,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14331.416667000005,
+          "actor": 2,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14477.613125000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14506.183333,
+          "actor": 3,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14535.496082999998,
+          "actor": 6,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14556.247708000003,
+          "actor": 0,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14581.581666999999,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14625.696167000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14742.867125000004,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14829.981500000002,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 14927.875,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        },
+        {
+          "elapsedMs": 15016.936542000003,
+          "actor": 1,
+          "pathname": "/staging/world",
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

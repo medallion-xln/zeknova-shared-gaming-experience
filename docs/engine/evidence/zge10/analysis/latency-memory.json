@@ -1,0 +1,7272 @@
+{
+  "zge09Main": {
+    "durationMs": 600148.3253749999,
+    "requests": {
+      "total": 3958,
+      "httpAccepted": 3958,
+      "acceptedCommands": 3005,
+      "duplicateReceipts": 0,
+      "throttled": 0,
+      "rejectedCommands": 179,
+      "transportFailures": 0,
+      "classes": {
+        "read": 720,
+        "construction": 360,
+        "movement": 2824,
+        "reconnect": 54
+      },
+      "reasons": {
+        "occupied": 61,
+        "stale-world-revision": 118
+      }
+    },
+    "clients": 8,
+    "latency": {
+      "count": 3958,
+      "min": 1.763083000027109,
+      "p50": 17.400666999979876,
+      "p95": 33.08529200000339,
+      "p99": 78.97141699999338,
+      "max": 770.5875839999935
+    },
+    "slowCount": 30,
+    "slowStageDistribution": {
+      "quota": {
+        "count": 30,
+        "min": 0.172875,
+        "p50": 0.387416,
+        "p95": 1.476792,
+        "p99": 3.063667,
+        "max": 3.098208
+      },
+      "admission": {
+        "count": 30,
+        "min": 0.000125,
+        "p50": 0.000167,
+        "p95": 18.699167,
+        "p99": 21.487541,
+        "max": 45.519541
+      },
+      "lockWait": {
+        "count": 30,
+        "min": 0.002042,
+        "p50": 0.006542,
+        "p95": 0.008875,
+        "p99": 0.018375,
+        "max": 0.030833
+      },
+      "ipc": {
+        "count": 30,
+        "min": 1.996833,
+        "p50": 8.014042,
+        "p95": 116.732918,
+        "p99": 129.67125,
+        "max": 132.437959
+      },
+      "commit": {
+        "count": 30,
+        "min": 0.002709,
+        "p50": 0.004542,
+        "p95": 0.406667,
+        "p99": 0.474625,
+        "max": 4.607208
+      }
+    },
+    "slowUnassigned": {
+      "count": 30,
+      "min": 1.7338750000152743,
+      "p50": 479.37258300000263,
+      "p95": 607.6064589999932,
+      "p99": 626.4504180000056,
+      "max": 751.4642929999935
+    },
+    "slowSampleCompletionDistanceMs": {
+      "count": 30,
+      "min": 2.186583000002429,
+      "p50": 16.435292000001937,
+      "p95": 482.8726669999887,
+      "p99": 483.65929199999846,
+      "max": 2145.22775000002
+    },
+    "top": [
+      {
+        "elapsedMs": 170479.05295800001,
+        "totalMs": 770.5875839999935,
+        "kind": "read",
+        "serverMs": 19.123291,
+        "unassignedMs": 751.4642929999935,
+        "stages": {
+          "payload": 0.029333,
+          "databaseOpen": 1.501542,
+          "quota": 3.063667,
+          "authentication": 0.390709,
+          "authorization": 0.002375,
+          "runtimeEnsure": 0.56575,
+          "admission": 0.000208,
+          "lockWait": 0.008667,
+          "validation": 4.505916,
+          "ipc": 8.014042,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.009917,
+          "commit": 0.007,
+          "eventRead": 0.407125,
+          "receiptConstruction": 0.376916,
+          "responseSerialization": 0.191083
+        },
+        "runtime": {
+          "queueWaitMs": 0.005166999995708466,
+          "evaluationMs": 3.126124999980675
+        }
+      },
+      {
+        "elapsedMs": 110478.743833,
+        "totalMs": 651.7943340000056,
+        "kind": "read",
+        "serverMs": 25.343916,
+        "unassignedMs": 626.4504180000056,
+        "stages": {
+          "payload": 0.034584,
+          "databaseOpen": 3.952292,
+          "quota": 1.476792,
+          "authentication": 0.348417,
+          "authorization": 0.002,
+          "runtimeEnsure": 0.358916,
+          "admission": 0.000167,
+          "lockWait": 0.002042,
+          "validation": 1.521125,
+          "ipc": 16.678542,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.00725,
+          "commit": 0.003459,
+          "eventRead": 0.413458,
+          "receiptConstruction": 0.316209,
+          "responseSerialization": 0.195041
+        },
+        "runtime": {
+          "queueWaitMs": 0.005084000003989786,
+          "evaluationMs": 2.66895900000236
+        }
+      },
+      {
+        "elapsedMs": 65480.29883300001,
+        "totalMs": 615.3403339999932,
+        "kind": "read",
+        "serverMs": 7.733875,
+        "unassignedMs": 607.6064589999932,
+        "stages": {
+          "payload": 0.020458,
+          "databaseOpen": 1.483875,
+          "quota": 0.3965,
+          "authentication": 0.420166,
+          "authorization": 0.004125,
+          "runtimeEnsure": 0.544916,
+          "admission": 0.000208,
+          "lockWait": 0.00725,
+          "validation": 1.100584,
+          "ipc": 2.740625,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.009625,
+          "commit": 0.008292,
+          "eventRead": 0.487125,
+          "receiptConstruction": 0.33725,
+          "responseSerialization": 0.131917
+        },
+        "runtime": {
+          "queueWaitMs": 0.003958000001148321,
+          "evaluationMs": 0.9792910000105621
+        }
+      },
+      {
+        "elapsedMs": 185479.464292,
+        "totalMs": 560.4215830000176,
+        "kind": "read",
+        "serverMs": 16.402833,
+        "unassignedMs": 544.0187500000176,
+        "stages": {
+          "payload": 0.015416,
+          "databaseOpen": 0.540334,
+          "quota": 0.352584,
+          "authentication": 0.286208,
+          "authorization": 0.002083,
+          "runtimeEnsure": 0.553791,
+          "admission": 0.000167,
+          "lockWait": 0.007417,
+          "validation": 1.733208,
+          "ipc": 11.851042,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007958,
+          "commit": 0.004333,
+          "eventRead": 0.426917,
+          "receiptConstruction": 0.311709,
+          "responseSerialization": 0.274708
+        },
+        "runtime": {
+          "queueWaitMs": 0.004249999998137355,
+          "evaluationMs": 6.019083999999566
+        }
+      },
+      {
+        "elapsedMs": 15479.031417,
+        "totalMs": 536.640707999999,
+        "kind": "read",
+        "serverMs": 14.281,
+        "unassignedMs": 522.359707999999,
+        "stages": {
+          "payload": 0.012167,
+          "databaseOpen": 0.511125,
+          "quota": 0.446917,
+          "authentication": 0.214291,
+          "authorization": 0.001667,
+          "runtimeEnsure": 0.553625,
+          "admission": 0.000166,
+          "lockWait": 0.003083,
+          "validation": 1.801834,
+          "ipc": 9.748417,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.008374,
+          "commit": 0.004458,
+          "eventRead": 0.389625,
+          "receiptConstruction": 0.312916,
+          "responseSerialization": 0.24325
+        },
+        "runtime": {
+          "queueWaitMs": 0.005875000002561137,
+          "evaluationMs": 4.300708999999188
+        }
+      },
+      {
+        "elapsedMs": 60479.952792000004,
+        "totalMs": 528.7175409999982,
+        "kind": "read",
+        "serverMs": 6.242084,
+        "unassignedMs": 522.4754569999982,
+        "stages": {
+          "payload": 0.019959,
+          "databaseOpen": 0.576875,
+          "quota": 0.387416,
+          "authentication": 0.20725,
+          "authorization": 0.001958,
+          "runtimeEnsure": 0.310958,
+          "admission": 0.000167,
+          "lockWait": 0.00625,
+          "validation": 0.954374,
+          "ipc": 2.896291,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006083,
+          "commit": 0.002791,
+          "eventRead": 0.387125,
+          "receiptConstruction": 0.309542,
+          "responseSerialization": 0.149
+        },
+        "runtime": {
+          "queueWaitMs": 0.0035829999978886917,
+          "evaluationMs": 1.362542000002577
+        }
+      },
+      {
+        "elapsedMs": 55478.869625,
+        "totalMs": 522.2534169999999,
+        "kind": "read",
+        "serverMs": 8.615167,
+        "unassignedMs": 513.6382499999999,
+        "stages": {
+          "payload": 0.014208,
+          "databaseOpen": 0.531333,
+          "quota": 0.399541,
+          "authentication": 0.236707,
+          "authorization": 0.0015,
+          "runtimeEnsure": 0.360333,
+          "admission": 0.000167,
+          "lockWait": 0.008833,
+          "validation": 1.532958,
+          "ipc": 4.626833,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.008666,
+          "commit": 0.00875,
+          "eventRead": 0.397583,
+          "receiptConstruction": 0.293625,
+          "responseSerialization": 0.167
+        },
+        "runtime": {
+          "queueWaitMs": 0.00433300000440795,
+          "evaluationMs": 2.1630829999994603
+        }
+      },
+      {
+        "elapsedMs": 50478.95025,
+        "totalMs": 515.0915830000013,
+        "kind": "read",
+        "serverMs": 9.255291,
+        "unassignedMs": 505.83629200000127,
+        "stages": {
+          "payload": 0.0165,
+          "databaseOpen": 0.505125,
+          "quota": 0.682708,
+          "authentication": 0.241918,
+          "authorization": 0.00175,
+          "runtimeEnsure": 0.352583,
+          "admission": 0.000167,
+          "lockWait": 0.007542,
+          "validation": 1.137041,
+          "ipc": 5.365375,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006083,
+          "commit": 0.004167,
+          "eventRead": 0.37775,
+          "receiptConstruction": 0.32,
+          "responseSerialization": 0.194208
+        },
+        "runtime": {
+          "queueWaitMs": 0.00391700000182027,
+          "evaluationMs": 2.6467500000071595
+        }
+      },
+      {
+        "elapsedMs": 125480.036792,
+        "totalMs": 511.50245800000266,
+        "kind": "read",
+        "serverMs": 14.836584,
+        "unassignedMs": 496.66587400000265,
+        "stages": {
+          "payload": 0.012875,
+          "databaseOpen": 0.498625,
+          "quota": 0.343875,
+          "authentication": 0.242667,
+          "authorization": 0.001791,
+          "runtimeEnsure": 0.325583,
+          "admission": 0.000208,
+          "lockWait": 0.007125,
+          "validation": 1.554916,
+          "ipc": 10.805083,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.0075,
+          "commit": 0.007,
+          "eventRead": 0.411917,
+          "receiptConstruction": 0.318709,
+          "responseSerialization": 0.268084
+        },
+        "runtime": {
+          "queueWaitMs": 0.004375000004074536,
+          "evaluationMs": 5.1134170000004815
+        }
+      },
+      {
+        "elapsedMs": 10480.05975,
+        "totalMs": 508.9579999999987,
+        "kind": "read",
+        "serverMs": 12.482458,
+        "unassignedMs": 496.4755419999987,
+        "stages": {
+          "payload": 0.012958,
+          "databaseOpen": 0.46,
+          "quota": 0.275042,
+          "authentication": 0.245751,
+          "authorization": 0.001875,
+          "runtimeEnsure": 0.296417,
+          "admission": 0.000166,
+          "lockWait": 0.002917,
+          "validation": 1.295041,
+          "ipc": 8.882625,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007375,
+          "commit": 0.006917,
+          "eventRead": 0.4165,
+          "receiptConstruction": 0.306417,
+          "responseSerialization": 0.2465
+        },
+        "runtime": {
+          "queueWaitMs": 0.004249999999956344,
+          "evaluationMs": 3.997041000000536
+        }
+      },
+      {
+        "elapsedMs": 100480.129042,
+        "totalMs": 506.3322909999988,
+        "kind": "read",
+        "serverMs": 12.212541,
+        "unassignedMs": 494.1197499999988,
+        "stages": {
+          "payload": 0.02225,
+          "databaseOpen": 0.55725,
+          "quota": 0.425167,
+          "authentication": 0.252625,
+          "authorization": 0.003042,
+          "runtimeEnsure": 0.353292,
+          "admission": 0.000208,
+          "lockWait": 0.007459,
+          "validation": 1.472418,
+          "ipc": 8.11025,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.008334,
+          "commit": 0.007,
+          "eventRead": 0.39725,
+          "receiptConstruction": 0.313292,
+          "responseSerialization": 0.250041
+        },
+        "runtime": {
+          "queueWaitMs": 0.00474999999278225,
+          "evaluationMs": 3.8892909999995027
+        }
+      },
+      {
+        "elapsedMs": 25480.615749999997,
+        "totalMs": 502.83395799999926,
+        "kind": "read",
+        "serverMs": 8.622,
+        "unassignedMs": 494.21195799999924,
+        "stages": {
+          "payload": 0.01275,
+          "databaseOpen": 0.488208,
+          "quota": 0.644,
+          "authentication": 0.261916,
+          "authorization": 0.00175,
+          "runtimeEnsure": 0.339541,
+          "admission": 0.000167,
+          "lockWait": 0.00225,
+          "validation": 1.019042,
+          "ipc": 4.745334,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006125,
+          "commit": 0.002834,
+          "eventRead": 0.385,
+          "receiptConstruction": 0.471417,
+          "responseSerialization": 0.208792
+        },
+        "runtime": {
+          "queueWaitMs": 0.004249999998137355,
+          "evaluationMs": 2.126124999998865
+        }
+      },
+      {
+        "elapsedMs": 20480.442375,
+        "totalMs": 502.5838330000006,
+        "kind": "read",
+        "serverMs": 11.172375,
+        "unassignedMs": 491.4114580000006,
+        "stages": {
+          "payload": 0.012167,
+          "databaseOpen": 0.512416,
+          "quota": 0.35175,
+          "authentication": 0.256542,
+          "authorization": 0.00175,
+          "runtimeEnsure": 0.837416,
+          "admission": 0.000166,
+          "lockWait": 0.007792,
+          "validation": 1.168709,
+          "ipc": 6.989666,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006291,
+          "commit": 0.003208,
+          "eventRead": 0.421459,
+          "receiptConstruction": 0.313458,
+          "responseSerialization": 0.257792
+        },
+        "runtime": {
+          "queueWaitMs": 0.003749999999854481,
+          "evaluationMs": 2.6573329999991984
+        }
+      },
+      {
+        "elapsedMs": 40479.548208,
+        "totalMs": 498.7123750000028,
+        "kind": "read",
+        "serverMs": 13.234583,
+        "unassignedMs": 485.4777920000028,
+        "stages": {
+          "payload": 0.044875,
+          "databaseOpen": 0.864458,
+          "quota": 0.400583,
+          "authentication": 0.237749,
+          "authorization": 0.0025,
+          "runtimeEnsure": 0.420292,
+          "admission": 0.000167,
+          "lockWait": 0.004333,
+          "validation": 1.500376,
+          "ipc": 8.706333,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006917,
+          "commit": 0.003875,
+          "eventRead": 0.437625,
+          "receiptConstruction": 0.320542,
+          "responseSerialization": 0.244125
+        },
+        "runtime": {
+          "queueWaitMs": 0.0044999999954598024,
+          "evaluationMs": 4.104749999998603
+        }
+      },
+      {
+        "elapsedMs": 30479.8485,
+        "totalMs": 496.9306250000009,
+        "kind": "read",
+        "serverMs": 7.241375,
+        "unassignedMs": 489.68925000000087,
+        "stages": {
+          "payload": 0.011,
+          "databaseOpen": 0.761834,
+          "quota": 0.331375,
+          "authentication": 0.216666,
+          "authorization": 0.001833,
+          "runtimeEnsure": 0.325833,
+          "admission": 0.000167,
+          "lockWait": 0.003958,
+          "validation": 0.916208,
+          "ipc": 3.782917,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006209,
+          "commit": 0.003292,
+          "eventRead": 0.387459,
+          "receiptConstruction": 0.314417,
+          "responseSerialization": 0.150125
+        },
+        "runtime": {
+          "queueWaitMs": 0.0044580000030691735,
+          "evaluationMs": 1.6136249999981374
+        }
+      },
+      {
+        "elapsedMs": 45479.379,
+        "totalMs": 490.9168750000026,
+        "kind": "read",
+        "serverMs": 11.544292,
+        "unassignedMs": 479.37258300000263,
+        "stages": {
+          "payload": 0.017458,
+          "databaseOpen": 0.825458,
+          "quota": 0.474,
+          "authentication": 0.344,
+          "authorization": 0.00275,
+          "runtimeEnsure": 0.611208,
+          "admission": 0.000208,
+          "lockWait": 0.00825,
+          "validation": 1.244583,
+          "ipc": 7.040292,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.009,
+          "commit": 0.004125,
+          "eventRead": 0.389042,
+          "receiptConstruction": 0.313083,
+          "responseSerialization": 0.224625
+        },
+        "runtime": {
+          "queueWaitMs": 0.004666000000725035,
+          "evaluationMs": 3.352500000000873
+        }
+      },
+      {
+        "elapsedMs": 155479.924625,
+        "totalMs": 490.77479199998197,
+        "kind": "read",
+        "serverMs": 14.214916,
+        "unassignedMs": 476.55987599998195,
+        "stages": {
+          "payload": 0.015959,
+          "databaseOpen": 0.539666,
+          "quota": 0.281375,
+          "authentication": 0.259833,
+          "authorization": 0.001917,
+          "runtimeEnsure": 0.308791,
+          "admission": 0.000208,
+          "lockWait": 0.003584,
+          "validation": 1.748041,
+          "ipc": 10.052083,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.008458,
+          "commit": 0.004583,
+          "eventRead": 0.377792,
+          "receiptConstruction": 0.310833,
+          "responseSerialization": 0.272125
+        },
+        "runtime": {
+          "queueWaitMs": 0.004458000010345131,
+          "evaluationMs": 4.975624999991851
+        }
+      },
+      {
+        "elapsedMs": 75478.893958,
+        "totalMs": 490.1529589999991,
+        "kind": "read",
+        "serverMs": 20.622375,
+        "unassignedMs": 469.5305839999991,
+        "stages": {
+          "payload": 0.0175,
+          "databaseOpen": 1.130916,
+          "quota": 0.484458,
+          "authentication": 0.417542,
+          "authorization": 0.00175,
+          "runtimeEnsure": 0.9015,
+          "admission": 0.000167,
+          "lockWait": 0.004333,
+          "validation": 1.343958,
+          "ipc": 15.341792,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006625,
+          "commit": 0.005291,
+          "eventRead": 0.383125,
+          "receiptConstruction": 0.322584,
+          "responseSerialization": 0.230917
+        },
+        "runtime": {
+          "queueWaitMs": 0.006750000000465661,
+          "evaluationMs": 4.292042000000947
+        }
+      },
+      {
+        "elapsedMs": 70480.504958,
+        "totalMs": 489.891208999994,
+        "kind": "read",
+        "serverMs": 12.53475,
+        "unassignedMs": 477.356458999994,
+        "stages": {
+          "payload": 0.015834,
+          "databaseOpen": 0.52575,
+          "quota": 0.412959,
+          "authentication": 0.245708,
+          "authorization": 0.00175,
+          "runtimeEnsure": 0.329625,
+          "admission": 0.000125,
+          "lockWait": 0.007083,
+          "validation": 1.438959,
+          "ipc": 8.56175,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.008709,
+          "commit": 0.004542,
+          "eventRead": 0.397583,
+          "receiptConstruction": 0.312042,
+          "responseSerialization": 0.244875
+        },
+        "runtime": {
+          "queueWaitMs": 0.004000000000814907,
+          "evaluationMs": 3.8697919999976875
+        }
+      },
+      {
+        "elapsedMs": 95480.437,
+        "totalMs": 482.47537499999453,
+        "kind": "read",
+        "serverMs": 5.221208,
+        "unassignedMs": 477.25416699999454,
+        "stages": {
+          "payload": 0.0175,
+          "databaseOpen": 0.554583,
+          "quota": 0.364542,
+          "authentication": 0.222834,
+          "authorization": 0.001708,
+          "runtimeEnsure": 0.300208,
+          "admission": 0.000166,
+          "lockWait": 0.008292,
+          "validation": 0.886042,
+          "ipc": 1.996833,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.005957,
+          "commit": 0.0035,
+          "eventRead": 0.379667,
+          "receiptConstruction": 0.331834,
+          "responseSerialization": 0.1235
+        },
+        "runtime": {
+          "queueWaitMs": 0.003333000000566244,
+          "evaluationMs": 0.9141669999953592
+        }
+      }
+    ],
+    "rss": {
+      "startMiB": 713.640625,
+      "endMiB": 720.609375,
+      "peakMiB": 743.28125,
+      "growthMiB": 6.96875,
+      "tailMiBPerMinute": 6.440592851065094
+    },
+    "workerHeap": {
+      "heapUsed": {
+        "count": 0
+      },
+      "heapTotal": {
+        "count": 0
+      },
+      "rss": {
+        "count": 0
+      },
+      "tailHeapUsedMiBPerMinute": null
+    },
+    "harness": {
+      "heap": {
+        "count": 0
+      },
+      "rss": {
+        "count": 0
+      },
+      "tailHeapMiBPerMinute": null
+    },
+    "sampleDurationMs": {
+      "count": 0
+    },
+    "fd": {
+      "count": 121,
+      "min": 227,
+      "p50": 227,
+      "p95": 228,
+      "p99": 228,
+      "max": 229
+    },
+    "cpuMs": 77290,
+    "nodeCounts": [
+      10
+    ],
+    "dbBytes": {
+      "start": 204800,
+      "end": 8970240
+    },
+    "perPID": {
+      "1176": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "1680": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "2216": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "2733": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "4146": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "4945": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "5492": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "5998": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "6659": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "7407": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "8206": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "8855": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9396": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9956": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "10478": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "11002": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "11543": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "12060": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "12615": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "13146": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "14212": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "15232": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "16362": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "16910": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "17650": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "18414": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "19286": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "19962": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "20936": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "22274": {
+        "program": "ps",
+        "start": 1671168,
+        "end": 1671168,
+        "peak": 1671168,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "22767": {
+        "program": "ps",
+        "start": 1671168,
+        "end": 1671168,
+        "peak": 1671168,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "23239": {
+        "program": "ps",
+        "start": 1671168,
+        "end": 1671168,
+        "peak": 1671168,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "23806": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "24291": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "24773": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "25451": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "25976": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "26490": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "26970": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "27502": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "28030": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "28500": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "28995": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "29472": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "29954": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "31737": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "34059": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "34528": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "35027": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "35496": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "35977": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "36486": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "36981": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "37451": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "37932": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "38403": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "38886": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "39355": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "39838": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "40405": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "40963": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "41432": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "41913": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "42383": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "42865": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "43335": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "43816": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "44289": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "44770": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "45239": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "45730": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "46212": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "46693": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "47165": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "47646": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "48116": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "48597": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "49067": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "49549": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "50018": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "50501": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "50971": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "51454": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "51923": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "52406": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "52875": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "53360": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "53829": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "54310": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "54779": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "55261": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "55731": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "56212": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "56683": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "57169": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "57638": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "58119": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "58588": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "59069": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "59544": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "60033": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "60502": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "60984": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "61453": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "61939": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "62410": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "62894": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "63363": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "63825": {
+        "program": "(php)",
+        "start": 24297472,
+        "end": 24297472,
+        "peak": 24297472,
+        "cpuStart": 60,
+        "cpuEnd": 60
+      },
+      "63844": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "87349": {
+        "program": "node",
+        "start": 83607552,
+        "end": 111771648,
+        "peak": 117243904,
+        "cpuStart": 250,
+        "cpuEnd": 16190.000000000002
+      },
+      "87426": {
+        "program": "node",
+        "start": 46628864,
+        "end": 87621632,
+        "peak": 95584256,
+        "cpuStart": 80,
+        "cpuEnd": 6580
+      },
+      "87455": {
+        "program": "node",
+        "start": 55934976,
+        "end": 81641472,
+        "peak": 94863360,
+        "cpuStart": 110,
+        "cpuEnd": 22010
+      },
+      "87456": {
+        "program": "node",
+        "start": 40189952,
+        "end": 31834112,
+        "peak": 40189952,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "87457": {
+        "program": "node",
+        "start": 40943616,
+        "end": 31834112,
+        "peak": 40943616,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "87458": {
+        "program": "node",
+        "start": 40304640,
+        "end": 31834112,
+        "peak": 40304640,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "87459": {
+        "program": "node",
+        "start": 40304640,
+        "end": 31834112,
+        "peak": 40304640,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "87460": {
+        "program": "node",
+        "start": 40304640,
+        "end": 31834112,
+        "peak": 40304640,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "87461": {
+        "program": "node",
+        "start": 40828928,
+        "end": 31834112,
+        "peak": 40828928,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "87462": {
+        "program": "node",
+        "start": 40697856,
+        "end": 31834112,
+        "peak": 40697856,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "87463": {
+        "program": "node",
+        "start": 39927808,
+        "end": 31834112,
+        "peak": 39927808,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "87526": {
+        "program": "php",
+        "start": 29212672,
+        "end": 24248320,
+        "peak": 30523392,
+        "cpuStart": 80,
+        "cpuEnd": 3840
+      },
+      "87541": {
+        "program": "php",
+        "start": 29868032,
+        "end": 24117248,
+        "peak": 30605312,
+        "cpuStart": 80,
+        "cpuEnd": 4560
+      },
+      "87543": {
+        "program": "php",
+        "start": 29884416,
+        "end": 24313856,
+        "peak": 30752768,
+        "cpuStart": 70,
+        "cpuEnd": 4590
+      },
+      "87560": {
+        "program": "php",
+        "start": 29671424,
+        "end": 24363008,
+        "peak": 30867456,
+        "cpuStart": 80,
+        "cpuEnd": 4600
+      },
+      "87563": {
+        "program": "php",
+        "start": 29933568,
+        "end": 24084480,
+        "peak": 30146560,
+        "cpuStart": 80,
+        "cpuEnd": 3820
+      },
+      "87567": {
+        "program": "php",
+        "start": 28901376,
+        "end": 24297472,
+        "peak": 30048256,
+        "cpuStart": 70,
+        "cpuEnd": 3790
+      },
+      "87571": {
+        "program": "php",
+        "start": 29884416,
+        "end": 24313856,
+        "peak": 30031872,
+        "cpuStart": 80,
+        "cpuEnd": 3780
+      },
+      "87576": {
+        "program": "php",
+        "start": 29540352,
+        "end": 24166400,
+        "peak": 30507008,
+        "cpuStart": 80,
+        "cpuEnd": 4590
+      },
+      "88425": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "89643": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "90659": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "91608": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "92581": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "93517": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "94483": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "96003": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "97006": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "97987": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "98956": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "99894": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      }
+    },
+    "health": {
+      "version": 1,
+      "owner": "supervisor-e05d7b0e-3457-4e45-b1bd-b224b591d75b",
+      "state": "ready",
+      "limits": {
+        "queueCapacity": 16,
+        "maxWorlds": 16,
+        "maxConnections": 64,
+        "maxFrame": 8388608,
+        "timeoutMs": 2000,
+        "leaseMs": 10000
+      },
+      "metrics": {
+        "accepted": 3921,
+        "rejected": 0,
+        "completed": 3921,
+        "failed": 0,
+        "restarts": 0,
+        "timeouts": 0,
+        "staleReplies": 0,
+        "authenticationFailures": 0,
+        "leaseFailures": 0,
+        "queuePeak": 3,
+        "workerStarts": 1,
+        "totalEvaluationMs": 23704.80705300066
+      },
+      "worlds": [
+        {
+          "worldId": "valley",
+          "state": "ready",
+          "workerId": "worker-1d1cc851-0f77-4373-b8c4-93ced6b61a74",
+          "generation": 1,
+          "expires": 1792611103564,
+          "queue": 0,
+          "active": false,
+          "lastFailure": null,
+          "evaluation": {
+            "created": 1,
+            "restored": 26,
+            "cacheHits": 3895
+          }
+        }
+      ]
+    },
+    "service": {
+      "protocol": "zge.world-service.v1",
+      "serviceId": "service-3b4e6de1-5fe8-482e-8cf6-37a0832a9ddc",
+      "pid": 87349,
+      "state": "ready",
+      "launcherPid": 87426,
+      "gatewayPids": [
+        87456,
+        87457,
+        87458,
+        87459,
+        87460,
+        87461,
+        87462,
+        87463
+      ],
+      "launches": 1,
+      "restarts": 0,
+      "lastFailure": null,
+      "lastHealth": {
+        "at": 1792611094030,
+        "ok": true,
+        "probe": 2
+      },
+      "world": {
+        "worldId": "valley",
+        "generation": 1,
+        "workerId": "worker-1d1cc851-0f77-4373-b8c4-93ced6b61a74",
+        "state": "ready"
+      },
+      "port": 59593,
+      "gatewayCount": 8,
+      "startedAt": 1792610490930,
+      "nextRestartAt": null,
+      "knownDatabase": true,
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "490096423"
+      },
+      "policy": {
+        "healthIntervalMs": 2000,
+        "healthTimeoutMs": 5000,
+        "healthFailures": 3,
+        "restartBaseMs": 250,
+        "restartMaxMs": 10000,
+        "restartLimit": 8,
+        "restartWindowMs": 60000
+      }
+    },
+    "final": {
+      "revision": 3013,
+      "cursor": 9768,
+      "archiveReceipts": 3192,
+      "personalClaims": 3,
+      "teamClaims": 1,
+      "personalXp": [
+        {
+          "id": "load-0",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-1",
+          "xp": 434,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-2",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-3",
+          "xp": 420,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-4",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-5",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-6",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-7",
+          "xp": 420,
+          "rank": "ensign"
+        }
+      ],
+      "stone": 99636,
+      "acceptedPlaces": 91,
+      "deterministicReplay": true
+    }
+  },
+  "zge09Final": {
+    "durationMs": 180000.777167,
+    "requests": {
+      "total": 1188,
+      "httpAccepted": 1188,
+      "acceptedCommands": 905,
+      "duplicateReceipts": 0,
+      "throttled": 0,
+      "rejectedCommands": 51,
+      "transportFailures": 0,
+      "classes": {
+        "read": 216,
+        "construction": 108,
+        "movement": 848,
+        "reconnect": 16
+      },
+      "reasons": {
+        "occupied": 19,
+        "stale-world-revision": 32
+      }
+    },
+    "clients": 8,
+    "latency": {
+      "count": 1188,
+      "min": 2.4663329999966663,
+      "p50": 16.533125000001746,
+      "p95": 33.84745899999689,
+      "p99": 463.27975000001607,
+      "max": 505.38450000001467
+    },
+    "slowCount": 35,
+    "slowStageDistribution": {
+      "quota": {
+        "count": 35,
+        "min": 0.160209,
+        "p50": 0.715958,
+        "p95": 0.957958,
+        "p99": 0.978208,
+        "max": 1.074209
+      },
+      "admission": {
+        "count": 35,
+        "min": 0.000166,
+        "p50": 0.000292,
+        "p95": 0.000625,
+        "p99": 0.750375,
+        "max": 0.856333
+      },
+      "lockWait": {
+        "count": 35,
+        "min": 0.001791,
+        "p50": 0.004125,
+        "p95": 0.009,
+        "p99": 0.009209,
+        "max": 0.014917
+      },
+      "ipc": {
+        "count": 35,
+        "min": 2.284042,
+        "p50": 5.429084,
+        "p95": 12.886833,
+        "p99": 13.444292,
+        "max": 91.616832
+      },
+      "commit": {
+        "count": 35,
+        "min": 0.002583,
+        "p50": 0.00425,
+        "p95": 0.012083,
+        "p99": 0.378875,
+        "max": 33.764209
+      }
+    },
+    "slowUnassigned": {
+      "count": 35,
+      "min": 2.455791000003231,
+      "p50": 452.8258749999985,
+      "p95": 487.02670800002255,
+      "p99": 491.5942090000048,
+      "max": 492.7955830000147
+    },
+    "slowSampleCompletionDistanceMs": {
+      "count": 35,
+      "min": 23.149459000007482,
+      "p50": 455.32141599999886,
+      "p95": 496.83137400003034,
+      "p99": 504.1848330000066,
+      "max": 1023.0346669999999
+    },
+    "top": [
+      {
+        "elapsedMs": 165001.123542,
+        "totalMs": 505.38450000001467,
+        "kind": "read",
+        "serverMs": 12.588917,
+        "unassignedMs": 492.7955830000147,
+        "stages": {
+          "payload": 0.039125,
+          "databaseOpen": 2.128,
+          "quota": 0.890792,
+          "authentication": 0.345918,
+          "authorization": 0.0035,
+          "runtimeEnsure": 0.391041,
+          "admission": 0.000459,
+          "lockWait": 0.006375,
+          "validation": 1.30375,
+          "ipc": 6.512083,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006084,
+          "commit": 0.003375,
+          "eventRead": 0.368417,
+          "receiptConstruction": 0.316333,
+          "responseSerialization": 0.223375
+        },
+        "runtime": {
+          "queueWaitMs": 0.004249999998137355,
+          "evaluationMs": 3.0448340000002645
+        }
+      },
+      {
+        "elapsedMs": 30000.366917,
+        "totalMs": 498.6211670000048,
+        "kind": "read",
+        "serverMs": 7.026958,
+        "unassignedMs": 491.5942090000048,
+        "stages": {
+          "payload": 0.015584,
+          "databaseOpen": 0.501,
+          "quota": 0.276792,
+          "authentication": 0.252874,
+          "authorization": 0.001708,
+          "runtimeEnsure": 0.297167,
+          "admission": 0.000208,
+          "lockWait": 0.002709,
+          "validation": 0.962709,
+          "ipc": 3.6845,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.009666,
+          "commit": 0.005959,
+          "eventRead": 0.52725,
+          "receiptConstruction": 0.310417,
+          "responseSerialization": 0.148125
+        },
+        "runtime": {
+          "queueWaitMs": 0.005582999998296145,
+          "evaluationMs": 1.4532499999986612
+        }
+      },
+      {
+        "elapsedMs": 160000.97333399998,
+        "totalMs": 498.55154100002255,
+        "kind": "read",
+        "serverMs": 11.524833,
+        "unassignedMs": 487.02670800002255,
+        "stages": {
+          "payload": 0.026166,
+          "databaseOpen": 0.541917,
+          "quota": 0.352042,
+          "authentication": 0.245707,
+          "authorization": 0.003375,
+          "runtimeEnsure": 0.258458,
+          "admission": 0.000208,
+          "lockWait": 0.002,
+          "validation": 1.43525,
+          "ipc": 7.66125,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006376,
+          "commit": 0.003792,
+          "eventRead": 0.3855,
+          "receiptConstruction": 0.3305,
+          "responseSerialization": 0.242458
+        },
+        "runtime": {
+          "queueWaitMs": 0.003208999987691641,
+          "evaluationMs": 3.5927499999816064
+        }
+      },
+      {
+        "elapsedMs": 155000.55925,
+        "totalMs": 480.1720839999907,
+        "kind": "read",
+        "serverMs": 19.195958,
+        "unassignedMs": 460.9761259999907,
+        "stages": {
+          "payload": 0.034458,
+          "databaseOpen": 1.571917,
+          "quota": 0.9385,
+          "authentication": 0.35875,
+          "authorization": 0.003042,
+          "runtimeEnsure": 0.59575,
+          "admission": 0.000375,
+          "lockWait": 0.006208,
+          "validation": 1.753834,
+          "ipc": 12.886833,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.008458,
+          "commit": 0.010291,
+          "eventRead": 0.395375,
+          "receiptConstruction": 0.312375,
+          "responseSerialization": 0.270834
+        },
+        "runtime": {
+          "queueWaitMs": 0.0035410000127740204,
+          "evaluationMs": 8.16566700002295
+        }
+      },
+      {
+        "elapsedMs": 134999.52224999998,
+        "totalMs": 479.188375000027,
+        "kind": "read",
+        "serverMs": 12.862667,
+        "unassignedMs": 466.325708000027,
+        "stages": {
+          "payload": 0.031625,
+          "databaseOpen": 1.282666,
+          "quota": 0.94,
+          "authentication": 0.325417,
+          "authorization": 0.002917,
+          "runtimeEnsure": 0.286375,
+          "admission": 0.000375,
+          "lockWait": 0.007334,
+          "validation": 1.394749,
+          "ipc": 7.599,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006541,
+          "commit": 0.00425,
+          "eventRead": 0.391041,
+          "receiptConstruction": 0.308916,
+          "responseSerialization": 0.236833
+        },
+        "runtime": {
+          "queueWaitMs": 0.003790999995544553,
+          "evaluationMs": 3.9969590000109747
+        }
+      },
+      {
+        "elapsedMs": 149999.890625,
+        "totalMs": 474.77324999999837,
+        "kind": "read",
+        "serverMs": 7.96475,
+        "unassignedMs": 466.8084999999984,
+        "stages": {
+          "payload": 0.028667,
+          "databaseOpen": 1.535791,
+          "quota": 0.553709,
+          "authentication": 0.292501,
+          "authorization": 0.003292,
+          "runtimeEnsure": 0.551417,
+          "admission": 0.000625,
+          "lockWait": 0.009209,
+          "validation": 1.035792,
+          "ipc": 2.997666,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006043,
+          "commit": 0.005583,
+          "eventRead": 0.389584,
+          "receiptConstruction": 0.369791,
+          "responseSerialization": 0.138542
+        },
+        "runtime": {
+          "queueWaitMs": 0.004207999998470768,
+          "evaluationMs": 1.2470420000026934
+        }
+      },
+      {
+        "elapsedMs": 140000.44579199998,
+        "totalMs": 472.1541670000006,
+        "kind": "read",
+        "serverMs": 9.977875,
+        "unassignedMs": 462.1762920000006,
+        "stages": {
+          "payload": 0.03025,
+          "databaseOpen": 1.277791,
+          "quota": 0.828083,
+          "authentication": 0.399332,
+          "authorization": 0.003459,
+          "runtimeEnsure": 0.352333,
+          "admission": 0.000333,
+          "lockWait": 0.00775,
+          "validation": 1.234458,
+          "ipc": 4.897833,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006834,
+          "commit": 0.004375,
+          "eventRead": 0.390333,
+          "receiptConstruction": 0.304,
+          "responseSerialization": 0.197834
+        },
+        "runtime": {
+          "queueWaitMs": 0.0038340000028256327,
+          "evaluationMs": 2.2451669999863952
+        }
+      },
+      {
+        "elapsedMs": 115000.677292,
+        "totalMs": 471.414042000004,
+        "kind": "read",
+        "serverMs": 10.278166,
+        "unassignedMs": 461.135876000004,
+        "stages": {
+          "payload": 0.028375,
+          "databaseOpen": 0.866542,
+          "quota": 0.395959,
+          "authentication": 0.225083,
+          "authorization": 0.00225,
+          "runtimeEnsure": 0.356417,
+          "admission": 0.000208,
+          "lockWait": 0.002417,
+          "validation": 1.084084,
+          "ipc": 6.34975,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006249,
+          "commit": 0.003625,
+          "eventRead": 0.386459,
+          "receiptConstruction": 0.355541,
+          "responseSerialization": 0.1715
+        },
+        "runtime": {
+          "queueWaitMs": 0.0035420000058365986,
+          "evaluationMs": 2.1356249999953434
+        }
+      },
+      {
+        "elapsedMs": 170000.697292,
+        "totalMs": 471.3347500000091,
+        "kind": "read",
+        "serverMs": 10.118625,
+        "unassignedMs": 461.2161250000091,
+        "stages": {
+          "payload": 0.027084,
+          "databaseOpen": 1.152292,
+          "quota": 0.731042,
+          "authentication": 0.361499,
+          "authorization": 0.003125,
+          "runtimeEnsure": 0.66025,
+          "admission": 0.000416,
+          "lockWait": 0.014917,
+          "validation": 1.321208,
+          "ipc": 4.888709,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.005917,
+          "commit": 0.003416,
+          "eventRead": 0.377375,
+          "receiptConstruction": 0.3345,
+          "responseSerialization": 0.185416
+        },
+        "runtime": {
+          "queueWaitMs": 0.004417000018293038,
+          "evaluationMs": 2.23704199999338
+        }
+      },
+      {
+        "elapsedMs": 25000.45275,
+        "totalMs": 468.2745419999992,
+        "kind": "read",
+        "serverMs": 8.246417,
+        "unassignedMs": 460.0281249999992,
+        "stages": {
+          "payload": 0.015667,
+          "databaseOpen": 0.503166,
+          "quota": 0.378209,
+          "authentication": 0.251166,
+          "authorization": 0.001708,
+          "runtimeEnsure": 0.400208,
+          "admission": 0.000166,
+          "lockWait": 0.003584,
+          "validation": 1.129,
+          "ipc": 4.606167,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007125,
+          "commit": 0.00375,
+          "eventRead": 0.427417,
+          "receiptConstruction": 0.307542,
+          "responseSerialization": 0.18175
+        },
+        "runtime": {
+          "queueWaitMs": 0.004250000001775334,
+          "evaluationMs": 2.19695800000045
+        }
+      },
+      {
+        "elapsedMs": 9999.789042,
+        "totalMs": 466.5840419999986,
+        "kind": "read",
+        "serverMs": 11.828917,
+        "unassignedMs": 454.7551249999986,
+        "stages": {
+          "payload": 0.01475,
+          "databaseOpen": 0.485291,
+          "quota": 0.3465,
+          "authentication": 0.240792,
+          "authorization": 0.001792,
+          "runtimeEnsure": 0.312625,
+          "admission": 0.000166,
+          "lockWait": 0.00275,
+          "validation": 1.276541,
+          "ipc": 8.141584,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.00675,
+          "commit": 0.003292,
+          "eventRead": 0.41325,
+          "receiptConstruction": 0.308209,
+          "responseSerialization": 0.2455
+        },
+        "runtime": {
+          "queueWaitMs": 0.002375000000029104,
+          "evaluationMs": 3.9139999999988504
+        }
+      },
+      {
+        "elapsedMs": 40000.351709,
+        "totalMs": 464.8828749999957,
+        "kind": "read",
+        "serverMs": 11.153875,
+        "unassignedMs": 453.7289999999957,
+        "stages": {
+          "payload": 0.011542,
+          "databaseOpen": 0.440417,
+          "quota": 0.19875,
+          "authentication": 0.251833,
+          "authorization": 0.001834,
+          "runtimeEnsure": 0.219459,
+          "admission": 0.000166,
+          "lockWait": 0.00275,
+          "validation": 1.316249,
+          "ipc": 7.738042,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006583,
+          "commit": 0.003041,
+          "eventRead": 0.3975,
+          "receiptConstruction": 0.298666,
+          "responseSerialization": 0.241125
+        },
+        "runtime": {
+          "queueWaitMs": 0.0035830000051646493,
+          "evaluationMs": 3.603291999999783
+        }
+      },
+      {
+        "elapsedMs": 145001.093917,
+        "totalMs": 463.27975000001607,
+        "kind": "read",
+        "serverMs": 9.533167,
+        "unassignedMs": 453.7465830000161,
+        "stages": {
+          "payload": 0.031917,
+          "databaseOpen": 1.566375,
+          "quota": 0.957958,
+          "authentication": 0.299668,
+          "authorization": 0.003334,
+          "runtimeEnsure": 0.485875,
+          "admission": 0.000375,
+          "lockWait": 0.008459,
+          "validation": 1.168375,
+          "ipc": 4.102542,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006667,
+          "commit": 0.004584,
+          "eventRead": 0.391042,
+          "receiptConstruction": 0.301083,
+          "responseSerialization": 0.161791
+        },
+        "runtime": {
+          "queueWaitMs": 0.003916999994544312,
+          "evaluationMs": 1.8165830000070855
+        }
+      },
+      {
+        "elapsedMs": 75001.185,
+        "totalMs": 462.7800419999985,
+        "kind": "read",
+        "serverMs": 9.954167,
+        "unassignedMs": 452.8258749999985,
+        "stages": {
+          "payload": 0.015458,
+          "databaseOpen": 0.481625,
+          "quota": 0.252125,
+          "authentication": 0.280249,
+          "authorization": 0.001833,
+          "runtimeEnsure": 0.221792,
+          "admission": 0.000167,
+          "lockWait": 0.001791,
+          "validation": 1.256,
+          "ipc": 6.490834,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007166,
+          "commit": 0.002917,
+          "eventRead": 0.386916,
+          "receiptConstruction": 0.311625,
+          "responseSerialization": 0.215
+        },
+        "runtime": {
+          "queueWaitMs": 0.0032919999939622357,
+          "evaluationMs": 3.139374999998836
+        }
+      },
+      {
+        "elapsedMs": 130001.373292,
+        "totalMs": 462.5883749999921,
+        "kind": "read",
+        "serverMs": 12.518125,
+        "unassignedMs": 450.0702499999921,
+        "stages": {
+          "payload": 0.028959,
+          "databaseOpen": 1.164458,
+          "quota": 0.925041,
+          "authentication": 0.311501,
+          "authorization": 0.003208,
+          "runtimeEnsure": 0.291375,
+          "admission": 0.000417,
+          "lockWait": 0.007625,
+          "validation": 1.409334,
+          "ipc": 7.39175,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006542,
+          "commit": 0.004417,
+          "eventRead": 0.391833,
+          "receiptConstruction": 0.302333,
+          "responseSerialization": 0.237
+        },
+        "runtime": {
+          "queueWaitMs": 0.003999999986262992,
+          "evaluationMs": 3.6141659999848343
+        }
+      },
+      {
+        "elapsedMs": 65001.160625,
+        "totalMs": 462.49770900000294,
+        "kind": "read",
+        "serverMs": 6.615584,
+        "unassignedMs": 455.88212500000293,
+        "stages": {
+          "payload": 0.014791,
+          "databaseOpen": 0.497375,
+          "quota": 0.340708,
+          "authentication": 0.269291,
+          "authorization": 0.001708,
+          "runtimeEnsure": 0.261542,
+          "admission": 0.000292,
+          "lockWait": 0.003417,
+          "validation": 0.885125,
+          "ipc": 3.378625,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006458,
+          "commit": 0.003291,
+          "eventRead": 0.422125,
+          "receiptConstruction": 0.3625,
+          "responseSerialization": 0.135083
+        },
+        "runtime": {
+          "queueWaitMs": 1.1570839999913005,
+          "evaluationMs": 0.9281659999978729
+        }
+      },
+      {
+        "elapsedMs": 125000.614709,
+        "totalMs": 461.4605409999931,
+        "kind": "read",
+        "serverMs": 18.580708,
+        "unassignedMs": 442.8798329999931,
+        "stages": {
+          "payload": 0.031125,
+          "databaseOpen": 1.283334,
+          "quota": 0.56075,
+          "authentication": 0.28775,
+          "authorization": 0.002375,
+          "runtimeEnsure": 0.364084,
+          "admission": 0.000209,
+          "lockWait": 0.003125,
+          "validation": 1.562583,
+          "ipc": 13.444292,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007416,
+          "commit": 0.006375,
+          "eventRead": 0.399584,
+          "receiptConstruction": 0.310667,
+          "responseSerialization": 0.270833
+        },
+        "runtime": {
+          "queueWaitMs": 0.008750000008149073,
+          "evaluationMs": 6.619875000003958
+        }
+      },
+      {
+        "elapsedMs": 35000.010542,
+        "totalMs": 460.95995799999946,
+        "kind": "read",
+        "serverMs": 5.50175,
+        "unassignedMs": 455.45820799999944,
+        "stages": {
+          "payload": 0.014833,
+          "databaseOpen": 0.495083,
+          "quota": 0.299458,
+          "authentication": 0.263792,
+          "authorization": 0.002208,
+          "runtimeEnsure": 0.279042,
+          "admission": 0.000167,
+          "lockWait": 0.002458,
+          "validation": 0.850833,
+          "ipc": 2.412459,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006959,
+          "commit": 0.003875,
+          "eventRead": 0.403125,
+          "receiptConstruction": 0.311,
+          "responseSerialization": 0.128292
+        },
+        "runtime": {
+          "queueWaitMs": 0.0035829999978886917,
+          "evaluationMs": 1.0778749999954016
+        }
+      },
+      {
+        "elapsedMs": 4999.840292000001,
+        "totalMs": 460.8567919999996,
+        "kind": "read",
+        "serverMs": 5.311584,
+        "unassignedMs": 455.5452079999996,
+        "stages": {
+          "payload": 0.014166,
+          "databaseOpen": 0.483583,
+          "quota": 0.294916,
+          "authentication": 0.195916,
+          "authorization": 0.001666,
+          "runtimeEnsure": 0.310083,
+          "admission": 0.000167,
+          "lockWait": 0.004167,
+          "validation": 0.718166,
+          "ipc": 2.508834,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006167,
+          "commit": 0.003666,
+          "eventRead": 0.336667,
+          "receiptConstruction": 0.281542,
+          "responseSerialization": 0.126125
+        },
+        "runtime": {
+          "queueWaitMs": 0.002124999999978172,
+          "evaluationMs": 1.1026659999997719
+        }
+      },
+      {
+        "elapsedMs": 90001.379584,
+        "totalMs": 460.3017499999987,
+        "kind": "read",
+        "serverMs": 6.533375,
+        "unassignedMs": 453.76837499999874,
+        "stages": {
+          "payload": 0.024041,
+          "databaseOpen": 0.534083,
+          "quota": 0.266209,
+          "authentication": 0.225999,
+          "authorization": 0.001791,
+          "runtimeEnsure": 0.2745,
+          "admission": 0.000166,
+          "lockWait": 0.001792,
+          "validation": 0.947917,
+          "ipc": 3.354208,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006167,
+          "commit": 0.002583,
+          "eventRead": 0.410625,
+          "receiptConstruction": 0.309084,
+          "responseSerialization": 0.149959
+        },
+        "runtime": {
+          "queueWaitMs": 0.004209000006085262,
+          "evaluationMs": 1.4532499999913853
+        }
+      }
+    ],
+    "rss": {
+      "startMiB": 744.90625,
+      "endMiB": 685.21875,
+      "peakMiB": 756.703125,
+      "growthMiB": -59.6875,
+      "tailMiBPerMinute": -1.8798268412392263
+    },
+    "workerHeap": {
+      "heapUsed": {
+        "count": 0
+      },
+      "heapTotal": {
+        "count": 0
+      },
+      "rss": {
+        "count": 0
+      },
+      "tailHeapUsedMiBPerMinute": null
+    },
+    "harness": {
+      "heap": {
+        "count": 0
+      },
+      "rss": {
+        "count": 0
+      },
+      "tailHeapMiBPerMinute": null
+    },
+    "sampleDurationMs": {
+      "count": 0
+    },
+    "fd": {
+      "count": 37,
+      "min": 227,
+      "p50": 228,
+      "p95": 229,
+      "p99": 229,
+      "max": 229
+    },
+    "cpuMs": 22160,
+    "nodeCounts": [
+      10
+    ],
+    "dbBytes": {
+      "start": 204800,
+      "end": 2920448
+    },
+    "perPID": {
+      "1372": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "2258": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "3148": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "3758": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "4549": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "5652": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "6158": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "6724": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "7972": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "8537": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9044": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9588": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "10095": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "10640": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "11150": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "11700": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "12207": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "12754": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "13262": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "13807": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "14315": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "14862": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "15369": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "15913": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "16419": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "16975": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "17481": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "18027": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "88332": {
+        "program": "node",
+        "start": 83361792,
+        "end": 102416384,
+        "peak": 110526464,
+        "cpuStart": 220,
+        "cpuEnd": 4660
+      },
+      "88453": {
+        "program": "node",
+        "start": 46219264,
+        "end": 71598080,
+        "peak": 74432512,
+        "cpuStart": 70,
+        "cpuEnd": 2020
+      },
+      "88482": {
+        "program": "node",
+        "start": 55590912,
+        "end": 84934656,
+        "peak": 91947008,
+        "cpuStart": 100,
+        "cpuEnd": 6720
+      },
+      "88503": {
+        "program": "node",
+        "start": 41484288,
+        "end": 32063488,
+        "peak": 41484288,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "88504": {
+        "program": "node",
+        "start": 40550400,
+        "end": 32063488,
+        "peak": 40550400,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "88505": {
+        "program": "node",
+        "start": 40648704,
+        "end": 32063488,
+        "peak": 40648704,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "88506": {
+        "program": "node",
+        "start": 41861120,
+        "end": 32063488,
+        "peak": 41861120,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "88507": {
+        "program": "node",
+        "start": 41680896,
+        "end": 32063488,
+        "peak": 41680896,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "88508": {
+        "program": "node",
+        "start": 42139648,
+        "end": 32063488,
+        "peak": 42139648,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "88509": {
+        "program": "node",
+        "start": 42385408,
+        "end": 32063488,
+        "peak": 42385408,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "88510": {
+        "program": "node",
+        "start": 42303488,
+        "end": 32063488,
+        "peak": 42303488,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "88530": {
+        "program": "php",
+        "start": 32325632,
+        "end": 26525696,
+        "peak": 32325632,
+        "cpuStart": 70,
+        "cpuEnd": 1090
+      },
+      "88550": {
+        "program": "php",
+        "start": 32129024,
+        "end": 24920064,
+        "peak": 32129024,
+        "cpuStart": 70,
+        "cpuEnd": 1340
+      },
+      "88552": {
+        "program": "php",
+        "start": 32325632,
+        "end": 24821760,
+        "peak": 32325632,
+        "cpuStart": 70,
+        "cpuEnd": 1120
+      },
+      "88590": {
+        "program": "php",
+        "start": 32522240,
+        "end": 25083904,
+        "peak": 32522240,
+        "cpuStart": 80,
+        "cpuEnd": 1330
+      },
+      "88597": {
+        "program": "php",
+        "start": 32014336,
+        "end": 24887296,
+        "peak": 32014336,
+        "cpuStart": 80,
+        "cpuEnd": 1120
+      },
+      "88615": {
+        "program": "php",
+        "start": 32309248,
+        "end": 25247744,
+        "peak": 32309248,
+        "cpuStart": 70,
+        "cpuEnd": 1330
+      },
+      "88618": {
+        "program": "php",
+        "start": 32604160,
+        "end": 24756224,
+        "peak": 32604160,
+        "cpuStart": 80,
+        "cpuEnd": 1110
+      },
+      "88622": {
+        "program": "php",
+        "start": 32915456,
+        "end": 25100288,
+        "peak": 32915456,
+        "cpuStart": 70,
+        "cpuEnd": 1300
+      },
+      "89108": {
+        "program": "php",
+        "start": 2031616,
+        "end": 2031616,
+        "peak": 2031616,
+        "cpuStart": 10,
+        "cpuEnd": 10
+      },
+      "89127": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "90165": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "91276": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "92599": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "94046": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "95835": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "97606": {
+        "program": "ps",
+        "start": 1687552,
+        "end": 1687552,
+        "peak": 1687552,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "98820": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "99964": {
+        "program": "ps",
+        "start": 1703936,
+        "end": 1703936,
+        "peak": 1703936,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      }
+    },
+    "health": {
+      "version": 1,
+      "owner": "supervisor-5aae7b87-c113-48db-bc5a-a46cc5726ef4",
+      "state": "ready",
+      "limits": {
+        "queueCapacity": 16,
+        "maxWorlds": 16,
+        "maxConnections": 64,
+        "maxFrame": 8388608,
+        "timeoutMs": 2000,
+        "leaseMs": 10000
+      },
+      "metrics": {
+        "accepted": 1189,
+        "rejected": 0,
+        "completed": 1189,
+        "failed": 0,
+        "restarts": 0,
+        "timeouts": 0,
+        "staleReplies": 0,
+        "authenticationFailures": 0,
+        "leaseFailures": 0,
+        "queuePeak": 3,
+        "workerStarts": 1,
+        "totalEvaluationMs": 7126.5233709999575
+      },
+      "worlds": [
+        {
+          "worldId": "valley",
+          "state": "ready",
+          "workerId": "worker-95cdd174-30fe-4138-b04f-49dd2c26e599",
+          "generation": 1,
+          "expires": 1792611846477,
+          "queue": 0,
+          "active": false,
+          "lastFailure": null,
+          "evaluation": {
+            "created": 1,
+            "restored": 14,
+            "cacheHits": 1175
+          }
+        }
+      ]
+    },
+    "service": {
+      "protocol": "zge.world-service.v1",
+      "serviceId": "service-8e7d5cc1-ae87-47c6-9e78-787695e3f8c3",
+      "pid": 88332,
+      "state": "ready",
+      "launcherPid": 88453,
+      "gatewayPids": [
+        88503,
+        88504,
+        88505,
+        88506,
+        88507,
+        88508,
+        88509,
+        88510
+      ],
+      "launches": 1,
+      "restarts": 0,
+      "lastFailure": null,
+      "lastHealth": {
+        "at": 1792611835837,
+        "ok": true,
+        "probe": 1
+      },
+      "world": {
+        "worldId": "valley",
+        "generation": 1,
+        "workerId": "worker-95cdd174-30fe-4138-b04f-49dd2c26e599",
+        "state": "ready"
+      },
+      "port": 64092,
+      "gatewayCount": 8,
+      "startedAt": 1792611654227,
+      "nextRestartAt": null,
+      "knownDatabase": true,
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "490297786"
+      },
+      "policy": {
+        "healthIntervalMs": 2000,
+        "healthTimeoutMs": 5000,
+        "healthFailures": 3,
+        "restartBaseMs": 250,
+        "restartMaxMs": 10000,
+        "restartLimit": 8,
+        "restartWindowMs": 60000
+      }
+    },
+    "final": {
+      "revision": 913,
+      "cursor": 2965,
+      "archiveReceipts": 964,
+      "personalClaims": 4,
+      "teamClaims": 1,
+      "personalXp": [
+        {
+          "id": "load-0",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-1",
+          "xp": 84,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-2",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-3",
+          "xp": 126,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-4",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-5",
+          "xp": 70,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-6",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-7",
+          "xp": 126,
+          "rank": "ensign"
+        }
+      ],
+      "stone": 99884,
+      "acceptedPlaces": 29,
+      "deterministicReplay": true
+    }
+  },
+  "zge10Control": {
+    "durationMs": 180479.350875,
+    "requests": {
+      "total": 1189,
+      "httpAccepted": 1189,
+      "acceptedCommands": 905,
+      "duplicateReceipts": 0,
+      "throttled": 0,
+      "rejectedCommands": 51,
+      "transportFailures": 0,
+      "classes": {
+        "read": 217,
+        "construction": 108,
+        "movement": 848,
+        "reconnect": 16
+      },
+      "reasons": {
+        "occupied": 19,
+        "stale-world-revision": 32
+      }
+    },
+    "clients": 8,
+    "latency": {
+      "count": 1189,
+      "min": 2.73908400000073,
+      "p50": 17.6522919999843,
+      "p95": 40.20720900000015,
+      "p99": 483.632792000004,
+      "max": 567.8898749999935
+    },
+    "slowCount": 38,
+    "slowStageDistribution": {
+      "quota": {
+        "count": 38,
+        "min": 0.264375,
+        "p50": 0.416084,
+        "p95": 1.211458,
+        "p99": 1.781583,
+        "max": 2.86275
+      },
+      "admission": {
+        "count": 38,
+        "min": 0.000166,
+        "p50": 0.000208,
+        "p95": 1.079667,
+        "p99": 3.169792,
+        "max": 4.951833
+      },
+      "lockWait": {
+        "count": 38,
+        "min": 0.00175,
+        "p50": 0.00575,
+        "p95": 0.011875,
+        "p99": 0.024625,
+        "max": 0.072666
+      },
+      "ipc": {
+        "count": 38,
+        "min": 2.074917,
+        "p50": 5.313541,
+        "p95": 23.124375,
+        "p99": 50.618624,
+        "max": 78.561583
+      },
+      "commit": {
+        "count": 38,
+        "min": 0.003083,
+        "p50": 0.004875,
+        "p95": 5.323041,
+        "p99": 7.416833,
+        "max": 14.863542
+      }
+    },
+    "slowUnassigned": {
+      "count": 38,
+      "min": 6.729749999999498,
+      "p50": 463.030791999993,
+      "p95": 537.8662500000053,
+      "p99": 543.3675009999927,
+      "max": 558.5762919999935
+    },
+    "slowSampleCompletionDistanceMs": {
+      "count": 38,
+      "min": 456.19574999999895,
+      "p50": 477.28062500000306,
+      "p95": 696.8741249999948,
+      "p99": 855.4930830000085,
+      "max": 1016.2556659999973
+    },
+    "top": [
+      {
+        "elapsedMs": 120000.154708,
+        "totalMs": 567.8898749999935,
+        "kind": "read",
+        "serverMs": 9.313583,
+        "unassignedMs": 558.5762919999935,
+        "stages": {
+          "payload": 0.027083,
+          "databaseOpen": 1.333708,
+          "quota": 1.781583,
+          "authentication": 0.299126,
+          "authorization": 0.004,
+          "runtimeEnsure": 0.781083,
+          "admission": 0.000583,
+          "lockWait": 0.0105,
+          "validation": 1.062292,
+          "ipc": 3.033459,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006582,
+          "commit": 0.004917,
+          "eventRead": 0.381375,
+          "receiptConstruction": 0.340625,
+          "responseSerialization": 0.149334
+        },
+        "runtime": {
+          "queueWaitMs": 0.0036669999972218648,
+          "evaluationMs": 1.34170799999265
+        }
+      },
+      {
+        "elapsedMs": 130001.112583,
+        "totalMs": 559.9300419999927,
+        "kind": "read",
+        "serverMs": 16.562541,
+        "unassignedMs": 543.3675009999927,
+        "stages": {
+          "payload": 0.014667,
+          "databaseOpen": 0.510542,
+          "quota": 0.264375,
+          "authentication": 0.229751,
+          "authorization": 0.001666,
+          "runtimeEnsure": 0.281958,
+          "admission": 0.000166,
+          "lockWait": 0.002875,
+          "validation": 1.515042,
+          "ipc": 12.7455,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007584,
+          "commit": 0.004875,
+          "eventRead": 0.419667,
+          "receiptConstruction": 0.295875,
+          "responseSerialization": 0.241708
+        },
+        "runtime": {
+          "queueWaitMs": 4.56516699999338,
+          "evaluationMs": 3.6458329999877606
+        }
+      },
+      {
+        "elapsedMs": 160000.83616600002,
+        "totalMs": 550.0810420000053,
+        "kind": "read",
+        "serverMs": 12.214792,
+        "unassignedMs": 537.8662500000053,
+        "stages": {
+          "payload": 0.075792,
+          "databaseOpen": 1.172166,
+          "quota": 0.340167,
+          "authentication": 0.360875,
+          "authorization": 0.002209,
+          "runtimeEnsure": 0.267625,
+          "admission": 0.000166,
+          "lockWait": 0.0065,
+          "validation": 1.452084,
+          "ipc": 7.549875,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007667,
+          "commit": 0.004792,
+          "eventRead": 0.384583,
+          "receiptConstruction": 0.312833,
+          "responseSerialization": 0.234625
+        },
+        "runtime": {
+          "queueWaitMs": 0.0040840000146999955,
+          "evaluationMs": 3.4043339999916498
+        }
+      },
+      {
+        "elapsedMs": 150001.176291,
+        "totalMs": 520.4703340000124,
+        "kind": "read",
+        "serverMs": 6.88325,
+        "unassignedMs": 513.5870840000124,
+        "stages": {
+          "payload": 0.0205,
+          "databaseOpen": 0.555208,
+          "quota": 0.838709,
+          "authentication": 0.294334,
+          "authorization": 0.002166,
+          "runtimeEnsure": 0.287875,
+          "admission": 0.000208,
+          "lockWait": 0.00175,
+          "validation": 1.112708,
+          "ipc": 2.795375,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007917,
+          "commit": 0.007709,
+          "eventRead": 0.486375,
+          "receiptConstruction": 0.304084,
+          "responseSerialization": 0.133792
+        },
+        "runtime": {
+          "queueWaitMs": 0.005417000007582828,
+          "evaluationMs": 1.1318329999921843
+        }
+      },
+      {
+        "elapsedMs": 155001.06050000002,
+        "totalMs": 515.1722909999953,
+        "kind": "read",
+        "serverMs": 14.748417,
+        "unassignedMs": 500.4238739999953,
+        "stages": {
+          "payload": 0.016125,
+          "databaseOpen": 0.604417,
+          "quota": 0.370542,
+          "authentication": 0.317125,
+          "authorization": 0.002334,
+          "runtimeEnsure": 0.276625,
+          "admission": 0.000167,
+          "lockWait": 0.004125,
+          "validation": 1.9545,
+          "ipc": 10.075875,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.010167,
+          "commit": 0.007792,
+          "eventRead": 0.492416,
+          "receiptConstruction": 0.305458,
+          "responseSerialization": 0.271333
+        },
+        "runtime": {
+          "queueWaitMs": 0.004458999988855794,
+          "evaluationMs": 4.231707999977516
+        }
+      },
+      {
+        "elapsedMs": 175000.54875000002,
+        "totalMs": 506.836707999988,
+        "kind": "read",
+        "serverMs": 9.026875,
+        "unassignedMs": 497.809832999988,
+        "stages": {
+          "payload": 0.015625,
+          "databaseOpen": 0.536625,
+          "quota": 0.371375,
+          "authentication": 0.272459,
+          "authorization": 0.002042,
+          "runtimeEnsure": 0.5405,
+          "admission": 0.000208,
+          "lockWait": 0.006875,
+          "validation": 1.40575,
+          "ipc": 4.91325,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.009875,
+          "commit": 0.015125,
+          "eventRead": 0.401208,
+          "receiptConstruction": 0.325375,
+          "responseSerialization": 0.173042
+        },
+        "runtime": {
+          "queueWaitMs": 0.004042000015033409,
+          "evaluationMs": 2.3090420000080485
+        }
+      },
+      {
+        "elapsedMs": 140000.528583,
+        "totalMs": 500.39945799999987,
+        "kind": "read",
+        "serverMs": 9.966292,
+        "unassignedMs": 490.43316599999986,
+        "stages": {
+          "payload": 0.015833,
+          "databaseOpen": 0.540625,
+          "quota": 0.744042,
+          "authentication": 0.255001,
+          "authorization": 0.001875,
+          "runtimeEnsure": 0.282667,
+          "admission": 0.000167,
+          "lockWait": 0.003458,
+          "validation": 1.343417,
+          "ipc": 5.548208,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.010209,
+          "commit": 0.007709,
+          "eventRead": 0.618417,
+          "receiptConstruction": 0.355333,
+          "responseSerialization": 0.205292
+        },
+        "runtime": {
+          "queueWaitMs": 0.0047919999924488366,
+          "evaluationMs": 2.476874999993015
+        }
+      },
+      {
+        "elapsedMs": 145002.295583,
+        "totalMs": 500.04879200001596,
+        "kind": "read",
+        "serverMs": 8.3635,
+        "unassignedMs": 491.685292000016,
+        "stages": {
+          "payload": 0.016334,
+          "databaseOpen": 0.5395,
+          "quota": 0.532458,
+          "authentication": 0.437667,
+          "authorization": 0.001958,
+          "runtimeEnsure": 0.420459,
+          "admission": 0.000209,
+          "lockWait": 0.006583,
+          "validation": 1.221209,
+          "ipc": 4.236833,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007166,
+          "commit": 0.005208,
+          "eventRead": 0.424292,
+          "receiptConstruction": 0.316792,
+          "responseSerialization": 0.163541
+        },
+        "runtime": {
+          "queueWaitMs": 0.003624999983003363,
+          "evaluationMs": 1.7720839999965392
+        }
+      },
+      {
+        "elapsedMs": 85000.462541,
+        "totalMs": 492.9335839999985,
+        "kind": "read",
+        "serverMs": 8.317333,
+        "unassignedMs": 484.6162509999985,
+        "stages": {
+          "payload": 0.017292,
+          "databaseOpen": 0.66025,
+          "quota": 0.444791,
+          "authentication": 0.268334,
+          "authorization": 0.002,
+          "runtimeEnsure": 0.6355,
+          "admission": 0.000209,
+          "lockWait": 0.006,
+          "validation": 1.101166,
+          "ipc": 4.257917,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007833,
+          "commit": 0.004708,
+          "eventRead": 0.398041,
+          "receiptConstruction": 0.309541,
+          "responseSerialization": 0.167417
+        },
+        "runtime": {
+          "queueWaitMs": 0.004125000006752089,
+          "evaluationMs": 2.0964999999996508
+        }
+      },
+      {
+        "elapsedMs": 25000.2785,
+        "totalMs": 489.0045829999981,
+        "kind": "read",
+        "serverMs": 8.341542,
+        "unassignedMs": 480.6630409999981,
+        "stages": {
+          "payload": 0.015417,
+          "databaseOpen": 0.640667,
+          "quota": 0.370833,
+          "authentication": 0.220958,
+          "authorization": 0.0025,
+          "runtimeEnsure": 0.291958,
+          "admission": 0.000209,
+          "lockWait": 0.002625,
+          "validation": 1.028,
+          "ipc": 4.8435,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006542,
+          "commit": 0.004333,
+          "eventRead": 0.386541,
+          "receiptConstruction": 0.316792,
+          "responseSerialization": 0.177
+        },
+        "runtime": {
+          "queueWaitMs": 0.003457999999227468,
+          "evaluationMs": 2.1957079999992857
+        }
+      },
+      {
+        "elapsedMs": 5000.386750000001,
+        "totalMs": 488.88104099999873,
+        "kind": "read",
+        "serverMs": 6.762875,
+        "unassignedMs": 482.1181659999987,
+        "stages": {
+          "payload": 0.01075,
+          "databaseOpen": 1.593667,
+          "quota": 0.322334,
+          "authentication": 0.233334,
+          "authorization": 0.001917,
+          "runtimeEnsure": 0.288083,
+          "admission": 0.000208,
+          "lockWait": 0.004292,
+          "validation": 0.733499,
+          "ipc": 2.7485,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006791,
+          "commit": 0.003083,
+          "eventRead": 0.370625,
+          "receiptConstruction": 0.287291,
+          "responseSerialization": 0.131042
+        },
+        "runtime": {
+          "queueWaitMs": 0.0032920000003286987,
+          "evaluationMs": 1.2984999999998763
+        }
+      },
+      {
+        "elapsedMs": 164999.445708,
+        "totalMs": 484.17887500001234,
+        "kind": "read",
+        "serverMs": 13.805708,
+        "unassignedMs": 470.37316700001236,
+        "stages": {
+          "payload": 0.040458,
+          "databaseOpen": 1.593417,
+          "quota": 1.087458,
+          "authentication": 0.295041,
+          "authorization": 0.002459,
+          "runtimeEnsure": 1.665,
+          "admission": 0.00025,
+          "lockWait": 0.005708,
+          "validation": 1.382375,
+          "ipc": 6.631125,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007083,
+          "commit": 0.004708,
+          "eventRead": 0.390417,
+          "receiptConstruction": 0.381875,
+          "responseSerialization": 0.266834
+        },
+        "runtime": {
+          "queueWaitMs": 0.0028750000055879354,
+          "evaluationMs": 2.9629169999971054
+        }
+      },
+      {
+        "elapsedMs": 60000.592040999996,
+        "totalMs": 483.632792000004,
+        "kind": "read",
+        "serverMs": 6.194917,
+        "unassignedMs": 477.437875000004,
+        "stages": {
+          "payload": 0.016291,
+          "databaseOpen": 0.513209,
+          "quota": 0.275334,
+          "authentication": 0.224167,
+          "authorization": 0.001958,
+          "runtimeEnsure": 0.301625,
+          "admission": 0.000166,
+          "lockWait": 0.002334,
+          "validation": 0.922792,
+          "ipc": 3.042791,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006666,
+          "commit": 0.003959,
+          "eventRead": 0.387709,
+          "receiptConstruction": 0.320333,
+          "responseSerialization": 0.14625
+        },
+        "runtime": {
+          "queueWaitMs": 0.0034589999995660037,
+          "evaluationMs": 1.4284589999952004
+        }
+      },
+      {
+        "elapsedMs": 125001.56475,
+        "totalMs": 481.1446250000008,
+        "kind": "read",
+        "serverMs": 12.983,
+        "unassignedMs": 468.1616250000008,
+        "stages": {
+          "payload": 0.027709,
+          "databaseOpen": 0.992792,
+          "quota": 0.324334,
+          "authentication": 0.242626,
+          "authorization": 0.002041,
+          "runtimeEnsure": 0.291292,
+          "admission": 0.000166,
+          "lockWait": 0.002584,
+          "validation": 1.555667,
+          "ipc": 8.499833,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.008458,
+          "commit": 0.00675,
+          "eventRead": 0.404958,
+          "receiptConstruction": 0.312125,
+          "responseSerialization": 0.267834
+        },
+        "runtime": {
+          "queueWaitMs": 0.004291999997803941,
+          "evaluationMs": 4.168915999995079
+        }
+      },
+      {
+        "elapsedMs": 170000.37350000002,
+        "totalMs": 481.14300000001094,
+        "kind": "read",
+        "serverMs": 10.457083,
+        "unassignedMs": 470.68591700001093,
+        "stages": {
+          "payload": 0.028417,
+          "databaseOpen": 1.481709,
+          "quota": 0.812875,
+          "authentication": 0.328459,
+          "authorization": 0.00425,
+          "runtimeEnsure": 0.384375,
+          "admission": 0.000625,
+          "lockWait": 0.0085,
+          "validation": 1.414582,
+          "ipc": 5.052792,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.010125,
+          "commit": 0.008292,
+          "eventRead": 0.3875,
+          "receiptConstruction": 0.305125,
+          "responseSerialization": 0.178667
+        },
+        "runtime": {
+          "queueWaitMs": 0.0037500000034924597,
+          "evaluationMs": 2.343583999987459
+        }
+      },
+      {
+        "elapsedMs": 45000.888583,
+        "totalMs": 477.3431669999991,
+        "kind": "read",
+        "serverMs": 10.827417,
+        "unassignedMs": 466.51574999999906,
+        "stages": {
+          "payload": 0.015375,
+          "databaseOpen": 0.608708,
+          "quota": 0.416084,
+          "authentication": 0.228,
+          "authorization": 0.002042,
+          "runtimeEnsure": 0.336,
+          "admission": 0.000167,
+          "lockWait": 0.004208,
+          "validation": 1.25025,
+          "ipc": 7.001916,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006542,
+          "commit": 0.003791,
+          "eventRead": 0.382,
+          "receiptConstruction": 0.310583,
+          "responseSerialization": 0.227542
+        },
+        "runtime": {
+          "queueWaitMs": 0.004207999998470768,
+          "evaluationMs": 3.289415999999619
+        }
+      },
+      {
+        "elapsedMs": 50001.453833,
+        "totalMs": 476.70333299999766,
+        "kind": "read",
+        "serverMs": 9.275375,
+        "unassignedMs": 467.42795799999766,
+        "stages": {
+          "payload": 0.015458,
+          "databaseOpen": 0.5585,
+          "quota": 0.464625,
+          "authentication": 0.263541,
+          "authorization": 0.001958,
+          "runtimeEnsure": 0.322375,
+          "admission": 0.000208,
+          "lockWait": 0.006875,
+          "validation": 1.169793,
+          "ipc": 5.524042,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006958,
+          "commit": 0.004292,
+          "eventRead": 0.39,
+          "receiptConstruction": 0.312792,
+          "responseSerialization": 0.201291
+        },
+        "runtime": {
+          "queueWaitMs": 0.004000000000814907,
+          "evaluationMs": 2.6262920000008307
+        }
+      },
+      {
+        "elapsedMs": 20000.346374999997,
+        "totalMs": 476.6694580000003,
+        "kind": "read",
+        "serverMs": 9.80775,
+        "unassignedMs": 466.8617080000003,
+        "stages": {
+          "payload": 0.016083,
+          "databaseOpen": 0.620917,
+          "quota": 0.468917,
+          "authentication": 0.231665,
+          "authorization": 0.001958,
+          "runtimeEnsure": 0.586208,
+          "admission": 0.000208,
+          "lockWait": 0.007042,
+          "validation": 1.124333,
+          "ipc": 5.74825,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007084,
+          "commit": 0.003667,
+          "eventRead": 0.388917,
+          "receiptConstruction": 0.353375,
+          "responseSerialization": 0.213166
+        },
+        "runtime": {
+          "queueWaitMs": 0.003749999999854481,
+          "evaluationMs": 2.667874999999185
+        }
+      },
+      {
+        "elapsedMs": 135001.416166,
+        "totalMs": 475.75270899999305,
+        "kind": "read",
+        "serverMs": 12.721917,
+        "unassignedMs": 463.030791999993,
+        "stages": {
+          "payload": 0.041917,
+          "databaseOpen": 1.850458,
+          "quota": 0.836959,
+          "authentication": 0.533874,
+          "authorization": 0.005458,
+          "runtimeEnsure": 0.348416,
+          "admission": 0.000166,
+          "lockWait": 0.00575,
+          "validation": 1.355624,
+          "ipc": 6.701375,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.006417,
+          "commit": 0.003584,
+          "eventRead": 0.381458,
+          "receiptConstruction": 0.328167,
+          "responseSerialization": 0.22475
+        },
+        "runtime": {
+          "queueWaitMs": 0.004249999998137355,
+          "evaluationMs": 3.144666000007419
+        }
+      },
+      {
+        "elapsedMs": 15000.490083,
+        "totalMs": 474.27795799999876,
+        "kind": "read",
+        "serverMs": 11.417583,
+        "unassignedMs": 462.8603749999988,
+        "stages": {
+          "payload": 0.0165,
+          "databaseOpen": 0.496834,
+          "quota": 0.310167,
+          "authentication": 0.244958,
+          "authorization": 0.001625,
+          "runtimeEnsure": 0.280792,
+          "admission": 0.000167,
+          "lockWait": 0.002375,
+          "validation": 1.262083,
+          "ipc": 7.794,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007042,
+          "commit": 0.003834,
+          "eventRead": 0.417291,
+          "receiptConstruction": 0.31,
+          "responseSerialization": 0.240666
+        },
+        "runtime": {
+          "queueWaitMs": 0.0038749999985157046,
+          "evaluationMs": 3.5477500000015425
+        }
+      }
+    ],
+    "rss": {
+      "startMiB": 773.8125,
+      "endMiB": 677.359375,
+      "peakMiB": 776.75,
+      "growthMiB": -96.453125,
+      "tailMiBPerMinute": -25.05805675449883
+    },
+    "workerHeap": {
+      "heapUsed": {
+        "count": 0
+      },
+      "heapTotal": {
+        "count": 0
+      },
+      "rss": {
+        "count": 0
+      },
+      "tailHeapUsedMiBPerMinute": null
+    },
+    "harness": {
+      "heap": {
+        "count": 0
+      },
+      "rss": {
+        "count": 0
+      },
+      "tailHeapMiBPerMinute": null
+    },
+    "sampleDurationMs": {
+      "count": 0
+    },
+    "fd": {
+      "count": 38,
+      "min": 227,
+      "p50": 228,
+      "p95": 229,
+      "p99": 229,
+      "max": 229
+    },
+    "cpuMs": 22910,
+    "nodeCounts": [
+      10
+    ],
+    "dbBytes": {
+      "start": 204800,
+      "end": 2920448
+    },
+    "perPID": {
+      "46982": {
+        "program": "node",
+        "start": 86310912,
+        "end": 97157120,
+        "peak": 113033216,
+        "cpuStart": 240,
+        "cpuEnd": 4770
+      },
+      "47045": {
+        "program": "node",
+        "start": 50659328,
+        "end": 69206016,
+        "peak": 73367552,
+        "cpuStart": 80,
+        "cpuEnd": 2200
+      },
+      "47074": {
+        "program": "node",
+        "start": 59244544,
+        "end": 85180416,
+        "peak": 93487104,
+        "cpuStart": 100,
+        "cpuEnd": 6670
+      },
+      "47075": {
+        "program": "node",
+        "start": 44089344,
+        "end": 32030720,
+        "peak": 44089344,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "47076": {
+        "program": "node",
+        "start": 44367872,
+        "end": 32030720,
+        "peak": 44367872,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "47077": {
+        "program": "node",
+        "start": 44400640,
+        "end": 32030720,
+        "peak": 44400640,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "47078": {
+        "program": "node",
+        "start": 44187648,
+        "end": 32030720,
+        "peak": 44187648,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "47079": {
+        "program": "node",
+        "start": 44367872,
+        "end": 32030720,
+        "peak": 44367872,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "47080": {
+        "program": "node",
+        "start": 44253184,
+        "end": 32030720,
+        "peak": 44253184,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "47081": {
+        "program": "node",
+        "start": 44269568,
+        "end": 32030720,
+        "peak": 44269568,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "47082": {
+        "program": "node",
+        "start": 44335104,
+        "end": 32030720,
+        "peak": 44335104,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "47131": {
+        "program": "php",
+        "start": 32735232,
+        "end": 24854528,
+        "peak": 32735232,
+        "cpuStart": 70,
+        "cpuEnd": 1160
+      },
+      "47139": {
+        "program": "php",
+        "start": 32210944,
+        "end": 24788992,
+        "peak": 32210944,
+        "cpuStart": 70,
+        "cpuEnd": 1420
+      },
+      "47145": {
+        "program": "php",
+        "start": 31997952,
+        "end": 25051136,
+        "peak": 31997952,
+        "cpuStart": 70,
+        "cpuEnd": 1190
+      },
+      "47163": {
+        "program": "php",
+        "start": 32358400,
+        "end": 24805376,
+        "peak": 32358400,
+        "cpuStart": 80,
+        "cpuEnd": 1200
+      },
+      "47166": {
+        "program": "php",
+        "start": 32227328,
+        "end": 26279936,
+        "peak": 32227328,
+        "cpuStart": 70,
+        "cpuEnd": 1170
+      },
+      "47182": {
+        "program": "php",
+        "start": 32374784,
+        "end": 25018368,
+        "peak": 32374784,
+        "cpuStart": 80,
+        "cpuEnd": 1370
+      },
+      "47183": {
+        "program": "php",
+        "start": 32587776,
+        "end": 24985600,
+        "peak": 32587776,
+        "cpuStart": 80,
+        "cpuEnd": 1380
+      },
+      "47195": {
+        "program": "php",
+        "start": 32653312,
+        "end": 24903680,
+        "peak": 32653312,
+        "cpuStart": 80,
+        "cpuEnd": 1400
+      },
+      "47942": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "49179": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "50401": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "51257": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "52122": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "52740": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "53527": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "54595": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "55157": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "55687": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "56768": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "57504": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "58025": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "58560": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "59101": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "59637": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "60159": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "60715": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "61237": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "61769": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "62289": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "62819": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "63346": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "64105": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "64698": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "65242": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "65870": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "66418": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "66962": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "67502": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "68033": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "68580": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "69155": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "69719": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "70243": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "70869": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "71629": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "72113": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      }
+    },
+    "health": {
+      "version": 1,
+      "owner": "supervisor-effaf673-e6aa-4ddf-9f44-15a2c780cf8a",
+      "state": "ready",
+      "limits": {
+        "queueCapacity": 16,
+        "maxWorlds": 16,
+        "maxConnections": 64,
+        "maxFrame": 8388608,
+        "timeoutMs": 2000,
+        "leaseMs": 10000
+      },
+      "metrics": {
+        "accepted": 1190,
+        "rejected": 0,
+        "completed": 1190,
+        "failed": 0,
+        "restarts": 0,
+        "timeouts": 0,
+        "staleReplies": 0,
+        "authenticationFailures": 0,
+        "leaseFailures": 0,
+        "queuePeak": 3,
+        "workerStarts": 1,
+        "totalEvaluationMs": 7132.777561000182
+      },
+      "worlds": [
+        {
+          "worldId": "valley",
+          "state": "ready",
+          "workerId": "worker-fadf68c6-8764-4ac4-af36-76151862870b",
+          "generation": 1,
+          "expires": 1792629640145,
+          "queue": 0,
+          "active": false,
+          "lastFailure": null,
+          "evaluation": {
+            "created": 1,
+            "restored": 8,
+            "cacheHits": 1182
+          },
+          "telemetry": {
+            "pid": 47074,
+            "memory": {
+              "rss": 85245952,
+              "heapTotal": 42876928,
+              "heapUsed": 21781464,
+              "external": 2202337,
+              "arrayBuffers": 228245
+            },
+            "gc": {
+              "count": 383,
+              "durationMs": 128.57903629541397
+            }
+          }
+        }
+      ]
+    },
+    "service": {
+      "protocol": "zge.world-service.v1",
+      "serviceId": "service-fd4b46c2-33f3-4307-a027-4350ba7cdd6e",
+      "pid": 46982,
+      "state": "ready",
+      "launcherPid": 47045,
+      "gatewayPids": [
+        47075,
+        47076,
+        47077,
+        47078,
+        47079,
+        47080,
+        47081,
+        47082
+      ],
+      "launches": 1,
+      "restarts": 0,
+      "lastFailure": null,
+      "lastHealth": {
+        "at": 1792629630145,
+        "ok": true,
+        "probe": 1
+      },
+      "world": {
+        "worldId": "valley",
+        "generation": 1,
+        "workerId": "worker-fadf68c6-8764-4ac4-af36-76151862870b",
+        "state": "ready"
+      },
+      "port": 51530,
+      "gatewayCount": 8,
+      "startedAt": 1792629447854,
+      "nextRestartAt": null,
+      "knownDatabase": true,
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "491778784"
+      },
+      "policy": {
+        "healthIntervalMs": 2000,
+        "healthTimeoutMs": 5000,
+        "healthFailures": 3,
+        "restartBaseMs": 250,
+        "restartMaxMs": 10000,
+        "restartLimit": 8,
+        "restartWindowMs": 60000
+      }
+    },
+    "final": {
+      "revision": 913,
+      "cursor": 2965,
+      "archiveReceipts": 964,
+      "personalClaims": 4,
+      "teamClaims": 1,
+      "personalXp": [
+        {
+          "id": "load-0",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-1",
+          "xp": 112,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-2",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-3",
+          "xp": 126,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-4",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-5",
+          "xp": 42,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-6",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-7",
+          "xp": 126,
+          "rank": "ensign"
+        }
+      ],
+      "stone": 99884,
+      "acceptedPlaces": 29,
+      "deterministicReplay": true
+    }
+  },
+  "zge10Async": {
+    "durationMs": 900000.795083,
+    "requests": {
+      "total": 5940,
+      "httpAccepted": 5940,
+      "acceptedCommands": 4599,
+      "duplicateReceipts": 0,
+      "throttled": 0,
+      "rejectedCommands": 180,
+      "transportFailures": 0,
+      "classes": {
+        "read": 1080,
+        "construction": 540,
+        "movement": 4239,
+        "reconnect": 81
+      },
+      "reasons": {
+        "occupied": 178,
+        "stale-world-revision": 2
+      }
+    },
+    "clients": 8,
+    "latency": {
+      "count": 5940,
+      "min": 2.242792000004556,
+      "p50": 17.75029200001154,
+      "p95": 31.837334000039846,
+      "p99": 79.95895900001051,
+      "max": 576.1963749999995
+    },
+    "slowCount": 39,
+    "slowStageDistribution": {
+      "quota": {
+        "count": 39,
+        "min": 0.225042,
+        "p50": 1.179292,
+        "p95": 25.426625,
+        "p99": 39.452583,
+        "max": 114.682958
+      },
+      "admission": {
+        "count": 39,
+        "min": 0.000166,
+        "p50": 4.926584,
+        "p95": 86.6085,
+        "p99": 107.359208,
+        "max": 145.270458
+      },
+      "lockWait": {
+        "count": 39,
+        "min": 0.005625,
+        "p50": 0.02125,
+        "p95": 0.091417,
+        "p99": 0.288083,
+        "max": 0.388292
+      },
+      "ipc": {
+        "count": 39,
+        "min": 6.422375,
+        "p50": 47.999624,
+        "p95": 100.216584,
+        "p99": 218.259999,
+        "max": 229.93325
+      },
+      "commit": {
+        "count": 39,
+        "min": 0.004833,
+        "p50": 0.642958,
+        "p95": 11.606125,
+        "p99": 18.704166,
+        "max": 488.628667
+      }
+    },
+    "slowUnassigned": {
+      "count": 39,
+      "min": 2.5124169999832304,
+      "p50": 20.781333000014442,
+      "p95": 117.45304200001164,
+      "p99": 151.60887600000865,
+      "max": 203.02004099998277
+    },
+    "slowSampleCompletionDistanceMs": {
+      "count": 39,
+      "min": 609.7673339999747,
+      "p50": 1669.3136259999592,
+      "p95": 2448.7790830000304,
+      "p99": 2457.6628740000306,
+      "max": 2631.982791000046
+    },
+    "top": [
+      {
+        "elapsedMs": 327001.883166,
+        "totalMs": 576.1963749999995,
+        "kind": "movement",
+        "serverMs": 572.777458,
+        "unassignedMs": 3.41891699999951,
+        "stages": {
+          "payload": 0.031666,
+          "databaseOpen": 402.89125,
+          "quota": 0.344042,
+          "authentication": 0.953251,
+          "authorization": 0.026167,
+          "runtimeEnsure": 1.405333,
+          "admission": 145.270458,
+          "lockWait": 0.020375,
+          "validation": 1.64625,
+          "ipc": 15.034917,
+          "candidateValidation": 0.046458,
+          "transactionWrites": 0.542792,
+          "commitValidation": 0.010541,
+          "commit": 0.362333,
+          "eventRead": 0.620084,
+          "receiptConstruction": 0.588333,
+          "responseSerialization": 0.315542
+        },
+        "runtime": {
+          "queueWaitMs": 0.007500000006984919,
+          "evaluationMs": 7.1674999999813735
+        }
+      },
+      {
+        "elapsedMs": 326876.010083,
+        "totalMs": 561.4820419999887,
+        "kind": "construction",
+        "serverMs": 554.539833,
+        "unassignedMs": 6.942208999988679,
+        "stages": {
+          "payload": 0.017541,
+          "databaseOpen": 3.479458,
+          "quota": 0.651875,
+          "authentication": 0.921624,
+          "authorization": 0.517541,
+          "runtimeEnsure": 0.865625,
+          "admission": 4.926584,
+          "lockWait": 0.017292,
+          "validation": 1.78875,
+          "ipc": 33.467833,
+          "candidateValidation": 0.050667,
+          "transactionWrites": 0.515167,
+          "commitValidation": 0.011293,
+          "commit": 488.628667,
+          "eventRead": 2.928542,
+          "receiptConstruction": 1.529375,
+          "responseSerialization": 0.216583
+        },
+        "runtime": {
+          "queueWaitMs": 0.005332999979145825,
+          "evaluationMs": 28.36216700001387
+        }
+      },
+      {
+        "elapsedMs": 323175.988541,
+        "totalMs": 284.35383400000865,
+        "kind": "movement",
+        "serverMs": 132.744958,
+        "unassignedMs": 151.60887600000865,
+        "stages": {
+          "payload": 0.059583,
+          "databaseOpen": 4.668084,
+          "quota": 1.179292,
+          "authentication": 2.910875,
+          "authorization": 0.018875,
+          "runtimeEnsure": 2.194875,
+          "admission": 9.81775,
+          "lockWait": 0.091417,
+          "validation": 34.026458,
+          "ipc": 70.951499,
+          "candidateValidation": 0.042125,
+          "transactionWrites": 1.198375,
+          "commitValidation": 0.018542,
+          "commit": 2.740666,
+          "eventRead": 0.438709,
+          "receiptConstruction": 0.486208,
+          "responseSerialization": 1.246875
+        },
+        "runtime": {
+          "queueWaitMs": 0.00870900001609698,
+          "evaluationMs": 37.355499999946915
+        }
+      },
+      {
+        "elapsedMs": 327216.817625,
+        "totalMs": 278.8638749999809,
+        "kind": "movement",
+        "serverMs": 252.766916,
+        "unassignedMs": 26.0969589999809,
+        "stages": {
+          "payload": 0.032917,
+          "databaseOpen": 166.267167,
+          "quota": 4.515209,
+          "authentication": 0.336209,
+          "authorization": 0.3005,
+          "runtimeEnsure": 1.314708,
+          "admission": 34.526541,
+          "lockWait": 0.01425,
+          "validation": 8.212626,
+          "ipc": 21.487584,
+          "candidateValidation": 0.137041,
+          "transactionWrites": 1.666,
+          "commitValidation": 0.027542,
+          "commit": 1.447709,
+          "eventRead": 0.539916,
+          "receiptConstruction": 0.365959,
+          "responseSerialization": 0.953334
+        },
+        "runtime": {
+          "queueWaitMs": 0.006832999992184341,
+          "evaluationMs": 13.075790999981109
+        }
+      },
+      {
+        "elapsedMs": 105000.08737499999,
+        "totalMs": 275.7956250000134,
+        "kind": "read",
+        "serverMs": 251.095458,
+        "unassignedMs": 24.70016700001338,
+        "stages": {
+          "payload": 0.060666,
+          "databaseOpen": 0.762709,
+          "quota": 1.396208,
+          "authentication": 1.937792,
+          "authorization": 0.015,
+          "runtimeEnsure": 0.76575,
+          "admission": 0.000375,
+          "lockWait": 0.006791,
+          "validation": 13.525876,
+          "ipc": 229.93325,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.012834,
+          "commit": 0.061708,
+          "eventRead": 1.839042,
+          "receiptConstruction": 0.391125,
+          "responseSerialization": 0.242792
+        },
+        "runtime": {
+          "queueWaitMs": 0.005374999993364327,
+          "evaluationMs": 199.30558300000848
+        }
+      },
+      {
+        "elapsedMs": 328005.44283300004,
+        "totalMs": 258.66320799995447,
+        "kind": "movement",
+        "serverMs": 233.458333,
+        "unassignedMs": 25.204874999954455,
+        "stages": {
+          "payload": 0.02075,
+          "databaseOpen": 0.593666,
+          "quota": 1.015834,
+          "authentication": 0.22625,
+          "authorization": 0.006125,
+          "runtimeEnsure": 6.410583,
+          "admission": 0.804083,
+          "lockWait": 0.288083,
+          "validation": 1.822583,
+          "ipc": 218.259999,
+          "candidateValidation": 0.116083,
+          "transactionWrites": 1.172,
+          "commitValidation": 0.024749,
+          "commit": 0.970334,
+          "eventRead": 0.434792,
+          "receiptConstruction": 0.331708,
+          "responseSerialization": 0.237917
+        },
+        "runtime": {
+          "queueWaitMs": 0.09950000001117587,
+          "evaluationMs": 33.84499999997206
+        }
+      },
+      {
+        "elapsedMs": 315165.755208,
+        "totalMs": 235.73462499998277,
+        "kind": "read",
+        "serverMs": 32.714584,
+        "unassignedMs": 203.02004099998277,
+        "stages": {
+          "payload": 0.113458,
+          "databaseOpen": 2.027958,
+          "quota": 0.433917,
+          "authentication": 0.788332,
+          "authorization": 0.00625,
+          "runtimeEnsure": 1.805958,
+          "admission": 0.000166,
+          "lockWait": 0.005625,
+          "validation": 1.781084,
+          "ipc": 21.208167,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.009042,
+          "commit": 0.007291,
+          "eventRead": 2.055417,
+          "receiptConstruction": 1.212458,
+          "responseSerialization": 1.184666
+        },
+        "runtime": {
+          "queueWaitMs": 0.009874999988824129,
+          "evaluationMs": 5.8291250000474975
+        }
+      },
+      {
+        "elapsedMs": 323344.740666,
+        "totalMs": 233.20583400002215,
+        "kind": "read",
+        "serverMs": 207.376959,
+        "unassignedMs": 25.82887500002215,
+        "stages": {
+          "payload": 0.0875,
+          "databaseOpen": 5.335041,
+          "quota": 114.682958,
+          "authentication": 0.5305,
+          "authorization": 0.008625,
+          "runtimeEnsure": 8.095458,
+          "admission": 0.000208,
+          "lockWait": 0.012833,
+          "validation": 2.095916,
+          "ipc": 75.029292,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.007417,
+          "commit": 0.007833,
+          "eventRead": 0.83575,
+          "receiptConstruction": 0.32425,
+          "responseSerialization": 0.27325
+        },
+        "runtime": {
+          "queueWaitMs": 0.010834000015165657,
+          "evaluationMs": 7.490042000019457
+        }
+      },
+      {
+        "elapsedMs": 347168.4205,
+        "totalMs": 218.94445800001267,
+        "kind": "movement",
+        "serverMs": 213.761083,
+        "unassignedMs": 5.18337500001266,
+        "stages": {
+          "payload": 0.1095,
+          "databaseOpen": 6.583333,
+          "quota": 1.279333,
+          "authentication": 1.220583,
+          "authorization": 0.01375,
+          "runtimeEnsure": 1.354167,
+          "admission": 5.511625,
+          "lockWait": 0.036916,
+          "validation": 5.013499,
+          "ipc": 100.216584,
+          "candidateValidation": 0.141834,
+          "transactionWrites": 64.556541,
+          "commitValidation": 0.021042,
+          "commit": 18.704166,
+          "eventRead": 2.314083,
+          "receiptConstruction": 3.384375,
+          "responseSerialization": 0.439166
+        },
+        "runtime": {
+          "queueWaitMs": 0.005332999979145825,
+          "evaluationMs": 74.76816599996528
+        }
+      },
+      {
+        "elapsedMs": 327334.96625,
+        "totalMs": 218.16829100000905,
+        "kind": "movement",
+        "serverMs": 215.161625,
+        "unassignedMs": 3.006666000009062,
+        "stages": {
+          "payload": 0.053292,
+          "databaseOpen": 70.2745,
+          "quota": 0.366708,
+          "authentication": 0.92575,
+          "authorization": 0.036542,
+          "runtimeEnsure": 11.270042,
+          "admission": 86.6085,
+          "lockWait": 0.026291,
+          "validation": 5.834625,
+          "ipc": 31.700083,
+          "candidateValidation": 0.051333,
+          "transactionWrites": 2.230333,
+          "commitValidation": 0.027916,
+          "commit": 2.461375,
+          "eventRead": 0.516416,
+          "receiptConstruction": 1.761833,
+          "responseSerialization": 0.234666
+        },
+        "runtime": {
+          "queueWaitMs": 0.006832999992184341,
+          "evaluationMs": 17.85779099998763
+        }
+      },
+      {
+        "elapsedMs": 323669.443833,
+        "totalMs": 196.08654200000456,
+        "kind": "movement",
+        "serverMs": 186.010542,
+        "unassignedMs": 10.07600000000457,
+        "stages": {
+          "payload": 0.013792,
+          "databaseOpen": 8.405709,
+          "quota": 0.264459,
+          "authentication": 0.412751,
+          "authorization": 0.00925,
+          "runtimeEnsure": 1.891917,
+          "admission": 107.359208,
+          "lockWait": 0.020875,
+          "validation": 4.278042,
+          "ipc": 59.903043,
+          "candidateValidation": 0.036833,
+          "transactionWrites": 0.7835,
+          "commitValidation": 0.011458,
+          "commit": 0.88325,
+          "eventRead": 0.449417,
+          "receiptConstruction": 0.329333,
+          "responseSerialization": 0.335541
+        },
+        "runtime": {
+          "queueWaitMs": 0.008749999979045242,
+          "evaluationMs": 15.153209000010975
+        }
+      },
+      {
+        "elapsedMs": 293173.283333,
+        "totalMs": 172.34045799996238,
+        "kind": "movement",
+        "serverMs": 152.366458,
+        "unassignedMs": 19.973999999962388,
+        "stages": {
+          "payload": 0.019333,
+          "databaseOpen": 11.846084,
+          "quota": 0.33175,
+          "authentication": 0.280124,
+          "authorization": 0.010041,
+          "runtimeEnsure": 11.183208,
+          "admission": 11.435666,
+          "lockWait": 0.030917,
+          "validation": 5.903626,
+          "ipc": 93.029541,
+          "candidateValidation": 0.215416,
+          "transactionWrites": 3.345542,
+          "commitValidation": 0.024417,
+          "commit": 7.169792,
+          "eventRead": 5.647916,
+          "receiptConstruction": 0.489875,
+          "responseSerialization": 0.340459
+        },
+        "runtime": {
+          "queueWaitMs": 0.006750000000465661,
+          "evaluationMs": 10.451708999986295
+        }
+      },
+      {
+        "elapsedMs": 294835.688,
+        "totalMs": 169.89899999997579,
+        "kind": "movement",
+        "serverMs": 130.826958,
+        "unassignedMs": 39.072041999975795,
+        "stages": {
+          "payload": 0.01875,
+          "databaseOpen": 0.615042,
+          "quota": 0.3165,
+          "authentication": 0.230334,
+          "authorization": 0.007291,
+          "runtimeEnsure": 16.031625,
+          "admission": 0.942708,
+          "lockWait": 0.02625,
+          "validation": 20.303333,
+          "ipc": 79.496458,
+          "candidateValidation": 0.060792,
+          "transactionWrites": 2.382166,
+          "commitValidation": 0.014875,
+          "commit": 0.410666,
+          "eventRead": 0.486084,
+          "receiptConstruction": 0.327333,
+          "responseSerialization": 0.163416
+        },
+        "runtime": {
+          "queueWaitMs": 0.0044169999891892076,
+          "evaluationMs": 19.755791000032332
+        }
+      },
+      {
+        "elapsedMs": 323506.09375,
+        "totalMs": 159.7178750000312,
+        "kind": "read",
+        "serverMs": 113.08175,
+        "unassignedMs": 46.6361250000312,
+        "stages": {
+          "payload": 0.098625,
+          "databaseOpen": 3.50025,
+          "quota": 2.97275,
+          "authentication": 0.380625,
+          "authorization": 0.008209,
+          "runtimeEnsure": 4.325583,
+          "admission": 0.000208,
+          "lockWait": 0.006,
+          "validation": 3.436541,
+          "ipc": 96.641208,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.011541,
+          "commit": 0.011458,
+          "eventRead": 0.567333,
+          "receiptConstruction": 0.753708,
+          "responseSerialization": 0.313541
+        },
+        "runtime": {
+          "queueWaitMs": 0.0050829999963752925,
+          "evaluationMs": 9.038375000003725
+        }
+      },
+      {
+        "elapsedMs": 382999.762875,
+        "totalMs": 156.41862499999115,
+        "kind": "movement",
+        "serverMs": 141.119791,
+        "unassignedMs": 15.29883399999116,
+        "stages": {
+          "payload": 0.103958,
+          "databaseOpen": 4.227208,
+          "quota": 19.050667,
+          "authentication": 1.608417,
+          "authorization": 0.010334,
+          "runtimeEnsure": 7.932958,
+          "admission": 1.247167,
+          "lockWait": 0.025708,
+          "validation": 34.66075,
+          "ipc": 61.429875,
+          "candidateValidation": 0.195459,
+          "transactionWrites": 4.552209,
+          "commitValidation": 0.017167,
+          "commit": 1.209375,
+          "eventRead": 0.844375,
+          "receiptConstruction": 0.649459,
+          "responseSerialization": 0.563667
+        },
+        "runtime": {
+          "queueWaitMs": 0.004125000035855919,
+          "evaluationMs": 10.113125000032596
+        }
+      },
+      {
+        "elapsedMs": 363168.112083,
+        "totalMs": 155.69549999997253,
+        "kind": "movement",
+        "serverMs": 105.406125,
+        "unassignedMs": 50.28937499997252,
+        "stages": {
+          "payload": 0.438375,
+          "databaseOpen": 2.255458,
+          "quota": 2.36075,
+          "authentication": 0.644501,
+          "authorization": 0.013459,
+          "runtimeEnsure": 2.982459,
+          "admission": 9.678042,
+          "lockWait": 0.027667,
+          "validation": 13.806,
+          "ipc": 56.711709,
+          "candidateValidation": 0.064958,
+          "transactionWrites": 9.666333,
+          "commitValidation": 0.028458,
+          "commit": 1.386083,
+          "eventRead": 0.829334,
+          "receiptConstruction": 0.781125,
+          "responseSerialization": 0.822084
+        },
+        "runtime": {
+          "queueWaitMs": 1.843624999979511,
+          "evaluationMs": 17.60220899997512
+        }
+      },
+      {
+        "elapsedMs": 278506.124458,
+        "totalMs": 153.70000000001164,
+        "kind": "read",
+        "serverMs": 36.246958,
+        "unassignedMs": 117.45304200001164,
+        "stages": {
+          "payload": 0.023875,
+          "databaseOpen": 5.313416,
+          "quota": 2.991166,
+          "authentication": 0.258083,
+          "authorization": 0.002708,
+          "runtimeEnsure": 6.405417,
+          "admission": 0.000209,
+          "lockWait": 0.007042,
+          "validation": 2.355959,
+          "ipc": 17.6065,
+          "candidateValidation": 0,
+          "transactionWrites": 0,
+          "commitValidation": 0.0095,
+          "commit": 0.004833,
+          "eventRead": 0.436,
+          "receiptConstruction": 0.538167,
+          "responseSerialization": 0.239375
+        },
+        "runtime": {
+          "queueWaitMs": 0.009167000011075288,
+          "evaluationMs": 3.4019580000313
+        }
+      },
+      {
+        "elapsedMs": 404167.092958,
+        "totalMs": 151.5808749999851,
+        "kind": "movement",
+        "serverMs": 141.277083,
+        "unassignedMs": 10.303791999985094,
+        "stages": {
+          "payload": 0.724167,
+          "databaseOpen": 23.287291,
+          "quota": 25.426625,
+          "authentication": 0.570958,
+          "authorization": 0.010125,
+          "runtimeEnsure": 7.987709,
+          "admission": 11.961084,
+          "lockWait": 0.025,
+          "validation": 34.852708,
+          "ipc": 32.789209,
+          "candidateValidation": 0.056,
+          "transactionWrites": 0.494416,
+          "commitValidation": 0.012459,
+          "commit": 1.443791,
+          "eventRead": 0.460083,
+          "receiptConstruction": 0.323041,
+          "responseSerialization": 0.178417
+        },
+        "runtime": {
+          "queueWaitMs": 0.006374999997206032,
+          "evaluationMs": 7.137457999982871
+        }
+      },
+      {
+        "elapsedMs": 887173.16675,
+        "totalMs": 150.80362500005867,
+        "kind": "movement",
+        "serverMs": 98.519041,
+        "unassignedMs": 52.28458400005867,
+        "stages": {
+          "payload": 0.027833,
+          "databaseOpen": 8.137958,
+          "quota": 3.683584,
+          "authentication": 2.120166,
+          "authorization": 0.010333,
+          "runtimeEnsure": 6.6505,
+          "admission": 32.104209,
+          "lockWait": 0.0255,
+          "validation": 3.916459,
+          "ipc": 19.573959,
+          "candidateValidation": 0.046667,
+          "transactionWrites": 0.621,
+          "commitValidation": 0.039875,
+          "commit": 0.399,
+          "eventRead": 0.663042,
+          "receiptConstruction": 0.531917,
+          "responseSerialization": 0.21575
+        },
+        "runtime": {
+          "queueWaitMs": 0.0038750000530853868,
+          "evaluationMs": 5.494208000018261
+        }
+      },
+      {
+        "elapsedMs": 312172.496,
+        "totalMs": 150.26466600003187,
+        "kind": "movement",
+        "serverMs": 118.546042,
+        "unassignedMs": 31.718624000031866,
+        "stages": {
+          "payload": 0.021541,
+          "databaseOpen": 2.7225,
+          "quota": 39.452583,
+          "authentication": 0.744,
+          "authorization": 0.019208,
+          "runtimeEnsure": 26.264416,
+          "admission": 23.249375,
+          "lockWait": 0.0275,
+          "validation": 10.293375,
+          "ipc": 9.388,
+          "candidateValidation": 0.053959,
+          "transactionWrites": 3.917,
+          "commitValidation": 0.016542,
+          "commit": 0.342708,
+          "eventRead": 0.964125,
+          "receiptConstruction": 0.33625,
+          "responseSerialization": 0.138209
+        },
+        "runtime": {
+          "queueWaitMs": 0.005874999973457307,
+          "evaluationMs": 6.393708000017796
+        }
+      }
+    ],
+    "rss": {
+      "startMiB": 683.65625,
+      "endMiB": 569.03125,
+      "peakMiB": 702.40625,
+      "growthMiB": -114.625,
+      "tailMiBPerMinute": -3.963025554491528
+    },
+    "workerHeap": {
+      "heapUsed": {
+        "count": 181,
+        "min": 7421256,
+        "p50": 15725768,
+        "p95": 23321064,
+        "p99": 24400856,
+        "max": 25140928
+      },
+      "heapTotal": {
+        "count": 181,
+        "min": 11157504,
+        "p50": 42876928,
+        "p95": 44711936,
+        "p99": 45039616,
+        "max": 45301760
+      },
+      "rss": {
+        "count": 181,
+        "min": 55689216,
+        "p50": 77234176,
+        "p95": 88555520,
+        "p99": 92471296,
+        "max": 93274112
+      },
+      "tailHeapUsedMiBPerMinute": 0.398352294010006,
+      "first": {
+        "pid": 74678,
+        "memory": {
+          "rss": 55689216,
+          "heapTotal": 11157504,
+          "heapUsed": 7479208,
+          "external": 2048092,
+          "arrayBuffers": 42102
+        },
+        "gc": {
+          "count": 8,
+          "durationMs": 1.9130420088768005
+        }
+      },
+      "last": {
+        "pid": 74678,
+        "memory": {
+          "rss": 73744384,
+          "heapTotal": 44974080,
+          "heapUsed": 22922568,
+          "external": 2131782,
+          "arrayBuffers": 157690
+        },
+        "gc": {
+          "count": 1583,
+          "durationMs": 631.440249979496
+        }
+      }
+    },
+    "harness": {
+      "heap": {
+        "count": 181,
+        "min": 12116000,
+        "p50": 21306864,
+        "p95": 28647288,
+        "p99": 31434200,
+        "max": 32416304
+      },
+      "rss": {
+        "count": 181,
+        "min": 64471040,
+        "p50": 104300544,
+        "p95": 113197056,
+        "p99": 115294208,
+        "max": 116326400
+      },
+      "tailHeapMiBPerMinute": 0.41224610195704164
+    },
+    "sampleDurationMs": {
+      "count": 181,
+      "min": 447.284083000035,
+      "p50": 470.6041250000053,
+      "p95": 658.335167000012,
+      "p99": 837.2401669999963,
+      "max": 949.8566669999855
+    },
+    "fd": {
+      "count": 181,
+      "min": 224,
+      "p50": 224,
+      "p95": 229,
+      "p99": 230,
+      "max": 230
+    },
+    "cpuMs": 120620,
+    "nodeCounts": [
+      10
+    ],
+    "dbBytes": {
+      "start": 204800,
+      "end": 13565952
+    },
+    "perPID": {
+      "336": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "467": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "1005": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "1073": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "1519": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "1709": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "2086": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "2272": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "2605": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "2817": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "3158": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "3401": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "3670": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "4211": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "4252": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "4730": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "5270": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "5434": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "5781": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "6322": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "6456": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "6837": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "7379": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "7774": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "7891": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "8433": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "8943": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9077": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9483": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9907": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "9993": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "10533": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "11047": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "11135": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "11597": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "12107": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "12458": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "12647": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "13159": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "13702": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "14001": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "14216": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "14757": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "14954": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "15278": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "15822": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "16062": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "16333": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "16875": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "17206": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "17402": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "17979": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "18323": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "18502": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "19043": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "19216": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "20271": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "21274": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "22570": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "24099": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "25672": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "27064": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "28243": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "29233": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "30393": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "31272": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "32201": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "32908": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "33644": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "34616": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "35315": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "35844": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "36693": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "37835": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "38581": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "39566": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "40575": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "41724": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "42597": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "43529": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "44481": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "45691": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "46759": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "47639": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "48613": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "50110": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "51726": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "53175": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "55152": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "57231": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "59458": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "61165": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "62960": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "64612": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "65762": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "67203": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "68282": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "69931": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "71941": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "73745": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "74568": {
+        "program": "node",
+        "start": 74629120,
+        "end": 88948736,
+        "peak": 116293632,
+        "cpuStart": 240,
+        "cpuEnd": 26520
+      },
+      "74649": {
+        "program": "node",
+        "start": 46268416,
+        "end": 68157440,
+        "peak": 89882624,
+        "cpuStart": 80,
+        "cpuEnd": 10150
+      },
+      "74678": {
+        "program": "node",
+        "start": 55705600,
+        "end": 73744384,
+        "peak": 93241344,
+        "cpuStart": 100,
+        "cpuEnd": 32240.000000000004
+      },
+      "74679": {
+        "program": "node",
+        "start": 39780352,
+        "end": 21479424,
+        "peak": 39780352,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "74680": {
+        "program": "node",
+        "start": 40222720,
+        "end": 21479424,
+        "peak": 40222720,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "74681": {
+        "program": "node",
+        "start": 39993344,
+        "end": 21479424,
+        "peak": 39993344,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "74682": {
+        "program": "node",
+        "start": 40026112,
+        "end": 21479424,
+        "peak": 40026112,
+        "cpuStart": 50,
+        "cpuEnd": 50
+      },
+      "74683": {
+        "program": "node",
+        "start": 39550976,
+        "end": 21479424,
+        "peak": 39550976,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "74684": {
+        "program": "node",
+        "start": 39665664,
+        "end": 21479424,
+        "peak": 39665664,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "74685": {
+        "program": "node",
+        "start": 39698432,
+        "end": 21479424,
+        "peak": 39698432,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "74686": {
+        "program": "node",
+        "start": 39714816,
+        "end": 21479424,
+        "peak": 39714816,
+        "cpuStart": 40,
+        "cpuEnd": 40
+      },
+      "74725": {
+        "program": "php",
+        "start": 26886144,
+        "end": 23937024,
+        "peak": 26886144,
+        "cpuStart": 70,
+        "cpuEnd": 7160
+      },
+      "74727": {
+        "program": "php",
+        "start": 26935296,
+        "end": 23937024,
+        "peak": 26935296,
+        "cpuStart": 80,
+        "cpuEnd": 5990
+      },
+      "74728": {
+        "program": "php",
+        "start": 27131904,
+        "end": 24051712,
+        "peak": 27131904,
+        "cpuStart": 70,
+        "cpuEnd": 5990
+      },
+      "74759": {
+        "program": "php",
+        "start": 27836416,
+        "end": 23969792,
+        "peak": 27836416,
+        "cpuStart": 70,
+        "cpuEnd": 7330
+      },
+      "74783": {
+        "program": "php",
+        "start": 29114368,
+        "end": 24150016,
+        "peak": 29114368,
+        "cpuStart": 80,
+        "cpuEnd": 7210
+      },
+      "74786": {
+        "program": "php",
+        "start": 27688960,
+        "end": 24100864,
+        "peak": 27688960,
+        "cpuStart": 70,
+        "cpuEnd": 5970
+      },
+      "74795": {
+        "program": "php",
+        "start": 27508736,
+        "end": 24264704,
+        "peak": 27508736,
+        "cpuStart": 80,
+        "cpuEnd": 7140
+      },
+      "74798": {
+        "program": "php",
+        "start": 26705920,
+        "end": 23822336,
+        "peak": 26705920,
+        "cpuStart": 70,
+        "cpuEnd": 5930
+      },
+      "75209": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "75619": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "75752": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "76313": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "76857": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "77417": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "77632": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "77959": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "78508": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "78804": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "79057": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "79584": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "80008": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "80229": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "80859": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "80942": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "81512": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "81746": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "82096": {
+        "program": "ps",
+        "start": 1835008,
+        "end": 1835008,
+        "peak": 1835008,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "82366": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "82681": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "83226": {
+        "program": "ps",
+        "start": 1835008,
+        "end": 1835008,
+        "peak": 1835008,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "83249": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "83766": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "84301": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "84319": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "84840": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "84942": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "85373": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "85459": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "85910": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "86439": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "86514": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "86997": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "87407": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "87524": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "87970": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "88331": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "88496": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "88893": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "89039": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "89474": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "89549": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "90050": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "90089": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "90615": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "90622": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "91151": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "91171": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "91684": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "91690": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "92228": {
+        "program": "ps",
+        "start": 1818624,
+        "end": 1818624,
+        "peak": 1818624,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "92234": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "92762": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "92774": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "93302": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "93303": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "93817": {
+        "program": "ps",
+        "start": 1720320,
+        "end": 1720320,
+        "peak": 1720320,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "93835": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "94360": {
+        "program": "ps",
+        "start": 1802240,
+        "end": 1802240,
+        "peak": 1802240,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "94364": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "94876": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "94893": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "95420": {
+        "program": "ps",
+        "start": 1785856,
+        "end": 1785856,
+        "peak": 1785856,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "95443": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "95956": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "95961": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "96501": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "96514": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "97016": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "97059": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "97558": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "97582": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "98109": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "98111": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "98635": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "98654": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "99164": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "99175": {
+        "program": "ps",
+        "start": 1736704,
+        "end": 1736704,
+        "peak": 1736704,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "99719": {
+        "program": "ps",
+        "start": 1753088,
+        "end": 1753088,
+        "peak": 1753088,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      },
+      "99726": {
+        "program": "ps",
+        "start": 1769472,
+        "end": 1769472,
+        "peak": 1769472,
+        "cpuStart": 0,
+        "cpuEnd": 0
+      }
+    },
+    "health": {
+      "version": 1,
+      "owner": "supervisor-74f3dc6a-da88-4df8-9590-24322bfba17f",
+      "state": "ready",
+      "limits": {
+        "queueCapacity": 16,
+        "maxWorlds": 16,
+        "maxConnections": 64,
+        "maxFrame": 8388608,
+        "timeoutMs": 2000,
+        "leaseMs": 10000
+      },
+      "metrics": {
+        "accepted": 5876,
+        "rejected": 0,
+        "completed": 5876,
+        "failed": 0,
+        "restarts": 0,
+        "timeouts": 0,
+        "staleReplies": 0,
+        "authenticationFailures": 0,
+        "leaseFailures": 0,
+        "queuePeak": 2,
+        "workerStarts": 1,
+        "totalEvaluationMs": 37403.0837459965
+      },
+      "worlds": [
+        {
+          "worldId": "valley",
+          "state": "ready",
+          "workerId": "worker-ac9a3a15-452f-47a5-bf12-64791746d4a3",
+          "generation": 1,
+          "expires": 1792630601881,
+          "queue": 0,
+          "active": false,
+          "lastFailure": null,
+          "evaluation": {
+            "created": 1,
+            "restored": 2,
+            "cacheHits": 5874
+          },
+          "telemetry": {
+            "pid": 74678,
+            "memory": {
+              "rss": 73678848,
+              "heapTotal": 44974080,
+              "heapUsed": 25878664,
+              "external": 2179548,
+              "arrayBuffers": 205456
+            },
+            "gc": {
+              "count": 1583,
+              "durationMs": 631.440249979496
+            }
+          }
+        }
+      ]
+    },
+    "service": {
+      "protocol": "zge.world-service.v1",
+      "serviceId": "service-a2adec51-b2b5-4daa-a865-b65ea76bfe6f",
+      "pid": 74568,
+      "state": "ready",
+      "launcherPid": 74649,
+      "gatewayPids": [
+        74679,
+        74680,
+        74681,
+        74682,
+        74683,
+        74684,
+        74685,
+        74686
+      ],
+      "launches": 1,
+      "restarts": 0,
+      "lastFailure": null,
+      "lastHealth": {
+        "at": 1792630590870,
+        "ok": true,
+        "probe": 0
+      },
+      "world": {
+        "worldId": "valley",
+        "generation": 1,
+        "workerId": "worker-ac9a3a15-452f-47a5-bf12-64791746d4a3",
+        "state": "ready"
+      },
+      "port": 54554,
+      "gatewayCount": 8,
+      "startedAt": 1792629689075,
+      "nextRestartAt": null,
+      "knownDatabase": true,
+      "databaseIdentity": {
+        "dev": "16777232",
+        "ino": "492284596"
+      },
+      "policy": {
+        "healthIntervalMs": 2000,
+        "healthTimeoutMs": 5000,
+        "healthFailures": 3,
+        "restartBaseMs": 250,
+        "restartMaxMs": 10000,
+        "restartLimit": 8,
+        "restartWindowMs": 60000
+      }
+    },
+    "final": {
+      "revision": 4607,
+      "cursor": 14910,
+      "archiveReceipts": 4787,
+      "personalClaims": 4,
+      "teamClaims": 1,
+      "personalXp": [
+        {
+          "id": "load-0",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-1",
+          "xp": 630,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-2",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-3",
+          "xp": 630,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-4",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-5",
+          "xp": 630,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-6",
+          "xp": 0,
+          "rank": "ensign"
+        },
+        {
+          "id": "load-7",
+          "xp": 630,
+          "rank": "ensign"
+        }
+      ],
+      "stone": 99280,
+      "acceptedPlaces": 180,
+      "deterministicReplay": true
+    }
+  }
+}

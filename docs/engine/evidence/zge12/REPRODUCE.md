@@ -1,0 +1,17 @@
+# ZGE12 reproduction
+
+Use Node22+, PHP with PDO SQLite, Chrome155 and installed Playwright. This is local development/staging only. Do not reset the dirty tree or reuse production data. Model fixtures are self-authored CC0 triangles; imported rights otherwise default unknown.
+
+1. `npm run build:sdk` builds readable public SDK outputs; it does not reconstruct the historical original-game bundle.
+2. `npm run test:sdk:v12` runs27 public contracts. `npm run test:engine` includes these in279 cases; do not add counts as unique tests.
+3. `npm run verify:sdk:v12` captures the30-file closure, clean offline installs, builds/repacks twice and runs27 installed-public tests. Cache prerequisites are recorded; no root npm ci/reset is performed.
+4. `npm run verify:external:v12` creates a fresh `/tmp/zge12-independent-*` workspace and its own lockfile/clean install, three custom games, tests and strict declarations. Its result gives the path; run the generated server with `PORT=8814 node server.mjs` there.
+5. Start an owned original/Studio local server: `ZEKNOVA_DATA_DIR=/tmp/zge12-your-private-data PORT=8812 node scripts/dev.mjs`. Do not run production mode.
+6. `ZGE_EVIDENCE_DIR=/tmp/zge12-your-large-capture ZGE_STUDIO_URL=http://127.0.0.1:8812/examples/studio/ npm run benchmark:studio:large`. The harness supports CHROME_PATH; install/point its Playwright import at your known ESM installation. It tests all4sizes/bothbackends; do not reduce a failing case. Preserve logs and custody hashes. Current machine paths are explicit in the retained harness; adjust only dependency locations, documenting changes.
+7. `node scripts/zge12-workflow.mjs`, `node scripts/zge12-accessibility.mjs`, `node scripts/zge12-editor-retention.mjs` and `node scripts/zge12-gameplay.mjs` expect the disclosed local8812/8814 fixtures and record separate physical browser evidence. The fresh save retest requires a real new POST response. Historical failed attempts stay separate.
+8. `npm run diagnose:world-retention:v12` runs isolated forced-GC/snapshot/allocation/weak-reference diagnostics. Raw heaps remain private and are deleted after out-of-process aggregation. Never add this blocking sampling to the active service request loop.
+9. `npm run diagnose:sqlite:v12` uses a private synthetic database, WAL/FULL and explicit competing transactions. It never changes a real service's pragmas.
+10. Run the complete-service workload with fresh output: `ZGE_EVIDENCE_DIR=/tmp/zge12-your-soak ZGE_MANAGED_SERVICE=1 ZGE_PROFILES=mixed ZGE_CLIENTS=8 ZGE_DURATION_SECONDS=1500 ZGE_REQUESTS_PER_SECOND=6 node scripts/zge10-workloads.mjs sustained`. Existing fixture code creates private actors, DBs, ports and supervisors and closes only those owned processes. Archive audit follows timed capture; wait for it. Never repoint fault/recovery fixtures to a real database.
+11. Create a temporary Python venv, install Matplotlib there and run `scripts/zge12-charts.py` against the retained raw evidence layout. It generates standard PNG plots with real units/methods. Final source/result manifests and topic reports identify which captures are exploratory, frozen final, historical or contended.
+
+The task's private scratch root is `/tmp/zge12`; public safe copies live beside this file. Original legacy authentication cookies, private DBs, raw heaps and secret-bearing service state are intentionally excluded. No human ratings, complete WCAG audit, GPU timing, population cap or production SLA is inferred. Live game authority stays LEGACY; no deployment or commit occurs.

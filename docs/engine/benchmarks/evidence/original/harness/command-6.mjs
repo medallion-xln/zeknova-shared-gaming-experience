@@ -1,0 +1,1 @@
+return{state:await page.evaluate(()=>({paused:ZekNovaGame.paused,mode:ZekNovaGame.mode,body:document.body.innerText.slice(0,3500),active:document.activeElement?.outerHTML?.slice(0,200),controls:ZekNovaGame.controls.enabled})),errors,warnings:warnings.slice(-8)};

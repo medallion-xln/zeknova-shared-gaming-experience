@@ -1,0 +1,86 @@
+  PASS contract identity
+  PASS registry identity
+  PASS schema version
+  PASS action space identity
+  PASS six actions declared
+  PASS action indexes are canonical
+  PASS action keys are canonical
+  PASS safe fallback is stabilize
+  PASS safe fallback is declared interrupt
+  PASS target view is canonical
+  PASS target view validates byte-identically
+  PASS target view addresses observation
+  PASS target view addresses faction
+  PASS target view has every action
+  PASS stabilize is targetless
+  PASS scout has route target
+  PASS intercept has hostile contact target
+  PASS fortify has route target
+  PASS repair has damaged structure target
+  PASS share has every direct record as target
+  PASS target IDs are canonical
+  PASS target IDs are action-bound
+  PASS all observation requirements pass
+  PASS all-upstream produces all-final mask
+  PASS all mask bitsets are 3f
+  PASS safe fallback remains legal
+  PASS legality ID is canonical
+  PASS legality validates byte-identically
+  PASS mask hashes are deterministic
+  PASS empty observation retains only stabilize
+  PASS empty final mask retains only stabilize
+  PASS empty reasons identify missing route
+  PASS empty reasons identify missing contact
+  PASS empty reasons identify missing repair target
+  PASS empty reasons identify missing share target
+  PASS wrong-hostility contact cannot enable intercept
+  PASS friendly direct contact can still be shared
+  PASS operational structure cannot enable repair
+  PASS FX-OBS-MASK-RESURRECT intercept stays upstream-masked
+  PASS FX-OBS-MASK-RESURRECT repair stays upstream-masked
+  PASS upstream reason has precedence
+  PASS upstream bits are preserved
+  PASS nonterminal upstream without safe fallback rejected
+  PASS terminal masks every action
+  PASS terminal reason has highest precedence
+  PASS replan boundary masks every action
+  PASS replan reason has highest precedence
+  PASS FX-OBS-MASK-HIDDEN hidden other-faction event leaves observation unchanged
+  PASS FX-OBS-MASK-HIDDEN hidden other-faction event leaves mask unchanged
+  PASS FX-OBS-MASK-LEAK other-faction subject is absent from targets
+  PASS FX-OBS-MASK-STALE expired contact masks intercept
+  PASS FX-OBS-MASK-ROOT recomputation changes mask at deeper quantum
+  PASS shared hostile contact enables intercept
+  PASS shared-only contact cannot be reshared
+  PASS shared target preserves acquisition mode
+  PASS canonical target selection succeeds
+  PASS target cannot be selected for targetless action
+  PASS target from another action cannot be selected
+  PASS invented target cannot be selected
+  PASS FX-OVERFLOW observation reports two omitted contacts
+  PASS FX-OVERFLOW target view exposes only eight intercept targets
+  PASS FX-OVERFLOW target view reports omitted source records
+  PASS FX-OVERFLOW omitted target cannot be invented or selected
+  PASS FX-CLONE-DROP clone retains observation
+  PASS FX-CLONE-DROP clone retains upstream mask
+  PASS FX-CLONE-DROP clone produces same legality
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter parent observation
+  PASS FX-CLONE-ALIAS snapshot mutation cannot alter parent mask
+  PASS withObservation creates a distinct state
+  PASS withObservation preserves upstream mask
+  PASS FX-OBS-MASK-NONDET repeated target views are byte-identical
+  PASS FX-OBS-MASK-NONDET repeated legality records are byte-identical
+  PASS FX-OBS-MASK-NONDET repeated final hashes are identical
+  PASS tampered target view ID rejected
+  PASS tampered target record ID rejected
+  PASS tampered target slot index rejected
+  PASS tampered legality ID rejected
+  PASS tampered final mask rejected
+  PASS mask width mismatch rejected
+  PASS non-binary mask rejected
+  PASS state snapshot unexpected field rejected
+  PASS legality record contains no event IDs
+  PASS legality record contains no authoritative aggregates
+  PASS target view contains no float feature reconstruction
+  PASS action execution is absent from contract surface
+W0-O.5 OBSERVATION LEGALITY CONTRACT TESTS PASS (85/85)

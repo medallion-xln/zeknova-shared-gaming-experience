@@ -1,0 +1,117 @@
+{
+  "schema": "zge.verification-assessment.v1",
+  "date": "2026-10-21",
+  "baseline": {
+    "engine": 221,
+    "engineFailures": 0,
+    "legacyPassed": 83,
+    "legacyTotal": 86,
+    "fingerprintedFiles": 7176
+  },
+  "final": {
+    "enginePassed": 251,
+    "engineTotal": 251,
+    "legacyPassed": 83,
+    "legacyTotal": 86,
+    "unchangedGoldenFailures": 3,
+    "browserScriptsPassed": 9,
+    "completeManagedSoakSeconds": 600.148325375,
+    "httpRequests": 3958,
+    "httpThrottles": 0,
+    "transportFailures": 0,
+    "fullArchivedCommands": 3192,
+    "fullArchivedEvents": 9768
+  },
+  "diagnostics": [
+    {
+      "files": [
+        "browser-initial.log"
+      ],
+      "reason": "Playwright module missing from default local resolution",
+      "resolution": "existing installed module supplied through documented PLAYWRIGHT_MODULE; no installation or assertion relaxation"
+    },
+    {
+      "files": [
+        "progression-initial.log",
+        "progression-certified.log"
+      ],
+      "reason": "new test misstated revoked-auth status and original duplicate join receipt contract",
+      "resolution": "exact401 contract, duplicate original receipt plus fresh join alreadyJoined checked; progression-final passes"
+    },
+    {
+      "files": [
+        "gateway/admission-initial.log",
+        "gateway/gateway09-initial.log"
+      ],
+      "reason": "initial harness unhandled rejection/replay field expectation; inspect retained exact logs",
+      "resolution": "final9gateway+1client tests pass; no gameplay expectation weakened"
+    },
+    {
+      "files": [
+        "operations/diagnostic-dispositions.json"
+      ],
+      "reason": "hdiutil setup option probes, fixture expectedRevision omission and private-parent capture guard",
+      "resolution": "bounded disposablevolume/DR/sourcecapture final passes; failed attempts retained"
+    },
+    {
+      "files": [
+        "soak.log",
+        "final-soak.log",
+        "soak-buffer-reproduction.json"
+      ],
+      "reason": "postrun all-receipt stdout dump exceeded Node maxBuffer ENOBUFS",
+      "resolution": "scalar SQL placement count plus bounded full read-only archive audit; no history deleted"
+    },
+    {
+      "files": [
+        "certified-managed-soak/aborted-design-review.json"
+      ],
+      "reason": "partial mixed profile mostly exercised stale construction instead of successful mission changes",
+      "resolution": "real measured preflight reads included inHTTPquota/counts; complete600smanagedrun repeated"
+    },
+    {
+      "files": [
+        "movement-archive-audit.log",
+        "construction-archive-audit.log",
+        "recovery-archive-audit.log"
+      ],
+      "reason": "earlier completed profile lacked later-added fixture metadata",
+      "resolution": "unique persisted lease owner matched recorded health to original fixture; final bounded read-only audits pass"
+    },
+    {
+      "files": [
+        "latency-final-with-sample-setup/"
+      ],
+      "reason": "short burst measurement included baseline resource sampler setup",
+      "resolution": "final latency-certified timer begins afterinitialresource sample; paired earlier diagnostics retained withsameoriginalscope"
+    }
+  ],
+  "sourceLineage": {
+    "main600sSourceTree": "1be9a7411ec80ecea7ea995b8f5590ef1a599e269e940b491315b90c7a52d585",
+    "finalSourceTree": "63b567879b19f742234763c1524eefd8d67ef192558ac07add8878e3d0fbe888",
+    "finalQuotaFollowupSeconds": 180,
+    "finalQuotaFollowupRequests": 1188,
+    "finalQuotaFollowupArchiveCommands": 964,
+    "followupReason": "authenticated early rejections charge quota exactly once; success path unchanged"
+  },
+  "finalScopes": {
+    "unit": "PASS",
+    "engineIntegration": "PASS",
+    "phpSqliteStaging": "PASS",
+    "multiClientBrowser": "PASS",
+    "soak": "PASS_BOUNDED_600_SECONDS_COMPLETE_MANAGED_STACK",
+    "crashRecovery": "PASS_OWNED_LOCAL_BOUNDARIES",
+    "sourceReproducibility": "PASS_BOUNDED_79_FILES_64_SELECTED_TESTS",
+    "liveZeknovaTransfer": "NOT_DEMONSTRATED_LEGACY",
+    "productionRelease": "NO_GO"
+  },
+  "limits": [
+    "local loopback only",
+    "no maxpopulation or indefinite zeroleak claim",
+    "outermost monitor itself needs explicit restart",
+    "full volume drill isdirectactualruntimecandidateSQL transaction, notHTTPpowerloss",
+    "rich fixture initialpolicydeclared; normal recoverydefaultpolicy separate",
+    "originalgame source, complete aid/writer/V4 port, remoteidentity/TLS, credential rotation andownerrelease remain gates"
+  ],
+  "secrets": "No identities, keys, database/backups, production credential values or process arguments included."
+}

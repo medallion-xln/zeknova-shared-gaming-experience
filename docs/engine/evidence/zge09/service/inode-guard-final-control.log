@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: continuous service automatically recovers owned launcher SIGKILL with fenced durable retry, worker restart and competing-owner denial
+ok 1 - continuous service automatically recovers owned launcher SIGKILL with fenced durable retry, worker restart and competing-owner denial
+  ---
+  duration_ms: 11398.867958
+  type: 'test'
+  ...
+# Subtest: operator control stops only owned service, flushes private audit and supports explicit restart
+ok 2 - operator control stops only owned service, flushes private audit and supports explicit restart
+  ---
+  duration_ms: 1368.605292
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12834.66575

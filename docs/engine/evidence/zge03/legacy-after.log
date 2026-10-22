@@ -1,0 +1,34 @@
+tests/renderer-ownership-certification.test.mjs 1 tification.test.mjs:10:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115',
+  expected: '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2
+
+tests/runtime-graphics-context.test.mjs 1 s-context.test.mjs:2:128 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115',
+  expected: '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2
+
+tests/runtime-reconstruction.test.mjs 1 nstruction.test.mjs:15:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115',
+  expected: '7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2
+
+PASS 82 TOTAL 85
