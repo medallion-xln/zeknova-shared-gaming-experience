@@ -1,0 +1,108 @@
+{
+  "schema": "zge.movement-parity.v1",
+  "total": 1,
+  "matched": 0,
+  "mismatched": 1,
+  "unobservable": 1,
+  "classes": {
+    "DISPLACEMENT_MISMATCH": 1,
+    "TRAJECTORY_DIVERGENCE": 1,
+    "CAPABILITY_ABSENT": 3
+  },
+  "rows": [
+    {
+      "scriptId": "hold-forward-60-release-120",
+      "matched": false,
+      "differences": [
+        {
+          "classification": "DISPLACEMENT_MISMATCH",
+          "detail": {
+            "legacy": 2.367,
+            "rebuilt": 5.928,
+            "ratio": 2.504,
+            "tolerance": 0.35
+          }
+        },
+        {
+          "classification": "TRAJECTORY_DIVERGENCE",
+          "detail": {
+            "worst": 3.561,
+            "atFrame": 63,
+            "tolerance": 2.5
+          }
+        },
+        {
+          "classification": "CAPABILITY_ABSENT",
+          "detail": {
+            "capability": "dash",
+            "legacy": false,
+            "rebuilt": true,
+            "rule": "the rebuild adds this move; the bundle has no equivalent to diverge from"
+          }
+        },
+        {
+          "classification": "CAPABILITY_ABSENT",
+          "detail": {
+            "capability": "doubleJump",
+            "legacy": false,
+            "rebuilt": true,
+            "rule": "the rebuild adds this move; the bundle has no equivalent to diverge from"
+          }
+        },
+        {
+          "classification": "CAPABILITY_ABSENT",
+          "detail": {
+            "capability": "airControl",
+            "legacy": false,
+            "rebuilt": true,
+            "rule": "the rebuild adds this move; the bundle has no equivalent to diverge from"
+          }
+        }
+      ],
+      "mismatches": 2,
+      "unobservable": [
+        "legacy-velocity",
+        "legacy-grounded-flag",
+        "legacy-jump-state",
+        "legacy-input-mapping",
+        "legacy-acceleration-curve",
+        "legacy-collision-state",
+        "legacy-stall-cause"
+      ],
+      "fullyObservable": false,
+      "tolerances": {
+        "responseFrames": 2,
+        "displacementRatio": 0.35,
+        "restDrift": 0.000001,
+        "trajectory": 2.5,
+        "settleFrames": 20
+      },
+      "reproduce": "node scripts/zge17-movement-parity.mjs — bundle side from the committed capture, rebuilt side replayed"
+    }
+  ],
+  "generatedBy": "scripts/zge17-movement-parity.mjs",
+  "capture": {
+    "source": "assets/index-02987539.js",
+    "scriptId": "hold-forward-60-release-120",
+    "capturedAt": "2026-10-27T16:59:55.794Z",
+    "backend": "webgpu",
+    "observedStallFrame": 37
+  },
+  "measurements": {
+    "legacy": {
+      "displacement": 2.3672,
+      "responseFrames": 1,
+      "frames": 181
+    },
+    "rebuilt": {
+      "displacement": 5.9283,
+      "responseFrames": 1,
+      "frames": 181
+    }
+  },
+  "interpretation": [
+    "CAPABILITY_ABSENT for dash, doubleJump and airControl is the expected and desired result: the bundle has none of them, which is why movement is being rebuilt rather than extracted.",
+    "The bundle stops at frame 37 with the key still held, so its displacement is bounded by whatever it collided with rather than by its own speed. Displacement parity is therefore NOT meaningful from this capture, and the harness says so through legacy-collision-state and legacy-stall-cause in unobservable.",
+    "Response latency and rest drift ARE meaningful here, and both agree: the bundle and the rebuild move on the first sampled frame and neither creeps after release."
+  ]
+}

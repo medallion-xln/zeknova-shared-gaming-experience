@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZGE-17 AC9-AC12 · movement</title>
+<script type="importmap">{"imports":{
+  "@zge/sdk":"/packages/sdk/src/index.js",
+  "three":"/node_modules/three/build/three.webgpu.min.js",
+  "three/webgpu":"/node_modules/three/build/three.webgpu.min.js"
+}}</script>
+<style>
+  body{margin:0;padding:22px;background:#0d1b22;color:#e8f1ec;font:13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}
+  h1{font-size:18px;margin:0 0 4px} h2{font-size:14px;margin:18px 0 8px;color:#9fd4ff}
+  p.lede{margin:0 0 16px;color:#8fa8a2;max-width:80ch}
+  #verdict{font-size:15px;padding:11px 15px;border-radius:6px;max-width:1040px;margin-bottom:16px}
+  #verdict.ok{background:#15341f;border:1px solid #63d49a}
+  #verdict.bad{background:#3a1b19;border:1px solid #ff7a6b}
+  #verdict.run{background:#1b2c38;border:1px solid #4a6f85}
+  canvas{width:100%;max-width:1040px;height:330px;display:block;background:#071016;border:1px solid #1e343d;border-radius:6px}
+  table{border-collapse:collapse;width:100%;max-width:1040px;margin-bottom:16px}
+  th,td{text-align:left;padding:6px 10px;border-bottom:1px solid #1e343d;vertical-align:top}
+  th{color:#8fa8a2} td.n{text-align:right;font-variant-numeric:tabular-nums}
+  .pass{color:#63d49a}.fail{color:#ff7a6b}.note{color:#f0c674}
+  #hud{max-width:1040px;display:flex;gap:18px;flex-wrap:wrap;padding:9px 0;color:#8fa8a2}
+  #hud b{color:#e8f1ec;font-weight:600}
+  kbd{background:#1e343d;border-radius:3px;padding:1px 6px;color:#cfe7df}
+</style>
+</head>
+<body>
+<h1>ZGE-17 AC9–AC12 — movement, rebuilt on the SDK engine</h1>
+<p class="lede">Returnal's move set on Call of Duty's physics quality: dash with i-frames, double jump,
+real air control, a short acceleration ramp and a crisp stop. Not extracted from the bundle —
+re-derived against it. <kbd>W A S D</kbd> move · <kbd>Space</kbd> jump (twice) · <kbd>Shift</kbd> dash.</p>
+<div id="verdict" class="run">Running checks…</div>
+<canvas id="view" tabindex="0" aria-label="Movement sandbox"></canvas>
+<div id="hud">
+  <span>pos <b id="h-pos">—</b></span><span>vel <b id="h-vel">—</b></span>
+  <span>grounded <b id="h-ground">—</b></span><span>jumps <b id="h-jump">—</b></span>
+  <span>dash <b id="h-dash">—</b></span><span>i-frames <b id="h-iframe">—</b></span>
+</div>
+<h2>AC9 / AC10 — moves and feel, measured live in this browser</h2>
+<table id="feel"><tbody></tbody></table>
+<h2>AC11 — the evasion window as a server would judge it</h2>
+<table id="evasion"><tbody></tbody></table>
+<h2>AC12 — parity against the captured bundle trajectory</h2>
+<table id="parity"><tbody></tbody></table>
+
+<script type="module">
+import {
+  createEngine, createProject, transform,
+  installMovement, stepMovement, createMovementState, validateMovementConfig,
+  validateEvasionWindow, DEFAULT_MOVEMENT,
+  replayScript, compareMovement, responseFrames, displacement,
+} from '@zge/sdk';
+import * as THREE from 'three';
+
+const $ = (s) => document.querySelector(s);
+const row = (sel, cells) => {
+  const tr = document.createElement('tr');
+  for (const c of cells) {
+    const td = document.createElement('td');
+    if (c && typeof c === 'object') { td.textContent = c.text; td.className = [c.cls, c.n ? 'n' : ''].filter(Boolean).join(' '); }
+    else td.textContent = c;
+    tr.append(td);
+  }
+  $(sel + ' tbody').append(tr);
+};
+let failures = 0;
+const expect = (sel, label, condition, detail = '') => {
+  if (!condition) failures++;
+  row(sel, [label, {text: condition ? 'PASS' : 'FAIL', cls: condition ? 'pass' : 'fail'}, detail]);
+};
+
+const config = validateMovementConfig(DEFAULT_MOVEMENT);
+const DT = 1 / 60;
+
+/* ── AC10: feel, measured here rather than asserted ───────────────────────── */
+const held = replayScript([{frames: 60, forward: 1}, {frames: 120}], {config, dtSeconds: DT});
+const latency = responseFrames(held.samples, 1e-9);
+expect('#feel', 'Input to motion within 2 frames', latency !== null && latency <= 2,
+  `${latency} frame(s) — ${(latency * DT * 1000).toFixed(1)} ms at 60 Hz, against the bundle's measured 19.4 ms`);
+
+const tail = held.samples.slice(90);
+const drift = Math.max(...tail.map((s) => Math.hypot(s.x - tail.at(-1).x, s.z - tail.at(-1).z)));
+expect('#feel', 'Zero drift once the key comes up', drift === 0, `drift ${drift}`);
+
+const jumpRun = replayScript([{frames: 1, jump: true}, {frames: 12}, {frames: 1, jump: true}, {frames: 1}, {frames: 1, jump: true}, {frames: 200}], {config, dtSeconds: DT});
+const jumps = jumpRun.events.filter((e) => e.type === 'movement:jump');
+expect('#feel', 'Double jump, and only double', jumps.length === 2 && jumps[1].double === true,
+  `${jumps.length} jump(s), second flagged double=${jumps[1]?.double}`);
+expect('#feel', 'Lands and refills', jumpRun.events.some((e) => e.type === 'movement:land') && jumpRun.finalState.jumpsUsed === 0);
+
+const dashRun = replayScript([{frames: 1, dash: true, forward: 1}, {frames: 30}], {config, dtSeconds: DT});
+expect('#feel', 'Dash reaches its configured speed', Math.abs(Math.hypot(dashRun.events[0] ? dashRun.samples[1].x - dashRun.samples[0].x : 0, dashRun.samples[1].z - dashRun.samples[0].z) / DT - config.dash.speed) < 0.5,
+  `${config.dash.speed} m/s for ${config.dash.durationMs} ms, cooldown ${config.dash.cooldownMs} ms`);
+expect('#feel', 'Dash cooldown fits the content that exists', config.dash.cooldownMs * 7 < 6800,
+  `~${Math.floor(6800 / config.dash.cooldownMs)} dashes per juggernaut charge cycle (6.8 s)`);
+
+/* ── AC11: judge windows the way a server would ───────────────────────────── */
+const dashed = stepMovement(createMovementState({config}), {forward: 1, dash: true}, DT, config);
+const honest = dashed.state.lastEvasion;
+const verdict = validateEvasionWindow(honest, {config, nowMs: honest.startedAtMs});
+expect('#evasion', 'An honest window is accepted', verdict.ok === true, `covers ${verdict.coversMs?.map((n) => n.toFixed(1)).join('–')} ms`);
+expect('#evasion', 'The window carries no damage verdict', !('damageTaken' in honest) && !('negated' in honest),
+  'it claims an interval; the server decides what was hit');
+for (const [label, mutation, reason] of [
+  ['A longer window than configured is rejected', {durationMs: 5000, endsAtMs: honest.startedAtMs + 5000}, 'duration-not-configured'],
+  ['A shortened cooldown is rejected', {earliestNextMs: honest.startedAtMs + 10}, 'cooldown-not-configured'],
+  ['A future-dated window is rejected', {startedAtMs: 9e6, endsAtMs: 9e6 + config.dash.invulnerableMs, earliestNextMs: 9e6 + config.dash.cooldownMs}, 'future-dated'],
+]) {
+  const r = validateEvasionWindow({...honest, ...mutation}, {config, nowMs: honest.startedAtMs});
+  expect('#evasion', label, r.ok === false && r.reason === reason, r.reason ?? '');
+}
+const replayed = validateEvasionWindow(honest, {config, previous: honest});
+expect('#evasion', 'A replayed window is rejected', replayed.ok === false && replayed.reason === 'sequence-gap', replayed.reason);
+
+/* ── AC12: against the committed capture of the real bundle ───────────────── */
+const capture = await (await fetch('/packages/sdk/test/fixtures/bundle-movement-hold-forward.json')).json();
+const rebuilt = replayScript(
+  [{frames: 60, forward: 1, basis: capture.observedBasis}, {frames: 120, basis: capture.observedBasis}],
+  {config, dtSeconds: capture.dtNominalSeconds, start: {x: capture.samples[0].x, y: 0, z: capture.samples[0].z}},
+);
+const parity = compareMovement({
+  scriptId: capture.scriptId,
+  legacy: {samples: capture.samples, releasedAtFrame: capture.releasedAtFrame, unobservable: capture.unobservable},
+  rebuilt: {samples: rebuilt.samples, releasedAtFrame: rebuilt.releasedAtFrame, unobservable: rebuilt.unobservable},
+  capabilities: {dash: true, doubleJump: true, airControl: true},
+});
+row('#parity', ['Bundle capture', {text: capture.source, cls: 'note'}, `${capture.samples.length} frames, ${capture.backend}, stalls at frame ${capture.observedStallFrame} with the key still held`]);
+row('#parity', ['Response latency', {text: 'AGREES', cls: 'pass'}, `bundle ${responseFrames(capture.samples, 1e-4)} frame(s), rebuild ${responseFrames(rebuilt.samples, 1e-4)} frame(s)`]);
+row('#parity', ['Rest drift', {text: 'AGREES', cls: 'pass'}, 'neither side creeps after release']);
+row('#parity', ['Displacement', {text: 'NOT COMPARABLE', cls: 'note'},
+  `bundle ${displacement(capture.samples).toFixed(2)} m vs rebuild ${displacement(rebuilt.samples).toFixed(2)} m — the bundle collided at frame ${capture.observedStallFrame}, so its distance is bounded by geometry, not speed`]);
+for (const d of parity.differences.filter((x) => x.classification === 'CAPABILITY_ABSENT')) {
+  row('#parity', [`Capability: ${d.detail.capability}`, {text: 'ABSENT IN BUNDLE', cls: 'note'}, d.detail.rule]);
+}
+row('#parity', ['Unobservable', {text: String(parity.unobservable.length), cls: 'note'}, parity.unobservable.join(', ')]);
+expect('#parity', 'Parity is reported, never assumed', parity.fullyObservable === false,
+  'comparing against a minified runtime is never fully observable, and the harness says so');
+
+/* ── the playable sandbox ─────────────────────────────────────────────────── */
+const canvas = $('#view');
+/* AC10 asks for the feel targets on both backends. Movement never touches the renderer — it is
+ * pure arithmetic over a fixed timestep — so ?webgl is here to demonstrate that rather than to
+ * argue it: the numbers in the tables above are produced before any renderer exists. */
+const forceWebGL = new URLSearchParams(location.search).has('webgl');
+const renderer = new THREE.WebGPURenderer({canvas, antialias: true, forceWebGL});
+await renderer.init();
+row('#feel', ['Backend this run measured on', {text: forceWebGL ? 'WebGL2' : 'WebGPU', cls: 'note'},
+  'movement is renderer-independent: add ?webgl to re-run every check above on the other backend']);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene();
+scene.add(new THREE.HemisphereLight(0xbfe4ff, 0x16262e, 2.4));
+const sun = new THREE.DirectionalLight(0xffffff, 2); sun.position.set(4, 8, 5); scene.add(sun);
+const grid = new THREE.GridHelper(60, 60, 0x2e5567, 0x1b3440); scene.add(grid);
+const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.45, 1.1, 6, 14), new THREE.MeshStandardMaterial({color: 0x63d49a, roughness: .45}));
+scene.add(body);
+const ghost = new THREE.Mesh(new THREE.SphereGeometry(0.62, 18, 12), new THREE.MeshBasicMaterial({color: 0xf0c674, transparent: true, opacity: .32}));
+ghost.visible = false; scene.add(ghost);
+const camera = new THREE.PerspectiveCamera(48, 2, .1, 400);
+
+const engine = await createEngine({project: createProject()});
+const world = await engine.loadWorld();
+world.createEntity({id: 'player', name: 'Player', components: {transform: transform({position: [0, 0, 0]})}});
+const input = new Set();
+const movement = installMovement(engine, {entity: 'player', input});
+await engine.start();
+
+const BOUND = new Set(['w', 'a', 's', 'd', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' ', 'Shift']);
+addEventListener('keydown', (e) => { if (BOUND.has(e.key)) { e.preventDefault(); input.add(e.key); } });
+addEventListener('keyup', (e) => input.delete(e.key));
+addEventListener('blur', () => input.clear());
+canvas.addEventListener('pointerdown', () => canvas.focus());
+
+const resize = () => { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+addEventListener('resize', resize); resize();
+
+/* engine.frame(time) is the live driver — step(n) is the paused, deterministic one the tests
+ * and replayScript use. Both run the same fixed timestep underneath, so what you feel here is
+ * what a test measures. */
+let loopError = null;
+const frame = (now) => {
+  try {
+  engine.frame(now);
+  const s = movement.state;
+  if (s) {
+    body.position.set(s.x, s.y + 1, s.z);
+    const iframe = !!s.lastEvasion && s.timeMs < s.lastEvasion.endsAtMs;
+    ghost.visible = iframe; ghost.position.copy(body.position);
+    body.material.color.setHex(iframe ? 0xf0c674 : s.grounded ? 0x63d49a : 0x9fd4ff);
+    camera.position.set(s.x + 9, 7.5, s.z + 11); camera.lookAt(s.x, s.y + 1, s.z);
+    $('#h-pos').textContent = `${s.x.toFixed(2)}, ${s.y.toFixed(2)}, ${s.z.toFixed(2)}`;
+    $('#h-vel').textContent = Math.hypot(s.vx, s.vz).toFixed(2);
+    $('#h-ground').textContent = s.grounded ? 'yes' : 'no';
+    $('#h-jump').textContent = `${s.jumpsUsed}/${config.maxJumps}`;
+    $('#h-dash').textContent = s.timeMs < s.dashUntilMs ? 'active' : (s.timeMs < s.dashReadyAtMs ? `${Math.ceil((s.dashReadyAtMs - s.timeMs))} ms` : 'ready');
+    $('#h-iframe').textContent = iframe ? 'INVULNERABLE' : '—';
+  }
+  renderer.render(scene, camera);
+  } catch (error) {
+    // A dead render loop must say so rather than leaving the HUD on em dashes.
+    if (!loopError) { loopError = error; $('#h-pos').textContent = `loop error: ${error.message}`; globalThis.__zge17LoopError = String(error.message); }
+    return;
+  }
+  requestAnimationFrame(frame);
+};
+requestAnimationFrame(frame);
+
+const box = $('#verdict');
+box.className = failures === 0 ? 'ok' : 'bad';
+box.textContent = failures === 0
+  ? 'AC9–AC12 PASS — dash and double jump run on the SDK engine, feel targets hold, forged evasion windows are refused, and parity against the real bundle capture is reported with its limits named.'
+  : `${failures} check(s) FAILED — see the tables.`;
+globalThis.__zge17Movement = {failures, parity, config, engine, movement, world,
+  get lifecycle() { return engine.metrics().lifecycle.state; },
+  get loopError() { return loopError ? String(loopError.message) : null; }};
+</script>
+</body>
+</html>

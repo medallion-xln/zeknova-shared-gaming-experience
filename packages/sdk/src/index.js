@@ -1,6 +1,8 @@
 import {inspectGLB,validateModel} from './model.js';
 export {inspectGLB};
 export {installProjectRules} from './rules.js';
+export {installMovement,stepMovement,createMovementState,validateMovementConfig,validateEvasionWindow,evasionCovers,MOVEMENT_SCHEMA,EVASION_SCHEMA,MOVEMENT_AUTHORITY,DEFAULT_MOVEMENT} from './movement.js';
+export {compareMovement,replayScript,responseFrames,displacement,MovementParityReport,MOVEMENT_PARITY_CLASSES} from './movement-parity.js';
 export {createCameraDirector,MODES,resolveOcclusion,CAMERA_PRESET_SCHEMA,validateCameraPreset} from './camera.js';
 import {validateRules} from './rules.js';
 export {validateRules};
