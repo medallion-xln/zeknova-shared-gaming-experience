@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZGE-17 AC5/AC8 · asset pipeline parity</title>
+<script type="importmap">{"imports":{
+  "@zge/sdk":"/packages/sdk/src/index.js",
+  "three":"/node_modules/three/build/three.webgpu.min.js",
+  "three/webgpu":"/node_modules/three/build/three.webgpu.min.js"
+}}</script>
+<style>
+  body{margin:0;padding:22px;background:#0d1b22;color:#e8f1ec;font:13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}
+  h1{font-size:18px;margin:0 0 4px}
+  p.lede{margin:0 0 18px;color:#8fa8a2;max-width:78ch}
+  #verdict{font-size:15px;padding:11px 15px;border-radius:6px;max-width:1040px;margin-bottom:18px}
+  #verdict.ok{background:#15341f;border:1px solid #63d49a}
+  #verdict.bad{background:#3a1b19;border:1px solid #ff7a6b}
+  #verdict.run{background:#1b2c38;border:1px solid #4a6f85}
+  table{border-collapse:collapse;width:100%;max-width:1040px;margin-bottom:20px}
+  th,td{text-align:left;padding:6px 10px;border-bottom:1px solid #1e343d;vertical-align:top}
+  th{color:#8fa8a2}
+  td.n{text-align:right;font-variant-numeric:tabular-nums}
+  .pass{color:#63d49a}.fail{color:#ff7a6b}.note{color:#f0c674}
+  canvas{width:100%;max-width:1040px;height:340px;display:block;background:#071016;border:1px solid #1e343d;border-radius:6px;margin-bottom:18px}
+  h2{font-size:14px;margin:18px 0 8px;color:#9fd4ff}
+</style>
+</head>
+<body>
+<h1>ZGE-17 AC5 / AC8 — asset pipeline parity</h1>
+<p class="lede">Loads ZekNova's real first-party art through the SDK's trusted tier: GLTFLoader with the
+meshopt and KTX2/Basis decoders, registered by this page as the host. AC5 plays a clip off a rigged,
+textured model. AC8 holds the twenty-model subset against a declared budget and releases it to zero.</p>
+<div id="verdict" class="run">Running…</div>
+<canvas id="view"></canvas>
+<h2>AC5 — rigged, animated, textured</h2>
+<table id="ac5"><tbody></tbody></table>
+<h2>AC8 — residency</h2>
+<table id="ac8"><tbody></tbody></table>
+<h2>Subset</h2>
+<table id="subset"><thead><tr><th>Model</th><th>Kind</th><th class="n">KB</th><th>Decoders</th><th class="n">Verts</th><th>Loaded</th></tr></thead><tbody></tbody></table>
+
+<script type="module">
+import {createEngine, createProject} from '@zge/sdk';
+import {createThreeGLTFLoaderType} from '/packages/assets/src/threeAssetService.js';
+import * as THREE from 'three';
+
+const row = (sel, cells) => {
+  const tr = document.createElement('tr');
+  for (const c of cells) {
+    const td = document.createElement('td');
+    if (c && typeof c === 'object') { td.textContent = c.text; td.className = [c.cls, c.n ? 'n' : ''].filter(Boolean).join(' '); }
+    else td.textContent = c;
+    tr.append(td);
+  }
+  document.querySelector(sel + ' tbody').append(tr);
+  return tr;
+};
+const kb = (n) => (n / 1024).toFixed(0);
+const ok = (b) => ({ text: b ? 'PASS' : 'FAIL', cls: b ? 'pass' : 'fail' });
+let failures = 0;
+const expect = (sel, label, condition, detail = '') => {
+  if (!condition) failures++;
+  row(sel, [label, ok(condition), detail]);
+  return condition;
+};
+
+const SUBSET = [
+  'assets/models/captain-engineer-walk.glb',
+  'assets/models/captain-engineer-run.glb',
+  'assets/models/lieutenant-astronaut.glb',
+  'assets/models/captain-mech-run.glb',
+  'assets/models/boss-obsidian-knight.glb',
+  'assets/models/boss-archive-shade.glb',
+  'assets/models/boss-insect-king.glb',
+  'assets/models/boss-ancient-thornwarden.glb',
+  'assets/models/zeknovan-skyray-walk.glb',
+  'assets/models/boss-archive-shade-slash.anim.glb',
+  'assets/models/boss-insect-king-spin.anim.glb',
+  'assets/models/environment/alien-palm-tree.glb',
+  'assets/models/environment/giant-canopy-tree.glb',
+  'assets/models/environment/tiered-stone-pillar.glb',
+  'assets/models/environment/alien-coral-ground.glb',
+  'assets/models/environment/village-kit/oval-awning.glb',
+  'assets/models/environment/village-kit/round-market-hut.glb',
+  'assets/models/environment/forest-village/community-well.glb',
+  'assets/models/environment/desert-village/elder-communal-dome.glb',
+  'assets/models/environment/wetlands-village/water-wheel-mill.glb',
+];
+const HERO = 'assets/models/captain-engineer-walk.glb';
+
+// ── a real renderer, so KTX2 can detect which compressed formats this GPU takes ──
+const canvas = document.querySelector('#view');
+const renderer = new THREE.WebGPURenderer({ canvas, antialias: true });
+await renderer.init();
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene();
+scene.add(new THREE.HemisphereLight(0xbfe4ff, 0x203040, 2.2));
+const key = new THREE.DirectionalLight(0xffffff, 2.2); key.position.set(3, 6, 4); scene.add(key);
+const camera = new THREE.PerspectiveCamera(42, 2, 0.1, 200);
+
+// ── the host supplies the decoder stack; the SDK never imports three ──
+/* The AssetService default is 64 MiB. That is a default, not a declared budget, and it does not
+ * fit this working set — see the measurement reported under AC8. A host that intends to hold the
+ * whole subset at once must say so; eviction can only reclaim entries nobody holds a lease on. */
+const DEFAULT_BUDGET = 64 * 1024 * 1024;
+const DECLARED_BUDGET = 256 * 1024 * 1024;
+const engine = await createEngine({
+  project: createProject(),
+  assetBaseURL: new URL('/', location.href).href,
+  assetBudgetBytes: DECLARED_BUDGET,
+});
+await engine.loadWorld();
+const gltf = createThreeGLTFLoaderType({ getRenderer: () => renderer });
+engine.registerAssetLoader('gltf', gltf.type);
+
+// ── import every model: manifest + sha256 custody, no decode yet ──
+const imported = [];
+for (const [i, path] of SUBSET.entries()) {
+  const bytes = new Uint8Array(await (await fetch('/' + path)).arrayBuffer());
+  const asset = await engine.importTrustedModel({
+    id: `m${i}`, path, bytes,
+    license: { source: 'first-party', spdx: 'LicenseRef-ZekNova-Internal', redistribution: 'permitted' },
+  });
+  imported.push(asset);
+}
+
+// ════════════════ AC5 ════════════════
+const heroAsset = imported.find((a) => a.path === HERO);
+const lease = await engine.acquireAsset(heroAsset.id, { type: 'gltf', owner: 'ac5' });
+const instance = lease.instantiate();
+
+let skinned = null, textured = 0, meshes = 0;
+instance.scene.traverse((o) => {
+  if (o.isMesh || o.isSkinnedMesh) {
+    meshes++;
+    if (o.isSkinnedMesh && !skinned) skinned = o;
+    for (const m of [o.material].flat().filter(Boolean)) for (const v of Object.values(m)) if (v?.isTexture) { textured++; break; }
+  }
+});
+
+expect('#ac5', 'Model decoded through GLTFLoader + meshopt + KTX2', meshes > 0, `${meshes} mesh(es)`);
+expect('#ac5', 'Rigged — a SkinnedMesh with a bound skeleton', !!skinned?.skeleton, skinned ? `${skinned.skeleton.bones.length} bones` : 'none');
+expect('#ac5', 'Textured — materials carry decoded texture maps', textured > 0, `${textured} textured mesh(es)`);
+expect('#ac5', 'Animation clip present', instance.animations.length > 0, instance.animations.map((c) => `${c.name} ${c.duration.toFixed(2)}s`).join(', '));
+expect('#ac5', 'Objects are instanceof the host Three (ZGE-17 AC1)', instance.scene instanceof THREE.Object3D);
+
+// Play it: sample a bone before and after advancing the mixer.
+const mixer = new THREE.AnimationMixer(instance.scene);
+const action = mixer.clipAction(instance.animations[0]);
+action.play();
+const bone = skinned.skeleton.bones[Math.floor(skinned.skeleton.bones.length / 2)];
+mixer.update(0);
+instance.scene.updateMatrixWorld(true);
+const before = bone.position.clone().toArray().concat(bone.quaternion.toArray());
+mixer.update(instance.animations[0].duration * 0.37);
+instance.scene.updateMatrixWorld(true);
+const after = bone.position.clone().toArray().concat(bone.quaternion.toArray());
+const delta = Math.max(...before.map((v, i) => Math.abs(v - after[i])));
+expect('#ac5', 'Clip actually animates the skeleton', delta > 1e-4,
+  `bone "${bone.name}" moved by ${delta.toExponential(2)} after ${(instance.animations[0].duration * 0.37).toFixed(2)}s`);
+
+// Show it.
+const box = new THREE.Box3().setFromObject(instance.scene);
+const size = box.getSize(new THREE.Vector3()), centre = box.getCenter(new THREE.Vector3());
+instance.scene.position.sub(centre);
+scene.add(instance.scene);
+const radius = Math.max(size.x, size.y, size.z) || 1;
+const resize = () => {
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+};
+addEventListener('resize', resize); resize();
+let t = 0, last = performance.now();
+const tick = (now) => {
+  const dt = (now - last) / 1000; last = now; t += dt;
+  mixer.update(dt);
+  camera.position.set(Math.sin(t * 0.4) * radius * 2.4, radius * 0.9, Math.cos(t * 0.4) * radius * 2.4);
+  camera.lookAt(0, 0, 0);
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+};
+requestAnimationFrame(tick);
+
+// ════════════════ AC8 ════════════════
+const budget = engine.assets.status().budgetBytes;
+const leases = [];
+const loadResults = [];
+for (const asset of imported) {
+  try {
+    const l = await engine.acquireAsset(asset.id, { type: 'gltf', owner: 'ac8' });
+    leases.push(l);
+    loadResults.push({ asset, ok: true });
+  } catch (error) { loadResults.push({ asset, ok: false, error: error.message }); }
+}
+const held = engine.assets.status();
+
+for (const { asset, ok: loaded, error } of loadResults) {
+  row('#subset', [
+    asset.path.replace('assets/models/', ''),
+    asset.data.kind,
+    { text: kb(asset.data.sourceBytes), n: true },
+    asset.data.requiresDecoders.join(' ') || '—',
+    { text: String(asset.data.vertices), n: true },
+    loaded ? { text: 'yes', cls: 'pass' } : { text: error.slice(0, 40), cls: 'fail' },
+  ]);
+}
+
+expect('#ac8', 'Every model in the subset loads', loadResults.every((r) => r.ok),
+  `${loadResults.filter((r) => r.ok).length}/${loadResults.length}`);
+expect('#ac8', 'Residency stays within the declared budget', held.bytes <= budget,
+  `${kb(held.bytes)} KB of ${kb(budget)} KB declared`);
+// Reported, not asserted: this is the number that matters for ZGE-17 §9 asset work.
+row('#ac8', ['Measured working set for 20 first-party models',
+  { text: `${(held.bytes / 1048576).toFixed(0)} MB`, cls: 'note' },
+  `${(held.bytes / DEFAULT_BUDGET).toFixed(1)}× the 64 MiB AssetService default — the default cannot hold this subset`]);
+expect('#ac8', 'Leases are counted while held', held.references >= leases.length,
+  `${held.references} references, ${leases.length} leases`);
+
+lease.release();
+for (const l of leases) l.release();
+const freed = engine.assets.status();
+expect('#ac8', 'Releasing every lease returns references to zero', freed.references === 0,
+  `references ${held.references} → ${freed.references}`);
+
+await engine.dispose();
+const afterDispose = engine.assets.status();
+expect('#ac8', 'Disposing the engine clears cached entries', afterDispose.entries === 0,
+  `entries ${freed.entries} → ${afterDispose.entries}, bytes ${kb(freed.bytes)} KB → ${kb(afterDispose.bytes)} KB`);
+
+const verdict = document.querySelector('#verdict');
+verdict.className = failures === 0 ? 'ok' : 'bad';
+verdict.textContent = failures === 0
+  ? `AC5 + AC8 PASS — ${loadResults.filter((r) => r.ok).length} first-party models loaded with textures and skinning, a clip animated the skeleton, and residency released to zero.`
+  : `${failures} check(s) FAILED — see the tables below.`;
+globalThis.__zge17AssetParity = { failures, loaded: loadResults.filter((r) => r.ok).length, held, freed, afterDispose };
+</script>
+</body>
+</html>

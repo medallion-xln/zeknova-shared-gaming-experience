@@ -1,5 +1,7 @@
 import {inspectGLB,validateModel} from './model.js';
 export {inspectGLB};
+import {describeTrustedModel,validateTrustedModel,readGLBHeader,requiredDecoders,TRUSTED_MODEL_SCHEMA,KNOWN_EXTENSIONS} from './trusted-model.js';
+export {describeTrustedModel,validateTrustedModel,readGLBHeader,requiredDecoders,TRUSTED_MODEL_SCHEMA,KNOWN_EXTENSIONS};
 export {installProjectRules} from './rules.js';
 export {createCameraDirector,MODES,resolveOcclusion,CAMERA_PRESET_SCHEMA,validateCameraPreset} from './camera.js';
 import {validateRules} from './rules.js';
@@ -91,12 +93,22 @@ export function parseProject(text){try{return validateProject(migrateProject(JSO
 async function fetchAssetJSON(url){
  const response=await fetch(url);requireOK(response.ok,'asset fetch failed');const reader=response.body.getReader(),chunks=[];let size=0;while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>1048576){await reader.cancel();throw new SDKError('ASSET_SIZE','asset size limit 1MiB');}chunks.push(value);}const bytes=new Uint8Array(size);let offset=0;for(const c of chunks){bytes.set(c,offset);offset+=c.length;}try{return JSON.parse(new TextDecoder().decode(bytes));}catch{throw new SDKError('ASSET_PARSE','Invalid JSON asset');}
 }
-export async function createEngine({project=null,renderer='none',scheduler='manual',authorize=()=>false}={}){
+/* ZGE-17 AC5: assetBaseURL lets a host resolve project asset paths against the project root
+ * rather than the page that happens to be open. Trusted models are referenced by repository
+ * path (assets/models/x.glb), so a page served from a sub-directory would otherwise look for
+ * them beneath itself. Defaults to the page, which is what every existing consumer assumes. */
+export async function createEngine({project=null,renderer='none',scheduler='manual',authorize=()=>false,assetBaseURL=null,assetBudgetBytes=null}={}){
  requireOK(['none','auto','webgpu','webgl'].includes(renderer),'invalid renderer');
+ requireOK(assetBaseURL===null||typeof assetBaseURL==='string','assetBaseURL must be a string');
+ /* AC8: the 64 MiB AssetService default is a default, not a declared budget, and it does not
+  * fit this project's art — twenty first-party models decode to roughly 203 MB held at once.
+  * A host that knows its working set declares one; eviction only ever reclaims entries nobody
+  * holds a lease on, so an under-declared budget shows up as overshoot rather than thrashing. */
+ requireOK(assetBudgetBytes===null||(Number.isFinite(assetBudgetBytes)&&assetBudgetBytes>=0),'assetBudgetBytes must be a non-negative number');
  if(typeof project==='string'){let url=project.endsWith('.json')?project:project.replace(/\/$/,'')+'/project.json';const r=await fetch(url);requireOK(r.ok,'project fetch failed');project=await r.json();}
  project=project?validateProject(project):{schema:'zge.sdk.project.v1',id:'untitled',name:'Untitled',entryWorld:'main',worlds:{main:null},assets:[],plugins:[],prefabs:{}};
  project=validateProject(migrateProject(project));
- const kernel=new EngineKernel({id:project.id,scheduler}),types=defaults(),definitions=new Map(Object.entries(builtinDefinitions)),worlds=new Map(),assetIds=new Set(project.assets.map(a=>a.id)),assets=new AssetService({baseURL:globalThis.location?.href??'http://localhost/'});for(const [type,definition] of Object.entries(project.components??{})){requireOK(idOK(type)&&!types.has(type),'duplicate component schema');const def=validateDefinition(definition);definitions.set(type,def);types.set(type,value=>validateFields(value,def));}let active=null,disposed=false,presentation=null,disposePending=null;
+ const kernel=new EngineKernel({id:project.id,scheduler}),types=defaults(),definitions=new Map(Object.entries(builtinDefinitions)),worlds=new Map(),assetIds=new Set(project.assets.map(a=>a.id)),assets=new AssetService({baseURL:assetBaseURL??globalThis.location?.href??'http://localhost/',...(assetBudgetBytes===null?{}:{budgetBytes:assetBudgetBytes})});for(const [type,definition] of Object.entries(project.components??{})){requireOK(idOK(type)&&!types.has(type),'duplicate component schema');const def=validateDefinition(definition);definitions.set(type,def);types.set(type,value=>validateFields(value,def));}let active=null,disposed=false,presentation=null,disposePending=null;
  const alive=()=>requireOK(!disposed,'engine disposed');
  assets.register('project-json',{load:async url=>{const ref=project.assets.find(a=>new URL(a.path,assets.baseURL).href===url);requireOK(ref,'unknown project asset');const data=ref.data??await fetchAssetJSON(url);if(ref.type==='static-model')validateModel(data);const bytes=new TextEncoder().encode(JSON.stringify(plain(data)));requireOK(bytes.length<=1048576,'asset size limit');const digest=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');requireOK(digest===ref.sha256,'asset hash mismatch');return plain(data);},clone:copy,size:v=>JSON.stringify(v).length});
  const api={version:SDK_VERSION,renderer,project:copy(project),assets,
@@ -110,8 +122,21 @@ export async function createEngine({project=null,renderer='none',scheduler='manu
  prefabStatus(entityId){alive();const e=active?.findEntity(entityId),template=project.prefabs?.[e?.prefabId];return template?{id:e.prefabId,overrides:Object.keys(e.components).filter(k=>canonicalJSON(e.components[k])!==canonicalJSON(template.components[k]))}:null;},
  createPrefab(id,entityId){alive();requireOK(idOK(id)&&!Object.hasOwn(project.prefabs??{},id),'prefab ID must be new');const e=active?.findEntity(entityId);requireOK(e,'entity does not exist');project.prefabs??={};if(e.components.editor)e.components.editor.parent=null;project.prefabs[id]={name:e.name,components:e.components};kernel.events.emit('project:changed',{kind:'prefab',id});return copy(project.prefabs[id]);},
  assetReferences(id){alive();return{entities:[...worlds.values()].flatMap(w=>w.entities().filter(e=>Object.entries(e.components).some(([type,c])=>Object.entries(definitions.get(type)?.fields??{}).some(([key,f])=>f.type==='asset'&&c[key]===id))).map(e=>({world:w.id,entity:e.id}))),prefabs:Object.entries(project.prefabs??{}).filter(([,p])=>Object.entries(p.components??{}).some(([type,c])=>Object.entries(definitions.get(type)?.fields??{}).some(([key,f])=>f.type==='asset'&&c[key]===id))).map(([name])=>name)};},
- async importAsset({id,name=id,path=`imports/${id}.json`,data,type='json',license={redistribution:'unknown'}}){alive();requireOK(['json','static-model'].includes(type)&&idOK(id)&&!assetIds.has(id),'unique supported asset ID required');data=plain(data);if(type==='static-model')validateModel(data);const bytes=new TextEncoder().encode(JSON.stringify(data));requireOK(bytes.length<=1048576,'asset size limit 1MiB');const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');alive();requireOK(!assetIds.has(id),'duplicate asset after asynchronous import');const asset={id,name,path,type,data,sha256:hash,license:plain(license)};const compatibility={...project.sdkCompatibility,minimumPreview:Math.max(project.sdkCompatibility.minimumPreview,type==='static-model'?(data.hierarchy?13:12):0)};validateProject({...project,sdkCompatibility:compatibility,assets:[...project.assets,asset]});project.sdkCompatibility=compatibility;project.assets.push(asset);assetIds.add(id);kernel.events.emit('project:changed',{kind:'asset',id});return copy(asset);},
+ async importAsset({id,name=id,path=`imports/${id}.json`,data,type='json',license={redistribution:'unknown'}}){alive();requireOK(['json','static-model','trusted-model'].includes(type)&&idOK(id)&&!assetIds.has(id),'unique supported asset ID required');data=plain(data);if(type==='static-model')validateModel(data);if(type==='trusted-model')validateTrustedModel(data);const bytes=new TextEncoder().encode(JSON.stringify(data));requireOK(bytes.length<=1048576,'asset size limit 1MiB');const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');alive();requireOK(!assetIds.has(id),'duplicate asset after asynchronous import');const asset={id,name,path,type,data,sha256:hash,license:plain(license)};const compatibility={...project.sdkCompatibility,minimumPreview:Math.max(project.sdkCompatibility.minimumPreview,type==='static-model'?(data.hierarchy?13:12):0)};validateProject({...project,sdkCompatibility:compatibility,assets:[...project.assets,asset]});project.sdkCompatibility=compatibility;project.assets.push(asset);assetIds.add(id);kernel.events.emit('project:changed',{kind:'asset',id});return copy(asset);},
  async importModel({id,name=id,bytes,hierarchy=false,license={redistribution:'unknown'}}){alive();const data=inspectGLB(bytes,{hierarchy});const sourceSha256=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');return api.importAsset({id,name,type:'static-model',path:`imports/${id}.model.json`,data:{...data,sourceSha256},license});},
+ /* ZGE-17 AC5-AC7 — first-party model tier. The project REFERENCES the .glb by path and keeps a
+  * manifest plus sha256 custody; the file is never transcoded, because no portable schema here
+  * expresses skinned animation. Decoding is the host's GLTFLoader (see registerAssetLoader).
+  * Stays at minimumPreview 13: raising the ceiling is a release decision, and zge12.test.mjs
+  * deliberately asserts that 14 is rejected as a future version. */
+ async importTrustedModel({id,name=id,path,bytes,license={redistribution:'unknown'}}){alive();const data=await describeTrustedModel({path,bytes});requireOK(!data.unknownExtensions.length,`unrecognised glTF extensions: ${data.unknownExtensions.join(', ')}`);return api.importAsset({id,name,type:'trusted-model',path,data,license});},
+ /* The SDK never decides what a GLTF decoder is — the host supplies one, exactly as it supplies
+  * the Three namespace to createViewport. packages/assets/src/threeAssetService.js exports
+  * createThreeGLTFLoaderType() for this, already wired for meshopt and KTX2/Basis. Keeping it
+  * out of the SDK is what lets dist/index.js stay free of external imports. */
+ registerAssetLoader(type,loader){alive();requireOK(idOK(type)&&loader&&typeof loader.load==='function'&&typeof loader.clone==='function','asset loader needs load and clone');assets.register(type,loader);return type;},
+ trustedModels(){alive();return project.assets.filter(a=>a.type==='trusted-model').map(a=>copy(a));},
+ requiredDecoders(){alive();return requiredDecoders(project.assets.filter(a=>a.type==='trusted-model').map(a=>a.data));},
  assetReference(id){alive();const ref=project.assets.find(a=>a.id===id);requireOK(ref,'unknown public asset id');return copy(ref);},
  acquireAsset(id,options={type:'project-json'}){const ref=api.assetReference(id);return assets.acquire(ref.path,options);},
  attachRenderer(backend){alive();requireOK(!presentation&&backend&&typeof backend.render==='function'&&typeof backend.dispose==='function','one owned presentation backend required');presentation=backend;return api;},
