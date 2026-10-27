@@ -38,19 +38,30 @@ function sizeOf(gltf) {
   gltf.scene.traverse(o => { for (const a of Object.values(o.geometry?.attributes ?? {})) count(a.array); count(o.geometry?.index?.array); for (const m of [o.material].flat().filter(Boolean)) for (const t of Object.values(m)) if (t?.isTexture && !seen.has(t)) { seen.add(t); for (const mip of t.mipmaps ?? []) count(mip.data); if (!t.mipmaps?.length) bytes += (t.image?.width ?? 0)*(t.image?.height ?? 0)*4; } });
   return bytes;
 }
-let shared;
-export function getThreeAssetService() {
-  if (shared) return shared;
+/** ZGE-17 AC5: the GLTF+meshopt+KTX2 loader as a registerable AssetService type, so the SDK's
+ * own service can load first-party models without reaching for ZekNovaGame. `getRenderer` is a
+ * provider rather than a global so a host that is not ZekNova can supply its own renderer;
+ * KTX2 transcoder support can only be detected once a renderer exists, so detection stays lazy
+ * and a model with no Basis textures still loads before one is available. */
+export function createThreeGLTFLoaderType({ getRenderer = () => globalThis.ZekNovaGame?.renderer ?? null } = {}) {
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const ktx2 = new KTX2Loader().setTranscoderPath(new URL('../../../assets/vendor/basis/',import.meta.url).href);
   ktx2.workerPool.dispose(); ktx2.workerPool = new BoundedWorkerPool();
-  const service = new AssetService({ baseURL: new URL('../../../',import.meta.url).href });
   let configured = false;
-  service.register('gltf', { load: async url => {
-    const renderer = globalThis.ZekNovaGame?.renderer;
+  const type = { load: async url => {
+    const renderer = getRenderer();
     if (renderer && !configured) { ktx2.detectSupport(renderer); loader.setKTX2Loader(ktx2); configured = true; }
     return loader.loadAsync(url);
-  }, clone: cloneParsedGLTF, dispose: disposeParsed, size: sizeOf });
-  shared = { service, loader, ktx2, loadAsync: path => service.loadDetached(path, { type: 'gltf', owner: 'legacy-detached' }), status: () => ({ ...service.status(), workers: ktx2.workerPool.status() }), dispose() { service.dispose(); ktx2.dispose(); shared = null; } };
+  }, clone: cloneParsedGLTF, dispose: disposeParsed, size: sizeOf };
+  return { type, loader, ktx2, get configured() { return configured; }, dispose() { ktx2.dispose(); } };
+}
+
+let shared;
+export function getThreeAssetService() {
+  if (shared) return shared;
+  const { type, loader, ktx2, dispose } = createThreeGLTFLoaderType();
+  const service = new AssetService({ baseURL: new URL('../../../',import.meta.url).href });
+  service.register('gltf', type);
+  shared = { service, loader, ktx2, loadAsync: path => service.loadDetached(path, { type: 'gltf', owner: 'legacy-detached' }), status: () => ({ ...service.status(), workers: ktx2.workerPool.status() }), dispose() { service.dispose(); dispose(); shared = null; } };
   return shared;
 }
