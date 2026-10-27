@@ -1,0 +1,4313 @@
+{
+  "policy": "isolated synthetic table WAL FULL; active explicit 200ms competing writer; no gameplay policy changes",
+  "rows": [
+    {
+      "openMs": 0.176875,
+      "beginMs": 0.003334,
+      "commitMs": 0.918583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.800416,
+      "beginMs": 0.006917,
+      "commitMs": 0.250375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.135625,
+      "beginMs": 0.003125,
+      "commitMs": 0.285125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.111875,
+      "beginMs": 0.002458,
+      "commitMs": 0.188625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.0925,
+      "beginMs": 0.002292,
+      "commitMs": 0.153709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.105541,
+      "beginMs": 0.002667,
+      "commitMs": 0.14025,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 5.497083,
+      "beginMs": 0.012166,
+      "commitMs": 0.314917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.927125,
+      "beginMs": 0.004916,
+      "commitMs": 2.294709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.300458,
+      "beginMs": 0.004334,
+      "commitMs": 0.200667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.146834,
+      "beginMs": 0.003292,
+      "commitMs": 0.328667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.837334,
+      "beginMs": 0.004208,
+      "commitMs": 0.171959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.19025,
+      "beginMs": 0.00825,
+      "commitMs": 0.488583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.099708,
+      "beginMs": 0.002625,
+      "commitMs": 0.154791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.111916,
+      "beginMs": 0.002875,
+      "commitMs": 0.165083,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.10925,
+      "beginMs": 0.002917,
+      "commitMs": 0.170792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.220333,
+      "beginMs": 0.003167,
+      "commitMs": 1.577333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 15.214416,
+      "beginMs": 0.005042,
+      "commitMs": 10.654667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.239708,
+      "beginMs": 0.004291,
+      "commitMs": 7.399584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 7.342458,
+      "beginMs": 0.005166,
+      "commitMs": 0.226333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.124833,
+      "beginMs": 0.002958,
+      "commitMs": 3.546375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.249,
+      "beginMs": 0.003583,
+      "commitMs": 9.978792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.300667,
+      "beginMs": 0.004291,
+      "commitMs": 2.824666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.458166,
+      "beginMs": 0.005583,
+      "commitMs": 2.505917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.225125,
+      "beginMs": 0.004125,
+      "commitMs": 23.858167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.287875,
+      "beginMs": 0.004667,
+      "commitMs": 0.354,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.124625,
+      "beginMs": 0.003,
+      "commitMs": 1.148459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.160833,
+      "beginMs": 0.020584,
+      "commitMs": 0.4865,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.736916,
+      "beginMs": 0.005625,
+      "commitMs": 0.259,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.637042,
+      "beginMs": 0.003084,
+      "commitMs": 0.190958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.088916,
+      "beginMs": 0.002375,
+      "commitMs": 0.135667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.084833,
+      "beginMs": 0.002292,
+      "commitMs": 0.170167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.117208,
+      "beginMs": 0.002959,
+      "commitMs": 0.1885,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.120792,
+      "beginMs": 0.003417,
+      "commitMs": 0.274292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.179292,
+      "beginMs": 0.003125,
+      "commitMs": 0.197792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.6725,
+      "beginMs": 0.00525,
+      "commitMs": 0.202292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.170333,
+      "beginMs": 0.003917,
+      "commitMs": 0.173208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.123583,
+      "beginMs": 0.233958,
+      "commitMs": 0.238792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.186125,
+      "beginMs": 0.003667,
+      "commitMs": 0.208125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.092208,
+      "beginMs": 0.00225,
+      "commitMs": 0.151041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.121292,
+      "beginMs": 0.003208,
+      "commitMs": 0.167375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.091,
+      "beginMs": 0.00225,
+      "commitMs": 0.23825,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.12375,
+      "beginMs": 0.003083,
+      "commitMs": 0.179875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.174042,
+      "beginMs": 0.002834,
+      "commitMs": 0.769625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.186958,
+      "beginMs": 0.002875,
+      "commitMs": 0.194125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.402542,
+      "beginMs": 0.004834,
+      "commitMs": 0.236708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.14925,
+      "beginMs": 0.003041,
+      "commitMs": 0.23975,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.588833,
+      "beginMs": 0.003667,
+      "commitMs": 1.367542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.473459,
+      "beginMs": 0.004709,
+      "commitMs": 0.501334,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.224459,
+      "beginMs": 0.003208,
+      "commitMs": 0.292209,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.182833,
+      "beginMs": 0.003542,
+      "commitMs": 0.208167,
+      "checkpoint": {
+        "ms": 1.326333,
+        "state": [
+          0,
+          159,
+          159
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.452667,
+      "beginMs": 0.0035,
+      "commitMs": 0.160625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.416834,
+      "beginMs": 0.008208,
+      "commitMs": 0.180666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.159583,
+      "beginMs": 0.00275,
+      "commitMs": 0.081041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.117292,
+      "beginMs": 0.002959,
+      "commitMs": 0.058625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.084083,
+      "beginMs": 0.00225,
+      "commitMs": 0.053375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11125,
+      "beginMs": 0.003167,
+      "commitMs": 0.054417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.08475,
+      "beginMs": 0.002042,
+      "commitMs": 0.053917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.091667,
+      "beginMs": 0.002416,
+      "commitMs": 0.050583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.076958,
+      "beginMs": 0.002041,
+      "commitMs": 0.0475,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.082334,
+      "beginMs": 0.002084,
+      "commitMs": 0.043958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.072625,
+      "beginMs": 0.001875,
+      "commitMs": 0.048584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.081917,
+      "beginMs": 0.002,
+      "commitMs": 0.055209,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.7765,
+      "beginMs": 0.003125,
+      "commitMs": 0.082916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.081416,
+      "beginMs": 0.001958,
+      "commitMs": 0.046417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.073292,
+      "beginMs": 0.00175,
+      "commitMs": 0.102542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.200333,
+      "beginMs": 0.003583,
+      "commitMs": 0.100666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.134791,
+      "beginMs": 0.002834,
+      "commitMs": 0.063833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.091625,
+      "beginMs": 0.002125,
+      "commitMs": 0.077792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.17125,
+      "beginMs": 0.003167,
+      "commitMs": 1.354083,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.221833,
+      "beginMs": 0.003583,
+      "commitMs": 0.107084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.109541,
+      "beginMs": 0.0025,
+      "commitMs": 0.395875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.118791,
+      "beginMs": 0.002417,
+      "commitMs": 0.072042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.080625,
+      "beginMs": 0.005042,
+      "commitMs": 0.217708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.567208,
+      "beginMs": 0.004875,
+      "commitMs": 0.149333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.171791,
+      "beginMs": 0.013541,
+      "commitMs": 0.097667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.197875,
+      "beginMs": 0.003042,
+      "commitMs": 0.109375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.104292,
+      "beginMs": 0.002375,
+      "commitMs": 0.066625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.100416,
+      "beginMs": 0.002625,
+      "commitMs": 0.064333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.103,
+      "beginMs": 0.002209,
+      "commitMs": 0.063625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11375,
+      "beginMs": 0.002125,
+      "commitMs": 1.92675,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.410042,
+      "beginMs": 0.003584,
+      "commitMs": 0.117375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.54675,
+      "beginMs": 0.011125,
+      "commitMs": 0.457708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.006959,
+      "beginMs": 0.00825,
+      "commitMs": 0.20775,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.146667,
+      "beginMs": 0.00425,
+      "commitMs": 0.103458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.637625,
+      "beginMs": 0.00775,
+      "commitMs": 0.104125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.88275,
+      "beginMs": 0.009459,
+      "commitMs": 0.137333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.174625,
+      "beginMs": 0.0035,
+      "commitMs": 0.084792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11875,
+      "beginMs": 0.002792,
+      "commitMs": 0.077291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.138042,
+      "beginMs": 0.002958,
+      "commitMs": 0.422625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.591542,
+      "beginMs": 0.004,
+      "commitMs": 0.094167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1415,
+      "beginMs": 0.004834,
+      "commitMs": 0.078459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.818917,
+      "beginMs": 0.003,
+      "commitMs": 0.098917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.115125,
+      "beginMs": 0.002917,
+      "commitMs": 0.103542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.153792,
+      "beginMs": 0.004875,
+      "commitMs": 0.1225,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.349375,
+      "beginMs": 0.003167,
+      "commitMs": 0.073125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.108208,
+      "beginMs": 0.0025,
+      "commitMs": 0.047458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.084917,
+      "beginMs": 0.002084,
+      "commitMs": 0.057417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.112583,
+      "beginMs": 0.00275,
+      "commitMs": 0.057875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.096625,
+      "beginMs": 0.002666,
+      "commitMs": 0.049917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.096916,
+      "beginMs": 0.002167,
+      "commitMs": 0.054417,
+      "checkpoint": {
+        "ms": 0.922625,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.172667,
+      "beginMs": 0.003583,
+      "commitMs": 0.097917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.09075,
+      "beginMs": 0.002125,
+      "commitMs": 0.047584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.08225,
+      "beginMs": 0.002041,
+      "commitMs": 0.052584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.091417,
+      "beginMs": 0.002292,
+      "commitMs": 0.0485,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.112667,
+      "beginMs": 0.001917,
+      "commitMs": 0.04875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.102125,
+      "beginMs": 0.002625,
+      "commitMs": 0.049584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.080208,
+      "beginMs": 0.001958,
+      "commitMs": 0.044417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.077625,
+      "beginMs": 0.001916,
+      "commitMs": 0.048041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.072416,
+      "beginMs": 0.001833,
+      "commitMs": 0.044833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.07175,
+      "beginMs": 0.00175,
+      "commitMs": 0.122041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.168375,
+      "beginMs": 0.002792,
+      "commitMs": 0.058958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.08775,
+      "beginMs": 0.001958,
+      "commitMs": 0.057167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.108584,
+      "beginMs": 0.002875,
+      "commitMs": 0.920042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.158541,
+      "beginMs": 0.002583,
+      "commitMs": 0.091375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.178417,
+      "beginMs": 0.003458,
+      "commitMs": 0.10125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.13925,
+      "beginMs": 0.002833,
+      "commitMs": 0.083334,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.139833,
+      "beginMs": 0.002708,
+      "commitMs": 0.084792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.121209,
+      "beginMs": 0.002625,
+      "commitMs": 0.06575,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.117167,
+      "beginMs": 0.002875,
+      "commitMs": 0.059792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.111917,
+      "beginMs": 0.003167,
+      "commitMs": 0.053208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.091458,
+      "beginMs": 0.002,
+      "commitMs": 0.055375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.35775,
+      "beginMs": 0.00875,
+      "commitMs": 0.497292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.3155,
+      "beginMs": 0.004292,
+      "commitMs": 0.083,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.101875,
+      "beginMs": 0.001833,
+      "commitMs": 0.317,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1945,
+      "beginMs": 0.003459,
+      "commitMs": 0.111208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.301625,
+      "beginMs": 0.003417,
+      "commitMs": 0.097916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.296167,
+      "beginMs": 0.003042,
+      "commitMs": 0.243292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.438833,
+      "beginMs": 0.003667,
+      "commitMs": 0.142958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.187458,
+      "beginMs": 0.003,
+      "commitMs": 0.077792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.129,
+      "beginMs": 0.002125,
+      "commitMs": 0.054333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.083041,
+      "beginMs": 0.001833,
+      "commitMs": 0.05275,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.145791,
+      "beginMs": 0.002916,
+      "commitMs": 0.072417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.107709,
+      "beginMs": 0.002292,
+      "commitMs": 1.2345,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.182,
+      "beginMs": 0.003083,
+      "commitMs": 0.094417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.099625,
+      "beginMs": 0.002125,
+      "commitMs": 0.054667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.088208,
+      "beginMs": 0.002083,
+      "commitMs": 0.049625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.09025,
+      "beginMs": 0.002042,
+      "commitMs": 0.070708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.084666,
+      "beginMs": 0.001958,
+      "commitMs": 0.047875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.097708,
+      "beginMs": 0.002375,
+      "commitMs": 0.049167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.085167,
+      "beginMs": 0.001875,
+      "commitMs": 0.046792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.289083,
+      "beginMs": 0.002084,
+      "commitMs": 0.063709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.100542,
+      "beginMs": 0.002125,
+      "commitMs": 0.053208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.090208,
+      "beginMs": 0.002167,
+      "commitMs": 0.049834,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.079584,
+      "beginMs": 0.001875,
+      "commitMs": 0.047541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.076291,
+      "beginMs": 0.001875,
+      "commitMs": 0.047542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.079458,
+      "beginMs": 0.001917,
+      "commitMs": 0.043125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.077917,
+      "beginMs": 0.00175,
+      "commitMs": 0.048125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.082833,
+      "beginMs": 0.001916,
+      "commitMs": 0.049458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.078209,
+      "beginMs": 0.001833,
+      "commitMs": 0.049708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.079334,
+      "beginMs": 0.001875,
+      "commitMs": 0.048042,
+      "checkpoint": {
+        "ms": 0.659833,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.153292,
+      "beginMs": 0.005834,
+      "commitMs": 0.32,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.851083,
+      "beginMs": 0.003375,
+      "commitMs": 0.111166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.423708,
+      "beginMs": 0.004,
+      "commitMs": 0.307333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.278334,
+      "beginMs": 0.002542,
+      "commitMs": 0.063708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11325,
+      "beginMs": 0.002625,
+      "commitMs": 0.056959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.09075,
+      "beginMs": 0.001833,
+      "commitMs": 0.04325,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.079833,
+      "beginMs": 0.00175,
+      "commitMs": 0.05125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.07825,
+      "beginMs": 0.001709,
+      "commitMs": 0.050417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.326667,
+      "beginMs": 0.002875,
+      "commitMs": 0.07275,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.101625,
+      "beginMs": 0.002208,
+      "commitMs": 0.078375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.197209,
+      "beginMs": 0.003166,
+      "commitMs": 0.111875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.139834,
+      "beginMs": 0.002625,
+      "commitMs": 0.095667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.146292,
+      "beginMs": 0.0055,
+      "commitMs": 0.089333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.155083,
+      "beginMs": 0.002542,
+      "commitMs": 0.074667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.179792,
+      "beginMs": 0.00325,
+      "commitMs": 0.082959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.117708,
+      "beginMs": 0.002208,
+      "commitMs": 0.077958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.135833,
+      "beginMs": 0.002375,
+      "commitMs": 0.097208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.136375,
+      "beginMs": 0.0025,
+      "commitMs": 0.623709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.302417,
+      "beginMs": 0.00325,
+      "commitMs": 0.0875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1055,
+      "beginMs": 0.002333,
+      "commitMs": 0.050792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.093334,
+      "beginMs": 0.002291,
+      "commitMs": 0.139916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.086667,
+      "beginMs": 0.001958,
+      "commitMs": 0.047917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.319916,
+      "beginMs": 0.004625,
+      "commitMs": 0.109958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.561541,
+      "beginMs": 0.2155,
+      "commitMs": 0.226042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.219625,
+      "beginMs": 0.002542,
+      "commitMs": 0.077833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1145,
+      "beginMs": 0.002416,
+      "commitMs": 0.063166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.102583,
+      "beginMs": 0.002291,
+      "commitMs": 0.05725,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.092458,
+      "beginMs": 0.002042,
+      "commitMs": 0.047,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.082375,
+      "beginMs": 0.001875,
+      "commitMs": 0.043625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.078833,
+      "beginMs": 0.00175,
+      "commitMs": 0.046042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.093167,
+      "beginMs": 0.001958,
+      "commitMs": 0.051792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.091167,
+      "beginMs": 0.002333,
+      "commitMs": 0.050166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.085375,
+      "beginMs": 0.001792,
+      "commitMs": 0.04475,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.081875,
+      "beginMs": 0.001875,
+      "commitMs": 0.047833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.087458,
+      "beginMs": 0.00175,
+      "commitMs": 0.05025,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.086416,
+      "beginMs": 0.001917,
+      "commitMs": 0.053708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.080208,
+      "beginMs": 0.001667,
+      "commitMs": 0.051541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11125,
+      "beginMs": 0.002375,
+      "commitMs": 0.050792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 9.307458,
+      "beginMs": 0.010583,
+      "commitMs": 0.117,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.987625,
+      "beginMs": 0.004667,
+      "commitMs": 0.070041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.531084,
+      "beginMs": 0.004042,
+      "commitMs": 0.340584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.0945,
+      "beginMs": 0.011416,
+      "commitMs": 0.119084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.237459,
+      "beginMs": 0.003667,
+      "commitMs": 0.102125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.075208,
+      "beginMs": 0.003167,
+      "commitMs": 0.106584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.173875,
+      "beginMs": 0.004083,
+      "commitMs": 0.076125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.122792,
+      "beginMs": 0.002583,
+      "commitMs": 0.050708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.126667,
+      "beginMs": 0.002084,
+      "commitMs": 0.124667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.245291,
+      "beginMs": 0.0025,
+      "commitMs": 0.05575,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.377833,
+      "beginMs": 0.002833,
+      "commitMs": 0.62675,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.266958,
+      "beginMs": 0.003541,
+      "commitMs": 0.228916,
+      "checkpoint": {
+        "ms": 1.576167,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.651917,
+      "beginMs": 0.009417,
+      "commitMs": 0.433041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.766959,
+      "beginMs": 0.005083,
+      "commitMs": 0.338542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.720458,
+      "beginMs": 0.008875,
+      "commitMs": 0.336375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.221375,
+      "beginMs": 0.003084,
+      "commitMs": 0.078709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.169375,
+      "beginMs": 0.003,
+      "commitMs": 0.071958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.474416,
+      "beginMs": 0.003875,
+      "commitMs": 0.093375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.86825,
+      "beginMs": 0.004958,
+      "commitMs": 0.335375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.264917,
+      "beginMs": 0.004458,
+      "commitMs": 0.116708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.578125,
+      "beginMs": 0.008417,
+      "commitMs": 0.172292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.681083,
+      "beginMs": 0.003,
+      "commitMs": 0.0685,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.100208,
+      "beginMs": 0.002209,
+      "commitMs": 0.400084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1315,
+      "beginMs": 0.002292,
+      "commitMs": 0.052416,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.0925,
+      "beginMs": 0.002042,
+      "commitMs": 0.059375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.141833,
+      "beginMs": 0.003875,
+      "commitMs": 0.058959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.092042,
+      "beginMs": 0.002417,
+      "commitMs": 0.050667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.094333,
+      "beginMs": 0.001792,
+      "commitMs": 0.077625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.090958,
+      "beginMs": 0.002,
+      "commitMs": 0.058209,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.462667,
+      "beginMs": 0.008583,
+      "commitMs": 0.123709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.243125,
+      "beginMs": 0.003458,
+      "commitMs": 0.066958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.105542,
+      "beginMs": 0.002084,
+      "commitMs": 0.135708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.24275,
+      "beginMs": 0.003041,
+      "commitMs": 0.0605,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.604,
+      "beginMs": 0.002625,
+      "commitMs": 0.085666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.109333,
+      "beginMs": 0.002,
+      "commitMs": 0.09575,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.221542,
+      "beginMs": 0.00325,
+      "commitMs": 0.103625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.138125,
+      "beginMs": 0.002541,
+      "commitMs": 0.062458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.100708,
+      "beginMs": 0.001959,
+      "commitMs": 0.073959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.169292,
+      "beginMs": 0.002958,
+      "commitMs": 0.096542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.150333,
+      "beginMs": 0.0055,
+      "commitMs": 0.093542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.135375,
+      "beginMs": 0.002375,
+      "commitMs": 0.457334,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.189084,
+      "beginMs": 0.002791,
+      "commitMs": 0.098208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.16075,
+      "beginMs": 0.00325,
+      "commitMs": 0.090833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.138417,
+      "beginMs": 0.002375,
+      "commitMs": 0.07725,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.134417,
+      "beginMs": 0.002292,
+      "commitMs": 0.072792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.102334,
+      "beginMs": 0.002042,
+      "commitMs": 0.067125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.146875,
+      "beginMs": 0.002375,
+      "commitMs": 0.061125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.129458,
+      "beginMs": 0.002708,
+      "commitMs": 0.057959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.099625,
+      "beginMs": 0.005,
+      "commitMs": 0.095458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.344667,
+      "beginMs": 0.003791,
+      "commitMs": 0.1135,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.521916,
+      "beginMs": 0.008875,
+      "commitMs": 0.2245,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.232791,
+      "beginMs": 0.003416,
+      "commitMs": 0.075167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.103125,
+      "beginMs": 0.021834,
+      "commitMs": 0.370917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.253334,
+      "beginMs": 0.003291,
+      "commitMs": 0.078459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.126458,
+      "beginMs": 0.002667,
+      "commitMs": 0.053625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.112,
+      "beginMs": 0.002584,
+      "commitMs": 0.056709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.100959,
+      "beginMs": 0.00225,
+      "commitMs": 0.098958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.214375,
+      "beginMs": 0.003083,
+      "commitMs": 0.090375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.132,
+      "beginMs": 0.0025,
+      "commitMs": 0.05025,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.104625,
+      "beginMs": 0.002375,
+      "commitMs": 0.052333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.0965,
+      "beginMs": 0.002125,
+      "commitMs": 0.058958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.128917,
+      "beginMs": 0.002833,
+      "commitMs": 0.057375,
+      "checkpoint": {
+        "ms": 0.715167,
+        "state": [
+          0,
+          157,
+          157
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.121458,
+      "beginMs": 0.002334,
+      "commitMs": 0.091833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.103208,
+      "beginMs": 0.002167,
+      "commitMs": 0.044917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.095083,
+      "beginMs": 0.002042,
+      "commitMs": 0.048625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.114917,
+      "beginMs": 0.002208,
+      "commitMs": 0.048875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.10175,
+      "beginMs": 0.001917,
+      "commitMs": 0.046583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.096541,
+      "beginMs": 0.002,
+      "commitMs": 0.045917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.094792,
+      "beginMs": 0.001792,
+      "commitMs": 0.057125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 6.501625,
+      "beginMs": 0.005041,
+      "commitMs": 0.357125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.855666,
+      "beginMs": 0.009666,
+      "commitMs": 0.338166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.96625,
+      "beginMs": 0.027041,
+      "commitMs": 0.161542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.399458,
+      "beginMs": 0.0075,
+      "commitMs": 0.833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 13.64375,
+      "beginMs": 0.235,
+      "commitMs": 0.238042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.563375,
+      "beginMs": 0.01475,
+      "commitMs": 0.14275,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.352625,
+      "beginMs": 0.004209,
+      "commitMs": 0.096375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.814125,
+      "beginMs": 0.00825,
+      "commitMs": 1.213625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.3295,
+      "beginMs": 0.003333,
+      "commitMs": 0.137625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.175125,
+      "beginMs": 0.46475,
+      "commitMs": 0.347417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.386791,
+      "beginMs": 0.009791,
+      "commitMs": 3.237625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.354375,
+      "beginMs": 0.0165,
+      "commitMs": 0.144084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.212208,
+      "beginMs": 0.003833,
+      "commitMs": 0.0675,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1345,
+      "beginMs": 0.002583,
+      "commitMs": 0.056875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.611,
+      "beginMs": 0.00275,
+      "commitMs": 0.062791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.127291,
+      "beginMs": 0.003042,
+      "commitMs": 0.062459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.610042,
+      "beginMs": 0.002708,
+      "commitMs": 0.057459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1225,
+      "beginMs": 0.00275,
+      "commitMs": 0.058,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.113125,
+      "beginMs": 0.002417,
+      "commitMs": 0.051917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.100667,
+      "beginMs": 0.002167,
+      "commitMs": 0.049875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.09275,
+      "beginMs": 0.002,
+      "commitMs": 0.044417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.090083,
+      "beginMs": 0.001916,
+      "commitMs": 0.049584,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.110417,
+      "beginMs": 0.00225,
+      "commitMs": 0.049375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.103042,
+      "beginMs": 0.002291,
+      "commitMs": 0.053416,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.093375,
+      "beginMs": 0.002125,
+      "commitMs": 0.047416,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.105542,
+      "beginMs": 0.002416,
+      "commitMs": 0.04725,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.201292,
+      "beginMs": 0.002167,
+      "commitMs": 0.048875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.098917,
+      "beginMs": 0.002125,
+      "commitMs": 0.090917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.237792,
+      "beginMs": 0.0045,
+      "commitMs": 0.10575,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.139834,
+      "beginMs": 0.00225,
+      "commitMs": 0.545167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.157583,
+      "beginMs": 0.0025,
+      "commitMs": 0.050958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.101417,
+      "beginMs": 0.001875,
+      "commitMs": 0.054541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.12,
+      "beginMs": 0.002542,
+      "commitMs": 0.052583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.100458,
+      "beginMs": 0.002167,
+      "commitMs": 0.052792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.10275,
+      "beginMs": 0.002041,
+      "commitMs": 0.050417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.829041,
+      "beginMs": 0.01075,
+      "commitMs": 1.176667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.914042,
+      "beginMs": 0.008334,
+      "commitMs": 1.268042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.929166,
+      "beginMs": 0.008333,
+      "commitMs": 0.140625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.717083,
+      "beginMs": 0.015584,
+      "commitMs": 0.117417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.146875,
+      "beginMs": 0.002875,
+      "commitMs": 0.063875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.20025,
+      "beginMs": 0.004875,
+      "commitMs": 0.091625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.156875,
+      "beginMs": 0.002875,
+      "commitMs": 0.066459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.125167,
+      "beginMs": 0.002917,
+      "commitMs": 0.066208,
+      "checkpoint": {
+        "ms": 0.674583,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.599,
+      "beginMs": 0.008125,
+      "commitMs": 0.545208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.178458,
+      "beginMs": 0.004542,
+      "commitMs": 0.118458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.140834,
+      "beginMs": 0.002708,
+      "commitMs": 0.066083,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.131667,
+      "beginMs": 0.003042,
+      "commitMs": 0.056041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.104042,
+      "beginMs": 0.002167,
+      "commitMs": 0.099125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.237041,
+      "beginMs": 0.003292,
+      "commitMs": 0.115333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.187334,
+      "beginMs": 0.003375,
+      "commitMs": 0.072666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.694042,
+      "beginMs": 0.003459,
+      "commitMs": 0.113292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.160583,
+      "beginMs": 0.002875,
+      "commitMs": 0.05575,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.465208,
+      "beginMs": 0.062792,
+      "commitMs": 0.151542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.313667,
+      "beginMs": 0.004375,
+      "commitMs": 0.177375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.391375,
+      "beginMs": 0.003292,
+      "commitMs": 0.075208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.128125,
+      "beginMs": 0.002792,
+      "commitMs": 0.064667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.126042,
+      "beginMs": 0.002792,
+      "commitMs": 0.066708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.261459,
+      "beginMs": 0.002542,
+      "commitMs": 0.086125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.2215,
+      "beginMs": 0.00325,
+      "commitMs": 0.113708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.156584,
+      "beginMs": 0.002708,
+      "commitMs": 0.058625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.101875,
+      "beginMs": 0.001958,
+      "commitMs": 0.050916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.162459,
+      "beginMs": 0.002292,
+      "commitMs": 0.046542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.095833,
+      "beginMs": 0.002,
+      "commitMs": 0.043791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.103416,
+      "beginMs": 0.00325,
+      "commitMs": 0.051917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.092958,
+      "beginMs": 0.002041,
+      "commitMs": 0.044916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.089792,
+      "beginMs": 0.001833,
+      "commitMs": 0.042625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.088792,
+      "beginMs": 0.001709,
+      "commitMs": 0.045666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.115,
+      "beginMs": 0.002167,
+      "commitMs": 0.049,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.147917,
+      "beginMs": 0.002166,
+      "commitMs": 0.099083,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.282292,
+      "beginMs": 0.00375,
+      "commitMs": 0.121166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.18925,
+      "beginMs": 0.003708,
+      "commitMs": 0.061916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.114333,
+      "beginMs": 0.002292,
+      "commitMs": 0.062,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.572875,
+      "beginMs": 0.002625,
+      "commitMs": 0.067541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.129458,
+      "beginMs": 0.002166,
+      "commitMs": 0.05375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.101166,
+      "beginMs": 0.01875,
+      "commitMs": 0.168167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.999083,
+      "beginMs": 0.01025,
+      "commitMs": 0.143625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.353792,
+      "beginMs": 0.003625,
+      "commitMs": 0.082333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.622791,
+      "beginMs": 0.003625,
+      "commitMs": 0.280125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.21575,
+      "beginMs": 0.008709,
+      "commitMs": 0.545416,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.103,
+      "beginMs": 0.004375,
+      "commitMs": 0.129958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.213666,
+      "beginMs": 1.460417,
+      "commitMs": 0.206375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.705042,
+      "beginMs": 0.010208,
+      "commitMs": 0.205791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.79,
+      "beginMs": 0.004208,
+      "commitMs": 0.415166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.302791,
+      "beginMs": 0.0045,
+      "commitMs": 0.088,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.151583,
+      "beginMs": 0.002375,
+      "commitMs": 0.0685,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.175459,
+      "beginMs": 0.003292,
+      "commitMs": 0.123583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.141167,
+      "beginMs": 0.002875,
+      "commitMs": 1.302917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.438375,
+      "beginMs": 0.003667,
+      "commitMs": 0.122709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.148208,
+      "beginMs": 0.002667,
+      "commitMs": 0.05825,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.121584,
+      "beginMs": 0.002208,
+      "commitMs": 0.267875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.129208,
+      "beginMs": 0.002708,
+      "commitMs": 0.071542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.136834,
+      "beginMs": 0.003042,
+      "commitMs": 0.067958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.124541,
+      "beginMs": 0.002417,
+      "commitMs": 0.070125,
+      "checkpoint": {
+        "ms": 0.809209,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.230125,
+      "beginMs": 0.003584,
+      "commitMs": 0.142041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.214375,
+      "beginMs": 0.003709,
+      "commitMs": 0.05925,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.322292,
+      "beginMs": 0.014042,
+      "commitMs": 0.131625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.220084,
+      "beginMs": 0.00275,
+      "commitMs": 0.198959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.766208,
+      "beginMs": 0.003167,
+      "commitMs": 0.347875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.867625,
+      "beginMs": 0.021375,
+      "commitMs": 0.161333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.688833,
+      "beginMs": 0.006375,
+      "commitMs": 0.121792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.193458,
+      "beginMs": 0.003,
+      "commitMs": 0.360167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.170583,
+      "beginMs": 0.002959,
+      "commitMs": 0.082166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.137292,
+      "beginMs": 0.002667,
+      "commitMs": 0.0665,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.130458,
+      "beginMs": 0.002584,
+      "commitMs": 0.061541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.115834,
+      "beginMs": 0.00225,
+      "commitMs": 0.049625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.131375,
+      "beginMs": 0.013291,
+      "commitMs": 0.636208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.756291,
+      "beginMs": 0.004167,
+      "commitMs": 0.129166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.468708,
+      "beginMs": 0.003375,
+      "commitMs": 0.079583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.368084,
+      "beginMs": 0.057,
+      "commitMs": 1.187042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.184,
+      "beginMs": 0.016459,
+      "commitMs": 1.504375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.299083,
+      "beginMs": 0.003625,
+      "commitMs": 0.192917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.224333,
+      "beginMs": 0.453916,
+      "commitMs": 2.654792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.293792,
+      "beginMs": 0.003541,
+      "commitMs": 0.095583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.19425,
+      "beginMs": 0.003209,
+      "commitMs": 0.074042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.13,
+      "beginMs": 0.002625,
+      "commitMs": 0.0745,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.200541,
+      "beginMs": 0.003125,
+      "commitMs": 0.095667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.158292,
+      "beginMs": 0.002958,
+      "commitMs": 0.079167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.18775,
+      "beginMs": 0.002667,
+      "commitMs": 0.080375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.189917,
+      "beginMs": 0.002709,
+      "commitMs": 0.061375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.142708,
+      "beginMs": 0.002792,
+      "commitMs": 0.082041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.127875,
+      "beginMs": 0.002667,
+      "commitMs": 0.05775,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.112667,
+      "beginMs": 0.002166,
+      "commitMs": 0.046875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.1155,
+      "beginMs": 0.002166,
+      "commitMs": 0.048291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.112541,
+      "beginMs": 0.002084,
+      "commitMs": 0.046916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.10175,
+      "beginMs": 0.001917,
+      "commitMs": 0.053292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.125041,
+      "beginMs": 0.002333,
+      "commitMs": 0.049958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.974209,
+      "beginMs": 0.014709,
+      "commitMs": 1.993791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.703,
+      "beginMs": 0.012834,
+      "commitMs": 0.205667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.310041,
+      "beginMs": 0.007084,
+      "commitMs": 0.111791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.18025,
+      "beginMs": 0.01625,
+      "commitMs": 0.184417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.211167,
+      "beginMs": 0.002709,
+      "commitMs": 0.054417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.479958,
+      "beginMs": 0.003208,
+      "commitMs": 0.067667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.141625,
+      "beginMs": 0.002416,
+      "commitMs": 0.055708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.108875,
+      "beginMs": 0.002125,
+      "commitMs": 0.047083,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.108292,
+      "beginMs": 0.001916,
+      "commitMs": 0.044084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.635,
+      "beginMs": 0.00675,
+      "commitMs": 0.127333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 6.930458,
+      "beginMs": 0.01525,
+      "commitMs": 0.225292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.2215,
+      "beginMs": 0.003083,
+      "commitMs": 0.459541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 9.676084,
+      "beginMs": 0.009833,
+      "commitMs": 0.1225,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.215542,
+      "beginMs": 0.002875,
+      "commitMs": 0.070125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.149375,
+      "beginMs": 0.002792,
+      "commitMs": 0.057459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.109209,
+      "beginMs": 0.002292,
+      "commitMs": 0.0515,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.130834,
+      "beginMs": 0.002417,
+      "commitMs": 0.049459,
+      "checkpoint": {
+        "ms": 0.728666,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.197166,
+      "beginMs": 0.003208,
+      "commitMs": 0.090792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.29875,
+      "beginMs": 0.003083,
+      "commitMs": 0.057667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.659708,
+      "beginMs": 0.004583,
+      "commitMs": 0.102666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.459667,
+      "beginMs": 0.002708,
+      "commitMs": 0.186208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.147125,
+      "beginMs": 0.00275,
+      "commitMs": 0.062,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.748542,
+      "beginMs": 0.017833,
+      "commitMs": 0.608875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.516625,
+      "beginMs": 0.004917,
+      "commitMs": 0.115625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.170625,
+      "beginMs": 0.008167,
+      "commitMs": 0.066625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.38775,
+      "beginMs": 0.015708,
+      "commitMs": 0.14175,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.334625,
+      "beginMs": 0.00325,
+      "commitMs": 0.07925,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.139792,
+      "beginMs": 0.002666,
+      "commitMs": 0.062875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.203541,
+      "beginMs": 0.003917,
+      "commitMs": 1.67625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.23775,
+      "beginMs": 0.0045,
+      "commitMs": 0.083291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.146125,
+      "beginMs": 0.002708,
+      "commitMs": 0.055458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.263125,
+      "beginMs": 0.003417,
+      "commitMs": 0.118042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.125292,
+      "beginMs": 0.002125,
+      "commitMs": 0.06175,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.142416,
+      "beginMs": 0.0025,
+      "commitMs": 0.313541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.311625,
+      "beginMs": 0.002625,
+      "commitMs": 0.06525,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.346209,
+      "beginMs": 0.003417,
+      "commitMs": 0.084333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.267042,
+      "beginMs": 0.002625,
+      "commitMs": 0.248209,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.2515,
+      "beginMs": 0.00375,
+      "commitMs": 0.104708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.23525,
+      "beginMs": 0.003375,
+      "commitMs": 0.110084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.022167,
+      "beginMs": 0.008959,
+      "commitMs": 0.102208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.849208,
+      "beginMs": 0.182584,
+      "commitMs": 0.946333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.587666,
+      "beginMs": 0.0405,
+      "commitMs": 0.119167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.5265,
+      "beginMs": 0.00425,
+      "commitMs": 0.0895,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.938083,
+      "beginMs": 0.003625,
+      "commitMs": 0.321666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.117042,
+      "beginMs": 0.005792,
+      "commitMs": 0.071959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.193417,
+      "beginMs": 0.003541,
+      "commitMs": 0.079875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.570584,
+      "beginMs": 0.003416,
+      "commitMs": 0.112541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.928833,
+      "beginMs": 0.005083,
+      "commitMs": 0.108417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.586375,
+      "beginMs": 0.003542,
+      "commitMs": 0.076125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 6.924208,
+      "beginMs": 0.166167,
+      "commitMs": 0.418208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.859792,
+      "beginMs": 0.011208,
+      "commitMs": 0.348709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.685416,
+      "beginMs": 0.003625,
+      "commitMs": 0.127125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.8595,
+      "beginMs": 0.013125,
+      "commitMs": 0.091125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.016875,
+      "beginMs": 0.00925,
+      "commitMs": 0.788334,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.580625,
+      "beginMs": 0.00425,
+      "commitMs": 0.080125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 6.307125,
+      "beginMs": 0.019375,
+      "commitMs": 0.110666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.21075,
+      "beginMs": 0.00475,
+      "commitMs": 2.087416,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.275042,
+      "beginMs": 0.003375,
+      "commitMs": 0.139291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.72875,
+      "beginMs": 0.011333,
+      "commitMs": 0.360375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.194458,
+      "beginMs": 0.004709,
+      "commitMs": 0.079625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.511,
+      "beginMs": 0.005375,
+      "commitMs": 0.07925,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.678166,
+      "beginMs": 0.0115,
+      "commitMs": 0.434,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.627792,
+      "beginMs": 0.012584,
+      "commitMs": 0.115209,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.866,
+      "beginMs": 0.004541,
+      "commitMs": 0.069541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.14575,
+      "beginMs": 0.235083,
+      "commitMs": 0.062125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 14.282125,
+      "beginMs": 0.0165,
+      "commitMs": 3.414542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.848417,
+      "beginMs": 0.0085,
+      "commitMs": 0.126625,
+      "checkpoint": {
+        "ms": 5.189708,
+        "state": [
+          0,
+          157,
+          157
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.350041,
+      "beginMs": 0.010667,
+      "commitMs": 0.538958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.854916,
+      "beginMs": 0.013292,
+      "commitMs": 0.263208,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 5.983791,
+      "beginMs": 0.018334,
+      "commitMs": 1.947541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.84875,
+      "beginMs": 0.0145,
+      "commitMs": 0.365875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.324417,
+      "beginMs": 0.005,
+      "commitMs": 0.102792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.745792,
+      "beginMs": 0.022917,
+      "commitMs": 1.821125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.3605,
+      "beginMs": 0.004167,
+      "commitMs": 0.122125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.627666,
+      "beginMs": 2.152209,
+      "commitMs": 0.2825,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.787667,
+      "beginMs": 0.00675,
+      "commitMs": 4.296875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.630083,
+      "beginMs": 0.004083,
+      "commitMs": 0.068875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.682791,
+      "beginMs": 0.005875,
+      "commitMs": 0.173625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.992708,
+      "beginMs": 0.010333,
+      "commitMs": 0.247042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.608583,
+      "beginMs": 0.006333,
+      "commitMs": 0.432542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.544166,
+      "beginMs": 0.004042,
+      "commitMs": 0.096416,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.827416,
+      "beginMs": 0.0085,
+      "commitMs": 0.480917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.368458,
+      "beginMs": 0.013417,
+      "commitMs": 0.263042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.062292,
+      "beginMs": 0.003791,
+      "commitMs": 0.087292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.266458,
+      "beginMs": 0.002416,
+      "commitMs": 0.06225,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.138834,
+      "beginMs": 0.003041,
+      "commitMs": 0.057709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.149125,
+      "beginMs": 0.003042,
+      "commitMs": 0.059958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.189541,
+      "beginMs": 0.003291,
+      "commitMs": 0.0535,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.216166,
+      "beginMs": 0.002542,
+      "commitMs": 0.077625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11875,
+      "beginMs": 0.002875,
+      "commitMs": 0.093958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.117875,
+      "beginMs": 0.001958,
+      "commitMs": 0.084042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.144125,
+      "beginMs": 0.002875,
+      "commitMs": 0.069959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11725,
+      "beginMs": 0.001916,
+      "commitMs": 0.058334,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.134416,
+      "beginMs": 0.002667,
+      "commitMs": 0.0555,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.12725,
+      "beginMs": 0.002458,
+      "commitMs": 0.050917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.110667,
+      "beginMs": 0.003042,
+      "commitMs": 0.053666,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.13575,
+      "beginMs": 0.002792,
+      "commitMs": 0.055042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11075,
+      "beginMs": 0.001917,
+      "commitMs": 0.052375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.175042,
+      "beginMs": 0.003,
+      "commitMs": 0.056125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.13175,
+      "beginMs": 0.00325,
+      "commitMs": 0.054291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.113958,
+      "beginMs": 0.001875,
+      "commitMs": 0.050333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.109042,
+      "beginMs": 0.001875,
+      "commitMs": 0.059209,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.119167,
+      "beginMs": 0.002083,
+      "commitMs": 0.072167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.113041,
+      "beginMs": 0.002,
+      "commitMs": 0.053792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.112042,
+      "beginMs": 0.002209,
+      "commitMs": 0.050458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.108958,
+      "beginMs": 0.001917,
+      "commitMs": 0.056917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.157166,
+      "beginMs": 0.00275,
+      "commitMs": 0.16975,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.145,
+      "beginMs": 0.002833,
+      "commitMs": 0.089042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.269,
+      "beginMs": 0.003917,
+      "commitMs": 0.09925,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.12975,
+      "beginMs": 0.00225,
+      "commitMs": 0.074875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.212666,
+      "beginMs": 0.004667,
+      "commitMs": 0.123,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.365458,
+      "beginMs": 0.003291,
+      "commitMs": 0.100417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.220541,
+      "beginMs": 0.003625,
+      "commitMs": 0.5155,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.222,
+      "beginMs": 0.002875,
+      "commitMs": 0.074541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.461292,
+      "beginMs": 0.004959,
+      "commitMs": 0.087625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.148417,
+      "beginMs": 0.00275,
+      "commitMs": 0.3645,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.156125,
+      "beginMs": 0.00225,
+      "commitMs": 0.060542,
+      "checkpoint": {
+        "ms": 4.701125,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.342125,
+      "beginMs": 0.005,
+      "commitMs": 0.1945,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.179917,
+      "beginMs": 0.003208,
+      "commitMs": 0.084459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.232666,
+      "beginMs": 0.003125,
+      "commitMs": 0.07175,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.956209,
+      "beginMs": 0.004375,
+      "commitMs": 0.098833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.142542,
+      "beginMs": 0.002833,
+      "commitMs": 1.310459,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.2685,
+      "beginMs": 0.003208,
+      "commitMs": 0.095458,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.144167,
+      "beginMs": 0.003292,
+      "commitMs": 0.051792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.12,
+      "beginMs": 0.002166,
+      "commitMs": 0.049667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.123542,
+      "beginMs": 0.002625,
+      "commitMs": 0.052416,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.130583,
+      "beginMs": 0.002542,
+      "commitMs": 0.0505,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.177333,
+      "beginMs": 0.003125,
+      "commitMs": 0.059625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.123333,
+      "beginMs": 0.002041,
+      "commitMs": 0.050708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.124041,
+      "beginMs": 0.002417,
+      "commitMs": 0.090917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.130917,
+      "beginMs": 0.002333,
+      "commitMs": 0.058541,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.137958,
+      "beginMs": 0.002333,
+      "commitMs": 0.047709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.120375,
+      "beginMs": 0.00225,
+      "commitMs": 0.048667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.119875,
+      "beginMs": 0.002167,
+      "commitMs": 0.053166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.114333,
+      "beginMs": 0.002042,
+      "commitMs": 0.051792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.208125,
+      "beginMs": 0.0065,
+      "commitMs": 0.112875,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.173292,
+      "beginMs": 0.002708,
+      "commitMs": 0.065791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.126209,
+      "beginMs": 0.002125,
+      "commitMs": 0.064417,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.124375,
+      "beginMs": 0.002292,
+      "commitMs": 0.05025,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.11575,
+      "beginMs": 0.002083,
+      "commitMs": 7.126791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.967208,
+      "beginMs": 0.004125,
+      "commitMs": 0.211042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.248334,
+      "beginMs": 0.003583,
+      "commitMs": 0.120834,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.228917,
+      "beginMs": 0.003042,
+      "commitMs": 0.816583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.236459,
+      "beginMs": 0.002959,
+      "commitMs": 0.068583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.152375,
+      "beginMs": 0.002292,
+      "commitMs": 0.062667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.19725,
+      "beginMs": 0.003708,
+      "commitMs": 0.878375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.383041,
+      "beginMs": 0.006667,
+      "commitMs": 0.119084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.240833,
+      "beginMs": 0.0035,
+      "commitMs": 0.09825,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.74,
+      "beginMs": 0.004542,
+      "commitMs": 0.566084,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.741417,
+      "beginMs": 0.004417,
+      "commitMs": 0.083333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.185292,
+      "beginMs": 0.002333,
+      "commitMs": 0.084292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.174,
+      "beginMs": 0.00325,
+      "commitMs": 0.069333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.138125,
+      "beginMs": 0.002208,
+      "commitMs": 0.056958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.15475,
+      "beginMs": 0.002958,
+      "commitMs": 0.06075,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.129417,
+      "beginMs": 0.002292,
+      "commitMs": 0.123625,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.12225,
+      "beginMs": 0.002084,
+      "commitMs": 0.057083,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.150875,
+      "beginMs": 0.005541,
+      "commitMs": 0.084542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.559125,
+      "beginMs": 0.00275,
+      "commitMs": 0.110792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.270208,
+      "beginMs": 0.003708,
+      "commitMs": 0.154958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.203416,
+      "beginMs": 0.002958,
+      "commitMs": 0.079125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.189709,
+      "beginMs": 0.002125,
+      "commitMs": 0.065292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.16775,
+      "beginMs": 0.00225,
+      "commitMs": 0.071833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.345333,
+      "beginMs": 0.008208,
+      "commitMs": 0.146042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.94125,
+      "beginMs": 0.019083,
+      "commitMs": 1.979042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.681084,
+      "beginMs": 0.017791,
+      "commitMs": 1.932291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.359,
+      "beginMs": 0.003417,
+      "commitMs": 0.105959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 9.473667,
+      "beginMs": 0.011709,
+      "commitMs": 0.150542,
+      "checkpoint": {
+        "ms": 2.1795,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.49325,
+      "beginMs": 0.004,
+      "commitMs": 0.195,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.477416,
+      "beginMs": 0.037791,
+      "commitMs": 2.92325,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.832375,
+      "beginMs": 0.008084,
+      "commitMs": 0.105917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.52575,
+      "beginMs": 0.006125,
+      "commitMs": 0.112125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.762708,
+      "beginMs": 0.013208,
+      "commitMs": 0.111959,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.444708,
+      "beginMs": 0.005167,
+      "commitMs": 0.124041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.301917,
+      "beginMs": 0.00475,
+      "commitMs": 0.103,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 12.998125,
+      "beginMs": 0.011083,
+      "commitMs": 0.167667,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.2805,
+      "beginMs": 0.003,
+      "commitMs": 1.722708,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.347209,
+      "beginMs": 0.003667,
+      "commitMs": 0.121042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.174625,
+      "beginMs": 0.002917,
+      "commitMs": 0.104542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 9.009959,
+      "beginMs": 0.011583,
+      "commitMs": 0.11025,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.041375,
+      "beginMs": 0.009417,
+      "commitMs": 0.140166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.890916,
+      "beginMs": 0.003875,
+      "commitMs": 4.911041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.776291,
+      "beginMs": 0.005167,
+      "commitMs": 2.896791,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.371042,
+      "beginMs": 0.004125,
+      "commitMs": 0.088375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.659,
+      "beginMs": 0.005084,
+      "commitMs": 1.348833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.325833,
+      "beginMs": 0.004084,
+      "commitMs": 0.104334,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.171791,
+      "beginMs": 0.00275,
+      "commitMs": 0.102917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.142375,
+      "beginMs": 0.002375,
+      "commitMs": 0.057166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.23,
+      "beginMs": 0.004834,
+      "commitMs": 0.188583,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.753333,
+      "beginMs": 0.006541,
+      "commitMs": 0.094291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 9.106375,
+      "beginMs": 0.004917,
+      "commitMs": 3.141333,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.365416,
+      "beginMs": 0.019958,
+      "commitMs": 0.143375,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.328458,
+      "beginMs": 0.004375,
+      "commitMs": 0.122834,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 5.675833,
+      "beginMs": 0.05375,
+      "commitMs": 0.175125,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.2635,
+      "beginMs": 0.003833,
+      "commitMs": 0.096041,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.790958,
+      "beginMs": 0.004917,
+      "commitMs": 0.113916,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.402708,
+      "beginMs": 0.005375,
+      "commitMs": 0.107917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.188875,
+      "beginMs": 0.008833,
+      "commitMs": 0.147542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.443,
+      "beginMs": 0.005166,
+      "commitMs": 0.11675,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.629583,
+      "beginMs": 0.004709,
+      "commitMs": 0.100166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.189833,
+      "beginMs": 0.002833,
+      "commitMs": 0.068291,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.158292,
+      "beginMs": 0.002875,
+      "commitMs": 0.184958,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.354709,
+      "beginMs": 0.790791,
+      "commitMs": 0.116917,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 2.369625,
+      "beginMs": 0.006167,
+      "commitMs": 0.239042,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 5.011042,
+      "beginMs": 0.01225,
+      "commitMs": 0.318,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 4.834125,
+      "beginMs": 0.005334,
+      "commitMs": 0.296,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.23825,
+      "beginMs": 0.235167,
+      "commitMs": 0.102709,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 1.319667,
+      "beginMs": 0.0125,
+      "commitMs": 0.089792,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.667333,
+      "beginMs": 0.003584,
+      "commitMs": 0.075542,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.169041,
+      "beginMs": 0.002875,
+      "commitMs": 0.058166,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.127,
+      "beginMs": 0.002208,
+      "commitMs": 0.060167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.122667,
+      "beginMs": 0.009208,
+      "commitMs": 0.228,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 46.016292,
+      "beginMs": 0.013208,
+      "commitMs": 0.126292,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.523292,
+      "beginMs": 0.006,
+      "commitMs": 0.1025,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.429417,
+      "beginMs": 0.004625,
+      "commitMs": 0.1215,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.279917,
+      "beginMs": 0.003875,
+      "commitMs": 0.112167,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 0.178125,
+      "beginMs": 0.003292,
+      "commitMs": 0.094833,
+      "checkpoint": null,
+      "walBytes": 20632
+    },
+    {
+      "openMs": 3.077042,
+      "beginMs": 0.020417,
+      "commitMs": 0.855458,
+      "checkpoint": {
+        "ms": 7.534792,
+        "state": [
+          0,
+          156,
+          156
+        ]
+      },
+      "walBytes": 20632
+    }
+  ],
+  "contention": {
+    "beginMs": 0.002667
+  },
+  "kernelTracing": false,
+  "summary": {
+    "openMs": {
+      "p50": 0.182833,
+      "p95": 4.444708,
+      "p99": 9.473667,
+      "max": 46.016292
+    },
+    "beginMs": {
+      "p50": 0.003083,
+      "p95": 0.0165,
+      "p99": 0.235083,
+      "max": 2.152209
+    },
+    "commitMs": {
+      "p50": 0.093542,
+      "p95": 1.348833,
+      "p99": 4.296875,
+      "max": 23.858167
+    }
+  }
+}

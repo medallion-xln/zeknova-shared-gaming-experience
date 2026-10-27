@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>WHEP media-decode test</title>
+<style>body{background:#0b1c25;color:#e2eee8;font:13px system-ui,sans-serif;margin:20px}
+video{width:640px;height:360px;background:#000;border:1px solid #355957}
+#meta{font:11px monospace;white-space:pre-wrap;margin-top:10px;color:#9fe6c3}</style>
+</head><body>
+<h1>WHEP media-decode harness</h1>
+<video id="v" autoplay playsinline muted></video>
+<div id="state">idle</div>
+<button id="connect">Connect</button>
+<button id="close">Close</button>
+<pre id="meta"></pre>
+<script type="module">
+  import { WHEPReceiver } from '/packages/neural-bridge/src/index.js';
+  let receiver = null;
+  let frames = 0, presented = [], firstFrameAt = null;
+  const v = document.getElementById('v');
+  const stateEl = document.getElementById('state');
+  const metaEl = document.getElementById('meta');
+  function onFrame(now, metadata) {
+    frames++;
+    presented.push({ now, mediaTime: metadata.mediaTime, presentedFrames: metadata.presentedFrames, expectedDisplayTime: metadata.expectedDisplayTime, width: metadata.width, height: metadata.height });
+    if (firstFrameAt === null) firstFrameAt = performance.now();
+    if (presented.length > 25) presented.shift();
+    render();
+  }
+  function render() {
+    metaEl.textContent = JSON.stringify({
+      frames, firstFrameLagMs: firstFrameAt === null ? null : Math.round(firstFrameAt),
+      last: presented[presented.length - 1] ?? null,
+      videoWidth: v.videoWidth, videoHeight: v.videoHeight,
+      readyState: v.readyState, paused: v.paused, currentTime: v.currentTime,
+      receiverState: receiver?.state,
+      receiverStats: receiver?.status(),
+    }, null, 1);
+  }
+  document.getElementById('connect').onclick = async () => {
+    v.requestVideoFrameCallback?.(onFrame);
+    receiver = new WHEPReceiver({
+      url: 'http://127.0.0.1:8889/native-reference/whep',
+      video: v,
+      onState: (s) => { stateEl.textContent = s; render(); },
+      onTrack: () => render(),
+      onError: (e) => { stateEl.textContent = 'ERROR ' + e; render(); },
+    });
+    window.__receiver = receiver;
+    await receiver.start();
+    render();
+  };
+  document.getElementById('close').onclick = () => { receiver?.close(); receiver = null; render(); };
+  window.__getState = () => ({ frames, presented, receiverState: receiver?.status() });
+</script>
+</body></html>

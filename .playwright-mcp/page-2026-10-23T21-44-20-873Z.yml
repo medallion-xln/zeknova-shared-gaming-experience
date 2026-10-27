@@ -1,0 +1,166 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - strong [ref=f6e3]:
+      - text: ZEKNOVA
+      - generic [ref=f6e4]: STUDIO
+    - generic [ref=f6e5]:
+      - text: Project
+      - combobox "Project" [ref=f6e6]:
+        - option "Orbital Outpost" [selected]
+        - option "Beacon Haven"
+        - option "Empty world"
+    - button "Open" [ref=f6e7] [cursor=pointer]
+    - button "New" [ref=f6e8] [cursor=pointer]
+    - button "Import JSON" [ref=f6e9] [cursor=pointer]
+    - navigation "Workspace" [ref=f6e10]:
+      - button "World" [pressed] [ref=f6e11] [cursor=pointer]
+      - button "Simulate" [ref=f6e12] [cursor=pointer]
+      - button "Render" [ref=f6e13] [cursor=pointer]
+      - link "Play ↗" [ref=f6e14] [cursor=pointer]:
+        - /url: /examples/orbital-outpost/
+  - generic [ref=f6e15]:
+    - button "＋ Primitive" [ref=f6e16] [cursor=pointer]
+    - button "＋ Crate prefab" [ref=f6e17] [cursor=pointer]
+    - button "Delete" [disabled] [ref=f6e18]
+    - button "Undo" [disabled] [ref=f6e20]
+    - button "Redo" [disabled] [ref=f6e21]
+    - button "Save" [ref=f6e22] [cursor=pointer]
+    - button "Reload" [ref=f6e23] [cursor=pointer]
+    - button "Export JSON" [ref=f6e24] [cursor=pointer]
+    - generic [ref=f6e25]: Scene revision 0 · Saved
+  - main [ref=f6e26]:
+    - complementary [ref=f6e27]:
+      - heading "Scene 5" [level=2] [ref=f6e28]:
+        - text: Scene
+        - generic [ref=f6e29]: "5"
+      - searchbox "Search hierarchy" [ref=f6e30]
+      - group "Scene hierarchy" [ref=f6e31]:
+        - group [ref=f6e32]:
+          - generic "World" [ref=f6e33] [cursor=pointer]
+          - generic [ref=f6e34]:
+            - button "Landing platform, 1 of 5" [ref=f6e35] [cursor=pointer]: ◇Landing platform
+            - button "Landing platform visibility" [ref=f6e36] [cursor=pointer]: ◉
+            - button "Landing platform lock" [ref=f6e37] [cursor=pointer]: ▣
+          - generic [ref=f6e38]:
+            - button "Explorer, 2 of 5" [ref=f6e39] [cursor=pointer]: ◇Explorer
+            - button "Explorer visibility" [ref=f6e40] [cursor=pointer]: ◉
+            - button "Explorer lock" [ref=f6e41] [cursor=pointer]: ▣
+          - generic [ref=f6e42]:
+            - button "Cargo barrier, 3 of 5" [ref=f6e43] [cursor=pointer]: ◇Cargo barrier
+            - button "Cargo barrier visibility" [ref=f6e44] [cursor=pointer]: ◉
+            - button "Cargo barrier lock" [ref=f6e45] [cursor=pointer]: ▣
+          - generic [ref=f6e46]:
+            - button "Energy cell, 4 of 5" [ref=f6e47] [cursor=pointer]: ◇Energy cell
+            - button "Energy cell visibility" [ref=f6e48] [cursor=pointer]: ◉
+            - button "Energy cell lock" [ref=f6e49] [cursor=pointer]: ▣
+          - generic [ref=f6e50]:
+            - button "Antenna foundation, 5 of 5" [ref=f6e51] [cursor=pointer]: ◇Antenna foundation
+            - button "Antenna foundation visibility" [ref=f6e52] [cursor=pointer]: ◉
+            - button "Antenna foundation lock" [ref=f6e53] [cursor=pointer]: ▣
+      - group [ref=f6e54]:
+        - generic "Project assets" [ref=f6e55] [cursor=pointer]
+        - searchbox "Search assets" [ref=f6e56]
+        - button "Import JSON / static GLB" [ref=f6e57] [cursor=pointer]
+        - button "Place selected asset" [disabled] [ref=f6e58]
+        - paragraph [ref=f6e59]: Procedural primitives · no external media
+      - group [ref=f6e60]:
+        - generic "Prefabs" [ref=f6e61] [cursor=pointer]
+        - option "crate" [selected]
+      - group [ref=f6e62]:
+        - generic "Systems" [ref=f6e63] [cursor=pointer]
+    - separator "Resize scene panel" [ref=f6e64]
+    - generic [ref=f6e65]:
+      - generic [ref=f6e66]:
+        - combobox "Transform tool" [ref=f6e67]:
+          - option "Move" [selected]
+          - option "Rotate"
+          - option "Scale"
+        - combobox "Transform space" [ref=f6e68]:
+          - option "World" [selected]
+          - option "Local"
+        - generic [ref=f6e69]:
+          - checkbox "Snap" [ref=f6e70]
+          - text: Snap
+        - spinbutton "Snap increment" [ref=f6e71]: "0.5"
+        - generic [ref=f6e72]:
+          - checkbox "Grid" [checked] [ref=f6e73]
+          - text: Grid
+        - button "Focus F" [ref=f6e74] [cursor=pointer]
+        - button "Reset view" [ref=f6e75] [cursor=pointer]
+        - combobox "Camera projection" [ref=f6e76]:
+          - option "Perspective" [selected]
+          - option "Orthographic"
+      - generic:
+        - generic: main · Perspective
+        - generic: WEBGPU · native
+      - generic "3D scene viewport" [ref=f6e77]
+      - generic: "Drag background: orbit · right drag: pan · wheel: zoom · F: focus · Esc: cancel · angles in radians"
+    - separator "Resize inspector panel" [ref=f6e78]
+    - complementary [ref=f6e79]:
+      - heading "Inspector" [level=2] [ref=f6e80]
+      - paragraph [ref=f6e81]: Select an entity
+      - generic [ref=f6e82]:
+        - textbox "Entity name" [disabled] [ref=f6e83]
+        - button "Rename" [disabled] [ref=f6e84]
+        - button "Duplicate" [disabled] [ref=f6e85]
+      - paragraph
+      - group [ref=f6e86]:
+        - generic "Selection offsets · 0 selected" [ref=f6e87] [cursor=pointer]
+      - group "Transform" [ref=f6e89]:
+        - generic [ref=f6e91]:
+          - generic [ref=f6e92]:
+            - generic [ref=f6e93]: position
+            - spinbutton "position X" [disabled] [ref=f6e94]: "0"
+            - spinbutton "position Y" [disabled] [ref=f6e95]: "0"
+            - spinbutton "position Z" [disabled] [ref=f6e96]: "0"
+          - generic [ref=f6e97]:
+            - generic [ref=f6e98]: rotation
+            - spinbutton "rotation X" [disabled] [ref=f6e99]: "0"
+            - spinbutton "rotation Y" [disabled] [ref=f6e100]: "0"
+            - spinbutton "rotation Z" [disabled] [ref=f6e101]: "0"
+          - generic [ref=f6e102]:
+            - generic [ref=f6e103]: scale
+            - spinbutton "scale X" [disabled] [ref=f6e104]: "1"
+            - spinbutton "scale Y" [disabled] [ref=f6e105]: "1"
+            - spinbutton "scale Z" [disabled] [ref=f6e106]: "1"
+        - button "Apply transform" [disabled] [ref=f6e107]
+      - heading "Components" [level=3] [ref=f6e108]
+      - generic [ref=f6e109]: No selection
+      - group [ref=f6e110]:
+        - generic "AI observability" [ref=f6e111] [cursor=pointer]
+      - group [ref=f6e112]:
+        - generic "Render diagnostics" [ref=f6e113] [cursor=pointer]
+  - group [ref=f6e115]:
+    - generic "Gameplay rules · event → condition → action" [ref=f6e116] [cursor=pointer]
+    - option "Movement input → move with collision" [selected]
+    - option "Enter radius → collect resource"
+    - option "B input + resource condition → build prefab"
+    - option "E input + resource condition → activate"
+    - option "Counter threshold → complete objective"
+  - generic [ref=f6e117]:
+    - generic [ref=f6e118]:
+      - heading "Event timeline All channels" [level=2] [ref=f6e119]:
+        - text: Event timeline
+        - combobox "Filter events" [ref=f6e120]:
+          - option "All channels" [selected]
+          - option "Authoritative"
+          - option "Visualization"
+      - list
+    - generic [ref=f6e121]:
+      - heading "AI changeset DETERMINISTIC MOCK" [level=2] [ref=f6e122]:
+        - text: AI changeset
+        - generic [ref=f6e123]: DETERMINISTIC MOCK
+      - generic [ref=f6e124]:
+        - textbox "Mock request label" [ref=f6e125]: Add a supply crate
+        - combobox "Mock fixture" [ref=f6e126]:
+          - option "Add entity" [selected]
+          - option "Move selection"
+          - option "Remove selection"
+          - option "Haven objective (mock)"
+        - button "Preview" [ref=f6e127] [cursor=pointer]
+      - generic [ref=f6e128]: Choose a mock fixture to preview.
+      - button "Approve & commit" [disabled] [ref=f6e129]
+      - button "Reject" [disabled] [ref=f6e130]
+  - contentinfo [ref=f6e131]:
+    - status [ref=f6e132]: Opened Orbital Outpost · isolated local scene
+    - generic [ref=f6e133]: Authoring ≠ multiplayer authority

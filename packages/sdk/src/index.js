@@ -1,6 +1,7 @@
 import {inspectGLB,validateModel} from './model.js';
 export {inspectGLB};
 export {installProjectRules} from './rules.js';
+export {createCameraDirector,MODES,resolveOcclusion,CAMERA_PRESET_SCHEMA,validateCameraPreset} from './camera.js';
 import {validateRules} from './rules.js';
 export {validateRules};
 import {SDKError,fail,validateDefinition,validateFields,builtinDefinitions,migrateProject} from './schema.js';

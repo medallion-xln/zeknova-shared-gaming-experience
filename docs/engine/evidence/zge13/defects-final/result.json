@@ -1,0 +1,830 @@
+{
+  "scope": "physical original-game controls; natural 52-second diplomacy timer; local synthetic profile; response loss after actual commit; local logout/login through session API; no game-state or prototype mutation",
+  "clipping": [
+    {
+      "size": {
+        "width": 1440,
+        "height": 1000
+      },
+      "before": {
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000,
+          "top": 0,
+          "right": 1440,
+          "bottom": 1000,
+          "left": 0
+        },
+        "scroll": 0
+      },
+      "after": {
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000,
+          "top": 0,
+          "right": 1440,
+          "bottom": 1000,
+          "left": 0
+        },
+        "scroll": 0
+      }
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "before": {
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768,
+          "top": 0,
+          "right": 1024,
+          "bottom": 768,
+          "left": 0
+        },
+        "scroll": 0
+      },
+      "after": {
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768,
+          "top": 0,
+          "right": 1024,
+          "bottom": 768,
+          "left": 0
+        },
+        "scroll": 0
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 600
+      },
+      "before": {
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 900,
+          "height": 650,
+          "top": 0,
+          "right": 900,
+          "bottom": 650,
+          "left": 0
+        },
+        "scroll": 0
+      },
+      "after": {
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 900,
+          "height": 650,
+          "top": 0,
+          "right": 900,
+          "bottom": 650,
+          "left": 0
+        },
+        "scroll": 0
+      }
+    }
+  ],
+  "modal": {
+    "before": {
+      "position": [
+        -1.618383022939301,
+        4.827307889828002,
+        41.17391388796681
+      ],
+      "xp": 30,
+      "health": 1,
+      "camera": [
+        26.381616977060705,
+        46.827307889828,
+        69.17391388796682
+      ],
+      "buildings": [],
+      "resources": {
+        "energy": 42,
+        "water": 38,
+        "minerals": 103.75,
+        "iron": 3,
+        "biomass": 60.89846168001051,
+        "timber": 35,
+        "data": 18,
+        "credits": 2,
+        "trust": 52
+      },
+      "missions": {
+        "resourcesCollected": 0,
+        "enemiesDefeated": 0,
+        "treesChopped": 2,
+        "rockMinedAt": {
+          "orebelt-1": 1792686830473
+        },
+        "biomeStats": {
+          "highlands": {
+            "rocksMined": 1,
+            "treesChopped": 2
+          }
+        },
+        "commissioningEncounters": {},
+        "personalObjectiveIds": [
+          "mine-rock",
+          "chop-tree"
+        ],
+        "biomeVisited": [
+          "highlands"
+        ],
+        "bossDefeats": {},
+        "claimedBossRewards": [],
+        "worldJuggernauts": {
+          "world-juggernaut-forest-1": {
+            "id": "world-juggernaut-forest-1",
+            "biome": "forest",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-forest-2": {
+            "id": "world-juggernaut-forest-2",
+            "biome": "forest",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-1": {
+            "id": "world-juggernaut-desert-1",
+            "biome": "desert",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-2": {
+            "id": "world-juggernaut-desert-2",
+            "biome": "desert",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-1": {
+            "id": "world-juggernaut-highlands-1",
+            "biome": "highlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-2": {
+            "id": "world-juggernaut-highlands-2",
+            "biome": "highlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-1": {
+            "id": "world-juggernaut-arctic-1",
+            "biome": "arctic",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-2": {
+            "id": "world-juggernaut-arctic-2",
+            "biome": "arctic",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-1": {
+            "id": "world-juggernaut-wetlands-1",
+            "biome": "wetlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-2": {
+            "id": "world-juggernaut-wetlands-2",
+            "biome": "wetlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          }
+        },
+        "bossEncounterFlow": {
+          "state": "WAITING_FOR_PREREQUISITES",
+          "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Desert AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+          "missionId": "grid",
+          "updatedAt": 1792686830491
+        }
+      },
+      "boss": null,
+      "paused": false,
+      "backend": "webgpu",
+      "assets": {
+        "cache": {
+          "requests": 355,
+          "matched": 87,
+          "hits": 0,
+          "joined": 0,
+          "misses": 87,
+          "bytesDownloaded": 119673253,
+          "bytesServedFromCache": 0,
+          "evictions": 63,
+          "bypassed": 268,
+          "errors": 0,
+          "entries": 24,
+          "bytes": 66482000,
+          "budgetBytes": 67108864,
+          "inFlight": 0,
+          "top": [
+            {
+              "url": "village-kit/timber-walkway-b.glb",
+              "hits": 0,
+              "kb": 48
+            },
+            {
+              "url": "desert-village/elder-communal-dome.glb",
+              "hits": 0,
+              "kb": 5509
+            },
+            {
+              "url": "desert-village/sanctuary-dome.glb",
+              "hits": 0,
+              "kb": 3610
+            },
+            {
+              "url": "forest-village/outdoor-crafting-station.glb",
+              "hits": 0,
+              "kb": 975
+            },
+            {
+              "url": "desert-village/sandstone-dome-dwelling.glb",
+              "hits": 0,
+              "kb": 4664
+            }
+          ]
+        },
+        "parsed": {
+          "loads": 86,
+          "hits": 18,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 84,
+          "cancelled": 0,
+          "entries": 2,
+          "pending": 0,
+          "bytes": 49610572,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 49,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "loader": {
+          "patched": true,
+          "pending": [],
+          "completed": 86,
+          "failures": 0,
+          "stalls": 0,
+          "loadMs": {
+            "p50": 34.7,
+            "p95": 121.3,
+            "max": 225.5
+          },
+          "stallMs": 15000
+        },
+        "workers": {
+          "live": 5,
+          "created": 5,
+          "terminated": 0,
+          "errors": 0,
+          "byScript": {
+            "blob:": 4,
+            "workers/adaptive-runtime-worker.js": 1
+          }
+        }
+      },
+      "persistence": {
+        "state": "saved",
+        "revision": 7,
+        "lastAck": {
+          "seq": 8,
+          "revision": 7,
+          "at": 1792686875515,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 8,
+          "coalesced": 1,
+          "posted": 7,
+          "acked": 7,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 8,
+        "interceptedGets": 1,
+        "loadedExtension": null,
+        "restoredXp": null
+      },
+      "presentation": {
+        "presentation": {
+          "mode": "NATIVE",
+          "label": "NATIVE",
+          "fallbackReason": null,
+          "mock": null,
+          "allowMock": true,
+          "history": []
+        },
+        "native": {
+          "id": "native-three",
+          "initialized": true,
+          "backend": "webgpu",
+          "available": true,
+          "presented": 0,
+          "drawCalls": 547,
+          "triangles": 5334891,
+          "geometries": 930,
+          "textures": 143,
+          "canvas": {
+            "width": 1440,
+            "height": 1000
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "capture": {
+          "id": "reference-capture",
+          "available": true,
+          "width": 1280,
+          "height": 720,
+          "captures": 0,
+          "nextFrameIndex": 0,
+          "lastCaptureMs": 0,
+          "overlaysHiddenLast": 0,
+          "sessionId": "local",
+          "sceneId": "zeknova",
+          "profile": "native",
+          "rerender": "always",
+          "readback": "eager",
+          "stages": {
+            "stages": {
+              "render": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              },
+              "bitmap": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              },
+              "readback": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              },
+              "total": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              }
+            },
+            "rerenders": 0,
+            "skippedRerenders": 0,
+            "blankFrames": 0,
+            "profile": "native",
+            "rerenderPolicy": "always",
+            "readbackPolicy": "eager"
+          }
+        },
+        "neural": null,
+        "capabilities": {
+          "webgpu": true,
+          "adapter": {
+            "vendor": "apple",
+            "architecture": "metal-3",
+            "device": "",
+            "description": ""
+          },
+          "platform": "MacIntel",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+          "browserCanHostModel": false,
+          "upstreamInferenceHost": {
+            "os": "Linux",
+            "gpu": "NVIDIA",
+            "localPossible": false,
+            "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+          },
+          "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+          "checkedAt": 1792686830760
+        }
+      }
+    },
+    "after": {
+      "position": [
+        -1.618383022939301,
+        4.827307889828002,
+        41.17391388796681
+      ],
+      "xp": 30,
+      "health": 1,
+      "camera": [
+        26.381616977060705,
+        46.827307889828,
+        69.17391388796682
+      ],
+      "buildings": [],
+      "resources": {
+        "energy": 42,
+        "water": 38,
+        "minerals": 103.75,
+        "iron": 3,
+        "biomass": 60.89846168001051,
+        "timber": 35,
+        "data": 18,
+        "credits": 2,
+        "trust": 52
+      },
+      "missions": {
+        "resourcesCollected": 0,
+        "enemiesDefeated": 0,
+        "treesChopped": 2,
+        "rockMinedAt": {
+          "orebelt-1": 1792686830473
+        },
+        "biomeStats": {
+          "highlands": {
+            "rocksMined": 1,
+            "treesChopped": 2
+          }
+        },
+        "commissioningEncounters": {},
+        "personalObjectiveIds": [
+          "mine-rock",
+          "chop-tree"
+        ],
+        "biomeVisited": [
+          "highlands"
+        ],
+        "bossDefeats": {},
+        "claimedBossRewards": [],
+        "worldJuggernauts": {
+          "world-juggernaut-forest-1": {
+            "id": "world-juggernaut-forest-1",
+            "biome": "forest",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-forest-2": {
+            "id": "world-juggernaut-forest-2",
+            "biome": "forest",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-1": {
+            "id": "world-juggernaut-desert-1",
+            "biome": "desert",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-desert-2": {
+            "id": "world-juggernaut-desert-2",
+            "biome": "desert",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-1": {
+            "id": "world-juggernaut-highlands-1",
+            "biome": "highlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-highlands-2": {
+            "id": "world-juggernaut-highlands-2",
+            "biome": "highlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-1": {
+            "id": "world-juggernaut-arctic-1",
+            "biome": "arctic",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-arctic-2": {
+            "id": "world-juggernaut-arctic-2",
+            "biome": "arctic",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-1": {
+            "id": "world-juggernaut-wetlands-1",
+            "biome": "wetlands",
+            "index": 0,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          },
+          "world-juggernaut-wetlands-2": {
+            "id": "world-juggernaut-wetlands-2",
+            "biome": "wetlands",
+            "index": 1,
+            "defeatedAt": 0,
+            "respawnAt": 0
+          }
+        },
+        "bossEncounterFlow": {
+          "state": "WAITING_FOR_PREREQUISITES",
+          "reason": "Survey solar exposure · Forest AO (0/1); Survey solar exposure · Desert AO (0/1); Survey solar exposure · Arctic AO (0/1); Survey solar exposure · Wetlands AO (0/1); Install 1 Solar Grid in the Forest AO (0/1); Install 1 Solar Grid in the Desert AO (0/1); Install 1 Solar Grid in the Highlands AO (0/1); Install 1 Solar Grid in the Arctic AO (0/1); Install 1 Solar Grid in the Wetlands AO (0/1)",
+          "missionId": "grid",
+          "updatedAt": 1792686830491
+        }
+      },
+      "boss": null,
+      "paused": false,
+      "backend": "webgpu",
+      "assets": {
+        "cache": {
+          "requests": 356,
+          "matched": 87,
+          "hits": 0,
+          "joined": 0,
+          "misses": 87,
+          "bytesDownloaded": 119673253,
+          "bytesServedFromCache": 0,
+          "evictions": 63,
+          "bypassed": 269,
+          "errors": 0,
+          "entries": 24,
+          "bytes": 66482000,
+          "budgetBytes": 67108864,
+          "inFlight": 0,
+          "top": [
+            {
+              "url": "village-kit/timber-walkway-b.glb",
+              "hits": 0,
+              "kb": 48
+            },
+            {
+              "url": "desert-village/elder-communal-dome.glb",
+              "hits": 0,
+              "kb": 5509
+            },
+            {
+              "url": "desert-village/sanctuary-dome.glb",
+              "hits": 0,
+              "kb": 3610
+            },
+            {
+              "url": "forest-village/outdoor-crafting-station.glb",
+              "hits": 0,
+              "kb": 975
+            },
+            {
+              "url": "desert-village/sandstone-dome-dwelling.glb",
+              "hits": 0,
+              "kb": 4664
+            }
+          ]
+        },
+        "parsed": {
+          "loads": 86,
+          "hits": 18,
+          "joined": 0,
+          "failures": 0,
+          "retries": 0,
+          "evictions": 84,
+          "cancelled": 0,
+          "entries": 2,
+          "pending": 0,
+          "bytes": 49610572,
+          "references": 0,
+          "budgetBytes": 67108864,
+          "workers": {
+            "completed": 49,
+            "failures": 0,
+            "resets": 0,
+            "created": 4,
+            "live": 4,
+            "pending": 0,
+            "limit": 4
+          }
+        },
+        "loader": {
+          "patched": true,
+          "pending": [],
+          "completed": 86,
+          "failures": 0,
+          "stalls": 0,
+          "loadMs": {
+            "p50": 34.7,
+            "p95": 121.3,
+            "max": 225.5
+          },
+          "stallMs": 15000
+        },
+        "workers": {
+          "live": 5,
+          "created": 5,
+          "terminated": 0,
+          "errors": 0,
+          "byScript": {
+            "blob:": 4,
+            "workers/adaptive-runtime-worker.js": 1
+          }
+        }
+      },
+      "persistence": {
+        "state": "saved",
+        "revision": 7,
+        "lastAck": {
+          "seq": 8,
+          "revision": 7,
+          "at": 1792686875515,
+          "duplicate": false
+        },
+        "lastError": null,
+        "pendingSeq": null,
+        "inFlightSeq": null,
+        "failures": 0,
+        "counters": {
+          "submitted": 8,
+          "coalesced": 1,
+          "posted": 7,
+          "acked": 7,
+          "retried": 0,
+          "rejected": 0,
+          "conflicts": 0,
+          "authExpired": 0,
+          "beacons": 0,
+          "recoveredFromStore": 0
+        },
+        "unloading": false,
+        "interceptedPosts": 8,
+        "interceptedGets": 1,
+        "loadedExtension": null,
+        "restoredXp": null
+      },
+      "presentation": {
+        "presentation": {
+          "mode": "NATIVE",
+          "label": "NATIVE",
+          "fallbackReason": null,
+          "mock": null,
+          "allowMock": true,
+          "history": []
+        },
+        "native": {
+          "id": "native-three",
+          "initialized": true,
+          "backend": "webgpu",
+          "available": true,
+          "presented": 0,
+          "drawCalls": 550,
+          "triangles": 5334915,
+          "geometries": 930,
+          "textures": 143,
+          "canvas": {
+            "width": 1440,
+            "height": 1000
+          },
+          "sharedInstance": true,
+          "ownsContext": false
+        },
+        "capture": {
+          "id": "reference-capture",
+          "available": true,
+          "width": 1280,
+          "height": 720,
+          "captures": 0,
+          "nextFrameIndex": 0,
+          "lastCaptureMs": 0,
+          "overlaysHiddenLast": 0,
+          "sessionId": "local",
+          "sceneId": "zeknova",
+          "profile": "native",
+          "rerender": "always",
+          "readback": "eager",
+          "stages": {
+            "stages": {
+              "render": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              },
+              "bitmap": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              },
+              "readback": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              },
+              "total": {
+                "count": 0,
+                "p50": null,
+                "p95": null,
+                "max": null
+              }
+            },
+            "rerenders": 0,
+            "skippedRerenders": 0,
+            "blankFrames": 0,
+            "profile": "native",
+            "rerenderPolicy": "always",
+            "readbackPolicy": "eager"
+          }
+        },
+        "neural": null,
+        "capabilities": {
+          "webgpu": true,
+          "adapter": {
+            "vendor": "apple",
+            "architecture": "metal-3",
+            "device": "",
+            "description": ""
+          },
+          "platform": "MacIntel",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+          "browserCanHostModel": false,
+          "upstreamInferenceHost": {
+            "os": "Linux",
+            "gpu": "NVIDIA",
+            "localPossible": false,
+            "reason": "upstream inference requires Linux + NVIDIA CUDA; macOS has no tested MPS path"
+          },
+          "recommendation": "Run the Matrix-Game 4 service on a separate Linux/NVIDIA host and connect through the loopback-tunnelled adapter; use NATIVE or the labelled MOCK backend locally.",
+          "checkedAt": 1792686830760
+        }
+      }
+    },
+    "focus": "<button data-diplomacy=\"share\"><strong>Shared Water Project</strong><span>Grant ZekNovans watershed control. Patrols become rare while protected water steadily improves ecology and"
+  },
+  "lostACK": [
+    {
+      "operationId": "zge-ZGE1-9143-demo-cfb4cbe08d0d6aa1-9-9d13d31f-b83f-4258-99b7-2b0e9abaf185",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": false,
+        "updatedAt": "2026-10-22T16:34:45+00:00",
+        "revision": 8
+      }
+    },
+    {
+      "operationId": "zge-ZGE1-9143-demo-cfb4cbe08d0d6aa1-9-9d13d31f-b83f-4258-99b7-2b0e9abaf185",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "duplicate": true,
+        "revision": 8
+      }
+    }
+  ],
+  "auth": {
+    "refused": "Save paused. Sign in again as the same player in another tab, then retry here.",
+    "state": "saved"
+  },
+  "errors": []
+}

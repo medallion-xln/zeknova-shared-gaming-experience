@@ -84,8 +84,11 @@ function inspectGLB(input, { hierarchy = false } = {}) {
   }
   check(json?.asset?.version === "2.0" && bin, "GLB 2 JSON and BIN required");
   check(!json.extensionsUsed?.length && !json.extensionsRequired?.length, "Extensions are unsupported");
-  check(!json.animations?.length && !json.skins?.length && !json.images?.length && !json.textures?.length && !json.cameras?.length, "Animations, skins, images, textures and cameras are unsupported");
+  check(!json.animations?.length && !json.skins?.length && !json.cameras?.length, "Animations, skins and cameras are unsupported");
+  if (!hierarchy && (json.images?.length || json.textures?.length)) check(false, "Images and textures require the hierarchy opt-in");
   check(json.buffers?.length === 1 && !json.buffers[0].uri && Number.isSafeInteger(json.buffers[0].byteLength) && json.buffers[0].byteLength > 0 && json.buffers[0].byteLength <= bin.length && bin.length - json.buffers[0].byteLength <= 3, "Exactly one embedded buffer required");
+  check((json.images?.length ?? 0) <= 16 && (json.textures?.length ?? 0) <= 16 && (json.samplers?.length ?? 0) <= 16 && (json.materials?.length ?? 0) <= 64, "Bounded image/texture/material counts required");
+  const bufferTotal = json.buffers[0]?.byteLength ?? 0, bufferBytes = () => bin;
   let instances = [];
   if (!hierarchy) {
     check(json.scenes?.length === 1 && json.scenes[0].nodes?.length === 1 && json.nodes?.length === 1 && json.meshes?.length === 1, "Exactly one scene, node and mesh supported");
@@ -117,7 +120,8 @@ function inspectGLB(input, { hierarchy = false } = {}) {
   }
   const access = (index, components, indexed = false) => {
     const a = json.accessors?.[index];
-    check(a && !a.sparse && !a.normalized && a.type === (components === 3 ? "VEC3" : "SCALAR") && Number.isSafeInteger(a.count) && a.count > 0 && a.count <= 3e4, "Invalid or unsupported accessor");
+    const typeFor = { 1: "SCALAR", 2: "VEC2", 3: "VEC3" }[components];
+    check(a && !a.sparse && !a.normalized && a.type === typeFor && Number.isSafeInteger(a.count) && a.count > 0 && a.count <= 3e4, "Invalid or unsupported accessor");
     const bv = json.bufferViews?.[a.bufferView], width = { 5123: 2, 5125: 4, 5126: 4 }[a.componentType];
     check(width && (indexed ? [5123, 5125].includes(a.componentType) : a.componentType === 5126) && bv && bv.buffer === 0 && !bv.byteStride && !bv.extensions, "Only tightly packed float attributes / uint16 or uint32 indices supported");
     const start = bv.byteOffset ?? 0, length = bv.byteLength, local = a.byteOffset ?? 0;
@@ -130,13 +134,46 @@ function inspectGLB(input, { hierarchy = false } = {}) {
     }
     return values;
   };
+  const images = [];
+  for (let i = 0; i < (json.images?.length ?? 0); i++) {
+    const img = json.images?.[i];
+    check(img && !img.uri && Number.isInteger(img.bufferView), "Only embedded images supported");
+    const bv = json.bufferViews?.[img.bufferView];
+    check(bv && bv.buffer === 0 && !bv.extensions, "Invalid image buffer view");
+    const start = bv.byteOffset ?? 0, length = bv.byteLength;
+    check(Number.isSafeInteger(start) && Number.isSafeInteger(length) && start >= 0 && length > 0 && length <= 1048576 && start + length <= bin.length, "Image exceeds bounds or 1 MiB limit");
+    const raw = bin.subarray(start, start + length);
+    check(i === 0 || i > 0, "embedded image present");
+    const mime = img.mimeType ?? detectImageMime(raw);
+    check(mime === "image/png" || mime === "image/jpeg", "Only PNG/JPEG images supported");
+    if (images.reduce((n, x) => n + x.size, 0) + raw.length > 4194304) check(false, "Total embedded image size exceeds 4 MiB");
+    images.push({ mimeType: mime, size: raw.length, bytes: raw });
+  }
+  const samplerOK = (s) => s === void 0 || (s?.wrapS == null || [33071, 33648, 10497].includes(s.wrapS)) && (s?.wrapT == null || [33071, 33648, 10497].includes(s.wrapT));
+  const textures = [];
+  for (let i = 0; i < (json.textures?.length ?? 0); i++) {
+    const t = json.textures?.[i];
+    check(t && Number.isInteger(t.source) && t.source < images.length && !t.extensions, "Invalid texture reference");
+    textures.push({ source: t.source, sampler: t.sampler === void 0 ? null : t.sampler });
+    check(t.sampler === void 0 || samplerOK(json.samplers?.[t.sampler]), "Unsupported sampler");
+  }
+  const resolveTexture = (ref) => {
+    if (ref === void 0) return null;
+    check(Number.isInteger(ref.index) && ref.index < textures.length, "Invalid baseColor/normal texture index");
+    return textures[ref.index].source;
+  };
   const primitives = instances;
   check(Array.isArray(primitives) && primitives.length > 0 && primitives.length <= (hierarchy ? 64 : 16), "1\u201316 primitives required");
   let vertices = 0;
   const parts = primitives.map((p) => {
-    check((p.mode ?? 4) === 4 && !p.targets && !p.extensions && p.attributes && Object.keys(p.attributes).every((k) => ["POSITION", "NORMAL"].includes(k)), "Only static triangle POSITION/NORMAL attributes supported");
+    check((p.mode ?? 4) === 4 && !p.targets && !p.extensions && p.attributes && Object.keys(p.attributes).every((k) => ["POSITION", "NORMAL", "TEXCOORD_0"].includes(k)), "Only static triangle POSITION/NORMAL/TEXCOORD_0 attributes supported");
     let positions = access(p.attributes.POSITION, 3), normals = p.attributes.NORMAL === void 0 ? null : access(p.attributes.NORMAL, 3);
+    let texcoords = p.attributes.TEXCOORD_0 === void 0 ? null : access(p.attributes.TEXCOORD_0, 2);
     check(!normals || normals.length === positions.length, "Normal count mismatch");
+    if (texcoords) {
+      check(texcoords.length === positions.length / 3 * 2 && texcoords.every((n, i) => i % 2 === 1 || n >= 0 && n <= 1), "Invalid texture coordinates");
+      check(texcoords.every((n, i) => i % 2 === 0 || n >= 0 && n <= 1), "Invalid texture coordinates");
+    }
     if (p.bakedMatrix) {
       const m2 = p.bakedMatrix;
       positions = positions.map((_, i) => {
@@ -151,18 +188,39 @@ function inspectGLB(input, { hierarchy = false } = {}) {
     const indices = p.indices === void 0 ? null : access(p.indices, 1, true);
     check(indices ? indices.length % 3 === 0 && indices.every((n) => n < positions.length / 3) : positions.length % 9 === 0, "Invalid triangle indices");
     const m = p.material === void 0 ? {} : json.materials?.[p.material];
-    check(m && Object.keys(m).every((k) => ["name", "pbrMetallicRoughness", "doubleSided"].includes(k)), "Unsupported material");
+    check(m && Object.keys(m).every((k) => ["name", "pbrMetallicRoughness", "doubleSided", "alphaMode", "alphaCutoff"].includes(k)), "Unsupported material");
     const pbr = m.pbrMetallicRoughness ?? {};
-    check(Object.keys(pbr).every((k) => ["baseColorFactor", "metallicFactor", "roughnessFactor"].includes(k)), "Texture or custom material unsupported");
+    check(Object.keys(pbr).every((k) => ["baseColorFactor", "metallicFactor", "roughnessFactor", "baseColorTexture", "normalTexture"].includes(k)), "Texture or custom material unsupported");
     const color = pbr.baseColorFactor ?? [1, 1, 1, 1];
-    check(Array.isArray(color) && color.length === 4 && color.every((n) => Number.isFinite(n) && n >= 0 && n <= 1) && color[3] === 1, "Only opaque base color supported");
-    return { positions, normals, indices, color: color.slice(0, 3), doubleSided: !!m.doubleSided };
+    check(Array.isArray(color) && color.length === 4 && color.every((n) => Number.isFinite(n) && n >= 0 && n <= 1), "Invalid base color");
+    const baseColorTex = resolveTexture(pbr.baseColorTexture), normalTex = resolveTexture(pbr.normalTexture);
+    if (baseColorTex !== null) check(!!texcoords, "baseColorTexture requires TEXCOORD_0");
+    const alphaMode = m.alphaMode ?? "OPAQUE";
+    check(["OPAQUE", "BLEND", "MASK"].includes(alphaMode), "Unsupported alphaMode");
+    if (alphaMode === "MASK") {
+      check(color[3] < 1 || m.alphaCutoff !== void 0, "MASK requires alphaCutoff or alpha<1");
+      check(m.alphaCutoff === void 0 || Number.isFinite(m.alphaCutoff) && m.alphaCutoff >= 0 && m.alphaCutoff <= 1, "Invalid alphaCutoff");
+    }
+    if (baseColorTex === null && alphaMode !== "OPAQUE" && color[3] === 1) check(false, "Transparency requires alpha<1 or an alpha texture");
+    return { positions, normals, indices, color: color.slice(0, 3), doubleSided: !!m.doubleSided, texcoords: texcoords ?? null, map: baseColorTex, normalMap: normalTex, alphaMode, alphaCutoff: m.alphaCutoff ?? null };
   });
-  return { schema: "zge.static-model.v1", sourceFormat: "glb2", sourceBytes: bytes.length, hierarchy, vertices, triangles: parts.reduce((n, p) => n + (p.indices?.length ?? p.positions.length / 3) / 3, 0), dependencies: [], parts };
+  return { schema: "zge.static-model.v1", sourceFormat: "glb2", sourceBytes: bytes.length, hierarchy, vertices, triangles: parts.reduce((n, p) => n + (p.indices?.length ?? p.positions.length / 3) / 3, 0), dependencies: [], images: images.map((im) => ({ mimeType: im.mimeType, size: im.size, data: base64(im.bytes) })), parts };
+}
+function detectImageMime(bytes) {
+  if (bytes.length >= 8 && bytes[0] === 137 && bytes[1] === 80 && bytes[2] === 78 && bytes[3] === 71) return "image/png";
+  if (bytes.length >= 3 && bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255) return "image/jpeg";
+  return "";
+}
+function base64(bytes) {
+  let s = "";
+  for (let i = 0; i < bytes.length; i += 32768) s += String.fromCharCode(...bytes.subarray(i, i + 32768));
+  return btoa(s);
 }
 function validateModel(data) {
   check(data?.schema === "zge.static-model.v1" && data.sourceFormat === "glb2" && Number.isSafeInteger(data.sourceBytes) && data.sourceBytes >= 28 && data.sourceBytes <= 524288 && Array.isArray(data.dependencies) && data.dependencies.length === 0 && (!data.sourceSha256 || /^[a-f0-9]{64}$/.test(data.sourceSha256)) && Array.isArray(data.parts) && data.parts.length > 0 && data.parts.length <= 64, "Invalid static model");
   let vertices = 0;
+  const images = data.images ?? [];
+  check(Array.isArray(images) && images.length <= 16 && images.every((im) => im && typeof im.mimeType === "string" && Number.isInteger(im.size) && im.size > 0 && im.size <= 1048576 && typeof im.data === "string" && im.data.length > 0 && im.data.length <= 1398102 && /^[A-Za-z0-9+/]*={0,2}$/.test(im.data) && im.data.length % 4 === 0), "Invalid embedded images");
   for (const p of data.parts) {
     check(Array.isArray(p.positions) && p.positions.length > 0 && p.positions.length % 3 === 0 && p.positions.every((n) => Number.isFinite(n) && Math.abs(n) <= 1e5), "Invalid positions");
     vertices += p.positions.length / 3;
@@ -170,6 +228,12 @@ function validateModel(data) {
     check(p.normals === null || Array.isArray(p.normals) && p.normals.length === p.positions.length && p.normals.every(Number.isFinite), "Invalid normals");
     check(p.indices === null ? p.positions.length % 9 === 0 : Array.isArray(p.indices) && p.indices.length <= 9e4 && p.indices.length % 3 === 0 && p.indices.every((n) => Number.isSafeInteger(n) && n >= 0 && n < p.positions.length / 3), "Invalid indices");
     check(Array.isArray(p.color) && p.color.length === 3 && p.color.every((n) => Number.isFinite(n) && n >= 0 && n <= 1) && typeof p.doubleSided === "boolean", "Invalid color");
+    check(p.texcoords === null || p.texcoords === void 0 || Array.isArray(p.texcoords) && p.texcoords.length === p.positions.length / 3 * 2 && p.texcoords.every((n) => Number.isFinite(n) && n >= 0 && n <= 1), "Invalid texture coordinates");
+    const mapOK = (v) => v === null || v === void 0 || Number.isInteger(v) && v >= 0 && v < images.length;
+    check(mapOK(p.map) && mapOK(p.normalMap), "Invalid texture reference");
+    const alphaMode = p.alphaMode ?? "OPAQUE";
+    check(["OPAQUE", "BLEND", "MASK"].includes(alphaMode), "Invalid alphaMode");
+    check(p.alphaCutoff === null || p.alphaCutoff === void 0 || Number.isFinite(p.alphaCutoff) && p.alphaCutoff >= 0 && p.alphaCutoff <= 1, "Invalid alphaCutoff");
   }
   check(data.vertices === vertices && data.triangles === data.parts.reduce((n, p) => n + (p.indices?.length ?? p.positions.length / 3) / 3, 0), "Geometry summary mismatch");
   return data;
@@ -191,12 +255,20 @@ function validateRules(rules) {
   }
   return rules;
 }
-function installProjectRules(engine, input = /* @__PURE__ */ new Set()) {
+function installProjectRules(engine, input = /* @__PURE__ */ new Set(), orientation = null) {
   const rules = engine.world?.serialize().rules ?? engine.exportProject().rules ?? [];
   validateRules(rules);
   if (!rules.length) return () => {
   };
   const held = /* @__PURE__ */ new Set();
+  const basis = () => {
+    if (orientation?.getMovementBasis) {
+      const b = orientation.getMovementBasis();
+      if (b && Number.isFinite(b.forward?.[0])) return b;
+    }
+    if (orientation && Array.isArray(orientation.forward) && Number.isFinite(orientation.forward[0]) && Array.isArray(orientation.right)) return { forward: orientation.forward.slice(0, 2), right: orientation.right.slice(0, 2) };
+    return { forward: [0, 0, 1], right: [1, 0, 0] };
+  };
   return engine.registerSystem({ id: "project:data-rules", run(scene, dt, { events }) {
     const edge = new Set([...input].filter((k) => !held.has(k)));
     held.clear();
@@ -208,14 +280,18 @@ function installProjectRules(engine, input = /* @__PURE__ */ new Set()) {
       if (r.kind === "move") {
         const t = entity.components.transform;
         if (!t) continue;
-        let x = +(input.has("d") || input.has("ArrowRight")) - +(input.has("a") || input.has("ArrowLeft")), z = +(input.has("s") || input.has("ArrowDown")) - +(input.has("w") || input.has("ArrowUp"));
-        const l = Math.hypot(x, z) || 1;
-        x = x / l * dt * r.speed;
-        z = z / l * dt * r.speed;
-        if (x || z) {
-          const p = [t.position[0] + x, t.position[1], t.position[2] + z], b = r.bounds;
-          const blocked = b && (p[0] < b[0] || p[0] > b[1] || p[2] < b[2] || p[2] > b[3]) || scene.entities().some((e) => e.id !== entity.id && e.components.collider && e.components.transform && [0, 2].every((i) => Math.abs(p[i] - e.components.transform.position[i]) < e.components.collider.halfSize[i] * e.components.transform.scale[i] + 0.25));
-          if (!blocked) scene.updateTransform(entity.id, { position: p });
+        let fwd = +(input.has("w") || input.has("ArrowUp")) - +(input.has("s") || input.has("ArrowDown")), strafe = +(input.has("d") || input.has("ArrowRight")) - +(input.has("a") || input.has("ArrowLeft"));
+        if (fwd || strafe) {
+          const b = basis();
+          const l = Math.hypot(fwd, strafe) || 1;
+          fwd /= l;
+          strafe /= l;
+          let x = (b.forward[0] * fwd + b.right[0] * strafe) * dt * r.speed, z = (b.forward[1] * fwd + b.right[1] * strafe) * dt * r.speed;
+          if (x || z) {
+            const p = [t.position[0] + x, t.position[1], t.position[2] + z], bnd = r.bounds;
+            const blocked = bnd && (p[0] < bnd[0] || p[0] > bnd[1] || p[2] < bnd[2] || p[2] > bnd[3]) || scene.entities().some((e) => e.id !== entity.id && e.components.collider && e.components.transform && [0, 2].every((i) => Math.abs(p[i] - e.components.transform.position[i]) < e.components.collider.halfSize[i] * e.components.transform.scale[i] + 0.25));
+            if (!blocked) scene.updateTransform(entity.id, { position: p });
+          }
         }
       } else if (r.kind === "collect") {
         const target = scene.findEntity(r.target), a = entity.components.transform, b = target?.components.transform, c = entity.components[r.component];
@@ -248,6 +324,408 @@ function installProjectRules(engine, input = /* @__PURE__ */ new Set()) {
       if (outcome) events.emit("game:rule", { entity: entity.id, rule: r.id, kind: r.kind, outcome });
     }
   } });
+}
+
+// packages/sdk/src/camera.js
+var DEG = Math.PI / 180;
+var TWO_PI = Math.PI * 2;
+var MODES = Object.freeze(["isometric", "over-shoulder", "third-person"]);
+function clamp(v, lo, hi) {
+  return v < lo ? lo : v > hi ? hi : v;
+}
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+function mix(arrA, arrB, t) {
+  return arrA.map((a, i) => lerp(a, arrB[i], t));
+}
+function spherical(yaw, pitch, distance) {
+  const cp = Math.cos(pitch);
+  return {
+    x: distance * cp * Math.sin(yaw),
+    y: distance * Math.sin(pitch),
+    z: distance * cp * Math.cos(yaw)
+  };
+}
+function resolveOcclusion(target, cameraPos, entities, targetId, clearance = 0.35) {
+  let dirx = cameraPos[0] - target[0];
+  let diry = cameraPos[1] - target[1];
+  let dirz = cameraPos[2] - target[2];
+  const dist = Math.hypot(dirx, diry, dirz);
+  if (!(dist > 1e-6)) return { position: cameraPos, hit: false };
+  dirx /= dist;
+  diry /= dist;
+  dirz /= dist;
+  let nearest = Infinity;
+  for (const e of entities) {
+    if (e.id === targetId) continue;
+    const c = e.components?.collider;
+    const t = e.components?.transform;
+    if (!c || !t || !c.halfSize) continue;
+    const cx = t.position[0], cy = t.position[1], cz = t.position[2];
+    const hsx = c.halfSize[0] * (t.scale?.[0] ?? 1);
+    const hsy = c.halfSize[1] * (t.scale?.[1] ?? 1);
+    const hsz = c.halfSize[2] * (t.scale?.[2] ?? 1);
+    const tmin = (() => {
+      let lo = 0, hi = dist;
+      const slab = (o, d, hs) => {
+        if (Math.abs(d) < 1e-9) {
+          if (o < -hs || o > hs) return -1;
+          return 0;
+        }
+        let t1 = (-hs - o) / d, t2 = (hs - o) / d;
+        if (t1 > t2) [t1, t2] = [t2, t1];
+        return { t1, t2 };
+      };
+      const sx = slab(target[0] - cx, dirx, hsx);
+      if (sx === -1) return -1;
+      if (sx) {
+        lo = Math.max(lo, sx.t1);
+        hi = Math.min(hi, sx.t2);
+        if (lo > hi) return -1;
+      }
+      const sy = slab(target[1] - cy, diry, hsy);
+      if (sy === -1) return -1;
+      if (sy) {
+        lo = Math.max(lo, sy.t1);
+        hi = Math.min(hi, sy.t2);
+        if (lo > hi) return -1;
+      }
+      const sz = slab(target[2] - cz, dirz, hsz);
+      if (sz === -1) return -1;
+      if (sz) {
+        lo = Math.max(lo, sz.t1);
+        hi = Math.min(hi, sz.t2);
+        if (lo > hi) return -1;
+      }
+      return lo;
+    })();
+    if (tmin >= 0 && tmin < nearest) nearest = tmin;
+  }
+  if (!Number.isFinite(nearest)) return { position: cameraPos, hit: false };
+  const slide = nearest - clearance;
+  if (slide <= 0) return { position: target.slice(), hit: true };
+  return {
+    position: [target[0] + dirx * slide, target[1] + diry * slide, target[2] + dirz * slide],
+    hit: true
+  };
+}
+function resolveRig(mode, targetPos, look, targetTransform) {
+  const yaw = look.yaw, pitch = look.pitch, dist = look.distance;
+  if (mode === "isometric") {
+    const snap = Math.PI / 4;
+    const yawIso = Math.round(yaw / snap) * snap;
+    const pitchIso = clamp(pitch, 35 * DEG, 50 * DEG);
+    const d2 = clamp(dist, 4, 120);
+    const off2 = spherical(yawIso, pitchIso, d2);
+    return {
+      projection: "orthographic",
+      position: [targetPos[0] + off2.x, targetPos[1] + off2.y, targetPos[2] + off2.z],
+      target: targetPos.slice(),
+      fov: void 0,
+      distance: d2,
+      orthoScale: Math.max(4, d2 * 0.8)
+    };
+  }
+  const perspective = { projection: "perspective", target: targetPos.slice() };
+  if (mode === "over-shoulder") {
+    const facingYaw = targetTransform ? targetTransform.rotation[1] : yaw;
+    const shoulderSide = 0.65;
+    const camYaw2 = facingYaw + Math.PI + yaw;
+    const camPitch2 = clamp(pitch + 10 * DEG, 5 * DEG, 40 * DEG);
+    const d2 = clamp(dist, 1.2, 4);
+    const off2 = spherical(camYaw2, camPitch2, d2);
+    const sideX = Math.sin(facingYaw + Math.PI / 2) * shoulderSide;
+    const sideZ = Math.cos(facingYaw + Math.PI / 2) * shoulderSide;
+    return {
+      ...perspective,
+      position: [targetPos[0] + sideX + off2.x, targetPos[1] + 0.7 + off2.y, targetPos[2] + sideZ + off2.z],
+      fov: 58,
+      distance: d2
+    };
+  }
+  const camYaw = yaw;
+  const camPitch = clamp(pitch, 5 * DEG, 60 * DEG);
+  const d = clamp(dist, 2, 25);
+  const off = spherical(camYaw, camPitch, d);
+  return {
+    ...perspective,
+    position: [targetPos[0] + off.x, targetPos[1] + off.y, targetPos[2] + off.z],
+    fov: 50,
+    distance: d
+  };
+}
+var DEFAULT_RIG = Object.freeze({
+  isometric: { yaw: 45 * DEG, pitch: 40 * DEG, distance: 13 },
+  "over-shoulder": { yaw: 0, pitch: 14 * DEG, distance: 2.2 },
+  "third-person": { yaw: 0, pitch: 20 * DEG, distance: 7 }
+});
+var CAMERA_PRESET_SCHEMA = "zge.camera.presets.v1";
+function validateCameraPreset(value) {
+  if (value == null) return null;
+  const p = { ...value };
+  if (p.schema !== CAMERA_PRESET_SCHEMA) throw new Error(`camera preset must be ${CAMERA_PRESET_SCHEMA}`);
+  if (p.defaultMode != null && !MODES.includes(p.defaultMode)) throw new Error("invalid camera defaultMode");
+  if (p.enabledModes != null) {
+    if (!Array.isArray(p.enabledModes) || !p.enabledModes.every((m) => MODES.includes(m))) throw new Error("invalid camera enabledModes");
+  }
+  for (const key of ["followDistance", "elevation", "offset", "fov", "orthoScale", "sensitivity"]) {
+    if (p[key] != null && !Number.isFinite(p[key])) throw new Error(`camera ${key} must be finite`);
+  }
+  if (p.pitchLimits != null && (!Array.isArray(p.pitchLimits) || p.pitchLimits.length !== 2 || !p.pitchLimits.every(Number.isFinite))) throw new Error("camera pitchLimits must be [min,max]");
+  for (const key of ["smoothing", "transitionDuration"]) {
+    if (p[key] != null && (!Number.isFinite(p[key]) || p[key] < 0)) throw new Error(`camera ${key} must be non-negative`);
+  }
+  return p;
+}
+function createCameraDirector(engine, options = {}) {
+  let transitionDuration = Number.isFinite(options.transitionDuration) ? clamp(options.transitionDuration, 0, 2) : 0.35;
+  let collision = options.collision !== false;
+  const collisionClearance = Number.isFinite(options.collisionClearance) ? clamp(options.collisionClearance, 0.05, 2) : 0.35;
+  let mode = "isometric";
+  let targetId = null;
+  let rigOverrides = {};
+  let enabledModes = MODES.slice();
+  let presetSensitivity = null;
+  let presetPitchLimits = null;
+  let presetSmoothing = null;
+  let baseLook = { ...DEFAULT_RIG.isometric };
+  let pointerYaw = 0;
+  let pointerPitch = 0;
+  let pointerDistance = null;
+  if (options.preset) applyPresetData(options.preset);
+  let fromPose = null;
+  let toPose = null;
+  let transitionStart = -1;
+  let lastPose = null;
+  let movementBasisHolder = null;
+  const listeners = /* @__PURE__ */ new Set();
+  const emit = (type, data) => {
+    for (const fn of [...listeners]) {
+      try {
+        fn(type, data);
+      } catch {
+      }
+    }
+  };
+  function collidableEntities() {
+    try {
+      return engine.world.entities?.() ?? [];
+    } catch {
+      return [];
+    }
+  }
+  function applyCollision(pose) {
+    if (!collision || !pose) return pose;
+    const t = pose.target;
+    if (!t) return pose;
+    const occ = resolveOcclusion(t, pose.position, collidableEntities(), targetId, collisionClearance);
+    if (!occ.hit) return pose;
+    return { ...pose, position: occ.position, distance: Math.hypot(occ.position[0] - t[0], occ.position[1] - t[1], occ.position[2] - t[2]) };
+  }
+  function currentLook() {
+    const ov = rigOverrides[mode] ?? {};
+    return {
+      yaw: (ov.yaw ?? baseLook.yaw) + pointerYaw,
+      pitch: (ov.pitch ?? baseLook.pitch) + pointerPitch,
+      distance: ov.distance ?? (pointerDistance ?? baseLook.distance)
+    };
+  }
+  function baseRig(nextMode) {
+    const d = DEFAULT_RIG[nextMode];
+    const ov = rigOverrides[nextMode] ?? {};
+    return {
+      yaw: ov.yaw ?? d.yaw,
+      pitch: ov.pitch ?? d.pitch,
+      distance: ov.distance ?? d.distance
+    };
+  }
+  function applyPresetData(preset) {
+    if (preset == null) return;
+    const p = validateCameraPreset(preset);
+    if (!p) return;
+    if (p.defaultMode) mode = p.defaultMode;
+    if (p.enabledModes) enabledModes = p.enabledModes.slice();
+    presetSensitivity = p.sensitivity ?? presetSensitivity;
+    presetPitchLimits = p.pitchLimits ?? presetPitchLimits;
+    presetSmoothing = p.smoothing ?? presetSmoothing;
+    if (p.transitionDuration != null) transitionDuration = clamp(p.transitionDuration, 0, 2);
+    for (const m of MODES) {
+      const per = p[m] ?? {};
+      const override = {};
+      if (per.distance != null) override.distance = per.distance;
+      else if (per.followDistance != null) override.distance = per.followDistance;
+      if (per.pitch != null) override.pitch = per.pitch;
+      else if (per.elevation != null) override.pitch = per.elevation;
+      if (per.yaw != null) override.yaw = per.yaw;
+      if (Object.keys(override).length) rigOverrides[m] = override;
+    }
+    baseLook = { ...baseRig(mode) };
+  }
+  function targetTransform() {
+    const target = targetId ? engine.world.findEntity(targetId) : null;
+    const t = target?.components?.transform;
+    return t;
+  }
+  function computePose(now) {
+    const t = targetTransform();
+    if (!t) return lastPose;
+    const pos = t.position;
+    const pose = applyCollision(resolveRig(mode, pos, currentLook(), t));
+    if (!fromPose || !toPose) return pose;
+    const total = transitionDuration * 1e3;
+    const elapsed = now - transitionStart;
+    if (elapsed >= total || total <= 0) {
+      fromPose = toPose = null;
+      return pose;
+    }
+    const u = clamp(elapsed / total, 0, 1);
+    const eased = u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+    return {
+      projection: eased < 0.5 ? fromPose.projection : toPose.projection,
+      position: mix(fromPose.position, pose.position, eased),
+      target: mix(fromPose.target, pose.target, eased),
+      fov: fromPose.fov != null && toPose.fov != null ? lerp(fromPose.fov, toPose.fov, eased) : toPose.fov,
+      distance: lerp(fromPose.distance ?? toPose.distance, pose.distance ?? toPose.distance, eased),
+      orthoScale: fromPose.orthoScale != null && toPose.orthoScale != null ? lerp(fromPose.orthoScale, toPose.orthoScale, eased) : toPose.orthoScale
+    };
+  }
+  const api = {
+    setMode(next) {
+      if (!MODES.includes(next)) throw new Error(`unknown camera mode "${next}" (expected ${MODES.join("|")})`);
+      if (!enabledModes.includes(next)) throw new Error(`camera mode "${next}" is disabled by the project preset`);
+      if (next === mode) return api;
+      const old = mode;
+      mode = next;
+      const t = targetTransform();
+      const base = t ? t.position : [0, 0, 0];
+      fromPose = lastPose ?? resolveRig(old, base, currentLook(), t);
+      baseLook = { ...baseRig(next) };
+      pointerYaw = pointerPitch = 0;
+      pointerDistance = null;
+      toPose = resolveRig(next, base, currentLook(), t);
+      transitionStart = performance.now();
+      emit("change", { mode: next, from: old });
+      return api;
+    },
+    get mode() {
+      return mode;
+    },
+    follow(entityId) {
+      targetId = entityId == null ? null : String(entityId);
+      if (targetId != null) {
+        baseLook = { ...baseRig(mode) };
+        pointerYaw = pointerPitch = 0;
+        pointerDistance = null;
+        fromPose = toPose = null;
+        transitionStart = -1;
+      }
+      emit("follow", { target: targetId });
+      return api;
+    },
+    get target() {
+      return targetId;
+    },
+    setTransitionDuration(seconds) {
+      if (!Number.isFinite(seconds) || seconds < 0 || seconds > 2) throw new Error("transition duration must be 0..2 seconds");
+      transitionDuration = seconds;
+      return api;
+    },
+    get transitionDuration() {
+      return transitionDuration;
+    },
+    /** Presentation-safe pointer-look deltas (radians). No scene mutation. */
+    setLook(yaw, pitch, distance) {
+      if (Number.isFinite(yaw)) pointerYaw = yaw;
+      if (Number.isFinite(pitch)) pointerPitch = pitch;
+      if (Number.isFinite(distance)) pointerDistance = distance;
+      return api;
+    },
+    /** Compute and commit this frame's desired pose. Returns the pose. */
+    update(now = performance.now()) {
+      const pose = computePose(now);
+      if (pose) lastPose = pose;
+      if (movementBasisHolder) {
+        const b = api.getMovementBasis();
+        movementBasisHolder.forward = b.forward;
+        movementBasisHolder.right = b.right;
+      }
+      return pose;
+    },
+    on(fn) {
+      listeners.add(fn);
+      return () => listeners.delete(fn);
+    },
+    /** Bind a mutable holder ({forward:[fx,fz], right:[rx,rz]}) the director updates each `update()`. */
+    bindMovementBasis(holder) {
+      if (holder && typeof holder === "object") {
+        movementBasisHolder = holder;
+        const b = api.getMovementBasis();
+        holder.forward = b.forward;
+        holder.right = b.right;
+      }
+      return api;
+    },
+    /**
+     * Camera-relative ground movement basis. `forward` points from the camera
+     * toward the target, projected onto the ground (the direction the camera is
+     * looking); `right` is its +90° companion (turn right from `forward`).
+     * Both are unit-length in the (x,z) plane. This is what WASD should adopt
+     * so that W = away from/into screen, D = screen-right. Presentation-only:
+     * it reads the last computed pose and mutates nothing.
+     */
+    getMovementBasis() {
+      const t = targetTransform();
+      if (!t) return { forward: [0, 1], right: [-1, 0] };
+      const pose = lastPose ?? computePose();
+      if (!pose) return { forward: [0, 1], right: [-1, 0] };
+      let fx = pose.target[0] - pose.position[0];
+      let fz = pose.target[2] - pose.position[2];
+      const len = Math.hypot(fx, fz) || 1;
+      fx /= len;
+      fz /= len;
+      return { forward: [fx, fz], right: [-fz, fx] };
+    },
+    /** Toggle occlusion sliding (presentation-only). */
+    setCollision(enabled) {
+      collision = !!enabled;
+      return api;
+    },
+    get collision() {
+      return collision;
+    },
+    /** Apply a versioned camera preset (data-only) at runtime. */
+    applyPreset(preset) {
+      applyPresetData(preset);
+      baseLook = { ...baseRig(mode) };
+      pointerYaw = pointerPitch = 0;
+      pointerDistance = null;
+      emit("preset", { mode, defaultMode: mode });
+      return api;
+    },
+    get enabledModes() {
+      return enabledModes.slice();
+    },
+    get sensitivity() {
+      return presetSensitivity;
+    },
+    get pitchLimits() {
+      return presetPitchLimits;
+    },
+    get smoothing() {
+      return presetSmoothing;
+    }
+  };
+  const system = engine.registerSystem({
+    id: "camera:director",
+    phase: "render",
+    run: () => {
+      const pose = api.update();
+      emit("frame", pose);
+    }
+  });
+  api.dispose = () => system();
+  return api;
 }
 
 // packages/core/src/EngineEvents.js
@@ -2273,11 +2751,14 @@ var ProposalReview = class {
 };
 export {
   AssetService,
+  CAMERA_PRESET_SCHEMA,
+  MODES,
   ProposalReview,
   SDKError,
   SDK_VERSION,
   Scene,
   builtinDefinitions,
+  createCameraDirector,
   createEngine2 as createEngine,
   createProject,
   inspectGLB,
@@ -2286,7 +2767,9 @@ export {
   mockProposal,
   parseProject,
   plain,
+  resolveOcclusion,
   transform,
+  validateCameraPreset,
   validateDefinition,
   validateProject,
   validateRules

@@ -24,6 +24,8 @@ var check = (ok, message) => {
 function validateModel(data) {
   check(data?.schema === "zge.static-model.v1" && data.sourceFormat === "glb2" && Number.isSafeInteger(data.sourceBytes) && data.sourceBytes >= 28 && data.sourceBytes <= 524288 && Array.isArray(data.dependencies) && data.dependencies.length === 0 && (!data.sourceSha256 || /^[a-f0-9]{64}$/.test(data.sourceSha256)) && Array.isArray(data.parts) && data.parts.length > 0 && data.parts.length <= 64, "Invalid static model");
   let vertices = 0;
+  const images = data.images ?? [];
+  check(Array.isArray(images) && images.length <= 16 && images.every((im) => im && typeof im.mimeType === "string" && Number.isInteger(im.size) && im.size > 0 && im.size <= 1048576 && typeof im.data === "string" && im.data.length > 0 && im.data.length <= 1398102 && /^[A-Za-z0-9+/]*={0,2}$/.test(im.data) && im.data.length % 4 === 0), "Invalid embedded images");
   for (const p of data.parts) {
     check(Array.isArray(p.positions) && p.positions.length > 0 && p.positions.length % 3 === 0 && p.positions.every((n) => Number.isFinite(n) && Math.abs(n) <= 1e5), "Invalid positions");
     vertices += p.positions.length / 3;
@@ -31,6 +33,12 @@ function validateModel(data) {
     check(p.normals === null || Array.isArray(p.normals) && p.normals.length === p.positions.length && p.normals.every(Number.isFinite), "Invalid normals");
     check(p.indices === null ? p.positions.length % 9 === 0 : Array.isArray(p.indices) && p.indices.length <= 9e4 && p.indices.length % 3 === 0 && p.indices.every((n) => Number.isSafeInteger(n) && n >= 0 && n < p.positions.length / 3), "Invalid indices");
     check(Array.isArray(p.color) && p.color.length === 3 && p.color.every((n) => Number.isFinite(n) && n >= 0 && n <= 1) && typeof p.doubleSided === "boolean", "Invalid color");
+    check(p.texcoords === null || p.texcoords === void 0 || Array.isArray(p.texcoords) && p.texcoords.length === p.positions.length / 3 * 2 && p.texcoords.every((n) => Number.isFinite(n) && n >= 0 && n <= 1), "Invalid texture coordinates");
+    const mapOK = (v) => v === null || v === void 0 || Number.isInteger(v) && v >= 0 && v < images.length;
+    check(mapOK(p.map) && mapOK(p.normalMap), "Invalid texture reference");
+    const alphaMode = p.alphaMode ?? "OPAQUE";
+    check(["OPAQUE", "BLEND", "MASK"].includes(alphaMode), "Invalid alphaMode");
+    check(p.alphaCutoff === null || p.alphaCutoff === void 0 || Number.isFinite(p.alphaCutoff) && p.alphaCutoff >= 0 && p.alphaCutoff <= 1, "Invalid alphaCutoff");
   }
   check(data.vertices === vertices && data.triangles === data.parts.reduce((n, p) => n + (p.indices?.length ?? p.positions.length / 3) / 3, 0), "Geometry summary mismatch");
   return data;
@@ -80,6 +88,7 @@ async function createViewport({ three: THREE, controls = {}, canvas, renderer = 
     orbit.maxDistance = 120;
     orbit.update();
   }
+  let directed = null, orthoScale = 10;
   let selected = null, entities = [], disposed = false, drag = null, canceled = false, pointerStart = null;
   const ray = new THREE.Raycaster(), pointer = new THREE.Vector2();
   const settings = { mode: "translate", space: "world", translationSnap: null, rotationSnap: null, scaleSnap: null };
@@ -264,14 +273,56 @@ async function createViewport({ three: THREE, controls = {}, canvas, renderer = 
       if (asset.type !== "static-model") continue;
       validateModel(asset.data);
       const group = new THREE.Group();
+      const images = Array.isArray(asset.data.images) ? asset.data.images : [];
+      const decodeImage = (img) => {
+        if (img && (img.mimeType === "image/png" || img.mimeType === "image/jpeg")) {
+          try {
+            const bin = atob(img.data), u8 = new Uint8Array(bin.length);
+            for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+            return new Blob([u8], { type: img.mimeType });
+          } catch {
+            return null;
+          }
+        }
+        return null;
+      };
       for (const part of asset.data.parts) {
         const geometry = new THREE.BufferGeometry();
         geometry.setAttribute("position", new THREE.Float32BufferAttribute(part.positions, 3));
         if (part.indices) geometry.setIndex(part.indices);
         if (part.normals) geometry.setAttribute("normal", new THREE.Float32BufferAttribute(part.normals, 3));
         else geometry.computeVertexNormals();
+        if (part.texcoords) geometry.setAttribute("uv", new THREE.Float32BufferAttribute(part.texcoords, 2));
         geometry.computeBoundingSphere();
-        const material = new THREE.MeshBasicMaterial({ color: new THREE.Color(...part.color), side: part.doubleSided ? THREE.DoubleSide : THREE.FrontSide });
+        const params = { color: new THREE.Color(...part.color), side: part.doubleSided ? THREE.DoubleSide : THREE.FrontSide };
+        if (part.map != null && images[part.map]) {
+          const blob = decodeImage(images[part.map]);
+          if (blob) {
+            const url = URL.createObjectURL(blob);
+            const tex = new THREE.TextureLoader().load(url);
+            tex.colorSpace = THREE.SRGBColorSpace;
+            tex.flipY = false;
+            params.map = tex;
+          }
+        }
+        if (part.normalMap != null && images[part.normalMap]) {
+          const blob = decodeImage(images[part.normalMap]);
+          if (blob) {
+            const url = URL.createObjectURL(blob);
+            const tex = new THREE.TextureLoader().load(url);
+            tex.flipY = false;
+            params.normalMap = tex;
+          }
+        }
+        if (part.alphaMode === "BLEND") {
+          params.transparent = true;
+          params.opacity = 1;
+          params.depthWrite = false;
+        } else if (part.alphaMode === "MASK") {
+          params.transparent = false;
+          params.alphaTest = part.alphaCutoff ?? 0.5;
+        }
+        const material = new THREE.MeshStandardMaterial(params);
         group.add(new THREE.Mesh(geometry, material));
       }
       models.set(asset.id, group);
@@ -283,7 +334,7 @@ async function createViewport({ three: THREE, controls = {}, canvas, renderer = 
     gpu.setSize(r.width, r.height, false);
     perspective.aspect = r.width / r.height;
     perspective.updateProjectionMatrix();
-    const size = 10;
+    const size = orthoScale;
     orthographic.left = -size * r.width / r.height;
     orthographic.right = size * r.width / r.height;
     orthographic.top = size;
@@ -294,9 +345,34 @@ async function createViewport({ three: THREE, controls = {}, canvas, renderer = 
   }
   function render() {
     if (disposed) return;
-    resize();
-    orbit?.update();
+    if (directed) applyDirected();
+    else orbit?.update();
     gpu.render(scene, camera);
+  }
+  function applyDirected() {
+    const pose = directed;
+    if (!pose) return;
+    const next = pose.projection === "orthographic" ? orthographic : perspective;
+    if (next !== camera) {
+      camera = next;
+      if (gizmo) gizmo.camera = camera;
+      if (orbit) orbit.object = camera;
+    }
+    camera.position.fromArray(pose.position);
+    camera.lookAt(new THREE.Vector3(...pose.target));
+    if (pose.projection === "orthographic") {
+      orthoScale = Number.isFinite(pose.orthoScale) ? pose.orthoScale : orthoScale;
+    }
+    if (pose.projection === "perspective" && Number.isFinite(pose.fov) && camera.fov !== pose.fov) {
+      camera.fov = pose.fov;
+      camera.updateProjectionMatrix();
+    }
+    if (orbit) orbit.target.fromArray(pose.target);
+  }
+  function directCamera(pose) {
+    directed = pose ?? null;
+    if (directed && orbit) orbit.enabled = false;
+    return { mode: directed?.projection ?? null };
   }
   function project(point) {
     resize();
@@ -358,6 +434,7 @@ async function createViewport({ three: THREE, controls = {}, canvas, renderer = 
     projection,
     configure,
     cancel,
+    directCamera,
     cameraState() {
       return { position: camera.position.toArray(), target: orbit?.target.toArray(), projection: camera === orthographic ? "orthographic" : "perspective", zoom: camera.zoom };
     },
@@ -389,6 +466,33 @@ async function createViewport({ three: THREE, controls = {}, canvas, renderer = 
     },
     metrics() {
       return { backend, objects: meshes.size, geometries: gpu.info.memory.geometries, drawCalls: gpu.info.render.drawCalls ?? gpu.info.render.calls, controls: !!gizmo, dragging: !!drag, modelAssets: models.size };
+    },
+    frameTimings({ samples = 120 } = {}) {
+      samples = Math.min(600, Math.max(16, Math.floor(samples)));
+      const rounded = (n) => Number.isFinite(n) ? Math.round(n * 100) / 100 : null;
+      return new Promise((resolve) => {
+        let frames = 0;
+        const wait = performance.now() + samples;
+        const deltas = [];
+        let last = performance.now();
+        const tick = (now) => {
+          const d = now - last;
+          last = now;
+          render();
+          if (frames > 0) deltas.push(d);
+          frames++;
+          if (now < wait && frames < samples + 16) {
+            requestAnimationFrame(tick);
+          } else {
+            const sorted = deltas.slice().sort((a, b) => a - b);
+            const p = (q) => sorted[Math.min(sorted.length - 1, Math.floor(q * (sorted.length - 1)))] ?? null;
+            const frameMs = deltas.length ? 1e3 / (deltas.reduce((a, b) => a + b, 0) / deltas.length) : null;
+            const info = gpu.info.render;
+            resolve({ backend, frame: { count: deltas.length, presentFps: frameMs ? Math.round(1e3 / frameMs * 10) / 10 : null, p50: rounded(p(0.5)), p90: rounded(p(0.9)), p95: rounded(p(0.95)), p99: rounded(p(0.99)) }, render: info ? { calls: info.calls ?? info.drawCalls ?? null, triangles: info.triangles ?? null, points: info.points ?? null, lines: info.lines ?? null } : null, gpuTimestampQuery: { available: !!(gpu.backend?.device?.features?.has?.("timestamp-query") || gpu.backend?.isWebGPUBackend === true), note: "presentation rate is rAF-bound; GPU timestamp sampling requires timestamp-query feature and async readback" } });
+          }
+        };
+        requestAnimationFrame(tick);
+      });
     },
     dispose() {
       if (disposed) return;

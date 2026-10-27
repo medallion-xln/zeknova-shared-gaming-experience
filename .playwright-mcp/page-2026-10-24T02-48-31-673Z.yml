@@ -1,0 +1,64 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: ZEKNOVA ENGINE / INDEPENDENT WORLD 03
+      - heading "Construction Valley" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Explore a small colony. Gather supplies. Build a place to stay.
+    - generic [ref=e8]: NATIVE · WebGL 2
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic "3D colony terrain. Use WASD to move; click terrain to build." [ref=e12]
+        - generic:
+          - generic: WASD / arrows · move
+          - generic: Click · build
+        - generic [ref=e13]: Your officer is gold. Rocks, water, and structures block movement. Build inside the grid.
+      - generic [ref=e14]:
+        - button "Save locally" [ref=e15] [cursor=pointer]
+        - button "Restore save" [ref=e16] [cursor=pointer]
+        - button "Verify replay" [ref=e17] [cursor=pointer]
+        - button "Capture reference" [ref=e18] [cursor=pointer]
+        - button "Restart scene" [ref=e19] [cursor=pointer]
+      - status [ref=e20]: Ready. Select a structure and click clear terrain.
+      - group [ref=e21]:
+        - generic "World & event inspector" [ref=e22] [cursor=pointer]
+        - generic [ref=e23]: "{ \"authority\": { \"domain\": \"construction-world\", \"owner\": \"independent-engine\", \"epoch\": 0 }, \"revision\": 0, \"inventoryRevision\": 0, \"player\": { \"id\": \"player\", \"x\": 0, \"y\": 0, \"z\": -5, \"radius\": 0.4, \"xp\": 0 }, \"mission\": { \"status\": \"active\", \"commands\": [] }, \"buildings\": [], \"events\": [], \"subscriberFailures\": [], \"renderer\": { \"id\": \"source-world-webgl\", \"initialized\": true, \"backend\": \"webgl2\", \"available\": true, \"presented\": 0, \"drawCalls\": 0, \"triangles\": 0, \"geometries\": 0, \"textures\": 0, \"canvas\": { \"width\": 450, \"height\": 225 }, \"sharedInstance\": true, \"ownsContext\": false }, \"connection\": null }"
+    - complementary [ref=e24]:
+      - generic [ref=e25]:
+        - heading "Shared supplies" [level=2] [ref=e26]
+        - generic [ref=e27]: 12 stone
+        - paragraph [ref=e28]: Shelter · 4 stoneBeacon · 6 stone
+        - button "Gather +8 stone" [ref=e30] [cursor=pointer]
+      - generic [ref=e31]:
+        - heading "First colony" [level=2] [ref=e32]
+        - generic [ref=e33]: Build two structures · 0/2
+        - paragraph [ref=e35]: Officer XP · 0 / reward · 25 XP, once
+      - generic [ref=e36]:
+        - heading "Construction" [level=2] [ref=e37]
+        - text: Selected structure
+        - combobox "Selected structure" [ref=e39]:
+          - option "Shelter" [selected]
+          - option "Beacon"
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - text: X
+            - spinbutton "X" [ref=e42]: "2"
+          - generic [ref=e43]:
+            - text: Z
+            - spinbutton "Z" [ref=e44]: "2"
+        - generic [ref=e45]:
+          - button "Place structure" [ref=e46] [cursor=pointer]
+          - button "Try outside" [ref=e47] [cursor=pointer]
+        - generic [ref=e48]:
+          - combobox "Structure to remove" [ref=e49]
+          - button "Remove" [ref=e50] [cursor=pointer]
+        - paragraph [ref=e51]: Removal clears the site. Supplies are spent when construction succeeds.
+      - generic [ref=e52]:
+        - heading "Second builder" [level=2] [ref=e53]
+        - paragraph [ref=e54]: Simulate another builder requesting a shelter at (6, 6), using the same supplies and world.
+        - button "Request as Bob" [ref=e55] [cursor=pointer]
+  - generic [ref=e56]:
+    - text: ENGINE authority in this independent world · browser-local saves ·
+    - link "Previous transaction lab" [ref=e57] [cursor=pointer]:
+      - /url: ./v2.html
+    - text: The existing ZekNova game retains LEGACY construction authority.

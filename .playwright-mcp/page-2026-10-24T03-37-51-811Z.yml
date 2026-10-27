@@ -1,0 +1,6 @@
+- generic [ref=e1]:
+  - heading "WHEP media-decode harness" [level=1] [ref=e2]
+  - generic [ref=e4]: connected
+  - button "Connect" [active] [ref=e5]
+  - button "Close" [ref=e6]
+  - generic [ref=e7]: "{ \"frames\": 1, \"firstFrameLagMs\": 9007, \"last\": { \"now\": 9006, \"mediaTime\": 0, \"presentedFrames\": 1, \"expectedDisplayTime\": 9006.1, \"width\": 640, \"height\": 360 }, \"videoWidth\": 640, \"videoHeight\": 360, \"readyState\": 4, \"paused\": false, \"currentTime\": 0.001133, \"receiverState\": \"connected\", \"receiverStats\": { \"state\": \"connected\", \"error\": null, \"generation\": 1, \"sessionUrl\": \"http://127.0.0.1:8889/native-reference/whep/5060c40f-3ac7-4b8f-a530-f638f44850d3\", \"connects\": 1, \"restarts\": 0, \"tracks\": 2, \"errors\": 0 } }"

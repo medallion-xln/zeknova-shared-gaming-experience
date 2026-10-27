@@ -1,0 +1,15 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "BEACON HAVEN" [level=1] [ref=e3]
+    - button "Save" [ref=e4]
+    - button "Restore" [ref=e5]
+    - generic [ref=e6]:
+      - text: Open exported world
+      - button "Open exported world" [ref=e7]
+    - button "Enable sound" [ref=e8]
+    - link "Edit in Studio" [ref=e9] [cursor=pointer]:
+      - /url: ../studio/
+  - paragraph [ref=e10]: "Restore the island relay: WASD / arrows to collect 3 mint energy cells. Move near the blue site and press B to build. Approach the blue console and press E to power it."
+  - status [ref=e11]: Opening island…
+  - generic "Beacon Haven playable island" [ref=e12]
+  - paragraph

@@ -1,0 +1,58 @@
+{
+  "schema": "zge.milestone.verification.v1",
+  "milestone": "ZGE-15",
+  "title": "Immersive Fullscreen Play Mode & Three-Camera System",
+  "date": "2026-10-23",
+  "verdict": "PARTIAL",
+  "head": "d307723",
+  "custody": {
+    "committed": false,
+    "goldenHashesRepinned": false,
+    "deployed": false,
+    "credentialsRotated": false,
+    "productionTouched": false,
+    "multiplayerExpanded": false,
+    "dirtyWorktreePreserved": true
+  },
+  "tests": {
+    "engine": { "pass": 299, "total": 299, "note": "packages/*/test/*.test.mjs (294 baseline + 5 additional green; packages/core untouched)" },
+    "sdk": { "pass": 45, "total": 45, "note": "includes movement-basis, occlusion, and camera-preset tests" },
+    "legacy": { "pass": 83, "total": 86, "note": "same 3 golden mismatches (7a9cdfee, e6af33cd, reconstruct-bytes) untouched — NOT re-pinned" },
+    "zge15Camera": { "pass": 12, "total": 12 }
+  },
+  "phases": [
+    { "id": 1, "name": "immersive fullscreen", "status": "DONE", "evidence": "browser: native fullscreen + full-window fallback, HUD, pause/resume, return-to-editor, authored scene unchanged" },
+    { "id": 2, "name": "camera architecture", "status": "DONE", "evidence": "packages/sdk/src/camera.js createCameraDirector (render-phase system)" },
+    { "id": 3, "name": "isometric", "status": "DONE", "evidence": "orthographic 45deg/40deg, browser cameraState assertion + studio-isometric.png" },
+    { "id": 4, "name": "over-shoulder", "status": "DONE", "evidence": "perspective fov58 shoulder offset, studio-over-shoulder.png" },
+    { "id": 5, "name": "third-person", "status": "DONE", "evidence": "perspective fov50 chase/orbit, studio-third-person.png" },
+    { "id": 6, "name": "seamless switching", "status": "DONE", "evidence": "1/2/3/C ~350ms, stepNumber stable, revision 0; unit test for midpoint projection swap; setMode ~2ms / worst-frame <=0.5ms" },
+    { "id": 7, "name": "input routing + camera-relative movement", "status": "DONE", "evidence": "getMovementBasis/bindMovementBasis threaded through installProjectRules + installOutpost (single-writer preserved); browser: Beacon Haven W alignment 1.0, Studio W camera-forward; unit tests for unit basis + camera-relative displacement" },
+    { "id": 8, "name": "fullscreen HUD", "status": "DONE", "evidence": "objective/resource + camera selector + pause dialog" },
+    { "id": 9, "name": "camera collision/occlusion", "status": "DONE", "evidence": "resolveOcclusion ray/AABB slab test, presentation-only slide w/ actor exclusion + clearance; unit tests for hit/slide/self-exclude; setCollision toggle" },
+    { "id": 10, "name": "real gameplay in all modes", "status": "PARTIAL", "note": "movement + camera + switch verified programmatically in Beacon Haven and Studio play mode; resource/interaction/save physical loop across all three modes requires a human tester" },
+    { "id": 11, "name": "performance", "status": "DONE", "evidence": "Beacon Haven 600-frame rAF: avg 33.3ms p50 33.3/p95 33.9/p99 34.3; sim 59Hz fixed-step decoupled from 30Hz headless rAF ceiling; Studio 7 draw calls; camera switch <=0.5ms; exitPlay disposes cleanly (sim cleared, authored scene unchanged)" },
+    { "id": 12, "name": "camera presets portability", "status": "DONE", "evidence": "zge.camera.presets.v1 data-only contract (defaultMode/enabledModes/per-mode distance/pitch/fov/sensitivity/pitchLimits/transitionDuration); validateCameraPreset; director applyPreset; project.camera round-trips through createEngine/exportProject; Studio reads project.camera into state.cameraPreset and passes to director" },
+    { "id": 13, "name": "full regression + acceptance", "status": "PARTIAL", "note": "engine 299/299, SDK 45/45, legacy 83/86 (3 golden untouched); physical pointer-lock mouse-look not certifiable headless (trusted-gesture requirement)" }
+  ],
+  "renderer": {
+    "webgpu": "verified (auto)",
+    "webgl": "verified (forceWebGL fallback, render-label WEBGL · native)"
+  },
+  "evidenceFiles": [
+    "docs/engine/evidence/zge15/studio-isometric.png",
+    "docs/engine/evidence/zge15/studio-over-shoulder.png",
+    "docs/engine/evidence/zge15/studio-third-person.png"
+  ],
+  "regressionsFixed": [
+    "setModelAssets crash on legacy pre-texture static models (missing images array / part.map undefined)",
+    "ReferenceError: frameTimings is not defined (duplicate return-object key)",
+    "rules.js syntax error (extra closing brace) from camera-relative move rule",
+    "beacon-haven main.js duplicate createCameraDirector + delete director + double installProjectRules",
+    "camera.js collision const assigned in setCollision (TDZ/'cannot assign to constant')"
+  ],
+  "openForPASS": [
+    "physical pointer-lock mouse-look certification (trusted-gesture; headless blocked)",
+    "physical Play/Stop resource-collect/interact/objective/save loop across all three modes (requires a human tester)"
+  ]
+}

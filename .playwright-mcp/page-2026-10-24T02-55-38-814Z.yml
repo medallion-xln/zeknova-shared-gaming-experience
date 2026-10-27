@@ -1,0 +1,23 @@
+- generic [ref=f2e1]:
+  - main [ref=f2e26]:
+    - text: ◇ ◇ ◇ ◇ ◇
+    - generic "3D scene viewport" [ref=f2e77]
+  - generic:
+    - generic:
+      - group "Camera mode":
+        - button "1 Isometric" [ref=f2e162] [cursor=pointer]
+        - button "2 Shoulder" [ref=f2e163] [cursor=pointer]
+        - button "3 Third" [ref=f2e164] [cursor=pointer]
+        - button "C Cycle" [ref=f2e165] [cursor=pointer]
+      - group "Rendering mode":
+        - button "Native" [ref=f2e166] [cursor=pointer]
+        - button "Clean ref" [active] [pressed] [ref=f2e167] [cursor=pointer]
+        - button "Neural" [ref=f2e168] [cursor=pointer]
+      - status: Explore the world
+      - generic:
+        - button "Pause ⏸" [ref=f2e169] [cursor=pointer]
+        - button "Return to Editor" [ref=f2e170] [cursor=pointer]
+    - generic:
+      - generic: isometric
+      - generic: REFERENCE
+      - generic: WASD move · mouse look · 1/2/3/C camera · Esc pause

@@ -1,0 +1,9 @@
+{
+  "name": "@zge/neural-bridge",
+  "version": "0.1.0",
+  "description": "Source-owned reference-frame ingestion bridge: validates ZekNova clean reference frames and feeds the Matrix-Game 4 inference boundary over a private channel. CPU-compatible; no model, no GPU. Never holds gameplay authority.",
+  "type": "module",
+  "main": "./src/index.js",
+  "private": true,
+  "license": "UNLICENSED"
+}
