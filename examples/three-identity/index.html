@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZGE-17 AC1 · Three.js identity probe</title>
+<script type="importmap">{"imports":{
+  "three":"/node_modules/three/build/three.webgpu.min.js",
+  "three/webgpu":"/node_modules/three/build/three.webgpu.min.js"
+}}</script>
+<style>
+  body{margin:0;padding:24px;background:#0d1b22;color:#e8f1ec;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}
+  h1{font-size:18px;margin:0 0 4px}
+  p.lede{margin:0 0 20px;color:#8fa8a2;max-width:70ch}
+  table{border-collapse:collapse;width:100%;max-width:980px;margin-bottom:22px}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #1e343d;vertical-align:top}
+  th{color:#8fa8a2;font-weight:600}
+  .pass{color:#63d49a}.fail{color:#ff7a6b}.note{color:#f0c674}
+  #verdict{font-size:16px;padding:12px 16px;border-radius:6px;max-width:980px;margin-bottom:22px}
+  #verdict.ok{background:#15341f;border:1px solid #63d49a}
+  #verdict.bad{background:#3a1b19;border:1px solid #ff7a6b}
+  code{color:#9fd4ff}
+</style>
+</head>
+<body>
+<h1>ZGE-17 AC1 — Three.js identity probe</h1>
+<p class="lede">Asserts that every importable Three.js path in this repository resolves to one
+module instance, so objects created by the game's satellites are <code>instanceof</code> the
+editor stack's classes. The frozen bundle's inlined copy is a known, documented exception.</p>
+<div id="verdict">Running…</div>
+<table id="paths"><thead><tr><th>Import path</th><th>REVISION</th><th>Group identity</th><th>BufferGeometry identity</th></tr></thead><tbody></tbody></table>
+<table id="extra"><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody></tbody></table>
+
+<script type="module">
+const row = (tbody, cells) => {
+  const tr = document.createElement('tr');
+  for (const c of cells) {
+    const td = document.createElement('td');
+    if (c && typeof c === 'object') { td.textContent = c.text; td.className = c.cls || ''; }
+    else td.textContent = c;
+    tr.append(td);
+  }
+  tbody.append(tr);
+};
+
+// Every path anything in this repository can import Three through.
+const paths = {
+  'assets/vendor/three.module.min.js (satellites, vendored loaders, src/game)': '/assets/vendor/three.module.min.js',
+  'assets/vendor/three.core.min.js (direct core importers)':                    '/assets/vendor/three.core.min.js',
+  'node_modules/three/build/three.module.min.js (canonical core wrapper)':      '/node_modules/three/build/three.module.min.js',
+  'three  → three.webgpu.min.js (SDK, Studio, example games)':                  'three',
+};
+
+const loaded = [];
+for (const [label, spec] of Object.entries(paths)) {
+  try { loaded.push({ label, spec, mod: await import(spec) }); }
+  catch (error) { loaded.push({ label, spec, error }); }
+}
+
+// three.core.min.js does not export REVISION; compare on shared classes instead.
+const reference = loaded.find((e) => e.mod?.Group)?.mod ?? null;
+const tbody = document.querySelector('#paths tbody');
+let allIdentical = true;
+
+for (const entry of loaded) {
+  if (entry.error) {
+    allIdentical = false;
+    row(tbody, [entry.label, { text: 'import failed', cls: 'fail' }, { text: String(entry.error.message).slice(0, 60), cls: 'fail' }, '—']);
+    continue;
+  }
+  const sameGroup = entry.mod.Group === reference.Group;
+  const sameGeom  = entry.mod.BufferGeometry === reference.BufferGeometry;
+  if (!sameGroup || !sameGeom) allIdentical = false;
+  row(tbody, [
+    entry.label,
+    entry.mod.REVISION ?? '—',
+    { text: sameGroup ? 'same object' : 'DIFFERENT', cls: sameGroup ? 'pass' : 'fail' },
+    { text: sameGeom ? 'same object' : 'DIFFERENT', cls: sameGeom ? 'pass' : 'fail' },
+  ]);
+}
+
+// A real cross-stack construction: an object built through the vendored path must
+// satisfy instanceof from the editor-stack namespace.
+const extra = document.querySelector('#extra tbody');
+const vendored = loaded.find((e) => e.spec === '/assets/vendor/three.module.min.js')?.mod;
+const editor   = loaded.find((e) => e.spec === 'three')?.mod;
+let crossOk = false;
+if (vendored?.Group && editor?.Object3D) {
+  const made = new vendored.Group();
+  made.add(new vendored.Mesh(new vendored.BufferGeometry()));
+  crossOk = made instanceof editor.Object3D && made.children[0] instanceof editor.Mesh;
+}
+row(extra, ['Object built by the vendored path is instanceof the editor stack’s Object3D/Mesh',
+  { text: crossOk ? 'PASS' : 'FAIL', cls: crossOk ? 'pass' : 'fail' }]);
+
+const revisions = new Set(loaded.filter((e) => e.mod?.REVISION).map((e) => e.mod.REVISION));
+row(extra, ['Distinct Three revisions across importable paths',
+  { text: [...revisions].join(', ') || 'none reported', cls: revisions.size === 1 ? 'pass' : 'fail' }]);
+
+row(extra, ['Frozen bundle assets/index-02987539.js (Three r185 inlined by its own build)',
+  { text: 'KNOWN EXCEPTION — separate instance until the rebuild replaces it (ZGE-17 §13)', cls: 'note' }]);
+
+const ok = allIdentical && crossOk && revisions.size === 1;
+const verdict = document.querySelector('#verdict');
+verdict.className = ok ? 'ok' : 'bad';
+verdict.textContent = ok
+  ? 'AC1 PASS — every importable Three.js path resolves to one module instance.'
+  : 'AC1 FAIL — more than one Three.js module instance is reachable. See the rows above.';
+globalThis.__zge17ThreeIdentity = { ok, allIdentical, crossOk, revisions: [...revisions] };
+</script>
+</body>
+</html>
