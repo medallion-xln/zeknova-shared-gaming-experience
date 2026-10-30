@@ -1,0 +1,45 @@
+{
+  "head": "f91da08de12474990e4379b4b6ed906acb8a836b",
+  "branch": "main",
+  "node": "22.22.2",
+  "engineTests": {
+    "pass": 347,
+    "fail": 0
+  },
+  "sdkTests": {
+    "pass": 70,
+    "fail": 0
+  },
+  "requiredBehaviourTests": {
+    "pass": 18,
+    "fail": 0
+  },
+  "lineageTests": {
+    "pass": 2,
+    "fail": 0,
+    "tamperTargets": 6
+  },
+  "sdkNegativeControlTests": {
+    "pass": 1,
+    "fail": 0,
+    "tamperTargets": 4
+  },
+  "publicExports": 45,
+  "presentationExports": 1,
+  "browserRuns": 4,
+  "browserPageErrors": 0,
+  "cleanSourceSnapshot": true,
+  "hostedCI": "NOT_RUN: workflow is an uncommitted, unpushed local change",
+  "shippingAssetsModified": false,
+  "nestedCheckoutModifiedByMilestone": false,
+  "disposition": "PARTIAL: hosted CI activation/execution remains unverified",
+  "hashes": {
+    "assets/index-02987539.js": "25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115",
+    "assets/model-runtime-c96327ba.js": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+    "artifacts/runtime-reconstruction/index-reconstructed.js": "891b673401bf3e823ebb46e63822671112286de0ebc4107af74e3869c28ca791",
+    "artifacts/runtime-reconstruction/model-runtime-reconstructed.js": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+    "packages/sdk/dist/index.js": "f2d05e1fb2627b6d032a1146c7d8cd2162ed443e1ff7c82dcf85961664b40f99",
+    "packages/sdk/dist/three.js": "3263fb78c86e9347d1c02772cb6f5e87009c94619042364e052393947c401566",
+    "packages/sdk/dist/build-manifest.json": "62a897dcca22917fe7283fc1970c94ebf88a0e544b198ac95d10747cfad85716"
+  }
+}

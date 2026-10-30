@@ -95,15 +95,20 @@
     "verify:external:v12": "node scripts/zge12-external.mjs",
     "benchmark:studio:large": "node scripts/zge12-large-scenes.mjs",
     "diagnose:world-retention:v12": "node --expose-gc scripts/zge12-retention.mjs",
-    "diagnose:sqlite:v12": "node scripts/zge12-db-probe.mjs"
+    "diagnose:sqlite:v12": "node scripts/zge12-db-probe.mjs",
+    "test:runtime:behaviours": "node --experimental-vm-modules --test tests/runtime-required-behaviours.test.mjs",
+    "test:runtime:lineage": "node --test tests/runtime-lineage.test.mjs",
+    "verify:sdk:release": "node scripts/zge18a-sdk-consumer.mjs",
+    "verify:reproducible": "node scripts/zge18a-reproduce.mjs"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22.22.2 <23"
   },
   "devDependencies": {
-    "@gltf-transform/cli": "^4.4.2",
-    "esbuild": "^0.25.11",
-    "three": "^0.185.0"
+    "@gltf-transform/cli": "4.4.2",
+    "esbuild": "0.25.11",
+    "three": "0.185.0",
+    "typescript": "5.9.3"
   },
   "workspaces": [
     "packages/sdk"

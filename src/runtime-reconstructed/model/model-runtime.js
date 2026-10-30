@@ -1,3 +1,4 @@
+import { getThreeAssetService } from '../packages/assets/src/threeAssetService.js';
 import {
   AnimationMixer,
   Box3,
@@ -6,32 +7,21 @@ import {
   LoopOnce,
   Vector3,
 } from './vendor/three.module.min.js';
-import { GLTFLoader } from './vendor/GLTFLoader.js';
-import { KTX2Loader } from './vendor/KTX2Loader.bundle.js';
-import { MeshoptDecoder } from './vendor/meshopt_decoder.module.js';
 import { clone as cloneSkinnedModel } from './vendor/SkeletonUtils.js';
 import { currentModelQuality, originalModelPath, resolveModelLodPath } from './model-lod-manifest.js';
 
-const loader = new GLTFLoader();
-loader.setMeshoptDecoder(MeshoptDecoder);
-const ktx2Loader = new KTX2Loader().setTranscoderPath('./assets/vendor/basis/');
-let ktx2Configured = false;
+import { MeshoptDecoder } from './vendor/meshopt_decoder.module.js';
+
+const loader = getThreeAssetService();
 
 // GLTFLoader decoding and GPU texture preparation can spike memory when several
 // rigged files arrive together. Keep one shared queue for every officer,
 // companion, and enemy GLB handled by this runtime.
 let modelAssetQueue = Promise.resolve();
 
-function configureKtx2Loader() {
-  const renderer = globalThis.ZekNovaGame?.renderer;
-  if (!renderer || ktx2Configured) return;
-  ktx2Loader.detectSupport(renderer);
-  loader.setKTX2Loader(ktx2Loader);
-  ktx2Configured = true;
-}
+
 
 function loadGlbOneAtATime(path) {
-  configureKtx2Loader();
   const selectedPath = resolveModelLodPath(path);
   const sourcePath = originalModelPath(path);
   const task = modelAssetQueue.then(async () => {

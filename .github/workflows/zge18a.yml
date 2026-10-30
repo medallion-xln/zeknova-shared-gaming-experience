@@ -1,0 +1,65 @@
+name: ZGE integrity and SDK release
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      gpu:
+        description: Run browser certification on a provisioned zge-desktop-gpu runner
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Install locked toolchain
+        run: npm ci --ignore-scripts
+      - name: Install PHP fixture dependencies
+        run: sudo apt-get update && sudo apt-get install -y php-cli php-sqlite3
+      - name: Source, artifact, graphics and behavior integrity
+        run: |
+          npm run check
+          npm run runtime:reconstruct:verify
+          node tests/runtime-graphics-context.test.mjs
+          node tests/renderer-ownership-certification.test.mjs
+          npm run test:runtime:lineage
+          npm run test:runtime:behaviours
+          node --test tests/runtime-disposal-mutations.test.mjs
+          node --test tests/sdk-output-integrity.test.mjs
+      - name: Package and SDK suites
+        run: |
+          npm run test:engine
+          npm run test:sdk
+      - name: SDK release and public consumer
+        run: |
+          npm run build:sdk
+          npm run verify:sdk:release
+      - name: Independent builds and committed output consistency
+        run: |
+          npm run verify:reproducible
+          git diff --exit-code -- artifacts/runtime-reconstruction packages/sdk/dist
+  # GPU certification is a separate, explicit self-hosted lane. The pinned
+  # Playwright module and real browser/GPU are supplied by that runner.
+  browser-certification:
+    if: github.event_name == 'workflow_dispatch' && inputs.gpu
+    runs-on: [self-hosted, zge-desktop-gpu]
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: npm ci --ignore-scripts
+      - run: node scripts/zge18a-browser.mjs

@@ -1,0 +1,25 @@
+{
+  "schema": "zge.runtime-lineage.v1",
+  "baselineCommit": "f91da08de12474990e4379b4b6ed906acb8a836b",
+  "policy": "Shipping references remain unchanged. Candidates derive from reviewed sources; compatibility additionally corrects the final staged RB-1 wrapper. This manifest does not deploy or change launch bindings.",
+  "compatibility": {
+    "shipping": "assets/index-02987539.js",
+    "sha256": "891b673401bf3e823ebb46e63822671112286de0ebc4107af74e3869c28ca791",
+    "candidate": "artifacts/runtime-reconstruction/index-reconstructed.js",
+    "deploymentPath": "assets/index-02987539.js",
+    "historicalSha256": "7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab",
+    "disposition": "Reconcile only shipping lines 1122 (RB-1), 1144 (RB-2), 1168 (RB-3) into segment 04. Protect actual functions with runtime-required-behaviours tests. Candidate-only RB-1 correction: final staged wrapper had another unbounded HQ await. Bound it to 3000ms, skip a duplicate HQ wait in the inner implementation, and fence disposal around the unchanged 5500ms staging pause. Shipping reference is preserved, not deployed. HQ rejection in the staged wrapper retains procedural fallback rather than leaking a rejected detached promise.",
+    "shippingSha256": "25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115"
+  },
+  "model": {
+    "shipping": "assets/model-runtime-c96327ba.js",
+    "sha256": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+    "candidate": "artifacts/runtime-reconstruction/model-runtime-reconstructed.js",
+    "deploymentPath": "assets/model-runtime-c96327ba.js",
+    "historicalSha256": "e6af33cdf1f56c098d16156ce34ff435c7fa7a5490ed640a63c6e5e43ca726d0",
+    "disposition": "Reconcile shared getThreeAssetService loader ownership and remove historical independent GLTF/KTX2 construction. Preserve all other shipping model bytes."
+  },
+  "optionalDeploymentImports": {
+    "assets/wasm/zeknova_core.js": "Generated optional WASM module, disabled unless wasm query flag is explicitly enabled. Ignored locally; not required by default launch or this milestone. WASM-on certification is excluded."
+  }
+}

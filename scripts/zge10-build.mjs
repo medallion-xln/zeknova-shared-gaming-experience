@@ -1,7 +1,11 @@
 import { build } from 'esbuild';
-import { mkdirSync,writeFileSync,copyFileSync } from 'node:fs';
+import { mkdirSync,writeFileSync,copyFileSync,readdirSync,readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-mkdirSync('packages/sdk/dist',{recursive:true});for(const entry of ['index','three'])copyFileSync(`packages/sdk/src/${entry}.d.ts`,`packages/sdk/dist/${entry}.d.ts`);const hashes={};
+mkdirSync('packages/sdk/dist',{recursive:true});const hashes={};
+for(const file of readdirSync('packages/sdk/src').filter(f=>f.endsWith('.d.ts')).sort()){
+ copyFileSync(`packages/sdk/src/${file}`,`packages/sdk/dist/${file}`);
+ hashes[file]=createHash('sha256').update(readFileSync(`packages/sdk/src/${file}`)).digest('hex');
+}
 for(const entry of ['index','three']){
  const options={entryPoints:[`packages/sdk/src/${entry}.js`],bundle:true,format:'esm',platform:'browser',external:['three/webgpu'],legalComments:'none',write:false};
  const a=(await build(options)).outputFiles[0].contents,b=(await build(options)).outputFiles[0].contents;

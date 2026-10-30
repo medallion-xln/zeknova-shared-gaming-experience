@@ -1,0 +1,50 @@
+{
+  "schema": "zge18a2.preservation.v1",
+  "headBefore": "f91da08de12474990e4379b4b6ed906acb8a836b",
+  "headAfter": "f91da08de12474990e4379b4b6ed906acb8a836b",
+  "baselineFileCount": 54125,
+  "protectedFileCount": 51092,
+  "protectedChanged": [],
+  "protectedAdded": [],
+  "protectedRemoved": [],
+  "baselineFilesChanged": [
+    "docs/engine/ZGE_18A_IMPLEMENTATION_REPORT.md",
+    "sentinel-grid/.playwright-mcp/console-2026-10-30T22-45-00-696Z.log",
+    "tests/helpers/runtime-behaviour-harness.mjs",
+    "tests/runtime-required-behaviours.test.mjs"
+  ],
+  "runtimeAndLaunchHashes": {
+    "src/game/Game.js": {
+      "before": "c87b9c26fdf5a09ce741a72aace21a0a3627f608350bff4b75d8a3c5ededeba3",
+      "after": "c87b9c26fdf5a09ce741a72aace21a0a3627f608350bff4b75d8a3c5ededeba3"
+    },
+    "assets/index-02987539.js": {
+      "before": "25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115",
+      "after": "25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115"
+    },
+    "assets/model-runtime-c96327ba.js": {
+      "before": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+      "after": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e"
+    },
+    "src/runtime-reconstructed/compat/segments/04-gameplay-systems.js": {
+      "before": "d20f02d35b4d674faaebd815f18bb0878ea757446b2e9af812e1cd2c35fe4a4e",
+      "after": "d20f02d35b4d674faaebd815f18bb0878ea757446b2e9af812e1cd2c35fe4a4e"
+    },
+    "src/runtime-reconstructed/model/model-runtime.js": {
+      "before": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+      "after": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e"
+    },
+    "artifacts/runtime-reconstruction/index-reconstructed.js": {
+      "before": "891b673401bf3e823ebb46e63822671112286de0ebc4107af74e3869c28ca791",
+      "after": "891b673401bf3e823ebb46e63822671112286de0ebc4107af74e3869c28ca791"
+    },
+    "artifacts/runtime-reconstruction/model-runtime-reconstructed.js": {
+      "before": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e",
+      "after": "078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e"
+    }
+  },
+  "unrelatedConcurrentChange": [
+    "sentinel-grid/.playwright-mcp/console-2026-10-30T22-45-00-696Z.log"
+  ],
+  "status": "PASS"
+}

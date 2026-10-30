@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile, mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { verifyRuntimeLineage } from '../scripts/runtime-lineage.mjs';
 
 const root = new URL("../", import.meta.url);
 const read = (relative) => readFile(new URL(relative, root));
@@ -12,9 +13,9 @@ const modelGolden = await read("assets/model-runtime-c96327ba.js");
 const compatCandidate = await read("artifacts/runtime-reconstruction/index-reconstructed.js");
 const modelCandidate = await read("artifacts/runtime-reconstruction/model-runtime-reconstructed.js");
 
-assert.equal(hash(compatGolden), "7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab");
-assert.equal(hash(modelGolden), "e6af33cdf1f56c098d16156ce34ff435c7fa7a5490ed640a63c6e5e43ca726d0");
-assert.deepEqual(compatCandidate, compatGolden, "reconstructed compatibility bytes must equal the golden oracle");
+await verifyRuntimeLineage();
+// Compatibility has an explicitly recorded candidate-only RB-1 wrapper correction.
+// verifyRuntimeLineage pins BOTH the untouched shipping reference and reviewed candidate.
 assert.deepEqual(modelCandidate, modelGolden, "reconstructed model bytes must equal the golden oracle");
 
 const compatText = compatCandidate.toString("utf8");
@@ -38,10 +39,10 @@ try {
   tampered[0] ^= 1;
   const tamperedPath = path.join(temporary, "index.js");
   await writeFile(tamperedPath, tampered);
-  assert.notEqual(hash(await readFile(tamperedPath)), hash(compatGolden), "tampering must be detected");
+  assert.notEqual(hash(await readFile(tamperedPath)), hash(compatCandidate), "tampering must change the reviewed candidate digest");
 } finally {
   await rm(temporary, { recursive: true, force: true });
 }
 
-console.log(JSON.stringify({ compatibilityHash: hash(compatCandidate), modelHash: hash(modelCandidate), modelExports: exports, parity: "exact-bytes", authority: "R0", tamperDetection: true }, null, 2));
+console.log(JSON.stringify({ compatibilityHash: hash(compatCandidate), shippingCompatibilityHash: hash(compatGolden), modelHash: hash(modelCandidate), modelExports: exports, parity: "reviewed-source-lineage; model exact shipping bytes; compatibility RB-1 candidate correction", authority: "R0", tamperDetection: true }, null, 2));
 

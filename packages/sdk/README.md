@@ -1,8 +1,8 @@
-# @zge/sdk · preview 11
+# @zge/sdk · preview 13
 
-Local authoring and isolated simulation SDK. Node22+, modern browsers, pinned host Three0.185.0. No original ZekNova game bundle is needed. Plugins are trusted executable code, not a malicious-code sandbox. PHP/SQLite gameplay authority is separate.
+Local authoring and isolated simulation SDK. Node22.22.2–22.x, modern browsers, pinned host Three0.185.0. No original ZekNova game bundle is needed. Plugins are trusted executable code, not a malicious-code sandbox. PHP/SQLite gameplay authority is separate.
 
-Install the SDK tarball with `npm install ./zge-sdk-0.1.0-preview.11.tgz three@0.185.0`. Use an ESM project (`"type":"module"`). Public package exports include TypeScript declarations. Build from captured source with pinned esbuild0.25.11 and `node scripts/zge10-build.mjs`; declarations are emitted into `dist` from the maintained public declaration sources. A clean installed consumer is typechecked with TypeScript6.0.3.
+Install the SDK tarball with `npm install ./zge-sdk-0.1.0-preview.13.tgz three@0.185.0`. Use an ESM project (`"type":"module"`). Public package exports include TypeScript declarations. Build from captured source with pinned esbuild0.25.11 and `node scripts/zge10-build.mjs`; declarations are emitted into `dist` from the maintained public declaration sources. A clean installed consumer is typechecked with TypeScript5.9.3.
 
 This complete example is executed by documentation certification:
 
@@ -80,3 +80,18 @@ and a keyboard-accessible Place selected asset alternative to dragging.
 Asset paths also reject percent escapes, dot/empty segments and surrounding whitespace to avoid URL-normalization aliases or encoded traversal. This is validation tightening for previously ambiguous files.
 
 Importing a static model into an older supported project raises its exported minimumPreview to12. Portable model data labeled preview11 is rejected so older hosts cannot silently claim model support.
+
+### ZGE-18A release verification
+
+`npm run build:sdk` generates JS, all maintained declaration files and a content-hash manifest.
+`npm run verify:sdk:release` packs the public package, installs it in a fresh temporary consumer,
+checks all 45 root exports and `/three`, exercises movement/trusted-model APIs, and typechecks
+all runtime exports plus positive/negative usage examples. No private source import is used by
+that consumer. `npm run verify:reproducible` compares two independent locked installations/builds.
+
+ZGE-17 movement and trusted-model APIs are exposed in preview.13, matching their existing source
+compatibility level; this milestone does not change the project schema ceiling. `assetBaseURL`
+and `assetBudgetBytes` are declared engine options. Trusted models retain host-provided decoder
+ownership; their manifest SHA is custody metadata, not a claim of load-time byte verification.
+The portable/untrusted static-model parser remains separate. Native ZekNova Studio migration
+and standalone animation retargeting are outside this release closure.

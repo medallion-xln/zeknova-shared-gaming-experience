@@ -6,7 +6,7 @@ export interface SceneData {schema:'zge.sdk.scene.v1';id:string;revision:number;
 export type FieldType='number'|'boolean'|'string'|'enum'|'vector'|'asset'|'entity';
 export interface Field {type:FieldType;label?:string;optional?:boolean;nullable?:boolean;readOnly?:boolean;permission?:string;min?:number;max?:number;maxLength?:number;size?:2|3|4;values?:string[]}
 export interface ComponentDefinition {schema:'zge.component.v1';label:string;fields:Record<string,Field>;permission?:string;additionalProperties?:boolean}
-export interface Asset {id:string;name?:string;path:string;sha256:string;type?:'json'|'static-model';data?:Json;license?:{source?:string;author?:string;spdx?:string;redistribution?:'unknown'|'permitted'|'restricted'}}
+export interface Asset {id:string;name?:string;path:string;sha256:string;type?:'json'|'static-model'|'trusted-model';data?:Json|import('./trusted-model.js').TrustedModel;license?:{source?:string;author?:string;spdx?:string;redistribution?:'unknown'|'permitted'|'restricted'}}
 export interface Prefab {name:string;components:Entity['components']}
 export interface Project {schema:'zge.sdk.project.v1'|'zge.sdk.project.v2';id:string;name:string;entryWorld:string;worlds:Record<string,SceneData|null>;assets:Asset[];plugins:string[];prefabs?:Record<string,Prefab>;components?:Record<string,ComponentDefinition>;sdkCompatibility?:{major:0;minimumPreview:number};rules?:Rule[];metadata?:Record<string,Json>;provenance?:Json[]}
 export interface Operation {type:'CreateEntity'|'CreatePrefabInstance'|'DeleteEntity'|'UpdateTransform'|'AddComponent'|'RemoveComponent'|'UpdateComponent'|'RenameEntity'|'SetRules';id:string;expectedExists:boolean;name?:string;components?:Entity['components'];value?:unknown;component?:string;prefab?:string;transform?:Partial<Transform>;overrides?:Entity['components']}
@@ -47,12 +47,15 @@ export interface Engine {
  prefabStatus(entityId:string):{id:string;overrides:string[]}|null;createPrefab(id:string,entityId:string):Prefab;assetReferences(id:string):{entities:{world:string;entity:string}[];prefabs:string[]};
  importAsset(asset:{id:string;name?:string;path?:string;type?:'json'|'static-model';data:Json;license?:Asset['license']}):Promise<Asset>;
  importModel(asset:{id:string;name?:string;bytes:Uint8Array;hierarchy?:boolean;license?:Asset['license']}):Promise<Asset>;
+ importTrustedModel(asset:{id:string;name?:string;path:string;bytes:Uint8Array|ArrayBuffer;license?:Asset['license']}):Promise<Asset>;
+ registerAssetLoader<T>(type:string,loader:AssetLoader<T>):string;
+ trustedModels():Asset[];requiredDecoders():string[];
  assetReference(id:string):Asset;acquireAsset<T=unknown>(id:string,options?:AssetOptions):Promise<AssetLease<T>>;
  attachRenderer(renderer:{render():void;sync?(entities:Entity[]):void;dispose():void}):Engine;
  registerSystem(system:System):()=>void;use(plugin:Plugin):Engine;start():Promise<Engine>;pause():boolean;resume():boolean;step(count?:number):unknown;frame(time?:number):unknown;metrics():EngineMetrics;
  inspectEntity(id:string|null,options?:{principal?:unknown;includePrivate?:boolean}):Entity|null;dispose():Promise<void>;
 }
-export function createEngine(options?:{project?:Project|string|null;renderer?:RendererPreference;scheduler?:'manual'|'auto';authorize?:(request:{principal:unknown;capability:string;entityId:string})=>boolean}):Promise<Engine>;
+export function createEngine(options?:{project?:Project|string|null;renderer?:RendererPreference;scheduler?:'manual'|'auto';assetBaseURL?:string|null;assetBudgetBytes?:number|null;authorize?:(request:{principal:unknown;capability:string;entityId:string})=>boolean}):Promise<Engine>;
 export interface AssetOptions {type:string;variant?:string;owner?:string;signal?:AbortSignal;retries?:number;dependencies?:string[]}
 export interface AssetLease<T> {id:string;value:T;instantiate():T;release():void}
 export interface AssetLoader<T> {load(url:string,options:{signal:AbortSignal;variant:string}):T|Promise<T>;clone(value:T):T;size?(value:T):number;dispose?(value:T):void}
@@ -64,7 +67,7 @@ export class ProposalReview {constructor(scene:Scene,proposal:Proposal);readonly
 export type InteractionRule={id:string;entity:string;kind:"build"|"interact";target:string;sourceEntity:string;sourceComponent:string;component:string;counter:string;property:string;key:"e"|"b";radius:number;cost:number;prefab?:string};
 export type Rule=InteractionRule|{id:string;entity:string;kind:"move";speed:number;bounds?:[number,number,number,number]}|{id:string;entity:string;kind:"collect";target:string;component:string;counter:string;radius:number}|{id:string;entity:string;kind:"goal";component:string;property:string;sourceEntity:string;sourceComponent:string;counter:string;threshold:number};
 export function validateRules(rules:Rule[]):Rule[];
-export function installProjectRules(engine:Engine,input?:Set<string>):()=>void;
+export function installProjectRules(engine:Engine,input?:Set<string>,orientation?:import('./movement.js').MovementOrientation|null):()=>void;
 
 export const builtinDefinitions:Record<string,ComponentDefinition>;
 
@@ -74,3 +77,8 @@ export interface EngineMetrics {id:string;lifecycle:{state:string;[key:string]:u
 
 export interface StaticModel {schema:'zge.static-model.v1';sourceFormat:'glb2';sourceBytes:number;vertices:number;triangles:number;dependencies:[];parts:{positions:number[];normals:number[]|null;indices:number[]|null;color:number[];doubleSided:boolean}[]}
 export function inspectGLB(bytes:Uint8Array|ArrayBuffer,options?:{hierarchy?:boolean}):StaticModel;
+
+export * from './trusted-model.js';
+export * from './movement.js';
+export * from './movement-parity.js';
+export * from './camera.js';

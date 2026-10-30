@@ -6,27 +6,28 @@ The rebuild (ZGE-17 §13) re-derives ZekNova onto `@zge/sdk` using the frozen bu
 `assets/index-02987539.js` as its specification. The bundle is not a build input and is never
 modified.
 
-This document exists because **three behaviours that the shipping game depends on exist only as
-minified bytes**. They were fixed directly inside the bundle and never written back to
-`src/runtime-reconstructed/`, which is the repository's nominal source lineage. Anyone
-reimplementing these systems from that lineage — or from a reading of the segments — would
-faithfully reproduce three serious defects.
+This document originally recorded **three behaviours that existed only as minified bytes**.
+ZGE-18A reconciles them into source with executable regressions. Historically they were fixed
+directly inside the bundle and never written back to
+`src/runtime-reconstructed/`, the nominal source lineage. Before reconciliation, those
+segments restored unbounded asset waits and differed from shipping charge/recovery timing.
 
 Each entry below records the symptom, the stale behaviour, and the behaviour the rebuild must
 have. They are acceptance conditions, not notes.
 
 ## How this was established
 
-`node tests/runtime-reconstruction.test.mjs` fails: the live bundle hashes
+At the ZGE-17.1 baseline, `node tests/runtime-reconstruction.test.mjs` failed: the live bundle hashed
 `25665bd856768b89f2283f6e44a8f93efafe074f9d0fcace5efd8296c991d115`, while the segments in
 `src/runtime-reconstructed/compat/segments/` rebuild to
 `7a9cdfeec0c7b2ffe6e3f0f250fafb0e0d41ef0bd66d823240086985f36f5dab` — which is also what the
-committed artifact and the test's expectation hold. The segments and the artifact agree with each
-other; the **live bundle drifted away from both**.
+committed artifact and the test's expectation held. Those segments and the artifact agreed with
+each other; the **live bundle had drifted away from both**.
 
 Concatenating the eight segments with the same algorithm as
 `scripts/build-reconstructed-runtime.mjs` and diffing against the live bundle isolates the drift
-to exactly **three lines**: 1122, 1144 and 1168. All three are stall or soft-lock fixes.
+to exactly **three lines**: 1122, 1144 and 1168. They contain two readiness bounds and a
+charge/recovery timer placement change; the latter does not establish a permanent soft-lock.
 
 The model runtime drifted the same way: live `assets/model-runtime-c96327ba.js` hashes
 `078bd4e54aa7d7de6890779b1c9c7e945ab069c37f84dfd236643f3eb6a43f8e` against the lineage's
@@ -82,9 +83,12 @@ assets finish loading. A world that cannot load its decoration must still become
 procedural fallback — which the surrounding `catch` already provides ("ZekNova environment mesh
 upgrade unavailable; procedural vegetation remains active").
 
-## RB-3 — A charging juggernaut must always resolve its charge
+## RB-3 — Charge timer placement and recovery transitions
 
-**This is the most serious of the three: it is a permanent soft-lock in a boss encounter.**
+**ZGE-18A correction:** the byte difference is real; a permanent collision soft-lock was not
+established. In both lineages the collision helper already calls `zkJuggernautCrash` on every
+true return, entering recovery with a 2.1-second timer. The shipping branch also decrements
+that recovery timer during the same update. Executable regressions preserve this behavior.
 
 **Stale lineage (bundle line 1168), inside `zkUpdateHostileJuggernaut`, state `"charge"`:**
 
@@ -98,9 +102,10 @@ if (!zkJuggernautChargeCollision(e, t, p, f))
 return;
 ```
 
-The timer decrement and the crash check sit **inside** the no-collision branch. A juggernaut that
-collides mid-charge therefore never decrements `stateTimer` and never crashes out — it remains in
-`"charge"` forever, blocked against whatever it hit, for the rest of the session.
+The timer decrement and expiry check sit inside the no-collision branch. This differs from
+shipping behavior, but does not prove a permanent lock because the collision helper itself
+performs the crash transition. Tests cover unblocked expiry, collision/recovery, repeated
+obstruction, animation state changes, restart and idempotent cleanup.
 
 **Required behaviour (live bundle):**
 
@@ -139,5 +144,22 @@ brace between 5 and 18, charge between 7 and 17.
 ## Standing rule
 
 While the bundle remains the specification, **any further fix made inside it must be added to this
-document in the same change**. The hash gate cannot be relied on to catch drift: it is currently
-red, and `tests/runtime-graphics-context.test.mjs` carries the same stale expectation at line 2.
+document in the same change**. The ZGE-18A integrity gate verifies shipping-reference hashes, reconstructed source and reviewed
+candidate hashes independently. Historical hashes remain provenance, not current expectations.
+See `src/runtime-reconstructed/provenance.json`.
+
+## ZGE-18A candidate-only RB-1 correction
+
+Testing found a later staged `loadAOEnvironment` wrapper that still awaited HQ without a bound.
+The shipping reference remains untouched. The source-derived candidate bounds that wait at
+3,000 ms, retains the 5,500 ms staging pause, skips a second HQ wait in the inner loader,
+catches HQ rejection for procedural fallback and checks disposal around staging. This explicit
+failure-path correction preserves successful loading semantics. Its reviewed candidate digest
+and disposition are recorded separately from the shipping reference. Adoption by the launch
+path is a separate release decision.
+
+Run `npm run test:runtime:behaviours`. Tests execute verbatim candidate functions with controlled
+clocks; fixtures replace collaborators, not the implementation. Cancellation means token/disposal
+fencing of attachment, not network abort. Existing environment disposal can run twice after late
+readiness and must remain idempotent. These are bounded function-level regressions, not whole-game
+lifecycle or GPU resource certification.

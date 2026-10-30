@@ -1,0 +1,38 @@
+TAP version 13
+# M3: KILLED by "RB-1 disposal before or during the HQ wait schedules no staging pause and runs no inner loader"; control PASS; assertion /5500/
+# Subtest: M3 is killed by its attributable disposal regression (with passing control)
+ok 1 - M3 is killed by its attributable disposal regression (with passing control)
+  ---
+  duration_ms: 310.67325
+  type: 'test'
+  ...
+# M4: KILLED by "RB-1 disposal during the 5500ms staging pause stops before the inner loader touches anything"; control PASS; assertion /2 !== 1/
+# Subtest: M4 is killed by its attributable disposal regression (with passing control)
+ok 2 - M4 is killed by its attributable disposal regression (with passing control)
+  ---
+  duration_ms: 333.904292
+  type: 'test'
+  ...
+# M5: KILLED by "RB-1 disposal before or during the HQ wait schedules no staging pause and runs no inner loader"; control PASS; assertion /5500/
+# Subtest: M5 is killed by its attributable disposal regression (with passing control)
+ok 3 - M5 is killed by its attributable disposal regression (with passing control)
+  ---
+  duration_ms: 488.661625
+  type: 'test'
+  ...
+# M10: KILLED by "RB-1 inner loader contract: disposal or supersession during its own HQ wait stops before module import"; control PASS; assertion /1 !== 0/
+# Subtest: M10 is killed by its attributable disposal regression (with passing control)
+ok 4 - M10 is killed by its attributable disposal regression (with passing control)
+  ---
+  duration_ms: 588.803125
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1788.894542

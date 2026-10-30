@@ -1,0 +1,302 @@
+{
+  "schema": "zge18a2.inventory.v1",
+  "head": "f91da08de12474990e4379b4b6ed906acb8a836b",
+  "countReconciliation": {
+    "trackedDirtyIncludingNestedGitlink": 20,
+    "candidateTrackedModified": 19,
+    "preExistingNestedGitlink": 1,
+    "baselineCandidatePathCount": 44
+  },
+  "candidatePathCount": 51,
+  "candidatePaths": [
+    {
+      "status": " M",
+      "path": ".gitignore"
+    },
+    {
+      "status": " M",
+      "path": "artifacts/runtime-reconstruction/index-reconstructed.js"
+    },
+    {
+      "status": " M",
+      "path": "artifacts/runtime-reconstruction/model-runtime-reconstructed.js"
+    },
+    {
+      "status": " M",
+      "path": "docs/engine/REBUILD_REQUIRED_BEHAVIOURS.md"
+    },
+    {
+      "status": " M",
+      "path": "package-lock.json"
+    },
+    {
+      "status": " M",
+      "path": "package.json"
+    },
+    {
+      "status": " M",
+      "path": "packages/sdk/README.md"
+    },
+    {
+      "status": " M",
+      "path": "packages/sdk/dist/build-manifest.json"
+    },
+    {
+      "status": " M",
+      "path": "packages/sdk/dist/index.d.ts"
+    },
+    {
+      "status": " M",
+      "path": "packages/sdk/dist/index.js"
+    },
+    {
+      "status": " M",
+      "path": "packages/sdk/package.json"
+    },
+    {
+      "status": " M",
+      "path": "packages/sdk/src/index.d.ts"
+    },
+    {
+      "status": " M",
+      "path": "scripts/zge10-build.mjs"
+    },
+    {
+      "status": " M",
+      "path": "src/runtime-reconstructed/README.md"
+    },
+    {
+      "status": " M",
+      "path": "src/runtime-reconstructed/compat/segments/04-gameplay-systems.js"
+    },
+    {
+      "status": " M",
+      "path": "src/runtime-reconstructed/model/model-runtime.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/renderer-ownership-certification.test.mjs"
+    },
+    {
+      "status": " M",
+      "path": "tests/runtime-graphics-context.test.mjs"
+    },
+    {
+      "status": " M",
+      "path": "tests/runtime-reconstruction.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": ".github/workflows/zge18a.yml"
+    },
+    {
+      "status": "??",
+      "path": ".node-version"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/ZGE_18A2_DISPOSAL_CERTIFICATION.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/ZGE_18A_IMPLEMENTATION_REPORT.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a/browser.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a/consumer.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a/reproducibility.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a/verification.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a2/clean-gates.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a2/file-inventory.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a2/local-gates.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a2/mutations.tap"
+    },
+    {
+      "status": "??",
+      "path": "docs/engine/evidence/zge18a2/scope-preservation.json"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/dist/camera.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/dist/movement-parity.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/dist/movement.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/dist/trusted-model.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/src/camera.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/src/movement-parity.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/src/movement.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "packages/sdk/src/trusted-model.d.ts"
+    },
+    {
+      "status": "??",
+      "path": "scripts/runtime-lineage.mjs"
+    },
+    {
+      "status": "??",
+      "path": "scripts/sdk-output-integrity.mjs"
+    },
+    {
+      "status": "??",
+      "path": "scripts/zge18a-browser.mjs"
+    },
+    {
+      "status": "??",
+      "path": "scripts/zge18a-reproduce.mjs"
+    },
+    {
+      "status": "??",
+      "path": "scripts/zge18a-sdk-consumer.mjs"
+    },
+    {
+      "status": "??",
+      "path": "src/runtime-reconstructed/provenance.json"
+    },
+    {
+      "status": "??",
+      "path": "tests/helpers/runtime-behaviour-harness.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/runtime-disposal-mutations.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/runtime-lineage.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/runtime-required-behaviours.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/sdk-output-integrity.test.mjs"
+    }
+  ],
+  "requestAdded": [
+    "docs/engine/ZGE_18A2_DISPOSAL_CERTIFICATION.md",
+    "docs/engine/evidence/zge18a2/clean-gates.json",
+    "docs/engine/evidence/zge18a2/file-inventory.json",
+    "docs/engine/evidence/zge18a2/local-gates.json",
+    "docs/engine/evidence/zge18a2/mutations.tap",
+    "docs/engine/evidence/zge18a2/scope-preservation.json",
+    "tests/runtime-disposal-mutations.test.mjs"
+  ],
+  "requestModified": [
+    "docs/engine/ZGE_18A_IMPLEMENTATION_REPORT.md",
+    "tests/helpers/runtime-behaviour-harness.mjs",
+    "tests/runtime-required-behaviours.test.mjs"
+  ],
+  "requestChangedCount": 10,
+  "unrelatedDirtyPaths": [
+    {
+      "status": " M",
+      "path": "stable-fast-3d"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.cursor/skills/brainstorm/SKILL.md"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.lingcode/.gitignore"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.lingcode/product-journey.json"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/console-2026-10-30T22-43-54-471Z.log"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/console-2026-10-30T22-45-00-696Z.log"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-43-54-938Z.yml"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-43-58-316Z.png"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-44-15-628Z.yml"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-44-18-987Z.png"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-45-00-770Z.yml"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-45-13-492Z.yml"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-45-25-909Z.yml"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-45-30-356Z.png"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-45-43-543Z.yml"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-45-58-796Z.yml"
+    },
+    {
+      "status": "??",
+      "path": "sentinel-grid/.playwright-mcp/page-2026-10-30T22-46-05-990Z.png"
+    }
+  ]
+}

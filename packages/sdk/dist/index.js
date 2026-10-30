@@ -239,6 +239,120 @@ function validateModel(data) {
   return data;
 }
 
+// packages/sdk/src/trusted-model.js
+var TRUSTED_MODEL_SCHEMA = "zge.trusted-model.v1";
+var KNOWN_EXTENSIONS = Object.freeze({
+  EXT_meshopt_compression: "meshopt",
+  KHR_mesh_quantization: null,
+  // handled natively by three once quantized attributes are allowed
+  EXT_texture_webp: "webp",
+  // browser-native decode
+  KHR_texture_basisu: "ktx2",
+  KHR_materials_ior: null,
+  KHR_materials_specular: null,
+  KHR_texture_transform: null
+});
+var check2 = (ok, message) => {
+  if (!ok) throw new SDKError("MODEL_FORMAT", message);
+};
+function readGLBHeader(input) {
+  const bytes = input instanceof Uint8Array ? input : new Uint8Array(input);
+  check2(bytes.byteLength >= 20, "GLB too small for a header");
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  check2(view.getUint32(0, true) === 1179937895, "Not a GLB (bad magic)");
+  check2(view.getUint32(4, true) === 2, "Only GLB container version 2 is supported");
+  check2(view.getUint32(8, true) === bytes.length, "GLB length field does not match the file");
+  const jsonLength = view.getUint32(12, true);
+  check2(view.getUint32(16, true) === 1313821514, "First chunk must be JSON");
+  check2(jsonLength > 0 && 20 + jsonLength <= bytes.length, "JSON chunk exceeds the file");
+  try {
+    return JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes.subarray(20, 20 + jsonLength)));
+  } catch {
+    throw new SDKError("MODEL_PARSE", "Invalid GLB JSON chunk");
+  }
+}
+async function sha256Hex(bytes) {
+  const digest = await crypto.subtle.digest("SHA-256", bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes));
+  return [...new Uint8Array(digest)].map((v) => v.toString(16).padStart(2, "0")).join("");
+}
+async function describeTrustedModel({ path, bytes, maxBytes = 16 * 1024 * 1024 } = {}) {
+  check2(
+    typeof path === "string" && path.length > 0 && !path.includes("\\") && !path.startsWith("/") && path.split("/").every((part) => part && part !== "." && part !== "..") && !/[:\x00-\x1f]/.test(path),
+    "Trusted model needs a relative, traversal-free path"
+  );
+  const data = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  check2(data.byteLength > 0 && data.byteLength <= maxBytes, `GLB exceeds the ${Math.round(maxBytes / 1048576)} MiB trusted ceiling`);
+  const json = readGLBHeader(data);
+  check2(json?.asset?.version === "2.0", "glTF asset version 2.0 required");
+  const used = json.extensionsUsed ?? [];
+  const required = json.extensionsRequired ?? [];
+  check2(required.every((name) => used.includes(name)), "extensionsRequired must be listed in extensionsUsed");
+  const unknown = used.filter((name) => !(name in KNOWN_EXTENSIONS));
+  const decoders = [...new Set(used.map((name) => KNOWN_EXTENSIONS[name]).filter(Boolean))].sort();
+  const attributes = /* @__PURE__ */ new Set();
+  let primitives = 0;
+  for (const mesh of json.meshes ?? []) for (const part of mesh.primitives ?? []) {
+    primitives += 1;
+    for (const key of Object.keys(part.attributes ?? {})) attributes.add(key);
+  }
+  const positionAccessors = /* @__PURE__ */ new Set();
+  for (const mesh of json.meshes ?? []) for (const part of mesh.primitives ?? []) {
+    if (Number.isInteger(part.attributes?.POSITION)) positionAccessors.add(part.attributes.POSITION);
+  }
+  const vertices = [...positionAccessors].reduce((n, i) => n + (json.accessors?.[i]?.count ?? 0), 0);
+  const meshCount = (json.meshes ?? []).length;
+  const clipCount = (json.animations ?? []).length;
+  const kind = meshCount > 0 ? "geometry" : clipCount > 0 ? "animation" : "empty";
+  check2(kind !== "empty", "GLB has neither meshes nor animations");
+  return Object.freeze({
+    schema: TRUSTED_MODEL_SCHEMA,
+    path,
+    kind,
+    sourceFormat: "glb2",
+    sourceBytes: data.byteLength,
+    sourceSha256: await sha256Hex(data),
+    extensions: Object.freeze([...used].sort()),
+    extensionsRequired: Object.freeze([...required].sort()),
+    unknownExtensions: Object.freeze(unknown.sort()),
+    requiresDecoders: Object.freeze(decoders),
+    skinned: (json.skins ?? []).length > 0,
+    skins: (json.skins ?? []).length,
+    animations: Object.freeze((json.animations ?? []).map((a, i) => a.name ?? `clip-${i}`)),
+    textured: (json.textures ?? []).length > 0,
+    nodes: (json.nodes ?? []).length,
+    meshes: (json.meshes ?? []).length,
+    primitives,
+    materials: (json.materials ?? []).length,
+    images: (json.images ?? []).length,
+    textures: (json.textures ?? []).length,
+    attributes: Object.freeze([...attributes].sort()),
+    vertices
+  });
+}
+function validateTrustedModel(data) {
+  check2(data?.schema === TRUSTED_MODEL_SCHEMA && data.sourceFormat === "glb2", "Invalid trusted model");
+  check2(typeof data.path === "string" && data.path.length > 0, "Trusted model path required");
+  check2(Number.isSafeInteger(data.sourceBytes) && data.sourceBytes > 0, "Invalid source size");
+  check2(/^[a-f0-9]{64}$/.test(data.sourceSha256 ?? ""), "sha256 custody required for a trusted model");
+  for (const key of ["extensions", "extensionsRequired", "unknownExtensions", "requiresDecoders", "animations", "attributes"]) {
+    check2(Array.isArray(data[key]) && data[key].every((v) => typeof v === "string"), `Invalid ${key}`);
+  }
+  for (const key of ["skins", "nodes", "meshes", "primitives", "materials", "images", "textures", "vertices"]) {
+    check2(Number.isSafeInteger(data[key]) && data[key] >= 0, `Invalid ${key}`);
+  }
+  check2(typeof data.skinned === "boolean" && typeof data.textured === "boolean", "Invalid skinned/textured flags");
+  check2(data.skinned === data.skins > 0, "skinned flag disagrees with skin count");
+  check2(["geometry", "animation"].includes(data.kind), "Invalid trusted model kind");
+  check2(
+    data.kind === "geometry" ? data.meshes > 0 : data.meshes === 0 && data.animations.length > 0,
+    "kind disagrees with mesh and clip counts"
+  );
+  return data;
+}
+function requiredDecoders(manifests) {
+  return [...new Set(manifests.flatMap((m) => m.requiresDecoders ?? []))].sort();
+}
+
 // packages/sdk/src/rules.js
 function validateRules(rules) {
   const id = (v) => typeof v === "string" && /^[a-zA-Z0-9_.:-]{1,100}$/.test(v), num = (v, min, max) => Number.isFinite(v) && v >= min && v <= max;
@@ -326,6 +440,436 @@ function installProjectRules(engine, input = /* @__PURE__ */ new Set(), orientat
   } });
 }
 
+// packages/sdk/src/movement.js
+var MOVEMENT_SCHEMA = "zge.movement.v1";
+var EVASION_SCHEMA = "zge.evasion.v1";
+var MOVEMENT_AUTHORITY = Object.freeze({
+  plugin: "movement",
+  clientAuthoritative: Object.freeze(["position", "velocity", "facing", "grounded", "jump", "dash-motion"]),
+  serverValidated: Object.freeze(["damage-negation"]),
+  claims: Object.freeze([EVASION_SCHEMA]),
+  note: "The client owns where it is. It does not own whether it was hit."
+});
+var DEFAULT_MOVEMENT = Object.freeze({
+  schema: MOVEMENT_SCHEMA,
+  speed: 6,
+  // m/s on the ground
+  acceleration: 60,
+  // reaches full speed in ~0.1 s — weight without sludge
+  deceleration: 90,
+  // and stops crisply; AC10 requires it reach exactly zero
+  airControl: 0.45,
+  // Returnal lets you steer in the air; it does not let you fly
+  gravity: 24,
+  // heavier than earth: landings read as landings
+  jumpVelocity: 8.5,
+  maxJumps: 2,
+  // ground jump + one air jump
+  groundY: 0,
+  restEpsilon: 1e-6,
+  // below this, velocity snaps to zero rather than decaying forever
+  dash: Object.freeze({
+    speed: 26,
+    durationMs: 180,
+    cooldownMs: 900,
+    invulnerableMs: 140,
+    // strictly inside the dash: the tail is committed but vulnerable
+    airDashes: 1
+  })
+});
+var check3 = (ok, message) => {
+  if (!ok) throw new SDKError("MOVEMENT_CONFIG", message);
+};
+var finite = (v) => Number.isFinite(v);
+function validateMovementConfig(config) {
+  const c = { ...DEFAULT_MOVEMENT, ...config, dash: { ...DEFAULT_MOVEMENT.dash, ...config?.dash ?? {} } };
+  check3(c.schema === MOVEMENT_SCHEMA, "Invalid movement schema");
+  for (const key of ["speed", "acceleration", "deceleration", "gravity", "jumpVelocity"]) {
+    check3(finite(c[key]) && c[key] > 0 && c[key] <= 1e3, `movement.${key} must be > 0 and <= 1000`);
+  }
+  check3(finite(c.airControl) && c.airControl >= 0 && c.airControl <= 1, "movement.airControl must be 0..1");
+  check3(Number.isInteger(c.maxJumps) && c.maxJumps >= 1 && c.maxJumps <= 8, "movement.maxJumps must be 1..8");
+  check3(finite(c.groundY), "movement.groundY must be finite");
+  check3(finite(c.restEpsilon) && c.restEpsilon > 0 && c.restEpsilon < 1, "movement.restEpsilon must be a small positive number");
+  check3(finite(c.dash.speed) && c.dash.speed > 0 && c.dash.speed <= 1e3, "dash.speed must be > 0");
+  for (const key of ["durationMs", "cooldownMs", "invulnerableMs"]) {
+    check3(finite(c.dash[key]) && c.dash[key] >= 0 && c.dash[key] <= 6e4, `dash.${key} must be 0..60000`);
+  }
+  check3(c.dash.invulnerableMs <= c.dash.durationMs, "dash.invulnerableMs cannot outlast the dash itself");
+  check3(c.dash.cooldownMs >= c.dash.durationMs, "dash.cooldownMs must be at least the dash duration");
+  check3(Number.isInteger(c.dash.airDashes) && c.dash.airDashes >= 0 && c.dash.airDashes <= 8, "dash.airDashes must be 0..8");
+  return Object.freeze({ ...c, dash: Object.freeze({ ...c.dash }) });
+}
+function createMovementState({ x = 0, y = 0, z = 0, config = DEFAULT_MOVEMENT } = {}) {
+  const c = validateMovementConfig(config);
+  return {
+    x,
+    y: Math.max(y, c.groundY),
+    z,
+    vx: 0,
+    vy: 0,
+    vz: 0,
+    facingX: 0,
+    facingZ: 1,
+    grounded: y <= c.groundY,
+    jumpsUsed: 0,
+    airDashesUsed: 0,
+    dashUntilMs: -Infinity,
+    dashReadyAtMs: -Infinity,
+    dashDirX: 0,
+    dashDirZ: 0,
+    timeMs: 0,
+    sequence: 0,
+    evasionSequence: 0,
+    lastEvasion: null
+  };
+}
+var DEFAULT_BASIS = Object.freeze({ forward: [0, 1], right: [1, 0] });
+function stepMovement(state, input, dtSeconds, config = DEFAULT_MOVEMENT) {
+  const c = config.schema === MOVEMENT_SCHEMA && Object.isFrozen(config) ? config : validateMovementConfig(config);
+  check3(finite(dtSeconds) && dtSeconds > 0 && dtSeconds <= 1, "dt must be a positive number of seconds <= 1");
+  const s = { ...state };
+  const events = [];
+  const basis = input?.basis ?? DEFAULT_BASIS;
+  const dtMs = dtSeconds * 1e3;
+  s.timeMs += dtMs;
+  s.sequence += 1;
+  let forward = Math.max(-1, Math.min(1, Number(input?.forward ?? 0)));
+  let strafe = Math.max(-1, Math.min(1, Number(input?.strafe ?? 0)));
+  const magnitude = Math.hypot(forward, strafe);
+  if (magnitude > 1) {
+    forward /= magnitude;
+    strafe /= magnitude;
+  }
+  const wishX = basis.forward[0] * forward + basis.right[0] * strafe;
+  const wishZ = basis.forward[1] * forward + basis.right[1] * strafe;
+  const wishLength = Math.hypot(wishX, wishZ);
+  const dashing = s.timeMs < s.dashUntilMs;
+  if (input?.dash && !dashing && s.timeMs >= s.dashReadyAtMs && (s.grounded || s.airDashesUsed < c.dash.airDashes)) {
+    const dirX = wishLength > 0 ? wishX / wishLength : s.facingX;
+    const dirZ = wishLength > 0 ? wishZ / wishLength : s.facingZ;
+    s.dashDirX = dirX;
+    s.dashDirZ = dirZ;
+    s.dashUntilMs = s.timeMs + c.dash.durationMs;
+    s.dashReadyAtMs = s.timeMs + c.dash.cooldownMs;
+    if (!s.grounded) s.airDashesUsed += 1;
+    s.evasionSequence += 1;
+    const evasion = Object.freeze({
+      schema: EVASION_SCHEMA,
+      sequence: s.evasionSequence,
+      inputSequence: s.sequence,
+      startedAtMs: s.timeMs,
+      endsAtMs: s.timeMs + c.dash.invulnerableMs,
+      durationMs: c.dash.invulnerableMs,
+      earliestNextMs: s.timeMs + c.dash.cooldownMs,
+      authority: "client-feel",
+      claim: "damage-negation"
+    });
+    s.lastEvasion = evasion;
+    events.push({ type: "movement:dash", direction: [dirX, dirZ], evasion });
+    events.push({ type: "movement:evasion-window", evasion });
+  }
+  if (input?.jump && s.jumpsUsed < c.maxJumps) {
+    s.vy = c.jumpVelocity;
+    s.jumpsUsed += 1;
+    s.grounded = false;
+    events.push({ type: "movement:jump", ordinal: s.jumpsUsed, double: s.jumpsUsed > 1 });
+  }
+  if (s.timeMs < s.dashUntilMs) {
+    s.vx = s.dashDirX * c.dash.speed;
+    s.vz = s.dashDirZ * c.dash.speed;
+  } else {
+    const control = s.grounded ? 1 : c.airControl;
+    const targetX = wishLength > 0 ? wishX / Math.max(wishLength, 1) * c.speed : 0;
+    const targetZ = wishLength > 0 ? wishZ / Math.max(wishLength, 1) * c.speed : 0;
+    const rate = (wishLength > 0 ? c.acceleration : c.deceleration) * control * dtSeconds;
+    for (const [axis, target] of [["vx", targetX], ["vz", targetZ]]) {
+      const delta = target - s[axis];
+      s[axis] = Math.abs(delta) <= rate ? target : s[axis] + Math.sign(delta) * rate;
+    }
+    if (wishLength === 0 && Math.hypot(s.vx, s.vz) < c.restEpsilon) {
+      s.vx = 0;
+      s.vz = 0;
+    }
+  }
+  if (wishLength > 0) {
+    s.facingX = wishX / wishLength;
+    s.facingZ = wishZ / wishLength;
+  }
+  s.vy -= c.gravity * dtSeconds;
+  s.x += s.vx * dtSeconds;
+  s.y += s.vy * dtSeconds;
+  s.z += s.vz * dtSeconds;
+  if (s.y <= c.groundY) {
+    const wasAirborne = !s.grounded;
+    s.y = c.groundY;
+    s.vy = 0;
+    s.grounded = true;
+    s.jumpsUsed = 0;
+    s.airDashesUsed = 0;
+    if (wasAirborne) events.push({ type: "movement:land", at: [s.x, s.y, s.z] });
+  } else s.grounded = false;
+  return {
+    state: s,
+    events,
+    dashing: s.timeMs < s.dashUntilMs,
+    invulnerable: !!s.lastEvasion && s.timeMs < s.lastEvasion.endsAtMs
+  };
+}
+function validateEvasionWindow(window, { config = DEFAULT_MOVEMENT, previous = null, nowMs = null, toleranceMs = 50 } = {}) {
+  const c = config.schema === MOVEMENT_SCHEMA && Object.isFrozen(config) ? config : validateMovementConfig(config);
+  const fail2 = (reason, detail = {}) => ({ ok: false, reason, ...detail });
+  if (!window || window.schema !== EVASION_SCHEMA) return fail2("schema");
+  if (window.claim !== "damage-negation" || window.authority !== "client-feel") return fail2("claim");
+  for (const key of ["sequence", "inputSequence"]) {
+    if (!Number.isSafeInteger(window[key]) || window[key] < 1) return fail2("sequence-shape", { key });
+  }
+  for (const key of ["startedAtMs", "endsAtMs", "durationMs", "earliestNextMs"]) {
+    if (!finite(window[key]) || window[key] < 0) return fail2("timestamp-shape", { key });
+  }
+  const EPSILON_MS = 1e-6;
+  const off = (actual, expected) => Math.abs(actual - expected) > EPSILON_MS;
+  if (off(window.durationMs, c.dash.invulnerableMs)) return fail2("duration-not-configured", { declared: window.durationMs, expected: c.dash.invulnerableMs });
+  if (off(window.endsAtMs - window.startedAtMs, window.durationMs)) return fail2("window-inconsistent");
+  if (off(window.earliestNextMs - window.startedAtMs, c.dash.cooldownMs)) return fail2("cooldown-not-configured", { declared: window.earliestNextMs - window.startedAtMs, expected: c.dash.cooldownMs });
+  if (previous) {
+    if (window.sequence !== previous.sequence + 1) return fail2("sequence-gap", { expected: previous.sequence + 1, got: window.sequence });
+    if (window.startedAtMs < previous.earliestNextMs) return fail2("cooldown-violated", { earliest: previous.earliestNextMs, got: window.startedAtMs });
+  } else if (window.sequence !== 1) return fail2("sequence-gap", { expected: 1, got: window.sequence });
+  if (nowMs !== null && window.startedAtMs > nowMs + toleranceMs) return fail2("future-dated", { nowMs, startedAtMs: window.startedAtMs });
+  return { ok: true, reason: null, coversMs: [window.startedAtMs, window.endsAtMs] };
+}
+function evasionCovers(window, atMs) {
+  return !!window && finite(atMs) && atMs >= window.startedAtMs && atMs < window.endsAtMs;
+}
+function installMovement(engine, { entity = "player", input = /* @__PURE__ */ new Set(), orientation = null, config = DEFAULT_MOVEMENT, keys = {} } = {}) {
+  const c = validateMovementConfig(config);
+  const bind = {
+    forward: ["w", "ArrowUp"],
+    back: ["s", "ArrowDown"],
+    left: ["a", "ArrowLeft"],
+    right: ["d", "ArrowRight"],
+    jump: [" ", "Spacebar"],
+    dash: ["Shift", "shift"],
+    ...keys
+  };
+  const held = /* @__PURE__ */ new Set();
+  let state = null;
+  const basis = () => {
+    const b = orientation?.getMovementBasis?.() ?? orientation;
+    return Array.isArray(b?.forward) && finite(b.forward[0]) ? { forward: b.forward.slice(0, 2), right: b.right.slice(0, 2) } : DEFAULT_BASIS;
+  };
+  const down = (names) => names.some((k) => input.has(k));
+  const remove = engine.registerSystem({ id: "movement", phase: "simulate", run(scene, dt, { events }) {
+    const target = scene?.findEntity?.(entity);
+    if (!target?.components?.transform) return;
+    if (!state) {
+      const [x, y, z] = target.components.transform.position;
+      state = createMovementState({ x, y, z, config: c });
+    }
+    const edge = (names) => names.some((k) => input.has(k) && !held.has(k));
+    const frame = {
+      forward: (down(bind.forward) ? 1 : 0) - (down(bind.back) ? 1 : 0),
+      strafe: (down(bind.right) ? 1 : 0) - (down(bind.left) ? 1 : 0),
+      jump: edge(bind.jump),
+      dash: edge(bind.dash),
+      basis: basis()
+    };
+    held.clear();
+    for (const k of input) held.add(k);
+    const result = stepMovement(state, frame, dt, c);
+    state = result.state;
+    const [px, py, pz] = target.components.transform.position;
+    if (px !== state.x || py !== state.y || pz !== state.z) scene.updateTransform(entity, { position: [state.x, state.y, state.z] });
+    for (const event of result.events) events?.emit?.("game:movement", event);
+    return result;
+  } });
+  return {
+    config: c,
+    authority: MOVEMENT_AUTHORITY,
+    get state() {
+      return state ? { ...state } : null;
+    },
+    get lastEvasion() {
+      return state?.lastEvasion ?? null;
+    },
+    dispose() {
+      remove?.();
+      state = null;
+      held.clear();
+    }
+  };
+}
+
+// packages/sdk/src/movement-parity.js
+var MOVEMENT_PARITY_CLASSES = Object.freeze([
+  "RESPONSE_LATENCY_MISMATCH",
+  // frames from input to first motion
+  "DISPLACEMENT_MISMATCH",
+  // total ground covered over the script
+  "REST_DRIFT_MISMATCH",
+  // movement after the key came up
+  "TRAJECTORY_DIVERGENCE",
+  // worst per-sample separation
+  "DIRECTION_MISMATCH",
+  // ended up somewhere else entirely
+  "CAPABILITY_ABSENT",
+  // the rebuild has a move the bundle never had
+  "EXPECTED_NORMALIZATION"
+  // known, accepted difference
+]);
+var near = (a, b, epsilon) => Math.abs(a - b) <= epsilon;
+var distance = (a, b) => Math.hypot(a.x - b.x, (a.y ?? 0) - (b.y ?? 0), a.z - b.z);
+function responseFrames(samples, epsilon = 0.01) {
+  if (!samples?.length) return null;
+  const origin = samples[0];
+  for (let i = 1; i < samples.length; i++) if (distance(samples[i], origin) > epsilon) return i;
+  return null;
+}
+function displacement(samples) {
+  if (!samples?.length) return 0;
+  return Math.hypot(samples.at(-1).x - samples[0].x, samples.at(-1).z - samples[0].z);
+}
+function compareMovement(observation) {
+  const o = observation;
+  const differences = [];
+  const unobservable = [...o.legacy?.unobservable ?? [], ...o.rebuilt?.unobservable ?? []];
+  const add = (classification, detail) => differences.push({ classification, detail });
+  const tol = { responseFrames: 2, displacementRatio: 0.35, restDrift: 1e-6, trajectory: 2.5, settleFrames: 20, ...o.tolerances ?? {} };
+  const legacy = o.legacy?.samples ?? [];
+  const rebuilt = o.rebuilt?.samples ?? [];
+  if (!legacy.length || !rebuilt.length) {
+    unobservable.push(!legacy.length ? "legacy-trajectory" : "rebuilt-trajectory");
+    return report(o, differences, unobservable, tol);
+  }
+  const legacyResponse = responseFrames(legacy), rebuiltResponse = responseFrames(rebuilt);
+  if (legacyResponse === null || rebuiltResponse === null) unobservable.push("response-latency");
+  else if (Math.abs(legacyResponse - rebuiltResponse) > tol.responseFrames) {
+    add("RESPONSE_LATENCY_MISMATCH", { legacyFrames: legacyResponse, rebuiltFrames: rebuiltResponse, tolerance: tol.responseFrames });
+  }
+  const legacyDistance = displacement(legacy), rebuiltDistance = displacement(rebuilt);
+  if (legacyDistance > 0.01) {
+    const ratio = rebuiltDistance / legacyDistance;
+    if (ratio < 1 - tol.displacementRatio || ratio > 1 + tol.displacementRatio) {
+      add("DISPLACEMENT_MISMATCH", { legacy: +legacyDistance.toFixed(3), rebuilt: +rebuiltDistance.toFixed(3), ratio: +ratio.toFixed(3), tolerance: tol.displacementRatio });
+    }
+  } else unobservable.push("legacy-displacement-too-small-to-compare");
+  const released = o.legacy?.releasedAtFrame ?? null;
+  for (const [side, run] of [["legacy", o.legacy], ["rebuilt", o.rebuilt]]) {
+    const at = run?.releasedAtFrame ?? released;
+    const from = at === null ? null : at + tol.settleFrames;
+    if (from === null || from >= run.samples.length - 1) {
+      unobservable.push(`${side}-rest-drift`);
+      continue;
+    }
+    const tail = run.samples.slice(from);
+    const drift = Math.max(...tail.map((s) => Math.hypot(s.x - tail.at(-1).x, s.z - tail.at(-1).z)));
+    if (!near(drift, 0, tol.restDrift)) add("REST_DRIFT_MISMATCH", { side, drift: +drift.toExponential(3), tolerance: tol.restDrift, settleFrames: tol.settleFrames });
+  }
+  const span = Math.min(legacy.length, rebuilt.length);
+  let worst = 0, worstFrame = 0;
+  for (let i = 0; i < span; i++) {
+    const d = distance(
+      { x: legacy[i].x - legacy[0].x, y: 0, z: legacy[i].z - legacy[0].z },
+      { x: rebuilt[i].x - rebuilt[0].x, y: 0, z: rebuilt[i].z - rebuilt[0].z }
+    );
+    if (d > worst) {
+      worst = d;
+      worstFrame = i;
+    }
+  }
+  if (worst > tol.trajectory) add("TRAJECTORY_DIVERGENCE", { worst: +worst.toFixed(3), atFrame: worstFrame, tolerance: tol.trajectory });
+  if (legacyDistance > 0.01 && rebuiltDistance > 0.01) {
+    const angle = (run) => Math.atan2(run.at(-1).z - run[0].z, run.at(-1).x - run[0].x);
+    let delta = Math.abs(angle(legacy) - angle(rebuilt));
+    if (delta > Math.PI) delta = 2 * Math.PI - delta;
+    if (delta > Math.PI / 4) add("DIRECTION_MISMATCH", { radians: +delta.toFixed(3) });
+  }
+  for (const [name, present] of Object.entries(o.capabilities ?? {})) {
+    if (present) add("CAPABILITY_ABSENT", {
+      capability: name,
+      legacy: false,
+      rebuilt: true,
+      rule: "the rebuild adds this move; the bundle has no equivalent to diverge from"
+    });
+  }
+  return report(o, differences, unobservable, tol);
+}
+function report(o, differences, unobservable, tolerances) {
+  const mismatches = differences.filter((d) => !["EXPECTED_NORMALIZATION", "CAPABILITY_ABSENT"].includes(d.classification));
+  return {
+    scriptId: o.scriptId ?? null,
+    matched: mismatches.length === 0,
+    differences,
+    mismatches: mismatches.length,
+    unobservable: [...new Set(unobservable)],
+    fullyObservable: unobservable.length === 0,
+    tolerances,
+    reproduce: o.reproduce ?? "Replay the scripted input against both runtimes at the same cadence"
+  };
+}
+var MovementParityReport = class {
+  constructor({ limit = 100 } = {}) {
+    this.limit = limit;
+    this.rows = [];
+    this.total = 0;
+    this.mismatched = 0;
+    this.unobservable = 0;
+    this.classes = {};
+  }
+  record(observation) {
+    const row = compareMovement(observation);
+    this.total++;
+    if (!row.matched) this.mismatched++;
+    if (row.unobservable.length) this.unobservable++;
+    for (const d of row.differences) this.classes[d.classification] = (this.classes[d.classification] ?? 0) + 1;
+    this.rows.push(row);
+    if (this.rows.length > this.limit) this.rows.shift();
+    return row;
+  }
+  snapshot() {
+    return structuredClone({
+      schema: "zge.movement-parity.v1",
+      total: this.total,
+      matched: this.total - this.mismatched,
+      mismatched: this.mismatched,
+      unobservable: this.unobservable,
+      classes: this.classes,
+      rows: this.rows
+    });
+  }
+};
+function replayScript(script, { config = DEFAULT_MOVEMENT, dtSeconds = 1 / 60, start = { x: 0, y: 0, z: 0 } } = {}) {
+  const c = validateMovementConfig(config);
+  let state = createMovementState({ ...start, config: c });
+  const samples = [{ frame: 0, x: state.x, y: state.y, z: state.z }];
+  const events = [];
+  let frame = 0, releasedAtFrame = null;
+  for (const span of script) {
+    for (let i = 0; i < span.frames; i++) {
+      const result = stepMovement(state, {
+        forward: span.forward ?? 0,
+        strafe: span.strafe ?? 0,
+        jump: !!span.jump && i === 0,
+        dash: !!span.dash && i === 0,
+        basis: span.basis
+      }, dtSeconds, c);
+      state = result.state;
+      frame += 1;
+      samples.push({ frame, x: state.x, y: state.y, z: state.z });
+      for (const e of result.events) events.push({ frame, ...e });
+    }
+    if (releasedAtFrame === null && !span.forward && !span.strafe && !span.dash) releasedAtFrame = frame - span.frames + 1;
+  }
+  return {
+    samples,
+    events,
+    releasedAtFrame,
+    finalState: state,
+    unobservable: []
+  };
+}
+
 // packages/sdk/src/camera.js
 var DEG = Math.PI / 180;
 var TWO_PI = Math.PI * 2;
@@ -339,12 +883,12 @@ function lerp(a, b, t) {
 function mix(arrA, arrB, t) {
   return arrA.map((a, i) => lerp(a, arrB[i], t));
 }
-function spherical(yaw, pitch, distance) {
+function spherical(yaw, pitch, distance2) {
   const cp = Math.cos(pitch);
   return {
-    x: distance * cp * Math.sin(yaw),
-    y: distance * Math.sin(pitch),
-    z: distance * cp * Math.cos(yaw)
+    x: distance2 * cp * Math.sin(yaw),
+    y: distance2 * Math.sin(pitch),
+    z: distance2 * cp * Math.cos(yaw)
   };
 }
 function resolveOcclusion(target, cameraPos, entities, targetId, clearance = 0.35) {
@@ -635,10 +1179,10 @@ function createCameraDirector(engine, options = {}) {
       return transitionDuration;
     },
     /** Presentation-safe pointer-look deltas (radians). No scene mutation. */
-    setLook(yaw, pitch, distance) {
+    setLook(yaw, pitch, distance2) {
       if (Number.isFinite(yaw)) pointerYaw = yaw;
       if (Number.isFinite(pitch)) pointerPitch = pitch;
-      if (Number.isFinite(distance)) pointerDistance = distance;
+      if (Number.isFinite(distance2)) pointerDistance = distance2;
       return api;
     },
     /** Compute and commit this frame's desired pose. Returns the pose. */
@@ -2460,8 +3004,10 @@ async function fetchAssetJSON(url) {
     throw new SDKError("ASSET_PARSE", "Invalid JSON asset");
   }
 }
-async function createEngine2({ project = null, renderer = "none", scheduler = "manual", authorize = () => false } = {}) {
+async function createEngine2({ project = null, renderer = "none", scheduler = "manual", authorize = () => false, assetBaseURL = null, assetBudgetBytes = null } = {}) {
   requireOK(["none", "auto", "webgpu", "webgl"].includes(renderer), "invalid renderer");
+  requireOK(assetBaseURL === null || typeof assetBaseURL === "string", "assetBaseURL must be a string");
+  requireOK(assetBudgetBytes === null || Number.isFinite(assetBudgetBytes) && assetBudgetBytes >= 0, "assetBudgetBytes must be a non-negative number");
   if (typeof project === "string") {
     let url = project.endsWith(".json") ? project : project.replace(/\/$/, "") + "/project.json";
     const r = await fetch(url);
@@ -2470,7 +3016,7 @@ async function createEngine2({ project = null, renderer = "none", scheduler = "m
   }
   project = project ? validateProject(project) : { schema: "zge.sdk.project.v1", id: "untitled", name: "Untitled", entryWorld: "main", worlds: { main: null }, assets: [], plugins: [], prefabs: {} };
   project = validateProject(migrateProject(project));
-  const kernel = new EngineKernel({ id: project.id, scheduler }), types = defaults(), definitions = new Map(Object.entries(builtinDefinitions)), worlds = /* @__PURE__ */ new Map(), assetIds = new Set(project.assets.map((a) => a.id)), assets = new AssetService({ baseURL: globalThis.location?.href ?? "http://localhost/" });
+  const kernel = new EngineKernel({ id: project.id, scheduler }), types = defaults(), definitions = new Map(Object.entries(builtinDefinitions)), worlds = /* @__PURE__ */ new Map(), assetIds = new Set(project.assets.map((a) => a.id)), assets = new AssetService({ baseURL: assetBaseURL ?? globalThis.location?.href ?? "http://localhost/", ...assetBudgetBytes === null ? {} : { budgetBytes: assetBudgetBytes } });
   for (const [type, definition] of Object.entries(project.components ?? {})) {
     requireOK(idOK(type) && !types.has(type), "duplicate component schema");
     const def = validateDefinition(definition);
@@ -2585,9 +3131,10 @@ async function createEngine2({ project = null, renderer = "none", scheduler = "m
     },
     async importAsset({ id, name = id, path = `imports/${id}.json`, data, type = "json", license = { redistribution: "unknown" } }) {
       alive();
-      requireOK(["json", "static-model"].includes(type) && idOK(id) && !assetIds.has(id), "unique supported asset ID required");
+      requireOK(["json", "static-model", "trusted-model"].includes(type) && idOK(id) && !assetIds.has(id), "unique supported asset ID required");
       data = plain(data);
       if (type === "static-model") validateModel(data);
+      if (type === "trusted-model") validateTrustedModel(data);
       const bytes = new TextEncoder().encode(JSON.stringify(data));
       requireOK(bytes.length <= 1048576, "asset size limit 1MiB");
       const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))].map((v) => v.toString(16).padStart(2, "0")).join("");
@@ -2607,6 +3154,35 @@ async function createEngine2({ project = null, renderer = "none", scheduler = "m
       const data = inspectGLB(bytes, { hierarchy });
       const sourceSha256 = [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))].map((v) => v.toString(16).padStart(2, "0")).join("");
       return api.importAsset({ id, name, type: "static-model", path: `imports/${id}.model.json`, data: { ...data, sourceSha256 }, license });
+    },
+    /* ZGE-17 AC5-AC7 — first-party model tier. The project REFERENCES the .glb by path and keeps a
+     * manifest plus sha256 custody; the file is never transcoded, because no portable schema here
+     * expresses skinned animation. Decoding is the host's GLTFLoader (see registerAssetLoader).
+     * Stays at minimumPreview 13: raising the ceiling is a release decision, and zge12.test.mjs
+     * deliberately asserts that 14 is rejected as a future version. */
+    async importTrustedModel({ id, name = id, path, bytes, license = { redistribution: "unknown" } }) {
+      alive();
+      const data = await describeTrustedModel({ path, bytes });
+      requireOK(!data.unknownExtensions.length, `unrecognised glTF extensions: ${data.unknownExtensions.join(", ")}`);
+      return api.importAsset({ id, name, type: "trusted-model", path, data, license });
+    },
+    /* The SDK never decides what a GLTF decoder is — the host supplies one, exactly as it supplies
+     * the Three namespace to createViewport. packages/assets/src/threeAssetService.js exports
+     * createThreeGLTFLoaderType() for this, already wired for meshopt and KTX2/Basis. Keeping it
+     * out of the SDK is what lets dist/index.js stay free of external imports. */
+    registerAssetLoader(type, loader) {
+      alive();
+      requireOK(idOK(type) && loader && typeof loader.load === "function" && typeof loader.clone === "function", "asset loader needs load and clone");
+      assets.register(type, loader);
+      return type;
+    },
+    trustedModels() {
+      alive();
+      return project.assets.filter((a) => a.type === "trusted-model").map((a) => copy(a));
+    },
+    requiredDecoders() {
+      alive();
+      return requiredDecoders(project.assets.filter((a) => a.type === "trusted-model").map((a) => a.data));
     },
     assetReference(id) {
       alive();
@@ -2752,25 +3328,47 @@ var ProposalReview = class {
 export {
   AssetService,
   CAMERA_PRESET_SCHEMA,
+  DEFAULT_MOVEMENT,
+  EVASION_SCHEMA,
+  KNOWN_EXTENSIONS,
   MODES,
+  MOVEMENT_AUTHORITY,
+  MOVEMENT_PARITY_CLASSES,
+  MOVEMENT_SCHEMA,
+  MovementParityReport,
   ProposalReview,
   SDKError,
   SDK_VERSION,
   Scene,
+  TRUSTED_MODEL_SCHEMA,
   builtinDefinitions,
+  compareMovement,
   createCameraDirector,
   createEngine2 as createEngine,
+  createMovementState,
   createProject,
+  describeTrustedModel,
+  displacement,
+  evasionCovers,
   inspectGLB,
+  installMovement,
   installProjectRules,
   migrateProject,
   mockProposal,
   parseProject,
   plain,
+  readGLBHeader,
+  replayScript,
+  requiredDecoders,
   resolveOcclusion,
+  responseFrames,
+  stepMovement,
   transform,
   validateCameraPreset,
   validateDefinition,
+  validateEvasionWindow,
+  validateMovementConfig,
   validateProject,
-  validateRules
+  validateRules,
+  validateTrustedModel
 };
